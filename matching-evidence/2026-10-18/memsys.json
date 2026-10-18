@@ -1,0 +1,22 @@
+{
+  "unit": "memsys",
+  "text_nonpadding": 0,
+  "data_nonpadding": 1,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0BEE7C",
+      "8C0BEE7D"
+    ]
+  ],
+  "source_sha256": "ecb4f0ac4f093a02250ca47e89c03421ae0d5e892ee4fcd74dca43f15b0e2475",
+  "expanded_source_sha256": "af591ea931aa3d9f4fb0ab3264d7bfd91c42f1be0d5cf9d3c30a48029ad0f84b",
+  "compiler_input_sha256": "0fb22168c28297bd03de1bbbb5bad5786e2b0ffb930594b4f8c7f0becdb1f6b3",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "17842e093547c14c8b6a796f0b3662518f15aa333b7dddcbf974a725de3bfb05",
+  "object_sha256": "2a3f4fed50ac6525c5c08bc28f8d8566e5ad5744ed52be55615d73d559891f5b",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
