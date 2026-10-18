@@ -28,6 +28,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | asincos | 64 | 16 | 0/3 |
 | atan | 286 | 0 | 3/4 |
 | audio | 580 | 4,857 | 13/30 |
+| audioscr | 0 | 935 | 0/12 |
 | audiosfx | 58 | 0 | 0/30 |
 | blit | 1,038 | 4 | 8/10 |
 | bstree | 220 | 0 | 6/6 |
@@ -37,6 +38,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | checkpoint | 118 | 24 | 3/8 |
 | circuit | 144 | 376 | 1/5 |
 | controls | 1,190 | 104 | 5/11 |
+| controlscr | 0 | 4,999 | 0/11 |
 | controlsys | 438 | 122 | 5/11 |
 | countdown | 770 | 69 | 2/2 |
 | demo | 842 | 45 | 7/7 |
@@ -45,11 +47,16 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | drones | 46 | 0 | 2/4 |
 | fmath | 28 | 72 | 1/31 |
 | front | 1,880 | 1,102 | 5/5 |
+| game | 0 | 163 | 0/14 |
 | gameoverscr | 122 | 7 | 1/16 |
+| gamerecords | 192 | 0 | 2/25 |
 | gfx | 576 | 88 | 8/10 |
 | headlights | 308 | 172 | 1/4 |
+| highscorescr | 0 | 1,177 | 0/20 |
+| hud | 1,264 | 4,855 | 5/33 |
 | licensescr | 526 | 143 | 2/2 |
 | ll | 422 | 0 | 4/4 |
+| maxpath | 496 | 57 | 4/25 |
 | mb_wad | 182 | 0 | 3/4 |
 | mbox | 530 | 523 | 6/13 |
 | model | 118 | 1 | 2/3 |
@@ -61,6 +68,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | pausescr | 6 | 445 | 1/12 |
 | powerups | 1,580 | 8 | 8/8 |
 | rekon | 770 | 0 | 4/4 |
+| resurrect | 0 | 328 | 0/19 |
 | road | 18 | 0 | 0/3 |
 | save | 0 | 35 | 0/62 |
 | selectcarload | 244 | 4 | 2/7 |
@@ -94,13 +102,13 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **44,510 /569,664 (7.8134%)**, plus **18,289 initialized data bytes**.
-Whole-image credit: **62,799 /1,123,492 (5.5896%)**, **286 exact source functions**, 73 source units.
-The tenth batch adds 770 text/literal bytes, 182
-initialized data bytes and 4 exact functions. The audited batch is locally committed
-through `9893aa7`. No remote push was performed.
+Game text/literal credit: **46,462 /569,664 (8.1560%)**, plus **30,803 initialized data bytes**.
+Whole-image credit: **77,265 /1,123,492 (6.8772%)**, **297 exact source functions**, 81 source units.
+The eleventh batch adds 1,952 text/literal bytes, 12,514
+initialized data bytes and 11 exact functions. The audited batch is locally committed
+through `9642b7edaab5a040c49a69a24e6e745598f2a2bc`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-tenth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-eleventh.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -108,14 +116,18 @@ Compiler, linker and flags remain frozen. Only units whose compiler input change
 native link; byte-identical inputs may retain the already-verified native artifacts.
 
 The audio/stree generated epilogues are part of their source functions. Current total/game
-function denominators are 4,725/1,563. The two original gameover tail atoms and their
+function denominators are 4,726/1,564. The two original gameover tail atoms and their
 external pool belong to gamerecords; identities stay conservative pending mapping review.
 Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
 no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
 Four uncertain front zdepth high-halfword bytes remain conservatively excluded from credit.
 
 Target-backed camera, full surface and audio fields preserve model0x808/car0x3CC strides.
-Camera profile+0x48 remains distinct from circuit+0x3C. CarParts uses the proved0x60 stride.
+Player profiles use the proved0x40 stride and data handle at+0x3C for camera and circuit.
+The unsupported+0x48 profile field was removed. CarParts uses the proved0x60 stride.
+The external SetNewPathIndex entry is split from SetDroneResPathIndex with unchanged byte union;
+this adds one source function to the denominator and earns no extra bytes.
+World and circuit retain their original function-address aliases after semantic map renames.
 Six private matching lanes continue on disjoint units; later private packets are excluded until
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
 no full game image build or game execution was performed.
