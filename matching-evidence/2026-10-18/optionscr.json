@@ -1,0 +1,172 @@
+{
+  "unit": "optionscr",
+  "text_nonpadding": 166,
+  "data_nonpadding": 2092,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C042A7C",
+      "8C042A9C"
+    ],
+    [
+      "8C042EBC",
+      "8C042F36"
+    ],
+    [
+      "8C042F38",
+      "8C042F44"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BEECC",
+      "8C0BEF45"
+    ],
+    [
+      "8C0BEF48",
+      "8C0BEF85"
+    ],
+    [
+      "8C0BEF88",
+      "8C0BEFC5"
+    ],
+    [
+      "8C0BEFC8",
+      "8C0BF005"
+    ],
+    [
+      "8C0BF008",
+      "8C0BF045"
+    ],
+    [
+      "8C0BF048",
+      "8C0BF085"
+    ],
+    [
+      "8C0BF088",
+      "8C0BF0C5"
+    ],
+    [
+      "8C0BF0C8",
+      "8C0BF105"
+    ],
+    [
+      "8C0BF108",
+      "8C0BF145"
+    ],
+    [
+      "8C0BF148",
+      "8C0BF185"
+    ],
+    [
+      "8C0BF188",
+      "8C0BF1C5"
+    ],
+    [
+      "8C0BF1C8",
+      "8C0BF205"
+    ],
+    [
+      "8C0BF208",
+      "8C0BF245"
+    ],
+    [
+      "8C0BF248",
+      "8C0BF285"
+    ],
+    [
+      "8C0BF288",
+      "8C0BF2C5"
+    ],
+    [
+      "8C0BF2C8",
+      "8C0BF305"
+    ],
+    [
+      "8C0BF308",
+      "8C0BF345"
+    ],
+    [
+      "8C0BF348",
+      "8C0BF385"
+    ],
+    [
+      "8C0BF388",
+      "8C0BF3C5"
+    ],
+    [
+      "8C0BF3C8",
+      "8C0BF405"
+    ],
+    [
+      "8C0BF408",
+      "8C0BF445"
+    ],
+    [
+      "8C0BF448",
+      "8C0BF485"
+    ],
+    [
+      "8C0BF488",
+      "8C0BF4C5"
+    ],
+    [
+      "8C0BF4C8",
+      "8C0BF505"
+    ],
+    [
+      "8C0BF508",
+      "8C0BF545"
+    ],
+    [
+      "8C0BF548",
+      "8C0BF585"
+    ],
+    [
+      "8C0BF588",
+      "8C0BF5C5"
+    ],
+    [
+      "8C0BF5C8",
+      "8C0BF605"
+    ],
+    [
+      "8C0BF608",
+      "8C0BF645"
+    ],
+    [
+      "8C0BF648",
+      "8C0BF685"
+    ],
+    [
+      "8C0BF688",
+      "8C0BF6C5"
+    ],
+    [
+      "8C0BF6C8",
+      "8C0BF705"
+    ],
+    [
+      "8C0BF708",
+      "8C0BF749"
+    ],
+    [
+      "8C0BF74C",
+      "8C0BF752"
+    ],
+    [
+      "8C0BF754",
+      "8C0BF75D"
+    ]
+  ],
+  "source_sha256": "4cfd5ab158975236141e326386250580c8a23780b21fa8161c681113ee323971",
+  "expanded_source_sha256": "165937cc197f420636b6e2bf7760c130fde7110f77d5bd1dd6724a8841e28a73",
+  "compiler_input_sha256": "6abded51a4b745acbe54c4ac9780f063043aa94b2c8557b2ad6821a17e4c81bf",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "fb21389209142513dc7f16851d4e712e6f1bbbeaf4e1a9a7a795b57856343910",
+  "object_sha256": "5c25f7e309e0ecdf5fe9b02d3242c1a82bdb3c6322402848db25b49ac2bb86bc",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0,
+  "initialized_record_padding_excluded": 96
+}
