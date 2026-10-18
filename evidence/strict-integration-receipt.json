@@ -1,39 +1,39 @@
 {
   "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
-  "map_sha256": "030b642f84ac436db4b6057e875a945e3b388c7e0c2689863906822bc519b18c",
+  "map_sha256": "5aebc1783c96742de045188d696fa8cc1756241b4a6e94acf336a0b66b9208cf",
   "summary": {
     "game_code": {
-      "exact_bytes": 49302,
+      "exact_bytes": 49730,
       "total_bytes": 569664,
-      "percent": 8.6546
+      "percent": 8.7297
     },
     "image": {
-      "exact_bytes": 118236,
+      "exact_bytes": 119061,
       "total_bytes": 1123492,
-      "percent": 10.524
+      "percent": 10.5974
     },
     "map_coverage": {
       "text_bytes": 1123492,
-      "data_bytes": 85603,
+      "data_bytes": 86009,
       "unique_file_bytes": 1123492,
       "image_bytes": 1123492,
       "percent": 100.0
     },
     "functions": {
-      "exact": 324,
-      "total": 4718,
-      "game_exact": 324,
-      "game_total": 1556
+      "exact": 328,
+      "total": 4717,
+      "game_exact": 328,
+      "game_total": 1555
     },
     "units": {
       "mapped": 157,
       "game": 122,
-      "with_source": 107,
-      "partial": 85,
+      "with_source": 112,
+      "partial": 90,
       "exact": 22
     }
   },
-  "credited_union_bytes": 118236,
+  "credited_union_bytes": 119061,
   "overlap": false,
   "comparison_masks": false,
   "compiler_executed_by_audit": false,
@@ -1270,6 +1270,37 @@
       "object_sha256": "1921228b6f08e0b2362f86fba494d53465c5548917df7c556a2dcf0fba3f222f"
     },
     {
+      "unit": "audiomgr",
+      "text_nonpadding": 0,
+      "data_nonpadding": 381,
+      "exact_functions": 0,
+      "text_spans": [],
+      "data_spans": [
+        [
+          "8C0A7A50",
+          "8C0A7B87"
+        ],
+        [
+          "8C0BAD44",
+          "8C0BAD49"
+        ],
+        [
+          "8C0BAD4C",
+          "8C0BAD81"
+        ],
+        [
+          "8C0BAD84",
+          "8C0BAD90"
+        ]
+      ],
+      "source_sha256": "cf7a93ff2669ee3733b423686a41885aa73422d7afd24d9aa8ff2b9aa8f47ee3",
+      "expanded_source_sha256": "33ed61b73ebda3f139e7df6a157f4b7c18697d3e391184d72c614c326e5a18a5",
+      "compiler_input_sha256": "932a668c74466d5a70c51c07b79d834badeb9552637fe08dd011cfad5bcc4c23",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "d596cf6f11461ca43c65af77345d66551cd0872747c5e7e34e72a8bd05fc6c57",
+      "object_sha256": "cca5cd8791399cc89cef9f28a36c1ce8bf0c5e408dcbf427b5a5d670118c7bcc"
+    },
+    {
       "unit": "audiosfx",
       "text_nonpadding": 58,
       "data_nonpadding": 0,
@@ -1568,6 +1599,29 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "5f6ca34a07c62a14802cd2d10ff345576742ec6266f78c310e924c5219c0a5b7",
       "object_sha256": "da21cac6b3da0fc795d50fb2a2c0852b77950b8b7ad2e3595d09d6d9cbc607bb"
+    },
+    {
+      "unit": "collision",
+      "text_nonpadding": 280,
+      "data_nonpadding": 0,
+      "exact_functions": 2,
+      "text_spans": [
+        [
+          "8C01D41C",
+          "8C01D4F0"
+        ],
+        [
+          "8C01D762",
+          "8C01D7A6"
+        ]
+      ],
+      "data_spans": [],
+      "source_sha256": "de2cc11a9b7da7b8f21ddfe1bac76223e920ce97fa0f1c80e8ab6ed1daf8934a",
+      "expanded_source_sha256": "fc373a1123465eca5d2a2b4a333ece9b4a779c3fd8ca6820812b35278bd71792",
+      "compiler_input_sha256": "6f602da5a97aeb978b888b2f1eb9523236cbdbc0e6fd5ef33407a4ee4aca2617",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "42d0fb2e72533a6b1eaddee5f7123103b8a5110b5e7e60cbe4928a1c653e7d15",
+      "object_sha256": "854ba8b31eec3cf725203f1fc4a84eef1db519056014569c86d846aaafe21d1c"
     },
     {
       "unit": "controls",
@@ -2334,6 +2388,34 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "dadc26b80af80d34d1bac4690026995aa8d35346f7c38d6c29a9deb4c5d06f87",
       "object_sha256": "f04fc661af8c9749f123c2c2490b08c028c986b198f418c5b7d18b3973bb39e5"
+    },
+    {
+      "unit": "HAL_text",
+      "text_nonpadding": 40,
+      "data_nonpadding": 15,
+      "exact_functions": 0,
+      "text_spans": [
+        [
+          "8C02F068",
+          "8C02F090"
+        ]
+      ],
+      "data_spans": [
+        [
+          "8C0BDF84",
+          "8C0BDF85"
+        ],
+        [
+          "8C0BDF88",
+          "8C0BDF96"
+        ]
+      ],
+      "source_sha256": "a3e8d25e15708e1abc9659c5d9a239f95bff22d016c243b5ad40106b85b4933f",
+      "expanded_source_sha256": "99dda9e878ec3a980b393290fb88e32ddef96a6c8283ce47a4bc2e06b37a4cde",
+      "compiler_input_sha256": "a4df119ccb7bab02c93e050f04e04ca4f58e4386fc00138bd1863b6c323dc34f",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "658757940b2aa7d31b94703ce07a48194f7c272b725ff99ab630056bbf392879",
+      "object_sha256": "97eb451dcb27bf5fda1d9572180d53ad2512d49ad6fef57ceeaae557db9ce6d7"
     },
     {
       "unit": "HAL_time",
@@ -3282,6 +3364,25 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "17ca6ee8c943852b201b4181f06ef19bc488288257d1c0a61d6e0edaee256e5a",
       "object_sha256": "7527916891446541d71f6bc0f881b282ad37519a5ed42a7424fb04adfc9cc858"
+    },
+    {
+      "unit": "memsys",
+      "text_nonpadding": 0,
+      "data_nonpadding": 1,
+      "exact_functions": 0,
+      "text_spans": [],
+      "data_spans": [
+        [
+          "8C0BEE7C",
+          "8C0BEE7D"
+        ]
+      ],
+      "source_sha256": "ecb4f0ac4f093a02250ca47e89c03421ae0d5e892ee4fcd74dca43f15b0e2475",
+      "expanded_source_sha256": "af591ea931aa3d9f4fb0ab3264d7bfd91c42f1be0d5cf9d3c30a48029ad0f84b",
+      "compiler_input_sha256": "0fb22168c28297bd03de1bbbb5bad5786e2b0ffb930594b4f8c7f0becdb1f6b3",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "17842e093547c14c8b6a796f0b3662518f15aa333b7dddcbf974a725de3bfb05",
+      "object_sha256": "2a3f4fed50ac6525c5c08bc28f8d8566e5ad5744ed52be55615d73d559891f5b"
     },
     {
       "unit": "model",
@@ -5113,6 +5214,25 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "c03f59c7acefb454fdf5f1363f9aad1d43bbee8bc29bd5a8f2b3d509d8c84ed0",
       "object_sha256": "02636c6c0c22a4a84fabacb0a5a9e5fd93706666d109e44815c265112362e91b"
+    },
+    {
+      "unit": "dc_zoid_8C06ED90",
+      "text_nonpadding": 108,
+      "data_nonpadding": 0,
+      "exact_functions": 2,
+      "text_spans": [
+        [
+          "8C06ED90",
+          "8C06EDFC"
+        ]
+      ],
+      "data_spans": [],
+      "source_sha256": "ba12660f90d3e6460b50f3db22d68e36fecb8d3e5b782fae8535c7cb8d4b0f9c",
+      "expanded_source_sha256": "78f0cb02a0047b95728d1a0edfee70ec0caef061d43881927f4cfa0fc27aba0a",
+      "compiler_input_sha256": "4cdf28dcc54ed2f6f5a2e3a44785820dd4553375d2880a77ba14107e408bca12",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "74940d456a2321ab091cba1abe40e8623f483820c4338064c76f04816506ed4f",
+      "object_sha256": "d7f0fa5965377a1de4de26010148476a2725441c3e41fd20a5148511672ddd3b"
     },
     {
       "unit": "carscr",
