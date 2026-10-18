@@ -1,0 +1,24 @@
+{
+  "target": "Dreamcast Rush 2049 US v1.001",
+  "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+  "size": 1123492,
+  "load_address": 2348875776,
+  "source_gdi": "C:\\rush2049-dreamcast\\San Francisco RUSH 2049 v1.001\\San Francisco RUSH 2049 v1.001 (2000)(Midway)(NTSC)(US)[!].gdi",
+  "source_lba": 548451,
+  "originals": "read-only; local extraction only",
+  "mat3_reference": "C:\\rush2049-mat3",
+  "training": [
+    "bsearch",
+    "InsertLLE",
+    "interp",
+    "BodyVector"
+  ],
+  "heldout": [
+    "enginetorque",
+    "UpdateFrameTimer",
+    "GetWaveByIndex"
+  ],
+  "configuration_trial_cap": 16,
+  "heldout_tuning_forbidden": true,
+  "working_copy": "C:\\rush2049-dreamcast\\pilot\\orig\\1ST_READ.BIN"
+}

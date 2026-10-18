@@ -1,0 +1,37 @@
+{
+  "scope": "centrally assigned shared dependencies; do not count per-function copies",
+  "spans": [
+    {
+      "group": "timer_shared",
+      "target_offset": 452,
+      "size": 4,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "c087e4ba1c695249b10319260594f3190c0833bf586c986e10c5c0ea2e8c22d8"
+    },
+    {
+      "group": "timer_shared",
+      "target_offset": 472,
+      "size": 32,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "2fc495c0d74de9a6bd585479bd37acf4913cdf8b69eb54a5b42c703b3e9c8577"
+    },
+    {
+      "group": "drivetra_shared",
+      "target_offset": 78364,
+      "size": 4,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "7c258edf9c39c9e767867bf6e793aec5bab766afeb25777c7c4ec8ceeadf1227"
+    },
+    {
+      "group": "drivetra_shared",
+      "target_offset": 78376,
+      "size": 20,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "03e6f418226534fd8d7761502320d2565cfac9205926454ede8c2c80b2e9820e"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "function": "bsearch",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 59,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  },
+  {
+    "function": "InsertLLE",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 99,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  },
+  {
+    "function": "interp",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 10,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  },
+  {
+    "function": "BodyVector",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 47,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  },
+  {
+    "function": "enginetorque",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 145,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  },
+  {
+    "function": "UpdateFrameTimer",
+    "span_hash_verified": true,
+    "decoded_instruction_count": 54,
+    "unknown_opcodes": [],
+    "boundary_status": "static reviewed; not compiler/analyzer corroborated"
+  }
+]

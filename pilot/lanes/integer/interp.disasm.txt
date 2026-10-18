@@ -1,0 +1,10 @@
+8C0231D2 3548  sub r4,r5
+8C0231D4 D314  mov.l @(0x8C023228,pc),r3 ; literal=0x8C09B680
+8C0231D6 0567  mul.l r6,r5
+8C0231D8 4F22  sts.l pr,@-r15
+8C0231DA 011A  sts macl,r1
+8C0231DC 430B  jsr @r3
+8C0231DE 6073  mov r7,r0
+8C0231E0 4F26  lds.l @r15+,pr
+8C0231E2 000B  rts
+8C0231E4 304C  add r4,r0

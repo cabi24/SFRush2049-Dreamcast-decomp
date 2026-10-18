@@ -1,0 +1,31 @@
+{
+  "file": "STARSKY.STR",
+  "size": 62588928,
+  "differing_bytes": 846,
+  "first_difference": 15370367,
+  "last_difference": 15371216,
+  "contiguous_ranges_count": 5,
+  "ranges_first_100": [
+    [
+      15370367,
+      15370368
+    ],
+    [
+      15370370,
+      15370380
+    ],
+    [
+      15370382,
+      15370462
+    ],
+    [
+      15370464,
+      15370611
+    ],
+    [
+      15370613,
+      15371216
+    ]
+  ],
+  "reason": "Not established; a content difference alone does not distinguish an intentional audio change from mastering/dump differences."
+}

@@ -1,0 +1,45 @@
+8c065c1e 2fe6 mov.l r14,@-r15
+8c065c20 4f22 sts.l pr,@-r15
+8c065c22 7ffc add #-4,r15
+8c065c24 e601 mov #1,r6
+8c065c26 2f42 mov.l r4,@r15
+8c065c28 bd82 bsr 0x8c065730
+8c065c2a 6563 mov r6,r5
+8c065c2c 6ef2 mov.l @r15,r14
+8c065c2e d210 mov.l @(0x8c065c70,pc),r2 ; 0x8c15fa20
+8c065c30 63e3 mov r14,r3
+8c065c32 4e08 shll2 r14
+8c065c34 3e3c add r3,r14
+8c065c36 4e08 shll2 r14
+8c065c38 3e2c add r2,r14
+8c065c3a 84e3 .word 0x84e3
+8c065c3c 2008 tst r0,r0
+8c065c3e 890f bt 0x8c065c60
+8c065c40 d10c mov.l @(0x8c065c74,pc),r1 ; 0x8c15fa14
+8c065c42 84e4 .word 0x84e4
+8c065c44 6310 mov.b @r1,r3
+8c065c46 600c extu.b r0,r0
+8c065c48 2338 tst r3,r3
+8c065c4a 0329 .word 0x0329
+8c065c4c 73ff add #-1,r3
+8c065c4e 633b neg r3,r3
+8c065c50 3030 cmp/eq r3,r0
+8c065c52 8905 bt 0x8c065c60
+8c065c54 d307 mov.l @(0x8c065c74,pc),r3 ; 0x8c15fa14
+8c065c56 6030 mov.b @r3,r0
+8c065c58 2008 tst r0,r0
+8c065c5a 0029 .word 0x0029
+8c065c5c ca01 .word 0xca01
+8c065c5e 80e4 .word 0x80e4
+8c065c60 7f04 add #4,r15
+8c065c62 4f26 lds.l @r15+,pr
+8c065c64 000b rts
+8c065c66 6ef6 mov.l @r15+,r14
+8c065c68 00e9 .word 0x00e9
+8c065c6a 00fc mov.b @(r0,r15),r0
+8c065c6c 6104 mov.b @r0+,r1
+8c065c6e 8c02 .word 0x8c02
+8c065c70 fa20 fadd fr2,fr10
+8c065c72 8c15 .word 0x8c15
+8c065c74 fa14 fcmp/eq fr1,fr10
+8c065c76 8c15 .word 0x8c15

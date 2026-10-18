@@ -1,0 +1,39 @@
+# Original game media and archives: never committed
+*.iso
+*.7z
+*.rar
+*.gdi
+*.GDI
+*.bin
+*.BIN
+*.raw
+San Francisco */
+"San Francisco */"
+
+# Extracted executable and other binaries
+pilot/orig/*
+!pilot/orig/README.md
+*.elf
+*.obj
+*.abs
+*.dol
+*.exe
+*.dll
+
+# Downloaded toolchain and analyzers (see tools/README.md and tools/downloads/MANIFEST.json)
+tools/downloads/*
+!tools/downloads/MANIFEST.json
+tools/shc/
+tools/ghidra/
+tools/jdk/
+tools/wibo/
+ghidra-project/
+ghidra-home/
+
+# Build and experiment outputs
+build/
+calib/out/
+calib/link/*.abs
+calib/link/*.map
+**/__pycache__/
+*.pyc

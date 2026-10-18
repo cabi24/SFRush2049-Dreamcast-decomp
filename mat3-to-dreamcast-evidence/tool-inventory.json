@@ -1,0 +1,83 @@
+{
+  "scope": "PATH, named common tool roots, installed-app registry names filtered for SH/SDK/Ghidra/compiler vendors, and MAT3 local compiler bundle. No exhaustive drive scan or tool execution/install.",
+  "path_tools": {
+    "python": "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.EXE",
+    "java": null,
+    "ghidraRun": null,
+    "analyzeHeadless": null,
+    "sh-elf-gcc": null,
+    "sh4-elf-gcc": null,
+    "sh-elf-objdump": null,
+    "sh4-elf-objdump": null,
+    "sh-coff-gcc": null,
+    "shc": null,
+    "ld": null,
+    "lld": null,
+    "clang": null,
+    "llvm-objdump": null,
+    "wine": null,
+    "wsl": "C:\\Windows\\system32\\wsl.EXE"
+  },
+  "common_roots": {
+    "C:/tools": false,
+    "C:/devkitPro": false,
+    "C:/msys64": false,
+    "C:/cygwin64": false,
+    "C:/KATANA": false,
+    "C:/SEGA": false,
+    "C:/Renesas": false,
+    "C:/Hitachi": false,
+    "C:/Program Files/Renesas": false,
+    "C:/Program Files (x86)/Renesas": false,
+    "C:/Program Files (x86)/Hitachi": false,
+    "C:/Program Files/Ghidra": false,
+    "C:/ghidra": false,
+    "C:/Program Files/LLVM": false
+  },
+  "filtered_installed_app_registry_matches": [],
+  "local_tools": [
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\compilers\\GC\\2.6\\mwcceppc.exe",
+      "size": 2066432,
+      "sha256": "316e2a98236c23f3fc902243b157eaebf8ef2ad6edb88cfd632a15b6676fa9a8",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    },
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\compilers\\GC\\2.7\\mwldeppc.exe",
+      "size": 748032,
+      "sha256": "424a7fadaee47abc4406c7145bface744e8dbc7f7c35922ca70ee647a1bee2f4",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    },
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\compilers\\ProDG\\3.5\\ngccc.exe",
+      "size": 221184,
+      "sha256": "2021997d83387071c5377449fe2a700c0c16d1f34ef68e294c345d477f110231",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    },
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\tools\\dtk.exe",
+      "size": 8471040,
+      "sha256": "5f990adbf8d88091fa1a8d48a9b7bd515f5fe59217ca3128b56bca21c02f15fb",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    },
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\tools\\objdiff-cli.exe",
+      "size": 7013888,
+      "sha256": "c1e418ebbedb1f6392ed1098c14423c48fab70f0b0f4094299b05a03d36773ae",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    },
+    {
+      "path": "C:\\rush2049-mat3\\decomp\\build\\tools\\ninja.exe",
+      "size": 603648,
+      "sha256": "e52a7ad9538d9618c67a0bd777964e2eec8a30f68b810a2f6adce1f2daf847b8",
+      "role": "PPC compiler/linker or existing GC-oriented analysis/build tool; SH-4 support not established"
+    }
+  ],
+  "compiler_bundle_families": [
+    "GC",
+    "ProDG",
+    "Wii",
+    "X360"
+  ],
+  "conclusion": "Existing GC/Wii/X360/ProDG NGC bundles are not a located SH-4 toolchain. Native git.exe could not read the directory in this sandbox; HEAD was read directly and selected files are hash-pinned."
+}

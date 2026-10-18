@@ -1,0 +1,13 @@
+orig/*
+!orig/README.md
+build/
+**/__pycache__/
+*.o
+*.obj
+*.elf
+*.dol
+*.bin
+*.exe
+*.dll
+tools/vendor/
+lanes/*/out/

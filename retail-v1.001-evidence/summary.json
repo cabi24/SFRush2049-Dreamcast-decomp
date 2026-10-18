@@ -1,0 +1,207 @@
+{
+  "inspection_date": "2026-10-18",
+  "build": "San Francisco RUSH 2049 v1.001",
+  "source_gdi": "San Francisco RUSH 2049 v1.001/San Francisco RUSH 2049 v1.001 (2000)(Midway)(NTSC)(US)[!].gdi",
+  "ip": {
+    "hardware": "SEGA SEGAKATANA",
+    "maker": "SEGA ENTERPRISES",
+    "media": "AE19 GD-ROM1/1",
+    "regions": "U",
+    "peripherals": "0799A10",
+    "product": "T-9707N",
+    "version": "V1.001",
+    "date": "20000802",
+    "boot": "1ST_READ.BIN",
+    "company": "MIDWAY",
+    "title": "RUSH 2049"
+  },
+  "ip_sha256": "8d59535d398ac8b5e922046cffae3fca9b35b88d5f594fcba952e0e94c9b21bc",
+  "executable": {
+    "path": "1ST_READ.BIN",
+    "lba": 548451,
+    "size": 1123492,
+    "flags": 0,
+    "date_bytes": [
+      100,
+      8,
+      1,
+      17,
+      8,
+      20,
+      224
+    ],
+    "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+    "iso9660_timestamp": "2000-08-01 17:08:20 -08:00",
+    "direct_comparison_with_aug1": {
+      "identical": true,
+      "differing_bytes": 0,
+      "bytes_compared": 1123492
+    }
+  },
+  "tracks": [
+    {
+      "track": 1,
+      "start_lba": 0,
+      "type": 4,
+      "sector_bytes": 2352,
+      "filename": "track01.bin",
+      "file_offset": 0,
+      "sectors": 607
+    },
+    {
+      "track": 2,
+      "start_lba": 757,
+      "type": 0,
+      "sector_bytes": 2352,
+      "filename": "track02.raw",
+      "file_offset": 0,
+      "sectors": 526
+    },
+    {
+      "track": 3,
+      "start_lba": 45000,
+      "type": 4,
+      "sector_bytes": 2352,
+      "filename": "track03.bin",
+      "file_offset": 0,
+      "sectors": 12834
+    },
+    {
+      "track": 4,
+      "start_lba": 57984,
+      "type": 0,
+      "sector_bytes": 2352,
+      "filename": "track04.raw",
+      "file_offset": 0,
+      "sectors": 451
+    },
+    {
+      "track": 5,
+      "start_lba": 58585,
+      "type": 4,
+      "sector_bytes": 2352,
+      "filename": "track05.bin",
+      "file_offset": 0,
+      "sectors": 490565
+    }
+  ],
+  "volume": "SFR20491",
+  "pvd_timestamp_high_density_raw": "2000073117165700\\xe0",
+  "counts": {
+    "low_density_files": 4,
+    "high_density_files": 789,
+    "all_listed_files": 793,
+    "high_density_root_files": 350,
+    "browser_tree_files": 439,
+    "raw_track_bytes": 1187720016,
+    "allocated_file_bytes": 1005277275,
+    "lzs_files": 314,
+    "lzs_decode_errors": 0,
+    "lzs_decoded_bytes": 56650694,
+    "filename_table_entries": 315
+  },
+  "sdk_literal_fingerprints": [
+    {
+      "offset": 669509,
+      "text": "syMalloc Ver 2.01 Build:Apr 27 2000 11:36:06"
+    },
+    {
+      "offset": 675857,
+      "text": "Audio64 Ver 10.0.f.2 Build:May 16 2000 17:18:37"
+    },
+    {
+      "offset": 1069785,
+      "text": "syStart Ver 1.17 Build:Dec 01 1999 12:17:57"
+    },
+    {
+      "offset": 1069833,
+      "text": "mwPly Ver.2.05 Build:Mar 07 2000 21:16:39"
+    },
+    {
+      "offset": 1069877,
+      "text": "mwSfd Ver.2.28 Build:Feb 25 2000 10:52:13"
+    },
+    {
+      "offset": 1071341,
+      "text": "Shinobi Ver 1.68 Build:Mar 02 2000 14:42:43"
+    },
+    {
+      "offset": 1071533,
+      "text": "gdFs Ver 1.09 Build:Nov 25 1999 22:59:21"
+    },
+    {
+      "offset": 1073259,
+      "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+    }
+  ],
+  "debug_metadata": {
+    "recovered_symbol_entries": 0,
+    "recovered_type_records": 0,
+    "source_line_records": 0,
+    "valid_elf_files": 0,
+    "valid_coff_files": 0,
+    "browser_source_filename_literals": 13,
+    "browser_assertion_formats": 1,
+    "gameplay_source_filename_records": 0,
+    "compiler": "not established"
+  },
+  "architecture_layout": {
+    "architecture": "SH-4, little-endian, 32-bit address space",
+    "format": "raw/headerless",
+    "load_base": 2348875776,
+    "file_size": 1123492,
+    "loaded_end_exclusive": 2349999268,
+    "startup_jump_instruction_offset": 28,
+    "startup_jump_literal_offset": 44,
+    "startup_jump_target": 2349671552,
+    "regions": [
+      {
+        "start_offset": 0,
+        "end_offset_exclusive": 48,
+        "interpretation": "SH startup stub and literal pool; jump at 0x1C loads target 0x8C0D2480 from 0x2C",
+        "confidence": "instruction words and target literal directly observed"
+      },
+      {
+        "start_offset": 48,
+        "end_offset_exclusive": 128,
+        "interpretation": "Lib Handle Start/End metadata embedded beside startup",
+        "confidence": "literal metadata; not all bytes here are code"
+      },
+      {
+        "start_offset": 610176,
+        "end_offset_exclusive": 689152,
+        "interpretation": "Diagnostic, resource-filename, and audio-library string clusters; intervals include other data",
+        "confidence": "selected string offsets verified; not a section boundary"
+      },
+      {
+        "start_offset": 738496,
+        "end_offset_exclusive": 739756,
+        "interpretation": "315 asset-filename pointers followed by a zero word",
+        "confidence": "all pointer strings resolved to files in this image"
+      },
+      {
+        "start_offset": 795776,
+        "end_offset_exclusive": null,
+        "interpretation": "Initial startup jump target inside linked runtime code",
+        "confidence": "valid target within the loaded image; function extent not established"
+      },
+      {
+        "start_offset": 1069785,
+        "end_offset_exclusive": 1089536,
+        "interpretation": "SDK/CRI version strings and related data interspersed with linked components",
+        "confidence": "banners verified; not formal sections and not proof of compiler"
+      }
+    ],
+    "limitations": [
+      "No ELF/COFF section table; this is an anchor map, not a validated .text/.rodata/.data/.bss layout.",
+      "BSS extent, stack, heap, main entry and runtime relocation/copy destinations are not established.",
+      "Do not linear-disassemble resource pointers/string tables or infer whole function boundaries from string locations."
+    ]
+  },
+  "notes": [
+    "Byte identity with August 1 is for the executable, not the whole disc.",
+    "Raw marker hits include a rejected ELF-looking sequence in WINGEY.STR audio.",
+    "String anchors are not function addresses; resource-name crosswalks are candidates.",
+    "No games run, installs, matching waves, source publication, or unrelated repositories modified."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "passed": 16,
+  "checks": [
+    "startup MOV.L D004 aligns pc+4 before displacement",
+    "startup JMP @R0 has delay slot",
+    "negative BRA displacement sign extension",
+    "negative BT displacement sign extension",
+    "BT non-delayed versus BT/S delayed",
+    "FADD source M destination N fields",
+    "FMOV memory source uses integer M destination float N",
+    "FMOV store source float M destination integer N",
+    "FMAC includes fr0, source M, destination N",
+    "FTRV vector destination field",
+    "FIPR vector fields",
+    "SH4 invalid encoding retained",
+    "MOV.W sign extension",
+    "CFG follows both conditional paths and includes RTS delay slot",
+    "literal-backed indirect candidate resolves before slot",
+    "unknown delay slot stops conservative CFG path"
+  ]
+}

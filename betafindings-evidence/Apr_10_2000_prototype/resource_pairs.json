@@ -1,0 +1,1282 @@
+[
+  {
+    "id": 0,
+    "name": "kWaveTextE",
+    "filename": "texte.rom",
+    "name_offset": 475236,
+    "name_pointer_offset": 536420,
+    "filename_pointer_offset": 537060
+  },
+  {
+    "id": 1,
+    "name": "kWaveTextS",
+    "filename": "texts.rom",
+    "name_offset": 475248,
+    "name_pointer_offset": 536424,
+    "filename_pointer_offset": 537064
+  },
+  {
+    "id": 2,
+    "name": "kWaveTextI",
+    "filename": "texti.rom",
+    "name_offset": 475260,
+    "name_pointer_offset": 536428,
+    "filename_pointer_offset": 537068
+  },
+  {
+    "id": 3,
+    "name": "kWaveTextG",
+    "filename": "textg.rom",
+    "name_offset": 475272,
+    "name_pointer_offset": 536432,
+    "filename_pointer_offset": 537072
+  },
+  {
+    "id": 4,
+    "name": "kWaveTextD",
+    "filename": "textd.rom",
+    "name_offset": 475284,
+    "name_pointer_offset": 536436,
+    "filename_pointer_offset": 537076
+  },
+  {
+    "id": 5,
+    "name": "kWaveTextF",
+    "filename": "textf.rom",
+    "name_offset": 475296,
+    "name_pointer_offset": 536440,
+    "filename_pointer_offset": 537080
+  },
+  {
+    "id": 6,
+    "name": "kWaveDebugFontTex",
+    "filename": "debugfonttex.rom",
+    "name_offset": 475308,
+    "name_pointer_offset": 536444,
+    "filename_pointer_offset": 537084
+  },
+  {
+    "id": 7,
+    "name": "kWaveDigitLgFontTex",
+    "filename": "digitlgfonttex.rom",
+    "name_offset": 475328,
+    "name_pointer_offset": 536448,
+    "filename_pointer_offset": 537088
+  },
+  {
+    "id": 8,
+    "name": "kWaveDigitMdFontTex",
+    "filename": "digitmdfonttex.rom",
+    "name_offset": 475348,
+    "name_pointer_offset": 536452,
+    "filename_pointer_offset": 537092
+  },
+  {
+    "id": 9,
+    "name": "kWaveDigitSmFontTex",
+    "filename": "digitsmfonttex.rom",
+    "name_offset": 475368,
+    "name_pointer_offset": 536456,
+    "filename_pointer_offset": 537096
+  },
+  {
+    "id": 10,
+    "name": "kWaveDigitXLFontTex",
+    "filename": "digitxlfonttex.rom",
+    "name_offset": 475388,
+    "name_pointer_offset": 536460,
+    "filename_pointer_offset": 537100
+  },
+  {
+    "id": 11,
+    "name": "kWaveHudLgFontTex",
+    "filename": "hudlgfonttex.rom",
+    "name_offset": 475408,
+    "name_pointer_offset": 536464,
+    "filename_pointer_offset": 537104
+  },
+  {
+    "id": 12,
+    "name": "kWaveHudMdFontTex",
+    "filename": "hudmdfonttex.rom",
+    "name_offset": 475428,
+    "name_pointer_offset": 536468,
+    "filename_pointer_offset": 537108
+  },
+  {
+    "id": 13,
+    "name": "kWaveHudSmFontTex",
+    "filename": "hudsmfonttex.rom",
+    "name_offset": 475448,
+    "name_pointer_offset": 536472,
+    "filename_pointer_offset": 537112
+  },
+  {
+    "id": 14,
+    "name": "kWaveHudXLFontTex",
+    "filename": "hudxlfonttex.rom",
+    "name_offset": 475468,
+    "name_pointer_offset": 536476,
+    "filename_pointer_offset": 537116
+  },
+  {
+    "id": 15,
+    "name": "kWaveHudXXLFontTex",
+    "filename": "hudxxlfonttex.rom",
+    "name_offset": 475488,
+    "name_pointer_offset": 536480,
+    "filename_pointer_offset": 537120
+  },
+  {
+    "id": 16,
+    "name": "kWaveLegalFontTex",
+    "filename": "legalfonttex.rom",
+    "name_offset": 475508,
+    "name_pointer_offset": 536484,
+    "filename_pointer_offset": 537124
+  },
+  {
+    "id": 17,
+    "name": "kWaveMenuLgFontTex",
+    "filename": "menulgfonttex.rom",
+    "name_offset": 475528,
+    "name_pointer_offset": 536488,
+    "filename_pointer_offset": 537128
+  },
+  {
+    "id": 18,
+    "name": "kWaveMenuMdFontTex",
+    "filename": "menumdfonttex.rom",
+    "name_offset": 475548,
+    "name_pointer_offset": 536492,
+    "filename_pointer_offset": 537132
+  },
+  {
+    "id": 19,
+    "name": "kWaveMenuSmFontTex",
+    "filename": "menusmfonttex.rom",
+    "name_offset": 475568,
+    "name_pointer_offset": 536496,
+    "filename_pointer_offset": 537136
+  },
+  {
+    "id": 20,
+    "name": "kWaveMenuTitleFontTex",
+    "filename": "menutitlefonttex.rom",
+    "name_offset": 475588,
+    "name_pointer_offset": 536500,
+    "filename_pointer_offset": 537140
+  },
+  {
+    "id": 21,
+    "name": "kWaveTestFontTex",
+    "filename": "testfonttex.rom",
+    "name_offset": 475612,
+    "name_pointer_offset": 536504,
+    "filename_pointer_offset": 537144
+  },
+  {
+    "id": 22,
+    "name": "kWaveDebugFontDat",
+    "filename": "debugfontdat.rom",
+    "name_offset": 475632,
+    "name_pointer_offset": 536508,
+    "filename_pointer_offset": 537148
+  },
+  {
+    "id": 23,
+    "name": "kWaveDigitLgFontDat",
+    "filename": "digitlgfontdat.rom",
+    "name_offset": 475652,
+    "name_pointer_offset": 536512,
+    "filename_pointer_offset": 537152
+  },
+  {
+    "id": 24,
+    "name": "kWaveDigitMdFontDat",
+    "filename": "digitmdfontdat.rom",
+    "name_offset": 475672,
+    "name_pointer_offset": 536516,
+    "filename_pointer_offset": 537156
+  },
+  {
+    "id": 25,
+    "name": "kWaveDigitSmFontDat",
+    "filename": "digitsmfontdat.rom",
+    "name_offset": 475692,
+    "name_pointer_offset": 536520,
+    "filename_pointer_offset": 537160
+  },
+  {
+    "id": 26,
+    "name": "kWaveDigitXLFontDat",
+    "filename": "digitxlfontdat.rom",
+    "name_offset": 475712,
+    "name_pointer_offset": 536524,
+    "filename_pointer_offset": 537164
+  },
+  {
+    "id": 27,
+    "name": "kWaveHudLgFontDat",
+    "filename": "hudlgfontdat.rom",
+    "name_offset": 475732,
+    "name_pointer_offset": 536528,
+    "filename_pointer_offset": 537168
+  },
+  {
+    "id": 28,
+    "name": "kWaveHudMdFontDat",
+    "filename": "hudmdfontdat.rom",
+    "name_offset": 475752,
+    "name_pointer_offset": 536532,
+    "filename_pointer_offset": 537172
+  },
+  {
+    "id": 29,
+    "name": "kWaveHudSmFontDat",
+    "filename": "hudsmfontdat.rom",
+    "name_offset": 475772,
+    "name_pointer_offset": 536536,
+    "filename_pointer_offset": 537176
+  },
+  {
+    "id": 30,
+    "name": "kWaveHudXLFontDat",
+    "filename": "hudxlfontdat.rom",
+    "name_offset": 475792,
+    "name_pointer_offset": 536540,
+    "filename_pointer_offset": 537180
+  },
+  {
+    "id": 31,
+    "name": "kWaveHudXXLFontDat",
+    "filename": "hudxxlfontdat.rom",
+    "name_offset": 475812,
+    "name_pointer_offset": 536544,
+    "filename_pointer_offset": 537184
+  },
+  {
+    "id": 32,
+    "name": "kWaveLegalFontDat",
+    "filename": "legalfontdat.rom",
+    "name_offset": 475832,
+    "name_pointer_offset": 536548,
+    "filename_pointer_offset": 537188
+  },
+  {
+    "id": 33,
+    "name": "kWaveMenuLgFontDat",
+    "filename": "menulgfontdat.rom",
+    "name_offset": 475852,
+    "name_pointer_offset": 536552,
+    "filename_pointer_offset": 537192
+  },
+  {
+    "id": 34,
+    "name": "kWaveMenuMdFontDat",
+    "filename": "menumdfontdat.rom",
+    "name_offset": 475872,
+    "name_pointer_offset": 536556,
+    "filename_pointer_offset": 537196
+  },
+  {
+    "id": 35,
+    "name": "kWaveMenuSmFontDat",
+    "filename": "menusmfontdat.rom",
+    "name_offset": 475892,
+    "name_pointer_offset": 536560,
+    "filename_pointer_offset": 537200
+  },
+  {
+    "id": 36,
+    "name": "kWaveMenuTitleFontDat",
+    "filename": "menutitlefontdat.rom",
+    "name_offset": 475912,
+    "name_pointer_offset": 536564,
+    "filename_pointer_offset": 537204
+  },
+  {
+    "id": 37,
+    "name": "kWaveTestFontDat",
+    "filename": "testfontdat.rom",
+    "name_offset": 475936,
+    "name_pointer_offset": 536568,
+    "filename_pointer_offset": 537208
+  },
+  {
+    "id": 38,
+    "name": "kWaveAttract",
+    "filename": "attract.rom",
+    "name_offset": 475956,
+    "name_pointer_offset": 536572,
+    "filename_pointer_offset": 537212
+  },
+  {
+    "id": 39,
+    "name": "kWaveSelCom",
+    "filename": "selcom.rom",
+    "name_offset": 475972,
+    "name_pointer_offset": 536576,
+    "filename_pointer_offset": 537216
+  },
+  {
+    "id": 40,
+    "name": "kWaveSelOpt",
+    "filename": "selopt.rom",
+    "name_offset": 475984,
+    "name_pointer_offset": 536580,
+    "filename_pointer_offset": 537220
+  },
+  {
+    "id": 41,
+    "name": "kWaveSelTrk",
+    "filename": "seltrk.rom",
+    "name_offset": 475996,
+    "name_pointer_offset": 536584,
+    "filename_pointer_offset": 537224
+  },
+  {
+    "id": 42,
+    "name": "kWaveSelCar",
+    "filename": "selcar.rom",
+    "name_offset": 476008,
+    "name_pointer_offset": 536588,
+    "filename_pointer_offset": 537228
+  },
+  {
+    "id": 43,
+    "name": "kWaveInterface",
+    "filename": "interface.rom",
+    "name_offset": 476020,
+    "name_pointer_offset": 536592,
+    "filename_pointer_offset": 537232
+  },
+  {
+    "id": 44,
+    "name": "kWaveHud",
+    "filename": "hud.rom",
+    "name_offset": 476036,
+    "name_pointer_offset": 536596,
+    "filename_pointer_offset": 537236
+  },
+  {
+    "id": 45,
+    "name": "kWaveHud1",
+    "filename": "hud1.rom",
+    "name_offset": 476048,
+    "name_pointer_offset": 536600,
+    "filename_pointer_offset": 537240
+  },
+  {
+    "id": 46,
+    "name": "kWaveTargets",
+    "filename": "targets.rom",
+    "name_offset": 476060,
+    "name_pointer_offset": 536604,
+    "filename_pointer_offset": 537244
+  },
+  {
+    "id": 47,
+    "name": "kWaveHiscore",
+    "filename": "hiscore.rom",
+    "name_offset": 476076,
+    "name_pointer_offset": 536608,
+    "filename_pointer_offset": 537248
+  },
+  {
+    "id": 48,
+    "name": "kWaveGameTextE",
+    "filename": "gamtexte.rom",
+    "name_offset": 476092,
+    "name_pointer_offset": 536612,
+    "filename_pointer_offset": 537252
+  },
+  {
+    "id": 49,
+    "name": "kWaveGameTextS",
+    "filename": "gamtexts.rom",
+    "name_offset": 476108,
+    "name_pointer_offset": 536616,
+    "filename_pointer_offset": 537256
+  },
+  {
+    "id": 50,
+    "name": "kWaveGameTextI",
+    "filename": "gamtexti.rom",
+    "name_offset": 476124,
+    "name_pointer_offset": 536620,
+    "filename_pointer_offset": 537260
+  },
+  {
+    "id": 51,
+    "name": "kWaveGameTextG",
+    "filename": "gamtextg.rom",
+    "name_offset": 476140,
+    "name_pointer_offset": 536624,
+    "filename_pointer_offset": 537264
+  },
+  {
+    "id": 52,
+    "name": "kWaveGameTextD",
+    "filename": "gamtextd.rom",
+    "name_offset": 476156,
+    "name_pointer_offset": 536628,
+    "filename_pointer_offset": 537268
+  },
+  {
+    "id": 53,
+    "name": "kWaveGameTextF",
+    "filename": "gamtextf.rom",
+    "name_offset": 476172,
+    "name_pointer_offset": 536632,
+    "filename_pointer_offset": 537272
+  },
+  {
+    "id": 54,
+    "name": "kWaveWeapons",
+    "filename": "weapons.rom",
+    "name_offset": 476188,
+    "name_pointer_offset": 536636,
+    "filename_pointer_offset": 537276
+  },
+  {
+    "id": 55,
+    "name": "kWaveWings",
+    "filename": "wings.rom",
+    "name_offset": 476204,
+    "name_pointer_offset": 536640,
+    "filename_pointer_offset": 537280
+  },
+  {
+    "id": 56,
+    "name": "kWaveVehicles",
+    "filename": "vehicles.rom",
+    "name_offset": 476216,
+    "name_pointer_offset": 536644,
+    "filename_pointer_offset": 537284
+  },
+  {
+    "id": 57,
+    "name": "kWaveCar1",
+    "filename": "car1.rom",
+    "name_offset": 476232,
+    "name_pointer_offset": 536648,
+    "filename_pointer_offset": 537288
+  },
+  {
+    "id": 58,
+    "name": "kWaveCar2",
+    "filename": "car2.rom",
+    "name_offset": 476244,
+    "name_pointer_offset": 536652,
+    "filename_pointer_offset": 537292
+  },
+  {
+    "id": 59,
+    "name": "kWaveCar3",
+    "filename": "car3.rom",
+    "name_offset": 476256,
+    "name_pointer_offset": 536656,
+    "filename_pointer_offset": 537296
+  },
+  {
+    "id": 60,
+    "name": "kWaveCar4",
+    "filename": "car4.rom",
+    "name_offset": 476268,
+    "name_pointer_offset": 536660,
+    "filename_pointer_offset": 537300
+  },
+  {
+    "id": 61,
+    "name": "kWaveCar5",
+    "filename": "car5.rom",
+    "name_offset": 476280,
+    "name_pointer_offset": 536664,
+    "filename_pointer_offset": 537304
+  },
+  {
+    "id": 62,
+    "name": "kWaveCar6",
+    "filename": "car6.rom",
+    "name_offset": 476292,
+    "name_pointer_offset": 536668,
+    "filename_pointer_offset": 537308
+  },
+  {
+    "id": 63,
+    "name": "kWaveCar7",
+    "filename": "car7.rom",
+    "name_offset": 476304,
+    "name_pointer_offset": 536672,
+    "filename_pointer_offset": 537312
+  },
+  {
+    "id": 64,
+    "name": "kWaveCar8",
+    "filename": "car8.rom",
+    "name_offset": 476316,
+    "name_pointer_offset": 536676,
+    "filename_pointer_offset": 537316
+  },
+  {
+    "id": 65,
+    "name": "kWaveCar9",
+    "filename": "car9.rom",
+    "name_offset": 476328,
+    "name_pointer_offset": 536680,
+    "filename_pointer_offset": 537320
+  },
+  {
+    "id": 66,
+    "name": "kWaveCar10",
+    "filename": "car10.rom",
+    "name_offset": 476340,
+    "name_pointer_offset": 536684,
+    "filename_pointer_offset": 537324
+  },
+  {
+    "id": 67,
+    "name": "kWaveCar11",
+    "filename": "car11.rom",
+    "name_offset": 476352,
+    "name_pointer_offset": 536688,
+    "filename_pointer_offset": 537328
+  },
+  {
+    "id": 68,
+    "name": "kWaveCar12",
+    "filename": "car12.rom",
+    "name_offset": 476364,
+    "name_pointer_offset": 536692,
+    "filename_pointer_offset": 537332
+  },
+  {
+    "id": 69,
+    "name": "kWaveCar13",
+    "filename": "car13.rom",
+    "name_offset": 476376,
+    "name_pointer_offset": 536696,
+    "filename_pointer_offset": 537336
+  },
+  {
+    "id": 70,
+    "name": "kWaveTrack1",
+    "filename": "track1.rom",
+    "name_offset": 476388,
+    "name_pointer_offset": 536700,
+    "filename_pointer_offset": 537340
+  },
+  {
+    "id": 71,
+    "name": "kWaveTrack2",
+    "filename": "track2.rom",
+    "name_offset": 476400,
+    "name_pointer_offset": 536704,
+    "filename_pointer_offset": 537344
+  },
+  {
+    "id": 72,
+    "name": "kWaveTrack3",
+    "filename": "track3.rom",
+    "name_offset": 476412,
+    "name_pointer_offset": 536708,
+    "filename_pointer_offset": 537348
+  },
+  {
+    "id": 73,
+    "name": "kWaveTrack4",
+    "filename": "track4.rom",
+    "name_offset": 476424,
+    "name_pointer_offset": 536712,
+    "filename_pointer_offset": 537352
+  },
+  {
+    "id": 74,
+    "name": "kWaveTrack5",
+    "filename": "track5.rom",
+    "name_offset": 476436,
+    "name_pointer_offset": 536716,
+    "filename_pointer_offset": 537356
+  },
+  {
+    "id": 75,
+    "name": "kWaveTrack6",
+    "filename": "track6.rom",
+    "name_offset": 476448,
+    "name_pointer_offset": 536720,
+    "filename_pointer_offset": 537360
+  },
+  {
+    "id": 76,
+    "name": "kWaveDm1",
+    "filename": "dm1.rom",
+    "name_offset": 476460,
+    "name_pointer_offset": 536724,
+    "filename_pointer_offset": 537364
+  },
+  {
+    "id": 77,
+    "name": "kWaveDm2",
+    "filename": "dm2.rom",
+    "name_offset": 476472,
+    "name_pointer_offset": 536728,
+    "filename_pointer_offset": 537368
+  },
+  {
+    "id": 78,
+    "name": "kWaveDm3",
+    "filename": "dm3.rom",
+    "name_offset": 476484,
+    "name_pointer_offset": 536732,
+    "filename_pointer_offset": 537372
+  },
+  {
+    "id": 79,
+    "name": "kWaveDm4",
+    "filename": "dm4.rom",
+    "name_offset": 476496,
+    "name_pointer_offset": 536736,
+    "filename_pointer_offset": 537376
+  },
+  {
+    "id": 80,
+    "name": "kWaveDm5",
+    "filename": "dm5.rom",
+    "name_offset": 476508,
+    "name_pointer_offset": 536740,
+    "filename_pointer_offset": 537380
+  },
+  {
+    "id": 81,
+    "name": "kWaveDm6",
+    "filename": "dm6.rom",
+    "name_offset": 476520,
+    "name_pointer_offset": 536744,
+    "filename_pointer_offset": 537384
+  },
+  {
+    "id": 82,
+    "name": "kWaveDm7",
+    "filename": "dm7.rom",
+    "name_offset": 476532,
+    "name_pointer_offset": 536748,
+    "filename_pointer_offset": 537388
+  },
+  {
+    "id": 83,
+    "name": "kWaveDm8",
+    "filename": "dm8.rom",
+    "name_offset": 476544,
+    "name_pointer_offset": 536752,
+    "filename_pointer_offset": 537392
+  },
+  {
+    "id": 84,
+    "name": "kWaveDm9",
+    "filename": "dm9.rom",
+    "name_offset": 476556,
+    "name_pointer_offset": 536756,
+    "filename_pointer_offset": 537396
+  },
+  {
+    "id": 85,
+    "name": "kWaveDm10",
+    "filename": "dm10.rom",
+    "name_offset": 476568,
+    "name_pointer_offset": 536760,
+    "filename_pointer_offset": 537400
+  },
+  {
+    "id": 86,
+    "name": "kWaveStunt1",
+    "filename": "stunt1.rom",
+    "name_offset": 476580,
+    "name_pointer_offset": 536764,
+    "filename_pointer_offset": 537404
+  },
+  {
+    "id": 87,
+    "name": "kWaveStunt2",
+    "filename": "stunt2.rom",
+    "name_offset": 476592,
+    "name_pointer_offset": 536768,
+    "filename_pointer_offset": 537408
+  },
+  {
+    "id": 88,
+    "name": "kWaveStunt3",
+    "filename": "stunt3.rom",
+    "name_offset": 476604,
+    "name_pointer_offset": 536772,
+    "filename_pointer_offset": 537412
+  },
+  {
+    "id": 89,
+    "name": "kWaveStunt4",
+    "filename": "stunt4.rom",
+    "name_offset": 476616,
+    "name_pointer_offset": 536776,
+    "filename_pointer_offset": 537416
+  },
+  {
+    "id": 90,
+    "name": "kWaveObstacle1",
+    "filename": "obstacle1.rom",
+    "name_offset": 476628,
+    "name_pointer_offset": 536780,
+    "filename_pointer_offset": 537420
+  },
+  {
+    "id": 91,
+    "name": "kWaveWorldTrack1",
+    "filename": "track1worlds.rom",
+    "name_offset": 476644,
+    "name_pointer_offset": 536784,
+    "filename_pointer_offset": 537424
+  },
+  {
+    "id": 92,
+    "name": "kWaveWorldTrack2",
+    "filename": "track2worlds.rom",
+    "name_offset": 476664,
+    "name_pointer_offset": 536788,
+    "filename_pointer_offset": 537428
+  },
+  {
+    "id": 93,
+    "name": "kWaveWorldTrack3",
+    "filename": "track3worlds.rom",
+    "name_offset": 476684,
+    "name_pointer_offset": 536792,
+    "filename_pointer_offset": 537432
+  },
+  {
+    "id": 94,
+    "name": "kWaveWorldTrack4",
+    "filename": "track4worlds.rom",
+    "name_offset": 476704,
+    "name_pointer_offset": 536796,
+    "filename_pointer_offset": 537436
+  },
+  {
+    "id": 95,
+    "name": "kWaveWorldTrack5",
+    "filename": "track5worlds.rom",
+    "name_offset": 476724,
+    "name_pointer_offset": 536800,
+    "filename_pointer_offset": 537440
+  },
+  {
+    "id": 96,
+    "name": "kWaveWorldTrack6",
+    "filename": "track6worlds.rom",
+    "name_offset": 476744,
+    "name_pointer_offset": 536804,
+    "filename_pointer_offset": 537444
+  },
+  {
+    "id": 97,
+    "name": "kWaveWorldDm1",
+    "filename": "dm1worlds.rom",
+    "name_offset": 476764,
+    "name_pointer_offset": 536808,
+    "filename_pointer_offset": 537448
+  },
+  {
+    "id": 98,
+    "name": "kWaveWorldDm2",
+    "filename": "dm2worlds.rom",
+    "name_offset": 476780,
+    "name_pointer_offset": 536812,
+    "filename_pointer_offset": 537452
+  },
+  {
+    "id": 99,
+    "name": "kWaveWorldDm3",
+    "filename": "dm3worlds.rom",
+    "name_offset": 476796,
+    "name_pointer_offset": 536816,
+    "filename_pointer_offset": 537456
+  },
+  {
+    "id": 100,
+    "name": "kWaveWorldDm4",
+    "filename": "dm4worlds.rom",
+    "name_offset": 476812,
+    "name_pointer_offset": 536820,
+    "filename_pointer_offset": 537460
+  },
+  {
+    "id": 101,
+    "name": "kWaveWorldDm5",
+    "filename": "dm5worlds.rom",
+    "name_offset": 476828,
+    "name_pointer_offset": 536824,
+    "filename_pointer_offset": 537464
+  },
+  {
+    "id": 102,
+    "name": "kWaveWorldDm6",
+    "filename": "dm6worlds.rom",
+    "name_offset": 476844,
+    "name_pointer_offset": 536828,
+    "filename_pointer_offset": 537468
+  },
+  {
+    "id": 103,
+    "name": "kWaveWorldDm7",
+    "filename": "dm7worlds.rom",
+    "name_offset": 476860,
+    "name_pointer_offset": 536832,
+    "filename_pointer_offset": 537472
+  },
+  {
+    "id": 104,
+    "name": "kWaveWorldDm8",
+    "filename": "dm8worlds.rom",
+    "name_offset": 476876,
+    "name_pointer_offset": 536836,
+    "filename_pointer_offset": 537476
+  },
+  {
+    "id": 105,
+    "name": "kWaveWorldDm9",
+    "filename": "dm9worlds.rom",
+    "name_offset": 476892,
+    "name_pointer_offset": 536840,
+    "filename_pointer_offset": 537480
+  },
+  {
+    "id": 106,
+    "name": "kWaveWorldDm10",
+    "filename": "dm10worlds.rom",
+    "name_offset": 476908,
+    "name_pointer_offset": 536844,
+    "filename_pointer_offset": 537484
+  },
+  {
+    "id": 107,
+    "name": "kWaveWorldStunt1",
+    "filename": "stunt1worlds.rom",
+    "name_offset": 476924,
+    "name_pointer_offset": 536848,
+    "filename_pointer_offset": 537488
+  },
+  {
+    "id": 108,
+    "name": "kWaveWorldStunt2",
+    "filename": "stunt2worlds.rom",
+    "name_offset": 476944,
+    "name_pointer_offset": 536852,
+    "filename_pointer_offset": 537492
+  },
+  {
+    "id": 109,
+    "name": "kWaveWorldStunt3",
+    "filename": "stunt3worlds.rom",
+    "name_offset": 476964,
+    "name_pointer_offset": 536856,
+    "filename_pointer_offset": 537496
+  },
+  {
+    "id": 110,
+    "name": "kWaveWorldStunt4",
+    "filename": "stunt4worlds.rom",
+    "name_offset": 476984,
+    "name_pointer_offset": 536860,
+    "filename_pointer_offset": 537500
+  },
+  {
+    "id": 111,
+    "name": "kWaveWorldObstacle1",
+    "filename": "obstacle1worlds.rom",
+    "name_offset": 477004,
+    "name_pointer_offset": 536864,
+    "filename_pointer_offset": 537504
+  },
+  {
+    "id": 112,
+    "name": "kWaveRoadTrack1",
+    "filename": "track1road.rom",
+    "name_offset": 477024,
+    "name_pointer_offset": 536868,
+    "filename_pointer_offset": 537508
+  },
+  {
+    "id": 113,
+    "name": "kWaveRoadTrack2",
+    "filename": "track2road.rom",
+    "name_offset": 477040,
+    "name_pointer_offset": 536872,
+    "filename_pointer_offset": 537512
+  },
+  {
+    "id": 114,
+    "name": "kWaveRoadTrack3",
+    "filename": "track3road.rom",
+    "name_offset": 477056,
+    "name_pointer_offset": 536876,
+    "filename_pointer_offset": 537516
+  },
+  {
+    "id": 115,
+    "name": "kWaveRoadTrack4",
+    "filename": "track4road.rom",
+    "name_offset": 477072,
+    "name_pointer_offset": 536880,
+    "filename_pointer_offset": 537520
+  },
+  {
+    "id": 116,
+    "name": "kWaveRoadTrack5",
+    "filename": "track5road.rom",
+    "name_offset": 477088,
+    "name_pointer_offset": 536884,
+    "filename_pointer_offset": 537524
+  },
+  {
+    "id": 117,
+    "name": "kWaveRoadTrack6",
+    "filename": "track6road.rom",
+    "name_offset": 477104,
+    "name_pointer_offset": 536888,
+    "filename_pointer_offset": 537528
+  },
+  {
+    "id": 118,
+    "name": "kWaveRoadDm1",
+    "filename": "dm1road.rom",
+    "name_offset": 477120,
+    "name_pointer_offset": 536892,
+    "filename_pointer_offset": 537532
+  },
+  {
+    "id": 119,
+    "name": "kWaveRoadDm2",
+    "filename": "dm2road.rom",
+    "name_offset": 477136,
+    "name_pointer_offset": 536896,
+    "filename_pointer_offset": 537536
+  },
+  {
+    "id": 120,
+    "name": "kWaveRoadDm3",
+    "filename": "dm3road.rom",
+    "name_offset": 477152,
+    "name_pointer_offset": 536900,
+    "filename_pointer_offset": 537540
+  },
+  {
+    "id": 121,
+    "name": "kWaveRoadDm4",
+    "filename": "dm4road.rom",
+    "name_offset": 477168,
+    "name_pointer_offset": 536904,
+    "filename_pointer_offset": 537544
+  },
+  {
+    "id": 122,
+    "name": "kWaveRoadDm5",
+    "filename": "dm5road.rom",
+    "name_offset": 477184,
+    "name_pointer_offset": 536908,
+    "filename_pointer_offset": 537548
+  },
+  {
+    "id": 123,
+    "name": "kWaveRoadDm6",
+    "filename": "dm6road.rom",
+    "name_offset": 477200,
+    "name_pointer_offset": 536912,
+    "filename_pointer_offset": 537552
+  },
+  {
+    "id": 124,
+    "name": "kWaveRoadDm7",
+    "filename": "dm7road.rom",
+    "name_offset": 477216,
+    "name_pointer_offset": 536916,
+    "filename_pointer_offset": 537556
+  },
+  {
+    "id": 125,
+    "name": "kWaveRoadDm8",
+    "filename": "dm8road.rom",
+    "name_offset": 477232,
+    "name_pointer_offset": 536920,
+    "filename_pointer_offset": 537560
+  },
+  {
+    "id": 126,
+    "name": "kWaveRoadDm9",
+    "filename": "dm9road.rom",
+    "name_offset": 477248,
+    "name_pointer_offset": 536924,
+    "filename_pointer_offset": 537564
+  },
+  {
+    "id": 127,
+    "name": "kWaveRoadDm10",
+    "filename": "dm10road.rom",
+    "name_offset": 477264,
+    "name_pointer_offset": 536928,
+    "filename_pointer_offset": 537568
+  },
+  {
+    "id": 128,
+    "name": "kWaveRoadStunt1",
+    "filename": "stunt1road.rom",
+    "name_offset": 477280,
+    "name_pointer_offset": 536932,
+    "filename_pointer_offset": 537572
+  },
+  {
+    "id": 129,
+    "name": "kWaveRoadStunt2",
+    "filename": "stunt2road.rom",
+    "name_offset": 477296,
+    "name_pointer_offset": 536936,
+    "filename_pointer_offset": 537576
+  },
+  {
+    "id": 130,
+    "name": "kWaveRoadStunt3",
+    "filename": "stunt3road.rom",
+    "name_offset": 477312,
+    "name_pointer_offset": 536940,
+    "filename_pointer_offset": 537580
+  },
+  {
+    "id": 131,
+    "name": "kWaveRoadStunt4",
+    "filename": "stunt4road.rom",
+    "name_offset": 477328,
+    "name_pointer_offset": 536944,
+    "filename_pointer_offset": 537584
+  },
+  {
+    "id": 132,
+    "name": "kWaveRoadObstacle1",
+    "filename": "obstacle1road.rom",
+    "name_offset": 477344,
+    "name_pointer_offset": 536948,
+    "filename_pointer_offset": 537588
+  },
+  {
+    "id": 133,
+    "name": "kWavePathTrack1",
+    "filename": "track1path.rom",
+    "name_offset": 477364,
+    "name_pointer_offset": 536952,
+    "filename_pointer_offset": 537592
+  },
+  {
+    "id": 134,
+    "name": "kWavePathTrack2",
+    "filename": "track2path.rom",
+    "name_offset": 477380,
+    "name_pointer_offset": 536956,
+    "filename_pointer_offset": 537596
+  },
+  {
+    "id": 135,
+    "name": "kWavePathTrack3",
+    "filename": "track3path.rom",
+    "name_offset": 477396,
+    "name_pointer_offset": 536960,
+    "filename_pointer_offset": 537600
+  },
+  {
+    "id": 136,
+    "name": "kWavePathTrack4",
+    "filename": "track4path.rom",
+    "name_offset": 477412,
+    "name_pointer_offset": 536964,
+    "filename_pointer_offset": 537604
+  },
+  {
+    "id": 137,
+    "name": "kWavePathTrack5",
+    "filename": "track5path.rom",
+    "name_offset": 477428,
+    "name_pointer_offset": 536968,
+    "filename_pointer_offset": 537608
+  },
+  {
+    "id": 138,
+    "name": "kWavePathTrack6",
+    "filename": "track6path.rom",
+    "name_offset": 477444,
+    "name_pointer_offset": 536972,
+    "filename_pointer_offset": 537612
+  },
+  {
+    "id": 139,
+    "name": "kWavePathDm1",
+    "filename": "dm1path.rom",
+    "name_offset": 477460,
+    "name_pointer_offset": 536976,
+    "filename_pointer_offset": 537616
+  },
+  {
+    "id": 140,
+    "name": "kWavePathDm2",
+    "filename": "dm2path.rom",
+    "name_offset": 477476,
+    "name_pointer_offset": 536980,
+    "filename_pointer_offset": 537620
+  },
+  {
+    "id": 141,
+    "name": "kWavePathDm3",
+    "filename": "dm3path.rom",
+    "name_offset": 477492,
+    "name_pointer_offset": 536984,
+    "filename_pointer_offset": 537624
+  },
+  {
+    "id": 142,
+    "name": "kWavePathDm4",
+    "filename": "dm4path.rom",
+    "name_offset": 477508,
+    "name_pointer_offset": 536988,
+    "filename_pointer_offset": 537628
+  },
+  {
+    "id": 143,
+    "name": "kWavePathDm5",
+    "filename": "dm5path.rom",
+    "name_offset": 477524,
+    "name_pointer_offset": 536992,
+    "filename_pointer_offset": 537632
+  },
+  {
+    "id": 144,
+    "name": "kWavePathDm6",
+    "filename": "dm6path.rom",
+    "name_offset": 477540,
+    "name_pointer_offset": 536996,
+    "filename_pointer_offset": 537636
+  },
+  {
+    "id": 145,
+    "name": "kWavePathDm7",
+    "filename": "dm7path.rom",
+    "name_offset": 477556,
+    "name_pointer_offset": 537000,
+    "filename_pointer_offset": 537640
+  },
+  {
+    "id": 146,
+    "name": "kWavePathDm8",
+    "filename": "dm8path.rom",
+    "name_offset": 477572,
+    "name_pointer_offset": 537004,
+    "filename_pointer_offset": 537644
+  },
+  {
+    "id": 147,
+    "name": "kWavePathDm9",
+    "filename": "dm9path.rom",
+    "name_offset": 477588,
+    "name_pointer_offset": 537008,
+    "filename_pointer_offset": 537648
+  },
+  {
+    "id": 148,
+    "name": "kWavePathDm10",
+    "filename": "dm10path.rom",
+    "name_offset": 477604,
+    "name_pointer_offset": 537012,
+    "filename_pointer_offset": 537652
+  },
+  {
+    "id": 149,
+    "name": "kWavePathStunt1",
+    "filename": "stunt1path.rom",
+    "name_offset": 477620,
+    "name_pointer_offset": 537016,
+    "filename_pointer_offset": 537656
+  },
+  {
+    "id": 150,
+    "name": "kWavePathStunt2",
+    "filename": "stunt2path.rom",
+    "name_offset": 477636,
+    "name_pointer_offset": 537020,
+    "filename_pointer_offset": 537660
+  },
+  {
+    "id": 151,
+    "name": "kWavePathStunt3",
+    "filename": "stunt3path.rom",
+    "name_offset": 477652,
+    "name_pointer_offset": 537024,
+    "filename_pointer_offset": 537664
+  },
+  {
+    "id": 152,
+    "name": "kWavePathStunt4",
+    "filename": "stunt4path.rom",
+    "name_offset": 477668,
+    "name_pointer_offset": 537028,
+    "filename_pointer_offset": 537668
+  },
+  {
+    "id": 153,
+    "name": "kWavePathObstacle1",
+    "filename": "obstacle1path.rom",
+    "name_offset": 477684,
+    "name_pointer_offset": 537032,
+    "filename_pointer_offset": 537672
+  },
+  {
+    "id": 154,
+    "name": "kWavePathBackTrack1",
+    "filename": "track1pathback.rom",
+    "name_offset": 477704,
+    "name_pointer_offset": 537036,
+    "filename_pointer_offset": 537676
+  },
+  {
+    "id": 155,
+    "name": "kWavePathBackTrack2",
+    "filename": "track2pathback.rom",
+    "name_offset": 477724,
+    "name_pointer_offset": 537040,
+    "filename_pointer_offset": 537680
+  },
+  {
+    "id": 156,
+    "name": "kWavePathBackTrack3",
+    "filename": "track3pathback.rom",
+    "name_offset": 477744,
+    "name_pointer_offset": 537044,
+    "filename_pointer_offset": 537684
+  },
+  {
+    "id": 157,
+    "name": "kWavePathBackTrack4",
+    "filename": "track4pathback.rom",
+    "name_offset": 477764,
+    "name_pointer_offset": 537048,
+    "filename_pointer_offset": 537688
+  },
+  {
+    "id": 158,
+    "name": "kWavePathBackTrack5",
+    "filename": "track5pathback.rom",
+    "name_offset": 477784,
+    "name_pointer_offset": 537052,
+    "filename_pointer_offset": 537692
+  },
+  {
+    "id": 159,
+    "name": "kWavePathBackTrack6",
+    "filename": "track6pathback.rom",
+    "name_offset": 477804,
+    "name_pointer_offset": 537056,
+    "filename_pointer_offset": 537696
+  }
+]

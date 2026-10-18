@@ -1,0 +1,30 @@
+[
+  {
+    "path": "src\\training\\bsearch.c",
+    "sha256": "fc0cd8fb89c4af9884303c44c3ed20689cd5004f15b5a10b3bc420d893fe038a",
+    "origin": "lanes/integer/candidates.c",
+    "origin_sha256": "a2e15aca5a03985f2228baa8ef0f83f4838351ccc2d17d5afd191ac94caaead9",
+    "accepted_E": false
+  },
+  {
+    "path": "src\\training\\interp.c",
+    "sha256": "1c98e88409ead2a877c282eb0239630926d810ebdddad0832fe0286c917ff9a1",
+    "origin": "lanes/integer/candidates.c",
+    "origin_sha256": "a2e15aca5a03985f2228baa8ef0f83f4838351ccc2d17d5afd191ac94caaead9",
+    "accepted_E": false
+  },
+  {
+    "path": "src\\training\\InsertLLE.c",
+    "sha256": "8a4f55031d2f8e395fff93a87daec22d37b75f3563e3915890e7d844d987aa05",
+    "origin": "lanes/integer/candidates.c",
+    "origin_sha256": "a2e15aca5a03985f2228baa8ef0f83f4838351ccc2d17d5afd191ac94caaead9",
+    "accepted_E": false
+  },
+  {
+    "path": "src\\training\\BodyVector.c",
+    "sha256": "e7574c21890689e79f27dfa1423947634aabe55972d717d744fd56ef54b15d09",
+    "origin": "lanes\\resource_float\\BodyVector-candidate.c",
+    "origin_sha256": "e7574c21890689e79f27dfa1423947634aabe55972d717d744fd56ef54b15d09",
+    "accepted_E": false
+  }
+]

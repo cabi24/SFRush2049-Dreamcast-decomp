@@ -1,0 +1,497 @@
+=== 8c09b680-8c09ba60 ===
+8c09b680  0820   tst r0,r0
+8c09b682  262f   mov.l r2,@-r15
+8c09b684  4b89   bt 0x8c09b71e
+8c09b686  362f   mov.l r3,@-r15
+8c09b688  00e2   mov #0x0,r2
+8c09b68a  2721   div0s r2,r1
+8c09b68c  3a33   subc r3,r3
+8c09b68e  2a31   subc r2,r1
+8c09b690  0723   div0s r0,r3
+8c09b692  2441   rotcl r1
+8c09b694  0433   div1 r0,r3
+8c09b696  2441   rotcl r1
+8c09b698  0433   div1 r0,r3
+8c09b69a  2441   rotcl r1
+8c09b69c  0433   div1 r0,r3
+8c09b69e  2441   rotcl r1
+8c09b6a0  0433   div1 r0,r3
+8c09b6a2  2441   rotcl r1
+8c09b6a4  0433   div1 r0,r3
+8c09b6a6  2441   rotcl r1
+8c09b6a8  0433   div1 r0,r3
+8c09b6aa  2441   rotcl r1
+8c09b6ac  0433   div1 r0,r3
+8c09b6ae  2441   rotcl r1
+8c09b6b0  0433   div1 r0,r3
+8c09b6b2  2441   rotcl r1
+8c09b6b4  0433   div1 r0,r3
+8c09b6b6  2441   rotcl r1
+8c09b6b8  0433   div1 r0,r3
+8c09b6ba  2441   rotcl r1
+8c09b6bc  0433   div1 r0,r3
+8c09b6be  2441   rotcl r1
+8c09b6c0  0433   div1 r0,r3
+8c09b6c2  2441   rotcl r1
+8c09b6c4  0433   div1 r0,r3
+8c09b6c6  2441   rotcl r1
+8c09b6c8  0433   div1 r0,r3
+8c09b6ca  2441   rotcl r1
+8c09b6cc  0433   div1 r0,r3
+8c09b6ce  2441   rotcl r1
+8c09b6d0  0433   div1 r0,r3
+8c09b6d2  2441   rotcl r1
+8c09b6d4  0433   div1 r0,r3
+8c09b6d6  2441   rotcl r1
+8c09b6d8  0433   div1 r0,r3
+8c09b6da  2441   rotcl r1
+8c09b6dc  0433   div1 r0,r3
+8c09b6de  2441   rotcl r1
+8c09b6e0  0433   div1 r0,r3
+8c09b6e2  2441   rotcl r1
+8c09b6e4  0433   div1 r0,r3
+8c09b6e6  2441   rotcl r1
+8c09b6e8  0433   div1 r0,r3
+8c09b6ea  2441   rotcl r1
+8c09b6ec  0433   div1 r0,r3
+8c09b6ee  2441   rotcl r1
+8c09b6f0  0433   div1 r0,r3
+8c09b6f2  2441   rotcl r1
+8c09b6f4  0433   div1 r0,r3
+8c09b6f6  2441   rotcl r1
+8c09b6f8  0433   div1 r0,r3
+8c09b6fa  2441   rotcl r1
+8c09b6fc  0433   div1 r0,r3
+8c09b6fe  2441   rotcl r1
+8c09b700  0433   div1 r0,r3
+8c09b702  2441   rotcl r1
+8c09b704  0433   div1 r0,r3
+8c09b706  2441   rotcl r1
+8c09b708  0433   div1 r0,r3
+8c09b70a  2441   rotcl r1
+8c09b70c  0433   div1 r0,r3
+8c09b70e  2441   rotcl r1
+8c09b710  0433   div1 r0,r3
+8c09b712  2441   rotcl r1
+8c09b714  2e31   addc r2,r1
+8c09b716  1360   mov r1,r0
+8c09b718  f663   mov.l @r15+,r3
+8c09b71a  0b00   rts
+8c09b71c  f662   _mov.l @r15+,r2
+8c09b71e  03d1   mov.l 0x8c09b72c,r1
+8c09b720  03d2   mov.l 0x8c09b730,r2
+8c09b722  00e0   mov #0x0,r0
+8c09b724  2221   mov.l r2,@r1
+8c09b726  0b00   rts
+8c09b728  f662   _mov.l @r15+,r2
+8c09b72a  0900   nop
+8c09b72c  0c90  ??
+8c09b72e  1a8c  ??
+8c09b730  4e04  ??
+8c09b732  0000  ??
+8c09b734  0820   tst r0,r0
+8c09b736  262f   mov.l r2,@-r15
+8c09b738  4589   bt 0x8c09b7c6
+8c09b73a  00e2   mov #0x0,r2
+8c09b73c  1900   div0u
+8c09b73e  2441   rotcl r1
+8c09b740  0432   div1 r0,r2
+8c09b742  2441   rotcl r1
+8c09b744  0432   div1 r0,r2
+8c09b746  2441   rotcl r1
+8c09b748  0432   div1 r0,r2
+8c09b74a  2441   rotcl r1
+8c09b74c  0432   div1 r0,r2
+8c09b74e  2441   rotcl r1
+8c09b750  0432   div1 r0,r2
+8c09b752  2441   rotcl r1
+8c09b754  0432   div1 r0,r2
+8c09b756  2441   rotcl r1
+8c09b758  0432   div1 r0,r2
+8c09b75a  2441   rotcl r1
+8c09b75c  0432   div1 r0,r2
+8c09b75e  2441   rotcl r1
+8c09b760  0432   div1 r0,r2
+8c09b762  2441   rotcl r1
+8c09b764  0432   div1 r0,r2
+8c09b766  2441   rotcl r1
+8c09b768  0432   div1 r0,r2
+8c09b76a  2441   rotcl r1
+8c09b76c  0432   div1 r0,r2
+8c09b76e  2441   rotcl r1
+8c09b770  0432   div1 r0,r2
+8c09b772  2441   rotcl r1
+8c09b774  0432   div1 r0,r2
+8c09b776  2441   rotcl r1
+8c09b778  0432   div1 r0,r2
+8c09b77a  2441   rotcl r1
+8c09b77c  0432   div1 r0,r2
+8c09b77e  2441   rotcl r1
+8c09b780  0432   div1 r0,r2
+8c09b782  2441   rotcl r1
+8c09b784  0432   div1 r0,r2
+8c09b786  2441   rotcl r1
+8c09b788  0432   div1 r0,r2
+8c09b78a  2441   rotcl r1
+8c09b78c  0432   div1 r0,r2
+8c09b78e  2441   rotcl r1
+8c09b790  0432   div1 r0,r2
+8c09b792  2441   rotcl r1
+8c09b794  0432   div1 r0,r2
+8c09b796  2441   rotcl r1
+8c09b798  0432   div1 r0,r2
+8c09b79a  2441   rotcl r1
+8c09b79c  0432   div1 r0,r2
+8c09b79e  2441   rotcl r1
+8c09b7a0  0432   div1 r0,r2
+8c09b7a2  2441   rotcl r1
+8c09b7a4  0432   div1 r0,r2
+8c09b7a6  2441   rotcl r1
+8c09b7a8  0432   div1 r0,r2
+8c09b7aa  2441   rotcl r1
+8c09b7ac  0432   div1 r0,r2
+8c09b7ae  2441   rotcl r1
+8c09b7b0  0432   div1 r0,r2
+8c09b7b2  2441   rotcl r1
+8c09b7b4  0432   div1 r0,r2
+8c09b7b6  2441   rotcl r1
+8c09b7b8  0432   div1 r0,r2
+8c09b7ba  2441   rotcl r1
+8c09b7bc  0432   div1 r0,r2
+8c09b7be  2441   rotcl r1
+8c09b7c0  1360   mov r1,r0
+8c09b7c2  0b00   rts
+8c09b7c4  f662   _mov.l @r15+,r2
+8c09b7c6  03d2   mov.l 0x8c09b7d4,r2
+8c09b7c8  03d1   mov.l 0x8c09b7d8,r1
+8c09b7ca  00e0   mov #0x0,r0
+8c09b7cc  1222   mov.l r1,@r2
+8c09b7ce  0b00   rts
+8c09b7d0  f662   _mov.l @r15+,r2
+8c09b7d2  0900   nop
+8c09b7d4  0c90  ??
+8c09b7d6  1a8c  ??
+8c09b7d8  4e04  ??
+8c09b7da  0000  ??
+8c09b7dc  0f60   exts.w r0,r0
+8c09b7de  0820   tst r0,r0
+8c09b7e0  1b8d   bt/s 0x8c09b81a
+8c09b7e2  262f   _mov.l r2,@-r15
+8c09b7e4  1f61   exts.w r1,r1
+8c09b7e6  00e2   mov #0x0,r2
+8c09b7e8  2721   div0s r2,r1
+8c09b7ea  2a31   subc r2,r1
+8c09b7ec  2840   shll16 r0
+8c09b7ee  0721   div0s r0,r1
+8c09b7f0  0431   div1 r0,r1
+8c09b7f2  0431   div1 r0,r1
+8c09b7f4  0431   div1 r0,r1
+8c09b7f6  0431   div1 r0,r1
+8c09b7f8  0431   div1 r0,r1
+8c09b7fa  0431   div1 r0,r1
+8c09b7fc  0431   div1 r0,r1
+8c09b7fe  0431   div1 r0,r1
+8c09b800  0431   div1 r0,r1
+8c09b802  0431   div1 r0,r1
+8c09b804  0431   div1 r0,r1
+8c09b806  0431   div1 r0,r1
+8c09b808  0431   div1 r0,r1
+8c09b80a  0431   div1 r0,r1
+8c09b80c  0431   div1 r0,r1
+8c09b80e  0431   div1 r0,r1
+8c09b810  1f60   exts.w r1,r0
+8c09b812  2440   rotcl r0
+8c09b814  2e30   addc r2,r0
+8c09b816  0b00   rts
+8c09b818  f662   _mov.l @r15+,r2
+8c09b81a  02d2   mov.l 0x8c09b824,r2
+8c09b81c  02d1   mov.l 0x8c09b828,r1
+8c09b81e  1222   mov.l r1,@r2
+8c09b820  0b00   rts
+8c09b822  f662   _mov.l @r15+,r2
+8c09b824  0c90  ??
+8c09b826  1a8c  ??
+8c09b828  4e04  ??
+8c09b82a  0000  ??
+8c09b82c  0820   tst r0,r0
+8c09b82e  262f   mov.l r2,@-r15
+8c09b830  5589   bt 0x8c09b8de
+8c09b832  362f   mov.l r3,@-r15
+8c09b834  00e2   mov #0x0,r2
+8c09b836  462f   mov.l r4,@-r15
+8c09b838  2721   div0s r2,r1
+8c09b83a  2904   movt r4
+8c09b83c  3a33   subc r3,r3
+8c09b83e  2a31   subc r2,r1
+8c09b840  0723   div0s r0,r3
+8c09b842  2441   rotcl r1
+8c09b844  0433   div1 r0,r3
+8c09b846  2441   rotcl r1
+8c09b848  0433   div1 r0,r3
+8c09b84a  2441   rotcl r1
+8c09b84c  0433   div1 r0,r3
+8c09b84e  2441   rotcl r1
+8c09b850  0433   div1 r0,r3
+8c09b852  2441   rotcl r1
+8c09b854  0433   div1 r0,r3
+8c09b856  2441   rotcl r1
+8c09b858  0433   div1 r0,r3
+8c09b85a  2441   rotcl r1
+8c09b85c  0433   div1 r0,r3
+8c09b85e  2441   rotcl r1
+8c09b860  0433   div1 r0,r3
+8c09b862  2441   rotcl r1
+8c09b864  0433   div1 r0,r3
+8c09b866  2441   rotcl r1
+8c09b868  0433   div1 r0,r3
+8c09b86a  2441   rotcl r1
+8c09b86c  0433   div1 r0,r3
+8c09b86e  2441   rotcl r1
+8c09b870  0433   div1 r0,r3
+8c09b872  2441   rotcl r1
+8c09b874  0433   div1 r0,r3
+8c09b876  2441   rotcl r1
+8c09b878  0433   div1 r0,r3
+8c09b87a  2441   rotcl r1
+8c09b87c  0433   div1 r0,r3
+8c09b87e  2441   rotcl r1
+8c09b880  0433   div1 r0,r3
+8c09b882  2441   rotcl r1
+8c09b884  0433   div1 r0,r3
+8c09b886  2441   rotcl r1
+8c09b888  0433   div1 r0,r3
+8c09b88a  2441   rotcl r1
+8c09b88c  0433   div1 r0,r3
+8c09b88e  2441   rotcl r1
+8c09b890  0433   div1 r0,r3
+8c09b892  2441   rotcl r1
+8c09b894  0433   div1 r0,r3
+8c09b896  2441   rotcl r1
+8c09b898  0433   div1 r0,r3
+8c09b89a  2441   rotcl r1
+8c09b89c  0433   div1 r0,r3
+8c09b89e  2441   rotcl r1
+8c09b8a0  0433   div1 r0,r3
+8c09b8a2  2441   rotcl r1
+8c09b8a4  0433   div1 r0,r3
+8c09b8a6  2441   rotcl r1
+8c09b8a8  0433   div1 r0,r3
+8c09b8aa  2441   rotcl r1
+8c09b8ac  0433   div1 r0,r3
+8c09b8ae  2441   rotcl r1
+8c09b8b0  0433   div1 r0,r3
+8c09b8b2  2441   rotcl r1
+8c09b8b4  0433   div1 r0,r3
+8c09b8b6  2441   rotcl r1
+8c09b8b8  0433   div1 r0,r3
+8c09b8ba  2441   rotcl r1
+8c09b8bc  0433   div1 r0,r3
+8c09b8be  2441   rotcl r1
+8c09b8c0  0433   div1 r0,r3
+8c09b8c2  2723   div0s r2,r3
+8c09b8c4  2902   movt r2
+8c09b8c6  4a22   xor r4,r2
+8c09b8c8  2542   rotcr r2
+8c09b8ca  028b   bf 0x8c09b8d2
+8c09b8cc  0723   div0s r0,r3
+8c09b8ce  2143   shar r3
+8c09b8d0  0433   div1 r0,r3
+8c09b8d2  4c33   add r4,r3
+8c09b8d4  3360   mov r3,r0
+8c09b8d6  f664   mov.l @r15+,r4
+8c09b8d8  f663   mov.l @r15+,r3
+8c09b8da  0b00   rts
+8c09b8dc  f662   _mov.l @r15+,r2
+8c09b8de  03d1   mov.l 0x8c09b8ec,r1
+8c09b8e0  03d2   mov.l 0x8c09b8f0,r2
+8c09b8e2  00e0   mov #0x0,r0
+8c09b8e4  2221   mov.l r2,@r1
+8c09b8e6  0b00   rts
+8c09b8e8  f662   _mov.l @r15+,r2
+8c09b8ea  0900   nop
+8c09b8ec  0c90  ??
+8c09b8ee  1a8c  ??
+8c09b8f0  4e04  ??
+8c09b8f2  0000  ??
+8c09b8f4  0820   tst r0,r0
+8c09b8f6  4d89   bt 0x8c09b994
+8c09b8f8  362f   mov.l r3,@-r15
+8c09b8fa  00e3   mov #0x0,r3
+8c09b8fc  462f   mov.l r4,@-r15
+8c09b8fe  0364   mov r0,r4
+8c09b900  1900   div0u
+8c09b902  2441   rotcl r1
+8c09b904  4433   div1 r4,r3
+8c09b906  2441   rotcl r1
+8c09b908  4433   div1 r4,r3
+8c09b90a  2441   rotcl r1
+8c09b90c  4433   div1 r4,r3
+8c09b90e  2441   rotcl r1
+8c09b910  4433   div1 r4,r3
+8c09b912  2441   rotcl r1
+8c09b914  4433   div1 r4,r3
+8c09b916  2441   rotcl r1
+8c09b918  4433   div1 r4,r3
+8c09b91a  2441   rotcl r1
+8c09b91c  4433   div1 r4,r3
+8c09b91e  2441   rotcl r1
+8c09b920  4433   div1 r4,r3
+8c09b922  2441   rotcl r1
+8c09b924  4433   div1 r4,r3
+8c09b926  2441   rotcl r1
+8c09b928  4433   div1 r4,r3
+8c09b92a  2441   rotcl r1
+8c09b92c  4433   div1 r4,r3
+8c09b92e  2441   rotcl r1
+8c09b930  4433   div1 r4,r3
+8c09b932  2441   rotcl r1
+8c09b934  4433   div1 r4,r3
+8c09b936  2441   rotcl r1
+8c09b938  4433   div1 r4,r3
+8c09b93a  2441   rotcl r1
+8c09b93c  4433   div1 r4,r3
+8c09b93e  2441   rotcl r1
+8c09b940  4433   div1 r4,r3
+8c09b942  2441   rotcl r1
+8c09b944  4433   div1 r4,r3
+8c09b946  2441   rotcl r1
+8c09b948  4433   div1 r4,r3
+8c09b94a  2441   rotcl r1
+8c09b94c  4433   div1 r4,r3
+8c09b94e  2441   rotcl r1
+8c09b950  4433   div1 r4,r3
+8c09b952  2441   rotcl r1
+8c09b954  4433   div1 r4,r3
+8c09b956  2441   rotcl r1
+8c09b958  4433   div1 r4,r3
+8c09b95a  2441   rotcl r1
+8c09b95c  4433   div1 r4,r3
+8c09b95e  2441   rotcl r1
+8c09b960  4433   div1 r4,r3
+8c09b962  2441   rotcl r1
+8c09b964  4433   div1 r4,r3
+8c09b966  2441   rotcl r1
+8c09b968  4433   div1 r4,r3
+8c09b96a  2441   rotcl r1
+8c09b96c  4433   div1 r4,r3
+8c09b96e  2441   rotcl r1
+8c09b970  4433   div1 r4,r3
+8c09b972  2441   rotcl r1
+8c09b974  4433   div1 r4,r3
+8c09b976  2441   rotcl r1
+8c09b978  4433   div1 r4,r3
+8c09b97a  2441   rotcl r1
+8c09b97c  4433   div1 r4,r3
+8c09b97e  2441   rotcl r1
+8c09b980  4433   div1 r4,r3
+8c09b982  038b   bf 0x8c09b98c
+8c09b984  3360   mov r3,r0
+8c09b986  f664   mov.l @r15+,r4
+8c09b988  0b00   rts
+8c09b98a  f663   _mov.l @r15+,r3
+8c09b98c  3c30   add r3,r0
+8c09b98e  f664   mov.l @r15+,r4
+8c09b990  0b00   rts
+8c09b992  f663   _mov.l @r15+,r3
+8c09b994  262f   mov.l r2,@-r15
+8c09b996  03d1   mov.l 0x8c09b9a4,r1
+8c09b998  03d2   mov.l 0x8c09b9a8,r2
+8c09b99a  00e0   mov #0x0,r0
+8c09b99c  2221   mov.l r2,@r1
+8c09b99e  0b00   rts
+8c09b9a0  f662   _mov.l @r15+,r2
+8c09b9a2  0900   nop
+8c09b9a4  0c90  ??
+8c09b9a6  1a8c  ??
+8c09b9a8  4e04  ??
+8c09b9aa  0000  ??
+8c09b9ac  0f60   exts.w r0,r0
+8c09b9ae  0820   tst r0,r0
+8c09b9b0  268d   bt/s 0x8c09ba00
+8c09b9b2  262f   _mov.l r2,@-r15
+8c09b9b4  1f61   exts.w r1,r1
+8c09b9b6  362f   mov.l r3,@-r15
+8c09b9b8  00e2   mov #0x0,r2
+8c09b9ba  2840   shll16 r0
+8c09b9bc  2721   div0s r2,r1
+8c09b9be  2903   movt r3
+8c09b9c0  2a31   subc r2,r1
+8c09b9c2  0721   div0s r0,r1
+8c09b9c4  0431   div1 r0,r1
+8c09b9c6  0431   div1 r0,r1
+8c09b9c8  0431   div1 r0,r1
+8c09b9ca  0431   div1 r0,r1
+8c09b9cc  0431   div1 r0,r1
+8c09b9ce  0431   div1 r0,r1
+8c09b9d0  0431   div1 r0,r1
+8c09b9d2  0431   div1 r0,r1
+8c09b9d4  0431   div1 r0,r1
+8c09b9d6  0431   div1 r0,r1
+8c09b9d8  0431   div1 r0,r1
+8c09b9da  0431   div1 r0,r1
+8c09b9dc  0431   div1 r0,r1
+8c09b9de  0431   div1 r0,r1
+8c09b9e0  0431   div1 r0,r1
+8c09b9e2  0431   div1 r0,r1
+8c09b9e4  2721   div0s r2,r1
+8c09b9e6  2902   movt r2
+8c09b9e8  3a22   xor r3,r2
+8c09b9ea  2542   rotcr r2
+8c09b9ec  028b   bf 0x8c09b9f4
+8c09b9ee  0721   div0s r0,r1
+8c09b9f0  2141   shar r1
+8c09b9f2  0431   div1 r0,r1
+8c09b9f4  2941   shlr16 r1
+8c09b9f6  3c31   add r3,r1
+8c09b9f8  1f60   exts.w r1,r0
+8c09b9fa  f663   mov.l @r15+,r3
+8c09b9fc  0b00   rts
+8c09b9fe  f662   _mov.l @r15+,r2
+8c09ba00  02d1   mov.l 0x8c09ba0c,r1
+8c09ba02  03d2   mov.l 0x8c09ba10,r2
+8c09ba04  2221   mov.l r2,@r1
+8c09ba06  0b00   rts
+8c09ba08  f662   _mov.l @r15+,r2
+8c09ba0a  0900   nop
+8c09ba0c  0c90  ??
+8c09ba0e  1a8c  ??
+8c09ba10  4e04  ??
+8c09ba12  0000  ??
+8c09ba14  362f   mov.l r3,@-r15
+8c09ba16  40e3   mov #0x40,r3
+8c09ba18  0233   cmp/hs r0,r3
+8c09ba1a  4b8b   bf 0x8c09bab4
+8c09ba1c  01d3   mov.l 0x8c09ba24,r3
+8c09ba1e  3e03   mov.l @(r0,r3),r3
+8c09ba20  2b43   jmp @r3
+8c09ba22  0900   _nop
+8c09ba24  70ba  ??
+8c09ba26  098c  ??
+8c09ba28  0900   nop
+8c09ba2a  2f50   mov.l @(0x3c,r2),r0
+8c09ba2c  0f11   mov.l r0,@(0x3c,r1)
+8c09ba2e  2e50   mov.l @(0x38,r2),r0
+8c09ba30  0e11   mov.l r0,@(0x38,r1)
+8c09ba32  2d50   mov.l @(0x34,r2),r0
+8c09ba34  0d11   mov.l r0,@(0x34,r1)
+8c09ba36  2c50   mov.l @(0x30,r2),r0
+8c09ba38  0c11   mov.l r0,@(0x30,r1)
+8c09ba3a  2b50   mov.l @(0x2c,r2),r0
+8c09ba3c  0b11   mov.l r0,@(0x2c,r1)
+8c09ba3e  2a50   mov.l @(0x28,r2),r0
+8c09ba40  0a11   mov.l r0,@(0x28,r1)
+8c09ba42  2950   mov.l @(0x24,r2),r0
+8c09ba44  0911   mov.l r0,@(0x24,r1)
+8c09ba46  2850   mov.l @(0x20,r2),r0
+8c09ba48  0811   mov.l r0,@(0x20,r1)
+8c09ba4a  2750   mov.l @(0x1c,r2),r0
+8c09ba4c  0711   mov.l r0,@(0x1c,r1)
+8c09ba4e  2650   mov.l @(0x18,r2),r0
+8c09ba50  0611   mov.l r0,@(0x18,r1)
+8c09ba52  2550   mov.l @(0x14,r2),r0
+8c09ba54  0511   mov.l r0,@(0x14,r1)
+8c09ba56  2450   mov.l @(0x10,r2),r0
+8c09ba58  0411   mov.l r0,@(0x10,r1)
+8c09ba5a  2350   mov.l @(0xc,r2),r0
+8c09ba5c  0311   mov.l r0,@(0xc,r1)
+8c09ba5e  2250   mov.l @(0x8,r2),r0

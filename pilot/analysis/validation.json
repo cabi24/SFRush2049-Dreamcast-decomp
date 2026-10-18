@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "python_files_syntax_checked": 19,
+  "scripts": [
+    {
+      "path": "lanes\\integer\\build_evidence.py",
+      "sha256": "0b5b9ec1ae87b8d795118883630fe5ffc49863db4316da03d41e4589437f19e3"
+    },
+    {
+      "path": "lanes\\integer\\list_search.py",
+      "sha256": "631c42fc4d4ba4d04df4697df492ab71363600b55b9309283dd2a69f716f2c94"
+    },
+    {
+      "path": "lanes\\integer\\minimal_decode.py",
+      "sha256": "eb80d5ac3186e4bdca1893a5b28b657ab67121bb091db74013aabc08e2203b90"
+    },
+    {
+      "path": "lanes\\integer\\search.py",
+      "sha256": "d4bfd1131d8589e51fb712a0db1b02c28bc728f9aafa26c851c1887160d5a7ff"
+    },
+    {
+      "path": "lanes\\integer\\xref.py",
+      "sha256": "373565bac949e861a1e3a37c7e5456637bf674a4325b86002ffe97eb0557fae9"
+    },
+    {
+      "path": "lanes\\resource_float\\body_trace.py",
+      "sha256": "e48288d7e365c77a9f3f8f5905a63dc1f341b7142fd82166428f2a2afae4942e"
+    },
+    {
+      "path": "lanes\\resource_float\\lane_sh4.py",
+      "sha256": "9571ea32d9faeccc5ed718fb33f34d63711938cbe0915cf5a6fab62184822901"
+    },
+    {
+      "path": "lanes\\resource_float\\write_evidence.py",
+      "sha256": "9c60f7270c4cc856e81c7a65d09568b5737f3855d6c8031bf1e761eca6621f4c"
+    },
+    {
+      "path": "lanes\\toolchain\\collect_inventory.py",
+      "sha256": "09489a12b737f69ade16579f2148000ff0b37a63d75d5d100afd327975ac9c19"
+    },
+    {
+      "path": "tools\\compare.py",
+      "sha256": "9a8809542c3f65025ebddabdf941cbe8e311b48c3362b63cefb20c31e6da2e56"
+    },
+    {
+      "path": "tools\\consolidate.py",
+      "sha256": "c86d41aac9ed28b5c800e4ea688fafd4c0048ca9bfefd00858de4879fbf192b5"
+    },
+    {
+      "path": "tools\\dc_target.py",
+      "sha256": "445925db47498ed3986ae86a69d21a7506810538d37a1a845b35f755779085af"
+    },
+    {
+      "path": "tools\\object_info.py",
+      "sha256": "a4faa429bc8a6f01d58bb2175c121ad3ac667ed7a0350648ac126c51a8dcb663"
+    },
+    {
+      "path": "tools\\prepare_sources.py",
+      "sha256": "4d4e5108f3787b7ade5891744886053b3ab5935cdc2307f3e1e5c48af9b8d894"
+    },
+    {
+      "path": "tools\\probe.py",
+      "sha256": "f5d2d373c1067a1df5fa0dddcd705429b947d0ba414fcc884c3f139382d38019"
+    },
+    {
+      "path": "tools\\sh4.py",
+      "sha256": "d0dd1085d5245ae3285fc102420fc82fe9ecf6e75ace8e192197c44589a51678"
+    },
+    {
+      "path": "tools\\test_compare.py",
+      "sha256": "fbb42398c0841e46f110702dc288ac0996feadfbb43736d040c5754913919e9c"
+    },
+    {
+      "path": "tools\\test_object_info.py",
+      "sha256": "a63197c422b4793b4e28fa87cca20e11c93f1e737385894760b05cfa39097ed7"
+    },
+    {
+      "path": "tools\\validate.py",
+      "sha256": "c9c39ef8ad30125814b5d6cffc7caa2b078ea3b26b68153fed0360d7c3228d61"
+    }
+  ],
+  "commands": [
+    {
+      "name": "synthetic_verifier_controls",
+      "argv": [
+        "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_returncode": 0,
+      "actual_returncode": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": "test_absent_coverage (test_compare.Controls.test_absent_coverage) ... ok\ntest_code_mutation (test_compare.Controls.test_code_mutation) ... ok\ntest_empty_rejected (test_compare.Controls.test_empty_rejected) ... ok\ntest_identical_control (test_compare.Controls.test_identical_control) ... ok\ntest_linked_elf_positive_control (test_compare.Controls.test_linked_elf_positive_control) ... ok\ntest_overlap_rejected (test_compare.Controls.test_overlap_rejected) ... ok\ntest_pool_mutation (test_compare.Controls.test_pool_mutation) ... ok\ntest_relocatable_rejected (test_compare.Controls.test_relocatable_rejected) ... ok\ntest_relocation_target_mutation (test_compare.Controls.test_relocation_target_mutation) ... ok\ntest_wrong_endian_rejected (test_compare.Controls.test_wrong_endian_rejected) ... ok\ntest_wrong_machine_elf_rejected (test_compare.Controls.test_wrong_machine_elf_rejected) ... ok\ntest_short_rejected (test_object_info.ObjectControls.test_short_rejected) ... ok\ntest_truncated_rejected (test_object_info.ObjectControls.test_truncated_rejected) ... ok\ntest_typed_rel_and_rela (test_object_info.ObjectControls.test_typed_rel_and_rela) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "decoder_controls",
+      "argv": [
+        "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "tools/sh4.py",
+        "--selftest"
+      ],
+      "expected_returncode": 0,
+      "actual_returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"passed\": 16,\n  \"checks\": [\n    \"startup MOV.L D004 aligns pc+4 before displacement\",\n    \"startup JMP @R0 has delay slot\",\n    \"negative BRA displacement sign extension\",\n    \"negative BT displacement sign extension\",\n    \"BT non-delayed versus BT/S delayed\",\n    \"FADD source M destination N fields\",\n    \"FMOV memory source uses integer M destination float N\",\n    \"FMOV store source float M destination integer N\",\n    \"FMAC includes fr0, source M, destination N\",\n    \"FTRV vector destination field\",\n    \"FIPR vector fields\",\n    \"SH4 invalid encoding retained\",\n    \"MOV.W sign extension\",\n    \"CFG follows both conditional paths and includes RTS delay slot\",\n    \"literal-backed indirect candidate resolves before slot\",\n    \"unknown delay slot stops conservative CFG path\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "evidence_checks",
+      "argv": [
+        "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "tools/consolidate.py"
+      ],
+      "expected_returncode": 0,
+      "actual_returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"status\": \"validated\",\n  \"target_sha256\": \"336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688\",\n  \"MAT3_references_unchanged\": 31,\n  \"fixed_pilot_slots\": 7,\n  \"accepted_MAT3_semantic_identities\": 5,\n  \"additional_API_counterpart_with_source_drift\": 1,\n  \"unlocated_slots\": 1,\n  \"equivalent_C_accepted\": 0,\n  \"SH_compiler_invocations\": 0,\n  \"configuration_trials_used\": 0,\n  \"configuration_trial_cap\": 16,\n  \"emitted_SH_objects\": 0,\n  \"exact_local_links\": 0,\n  \"accepted_identity_code_union_bytes\": 710,\n  \"additional_API_counterpart_code_bytes\": 118,\n  \"shared_literal_dependency_union_bytes\": 60,\n  \"earned_source_code_bytes\": 0,\n  \"earned_source_data_bytes\": 0,\n  \"full_image_source_coverage_bytes\": 0,\n  \"full_image_denominator_bytes\": 1123492,\n  \"historical_object_identity\": \"unmeasurable: no original DC objects\",\n  \"whole_image_exact_rebuild\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "compiler_dry_run_gate",
+      "argv": [
+        "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "tools/probe.py",
+        "interp",
+        "--dry-run"
+      ],
+      "expected_returncode": 0,
+      "actual_returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"status\": \"configuration ready; dry run only\",\n  \"argv\": [\n    \"C:\\\\rush2049-dreamcast\\\\tools\\\\shc_cc.cmd\",\n    \"C:\\\\rush2049-dreamcast\\\\pilot\\\\src\\\\training\\\\interp.c\",\n    \"C:\\\\rush2049-dreamcast\\\\pilot\\\\build\\\\training\\\\interp\\\\b82c1b3e7519-1\\\\candidate.o\"\n  ],\n  \"compiler_executed\": false\n}\n",
+      "stderr": ""
+    }
+  ],
+  "target_execution": false,
+  "target_compilation": false,
+  "match_credit": 0
+}

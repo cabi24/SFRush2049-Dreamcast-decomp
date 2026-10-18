@@ -1,0 +1,5 @@
+{
+  "head": "ref: refs/heads/main",
+  "commit": "f43bbe4bbc6948ffa9ff09bf64af6d9430e8cb73",
+  "note": "Read directly; native git.exe status was unavailable, no fetch/status refresh was performed."
+}

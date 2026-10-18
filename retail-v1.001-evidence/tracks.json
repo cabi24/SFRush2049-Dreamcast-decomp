@@ -1,0 +1,47 @@
+[
+  {
+    "track": 1,
+    "start_lba": 0,
+    "type": 4,
+    "sector_bytes": 2352,
+    "filename": "track01.bin",
+    "file_offset": 0,
+    "sectors": 607
+  },
+  {
+    "track": 2,
+    "start_lba": 757,
+    "type": 0,
+    "sector_bytes": 2352,
+    "filename": "track02.raw",
+    "file_offset": 0,
+    "sectors": 526
+  },
+  {
+    "track": 3,
+    "start_lba": 45000,
+    "type": 4,
+    "sector_bytes": 2352,
+    "filename": "track03.bin",
+    "file_offset": 0,
+    "sectors": 12834
+  },
+  {
+    "track": 4,
+    "start_lba": 57984,
+    "type": 0,
+    "sector_bytes": 2352,
+    "filename": "track04.raw",
+    "file_offset": 0,
+    "sectors": 451
+  },
+  {
+    "track": 5,
+    "start_lba": 58585,
+    "type": 4,
+    "sector_bytes": 2352,
+    "filename": "track05.bin",
+    "file_offset": 0,
+    "sectors": 490565
+  }
+]

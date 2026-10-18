@@ -1,0 +1,37 @@
+{
+ "name": "BodyVector",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT BodyVector.abs",
+  "FORM A",
+  "START P(8C026B00)",
+  "PRINT BodyVector.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "calib/out/nodefault-speed-allver/shc-v5.1r11/BodyVector.obj",
+   "sha256": "c34b9947ac8ffbe455d883906499aebe09bcc31c4ef86f89c952161d348171f0"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C026B00",
+   "length": 94
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C026B00",
+   "size": 94,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "b809e1fe7e3c46b3aca383e7d6e94c86f094c7bd1108f039c53a5df6e7cf90d6"
+  }
+ ],
+ "all_exact": true
+}

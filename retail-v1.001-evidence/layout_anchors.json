@@ -1,0 +1,53 @@
+{
+  "architecture": "SH-4, little-endian, 32-bit address space",
+  "format": "raw/headerless",
+  "load_base": 2348875776,
+  "file_size": 1123492,
+  "loaded_end_exclusive": 2349999268,
+  "startup_jump_instruction_offset": 28,
+  "startup_jump_literal_offset": 44,
+  "startup_jump_target": 2349671552,
+  "regions": [
+    {
+      "start_offset": 0,
+      "end_offset_exclusive": 48,
+      "interpretation": "SH startup stub and literal pool; jump at 0x1C loads target 0x8C0D2480 from 0x2C",
+      "confidence": "instruction words and target literal directly observed"
+    },
+    {
+      "start_offset": 48,
+      "end_offset_exclusive": 128,
+      "interpretation": "Lib Handle Start/End metadata embedded beside startup",
+      "confidence": "literal metadata; not all bytes here are code"
+    },
+    {
+      "start_offset": 610176,
+      "end_offset_exclusive": 689152,
+      "interpretation": "Diagnostic, resource-filename, and audio-library string clusters; intervals include other data",
+      "confidence": "selected string offsets verified; not a section boundary"
+    },
+    {
+      "start_offset": 738496,
+      "end_offset_exclusive": 739756,
+      "interpretation": "315 asset-filename pointers followed by a zero word",
+      "confidence": "all pointer strings resolved to files in this image"
+    },
+    {
+      "start_offset": 795776,
+      "end_offset_exclusive": null,
+      "interpretation": "Initial startup jump target inside linked runtime code",
+      "confidence": "valid target within the loaded image; function extent not established"
+    },
+    {
+      "start_offset": 1069785,
+      "end_offset_exclusive": 1089536,
+      "interpretation": "SDK/CRI version strings and related data interspersed with linked components",
+      "confidence": "banners verified; not formal sections and not proof of compiler"
+    }
+  ],
+  "limitations": [
+    "No ELF/COFF section table; this is an anchor map, not a validated .text/.rodata/.data/.bss layout.",
+    "BSS extent, stack, heap, main entry and runtime relocation/copy destinations are not established.",
+    "Do not linear-disassemble resource pointers/string tables or infer whole function boundaries from string locations."
+  ]
+}

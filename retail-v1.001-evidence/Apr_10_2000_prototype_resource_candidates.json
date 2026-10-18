@@ -1,0 +1,1138 @@
+[
+  {
+    "earlier_name": "kWaveTextE",
+    "earlier_index": 0,
+    "earlier_filename": "texte.rom",
+    "retail_index": 0,
+    "retail_filename": "texte.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTextS",
+    "earlier_index": 1,
+    "earlier_filename": "texts.rom",
+    "retail_index": 1,
+    "retail_filename": "texts.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTextI",
+    "earlier_index": 2,
+    "earlier_filename": "texti.rom",
+    "retail_index": 2,
+    "retail_filename": "texti.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTextG",
+    "earlier_index": 3,
+    "earlier_filename": "textg.rom",
+    "retail_index": 3,
+    "retail_filename": "textg.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTextD",
+    "earlier_index": 4,
+    "earlier_filename": "textd.rom",
+    "retail_index": 4,
+    "retail_filename": "textd.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTextF",
+    "earlier_index": 5,
+    "earlier_filename": "textf.rom",
+    "retail_index": 5,
+    "retail_filename": "textf.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDebugFontTex",
+    "earlier_index": 6,
+    "earlier_filename": "debugfonttex.rom",
+    "retail_index": 8,
+    "retail_filename": "debugfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitLgFontTex",
+    "earlier_index": 7,
+    "earlier_filename": "digitlgfonttex.rom",
+    "retail_index": 9,
+    "retail_filename": "digitlgfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitMdFontTex",
+    "earlier_index": 8,
+    "earlier_filename": "digitmdfonttex.rom",
+    "retail_index": 10,
+    "retail_filename": "digitmdfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitSmFontTex",
+    "earlier_index": 9,
+    "earlier_filename": "digitsmfonttex.rom",
+    "retail_index": 11,
+    "retail_filename": "digitsmfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitXLFontTex",
+    "earlier_index": 10,
+    "earlier_filename": "digitxlfonttex.rom",
+    "retail_index": 12,
+    "retail_filename": "digitxlfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudLgFontTex",
+    "earlier_index": 11,
+    "earlier_filename": "hudlgfonttex.rom",
+    "retail_index": 13,
+    "retail_filename": "hudlgfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudMdFontTex",
+    "earlier_index": 12,
+    "earlier_filename": "hudmdfonttex.rom",
+    "retail_index": 14,
+    "retail_filename": "hudmdfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudSmFontTex",
+    "earlier_index": 13,
+    "earlier_filename": "hudsmfonttex.rom",
+    "retail_index": 15,
+    "retail_filename": "hudsmfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudXLFontTex",
+    "earlier_index": 14,
+    "earlier_filename": "hudxlfonttex.rom",
+    "retail_index": 16,
+    "retail_filename": "hudxlfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudXXLFontTex",
+    "earlier_index": 15,
+    "earlier_filename": "hudxxlfonttex.rom",
+    "retail_index": 17,
+    "retail_filename": "hudxxlfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuLgFontTex",
+    "earlier_index": 17,
+    "earlier_filename": "menulgfonttex.rom",
+    "retail_index": 18,
+    "retail_filename": "menulgfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuMdFontTex",
+    "earlier_index": 18,
+    "earlier_filename": "menumdfonttex.rom",
+    "retail_index": 19,
+    "retail_filename": "menumdfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuSmFontTex",
+    "earlier_index": 19,
+    "earlier_filename": "menusmfonttex.rom",
+    "retail_index": 20,
+    "retail_filename": "menusmfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuTitleFontTex",
+    "earlier_index": 20,
+    "earlier_filename": "menutitlefonttex.rom",
+    "retail_index": 21,
+    "retail_filename": "menutitlefonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTestFontTex",
+    "earlier_index": 21,
+    "earlier_filename": "testfonttex.rom",
+    "retail_index": 23,
+    "retail_filename": "testfonttex.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDebugFontDat",
+    "earlier_index": 22,
+    "earlier_filename": "debugfontdat.rom",
+    "retail_index": 24,
+    "retail_filename": "debugfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitLgFontDat",
+    "earlier_index": 23,
+    "earlier_filename": "digitlgfontdat.rom",
+    "retail_index": 25,
+    "retail_filename": "digitlgfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitMdFontDat",
+    "earlier_index": 24,
+    "earlier_filename": "digitmdfontdat.rom",
+    "retail_index": 26,
+    "retail_filename": "digitmdfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitSmFontDat",
+    "earlier_index": 25,
+    "earlier_filename": "digitsmfontdat.rom",
+    "retail_index": 27,
+    "retail_filename": "digitsmfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDigitXLFontDat",
+    "earlier_index": 26,
+    "earlier_filename": "digitxlfontdat.rom",
+    "retail_index": 28,
+    "retail_filename": "digitxlfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudLgFontDat",
+    "earlier_index": 27,
+    "earlier_filename": "hudlgfontdat.rom",
+    "retail_index": 29,
+    "retail_filename": "hudlgfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudMdFontDat",
+    "earlier_index": 28,
+    "earlier_filename": "hudmdfontdat.rom",
+    "retail_index": 30,
+    "retail_filename": "hudmdfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudSmFontDat",
+    "earlier_index": 29,
+    "earlier_filename": "hudsmfontdat.rom",
+    "retail_index": 31,
+    "retail_filename": "hudsmfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudXLFontDat",
+    "earlier_index": 30,
+    "earlier_filename": "hudxlfontdat.rom",
+    "retail_index": 32,
+    "retail_filename": "hudxlfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHudXXLFontDat",
+    "earlier_index": 31,
+    "earlier_filename": "hudxxlfontdat.rom",
+    "retail_index": 33,
+    "retail_filename": "hudxxlfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuLgFontDat",
+    "earlier_index": 33,
+    "earlier_filename": "menulgfontdat.rom",
+    "retail_index": 34,
+    "retail_filename": "menulgfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuMdFontDat",
+    "earlier_index": 34,
+    "earlier_filename": "menumdfontdat.rom",
+    "retail_index": 35,
+    "retail_filename": "menumdfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuSmFontDat",
+    "earlier_index": 35,
+    "earlier_filename": "menusmfontdat.rom",
+    "retail_index": 36,
+    "retail_filename": "menusmfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveMenuTitleFontDat",
+    "earlier_index": 36,
+    "earlier_filename": "menutitlefontdat.rom",
+    "retail_index": 37,
+    "retail_filename": "menutitlefontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTestFontDat",
+    "earlier_index": 37,
+    "earlier_filename": "testfontdat.rom",
+    "retail_index": 39,
+    "retail_filename": "testfontdat.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveAttract",
+    "earlier_index": 38,
+    "earlier_filename": "attract.rom",
+    "retail_index": 40,
+    "retail_filename": "attract.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveSelCom",
+    "earlier_index": 39,
+    "earlier_filename": "selcom.rom",
+    "retail_index": 44,
+    "retail_filename": "selcom.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveSelOpt",
+    "earlier_index": 40,
+    "earlier_filename": "selopt.rom",
+    "retail_index": 45,
+    "retail_filename": "selopt.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveSelTrk",
+    "earlier_index": 41,
+    "earlier_filename": "seltrk.rom",
+    "retail_index": 46,
+    "retail_filename": "seltrk.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveSelCar",
+    "earlier_index": 42,
+    "earlier_filename": "selcar.rom",
+    "retail_index": 42,
+    "retail_filename": "selcar.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveInterface",
+    "earlier_index": 43,
+    "earlier_filename": "interface.rom",
+    "retail_index": 41,
+    "retail_filename": "interface.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHud",
+    "earlier_index": 44,
+    "earlier_filename": "hud.rom",
+    "retail_index": 47,
+    "retail_filename": "hud.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveHiscore",
+    "earlier_index": 47,
+    "earlier_filename": "hiscore.rom",
+    "retail_index": 54,
+    "retail_filename": "hiscore.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWeapons",
+    "earlier_index": 54,
+    "earlier_filename": "weapons.rom",
+    "retail_index": 55,
+    "retail_filename": "weapons.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWings",
+    "earlier_index": 55,
+    "earlier_filename": "wings.rom",
+    "retail_index": 56,
+    "retail_filename": "wings.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveVehicles",
+    "earlier_index": 56,
+    "earlier_filename": "vehicles.rom",
+    "retail_index": 57,
+    "retail_filename": "vehicles.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar1",
+    "earlier_index": 57,
+    "earlier_filename": "car1.rom",
+    "retail_index": 64,
+    "retail_filename": "car1.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar2",
+    "earlier_index": 58,
+    "earlier_filename": "car2.rom",
+    "retail_index": 65,
+    "retail_filename": "car2.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar3",
+    "earlier_index": 59,
+    "earlier_filename": "car3.rom",
+    "retail_index": 66,
+    "retail_filename": "car3.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar4",
+    "earlier_index": 60,
+    "earlier_filename": "car4.rom",
+    "retail_index": 67,
+    "retail_filename": "car4.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar5",
+    "earlier_index": 61,
+    "earlier_filename": "car5.rom",
+    "retail_index": 68,
+    "retail_filename": "car5.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar6",
+    "earlier_index": 62,
+    "earlier_filename": "car6.rom",
+    "retail_index": 69,
+    "retail_filename": "car6.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar7",
+    "earlier_index": 63,
+    "earlier_filename": "car7.rom",
+    "retail_index": 70,
+    "retail_filename": "car7.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar8",
+    "earlier_index": 64,
+    "earlier_filename": "car8.rom",
+    "retail_index": 71,
+    "retail_filename": "car8.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar9",
+    "earlier_index": 65,
+    "earlier_filename": "car9.rom",
+    "retail_index": 72,
+    "retail_filename": "car9.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar10",
+    "earlier_index": 66,
+    "earlier_filename": "car10.rom",
+    "retail_index": 73,
+    "retail_filename": "car10.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar11",
+    "earlier_index": 67,
+    "earlier_filename": "car11.rom",
+    "retail_index": 74,
+    "retail_filename": "car11.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar12",
+    "earlier_index": 68,
+    "earlier_filename": "car12.rom",
+    "retail_index": 75,
+    "retail_filename": "car12.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveCar13",
+    "earlier_index": 69,
+    "earlier_filename": "car13.rom",
+    "retail_index": 76,
+    "retail_filename": "car13.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack1",
+    "earlier_index": 70,
+    "earlier_filename": "track1.rom",
+    "retail_index": 233,
+    "retail_filename": "track1.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack2",
+    "earlier_index": 71,
+    "earlier_filename": "track2.rom",
+    "retail_index": 234,
+    "retail_filename": "track2.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack3",
+    "earlier_index": 72,
+    "earlier_filename": "track3.rom",
+    "retail_index": 235,
+    "retail_filename": "track3.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack4",
+    "earlier_index": 73,
+    "earlier_filename": "track4.rom",
+    "retail_index": 236,
+    "retail_filename": "track4.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack5",
+    "earlier_index": 74,
+    "earlier_filename": "track5.rom",
+    "retail_index": 237,
+    "retail_filename": "track5.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveTrack6",
+    "earlier_index": 75,
+    "earlier_filename": "track6.rom",
+    "retail_index": 238,
+    "retail_filename": "track6.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm1",
+    "earlier_index": 76,
+    "earlier_filename": "dm1.rom",
+    "retail_index": 239,
+    "retail_filename": "dm1.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm2",
+    "earlier_index": 77,
+    "earlier_filename": "dm2.rom",
+    "retail_index": 240,
+    "retail_filename": "dm2.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm3",
+    "earlier_index": 78,
+    "earlier_filename": "dm3.rom",
+    "retail_index": 241,
+    "retail_filename": "dm3.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm4",
+    "earlier_index": 79,
+    "earlier_filename": "dm4.rom",
+    "retail_index": 242,
+    "retail_filename": "dm4.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm5",
+    "earlier_index": 80,
+    "earlier_filename": "dm5.rom",
+    "retail_index": 243,
+    "retail_filename": "dm5.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm6",
+    "earlier_index": 81,
+    "earlier_filename": "dm6.rom",
+    "retail_index": 244,
+    "retail_filename": "dm6.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm7",
+    "earlier_index": 82,
+    "earlier_filename": "dm7.rom",
+    "retail_index": 245,
+    "retail_filename": "dm7.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveDm8",
+    "earlier_index": 83,
+    "earlier_filename": "dm8.rom",
+    "retail_index": 246,
+    "retail_filename": "dm8.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveStunt1",
+    "earlier_index": 86,
+    "earlier_filename": "stunt1.rom",
+    "retail_index": 247,
+    "retail_filename": "stunt1.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveStunt2",
+    "earlier_index": 87,
+    "earlier_filename": "stunt2.rom",
+    "retail_index": 248,
+    "retail_filename": "stunt2.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveStunt3",
+    "earlier_index": 88,
+    "earlier_filename": "stunt3.rom",
+    "retail_index": 249,
+    "retail_filename": "stunt3.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveStunt4",
+    "earlier_index": 89,
+    "earlier_filename": "stunt4.rom",
+    "retail_index": 250,
+    "retail_filename": "stunt4.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveObstacle1",
+    "earlier_index": 90,
+    "earlier_filename": "obstacle1.rom",
+    "retail_index": 251,
+    "retail_filename": "obstacle1.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack1",
+    "earlier_index": 91,
+    "earlier_filename": "track1worlds.rom",
+    "retail_index": 252,
+    "retail_filename": "track1worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack2",
+    "earlier_index": 92,
+    "earlier_filename": "track2worlds.rom",
+    "retail_index": 253,
+    "retail_filename": "track2worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack3",
+    "earlier_index": 93,
+    "earlier_filename": "track3worlds.rom",
+    "retail_index": 254,
+    "retail_filename": "track3worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack4",
+    "earlier_index": 94,
+    "earlier_filename": "track4worlds.rom",
+    "retail_index": 255,
+    "retail_filename": "track4worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack5",
+    "earlier_index": 95,
+    "earlier_filename": "track5worlds.rom",
+    "retail_index": 256,
+    "retail_filename": "track5worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldTrack6",
+    "earlier_index": 96,
+    "earlier_filename": "track6worlds.rom",
+    "retail_index": 257,
+    "retail_filename": "track6worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm1",
+    "earlier_index": 97,
+    "earlier_filename": "dm1worlds.rom",
+    "retail_index": 258,
+    "retail_filename": "dm1worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm2",
+    "earlier_index": 98,
+    "earlier_filename": "dm2worlds.rom",
+    "retail_index": 259,
+    "retail_filename": "dm2worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm3",
+    "earlier_index": 99,
+    "earlier_filename": "dm3worlds.rom",
+    "retail_index": 260,
+    "retail_filename": "dm3worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm4",
+    "earlier_index": 100,
+    "earlier_filename": "dm4worlds.rom",
+    "retail_index": 261,
+    "retail_filename": "dm4worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm5",
+    "earlier_index": 101,
+    "earlier_filename": "dm5worlds.rom",
+    "retail_index": 262,
+    "retail_filename": "dm5worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm6",
+    "earlier_index": 102,
+    "earlier_filename": "dm6worlds.rom",
+    "retail_index": 263,
+    "retail_filename": "dm6worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm7",
+    "earlier_index": 103,
+    "earlier_filename": "dm7worlds.rom",
+    "retail_index": 264,
+    "retail_filename": "dm7worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldDm8",
+    "earlier_index": 104,
+    "earlier_filename": "dm8worlds.rom",
+    "retail_index": 265,
+    "retail_filename": "dm8worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldStunt1",
+    "earlier_index": 107,
+    "earlier_filename": "stunt1worlds.rom",
+    "retail_index": 266,
+    "retail_filename": "stunt1worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldStunt2",
+    "earlier_index": 108,
+    "earlier_filename": "stunt2worlds.rom",
+    "retail_index": 267,
+    "retail_filename": "stunt2worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldStunt3",
+    "earlier_index": 109,
+    "earlier_filename": "stunt3worlds.rom",
+    "retail_index": 268,
+    "retail_filename": "stunt3worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldStunt4",
+    "earlier_index": 110,
+    "earlier_filename": "stunt4worlds.rom",
+    "retail_index": 269,
+    "retail_filename": "stunt4worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveWorldObstacle1",
+    "earlier_index": 111,
+    "earlier_filename": "obstacle1worlds.rom",
+    "retail_index": 270,
+    "retail_filename": "obstacle1worlds.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack1",
+    "earlier_index": 112,
+    "earlier_filename": "track1road.rom",
+    "retail_index": 271,
+    "retail_filename": "track1road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack2",
+    "earlier_index": 113,
+    "earlier_filename": "track2road.rom",
+    "retail_index": 272,
+    "retail_filename": "track2road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack3",
+    "earlier_index": 114,
+    "earlier_filename": "track3road.rom",
+    "retail_index": 273,
+    "retail_filename": "track3road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack4",
+    "earlier_index": 115,
+    "earlier_filename": "track4road.rom",
+    "retail_index": 274,
+    "retail_filename": "track4road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack5",
+    "earlier_index": 116,
+    "earlier_filename": "track5road.rom",
+    "retail_index": 275,
+    "retail_filename": "track5road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadTrack6",
+    "earlier_index": 117,
+    "earlier_filename": "track6road.rom",
+    "retail_index": 276,
+    "retail_filename": "track6road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm1",
+    "earlier_index": 118,
+    "earlier_filename": "dm1road.rom",
+    "retail_index": 277,
+    "retail_filename": "dm1road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm2",
+    "earlier_index": 119,
+    "earlier_filename": "dm2road.rom",
+    "retail_index": 278,
+    "retail_filename": "dm2road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm3",
+    "earlier_index": 120,
+    "earlier_filename": "dm3road.rom",
+    "retail_index": 279,
+    "retail_filename": "dm3road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm4",
+    "earlier_index": 121,
+    "earlier_filename": "dm4road.rom",
+    "retail_index": 280,
+    "retail_filename": "dm4road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm5",
+    "earlier_index": 122,
+    "earlier_filename": "dm5road.rom",
+    "retail_index": 281,
+    "retail_filename": "dm5road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm6",
+    "earlier_index": 123,
+    "earlier_filename": "dm6road.rom",
+    "retail_index": 282,
+    "retail_filename": "dm6road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm7",
+    "earlier_index": 124,
+    "earlier_filename": "dm7road.rom",
+    "retail_index": 283,
+    "retail_filename": "dm7road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadDm8",
+    "earlier_index": 125,
+    "earlier_filename": "dm8road.rom",
+    "retail_index": 284,
+    "retail_filename": "dm8road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadStunt1",
+    "earlier_index": 128,
+    "earlier_filename": "stunt1road.rom",
+    "retail_index": 285,
+    "retail_filename": "stunt1road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadStunt2",
+    "earlier_index": 129,
+    "earlier_filename": "stunt2road.rom",
+    "retail_index": 286,
+    "retail_filename": "stunt2road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadStunt3",
+    "earlier_index": 130,
+    "earlier_filename": "stunt3road.rom",
+    "retail_index": 287,
+    "retail_filename": "stunt3road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadStunt4",
+    "earlier_index": 131,
+    "earlier_filename": "stunt4road.rom",
+    "retail_index": 288,
+    "retail_filename": "stunt4road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWaveRoadObstacle1",
+    "earlier_index": 132,
+    "earlier_filename": "obstacle1road.rom",
+    "retail_index": 289,
+    "retail_filename": "obstacle1road.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack1",
+    "earlier_index": 133,
+    "earlier_filename": "track1path.rom",
+    "retail_index": 290,
+    "retail_filename": "track1path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack2",
+    "earlier_index": 134,
+    "earlier_filename": "track2path.rom",
+    "retail_index": 291,
+    "retail_filename": "track2path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack3",
+    "earlier_index": 135,
+    "earlier_filename": "track3path.rom",
+    "retail_index": 292,
+    "retail_filename": "track3path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack4",
+    "earlier_index": 136,
+    "earlier_filename": "track4path.rom",
+    "retail_index": 293,
+    "retail_filename": "track4path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack5",
+    "earlier_index": 137,
+    "earlier_filename": "track5path.rom",
+    "retail_index": 294,
+    "retail_filename": "track5path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathTrack6",
+    "earlier_index": 138,
+    "earlier_filename": "track6path.rom",
+    "retail_index": 295,
+    "retail_filename": "track6path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm1",
+    "earlier_index": 139,
+    "earlier_filename": "dm1path.rom",
+    "retail_index": 296,
+    "retail_filename": "dm1path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm2",
+    "earlier_index": 140,
+    "earlier_filename": "dm2path.rom",
+    "retail_index": 297,
+    "retail_filename": "dm2path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm3",
+    "earlier_index": 141,
+    "earlier_filename": "dm3path.rom",
+    "retail_index": 298,
+    "retail_filename": "dm3path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm4",
+    "earlier_index": 142,
+    "earlier_filename": "dm4path.rom",
+    "retail_index": 299,
+    "retail_filename": "dm4path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm5",
+    "earlier_index": 143,
+    "earlier_filename": "dm5path.rom",
+    "retail_index": 300,
+    "retail_filename": "dm5path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm6",
+    "earlier_index": 144,
+    "earlier_filename": "dm6path.rom",
+    "retail_index": 301,
+    "retail_filename": "dm6path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm7",
+    "earlier_index": 145,
+    "earlier_filename": "dm7path.rom",
+    "retail_index": 302,
+    "retail_filename": "dm7path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathDm8",
+    "earlier_index": 146,
+    "earlier_filename": "dm8path.rom",
+    "retail_index": 303,
+    "retail_filename": "dm8path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathStunt1",
+    "earlier_index": 149,
+    "earlier_filename": "stunt1path.rom",
+    "retail_index": 304,
+    "retail_filename": "stunt1path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathStunt2",
+    "earlier_index": 150,
+    "earlier_filename": "stunt2path.rom",
+    "retail_index": 305,
+    "retail_filename": "stunt2path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathStunt3",
+    "earlier_index": 151,
+    "earlier_filename": "stunt3path.rom",
+    "retail_index": 306,
+    "retail_filename": "stunt3path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathStunt4",
+    "earlier_index": 152,
+    "earlier_filename": "stunt4path.rom",
+    "retail_index": 307,
+    "retail_filename": "stunt4path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathObstacle1",
+    "earlier_index": 153,
+    "earlier_filename": "obstacle1path.rom",
+    "retail_index": 308,
+    "retail_filename": "obstacle1path.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack1",
+    "earlier_index": 154,
+    "earlier_filename": "track1pathback.rom",
+    "retail_index": 309,
+    "retail_filename": "track1pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack2",
+    "earlier_index": 155,
+    "earlier_filename": "track2pathback.rom",
+    "retail_index": 310,
+    "retail_filename": "track2pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack3",
+    "earlier_index": 156,
+    "earlier_filename": "track3pathback.rom",
+    "retail_index": 311,
+    "retail_filename": "track3pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack4",
+    "earlier_index": 157,
+    "earlier_filename": "track4pathback.rom",
+    "retail_index": 312,
+    "retail_filename": "track4pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack5",
+    "earlier_index": 158,
+    "earlier_filename": "track5pathback.rom",
+    "retail_index": 313,
+    "retail_filename": "track5pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  },
+  {
+    "earlier_name": "kWavePathBackTrack6",
+    "earlier_index": 159,
+    "earlier_filename": "track6pathback.rom",
+    "retail_index": 314,
+    "retail_filename": "track6pathback.lzs",
+    "confidence": "candidate label transfer by filename stem; semantics/types not proven"
+  }
+]

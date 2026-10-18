@@ -1,0 +1,2066 @@
+=== 8c010000-8c010220 ===
+8c010000  0900   nop
+8c010002  0900   nop
+8c010004  0900   nop
+8c010006  0900   nop
+8c010008  0900   nop
+8c01000a  0900   nop
+8c01000c  05d0   mov.l 0x8c010024,r0
+8c01000e  0261   mov.l @r0,r1
+8c010010  05d2   mov.l 0x8c010028,r2
+8c010012  2921   and r2,r1
+8c010014  0492   mov.w 0x8c010020,r2
+8c010016  2b21   or r2,r1
+8c010018  1220   mov.l r1,@r0
+8c01001a  04d0   mov.l 0x8c01002c,r0
+8c01001c  2b40   jmp @r0
+8c01001e  0900   _nop
+8c010020  0008  ??
+8c010022  0000  ??
+8c010024  1c00  ??
+8c010026  00ff  ??
+8c010028  af89  ??
+8c01002a  0000  ??
+8c01002c  8024  ??
+8c01002e  0d8c  ??
+8c010030  4c69  ??
+8c010032  6220  ??
+8c010034  4861  ??
+8c010036  6e64  ??
+8c010038  6c65  ??
+8c01003a  2053  ??
+8c01003c  7461  ??
+8c01003e  7274  ??
+8c010040  0000  ??
+8c010042  0000  ??
+8c010044  0100  ??
+8c010046  0000  ??
+8c010048  0000  ??
+8c01004a  0000  ??
+8c01004c  0000  ??
+8c01004e  0000  ??
+8c010050  000a  ??
+8c010052  7eba  ??
+8c010054  a9bd   bsr 0x8c00fbaa
+8c010056  d111   _mov.l r13,@(0x4,r1)
+8c010058  8aeb   mov #-0x76,r11
+8c01005a  0060   mov.b @r0,r0
+8c01005c  0895   mov.w 0x8c010070,r5
+8c01005e  625f   mov.l @(0x8,r6),r15
+8c010060  0000  ??
+8c010062  0000  ??
+8c010064  0000  ??
+8c010066  0000  ??
+8c010068  0000  ??
+8c01006a  0000  ??
+8c01006c  0000  ??
+8c01006e  0000  ??
+8c010070  4c69   extu.b r4,r9
+8c010072  6220   mov.l r6,@r0
+8c010074  4861   swap.b r4,r1
+8c010076  6e64   exts.b r6,r4
+8c010078  6c65   extu.b r6,r5
+8c01007a  2045   shal r5
+8c01007c  6e64   exts.b r6,r4
+8c01007e  2020   mov.b r2,@r0
+8c010080  0200   stc SR,r0
+8c010082  0203   stc SR,r3
+8c010084  0c92   mov.w 0x8c0100a0,r2
+8c010086  0940   shlr2 r0
+8c010088  0940   shlr2 r0
+8c01008a  0fc9   and #0xf,r0
+8c01008c  0365   mov r0,r5
+8c01008e  4360   mov r4,r0
+8c010090  0fc9   and #0xf,r0
+8c010092  0840   shll2 r0
+8c010094  2923   and r2,r3
+8c010096  0840   shll2 r0
+8c010098  3b20   or r3,r0
+8c01009a  0e40   ldc r0,SR
+8c01009c  0b00   rts
+8c01009e  5360   _mov r5,r0
+8c0100a0  0fff  ??
+8c0100a2  0000  ??
+8c0100a4  47d3   mov.l 0x8c0101c4,r3
+8c0100a6  3262   mov.l @r3,r2
+8c0100a8  0172   add #0x1,r2
+8c0100aa  0b00   rts
+8c0100ac  2223   _mov.l r2,@r3
+8c0100ae  224f   sts.l PR,@-r15
+8c0100b0  fc7f   add #-0x4,r15
+8c0100b2  45d3   mov.l 0x8c0101c8,r3
+8c0100b4  0b43   jsr @r3
+8c0100b6  0fe4   _mov #0xf,r4
+8c0100b8  44d2   mov.l 0x8c0101cc,r2
+8c0100ba  022f   mov.l r0,@r15
+8c0100bc  2263   mov.l @r2,r3
+8c0100be  3823   tst r3,r3
+8c0100c0  0b8b   bf 0x8c0100da
+8c0100c2  40d1   mov.l 0x8c0101c4,r1
+8c0100c4  00e3   mov #0x0,r3
+8c0100c6  3221   mov.l r3,@r1
+8c0100c8  3367   mov r3,r7
+8c0100ca  42d3   mov.l 0x8c0101d4,r3
+8c0100cc  7894   mov.w 0x8c0101c0,r4
+8c0100ce  40d5   mov.l 0x8c0101d0,r5
+8c0100d0  0b43   jsr @r3
+8c0100d2  58e6   _mov #0x58,r6
+8c0100d4  3dd3   mov.l 0x8c0101cc,r3
+8c0100d6  01e2   mov #0x1,r2
+8c0100d8  2223   mov.l r2,@r3
+8c0100da  3ad0   mov.l 0x8c0101c4,r0
+8c0100dc  0261   mov.l @r0,r1
+8c0100de  3ed3   mov.l 0x8c0101d8,r3
+8c0100e0  1223   mov.l r1,@r3
+8c0100e2  3ed2   mov.l 0x8c0101dc,r2
+8c0100e4  9df3   fldi1 fr3
+8c0100e6  28f2   fmov.s @r2,fr2
+8c0100e8  3dd3   mov.l 0x8c0101e0,r3
+8c0100ea  32f2   fmul fr3,fr2
+8c0100ec  2af3   fmov.s fr2,@r3
+8c0100ee  3dd2   mov.l 0x8c0101e4,r2
+8c0100f0  2af2   fmov.s fr2,@r2
+8c0100f2  35d1   mov.l 0x8c0101c8,r1
+8c0100f4  f664   mov.l @r15+,r4
+8c0100f6  2b41   jmp @r1
+8c0100f8  264f   _lds.l @r15+,PR
+8c0100fa  3bd2   mov.l 0x8c0101e8,r2
+8c0100fc  01e3   mov #0x1,r3
+8c0100fe  0b00   rts
+8c010100  3222   _mov.l r3,@r2
+8c010102  39d0   mov.l 0x8c0101e8,r0
+8c010104  00e1   mov #0x0,r1
+8c010106  0b00   rts
+8c010108  1220   _mov.l r1,@r0
+8c01010a  33d2   mov.l 0x8c0101d8,r2
+8c01010c  2263   mov.l @r2,r3
+8c01010e  2dd1   mov.l 0x8c0101c4,r1
+8c010110  1262   mov.l @r1,r2
+8c010112  36d0   mov.l 0x8c0101ec,r0
+8c010114  3832   sub r3,r2
+8c010116  2220   mov.l r2,@r0
+8c010118  1263   mov.l @r1,r3
+8c01011a  2fd2   mov.l 0x8c0101d8,r2
+8c01011c  3222   mov.l r3,@r2
+8c01011e  32d0   mov.l 0x8c0101e8,r0
+8c010120  2ed5   mov.l 0x8c0101dc,r5
+8c010122  0263   mov.l @r0,r3
+8c010124  32d4   mov.l 0x8c0101f0,r4
+8c010126  3823   tst r3,r3
+8c010128  0b89   bt 0x8c010142
+8c01012a  30d2   mov.l 0x8c0101ec,r2
+8c01012c  2fd1   mov.l 0x8c0101ec,r1
+8c01012e  2263   mov.l @r2,r3
+8c010130  4262   mov.l @r4,r2
+8c010132  3c32   add r3,r2
+8c010134  2224   mov.l r2,@r4
+8c010136  2fd4   mov.l 0x8c0101f4,r4
+8c010138  1263   mov.l @r1,r3
+8c01013a  4262   mov.l @r4,r2
+8c01013c  3c32   add r3,r2
+8c01013e  0aa0   bra 0x8c010156
+8c010140  2224   _mov.l r2,@r4
+8c010142  20d0   mov.l 0x8c0101c4,r0
+8c010144  4263   mov.l @r4,r3
+8c010146  0262   mov.l @r0,r2
+8c010148  3832   sub r3,r2
+8c01014a  58f2   fmov.s @r5,fr2
+8c01014c  5a42   lds r2,FPUL
+8c01014e  25d3   mov.l 0x8c0101e4,r3
+8c010150  2df3   float FPUL,fr3
+8c010152  22f3   fmul fr2,fr3
+8c010154  3af3   fmov.s fr3,@r3
+8c010156  25d3   mov.l 0x8c0101ec,r3
+8c010158  05e4   mov #0x5,r4
+8c01015a  3262   mov.l @r3,r2
+8c01015c  4732   cmp/gt r4,r2
+8c01015e  018b   bf 0x8c010164
+8c010160  22d0   mov.l 0x8c0101ec,r0
+8c010162  4220   mov.l r4,@r0
+8c010164  21d2   mov.l 0x8c0101ec,r2
+8c010166  2263   mov.l @r2,r3
+8c010168  5a43   lds r3,FPUL
+8c01016a  58f2   fmov.s @r5,fr2
+8c01016c  1cd3   mov.l 0x8c0101e0,r3
+8c01016e  2df3   float FPUL,fr3
+8c010170  22f3   fmul fr2,fr3
+8c010172  0b00   rts
+8c010174  3af3   _fmov.s fr3,@r3
+8c010176  13d1   mov.l 0x8c0101c4,r1
+8c010178  1262   mov.l @r1,r2
+8c01017a  1fd3   mov.l 0x8c0101f8,r3
+8c01017c  1cd0   mov.l 0x8c0101f0,r0
+8c01017e  2220   mov.l r2,@r0
+8c010180  1360   mov r1,r0
+8c010182  38f3   fmov.s @r3,fr3
+8c010184  42f3   fmul fr4,fr3
+8c010186  3df3   ftrc fr3,FPUL
+8c010188  5a02   sts FPUL,r2
+8c01018a  0261   mov.l @r0,r1
+8c01018c  1c32   add r1,r2
+8c01018e  19d1   mov.l 0x8c0101f4,r1
+8c010190  0b00   rts
+8c010192  2221   _mov.l r2,@r1
+8c010194  18d3   mov.l 0x8c0101f8,r3
+8c010196  17d4   mov.l 0x8c0101f4,r4
+8c010198  38f3   fmov.s @r3,fr3
+8c01019a  4261   mov.l @r4,r1
+8c01019c  42f3   fmul fr4,fr3
+8c01019e  3df3   ftrc fr3,FPUL
+8c0101a0  5a02   sts FPUL,r2
+8c0101a2  2c31   add r2,r1
+8c0101a4  0b00   rts
+8c0101a6  1224   _mov.l r1,@r4
+8c0101a8  06d0   mov.l 0x8c0101c4,r0
+8c0101aa  0263   mov.l @r0,r3
+8c0101ac  11d1   mov.l 0x8c0101f4,r1
+8c0101ae  1262   mov.l @r1,r2
+8c0101b0  3832   sub r3,r2
+8c0101b2  0ad3   mov.l 0x8c0101dc,r3
+8c0101b4  5a42   lds r2,FPUL
+8c0101b6  38f2   fmov.s @r3,fr2
+8c0101b8  2df3   float FPUL,fr3
+8c0101ba  3cf0   fmov fr3,fr0
+8c0101bc  0b00   rts
+8c0101be  22f0   _fmul fr2,fr0
+8c0101c0  0009  ??
+8c0101c2  0000  ??
+8c0101c4  3c25  ??
+8c0101c6  128c  ??
+8c0101c8  8000  ??
+8c0101ca  018c  ??
+8c0101cc  308c  ??
+8c0101ce  0b8c  ??
+8c0101d0  a400  ??
+8c0101d2  018c  ??
+8c0101d4  8494  ??
+8c0101d6  0d8c  ??
+8c0101d8  5c25  ??
+8c0101da  128c  ??
+8c0101dc  2c8c  ??
+8c0101de  0b8c  ??
+8c0101e0  4c25  ??
+8c0101e2  128c  ??
+8c0101e4  4825  ??
+8c0101e6  128c  ??
+8c0101e8  248c  ??
+8c0101ea  0b8c  ??
+8c0101ec  5025  ??
+8c0101ee  128c  ??
+8c0101f0  5825  ??
+8c0101f2  128c  ??
+8c0101f4  5425  ??
+8c0101f6  128c  ??
+8c0101f8  288c  ??
+8c0101fa  0b8c  ??
+8c0101fc  04d2   mov.l 0x8c010210,r2
+8c0101fe  2263   mov.l @r2,r3
+8c010200  04d1   mov.l 0x8c010214,r1
+8c010202  1260   mov.l @r1,r0
+8c010204  3830   sub r3,r0
+8c010206  1540   cmp/pl r0
+8c010208  2900   movt r0
+8c01020a  0b00   rts
+8c01020c  01ca   _xor #0x1,r0
+8c01020e  0000  ??
+8c010210  3c25  ??
+8c010212  128c  ??
+8c010214  5425  ??
+8c010216  128c  ??
+8c010218  0b00   rts
+8c01021a  0900   _nop
+8c01021c  00e6   mov #0x0,r6
+8c01021e  6224   mov.l r6,@r4
+=== 8c022c00-8c023a00 ===
+8c022c00  078f   bf/s 0x8c022c12
+8c022c02  936d   _mov r9,r13
+8c022c04  0b4c   jsr @r12
+8c022c06  d364   _mov r13,r4
+8c022c08  e063   mov.b @r14,r3
+8c022c0a  017d   add #0x1,r13
+8c022c0c  df62   exts.w r13,r2
+8c022c0e  3332   cmp/ge r3,r2
+8c022c10  f88b   bf 0x8c022c04
+8c022c12  21d5   mov.l 0x8c022c98,r5
+8c022c14  04e6   mov #0x4,r6
+8c022c16  9364   mov r9,r4
+8c022c18  4f63   exts.w r4,r3
+8c022c1a  3362   mov r3,r2
+8c022c1c  0843   shll2 r3
+8c022c1e  2c33   add r2,r3
+8c022c20  0843   shll2 r3
+8c022c22  0843   shll2 r3
+8c022c24  5c33   add r5,r3
+8c022c26  4023   mov.b r4,@r3
+8c022c28  0174   add #0x1,r4
+8c022c2a  4f63   exts.w r4,r3
+8c022c2c  3362   mov r3,r2
+8c022c2e  0843   shll2 r3
+8c022c30  2c33   add r2,r3
+8c022c32  0843   shll2 r3
+8c022c34  0843   shll2 r3
+8c022c36  5c33   add r5,r3
+8c022c38  4023   mov.b r4,@r3
+8c022c3a  0174   add #0x1,r4
+8c022c3c  4f63   exts.w r4,r3
+8c022c3e  6333   cmp/ge r6,r3
+8c022c40  ea8b   bf 0x8c022c18
+8c022c42  264f   lds.l @r15+,PR
+8c022c44  f669   mov.l @r15+,r9
+8c022c46  f66a   mov.l @r15+,r10
+8c022c48  f66b   mov.l @r15+,r11
+8c022c4a  f66c   mov.l @r15+,r12
+8c022c4c  f66d   mov.l @r15+,r13
+8c022c4e  0b00   rts
+8c022c50  f66e   _mov.l @r15+,r14
+8c022c52  13d4   mov.l 0x8c022ca0,r4
+8c022c54  00e5   mov #0x0,r5
+8c022c56  11d6   mov.l 0x8c022c9c,r6
+8c022c58  5226   mov.l r5,@r6
+8c022c5a  4163   mov.w @r4,r3
+8c022c5c  0173   add #0x1,r3
+8c022c5e  3124   mov.w r3,@r4
+8c022c60  05e3   mov #0x5,r3
+8c022c62  4162   mov.w @r4,r2
+8c022c64  3732   cmp/gt r3,r2
+8c022c66  028b   bf 0x8c022c6e
+8c022c68  01e1   mov #0x1,r1
+8c022c6a  1226   mov.l r1,@r6
+8c022c6c  5124   mov.w r5,@r4
+8c022c6e  0b00   rts
+8c022c70  0900   _nop
+8c022c72  0808  ??
+8c022c74  c607  ??
+8c022c76  0000  ??
+8c022c78  b4cb  ??
+8c022c7a  148c  ??
+8c022c7c  d8fa  ??
+8c022c7e  038c  ??
+8c022c80  86cb  ??
+8c022c82  148c  ??
+8c022c84  5eee  ??
+8c022c86  038c  ??
+8c022c88  9a18  ??
+8c022c8a  018c  ??
+8c022c8c  8c4a  ??
+8c022c8e  038c  ??
+8c022c90  72fe  ??
+8c022c92  058c  ??
+8c022c94  a8fa  ??
+8c022c96  058c  ??
+8c022c98  0060  ??
+8c022c9a  008c  ??
+8c022c9c  8042  ??
+8c022c9e  138c  ??
+8c022ca0  fed8  ??
+8c022ca2  0b8c  ??
+8c022ca4  e62f   mov.l r14,@-r15
+8c022ca6  436e   mov r4,r14
+8c022ca8  fbff   fmov.s fr15,@-r15
+8c022caa  224f   sts.l PR,@-r15
+8c022cac  ea84   mov.b @(0xa,r14),r0
+8c022cae  0820   tst r0,r0
+8c022cb0  0189   bt 0x8c022cb6
+8c022cb2  23b1   bsr 0x8c022efc
+8c022cb4  e364   _mov r14,r4
+8c022cb6  96b2   bsr 0x8c0231e6
+8c022cb8  e364   _mov r14,r4
+8c022cba  6cb1   bsr 0x8c022f96
+8c022cbc  e364   _mov r14,r4
+8c022cbe  46c7   mova 0x8c022dd8,r0
+8c022cc0  7c94   mov.w 0x8c022dbc,r4
+8c022cc2  08ff   fmov.s @r0,fr15
+8c022cc4  7b90   mov.w 0x8c022dbe,r0
+8c022cc6  ec34   add r14,r4
+8c022cc8  46f3   fmov.s @(r0,r4),fr3
+8c022cca  a470   add #-0x5c,r0
+8c022ccc  46f2   fmov.s @(r0,r4),fr2
+8c022cce  7790   mov.w 0x8c022dc0,r0
+8c022cd0  30f2   fadd fr3,fr2
+8c022cd2  f2f2   fmul fr15,fr2
+8c022cd4  27fe   fmov fr2,@(r0,r14)
+8c022cd6  5db0   bsr 0x8c022d94
+8c022cd8  e364   _mov r14,r4
+8c022cda  e364   mov r14,r4
+8c022cdc  28e0   mov #0x28,r0
+8c022cde  6474   add #0x64,r4
+8c022ce0  46f3   fmov.s @(r0,r4),fr3
+8c022ce2  1ce0   mov #0x1c,r0
+8c022ce4  46f4   fmov.s @(r0,r4),fr4
+8c022ce6  6c90   mov.w 0x8c022dc2,r0
+8c022ce8  ec03   mov.b @(r0,r14),r3
+8c022cea  3823   tst r3,r3
+8c022cec  048d   bt/s 0x8c022cf8
+8c022cee  30f4   _fadd fr3,fr4
+8c022cf0  3ac7   mova 0x8c022ddc,r0
+8c022cf2  08f3   fmov.s @r0,fr3
+8c022cf4  45f3   fcmp/gt fr4,fr3
+8c022cf6  0d8b   bf 0x8c022d14
+8c022cf8  6490   mov.w 0x8c022dc4,r0
+8c022cfa  fcf0   fmov fr15,fr0
+8c022cfc  e6f3   fmov.s @(r0,r14),fr3
+8c022cfe  ac70   add #-0x54,r0
+8c022d00  e6f2   fmov.s @(r0,r14),fr2
+8c022d02  3ef2   fmac fr0,fr3,fr2
+8c022d04  27fe   fmov fr2,@(r0,r14)
+8c022d06  5470   add #0x54,r0
+8c022d08  e6f3   fmov.s @(r0,r14),fr3
+8c022d0a  b070   add #-0x50,r0
+8c022d0c  e6f2   fmov.s @(r0,r14),fr2
+8c022d0e  3ef2   fmac fr0,fr3,fr2
+8c022d10  30a0   bra 0x8c022d74
+8c022d12  27fe   _fmov fr2,@(r0,r14)
+8c022d14  5790   mov.w 0x8c022dc6,r0
+8c022d16  8df3   fldi0 fr3
+8c022d18  e6f2   fmov.s @(r0,r14),fr2
+8c022d1a  35f2   fcmp/gt fr3,fr2
+8c022d1c  098d   bt/s 0x8c022d32
+8c022d1e  8df5   _fldi0 fr5
+8c022d20  5290   mov.w 0x8c022dc8,r0
+8c022d22  57fe   fmov fr5,@(r0,r14)
+8c022d24  5470   add #0x54,r0
+8c022d26  e6f2   fmov.s @(r0,r14),fr2
+8c022d28  b070   add #-0x50,r0
+8c022d2a  e6f1   fmov.s @(r0,r14),fr1
+8c022d2c  20f1   fadd fr2,fr1
+8c022d2e  21a0   bra 0x8c022d74
+8c022d30  17fe   _fmov fr1,@(r0,r14)
+8c022d32  4a90   mov.w 0x8c022dca,r0
+8c022d34  e6f2   fmov.s @(r0,r14),fr2
+8c022d36  35f2   fcmp/gt fr3,fr2
+8c022d38  0889   bt 0x8c022d4c
+8c022d3a  4390   mov.w 0x8c022dc4,r0
+8c022d3c  e6f3   fmov.s @(r0,r14),fr3
+8c022d3e  ac70   add #-0x54,r0
+8c022d40  e6f2   fmov.s @(r0,r14),fr2
+8c022d42  30f2   fadd fr3,fr2
+8c022d44  27fe   fmov fr2,@(r0,r14)
+8c022d46  0470   add #0x4,r0
+8c022d48  14a0   bra 0x8c022d74
+8c022d4a  57fe   _fmov fr5,@(r0,r14)
+8c022d4c  3b90   mov.w 0x8c022dc6,r0
+8c022d4e  e6f3   fmov.s @(r0,r14),fr3
+8c022d50  3890   mov.w 0x8c022dc4,r0
+8c022d52  e6f2   fmov.s @(r0,r14),fr2
+8c022d54  ac70   add #-0x54,r0
+8c022d56  32f2   fmul fr3,fr2
+8c022d58  e6f3   fmov.s @(r0,r14),fr3
+8c022d5a  43f2   fdiv fr4,fr2
+8c022d5c  20f3   fadd fr2,fr3
+8c022d5e  37fe   fmov fr3,@(r0,r14)
+8c022d60  3390   mov.w 0x8c022dca,r0
+8c022d62  e6f3   fmov.s @(r0,r14),fr3
+8c022d64  2e90   mov.w 0x8c022dc4,r0
+8c022d66  e6f2   fmov.s @(r0,r14),fr2
+8c022d68  b070   add #-0x50,r0
+8c022d6a  32f2   fmul fr3,fr2
+8c022d6c  e6f3   fmov.s @(r0,r14),fr3
+8c022d6e  43f2   fdiv fr4,fr2
+8c022d70  20f3   fadd fr2,fr3
+8c022d72  37fe   fmov fr3,@(r0,r14)
+8c022d74  9df4   fldi1 fr4
+8c022d76  40f4   fadd fr4,fr4
+8c022d78  2890   mov.w 0x8c022dcc,r0
+8c022d7a  e6f3   fmov.s @(r0,r14),fr3
+8c022d7c  2790   mov.w 0x8c022dce,r0
+8c022d7e  42f3   fmul fr4,fr3
+8c022d80  37fe   fmov fr3,@(r0,r14)
+8c022d82  2390   mov.w 0x8c022dcc,r0
+8c022d84  e6f3   fmov.s @(r0,r14),fr3
+8c022d86  2390   mov.w 0x8c022dd0,r0
+8c022d88  42f3   fmul fr4,fr3
+8c022d8a  37fe   fmov fr3,@(r0,r14)
+8c022d8c  264f   lds.l @r15+,PR
+8c022d8e  f9ff   fmov.s @r15+,fr15
+8c022d90  0b00   rts
+8c022d92  f66e   _mov.l @r15+,r14
+8c022d94  1d90   mov.w 0x8c022dd2,r0
+8c022d96  46f4   fmov.s @(r0,r4),fr4
+8c022d98  11c7   mova 0x8c022de0,r0
+8c022d9a  4cf5   fmov fr4,fr5
+8c022d9c  42f5   fmul fr4,fr5
+8c022d9e  08f4   fmov.s @r0,fr4
+8c022da0  1890   mov.w 0x8c022dd4,r0
+8c022da2  46f3   fmov.s @(r0,r4),fr3
+8c022da4  35f4   fcmp/gt fr3,fr4
+8c022da6  008b   bf 0x8c022daa
+8c022da8  47f4   fmov fr4,@(r0,r4)
+8c022daa  0ec7   mova 0x8c022de4,r0
+8c022dac  08f7   fmov.s @r0,fr7
+8c022dae  1290   mov.w 0x8c022dd6,r0
+8c022db0  46f3   fmov.s @(r0,r4),fr3
+8c022db2  75f3   fcmp/gt fr7,fr3
+8c022db4  188f   bf/s 0x8c022de8
+8c022db6  8df6   _fldi0 fr6
+8c022db8  20a0   bra 0x8c022dfc
+8c022dba  6cf4   _fmov fr6,fr4
+8c022dbc  3004  ??
+8c022dbe  5c01  ??
+8c022dc0  1c04  ??
+8c022dc2  a805  ??
+8c022dc4  1004  ??
+8c022dc6  8000  ??
+8c022dc8  bc03  ??
+8c022dca  8c00  ??
+8c022dcc  1804  ??
+8c022dce  fc04  ??
+8c022dd0  5805  ??
+8c022dd2  2c04  ??
+8c022dd4  0804  ??
+8c022dd6  cc03  ??
+8c022dd8  0000  ??
+8c022dda  003f  ??
+8c022ddc  0000  ??
+8c022dde  fa43  ??
+8c022de0  7870  ??
+8c022de2  d142  ??
+8c022de4  cdcc  ??
+8c022de6  4c3f  ??
+8c022de8  4df3   fneg fr3
+8c022dea  70f3   fadd fr7,fr3
+8c022dec  7990   mov.w 0x8c022ee2,r0
+8c022dee  4263   mov.l @r4,r3
+8c022df0  36f2   fmov.s @(r0,r3),fr2
+8c022df2  41c7   mova 0x8c022ef8,r0
+8c022df4  22f3   fmul fr2,fr3
+8c022df6  08f2   fmov.s @r0,fr2
+8c022df8  3cf4   fmov fr3,fr4
+8c022dfa  22f4   fmul fr2,fr4
+8c022dfc  7290   mov.w 0x8c022ee4,r0
+8c022dfe  4d03   mov.w @(r0,r4),r3
+8c022e00  3823   tst r3,r3
+8c022e02  0289   bt 0x8c022e0a
+8c022e04  8df3   fldi0 fr3
+8c022e06  34f4   fcmp/eq fr3,fr4
+8c022e08  1b8b   bf 0x8c022e42
+8c022e0a  6c90   mov.w 0x8c022ee6,r0
+8c022e0c  6c91   mov.w 0x8c022ee8,r1
+8c022e0e  67f4   fmov fr6,@(r0,r4)
+8c022e10  f070   add #-0x10,r0
+8c022e12  67f4   fmov fr6,@(r0,r4)
+8c022e14  f870   add #-0x8,r0
+8c022e16  46f3   fmov.s @(r0,r4),fr3
+8c022e18  1c70   add #0x1c,r0
+8c022e1a  6792   mov.w 0x8c022eec,r2
+8c022e1c  37f4   fmov fr3,@(r0,r4)
+8c022e1e  e470   add #-0x1c,r0
+8c022e20  4263   mov.l @r4,r3
+8c022e22  4c32   add r4,r2
+8c022e24  46f2   fmov.s @(r0,r4),fr2
+8c022e26  3c31   add r3,r1
+8c022e28  18f0   fmov.s @r1,fr0
+8c022e2a  5e91   mov.w 0x8c022eea,r1
+8c022e2c  4c31   add r4,r1
+8c022e2e  18f3   fmov.s @r1,fr3
+8c022e30  02f3   fmul fr0,fr3
+8c022e32  28f0   fmov.s @r2,fr0
+8c022e34  3ef2   fmac fr0,fr3,fr2
+8c022e36  27f4   fmov fr2,@(r0,r4)
+8c022e38  0c70   add #0xc,r0
+8c022e3a  46f3   fmov.s @(r0,r4),fr3
+8c022e3c  0470   add #0x4,r0
+8c022e3e  0b00   rts
+8c022e40  37f4   _fmov fr3,@(r0,r4)
+8c022e42  4153   mov.l @(0x4,r4),r3
+8c022e44  10e0   mov #0x10,r0
+8c022e46  36f3   fmov.s @(r0,r3),fr3
+8c022e48  5190   mov.w 0x8c022eee,r0
+8c022e4a  32f4   fmul fr3,fr4
+8c022e4c  46f3   fmov.s @(r0,r4),fr3
+8c022e4e  f070   add #-0x10,r0
+8c022e50  46f2   fmov.s @(r0,r4),fr2
+8c022e52  0870   add #0x8,r0
+8c022e54  32f2   fmul fr3,fr2
+8c022e56  27f4   fmov fr2,@(r0,r4)
+8c022e58  46f3   fmov.s @(r0,r4),fr3
+8c022e5a  e470   add #-0x1c,r0
+8c022e5c  46f2   fmov.s @(r0,r4),fr2
+8c022e5e  35f2   fcmp/gt fr3,fr2
+8c022e60  028f   bf/s 0x8c022e68
+8c022e62  2905   _movt r5
+8c022e64  02a0   bra 0x8c022e6c
+8c022e66  4cf3   _fmov fr4,fr3
+8c022e68  4cf3   fmov fr4,fr3
+8c022e6a  4df3   fneg fr3
+8c022e6c  3b90   mov.w 0x8c022ee6,r0
+8c022e6e  37f4   fmov fr3,@(r0,r4)
+8c022e70  46f3   fmov.s @(r0,r4),fr3
+8c022e72  e470   add #-0x1c,r0
+8c022e74  46f2   fmov.s @(r0,r4),fr2
+8c022e76  3790   mov.w 0x8c022ee8,r0
+8c022e78  4263   mov.l @r4,r3
+8c022e7a  31f2   fsub fr3,fr2
+8c022e7c  36f3   fmov.s @(r0,r3),fr3
+8c022e7e  3590   mov.w 0x8c022eec,r0
+8c022e80  32f2   fmul fr3,fr2
+8c022e82  46f3   fmov.s @(r0,r4),fr3
+8c022e84  3490   mov.w 0x8c022ef0,r0
+8c022e86  2cf4   fmov fr2,fr4
+8c022e88  32f4   fmul fr3,fr4
+8c022e8a  46f3   fmov.s @(r0,r4),fr3
+8c022e8c  1c70   add #0x1c,r0
+8c022e8e  46f2   fmov.s @(r0,r4),fr2
+8c022e90  40f3   fadd fr4,fr3
+8c022e92  25f3   fcmp/gt fr2,fr3
+8c022e94  2900   movt r0
+8c022e96  0a25   xor r0,r5
+8c022e98  5825   tst r5,r5
+8c022e9a  0789   bt 0x8c022eac
+8c022e9c  2990   mov.w 0x8c022ef2,r0
+8c022e9e  46f3   fmov.s @(r0,r4),fr3
+8c022ea0  e470   add #-0x1c,r0
+8c022ea2  37f4   fmov fr3,@(r0,r4)
+8c022ea4  fc70   add #-0x4,r0
+8c022ea6  46f3   fmov.s @(r0,r4),fr3
+8c022ea8  03a0   bra 0x8c022eb2
+8c022eaa  1c70   _add #0x1c,r0
+8c022eac  2090   mov.w 0x8c022ef0,r0
+8c022eae  46f3   fmov.s @(r0,r4),fr3
+8c022eb0  40f3   fadd fr4,fr3
+8c022eb2  37f4   fmov fr3,@(r0,r4)
+8c022eb4  1e90   mov.w 0x8c022ef4,r0
+8c022eb6  9df4   fldi1 fr4
+8c022eb8  46f3   fmov.s @(r0,r4),fr3
+8c022eba  4263   mov.l @r4,r3
+8c022ebc  1490   mov.w 0x8c022ee8,r0
+8c022ebe  4cf2   fmov fr4,fr2
+8c022ec0  33f2   fdiv fr3,fr2
+8c022ec2  36f3   fmov.s @(r0,r3),fr3
+8c022ec4  1790   mov.w 0x8c022ef6,r0
+8c022ec6  33f5   fdiv fr3,fr5
+8c022ec8  4cf3   fmov fr4,fr3
+8c022eca  50f2   fadd fr5,fr2
+8c022ecc  23f3   fdiv fr2,fr3
+8c022ece  37f4   fmov fr3,@(r0,r4)
+8c022ed0  1470   add #0x14,r0
+8c022ed2  46f3   fmov.s @(r0,r4),fr3
+8c022ed4  f470   add #-0xc,r0
+8c022ed6  46f2   fmov.s @(r0,r4),fr2
+8c022ed8  f070   add #-0x10,r0
+8c022eda  32f2   fmul fr3,fr2
+8c022edc  27f4   fmov fr2,@(r0,r4)
+8c022ede  0b00   rts
+8c022ee0  0900   _nop
+8c022ee2  a800  ??
+8c022ee4  f403  ??
+8c022ee6  2004  ??
+8c022ee8  a000  ??
+8c022eea  0404  ??
+8c022eec  3406  ??
+8c022eee  2c04  ??
+8c022ef0  0804  ??
+8c022ef2  2404  ??
+8c022ef4  1404  ??
+8c022ef6  1804  ??
+8c022ef8  0000  ??
+8c022efa  a03f  ??
+8c022efc  e62f   mov.l r14,@-r15
+8c022efe  fbff   fmov.s fr15,@-r15
+8c022f00  ebff   fmov.s fr14,@-r15
+8c022f02  224f   sts.l PR,@-r15
+8c022f04  fc7f   add #-0x4,r15
+8c022f06  36c7   mova 0x8c022fe0,r0
+8c022f08  436e   mov r4,r14
+8c022f0a  08f3   fmov.s @r0,fr3
+8c022f0c  6190   mov.w 0x8c022fd2,r0
+8c022f0e  e153   mov.l @(0x4,r14),r3
+8c022f10  e6f2   fmov.s @(r0,r14),fr2
+8c022f12  34c7   mova 0x8c022fe4,r0
+8c022f14  08f1   fmov.s @r0,fr1
+8c022f16  14e0   mov #0x14,r0
+8c022f18  30f2   fadd fr3,fr2
+8c022f1a  322f   mov.l r3,@r15
+8c022f1c  36f5   fmov.s @(r0,r3),fr5
+8c022f1e  e264   mov.l @r14,r4
+8c022f20  5890   mov.w 0x8c022fd4,r0
+8c022f22  2cf4   fmov fr2,fr4
+8c022f24  12f4   fmul fr1,fr4
+8c022f26  46f2   fmov.s @(r0,r4),fr2
+8c022f28  0470   add #0x4,r0
+8c022f2a  5cf0   fmov fr5,fr0
+8c022f2c  22f0   fmul fr2,fr0
+8c022f2e  46f2   fmov.s @(r0,r4),fr2
+8c022f30  5190   mov.w 0x8c022fd6,r0
+8c022f32  22f5   fmul fr2,fr5
+8c022f34  ed04   mov.w @(r0,r14),r4
+8c022f36  0cff   fmov fr0,fr15
+8c022f38  42ff   fmul fr4,fr15
+8c022f3a  4824   tst r4,r4
+8c022f3c  5cfe   fmov fr5,fr14
+8c022f3e  038d   bt/s 0x8c022f48
+8c022f40  42fe   _fmul fr4,fr14
+8c022f42  4360   mov r4,r0
+8c022f44  ff88   cmp/eq #-0x1,r0
+8c022f46  048b   bf 0x8c022f52
+8c022f48  4590   mov.w 0x8c022fd6,r0
+8c022f4a  ed03   mov.w @(r0,r14),r3
+8c022f4c  fe70   add #-0x2,r0
+8c022f4e  1ca0   bra 0x8c022f8a
+8c022f50  350e   _mov.w r3,@(r0,r14)
+8c022f52  4190   mov.w 0x8c022fd8,r0
+8c022f54  ed04   mov.w @(r0,r14),r4
+8c022f56  4824   tst r4,r4
+8c022f58  0289   bt 0x8c022f60
+8c022f5a  4360   mov r4,r0
+8c022f5c  ff88   cmp/eq #-0x1,r0
+8c022f5e  038b   bf 0x8c022f68
+8c022f60  fcf4   fmov fr15,fr4
+8c022f62  ecf5   fmov fr14,fr5
+8c022f64  42b0   bsr 0x8c022fec
+8c022f66  e364   _mov r14,r4
+8c022f68  3790   mov.w 0x8c022fda,r0
+8c022f6a  e6f3   fmov.s @(r0,r14),fr3
+8c022f6c  f5f3   fcmp/gt fr15,fr3
+8c022f6e  018b   bf 0x8c022f74
+8c022f70  6ab0   bsr 0x8c023048
+8c022f72  e364   _mov r14,r4
+8c022f74  3190   mov.w 0x8c022fda,r0
+8c022f76  e6f3   fmov.s @(r0,r14),fr3
+8c022f78  35fe   fcmp/gt fr3,fr14
+8c022f7a  068b   bf 0x8c022f8a
+8c022f7c  e364   mov r14,r4
+8c022f7e  047f   add #0x4,r15
+8c022f80  264f   lds.l @r15+,PR
+8c022f82  f9fe   fmov.s @r15+,fr14
+8c022f84  f9ff   fmov.s @r15+,fr15
+8c022f86  75a0   bra 0x8c023074
+8c022f88  f66e   _mov.l @r15+,r14
+8c022f8a  047f   add #0x4,r15
+8c022f8c  264f   lds.l @r15+,PR
+8c022f8e  f9fe   fmov.s @r15+,fr14
+8c022f90  f9ff   fmov.s @r15+,fr15
+8c022f92  0b00   rts
+8c022f94  f66e   _mov.l @r15+,r14
+8c022f96  4984   mov.b @(0x9,r4),r0
+8c022f98  1e91   mov.w 0x8c022fd8,r1
+8c022f9a  0362   mov r0,r2
+8c022f9c  0040   shll r0
+8c022f9e  4c31   add r4,r1
+8c022fa0  4153   mov.l @(0x4,r4),r3
+8c022fa2  2c30   add r2,r0
+8c022fa4  10d2   mov.l 0x8c022fe8,r2
+8c022fa6  0840   shll2 r0
+8c022fa8  1161   mov.w @r1,r1
+8c022faa  0040   shll r0
+8c022fac  0c32   add r0,r2
+8c022fae  0841   shll2 r1
+8c022fb0  04e0   mov #0x4,r0
+8c022fb2  2c31   add r2,r1
+8c022fb4  16f3   fmov.s @(r0,r1),fr3
+8c022fb6  0ce0   mov #0xc,r0
+8c022fb8  36f2   fmov.s @(r0,r3),fr2
+8c022fba  0f90   mov.w 0x8c022fdc,r0
+8c022fbc  32f2   fmul fr3,fr2
+8c022fbe  27f4   fmov fr2,@(r0,r4)
+8c022fc0  0d90   mov.w 0x8c022fde,r0
+8c022fc2  4263   mov.l @r4,r3
+8c022fc4  36f3   fmov.s @(r0,r3),fr3
+8c022fc6  0990   mov.w 0x8c022fdc,r0
+8c022fc8  46f2   fmov.s @(r0,r4),fr2
+8c022fca  0470   add #0x4,r0
+8c022fcc  32f2   fmul fr3,fr2
+8c022fce  0b00   rts
+8c022fd0  27f4   _fmov fr2,@(r0,r4)
+8c022fd2  d003  ??
+8c022fd4  ac00  ??
+8c022fd6  f603  ??
+8c022fd8  f403  ??
+8c022fda  0804  ??
+8c022fdc  2804  ??
+8c022fde  a400  ??
+8c022fe0  0000  ??
+8c022fe2  4040  ??
+8c022fe4  0000  ??
+8c022fe6  803e  ??
+8c022fe8  48ba  ??
+8c022fea  0b8c  ??
+8c022fec  5890   mov.w 0x8c0230a0,r0
+8c022fee  01e3   mov #0x1,r3
+8c022ff0  04e5   mov #0x4,r5
+8c022ff2  2ed6   mov.l 0x8c0230ac,r6
+8c022ff4  3504   mov.w r3,@(r0,r4)
+8c022ff6  4d03   mov.w @(r0,r4),r3
+8c022ff8  5333   cmp/ge r5,r3
+8c022ffa  2389   bt 0x8c023044
+8c022ffc  5190   mov.w 0x8c0230a2,r0
+8c022ffe  04e1   mov #0x4,r1
+8c023000  4263   mov.l @r4,r3
+8c023002  4152   mov.l @(0x4,r4),r2
+8c023004  36f3   fmov.s @(r0,r3),fr3
+8c023006  0ce0   mov #0xc,r0
+8c023008  26f2   fmov.s @(r0,r2),fr2
+8c02300a  4984   mov.b @(0x9,r4),r0
+8c02300c  4892   mov.w 0x8c0230a0,r2
+8c02300e  32f2   fmul fr3,fr2
+8c023010  0363   mov r0,r3
+8c023012  0040   shll r0
+8c023014  4c32   add r4,r2
+8c023016  3c30   add r3,r0
+8c023018  2162   mov.w @r2,r2
+8c02301a  0840   shll2 r0
+8c02301c  2cf5   fmov fr2,fr5
+8c02301e  0040   shll r0
+8c023020  0842   shll2 r2
+8c023022  6c30   add r6,r0
+8c023024  2c30   add r2,r0
+8c023026  16f3   fmov.s @(r0,r1),fr3
+8c023028  3c90   mov.w 0x8c0230a4,r0
+8c02302a  32f5   fmul fr3,fr5
+8c02302c  5cf3   fmov fr5,fr3
+8c02302e  46f5   fmov.s @(r0,r4),fr5
+8c023030  32f5   fmul fr3,fr5
+8c023032  55f4   fcmp/gt fr5,fr4
+8c023034  0689   bt 0x8c023044
+8c023036  3390   mov.w 0x8c0230a0,r0
+8c023038  4d03   mov.w @(r0,r4),r3
+8c02303a  0173   add #0x1,r3
+8c02303c  3504   mov.w r3,@(r0,r4)
+8c02303e  4d02   mov.w @(r0,r4),r2
+8c023040  5332   cmp/ge r5,r2
+8c023042  db8b   bf 0x8c022ffc
+8c023044  0b00   rts
+8c023046  0900   _nop
+8c023048  2a90   mov.w 0x8c0230a0,r0
+8c02304a  04e2   mov #0x4,r2
+8c02304c  4d03   mov.w @(r0,r4),r3
+8c02304e  2333   cmp/ge r2,r3
+8c023050  0e89   bt 0x8c023070
+8c023052  2890   mov.w 0x8c0230a6,r0
+8c023054  46f3   fmov.s @(r0,r4),fr3
+8c023056  2790   mov.w 0x8c0230a8,r0
+8c023058  46f2   fmov.s @(r0,r4),fr2
+8c02305a  35f2   fcmp/gt fr3,fr2
+8c02305c  088b   bf 0x8c023070
+8c02305e  46f2   fmov.s @(r0,r4),fr2
+8c023060  9df3   fldi1 fr3
+8c023062  30f2   fadd fr3,fr2
+8c023064  1f90   mov.w 0x8c0230a6,r0
+8c023066  27f4   fmov fr2,@(r0,r4)
+8c023068  1a90   mov.w 0x8c0230a0,r0
+8c02306a  4d03   mov.w @(r0,r4),r3
+8c02306c  0173   add #0x1,r3
+8c02306e  3504   mov.w r3,@(r0,r4)
+8c023070  0b00   rts
+8c023072  0900   _nop
+8c023074  1490   mov.w 0x8c0230a0,r0
+8c023076  01e3   mov #0x1,r3
+8c023078  4d02   mov.w @(r0,r4),r2
+8c02307a  3732   cmp/gt r3,r2
+8c02307c  0e8b   bf 0x8c02309c
+8c02307e  1290   mov.w 0x8c0230a6,r0
+8c023080  46f3   fmov.s @(r0,r4),fr3
+8c023082  1190   mov.w 0x8c0230a8,r0
+8c023084  46f2   fmov.s @(r0,r4),fr2
+8c023086  35f2   fcmp/gt fr3,fr2
+8c023088  088b   bf 0x8c02309c
+8c02308a  46f2   fmov.s @(r0,r4),fr2
+8c02308c  9df3   fldi1 fr3
+8c02308e  30f2   fadd fr3,fr2
+8c023090  0990   mov.w 0x8c0230a6,r0
+8c023092  27f4   fmov fr2,@(r0,r4)
+8c023094  0490   mov.w 0x8c0230a0,r0
+8c023096  4d03   mov.w @(r0,r4),r3
+8c023098  ff73   add #-0x1,r3
+8c02309a  3504   mov.w r3,@(r0,r4)
+8c02309c  0b00   rts
+8c02309e  0900   _nop
+8c0230a0  f403  ??
+8c0230a2  a400  ??
+8c0230a4  1c04  ??
+8c0230a6  5806  ??
+8c0230a8  1407  ??
+8c0230aa  0000  ??
+8c0230ac  48ba  ??
+8c0230ae  0b8c  ??
+8c0230b0  e62f   mov.l r14,@-r15
+8c0230b2  d62f   mov.l r13,@-r15
+8c0230b4  c62f   mov.l r12,@-r15
+8c0230b6  b62f   mov.l r11,@-r15
+8c0230b8  224f   sts.l PR,@-r15
+8c0230ba  ec7f   add #-0x14,r15
+8c0230bc  ae90   mov.w 0x8c02321c,r0
+8c0230be  5f61   exts.w r5,r1
+8c0230c0  59d3   mov.l 0x8c023228,r3
+8c0230c2  122f   mov.l r1,@r15
+8c0230c4  0b43   jsr @r3
+8c0230c6  0900   _nop
+8c0230c8  0365   mov r0,r5
+8c0230ca  58d2   mov.l 0x8c02322c,r2
+8c0230cc  a690   mov.w 0x8c02321c,r0
+8c0230ce  f261   mov.l @r15,r1
+8c0230d0  0b42   jsr @r2
+8c0230d2  0900   _nop
+8c0230d4  5f63   exts.w r5,r3
+8c0230d6  1143   cmp/pz r3
+8c0230d8  028d   bt/s 0x8c0230e0
+8c0230da  036d   _mov r0,r13
+8c0230dc  00ed   mov #0x0,r13
+8c0230de  00e5   mov #0x0,r5
+8c0230e0  0be2   mov #0xb,r2
+8c0230e2  9c9b   mov.w 0x8c02321e,r11
+8c0230e4  5f63   exts.w r5,r3
+8c0230e6  2333   cmp/ge r2,r3
+8c0230e8  028f   bf/s 0x8c0230f0
+8c0230ea  0eec   _mov #0xe,r12
+8c0230ec  b36d   mov r11,r13
+8c0230ee  0ae5   mov #0xa,r5
+8c0230f0  4fd2   mov.l 0x8c023230,r2
+8c0230f2  6361   mov r6,r1
+8c0230f4  0b42   jsr @r2
+8c0230f6  c360   _mov r12,r0
+8c0230f8  4ed3   mov.l 0x8c023234,r3
+8c0230fa  6361   mov r6,r1
+8c0230fc  036e   mov r0,r14
+8c0230fe  0b43   jsr @r3
+8c023100  c360   _mov r12,r0
+8c023102  09e3   mov #0x9,r3
+8c023104  ef62   exts.w r14,r2
+8c023106  3332   cmp/ge r3,r2
+8c023108  028f   bf/s 0x8c023110
+8c02310a  0366   _mov r0,r6
+8c02310c  0de6   mov #0xd,r6
+8c02310e  08ee   mov #0x8,r14
+8c023110  ef63   exts.w r14,r3
+8c023112  3362   mov r3,r2
+8c023114  0043   shll r3
+8c023116  2c33   add r2,r3
+8c023118  5f65   exts.w r5,r5
+8c02311a  0843   shll2 r3
+8c02311c  0043   shll r3
+8c02311e  0045   shll r5
+8c023120  5c33   add r5,r3
+8c023122  531f   mov.l r5,@(0xc,r15)
+8c023124  7c33   add r7,r3
+8c023126  3365   mov r3,r5
+8c023128  0275   add #0x2,r5
+8c02312a  df6d   exts.w r13,r13
+8c02312c  311f   mov.l r3,@(0x4,r15)
+8c02312e  b41f   mov.l r11,@(0x10,r15)
+8c023130  d21f   mov.l r13,@(0x8,r15)
+8c023132  5162   mov.w @r5,r2
+8c023134  222f   mov.l r2,@r15
+8c023136  3165   mov.w @r3,r5
+8c023138  f251   mov.l @(0x8,r15),r1
+8c02313a  5832   sub r5,r2
+8c02313c  1702   mul.l r1,r2
+8c02313e  3ad2   mov.l 0x8c023228,r2
+8c023140  1a01   sts MACL,r1
+8c023142  0b42   jsr @r2
+8c023144  f450   _mov.l @(0x10,r15),r0
+8c023146  ef6e   exts.w r14,r14
+8c023148  017e   add #0x1,r14
+8c02314a  e363   mov r14,r3
+8c02314c  004e   shll r14
+8c02314e  3c3e   add r3,r14
+8c023150  35d3   mov.l 0x8c023228,r3
+8c023152  084e   shll2 r14
+8c023154  004e   shll r14
+8c023156  5c30   add r5,r0
+8c023158  f281   mov.w r0,@(0x4,r15)
+8c02315a  f352   mov.l @(0xc,r15),r2
+8c02315c  2c3e   add r2,r14
+8c02315e  7c3e   add r7,r14
+8c023160  e365   mov r14,r5
+8c023162  0275   add #0x2,r5
+8c023164  e22f   mov.l r14,@r15
+8c023166  b31f   mov.l r11,@(0xc,r15)
+8c023168  5167   mov.w @r5,r7
+8c02316a  f265   mov.l @r15,r5
+8c02316c  f251   mov.l @(0x8,r15),r1
+8c02316e  5165   mov.w @r5,r5
+8c023170  5837   sub r5,r7
+8c023172  1707   mul.l r1,r7
+8c023174  1a01   sts MACL,r1
+8c023176  0b43   jsr @r3
+8c023178  b360   _mov r11,r0
+8c02317a  5c30   add r5,r0
+8c02317c  2ad3   mov.l 0x8c023228,r3
+8c02317e  012f   mov.w r0,@r15
+8c023180  6f67   exts.w r6,r7
+8c023182  c21f   mov.l r12,@(0x8,r15)
+8c023184  f285   mov.w @(0x4,r15),r0
+8c023186  f166   mov.w @r15,r6
+8c023188  0365   mov r0,r5
+8c02318a  5836   sub r5,r6
+8c02318c  7706   mul.l r7,r6
+8c02318e  1a01   sts MACL,r1
+8c023190  0b43   jsr @r3
+8c023192  c360   _mov r12,r0
+8c023194  5c30   add r5,r0
+8c023196  012f   mov.w r0,@r15
+8c023198  4c84   mov.b @(0xc,r4),r0
+8c02319a  f165   mov.w @r15,r5
+8c02319c  0362   mov r0,r2
+8c02319e  0040   shll r0
+8c0231a0  2c30   add r2,r0
+8c0231a2  25d2   mov.l 0x8c023238,r2
+8c0231a4  0840   shll2 r0
+8c0231a6  4153   mov.l @(0x4,r4),r3
+8c0231a8  0c32   add r0,r2
+8c0231aa  4b84   mov.b @(0xb,r4),r0
+8c0231ac  5f65   exts.w r5,r5
+8c0231ae  0840   shll2 r0
+8c0231b0  5a45   lds r5,FPUL
+8c0231b2  26f3   fmov.s @(r0,r2),fr3
+8c0231b4  08e0   mov #0x8,r0
+8c0231b6  36f2   fmov.s @(r0,r3),fr2
+8c0231b8  32f2   fmul fr3,fr2
+8c0231ba  2df3   float FPUL,fr3
+8c0231bc  22f3   fmul fr2,fr3
+8c0231be  3df3   ftrc fr3,FPUL
+8c0231c0  5a05   sts FPUL,r5
+8c0231c2  5360   mov r5,r0
+8c0231c4  147f   add #0x14,r15
+8c0231c6  264f   lds.l @r15+,PR
+8c0231c8  f66b   mov.l @r15+,r11
+8c0231ca  f66c   mov.l @r15+,r12
+8c0231cc  f66d   mov.l @r15+,r13
+8c0231ce  0b00   rts
+8c0231d0  f66e   _mov.l @r15+,r14
+8c0231d2  4835   sub r4,r5
+8c0231d4  14d3   mov.l 0x8c023228,r3
+8c0231d6  6705   mul.l r6,r5
+8c0231d8  224f   sts.l PR,@-r15
+8c0231da  1a01   sts MACL,r1
+8c0231dc  0b43   jsr @r3
+8c0231de  7360   _mov r7,r0
+8c0231e0  264f   lds.l @r15+,PR
+8c0231e2  0b00   rts
+8c0231e4  4c30   _add r4,r0
+8c0231e6  e62f   mov.l r14,@-r15
+8c0231e8  14c7   mova 0x8c02323c,r0
+8c0231ea  fbff   fmov.s fr15,@-r15
+8c0231ec  436e   mov r4,r14
+8c0231ee  ebff   fmov.s fr14,@-r15
+8c0231f0  224f   sts.l PR,@-r15
+8c0231f2  08ff   fmov.s @r0,fr15
+8c0231f4  1490   mov.w 0x8c023220,r0
+8c0231f6  ec03   mov.b @(r0,r14),r3
+8c0231f8  3823   tst r3,r3
+8c0231fa  2189   bt 0x8c023240
+8c0231fc  1190   mov.w 0x8c023222,r0
+8c0231fe  00e6   mov #0x0,r6
+8c023200  ee07   mov.l @(r0,r14),r7
+8c023202  fc70   add #-0x4,r0
+8c023204  e6f3   fmov.s @(r0,r14),fr3
+8c023206  f2f3   fmul fr15,fr3
+8c023208  3df3   ftrc fr3,FPUL
+8c02320a  5a05   sts FPUL,r5
+8c02320c  50bf   bsr 0x8c0230b0
+8c02320e  e364   _mov r14,r4
+8c023210  0f60   exts.w r0,r0
+8c023212  5a40   lds r0,FPUL
+8c023214  0690   mov.w 0x8c023224,r0
+8c023216  2df3   float FPUL,fr3
+8c023218  3ba0   bra 0x8c023292
+8c02321a  37fe   _fmov fr3,@(r0,r14)
+8c02321c  7e04  ??
+8c02321e  7d04  ??
+8c023220  4006  ??
+8c023222  0c04  ??
+8c023224  0404  ??
+8c023226  0000  ??
+8c023228  80b6  ??
+8c02322a  098c  ??
+8c02322c  2cb8  ??
+8c02322e  098c  ??
+8c023230  dcb7  ??
+8c023232  098c  ??
+8c023234  acb9  ??
+8c023236  098c  ??
+8c023238  4cbc  ??
+8c02323a  0b8c  ??
+8c02323c  f3c9  ??
+8c02323e  1841  ??
+8c023240  2ac7   mova 0x8c0232ec,r0
+8c023242  08fe   fmov.s @r0,fr14
+8c023244  4e90   mov.w 0x8c0232e4,r0
+8c023246  ed03   mov.w @(r0,r14),r3
+8c023248  1143   cmp/pz r3
+8c02324a  0f89   bt 0x8c02326c
+8c02324c  4b90   mov.w 0x8c0232e6,r0
+8c02324e  ee07   mov.l @(r0,r14),r7
+8c023250  c470   add #-0x3c,r0
+8c023252  e6f3   fmov.s @(r0,r14),fr3
+8c023254  3870   add #0x38,r0
+8c023256  e2f3   fmul fr14,fr3
+8c023258  3df3   ftrc fr3,FPUL
+8c02325a  e6f3   fmov.s @(r0,r14),fr3
+8c02325c  f2f3   fmul fr15,fr3
+8c02325e  5a06   sts FPUL,r6
+8c023260  3df3   ftrc fr3,FPUL
+8c023262  5a05   sts FPUL,r5
+8c023264  24bf   bsr 0x8c0230b0
+8c023266  e364   _mov r14,r4
+8c023268  0ea0   bra 0x8c023288
+8c02326a  0900   _nop
+8c02326c  3b90   mov.w 0x8c0232e6,r0
+8c02326e  ee07   mov.l @(r0,r14),r7
+8c023270  c470   add #-0x3c,r0
+8c023272  e6f3   fmov.s @(r0,r14),fr3
+8c023274  3870   add #0x38,r0
+8c023276  e2f3   fmul fr14,fr3
+8c023278  3df3   ftrc fr3,FPUL
+8c02327a  e6f3   fmov.s @(r0,r14),fr3
+8c02327c  f2f3   fmul fr15,fr3
+8c02327e  5a06   sts FPUL,r6
+8c023280  3df3   ftrc fr3,FPUL
+8c023282  5a05   sts FPUL,r5
+8c023284  14bf   bsr 0x8c0230b0
+8c023286  e364   _mov r14,r4
+8c023288  0f60   exts.w r0,r0
+8c02328a  5a40   lds r0,FPUL
+8c02328c  2c90   mov.w 0x8c0232e8,r0
+8c02328e  2df3   float FPUL,fr3
+8c023290  37fe   fmov fr3,@(r0,r14)
+8c023292  2a94   mov.w 0x8c0232ea,r4
+8c023294  ec34   add r14,r4
+8c023296  4250   mov.l @(0x8,r4),r0
+8c023298  0188   cmp/eq #0x1,r0
+8c02329a  038d   bt/s 0x8c0232a4
+8c02329c  0365   _mov r0,r5
+8c02329e  5360   mov r5,r0
+8c0232a0  0288   cmp/eq #0x2,r0
+8c0232a2  0c8b   bf 0x8c0232be
+8c0232a4  4350   mov.l @(0xc,r4),r0
+8c0232a6  0188   cmp/eq #0x1,r0
+8c0232a8  0289   bt 0x8c0232b0
+8c0232aa  4350   mov.l @(0xc,r4),r0
+8c0232ac  0288   cmp/eq #0x2,r0
+8c0232ae  068b   bf 0x8c0232be
+8c0232b0  0fd1   mov.l 0x8c0232f0,r1
+8c0232b2  1990   mov.w 0x8c0232e8,r0
+8c0232b4  5a41   lds r1,FPUL
+8c0232b6  e6f2   fmov.s @(r0,r14),fr2
+8c0232b8  0df3   fsts FPUL,fr3
+8c0232ba  32f2   fmul fr3,fr2
+8c0232bc  27fe   fmov fr2,@(r0,r14)
+8c0232be  ea84   mov.b @(0xa,r14),r0
+8c0232c0  0820   tst r0,r0
+8c0232c2  0a89   bt 0x8c0232da
+8c0232c4  0e90   mov.w 0x8c0232e4,r0
+8c0232c6  ed00   mov.w @(r0,r14),r0
+8c0232c8  0488   cmp/eq #0x4,r0
+8c0232ca  0689   bt 0x8c0232da
+8c0232cc  09d1   mov.l 0x8c0232f4,r1
+8c0232ce  0b90   mov.w 0x8c0232e8,r0
+8c0232d0  5a41   lds r1,FPUL
+8c0232d2  e6f2   fmov.s @(r0,r14),fr2
+8c0232d4  0df3   fsts FPUL,fr3
+8c0232d6  32f2   fmul fr3,fr2
+8c0232d8  27fe   fmov fr2,@(r0,r14)
+8c0232da  264f   lds.l @r15+,PR
+8c0232dc  f9fe   fmov.s @r15+,fr14
+8c0232de  f9ff   fmov.s @r15+,fr15
+8c0232e0  0b00   rts
+8c0232e2  f66e   _mov.l @r15+,r14
+8c0232e4  f403  ??
+8c0232e6  0c04  ??
+8c0232e8  0404  ??
+8c0232ea  0c06  ??
+8c0232ec  0000  ??
+8c0232ee  0043  ??
+8c0232f0  0000  ??
+8c0232f2  c03f  ??
+8c0232f4  cdcc  ??
+8c0232f6  6c3f  ??
+8c0232f8  6390   mov.w 0x8c0233c2,r0
+8c0232fa  8df4   fldi0 fr4
+8c0232fc  47f4   fmov fr4,@(r0,r4)
+8c0232fe  0470   add #0x4,r0
+8c023300  47f4   fmov fr4,@(r0,r4)
+8c023302  0470   add #0x4,r0
+8c023304  47f4   fmov fr4,@(r0,r4)
+8c023306  0470   add #0x4,r0
+8c023308  9df3   fldi1 fr3
+8c02330a  37f4   fmov fr3,@(r0,r4)
+8c02330c  0470   add #0x4,r0
+8c02330e  01e3   mov #0x1,r3
+8c023310  0b00   rts
+8c023312  3404   _mov.b r3,@(r0,r4)
+8c023314  f47f   add #-0xc,r15
+8c023316  5690   mov.w 0x8c0233c6,r0
+8c023318  9df6   fldi1 fr6
+8c02331a  4d02   mov.w @(r0,r4),r2
+8c02331c  5490   mov.w 0x8c0233c8,r0
+8c02331e  6cf2   fmov fr6,fr2
+8c023320  46f3   fmov.s @(r0,r4),fr3
+8c023322  5290   mov.w 0x8c0233ca,r0
+8c023324  4e93   mov.w 0x8c0233c4,r3
+8c023326  37f4   fmov fr3,@(r0,r4)
+8c023328  46f3   fmov.s @(r0,r4),fr3
+8c02332a  0470   add #0x4,r0
+8c02332c  3f22   muls.w r3,r2
+8c02332e  33f2   fdiv fr3,fr2
+8c023330  2bd1   mov.l 0x8c0233e0,r1
+8c023332  1a05   sts MACL,r5
+8c023334  1c35   add r1,r5
+8c023336  27f4   fmov fr2,@(r0,r4)
+8c023338  4390   mov.w 0x8c0233c2,r0
+8c02333a  46f3   fmov.s @(r0,r4),fr3
+8c02333c  4690   mov.w 0x8c0233cc,r0
+8c02333e  46f2   fmov.s @(r0,r4),fr2
+8c023340  ec70   add #-0x14,r0
+8c023342  32f2   fmul fr3,fr2
+8c023344  27f4   fmov fr2,@(r0,r4)
+8c023346  4290   mov.w 0x8c0233ce,r0
+8c023348  46f3   fmov.s @(r0,r4),fr3
+8c02334a  3360   mov r3,r0
+8c02334c  37f4   fmov fr3,@(r0,r4)
+8c02334e  3f90   mov.w 0x8c0233d0,r0
+8c023350  5c00   mov.b @(r0,r5),r0
+8c023352  0188   cmp/eq #0x1,r0
+8c023354  038f   bf/s 0x8c02335e
+8c023356  8df4   _fldi0 fr4
+8c023358  3b90   mov.w 0x8c0233d2,r0
+8c02335a  04a0   bra 0x8c023366
+8c02335c  47f4   _fmov fr4,@(r0,r4)
+8c02335e  3990   mov.w 0x8c0233d4,r0
+8c023360  46f3   fmov.s @(r0,r4),fr3
+8c023362  3690   mov.w 0x8c0233d2,r0
+8c023364  37f4   fmov fr3,@(r0,r4)
+8c023366  1fd2   mov.l 0x8c0233e4,r2
+8c023368  2063   mov.b @r2,r3
+8c02336a  3823   tst r3,r3
+8c02336c  038b   bf 0x8c023376
+8c02336e  2f90   mov.w 0x8c0233d0,r0
+8c023370  5c03   mov.b @(r0,r5),r3
+8c023372  3823   tst r3,r3
+8c023374  0289   bt 0x8c02337c
+8c023376  1cc7   mova 0x8c0233e8,r0
+8c023378  06a0   bra 0x8c023388
+8c02337a  08f3   _fmov.s @r0,fr3
+8c02337c  1bd3   mov.l 0x8c0233ec,r3
+8c02337e  3062   mov.b @r3,r2
+8c023380  2822   tst r2,r2
+8c023382  0889   bt 0x8c023396
+8c023384  1ac7   mova 0x8c0233f0,r0
+8c023386  08f3   fmov.s @r0,fr3
+8c023388  2590   mov.w 0x8c0233d6,r0
+8c02338a  37f4   fmov fr3,@(r0,r4)
+8c02338c  fc70   add #-0x4,r0
+8c02338e  47f4   fmov fr4,@(r0,r4)
+8c023390  fc70   add #-0x4,r0
+8c023392  04a0   bra 0x8c02339e
+8c023394  67f4   _fmov fr6,@(r0,r4)
+8c023396  1f90   mov.w 0x8c0233d8,r0
+8c023398  46f3   fmov.s @(r0,r4),fr3
+8c02339a  1c90   mov.w 0x8c0233d6,r0
+8c02339c  37f4   fmov fr3,@(r0,r4)
+8c02339e  15c7   mova 0x8c0233f4,r0
+8c0233a0  08f3   fmov.s @r0,fr3
+8c0233a2  1890   mov.w 0x8c0233d6,r0
+8c0233a4  46f2   fmov.s @(r0,r4),fr2
+8c0233a6  35f2   fcmp/gt fr3,fr2
+8c0233a8  008b   bf 0x8c0233ac
+8c0233aa  67f4   fmov fr6,@(r0,r4)
+8c0233ac  4a84   mov.b @(0xa,r4),r0
+8c0233ae  0820   tst r0,r0
+8c0233b0  228f   bf/s 0x8c0233f8
+8c0233b2  00e7   _mov #0x0,r7
+8c0233b4  1190   mov.w 0x8c0233da,r0
+8c0233b6  4c03   mov.b @(r0,r4),r3
+8c0233b8  1090   mov.w 0x8c0233dc,r0
+8c0233ba  3504   mov.w r3,@(r0,r4)
+8c0233bc  0270   add #0x2,r0
+8c0233be  1fa0   bra 0x8c023400
+8c0233c0  3504   _mov.w r3,@(r0,r4)
+8c0233c2  2007  ??
+8c0233c4  cc03  ??
+8c0233c6  c607  ??
+8c0233c8  1807  ??
+8c0233ca  3406  ??
+8c0233cc  c403  ??
+8c0233ce  2407  ??
+8c0233d0  ef00  ??
+8c0233d2  d003  ??
+8c0233d4  2c07  ??
+8c0233d6  d403  ??
+8c0233d8  2807  ??
+8c0233da  3007  ??
+8c0233dc  f403  ??
+8c0233de  0000  ??
+8c0233e0  0040  ??
+8c0233e2  008c  ??
+8c0233e4  4ec6  ??
+8c0233e6  128c  ??
+8c0233e8  3333  ??
+8c0233ea  333f  ??
+8c0233ec  4cc6   mov.l @(0x130,GBR),r0
+8c0233ee  128c  ??
+8c0233f0  c3f5  ??
+8c0233f2  a83e  ??
+8c0233f4  a470  ??
+8c0233f6  7d3f  ??
+8c0233f8  6490   mov.w 0x8c0234c4,r0
+8c0233fa  4c01   mov.b @(r0,r4),r1
+8c0233fc  6390   mov.w 0x8c0234c6,r0
+8c0233fe  1504   mov.w r1,@(r0,r4)
+8c023400  6290   mov.w 0x8c0234c8,r0
+8c023402  4e03   mov.l @(r0,r4),r3
+8c023404  1143   cmp/pz r3
+8c023406  088d   bt/s 0x8c02341a
+8c023408  7366   _mov r7,r6
+8c02340a  5c90   mov.w 0x8c0234c6,r0
+8c02340c  7504   mov.w r7,@(r0,r4)
+8c02340e  fe70   add #-0x2,r0
+8c023410  7504   mov.w r7,@(r0,r4)
+8c023412  d870   add #-0x28,r0
+8c023414  67f4   fmov fr6,@(r0,r4)
+8c023416  0870   add #0x8,r0
+8c023418  67f4   fmov fr6,@(r0,r4)
+8c02341a  2ec7   mova 0x8c0234d4,r0
+8c02341c  9dfb   fldi1 fr11
+8c02341e  08f9   fmov.s @r0,fr9
+8c023420  2dc7   mova 0x8c0234d8,r0
+8c023422  08f8   fmov.s @r0,fr8
+8c023424  2dc7   mova 0x8c0234dc,r0
+8c023426  08f7   fmov.s @r0,fr7
+8c023428  b0fb   fadd fr11,fr11
+8c02342a  2dc7   mova 0x8c0234e0,r0
+8c02342c  4d95   mov.w 0x8c0234ca,r5
+8c02342e  08f5   fmov.s @r0,fr5
+8c023430  04e7   mov #0x4,r7
+8c023432  9dfa   fldi1 fr10
+8c023434  4c35   add r4,r5
+8c023436  4dfa   fneg fr10
+8c023438  48e0   mov #0x48,r0
+8c02343a  8df3   fldi0 fr3
+8c02343c  56f2   fmov.s @(r0,r5),fr2
+8c02343e  35f2   fcmp/gt fr3,fr2
+8c023440  0a8b   bf 0x8c023458
+8c023442  56f2   fmov.s @(r0,r5),fr2
+8c023444  25f7   fcmp/gt fr2,fr7
+8c023446  058b   bf 0x8c023454
+8c023448  56f2   fmov.s @(r0,r5),fr2
+8c02344a  25fb   fcmp/gt fr2,fr11
+8c02344c  0989   bt 0x8c023462
+8c02344e  56f0   fmov.s @(r0,r5),fr0
+8c023450  0da0   bra 0x8c02346e
+8c023452  52f0   _fmul fr5,fr0
+8c023454  0ba0   bra 0x8c02346e
+8c023456  6cf0   _fmov fr6,fr0
+8c023458  95f2   fcmp/gt fr9,fr2
+8c02345a  078b   bf 0x8c02346c
+8c02345c  56f2   fmov.s @(r0,r5),fr2
+8c02345e  85f2   fcmp/gt fr8,fr2
+8c023460  018b   bf 0x8c023466
+8c023462  04a0   bra 0x8c02346e
+8c023464  4cf0   _fmov fr4,fr0
+8c023466  56f0   fmov.s @(r0,r5),fr0
+8c023468  01a0   bra 0x8c02346e
+8c02346a  52f0   _fmul fr5,fr0
+8c02346c  acf0   fmov fr10,fr0
+8c02346e  2e93   mov.w 0x8c0234ce,r3
+8c023470  6361   mov r6,r1
+8c023472  2d90   mov.w 0x8c0234d0,r0
+8c023474  0841   shll2 r1
+8c023476  4c33   add r4,r3
+8c023478  2892   mov.w 0x8c0234cc,r2
+8c02347a  1c33   add r1,r3
+8c02347c  46f3   fmov.s @(r0,r4),fr3
+8c02347e  38f2   fmov.s @r3,fr2
+8c023480  4c32   add r4,r2
+8c023482  1c32   add r1,r2
+8c023484  32f2   fmul fr3,fr2
+8c023486  48e0   mov #0x48,r0
+8c023488  5c75   add #0x5c,r5
+8c02348a  8df3   fldi0 fr3
+8c02348c  02f2   fmul fr0,fr2
+8c02348e  4df2   fneg fr2
+8c023490  2af2   fmov.s fr2,@r2
+8c023492  56f2   fmov.s @(r0,r5),fr2
+8c023494  35f2   fcmp/gt fr3,fr2
+8c023496  0b8f   bf/s 0x8c0234b0
+8c023498  0176   _add #0x1,r6
+8c02349a  56f2   fmov.s @(r0,r5),fr2
+8c02349c  25f7   fcmp/gt fr2,fr7
+8c02349e  058b   bf 0x8c0234ac
+8c0234a0  56f2   fmov.s @(r0,r5),fr2
+8c0234a2  25fb   fcmp/gt fr2,fr11
+8c0234a4  0989   bt 0x8c0234ba
+8c0234a6  56f0   fmov.s @(r0,r5),fr0
+8c0234a8  1da0   bra 0x8c0234e6
+8c0234aa  52f0   _fmul fr5,fr0
+8c0234ac  1ba0   bra 0x8c0234e6
+8c0234ae  6cf0   _fmov fr6,fr0
+8c0234b0  95f2   fcmp/gt fr9,fr2
+8c0234b2  178b   bf 0x8c0234e4
+8c0234b4  56f2   fmov.s @(r0,r5),fr2
+8c0234b6  85f2   fcmp/gt fr8,fr2
+8c0234b8  018b   bf 0x8c0234be
+8c0234ba  14a0   bra 0x8c0234e6
+8c0234bc  4cf0   _fmov fr4,fr0
+8c0234be  56f0   fmov.s @(r0,r5),fr0
+8c0234c0  11a0   bra 0x8c0234e6
+8c0234c2  52f0   _fmul fr5,fr0
+8c0234c4  3007  ??
+8c0234c6  f603  ??
+8c0234c8  1007  ??
+8c0234ca  3004  ??
+8c0234cc  b403  ??
+8c0234ce  dc03  ??
+8c0234d0  d403  ??
+8c0234d2  0000  ??
+8c0234d4  0000  ??
+8c0234d6  20c1  ??
+8c0234d8  0000  ??
+8c0234da  00c0  ??
+8c0234dc  0000  ??
+8c0234de  2041  ??
+8c0234e0  cdcc  ??
+8c0234e2  4c3d  ??
+8c0234e4  acf0   fmov fr10,fr0
+8c0234e6  6e93   mov.w 0x8c0235c6,r3
+8c0234e8  6361   mov r6,r1
+8c0234ea  6d90   mov.w 0x8c0235c8,r0
+8c0234ec  0841   shll2 r1
+8c0234ee  4c33   add r4,r3
+8c0234f0  6892   mov.w 0x8c0235c4,r2
+8c0234f2  1c33   add r1,r3
+8c0234f4  46f3   fmov.s @(r0,r4),fr3
+8c0234f6  38f2   fmov.s @r3,fr2
+8c0234f8  4c32   add r4,r2
+8c0234fa  1c32   add r1,r2
+8c0234fc  32f2   fmul fr3,fr2
+8c0234fe  48e0   mov #0x48,r0
+8c023500  5c75   add #0x5c,r5
+8c023502  8df3   fldi0 fr3
+8c023504  02f2   fmul fr0,fr2
+8c023506  4df2   fneg fr2
+8c023508  2af2   fmov.s fr2,@r2
+8c02350a  56f2   fmov.s @(r0,r5),fr2
+8c02350c  35f2   fcmp/gt fr3,fr2
+8c02350e  0b8f   bf/s 0x8c023528
+8c023510  0176   _add #0x1,r6
+8c023512  56f2   fmov.s @(r0,r5),fr2
+8c023514  25f7   fcmp/gt fr2,fr7
+8c023516  058b   bf 0x8c023524
+8c023518  56f2   fmov.s @(r0,r5),fr2
+8c02351a  25fb   fcmp/gt fr2,fr11
+8c02351c  0989   bt 0x8c023532
+8c02351e  56f0   fmov.s @(r0,r5),fr0
+8c023520  0da0   bra 0x8c02353e
+8c023522  52f0   _fmul fr5,fr0
+8c023524  0ba0   bra 0x8c02353e
+8c023526  6cf0   _fmov fr6,fr0
+8c023528  95f2   fcmp/gt fr9,fr2
+8c02352a  078b   bf 0x8c02353c
+8c02352c  56f2   fmov.s @(r0,r5),fr2
+8c02352e  85f2   fcmp/gt fr8,fr2
+8c023530  018b   bf 0x8c023536
+8c023532  04a0   bra 0x8c02353e
+8c023534  4cf0   _fmov fr4,fr0
+8c023536  56f0   fmov.s @(r0,r5),fr0
+8c023538  01a0   bra 0x8c02353e
+8c02353a  52f0   _fmul fr5,fr0
+8c02353c  acf0   fmov fr10,fr0
+8c02353e  4293   mov.w 0x8c0235c6,r3
+8c023540  6361   mov r6,r1
+8c023542  4190   mov.w 0x8c0235c8,r0
+8c023544  0841   shll2 r1
+8c023546  4c33   add r4,r3
+8c023548  3c92   mov.w 0x8c0235c4,r2
+8c02354a  1c33   add r1,r3
+8c02354c  46f3   fmov.s @(r0,r4),fr3
+8c02354e  38f2   fmov.s @r3,fr2
+8c023550  4c32   add r4,r2
+8c023552  1c32   add r1,r2
+8c023554  32f2   fmul fr3,fr2
+8c023556  48e0   mov #0x48,r0
+8c023558  5c75   add #0x5c,r5
+8c02355a  8df3   fldi0 fr3
+8c02355c  02f2   fmul fr0,fr2
+8c02355e  4df2   fneg fr2
+8c023560  2af2   fmov.s fr2,@r2
+8c023562  56f2   fmov.s @(r0,r5),fr2
+8c023564  35f2   fcmp/gt fr3,fr2
+8c023566  0b8f   bf/s 0x8c023580
+8c023568  0176   _add #0x1,r6
+8c02356a  56f2   fmov.s @(r0,r5),fr2
+8c02356c  25f7   fcmp/gt fr2,fr7
+8c02356e  058b   bf 0x8c02357c
+8c023570  56f2   fmov.s @(r0,r5),fr2
+8c023572  25fb   fcmp/gt fr2,fr11
+8c023574  0989   bt 0x8c02358a
+8c023576  56f0   fmov.s @(r0,r5),fr0
+8c023578  0da0   bra 0x8c023596
+8c02357a  52f0   _fmul fr5,fr0
+8c02357c  0ba0   bra 0x8c023596
+8c02357e  6cf0   _fmov fr6,fr0
+8c023580  95f2   fcmp/gt fr9,fr2
+8c023582  078b   bf 0x8c023594
+8c023584  56f2   fmov.s @(r0,r5),fr2
+8c023586  85f2   fcmp/gt fr8,fr2
+8c023588  018b   bf 0x8c02358e
+8c02358a  04a0   bra 0x8c023596
+8c02358c  4cf0   _fmov fr4,fr0
+8c02358e  56f0   fmov.s @(r0,r5),fr0
+8c023590  01a0   bra 0x8c023596
+8c023592  52f0   _fmul fr5,fr0
+8c023594  acf0   fmov fr10,fr0
+8c023596  1693   mov.w 0x8c0235c6,r3
+8c023598  6361   mov r6,r1
+8c02359a  1590   mov.w 0x8c0235c8,r0
+8c02359c  0841   shll2 r1
+8c02359e  4c33   add r4,r3
+8c0235a0  1092   mov.w 0x8c0235c4,r2
+8c0235a2  1c33   add r1,r3
+8c0235a4  46f3   fmov.s @(r0,r4),fr3
+8c0235a6  38f2   fmov.s @r3,fr2
+8c0235a8  4c32   add r4,r2
+8c0235aa  0176   add #0x1,r6
+8c0235ac  32f2   fmul fr3,fr2
+8c0235ae  1c32   add r1,r2
+8c0235b0  7336   cmp/ge r7,r6
+8c0235b2  02f2   fmul fr0,fr2
+8c0235b4  4df2   fneg fr2
+8c0235b6  2af2   fmov.s fr2,@r2
+8c0235b8  028d   bt/s 0x8c0235c0
+8c0235ba  5c75   _add #0x5c,r5
+8c0235bc  3caf   bra 0x8c023438
+8c0235be  0900   _nop
+8c0235c0  0b00   rts
+8c0235c2  0c7f   _add #0xc,r15
+8c0235c4  b403  ??
+8c0235c6  dc03  ??
+8c0235c8  d403  ??
+8c0235ca  e62f   mov.l r14,@-r15
+8c0235cc  224f   sts.l PR,@-r15
+8c0235ce  38d3   mov.l 0x8c0236b0,r3
+8c0235d0  0b43   jsr @r3
+8c0235d2  436e   _mov r4,r14
+8c0235d4  90be   bsr 0x8c0232f8
+8c0235d6  e364   _mov r14,r4
+8c0235d8  36d3   mov.l 0x8c0236b4,r3
+8c0235da  0b43   jsr @r3
+8c0235dc  e364   _mov r14,r4
+8c0235de  36d2   mov.l 0x8c0236b8,r2
+8c0235e0  0b42   jsr @r2
+8c0235e2  e364   _mov r14,r4
+8c0235e4  35c7   mova 0x8c0236bc,r0
+8c0235e6  e364   mov r14,r4
+8c0235e8  08f3   fmov.s @r0,fr3
+8c0235ea  5790   mov.w 0x8c02369c,r0
+8c0235ec  46f2   fmov.s @(r0,r4),fr2
+8c0235ee  5690   mov.w 0x8c02369e,r0
+8c0235f0  32f2   fmul fr3,fr2
+8c0235f2  3df2   ftrc fr2,FPUL
+8c0235f4  5a03   sts FPUL,r3
+8c0235f6  3504   mov.w r3,@(r0,r4)
+8c0235f8  264f   lds.l @r15+,PR
+8c0235fa  0b00   rts
+8c0235fc  f66e   _mov.l @r15+,r14
+8c0235fe  d62f   mov.l r13,@-r15
+8c023600  c62f   mov.l r12,@-r15
+8c023602  b62f   mov.l r11,@-r15
+8c023604  a62f   mov.l r10,@-r15
+8c023606  962f   mov.l r9,@-r15
+8c023608  fbff   fmov.s fr15,@-r15
+8c02360a  224f   sts.l PR,@-r15
+8c02360c  82be   bsr 0x8c023314
+8c02360e  436d   _mov r4,r13
+8c023610  4690   mov.w 0x8c0236a0,r0
+8c023612  dc02   mov.b @(r0,r13),r2
+8c023614  2822   tst r2,r2
+8c023616  0b8f   bf/s 0x8c023630
+8c023618  8dff   _fldi0 fr15
+8c02361a  4390   mov.w 0x8c0236a4,r0
+8c02361c  4193   mov.w 0x8c0236a2,r3
+8c02361e  dd02   mov.w @(r0,r13),r2
+8c023620  27d1   mov.l 0x8c0236c0,r1
+8c023622  3f22   muls.w r3,r2
+8c023624  3f90   mov.w 0x8c0236a6,r0
+8c023626  1a03   sts MACL,r3
+8c023628  1c33   add r1,r3
+8c02362a  3c02   mov.b @(r0,r3),r2
+8c02362c  2822   tst r2,r2
+8c02362e  0789   bt 0x8c023640
+8c023630  3a90   mov.w 0x8c0236a8,r0
+8c023632  f7fd   fmov fr15,@(r0,r13)
+8c023634  1c70   add #0x1c,r0
+8c023636  f7fd   fmov fr15,@(r0,r13)
+8c023638  0870   add #0x8,r0
+8c02363a  f7fd   fmov fr15,@(r0,r13)
+8c02363c  fc70   add #-0x4,r0
+8c02363e  f7fd   fmov fr15,@(r0,r13)
+8c023640  20d3   mov.l 0x8c0236c4,r3
+8c023642  0b43   jsr @r3
+8c023644  d364   _mov r13,r4
+8c023646  52b1   bsr 0x8c0238ee
+8c023648  d364   _mov r13,r4
+8c02364a  1fd3   mov.l 0x8c0236c8,r3
+8c02364c  0b43   jsr @r3
+8c02364e  d364   _mov r13,r4
+8c023650  1ac7   mova 0x8c0236bc,r0
+8c023652  d364   mov r13,r4
+8c023654  08f3   fmov.s @r0,fr3
+8c023656  2190   mov.w 0x8c02369c,r0
+8c023658  46f2   fmov.s @(r0,r4),fr2
+8c02365a  2090   mov.w 0x8c02369e,r0
+8c02365c  32f2   fmul fr3,fr2
+8c02365e  3df2   ftrc fr2,FPUL
+8c023660  5a03   sts FPUL,r3
+8c023662  3504   mov.w r3,@(r0,r4)
+8c023664  da84   mov.b @(0xa,r13),r0
+8c023666  0820   tst r0,r0
+8c023668  328f   bf/s 0x8c0236d0
+8c02366a  03e9   _mov #0x3,r9
+8c02366c  17c7   mova 0x8c0236cc,r0
+8c02366e  08f2   fmov.s @r0,fr2
+8c023670  1b90   mov.w 0x8c0236aa,r0
+8c023672  d6f1   fmov.s @(r0,r13),fr1
+8c023674  25f1   fcmp/gt fr2,fr1
+8c023676  2b8b   bf 0x8c0236d0
+8c023678  1190   mov.w 0x8c02369e,r0
+8c02367a  dd03   mov.w @(r0,r13),r3
+8c02367c  1143   cmp/pz r3
+8c02367e  0289   bt 0x8c023686
+8c023680  dd02   mov.w @(r0,r13),r2
+8c023682  01a0   bra 0x8c023688
+8c023684  2b62   _neg r2,r2
+8c023686  dd02   mov.w @(r0,r13),r2
+8c023688  1091   mov.w 0x8c0236ac,r1
+8c02368a  1332   cmp/ge r1,r2
+8c02368c  2089   bt 0x8c0236d0
+8c02368e  0e90   mov.w 0x8c0236ae,r0
+8c023690  dd02   mov.w @(r0,r13),r2
+8c023692  2822   tst r2,r2
+8c023694  218b   bf 0x8c0236da
+8c023696  01e1   mov #0x1,r1
+8c023698  1fa0   bra 0x8c0236da
+8c02369a  150d   _mov.w r1,@(r0,r13)
+8c02369c  0804  ??
+8c02369e  d007  ??
+8c0236a0  4006  ??
+8c0236a2  cc03  ??
+8c0236a4  c607  ??
+8c0236a6  7103  ??
+8c0236a8  b003  ??
+8c0236aa  d003  ??
+8c0236ac  5802  ??
+8c0236ae  5c06  ??
+8c0236b0  b89e  ??
+8c0236b2  038c  ??
+8c0236b4  c2b0  ??
+8c0236b6  048c  ??
+8c0236b8  5c4c  ??
+8c0236ba  028c  ??
+8c0236bc  8e82  ??
+8c0236be  0941  ??
+8c0236c0  0040  ??
+8c0236c2  008c  ??
+8c0236c4  a42c  ??
+8c0236c6  028c  ??
+8c0236c8  e650  ??
+8c0236ca  028c  ??
+8c0236cc  0000  ??
+8c0236ce  003f  ??
+8c0236d0  ad90   mov.w 0x8c02382e,r0
+8c0236d2  dd02   mov.w @(r0,r13),r2
+8c0236d4  2822   tst r2,r2
+8c0236d6  0089   bt 0x8c0236da
+8c0236d8  950d   mov.w r9,@(r0,r13)
+8c0236da  a990   mov.w 0x8c023830,r0
+8c0236dc  dc00   mov.b @(r0,r13),r0
+8c0236de  0288   cmp/eq #0x2,r0
+8c0236e0  0189   bt 0x8c0236e6
+8c0236e2  e4a0   bra 0x8c0238ae
+8c0236e4  0900   _nop
+8c0236e6  00ea   mov #0x0,r10
+8c0236e8  04eb   mov #0x4,r11
+8c0236ea  a36c   mov r10,r12
+8c0236ec  a192   mov.w 0x8c023832,r2
+8c0236ee  c361   mov r12,r1
+8c0236f0  a093   mov.w 0x8c023834,r3
+8c0236f2  0841   shll2 r1
+8c0236f4  dc32   add r13,r2
+8c0236f6  dc33   add r13,r3
+8c0236f8  1c33   add r1,r3
+8c0236fa  1c32   add r1,r2
+8c0236fc  38f3   fmov.s @r3,fr3
+8c0236fe  28f2   fmov.s @r2,fr2
+8c023700  35f2   fcmp/gt fr3,fr2
+8c023702  078b   bf 0x8c023714
+8c023704  9593   mov.w 0x8c023832,r3
+8c023706  9592   mov.w 0x8c023834,r2
+8c023708  dc33   add r13,r3
+8c02370a  1c33   add r1,r3
+8c02370c  38f3   fmov.s @r3,fr3
+8c02370e  dc32   add r13,r2
+8c023710  1c32   add r1,r2
+8c023712  3af2   fmov.s fr3,@r2
+8c023714  8e92   mov.w 0x8c023834,r2
+8c023716  0ce0   mov #0xc,r0
+8c023718  8b93   mov.w 0x8c023832,r3
+8c02371a  dc32   add r13,r2
+8c02371c  dc33   add r13,r3
+8c02371e  1c32   add r1,r2
+8c023720  1c33   add r1,r3
+8c023722  26f3   fmov.s @(r0,r2),fr3
+8c023724  38f2   fmov.s @r3,fr2
+8c023726  25f3   fcmp/gt fr2,fr3
+8c023728  088f   bf/s 0x8c02373c
+8c02372a  a367   _mov r10,r7
+8c02372c  8193   mov.w 0x8c023832,r3
+8c02372e  8192   mov.w 0x8c023834,r2
+8c023730  dc33   add r13,r3
+8c023732  1c33   add r1,r3
+8c023734  38f3   fmov.s @r3,fr3
+8c023736  dc32   add r13,r2
+8c023738  1c32   add r1,r2
+8c02373a  37f2   fmov fr3,@(r0,r2)
+8c02373c  7b96   mov.w 0x8c023836,r6
+8c02373e  dc36   add r13,r6
+8c023740  6365   mov r6,r5
+8c023742  6364   mov r6,r4
+8c023744  7360   mov r7,r0
+8c023746  0040   shll r0
+8c023748  7363   mov r7,r3
+8c02374a  3c30   add r3,r0
+8c02374c  7493   mov.w 0x8c023838,r3
+8c02374e  0840   shll2 r0
+8c023750  7192   mov.w 0x8c023836,r2
+8c023752  dc33   add r13,r3
+8c023754  dc32   add r13,r2
+8c023756  1c33   add r1,r3
+8c023758  2c30   add r2,r0
+8c02375a  38f2   fmov.s @r3,fr2
+8c02375c  16f3   fmov.s @(r0,r1),fr3
+8c02375e  25f3   fcmp/gt fr2,fr3
+8c023760  058b   bf 0x8c02376e
+8c023762  6992   mov.w 0x8c023838,r2
+8c023764  1360   mov r1,r0
+8c023766  66f3   fmov.s @(r0,r6),fr3
+8c023768  dc32   add r13,r2
+8c02376a  1c32   add r1,r2
+8c02376c  3af2   fmov.s fr3,@r2
+8c02376e  6393   mov.w 0x8c023838,r3
+8c023770  1360   mov r1,r0
+8c023772  56f2   fmov.s @(r0,r5),fr2
+8c023774  0ce0   mov #0xc,r0
+8c023776  dc33   add r13,r3
+8c023778  1c33   add r1,r3
+8c02377a  36f3   fmov.s @(r0,r3),fr3
+8c02377c  25f3   fcmp/gt fr2,fr3
+8c02377e  078f   bf/s 0x8c023790
+8c023780  0177   _add #0x1,r7
+8c023782  5992   mov.w 0x8c023838,r2
+8c023784  1360   mov r1,r0
+8c023786  46f3   fmov.s @(r0,r4),fr3
+8c023788  0ce0   mov #0xc,r0
+8c02378a  dc32   add r13,r2
+8c02378c  1c32   add r1,r2
+8c02378e  37f2   fmov fr3,@(r0,r2)
+8c023790  7360   mov r7,r0
+8c023792  7363   mov r7,r3
+8c023794  0040   shll r0
+8c023796  4e92   mov.w 0x8c023836,r2
+8c023798  3c30   add r3,r0
+8c02379a  4d93   mov.w 0x8c023838,r3
+8c02379c  dc32   add r13,r2
+8c02379e  dc33   add r13,r3
+8c0237a0  0840   shll2 r0
+8c0237a2  1c33   add r1,r3
+8c0237a4  2c30   add r2,r0
+8c0237a6  38f2   fmov.s @r3,fr2
+8c0237a8  16f3   fmov.s @(r0,r1),fr3
+8c0237aa  0c75   add #0xc,r5
+8c0237ac  0c74   add #0xc,r4
+8c0237ae  25f3   fcmp/gt fr2,fr3
+8c0237b0  068f   bf/s 0x8c0237c0
+8c0237b2  0c76   _add #0xc,r6
+8c0237b4  4092   mov.w 0x8c023838,r2
+8c0237b6  1360   mov r1,r0
+8c0237b8  66f3   fmov.s @(r0,r6),fr3
+8c0237ba  dc32   add r13,r2
+8c0237bc  1c32   add r1,r2
+8c0237be  3af2   fmov.s fr3,@r2
+8c0237c0  3a93   mov.w 0x8c023838,r3
+8c0237c2  1360   mov r1,r0
+8c0237c4  56f2   fmov.s @(r0,r5),fr2
+8c0237c6  0ce0   mov #0xc,r0
+8c0237c8  dc33   add r13,r3
+8c0237ca  1c33   add r1,r3
+8c0237cc  36f3   fmov.s @(r0,r3),fr3
+8c0237ce  25f3   fcmp/gt fr2,fr3
+8c0237d0  078f   bf/s 0x8c0237e2
+8c0237d2  0177   _add #0x1,r7
+8c0237d4  3092   mov.w 0x8c023838,r2
+8c0237d6  1360   mov r1,r0
+8c0237d8  46f3   fmov.s @(r0,r4),fr3
+8c0237da  0ce0   mov #0xc,r0
+8c0237dc  dc32   add r13,r2
+8c0237de  1c32   add r1,r2
+8c0237e0  37f2   fmov fr3,@(r0,r2)
+8c0237e2  7360   mov r7,r0
+8c0237e4  7363   mov r7,r3
+8c0237e6  0040   shll r0
+8c0237e8  2592   mov.w 0x8c023836,r2
+8c0237ea  3c30   add r3,r0
+8c0237ec  2493   mov.w 0x8c023838,r3
+8c0237ee  dc32   add r13,r2
+8c0237f0  dc33   add r13,r3
+8c0237f2  0840   shll2 r0
+8c0237f4  1c33   add r1,r3
+8c0237f6  2c30   add r2,r0
+8c0237f8  38f2   fmov.s @r3,fr2
+8c0237fa  16f3   fmov.s @(r0,r1),fr3
+8c0237fc  0c75   add #0xc,r5
+8c0237fe  0c74   add #0xc,r4
+8c023800  25f3   fcmp/gt fr2,fr3
+8c023802  068f   bf/s 0x8c023812
+8c023804  0c76   _add #0xc,r6
+8c023806  1792   mov.w 0x8c023838,r2
+8c023808  1360   mov r1,r0
+8c02380a  66f3   fmov.s @(r0,r6),fr3
+8c02380c  dc32   add r13,r2
+8c02380e  1c32   add r1,r2
+8c023810  3af2   fmov.s fr3,@r2
+8c023812  1193   mov.w 0x8c023838,r3
+8c023814  1360   mov r1,r0
+8c023816  56f2   fmov.s @(r0,r5),fr2
+8c023818  0ce0   mov #0xc,r0
+8c02381a  dc33   add r13,r3
+8c02381c  1c33   add r1,r3
+8c02381e  36f3   fmov.s @(r0,r3),fr3
+8c023820  25f3   fcmp/gt fr2,fr3
+8c023822  0f8f   bf/s 0x8c023844
+8c023824  0177   _add #0x1,r7
+8c023826  0792   mov.w 0x8c023838,r2
+8c023828  dc32   add r13,r2
+8c02382a  06a0   bra 0x8c02383a
+8c02382c  0900   _nop
+8c02382e  5c06  ??
+8c023830  cc07  ??
+8c023832  2401  ??
+8c023834  6001  ??
+8c023836  c400  ??
+8c023838  4801  ??
+8c02383a  1360   mov r1,r0
+8c02383c  46f3   fmov.s @(r0,r4),fr3
+8c02383e  0ce0   mov #0xc,r0
+8c023840  1c32   add r1,r2
+8c023842  37f2   fmov fr3,@(r0,r2)
+8c023844  7360   mov r7,r0
+8c023846  7363   mov r7,r3
+8c023848  0040   shll r0
+8c02384a  6b92   mov.w 0x8c023924,r2
+8c02384c  3c30   add r3,r0
+8c02384e  6a93   mov.w 0x8c023926,r3
+8c023850  dc32   add r13,r2
+8c023852  dc33   add r13,r3
+8c023854  0840   shll2 r0
+8c023856  1c33   add r1,r3
+8c023858  2c30   add r2,r0
+8c02385a  38f2   fmov.s @r3,fr2
+8c02385c  16f3   fmov.s @(r0,r1),fr3
+8c02385e  0c75   add #0xc,r5
+8c023860  0c74   add #0xc,r4
+8c023862  25f3   fcmp/gt fr2,fr3
+8c023864  068f   bf/s 0x8c023874
+8c023866  0c76   _add #0xc,r6
+8c023868  5d92   mov.w 0x8c023926,r2
+8c02386a  1360   mov r1,r0
+8c02386c  66f3   fmov.s @(r0,r6),fr3
+8c02386e  dc32   add r13,r2
+8c023870  1c32   add r1,r2
+8c023872  3af2   fmov.s fr3,@r2
+8c023874  5793   mov.w 0x8c023926,r3
+8c023876  1360   mov r1,r0
+8c023878  56f2   fmov.s @(r0,r5),fr2
+8c02387a  0ce0   mov #0xc,r0
+8c02387c  dc33   add r13,r3
+8c02387e  1c33   add r1,r3
+8c023880  36f3   fmov.s @(r0,r3),fr3
+8c023882  25f3   fcmp/gt fr2,fr3
+8c023884  078f   bf/s 0x8c023896
+8c023886  0177   _add #0x1,r7
+8c023888  4d92   mov.w 0x8c023926,r2
+8c02388a  1360   mov r1,r0
+8c02388c  46f3   fmov.s @(r0,r4),fr3
+8c02388e  0ce0   mov #0xc,r0
+8c023890  dc32   add r13,r2
+8c023892  1c32   add r1,r2
+8c023894  37f2   fmov fr3,@(r0,r2)
+8c023896  b337   cmp/ge r11,r7
+8c023898  0c75   add #0xc,r5
+8c02389a  0c74   add #0xc,r4
+8c02389c  028d   bt/s 0x8c0238a4
+8c02389e  0c76   _add #0xc,r6
+8c0238a0  50af   bra 0x8c023744
+8c0238a2  0900   _nop
+8c0238a4  017c   add #0x1,r12
+8c0238a6  933c   cmp/ge r9,r12
+8c0238a8  0189   bt 0x8c0238ae
+8c0238aa  1faf   bra 0x8c0236ec
+8c0238ac  0900   _nop
+8c0238ae  3b90   mov.w 0x8c023928,r0
+8c0238b0  d6f3   fmov.s @(r0,r13),fr3
+8c0238b2  0c70   add #0xc,r0
+8c0238b4  37fd   fmov fr3,@(r0,r13)
+8c0238b6  f870   add #-0x8,r0
+8c0238b8  d6f3   fmov.s @(r0,r13),fr3
+8c0238ba  0c70   add #0xc,r0
+8c0238bc  37fd   fmov fr3,@(r0,r13)
+8c0238be  f870   add #-0x8,r0
+8c0238c0  d6f3   fmov.s @(r0,r13),fr3
+8c0238c2  0c70   add #0xc,r0
+8c0238c4  37fd   fmov fr3,@(r0,r13)
+8c0238c6  ec70   add #-0x14,r0
+8c0238c8  f7fd   fmov fr15,@(r0,r13)
+8c0238ca  0470   add #0x4,r0
+8c0238cc  f7fd   fmov fr15,@(r0,r13)
+8c0238ce  0470   add #0x4,r0
+8c0238d0  f7fd   fmov fr15,@(r0,r13)
+8c0238d2  1070   add #0x10,r0
+8c0238d4  f7fd   fmov fr15,@(r0,r13)
+8c0238d6  0470   add #0x4,r0
+8c0238d8  f7fd   fmov fr15,@(r0,r13)
+8c0238da  0470   add #0x4,r0
+8c0238dc  f7fd   fmov fr15,@(r0,r13)
+8c0238de  264f   lds.l @r15+,PR
+8c0238e0  f9ff   fmov.s @r15+,fr15
+8c0238e2  f669   mov.l @r15+,r9
+8c0238e4  f66a   mov.l @r15+,r10
+8c0238e6  f66b   mov.l @r15+,r11
+8c0238e8  f66c   mov.l @r15+,r12
+8c0238ea  0b00   rts
+8c0238ec  f66d   _mov.l @r15+,r13
+8c0238ee  e62f   mov.l r14,@-r15
+8c0238f0  d62f   mov.l r13,@-r15
+8c0238f2  224f   sts.l PR,@-r15
+8c0238f4  0dd3   mov.l 0x8c02392c,r3
+8c0238f6  0b43   jsr @r3
+8c0238f8  436e   _mov r4,r14
+8c0238fa  e36d   mov r14,r13
+8c0238fc  86b2   bsr 0x8c023e0c
+8c0238fe  e364   _mov r14,r4
+8c023900  cdb4   bsr 0x8c02429e
+8c023902  d364   _mov r13,r4
+8c023904  1ab0   bsr 0x8c02393c
+8c023906  d364   _mov r13,r4
+8c023908  46b6   bsr 0x8c024598
+8c02390a  d364   _mov r13,r4
+8c02390c  08d2   mov.l 0x8c023930,r2
+8c02390e  0b42   jsr @r2
+8c023910  d364   _mov r13,r4
+8c023912  08d3   mov.l 0x8c023934,r3
+8c023914  0b43   jsr @r3
+8c023916  d364   _mov r13,r4
+8c023918  264f   lds.l @r15+,PR
+8c02391a  d364   mov r13,r4
+8c02391c  06d2   mov.l 0x8c023938,r2
+8c02391e  f66d   mov.l @r15+,r13
+8c023920  2b42   jmp @r2
+8c023922  f66e   _mov.l @r15+,r14
+8c023924  c400  ??
+8c023926  4801  ??
+8c023928  2401  ??
+8c02392a  0000  ??
+8c02392c  c2b0  ??
+8c02392e  048c  ??
+8c023930  5049  ??
+8c023932  028c  ??
+8c023934  ac49  ??
+8c023936  028c  ??
+8c023938  5c4c  ??
+8c02393a  028c  ??
+8c02393c  6890   mov.w 0x8c023a10,r0
+8c02393e  4e00   mov.l @(r0,r4),r0
+8c023940  10c8   tst #0x10,r0
+8c023942  638b   bf 0x8c023a0c
+8c023944  6595   mov.w 0x8c023a12,r5
+8c023946  36c7   mova 0x8c023a20,r0
+8c023948  08f5   fmov.s @r0,fr5
+8c02394a  4c35   add r4,r5
+8c02394c  5260   mov.l @r5,r0
+8c02394e  0888   cmp/eq #0x8,r0
+8c023950  028b   bf 0x8c023958
+8c023952  5150   mov.l @(0x4,r5),r0
+8c023954  0888   cmp/eq #0x8,r0
+8c023956  2389   bt 0x8c0239a0
+8c023958  5c90   mov.w 0x8c023a14,r0
+8c02395a  9df6   fldi1 fr6
+8c02395c  46f4   fmov.s @(r0,r4),fr4
+8c02395e  31c7   mova 0x8c023a24,r0
+8c023960  08f0   fmov.s @r0,fr0
+8c023962  5890   mov.w 0x8c023a16,r0
+8c023964  46f3   fmov.s @(r0,r4),fr3
+8c023966  3ef4   fmac fr0,fr3,fr4
+8c023968  65f4   fcmp/gt fr6,fr4
+8c02396a  008b   bf 0x8c02396e
+8c02396c  6cf4   fmov fr6,fr4
+8c02396e  5390   mov.w 0x8c023a18,r0
+8c023970  46f3   fmov.s @(r0,r4),fr3
+8c023972  55f3   fcmp/gt fr5,fr3
+8c023974  098b   bf 0x8c02398a
+8c023976  5090   mov.w 0x8c023a1a,r0
+8c023978  46f3   fmov.s @(r0,r4),fr3
+8c02397a  42f3   fmul fr4,fr3
+8c02397c  2ac7   mova 0x8c023a28,r0
+8c02397e  08f2   fmov.s @r0,fr2
+8c023980  4c90   mov.w 0x8c023a1c,r0
+8c023982  22f3   fmul fr2,fr3
+8c023984  46f1   fmov.s @(r0,r4),fr1
+8c023986  0aa0   bra 0x8c02399e
+8c023988  31f1   _fsub fr3,fr1
+8c02398a  4690   mov.w 0x8c023a1a,r0
+8c02398c  46f2   fmov.s @(r0,r4),fr2
+8c02398e  32f2   fmul fr3,fr2
+8c023990  26c7   mova 0x8c023a2c,r0
+8c023992  08f3   fmov.s @r0,fr3
+8c023994  4290   mov.w 0x8c023a1c,r0
+8c023996  42f2   fmul fr4,fr2
+8c023998  46f1   fmov.s @(r0,r4),fr1
+8c02399a  32f2   fmul fr3,fr2
+8c02399c  21f1   fsub fr2,fr1
+8c02399e  17f4   fmov fr1,@(r0,r4)
+8c0239a0  48e0   mov #0x48,r0
+8c0239a2  8df3   fldi0 fr3
+8c0239a4  46f2   fmov.s @(r0,r4),fr2
+8c0239a6  25f3   fcmp/gt fr2,fr3
+8c0239a8  3089   bt 0x8c023a0c
+8c0239aa  3890   mov.w 0x8c023a1e,r0
+8c0239ac  4d02   mov.w @(r0,r4),r2
+8c0239ae  2822   tst r2,r2
+8c0239b0  1189   bt 0x8c0239d6
+8c0239b2  4363   mov r4,r3
+8c0239b4  50e0   mov #0x50,r0
+8c0239b6  4073   add #0x40,r3
+8c0239b8  46f2   fmov.s @(r0,r4),fr2
+8c0239ba  38f3   fmov.s @r3,fr3
+8c0239bc  32f2   fmul fr3,fr2
+8c0239be  8df3   fldi0 fr3
+8c0239c0  35f2   fcmp/gt fr3,fr2
+8c0239c2  238b   bf 0x8c023a0c
+8c0239c4  4362   mov r4,r2
+8c0239c6  4072   add #0x40,r2
+8c0239c8  28f2   fmov.s @r2,fr2
+8c0239ca  2790   mov.w 0x8c023a1c,r0
+8c0239cc  52f2   fmul fr5,fr2
+8c0239ce  46f1   fmov.s @(r0,r4),fr1
+8c0239d0  21f1   fsub fr2,fr1
+8c0239d2  1ba0   bra 0x8c023a0c
+8c0239d4  17f4   _fmov fr1,@(r0,r4)
+8c0239d6  4362   mov r4,r2
+8c0239d8  50e0   mov #0x50,r0
+8c0239da  4072   add #0x40,r2
+8c0239dc  46f2   fmov.s @(r0,r4),fr2
+8c0239de  28f3   fmov.s @r2,fr3
+8c0239e0  32f2   fmul fr3,fr2
+8c0239e2  8df3   fldi0 fr3
+8c0239e4  35f2   fcmp/gt fr3,fr2
+8c0239e6  118b   bf 0x8c023a0c
+8c0239e8  0ec7   mova 0x8c023a24,r0
+8c0239ea  08f2   fmov.s @r0,fr2
+8c0239ec  1390   mov.w 0x8c023a16,r0
+8c0239ee  46f1   fmov.s @(r0,r4),fr1
+8c0239f0  15f2   fcmp/gt fr1,fr2
+8c0239f2  0b8b   bf 0x8c023a0c
+8c0239f4  4153   mov.l @(0x4,r4),r3
+8c0239f6  4362   mov r4,r2
+8c0239f8  24e0   mov #0x24,r0
+8c0239fa  4072   add #0x40,r2
+8c0239fc  36f3   fmov.s @(r0,r3),fr3
+8c0239fe  28f2   fmov.s @r2,fr2

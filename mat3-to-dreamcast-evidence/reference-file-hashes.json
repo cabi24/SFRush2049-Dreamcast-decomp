@@ -1,0 +1,157 @@
+[
+  {
+    "path": "C:\\rush2049-mat3\\HANDOFF.md",
+    "size": 17079,
+    "sha256": "53c0698f84e1c4a898bfd803dd1c5f4eaeb07b448de622fad498192356644f4a"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\progress.json",
+    "size": 294996,
+    "sha256": "1d4b1313ae5404a07577cdceed4dd3a60946de01bb14ba424db03e708995719e"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\build\\2049LE\\report.json",
+    "size": 602571,
+    "sha256": "66ff0d26bd14c1e65fa7958df6e069cce4e78c2dc35f09999d7eb22a5e368374"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\configure.py",
+    "size": 18196,
+    "sha256": "d9bc18fa7a61e7f9501154beb1f1423e15046221fd4e68bf01a136adfe281b88"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\rush_d.elf",
+    "size": 5611448,
+    "sha256": "d4a06e4516ab9a75e6de780beee10ea07b8358016e4964a8baf9e8eaa282908c"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\rush_d_functions.csv",
+    "size": 270403,
+    "sha256": "56b57149117c8c83333f2aea59ac630d2a789bf7a8e1b1330a6a00c3dff3f254"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\rush_d_symbols.csv",
+    "size": 1026730,
+    "sha256": "03fcdae5ce8d8d2318252dbb96795018aaae7cdf9015dbffea661f908f831806"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\rush_d_compile_units.csv",
+    "size": 19202,
+    "sha256": "5523d0aa8cfb6d6aa3fc32884c762614fd6374f9306c3fe5a4ae6fbbc611822e"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\rush_d_variables.csv",
+    "size": 399332,
+    "sha256": "8cb38e8e7a086f4f158f7229e5302035bda74657db8b4c5b6c67c360dc5e0f85"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\include\\rush\\rush_types.h",
+    "size": 148196,
+    "sha256": "7bd2f572ee894381a399d4a7d380ab6bc1ff99d9262e5da33564c770e1aaa27e"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\include\\rush\\rush_protos.h",
+    "size": 76478,
+    "sha256": "db1fc0be9261c875ac978baae08fe5ab9019fe8387fd0b53e43bbdb9bd20d14d"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\include\\rush\\overrides.json",
+    "size": 7544,
+    "sha256": "baa8b61671c92ce525b24be7a02bd7ead50035f2ece7c1a98d0a068a9db6b69f"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\include\\msl_math_inline.h",
+    "size": 1732,
+    "sha256": "22f896ccacda7c0feb18fdb532fc5a090bdccef1576191ae7bb62c2a3322e182"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\waves.c",
+    "size": 21736,
+    "sha256": "905f8f3f962760a0371fb666edd0d9b8071970040b80ac1343919c268569b1bb"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\waveinfo.c",
+    "size": 3270,
+    "sha256": "31df59af82d5ae88eca7f6f9d474562250693528f5a6850dc532f06c3fe4d731"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\fakegdfs.c",
+    "size": 2077,
+    "sha256": "25d4d86f69112a30a1c50874d06d214b8d3770b90ca4481d4c26f4a97a93ddb8"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\paksysdc.c",
+    "size": 20881,
+    "sha256": "2d90751743fb210b7f985aad042be57c98efeaf10bfe0dc6acaa74edc206aef1"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\bsearch.c",
+    "size": 812,
+    "sha256": "de922acb2ce928c344b5c49431c7bb2b0052a75ecea44c6e9a8ab6b37c744d6f"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\ll.c",
+    "size": 4169,
+    "sha256": "182ad7483879d32534b4f0ff21315b7a228c95e3e30a84d7c86c52c50cb2ed25"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c",
+    "size": 6357,
+    "sha256": "a4cd272f9b3852cca6e70c90a4f24423d339179d0d57db3eae5164c6d87cc9f4"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\fmath.c",
+    "size": 11345,
+    "sha256": "dc2b38176f2cde208697603c632cdffcc62d60ccc1d5da0f8b990fc9af7edbc5"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\timer.c",
+    "size": 2274,
+    "sha256": "dfc26bcf3a0020221fcb37a5cd7483d27449f0d5f2cbde7dc594189741f0a2d4"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\TB_Vector.c",
+    "size": 760,
+    "sha256": "130cb068952e6aacaccb3c3265aefc40db3e344c48723db6212c8a377b6b0645"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\unzip.c",
+    "size": 11679,
+    "sha256": "cfde6253e9e3574211acaf0a1c8dcf9bc7d29318fa1dc2d8a2d3ed56529b7e09"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\zip.c",
+    "size": 29252,
+    "sha256": "5ebdb0be41ee03e16d82240e3da5e8764e5e1768f6af52ad2307ffb054dd06d8"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\src\\NGC\\ngcPad.c",
+    "size": 9832,
+    "sha256": "2cb9feb9c449152bafd988b6386fab555d8ccd81495a25efbc7b839de025ec32"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\tools\\cwmatch.py",
+    "size": 9700,
+    "sha256": "4f98eecd270953b8b2cae5b9951bd479cc371fab5be875104f8d9f66a9e909ca"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\tools\\candidate.py",
+    "size": 17479,
+    "sha256": "2f68abdf77de35009226add502a225eb704a2d9e339f99c6ec282568950e76ed"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\tools\\check.py",
+    "size": 6349,
+    "sha256": "74a0fd4e632e310b78b212a43f44b873ff752f830ccb4688863a39ee3cdc9f49"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\tools\\datacheck.py",
+    "size": 4732,
+    "sha256": "54c9c506df594c7299f8d795cf0ed6c98e421b10b9298f12fadb3b11e4815e64"
+  },
+  {
+    "path": "C:\\rush2049-mat3\\decomp\\tools\\verify_link.py",
+    "size": 5678,
+    "sha256": "1c665f087e3a540900b735c5fa5f9535c8a023b277b780c1a12303f2eda3f8b7"
+  }
+]

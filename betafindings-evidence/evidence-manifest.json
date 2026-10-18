@@ -1,0 +1,101 @@
+{
+  "inspection_date": "2026-10-18",
+  "files": [
+    {
+      "path": "Apr_10_2000_prototype/browser_source_literals.json",
+      "size": 243,
+      "sha256": "e97ed372ec24411b0be57cd1f7227ba1e76d8b797698cdd72beccae1b1bc7a29"
+    },
+    {
+      "path": "Apr_10_2000_prototype/diagnostics.json",
+      "size": 43974,
+      "sha256": "ca6c4949769b55d2ff24bd612dcb048beb831242489e678c4bdf5fd63b061643"
+    },
+    {
+      "path": "Apr_10_2000_prototype/resource_names.csv",
+      "size": 5638,
+      "sha256": "cb7de0f1671021b260cf0d598b9fa57be5b7b0ac2e83ebdcf845071ea3011272"
+    },
+    {
+      "path": "Apr_10_2000_prototype/resource_pairs.csv",
+      "size": 8844,
+      "sha256": "0e8c37cd0d47154129113eadada8296febe7e72d774134a15a32c2dd5e361a06"
+    },
+    {
+      "path": "Apr_10_2000_prototype/resource_pairs.json",
+      "size": 31012,
+      "sha256": "a24c4af07e36700cc81cbd7682e1c8a587a94a5fb10a7d842b8218ccde28ab5e"
+    },
+    {
+      "path": "Aug_1_2000_prototype/browser_source_literals.json",
+      "size": 1415,
+      "sha256": "5d1eae47d45fb484a762ee41b48461ca659adadbd64867066488b1fcdc17951d"
+    },
+    {
+      "path": "Aug_1_2000_prototype/diagnostics.json",
+      "size": 29907,
+      "sha256": "ebd15e8974d738810da8af13f680599a7cf4cb59a74c1b29c1bc09aeeb4e7f43"
+    },
+    {
+      "path": "Aug_7_2000_prototype/browser_source_literals.json",
+      "size": 42,
+      "sha256": "4e08e1bba1d712d73caa88cac1350248012360eedbd0f543745e96640d1d8f2e"
+    },
+    {
+      "path": "Aug_7_2000_prototype/diagnostics.json",
+      "size": 29999,
+      "sha256": "aca3c81fe70332a468cc9ab58265ccf270328c31d40e70e3ab24b6ce47c51174"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype/browser_source_literals.json",
+      "size": 42,
+      "sha256": "4e08e1bba1d712d73caa88cac1350248012360eedbd0f543745e96640d1d8f2e"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype/diagnostics.json",
+      "size": 46180,
+      "sha256": "a603d7ab0d28b92d8850d27215e80fe67a78937b6b8ad88c4c7c67ca7fcbf76f"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype/resource_names.csv",
+      "size": 5534,
+      "sha256": "6f881eee61746ff77771203e4b01118608d0ecb4b788df0a0cb2d1bbd9e03e0f"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype/resource_pairs.csv",
+      "size": 8715,
+      "sha256": "0c26b60c29f92a5f30e63c379441db68595203e3ee97166780de3950103a1fd5"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype/resource_pairs.json",
+      "size": 30188,
+      "sha256": "fdf7fe22c7eaebae26675320987f65da99b348d3bb959130f6b42945e2b4811b"
+    },
+    {
+      "path": "inspect_prototypes.py",
+      "size": 6611,
+      "sha256": "fd752d75a7139f0a4043c5677aae3242d4e33f75eb1f2c624b9d58b8eb26e362"
+    },
+    {
+      "path": "inventory.json",
+      "size": 497327,
+      "sha256": "c8ca1d20537b537caffee892541ae8f38d50f9d47450d8a4b12693b97cd20b6b"
+    },
+    {
+      "path": "lzs_all.json",
+      "size": 171831,
+      "sha256": "1c25f84deffbf85f898f5c04c2a928a50c6c15d1febcf08b5edaaeaff67cbe13"
+    },
+    {
+      "path": "scan_all.json",
+      "size": 942349,
+      "sha256": "d3d51d536457f74b90ba6d223129d328b09d03b90d54edb80aaaba32ebc2e5ee"
+    },
+    {
+      "path": "summary.json",
+      "size": 12484,
+      "sha256": "240b716646e2e6f24cacefbbee1678646895881f37e17769ec88db9d789fff74"
+    }
+  ],
+  "note": "Generated reports and text/code only; no raw tracks or game binaries. The manifest excludes itself."
+}

@@ -1,0 +1,92 @@
+{
+ "generated": "2026-10-17",
+ "sources": {
+  "downloads/shc/shc-v*.tar.gz": "https://github.com/decompme/compilers/releases/download/compilers/<name> (decomp.me compiler archive; Hitachi SuperH C/C++ compiler packages, Dreamcast platform)",
+  "downloads/rof2elf/rof2elf.py": "https://gist.githubusercontent.com/masonc15/cb2354b439e35f1400c71edfca7171ca/raw/2556b4f781d49b167be0952b4420fadd2b5a313f/rof2elf.py (SYSROF -> ELF converter used by decomp.me)",
+  "downloads/objdiff/*.exe": "https://github.com/encounter/objdiff/releases/tag/v3.8.2",
+  "downloads/ghidra/ghidra_12.1.4_PUBLIC_20260921.zip": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build (release page SHA-256 verified)",
+  "downloads/jdk/OpenJDK25U-jdk_x64_windows_hotspot_25.0.4.1_1.zip": "https://github.com/adoptium/temurin25-binaries/releases/tag/jdk-25.0.4.1%2B1 via api.adoptium.net (checksum verified)"
+ },
+ "files": [
+  {
+   "file": "downloads/ghidra/ghidra_12.1.4_PUBLIC_20260921.zip",
+   "size": 569649598,
+   "sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db"
+  },
+  {
+   "file": "downloads/jdk/OpenJDK25U-jdk_x64_windows_hotspot_25.0.4.1_1.zip",
+   "size": 141167264,
+   "sha256": "00c847d804f4a78e9f04f2683faf14fed898535b177b7fc704486cb0284e9283"
+  },
+  {
+   "file": "downloads/objdiff/objdiff-cli.exe",
+   "size": 7144448,
+   "sha256": "36d229ac6ce74a26b47f42cf86ea8e808d8cd834a54aa62d7ed3f47b765d971b"
+  },
+  {
+   "file": "downloads/objdiff/objdiff.exe",
+   "size": 24316928,
+   "sha256": "ce9d877a8cd6f133a962fb86d66f0348b9b88d735cea0fd52ae61bb9ad4d6691"
+  },
+  {
+   "file": "downloads/rof2elf/rof2elf.py",
+   "size": 34148,
+   "sha256": "807f34336f9f3c803ccc2ab01fbd1630e4c7388c29a357fe2f5ba10d2c7dfdef"
+  },
+  {
+   "file": "downloads/shc/shc-v5.0r10.tar.gz",
+   "size": 1229888,
+   "sha256": "1932570b2f751c26b18e5c7f3a7f9ab453aa05a13d1c06787e60fba7711d0016"
+  },
+  {
+   "file": "downloads/shc/shc-v5.0r26.tar.gz",
+   "size": 1783949,
+   "sha256": "a065c9b6bfe60af986c72c2d863b0b067fe839605b1131460ff786a8e0badc0d"
+  },
+  {
+   "file": "downloads/shc/shc-v5.0r28.tar.gz",
+   "size": 1870184,
+   "sha256": "27eebe4e3938b7a5e3b5f6d921501d1ec0eed862f2f7743f9ff1032fc2ec5789"
+  },
+  {
+   "file": "downloads/shc/shc-v5.0r31.tar.gz",
+   "size": 1958562,
+   "sha256": "1b67fce972207f3c72c72e1fd85db0371a5ef504f886a618079b25f1889e936b"
+  },
+  {
+   "file": "downloads/shc/shc-v5.0r32.tar.gz",
+   "size": 1973663,
+   "sha256": "21f26227e48a2c9325f0aaf954e569b29db8db1dd1174aff32623017d713fdf5"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r01.tar.gz",
+   "size": 1979022,
+   "sha256": "d42a0ff0f7c43bd19319cbc926cfb5b96f76827d6aafb995857b60b76c863cc0"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r03.tar.gz",
+   "size": 1994963,
+   "sha256": "a5c41c4b9499c7593d141ee99fcbb9bf3519dbb803cdec9f22318b84b19a06ea"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r04.tar.gz",
+   "size": 1756097,
+   "sha256": "277065890128db57816d40a968d510c6a7f9e3c97929d75fd45226755eebb34d"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r08.tar.gz",
+   "size": 2223056,
+   "sha256": "2bcc5598a71a429d5e79ae12c9f69adee8950051da2db74c87769144fb80b814"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r11.tar.gz",
+   "size": 995742,
+   "sha256": "5fda932494434e31dd8b50754ba7b76c4bd1fb32a0e7c595b2f0d67ecaa5de39"
+  },
+  {
+   "file": "downloads/shc/shc-v5.1r13.tar.gz",
+   "size": 2146541,
+   "sha256": "0da9982adc576171d93ceeeedff15c946fc570b0473e39b388e18d9e4ee1427a"
+  }
+ ]
+}

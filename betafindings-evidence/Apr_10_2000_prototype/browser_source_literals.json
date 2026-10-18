@@ -1,0 +1,15 @@
+{
+  "sources": [
+    {
+      "file": "2_DP.BIN",
+      "offset": 847636,
+      "text": "cursor.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 863216,
+      "text": "../common/mpgaudio.c"
+    }
+  ],
+  "assertions": []
+}

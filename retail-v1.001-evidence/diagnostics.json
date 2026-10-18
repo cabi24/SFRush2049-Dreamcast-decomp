@@ -1,0 +1,1746 @@
+[
+  {
+    "offset": 610176,
+    "text": "Katana Debug Adapter"
+  },
+  {
+    "offset": 633368,
+    "text": "kmSetBorderColor"
+  },
+  {
+    "offset": 633388,
+    "text": "kmSetSystemConfiguration"
+  },
+  {
+    "offset": 633416,
+    "text": "kmBeginScene"
+  },
+  {
+    "offset": 633432,
+    "text": "kmBeginPass"
+  },
+  {
+    "offset": 633444,
+    "text": "kmEndPass"
+  },
+  {
+    "offset": 633456,
+    "text": "kmEndScene"
+  },
+  {
+    "offset": 649388,
+    "text": "kmLoadTexture"
+  },
+  {
+    "offset": 662460,
+    "text": "acSetTransferMode( AC_TRANSFER_DMA ) failed"
+  },
+  {
+    "offset": 662504,
+    "text": "a64FileInit failed"
+  },
+  {
+    "offset": 662524,
+    "text": "acIntInit failed"
+  },
+  {
+    "offset": 662600,
+    "text": "a64FileGetSize failed"
+  },
+  {
+    "offset": 662624,
+    "text": "a64FileLoad failed"
+  },
+  {
+    "offset": 662644,
+    "text": "acSystemInit failed"
+  },
+  {
+    "offset": 662664,
+    "text": "amInit failed"
+  },
+  {
+    "offset": 662820,
+    "text": "kmCreateTextureSurface"
+  },
+  {
+    "offset": 662844,
+    "text": "kmLoadTexture"
+  },
+  {
+    "offset": 662860,
+    "text": "kmFreeTexture"
+  },
+  {
+    "offset": 662876,
+    "text": "kmSetFogTableColor"
+  },
+  {
+    "offset": 662896,
+    "text": "kmSetFogDensity"
+  },
+  {
+    "offset": 662912,
+    "text": "kmSetFogTable"
+  },
+  {
+    "offset": 669509,
+    "text": "syMalloc Ver 2.01 Build:Apr 27 2000 11:36:06"
+  },
+  {
+    "offset": 669556,
+    "text": "a64FileOpen - fileName/fd is NULL"
+  },
+  {
+    "offset": 669592,
+    "text": "a64FileOpen - No more free file handles"
+  },
+  {
+    "offset": 669632,
+    "text": "a64FileOpen - file not found"
+  },
+  {
+    "offset": 669664,
+    "text": "a64FileClose - fd is invalid"
+  },
+  {
+    "offset": 669696,
+    "text": "a64FileRead - buffer is NULL"
+  },
+  {
+    "offset": 669728,
+    "text": "a64FileRead - buffer is not 32 byte aligned"
+  },
+  {
+    "offset": 669772,
+    "text": "a64FileRead - buffer must be in SH4 memory"
+  },
+  {
+    "offset": 669816,
+    "text": "a64FileRead - size is 0"
+  },
+  {
+    "offset": 669840,
+    "text": "a64FileRead - gdFsRead failed"
+  },
+  {
+    "offset": 669872,
+    "text": "a64FileRead - fd is invalid"
+  },
+  {
+    "offset": 669900,
+    "text": "a64FileReadAsync - buffer is NULL"
+  },
+  {
+    "offset": 669936,
+    "text": "a64FileReadAsync - buffer is not 32 byte aligned"
+  },
+  {
+    "offset": 669988,
+    "text": "a64FileReadAsync - buffer must be in SH4 memory"
+  },
+  {
+    "offset": 670036,
+    "text": "a64FileReadAsync - size is 0"
+  },
+  {
+    "offset": 670068,
+    "text": "a64FileReadAsync - gdFsReqRd32 failed"
+  },
+  {
+    "offset": 670108,
+    "text": "a64FileReadAsync - fd is invalid"
+  },
+  {
+    "offset": 670144,
+    "text": "a64FileGetSize - fileName/size is NULL"
+  },
+  {
+    "offset": 670184,
+    "text": "a64FileGetSize - gdFsOpen fail (file not found)"
+  },
+  {
+    "offset": 670232,
+    "text": "a64FileGetSize - gdFsGetFileSize fail"
+  },
+  {
+    "offset": 670272,
+    "text": "a64FileRewind - gdFsSeek fail"
+  },
+  {
+    "offset": 670304,
+    "text": "a64FileRewind - fd is invalid"
+  },
+  {
+    "offset": 670336,
+    "text": "a64FileLoad - fileName/buffer is NULL"
+  },
+  {
+    "offset": 670376,
+    "text": "a64FileGetStatus - fd is invalid"
+  },
+  {
+    "offset": 670412,
+    "text": "acSystemSetMasterVolume - Warning: masterVolume is out of range, has been truncated to AC_MAX_SEND_LEVEL"
+  },
+  {
+    "offset": 670520,
+    "text": "acSystemSetMasterVolume - can't send driver command"
+  },
+  {
+    "offset": 670572,
+    "text": "acDigiDolbySurround - Warning: dolbyChannel is out of range, has been truncated to AC_MAX_DOLBY_POSITION"
+  },
+  {
+    "offset": 670680,
+    "text": "acDigiDolbySurround - Warning: leftRightPosition is out of range, has been truncated to AC_MAX_DOLBY_POSITION"
+  },
+  {
+    "offset": 670792,
+    "text": "acDigiDolbySurround - Warning: frontBackPosition is out of range, has been truncated to AC_MAX_DOLBY_POSITION"
+  },
+  {
+    "offset": 670904,
+    "text": "acDigiDolbySurround - can't send driver command"
+  },
+  {
+    "offset": 670952,
+    "text": "acDigiGetCurrentReadPosition - Driver not installed"
+  },
+  {
+    "offset": 671004,
+    "text": "acDigiGetCurrentReadPosition - port is out of range"
+  },
+  {
+    "offset": 671056,
+    "text": "acDigiSetFilterEnvelope - port is out of range"
+  },
+  {
+    "offset": 671104,
+    "text": "acDigiSetFilterEnvelope - can't send driver command"
+  },
+  {
+    "offset": 671156,
+    "text": "acDigiSetAmplitudeEnvelope - can't send driver command"
+  },
+  {
+    "offset": 671212,
+    "text": "acDigiSetLfoRegisters - can't send driver command"
+  },
+  {
+    "offset": 671264,
+    "text": "acSystemSetStereoOrMono - Warning: playback mode is undefined, reset to stereo"
+  },
+  {
+    "offset": 671344,
+    "text": "acSystemSetStereoOrMono - can't send driver command"
+  },
+  {
+    "offset": 671396,
+    "text": "acDigiSetLoopPoints - Loop Start or Loop End > 64k, values truncated"
+  },
+  {
+    "offset": 671468,
+    "text": "acDigiSetLoopPoints - can't send driver command"
+  },
+  {
+    "offset": 671516,
+    "text": "acDigiPlay - port is out of range"
+  },
+  {
+    "offset": 671552,
+    "text": "acDigiPlay - Warning: aicaLoopFlag is out of range, has been set to AC_LOOP_OFF"
+  },
+  {
+    "offset": 671632,
+    "text": "acDigiPlay - can't send driver command"
+  },
+  {
+    "offset": 671672,
+    "text": "acDigiPlayWithLoopParameters - port is out of range"
+  },
+  {
+    "offset": 671724,
+    "text": "acDigiPlayWithLoopParameters - Warning: aicaLoopFlag is out of range, has been set to AC_LOOP_OFF"
+  },
+  {
+    "offset": 671824,
+    "text": "acDigiPlayWithLoopParameters - can't send driver command"
+  },
+  {
+    "offset": 671884,
+    "text": "acDigiPlayWithParameters - port is out of range"
+  },
+  {
+    "offset": 671932,
+    "text": "acDigiPlayWithParameters - Warning: can't play sample rates of < 2506"
+  },
+  {
+    "offset": 672004,
+    "text": "acDigiPlayWithParameters - can't send driver command"
+  },
+  {
+    "offset": 672060,
+    "text": "acSystemRequestArmInterrupt - port is out of range"
+  },
+  {
+    "offset": 672112,
+    "text": "acSystemRequestArmInterrupt - can't send driver command"
+  },
+  {
+    "offset": 672168,
+    "text": "acSetMultiPlayMask - upperMask or lowerMask is NULL"
+  },
+  {
+    "offset": 672220,
+    "text": "acSetMultiPlayMask - port is out of range"
+  },
+  {
+    "offset": 672264,
+    "text": "acDigiMultiPlay - Warning: aicaLoopFlag is out of range, set to AC_LOOP_OFF"
+  },
+  {
+    "offset": 672340,
+    "text": "acDigiMultiPlay- masks are 0"
+  },
+  {
+    "offset": 672372,
+    "text": "acDigiMultiPlay - can't send driver command"
+  },
+  {
+    "offset": 672416,
+    "text": "acDigiMultiStop - masks are 0"
+  },
+  {
+    "offset": 672448,
+    "text": "acDigiMultiStop - can't send driver command"
+  },
+  {
+    "offset": 672492,
+    "text": "acDigiOpen - port is out of range"
+  },
+  {
+    "offset": 672528,
+    "text": "acDigiOpen - address is NULL"
+  },
+  {
+    "offset": 672560,
+    "text": "acDigiOpen - audioType is out of range"
+  },
+  {
+    "offset": 672600,
+    "text": "acDigiOpen - sizeInBytes is 0"
+  },
+  {
+    "offset": 672632,
+    "text": "acDigiOpen - Buffersize in Samples is > 64k"
+  },
+  {
+    "offset": 672676,
+    "text": "acDigiOpen - sampleRate is out of range"
+  },
+  {
+    "offset": 672716,
+    "text": "acDigiOpen - can't send driver command"
+  },
+  {
+    "offset": 672756,
+    "text": "acDigiSetSampleRate - port is out of range"
+  },
+  {
+    "offset": 672800,
+    "text": "acDigiSetSampleRate - sampleRate is out of range"
+  },
+  {
+    "offset": 672852,
+    "text": "acDigiSetSampleRate - can't send driver command"
+  },
+  {
+    "offset": 672900,
+    "text": "acDigiSetQSoundAngle - port is out of range"
+  },
+  {
+    "offset": 672944,
+    "text": "acDigiSetQSoundAngle - Warning: angle is out of range, has been set to 127"
+  },
+  {
+    "offset": 673020,
+    "text": "acDspSetQSoundAngle - can't send driver command"
+  },
+  {
+    "offset": 673068,
+    "text": "acDspLoadPrograms - address is NULL"
+  },
+  {
+    "offset": 673104,
+    "text": "acDspLoadPrograms - sizeInBytes is 0"
+  },
+  {
+    "offset": 673144,
+    "text": "acDspInstallProgram - can't send driver command"
+  },
+  {
+    "offset": 673192,
+    "text": "acDspLoadOutputMixer - address is NULL"
+  },
+  {
+    "offset": 673232,
+    "text": "acDspLoadOutputMixer - sizeInBytes is 0"
+  },
+  {
+    "offset": 673272,
+    "text": "acDspInstallOutputMixer - can't send driver command"
+  },
+  {
+    "offset": 673324,
+    "text": "acDspSetMixerChannel - port is out of range"
+  },
+  {
+    "offset": 673368,
+    "text": "acDspSetMixerChannel - can't send driver command"
+  },
+  {
+    "offset": 673420,
+    "text": "acDigiClose - port is out of range"
+  },
+  {
+    "offset": 673456,
+    "text": "acDigiClose - can't send driver command"
+  },
+  {
+    "offset": 673496,
+    "text": "acDigiSetPitch - port is out of range"
+  },
+  {
+    "offset": 673536,
+    "text": "acDigiSetCurrentPitch - Warning: can't play sample rates of < 2506"
+  },
+  {
+    "offset": 673604,
+    "text": "acDigiSetCurrentPitch - can't send driver command"
+  },
+  {
+    "offset": 673656,
+    "text": "acDigiSetVolume - port is out of range"
+  },
+  {
+    "offset": 673696,
+    "text": "acDigiSetVolume - Warning: channelVolume is out of range, has been truncated to AC_MAX_VOLUME"
+  },
+  {
+    "offset": 673792,
+    "text": "acDigiSetVolume - can't send driver command"
+  },
+  {
+    "offset": 673836,
+    "text": "acDigiSetPan - port is out of range"
+  },
+  {
+    "offset": 673872,
+    "text": "acDigiSetPan - Warning: aicaPan is out of range, has been truncated to AC_MAX_PAN"
+  },
+  {
+    "offset": 673956,
+    "text": "acDigiSetPan - can't send driver command"
+  },
+  {
+    "offset": 674000,
+    "text": "acDigiRequestEvent - port is out of range"
+  },
+  {
+    "offset": 674044,
+    "text": "acDigiRequestEvent - failed to set event request"
+  },
+  {
+    "offset": 674096,
+    "text": "acDigiStop - port is out of range"
+  },
+  {
+    "offset": 674132,
+    "text": "acDigiStop - can't send driver command"
+  },
+  {
+    "offset": 674172,
+    "text": "acMidiOpen - port is out of range"
+  },
+  {
+    "offset": 674208,
+    "text": "acMidiOpen - Warning: gmMode is out of range, set to AC_GM_OFF"
+  },
+  {
+    "offset": 674272,
+    "text": "acMidiOpen - address is NULL"
+  },
+  {
+    "offset": 674304,
+    "text": "acMidiOpen - sizeInBytes is 0"
+  },
+  {
+    "offset": 674336,
+    "text": "acMidiOpen - can't send driver command"
+  },
+  {
+    "offset": 674376,
+    "text": "acMidiSetTonebank - toneBank is out of range"
+  },
+  {
+    "offset": 674424,
+    "text": "acMidiSetTonebank - bankType is out of range"
+  },
+  {
+    "offset": 674472,
+    "text": "acMidiSetTonebank - address is NULL"
+  },
+  {
+    "offset": 674508,
+    "text": "acMidiSetTonebank - sizeInBytes is 0"
+  },
+  {
+    "offset": 674548,
+    "text": "acMidiSetTonebank - can't send driver command"
+  },
+  {
+    "offset": 674596,
+    "text": "acMidiClose - port is out of range"
+  },
+  {
+    "offset": 674632,
+    "text": "acMidiClose - can't send driver command"
+  },
+  {
+    "offset": 674672,
+    "text": "acMidiPlay - port is out of range"
+  },
+  {
+    "offset": 674708,
+    "text": "acMidiPlay - Warning: aicaLoopFlag is out of range, set to AC_LOOP_OFF"
+  },
+  {
+    "offset": 674780,
+    "text": "acMidiPlay - can't send driver command"
+  },
+  {
+    "offset": 674820,
+    "text": "acMidiStop - port is out of range"
+  },
+  {
+    "offset": 674856,
+    "text": "acMidiStop - can't send driver command"
+  },
+  {
+    "offset": 674896,
+    "text": "acMidiRequestEvent - port is out of range"
+  },
+  {
+    "offset": 674940,
+    "text": "acMidiRequestEvent - can't send driver command"
+  },
+  {
+    "offset": 674988,
+    "text": "acMidiPause - port is out of range"
+  },
+  {
+    "offset": 675024,
+    "text": "acMidiPause - can't send driver command"
+  },
+  {
+    "offset": 675064,
+    "text": "acMidiResume - port is out of range"
+  },
+  {
+    "offset": 675100,
+    "text": "acMidiResume - can't send driver command"
+  },
+  {
+    "offset": 675144,
+    "text": "acMidiSetVolume - port is out of range"
+  },
+  {
+    "offset": 675184,
+    "text": "acMidiSetVolume - Warning: portMasterVolume is out of range, set to AC_MAX_MIDI_VOLUME"
+  },
+  {
+    "offset": 675272,
+    "text": "acMidiSetVolume - can't send driver command"
+  },
+  {
+    "offset": 675316,
+    "text": "acMidiReset - port is out of range"
+  },
+  {
+    "offset": 675352,
+    "text": "acMidiReset - can't send driver command"
+  },
+  {
+    "offset": 675392,
+    "text": "acMidiSetTempo - port is out of range"
+  },
+  {
+    "offset": 675432,
+    "text": "acMidiSetTempo - can't send driver command"
+  },
+  {
+    "offset": 675476,
+    "text": "acMidiSendMessage - channel is out of range"
+  },
+  {
+    "offset": 675520,
+    "text": "acMidiSendMessage - value1 is out of range"
+  },
+  {
+    "offset": 675564,
+    "text": "acMidiSendMessage - value2 is out of range"
+  },
+  {
+    "offset": 675608,
+    "text": "acMidiSendMessage - can't send driver command"
+  },
+  {
+    "offset": 675656,
+    "text": "acCdSetVolume - volume is out of range"
+  },
+  {
+    "offset": 675696,
+    "text": "acCdSetVolume - can't send driver command"
+  },
+  {
+    "offset": 675740,
+    "text": "acCdSetPan - pan is out of range"
+  },
+  {
+    "offset": 675776,
+    "text": "acCdSetPan - can't send driver command"
+  },
+  {
+    "offset": 675816,
+    "text": "acCdInit - can't send driver command"
+  },
+  {
+    "offset": 675857,
+    "text": "Audio64 Ver 10.0.f.2 Build:May 16 2000 17:18:37"
+  },
+  {
+    "offset": 676464,
+    "text": "acIntSetMessagingMode - messageMode is out of range"
+  },
+  {
+    "offset": 676520,
+    "text": "acIntInit - failed to add the ARM interrupt handler to the chain"
+  },
+  {
+    "offset": 676588,
+    "text": "acIntInit - failed to add the polled message handler to the vblank taks list"
+  },
+  {
+    "offset": 676668,
+    "text": "acSystemGetIntArrayStartOffset - interruptArrayStartOffset is NULL"
+  },
+  {
+    "offset": 676736,
+    "text": "acSystemGetIntArrayStartOffset - Driver not installed"
+  },
+  {
+    "offset": 676792,
+    "text": "acSystemGetIntArrayStartOffset - intArrayStartPointer is NULL"
+  },
+  {
+    "offset": 676856,
+    "text": "acSystemGetIntArrayStartOffset - baseOfSoundMemory is NULL"
+  },
+  {
+    "offset": 676916,
+    "text": "acSystemGetIntArrayStartOffset - interruptArray is NULL"
+  },
+  {
+    "offset": 676972,
+    "text": "acSystemGetIntArrayStartOffset - interruptArrayLength is NULL"
+  },
+  {
+    "offset": 677036,
+    "text": "acSystemCheckDriverRevision - driver is NULL"
+  },
+  {
+    "offset": 677084,
+    "text": "acSystemCheckDriverRevision - driver in AICA memory, must be in SH4 memory"
+  },
+  {
+    "offset": 677160,
+    "text": "acSystemGetDriverRevision - driver is NULL"
+  },
+  {
+    "offset": 677204,
+    "text": "acSystemGetDriverRevision - driver in AICA memory, must be in SH4 memory"
+  },
+  {
+    "offset": 677280,
+    "text": "acSystemInit - driverType is invalid"
+  },
+  {
+    "offset": 677320,
+    "text": "acSystemInit - Driver already installed"
+  },
+  {
+    "offset": 677384,
+    "text": "acSystemInit - driver could be installed"
+  },
+  {
+    "offset": 677428,
+    "text": "acSystemGetFirstFreeSoundMemory - Driver not installed"
+  },
+  {
+    "offset": 677484,
+    "text": "acSystemGetCommandFlag - Driver not installed"
+  },
+  {
+    "offset": 677532,
+    "text": "acSystemResetArmInterrupt - Driver not installed"
+  },
+  {
+    "offset": 677584,
+    "text": "acSystemInstallDriver - driverImage is NULL"
+  },
+  {
+    "offset": 677628,
+    "text": "acSystemInstallDriver - driverSize is 0"
+  },
+  {
+    "offset": 677668,
+    "text": "acSystemInstallDriver - int array length must be 32 or 64"
+  },
+  {
+    "offset": 677728,
+    "text": "acSystemInstallDriver - driver and lib revisions are not in sync."
+  },
+  {
+    "offset": 677796,
+    "text": "acSetTransferMode - mode is out of range"
+  },
+  {
+    "offset": 677840,
+    "text": "acSetTransferMode - add handler failed"
+  },
+  {
+    "offset": 677880,
+    "text": "acTransfer - request is NULL"
+  },
+  {
+    "offset": 677912,
+    "text": "acTransfer - target must be in AICA memory"
+  },
+  {
+    "offset": 677956,
+    "text": "acTransfer - source must be in SH4 memory"
+  },
+  {
+    "offset": 678000,
+    "text": "acTransfer - target/source/size must be 32-byte aligned"
+  },
+  {
+    "offset": 678056,
+    "text": "acTransfer - target/source/size must be dword aligned"
+  },
+  {
+    "offset": 678112,
+    "text": "acTransfer - transfer queue is full"
+  },
+  {
+    "offset": 678148,
+    "text": "amStreamAllocateVoiceChannels - theStream is NULL"
+  },
+  {
+    "offset": 678200,
+    "text": "amStreamAllocateVoiceChannels - the stream is corrupt"
+  },
+  {
+    "offset": 678256,
+    "text": "amStreamSetVolume - theStream is NULL"
+  },
+  {
+    "offset": 678296,
+    "text": "amStreamSetVolume - newVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 678368,
+    "text": "amStreamSetVolume - trackNumber is out of range"
+  },
+  {
+    "offset": 678416,
+    "text": "amStreamSetVolume - can't send driver command"
+  },
+  {
+    "offset": 678464,
+    "text": "amStreamSetVolume - the stream is corrupt"
+  },
+  {
+    "offset": 678508,
+    "text": "amStreamSetPan - theStream is NULL"
+  },
+  {
+    "offset": 678544,
+    "text": "amStreamSetPan - Warning: newPan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 678616,
+    "text": "amStreamSetPan - trackNumber is out of range"
+  },
+  {
+    "offset": 678664,
+    "text": "amStreamSetPan - can't send driver command"
+  },
+  {
+    "offset": 678708,
+    "text": "amStreamSetPan - Warning: can't set the pan on a stereo stream"
+  },
+  {
+    "offset": 678772,
+    "text": "amStreamClose - theStream is NULL"
+  },
+  {
+    "offset": 678808,
+    "text": "amStreamIsDone - theStream is NULL"
+  },
+  {
+    "offset": 678844,
+    "text": "amStreamIsDone - isDone is NULL"
+  },
+  {
+    "offset": 678876,
+    "text": "amStreamIsIdle - theStream is NULL"
+  },
+  {
+    "offset": 678912,
+    "text": "amStreamIsIdle - isIdle is NULL"
+  },
+  {
+    "offset": 678944,
+    "text": "amStreamIsPlaying - theStream is NULL"
+  },
+  {
+    "offset": 678984,
+    "text": "amStreamIsPlaying - isPlaying is NULL"
+  },
+  {
+    "offset": 679024,
+    "text": "amStreamSetHeaderBuffer - theStream/headerBuffer is NULL"
+  },
+  {
+    "offset": 679084,
+    "text": "amStreamSetHeaderBuffer - headerBuffer isnot 32-byte aligned"
+  },
+  {
+    "offset": 679148,
+    "text": "amStreamStart - theStream is NULL"
+  },
+  {
+    "offset": 679184,
+    "text": "amStreamStart - headerBuffer/transferBuffer/playBuffer/isr is NULL"
+  },
+  {
+    "offset": 679252,
+    "text": "amStreamSetBuffers - theStream or is transferBuffer or playBuffer is NULL"
+  },
+  {
+    "offset": 679328,
+    "text": "amStreamSetBuffers - transferBuffer/playBuffer must be 32-byte aligned"
+  },
+  {
+    "offset": 679400,
+    "text": "amStreamSetBuffers - transferBufferSize/playBufferSize must be a multuple of 2048"
+  },
+  {
+    "offset": 679484,
+    "text": "amStreamSetBuffers - transferBuffer must be in SH4 memory"
+  },
+  {
+    "offset": 679544,
+    "text": "amStreamSetBuffers - playBuffer must be in AICA memory"
+  },
+  {
+    "offset": 679600,
+    "text": "amStreamSetIsr - theStream/theIsr is NULL"
+  },
+  {
+    "offset": 679644,
+    "text": "amStreamInit - theStream or fileName is NULL"
+  },
+  {
+    "offset": 679692,
+    "text": "amStreamInit - fileName is too long"
+  },
+  {
+    "offset": 679728,
+    "text": "amStreamStop - theStream is NULL"
+  },
+  {
+    "offset": 679764,
+    "text": "amStreamStop - theStream is corrupt"
+  },
+  {
+    "offset": 679800,
+    "text": "amStreamStop - can't send driver command after 20 retries"
+  },
+  {
+    "offset": 679860,
+    "text": "amStreamStop - can't send acDigiClose() mono port command"
+  },
+  {
+    "offset": 679920,
+    "text": "amStreamStop - can't send acDigiClose() left port command"
+  },
+  {
+    "offset": 679980,
+    "text": "amStreamStop - can't send acDigiClose() right port command"
+  },
+  {
+    "offset": 680612,
+    "text": "amStreamStart - streams must use even sample rates"
+  },
+  {
+    "offset": 680664,
+    "text": "amStreamStart - can't send driver command"
+  },
+  {
+    "offset": 680708,
+    "text": "amStreamStart - the stream is corrupt"
+  },
+  {
+    "offset": 680788,
+    "text": "amBankAssetTypeIs - theBank is NULL"
+  },
+  {
+    "offset": 680824,
+    "text": "amBankAssetTypeIs - Bank does not contain this many assets"
+  },
+  {
+    "offset": 680884,
+    "text": "amBankTransfer - target or source is NULL"
+  },
+  {
+    "offset": 680928,
+    "text": "amBankTransfer - target is not a 32 byte aligned address"
+  },
+  {
+    "offset": 680988,
+    "text": "amBankTransfer - source is not a 32 byte aligned address"
+  },
+  {
+    "offset": 681048,
+    "text": "amBankTransfer - target buffer must be in sound memory"
+  },
+  {
+    "offset": 681104,
+    "text": "amBankGetSize - bankSize or filename is NULL"
+  },
+  {
+    "offset": 681152,
+    "text": "amBankLoad - sh4buffer or filename is NULL"
+  },
+  {
+    "offset": 681196,
+    "text": "amBankLoad - sh4buffer is not a 32 byte aligned address"
+  },
+  {
+    "offset": 681252,
+    "text": "amBankLoad - can't read an asset into aica memory using gdfs"
+  },
+  {
+    "offset": 681316,
+    "text": "amBankFetchMidiPpqn - Null pointer passed as argument"
+  },
+  {
+    "offset": 681372,
+    "text": "amBankFetchMidiPpqn - Bank does not contain this many assets"
+  },
+  {
+    "offset": 681436,
+    "text": "amBankFetchMidiPpqn - not a midi type asset"
+  },
+  {
+    "offset": 681480,
+    "text": "amBankFetchMidiVolume - theBank or masterVolume is NULL"
+  },
+  {
+    "offset": 681536,
+    "text": "amBankFetchMidiVolume - assetNumber out of range"
+  },
+  {
+    "offset": 681588,
+    "text": "amBankFetchMidiVolume - not a midi type asset"
+  },
+  {
+    "offset": 681636,
+    "text": "amBankFetchMidiGmModeFlag - theBank is NULL"
+  },
+  {
+    "offset": 681680,
+    "text": "amBankFetchMidiGmModeFlag - assetNumber out of range"
+  },
+  {
+    "offset": 681736,
+    "text": "amBankFetchMidiGmModeFlag - not a MIDI type asset"
+  },
+  {
+    "offset": 681788,
+    "text": "amBankFetchAssetParameters - theBank or parameters is NULL"
+  },
+  {
+    "offset": 681848,
+    "text": "amBankFetchAssetParameters - assetNumber out of range"
+  },
+  {
+    "offset": 681904,
+    "text": "amBankFetchWaveLoopFlag - theBank or loopFlag is NULL"
+  },
+  {
+    "offset": 681960,
+    "text": "amBankFetchWaveLoopFlag - assetNumber out of range"
+  },
+  {
+    "offset": 682012,
+    "text": "amBankFetchWaveLoopFlag - not a WAVE type asset"
+  },
+  {
+    "offset": 682060,
+    "text": "amBankFetchWaveRandomPitch - theBank or randomPitchAmount is NULL"
+  },
+  {
+    "offset": 682128,
+    "text": "amBankFetchWaveRandomPitch - assetNumber out of range"
+  },
+  {
+    "offset": 682184,
+    "text": "amBankFetchWaveRandomPitch - not a WAVE type asset"
+  },
+  {
+    "offset": 682236,
+    "text": "amBankFetchWaveSampleRate - theBank or sampleRate is NULL"
+  },
+  {
+    "offset": 682296,
+    "text": "amBankFetchWaveSampleRate - assetNumber out of range"
+  },
+  {
+    "offset": 682352,
+    "text": "amBankFetchWaveSampleRate - not a WAVE type asset"
+  },
+  {
+    "offset": 682404,
+    "text": "amBankFetchWaveBitDepth - theBank or bitDepth is NULL"
+  },
+  {
+    "offset": 682460,
+    "text": "amBankFetchWaveBitDepth - assetNumber out of range"
+  },
+  {
+    "offset": 682512,
+    "text": "amBankFetchWaveBitDepth - not a WAVE type asset"
+  },
+  {
+    "offset": 682560,
+    "text": "amBankFetchUnknownParameters - theBank or parameterValue is NULL"
+  },
+  {
+    "offset": 682628,
+    "text": "amBankFetchUnknownParameters - parameterNumber out of range"
+  },
+  {
+    "offset": 682688,
+    "text": "amBankFetchUnknownParameters - assetNumber out of range"
+  },
+  {
+    "offset": 682744,
+    "text": "amBankFetchUnknownParameters - not a UNKNOWN type asset"
+  },
+  {
+    "offset": 682800,
+    "text": "amBankFetchAsset - theBank, parameterValue, *theAsset or assetSize is NULL"
+  },
+  {
+    "offset": 682876,
+    "text": "amBankFetchAsset - assetNumber out of range"
+  },
+  {
+    "offset": 682920,
+    "text": "amBankGetAssetSize - theBank or assetSize is NULL"
+  },
+  {
+    "offset": 682972,
+    "text": "amBankGetAssetSize - assetNumber out of range"
+  },
+  {
+    "offset": 683020,
+    "text": "amBankGetNumberOfAssets - numberOfAssets is NULL"
+  },
+  {
+    "offset": 683072,
+    "text": "amBankGetNumberOfAssets - theBank is NULL"
+  },
+  {
+    "offset": 683116,
+    "text": "amBankGetHeaderSize - headerSize is NULL"
+  },
+  {
+    "offset": 683160,
+    "text": "amBankGetHeaderSize - theBank is NULL"
+  },
+  {
+    "offset": 683244,
+    "text": "amHeapGetInfo - freeSoundMemory is NULL"
+  },
+  {
+    "offset": 683284,
+    "text": "amHeapGetInfo - size is NULL"
+  },
+  {
+    "offset": 683316,
+    "text": "amHeapGetInfo - the sound driver has not been installed"
+  },
+  {
+    "offset": 683372,
+    "text": "amHeapGetFree - audio heap not initialized"
+  },
+  {
+    "offset": 683416,
+    "text": "amHeapGetFree - freeMemory is NULL"
+  },
+  {
+    "offset": 683452,
+    "text": "amHeapAlloc - audio heap not initialized"
+  },
+  {
+    "offset": 683496,
+    "text": "amHeapAlloc - buffer is NULL"
+  },
+  {
+    "offset": 683528,
+    "text": "amHeapAlloc - size is 0"
+  },
+  {
+    "offset": 683552,
+    "text": "amHeapAlloc - alignment must be 4 or 32"
+  },
+  {
+    "offset": 683592,
+    "text": "amHeapAlloc - memory type must be AM_FIXED_MEMORY or AM_PURGABLE_MEMORY"
+  },
+  {
+    "offset": 683664,
+    "text": "amHeapGetMaxPurgable - maxPurgable is NULL"
+  },
+  {
+    "offset": 683708,
+    "text": "amHeapGetMaxPurgable - audio heap not initialized"
+  },
+  {
+    "offset": 683760,
+    "text": "amHeapPurge - Heap is not initialized"
+  },
+  {
+    "offset": 683800,
+    "text": "amHeapPurge - sizeNeeded is 0"
+  },
+  {
+    "offset": 683832,
+    "text": "amHeapPurge - insufficient purgable memory to fill request"
+  },
+  {
+    "offset": 683892,
+    "text": "amHeapFree - buffer is NULL"
+  },
+  {
+    "offset": 683920,
+    "text": "amHeapFree - you must free the blocks in reverse order from their allocation"
+  },
+  {
+    "offset": 684000,
+    "text": "amHeapFree - a block with that start address was not found"
+  },
+  {
+    "offset": 684612,
+    "text": "amHeapInit - memoryPool is NULL"
+  },
+  {
+    "offset": 684644,
+    "text": "amHeapInit - size is 0"
+  },
+  {
+    "offset": 684668,
+    "text": "amHeapInit - heap is already initialized"
+  },
+  {
+    "offset": 684712,
+    "text": "amHeapClear - the heap has not been initialized"
+  },
+  {
+    "offset": 684760,
+    "text": "amHeapClear - memoryType must be AM_FIXED_MEMORY or AM_PURGABLE_MEMORY"
+  },
+  {
+    "offset": 684832,
+    "text": "amHeapCheck - the heap has not been initialized"
+  },
+  {
+    "offset": 684880,
+    "text": "amHeapCheck - the bottom heap zone (PURGABLE) is corrupt"
+  },
+  {
+    "offset": 684940,
+    "text": "amHeapCheck - the top heap zone (FIXED) is corrupt"
+  },
+  {
+    "offset": 684992,
+    "text": "amInit - Driver already installed"
+  },
+  {
+    "offset": 685028,
+    "text": "amInit - amHeapGetInfo() failed"
+  },
+  {
+    "offset": 685060,
+    "text": "amInit - amHeapInit() failed"
+  },
+  {
+    "offset": 685092,
+    "text": "amSoundSetQChannels - firstQChannel is out of range (0-15)"
+  },
+  {
+    "offset": 685152,
+    "text": "amSoundSetQChannels - numberOfQChannels is out of range (0-16)"
+  },
+  {
+    "offset": 685216,
+    "text": "amSoundSetEffectsBuss - theSound is NULL"
+  },
+  {
+    "offset": 685260,
+    "text": "amSoundSetEffectsBuss - dspMixerChannel is out of range (0-15)"
+  },
+  {
+    "offset": 685324,
+    "text": "amSoundSetEffectsBuss - sourceMix is out of range (0-100)"
+  },
+  {
+    "offset": 685384,
+    "text": "amSoundSetEffectsBuss - effects buss can not be set while playing"
+  },
+  {
+    "offset": 685452,
+    "text": "amSoundSetEffectsBuss - theSound is not initialized, call amSoundFetchSample() first"
+  },
+  {
+    "offset": 685604,
+    "text": "amSoundSetEffectsBuss - wetLevel is NULL"
+  },
+  {
+    "offset": 685648,
+    "text": "amSoundSetEffectsBuss - dryLevel is NULL"
+  },
+  {
+    "offset": 685692,
+    "text": "amSoundReleaseVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 685740,
+    "text": "amSoundFetchSample - theSound is NULL"
+  },
+  {
+    "offset": 685780,
+    "text": "amSoundFetchSample - theBank is NULL"
+  },
+  {
+    "offset": 685820,
+    "text": "amSoundIsLooping - loopFlag is NULL"
+  },
+  {
+    "offset": 685856,
+    "text": "amSoundIsLooping - theSound is NULL"
+  },
+  {
+    "offset": 685892,
+    "text": "amSoundAllocateVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 685940,
+    "text": "amSoundGetSampleRate - realWorldSampleRate is NULL"
+  },
+  {
+    "offset": 685992,
+    "text": "amSoundGetSampleRate - theSound is NULL"
+  },
+  {
+    "offset": 686032,
+    "text": "amSoundGetVolume - aicaVolume is NULL"
+  },
+  {
+    "offset": 686072,
+    "text": "amSoundGetVolume - theSound is NULL"
+  },
+  {
+    "offset": 686108,
+    "text": "amSoundGetPan - pan is NULL"
+  },
+  {
+    "offset": 686136,
+    "text": "amSoundGetPan - theSound is NULL"
+  },
+  {
+    "offset": 686172,
+    "text": "amSoundGetVoiceChannel - voiceChannel is NULL"
+  },
+  {
+    "offset": 686220,
+    "text": "amSoundGetVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 686264,
+    "text": "amSoundGetCallback - *theCallback is NULL"
+  },
+  {
+    "offset": 686308,
+    "text": "amSoundGetCallback - theSound is NULL"
+  },
+  {
+    "offset": 686348,
+    "text": "amSoundSetCurrentPlaybackRate - theSound is NULL"
+  },
+  {
+    "offset": 686400,
+    "text": "amSoundSetCurrentPlaybackRate - sampleRate is out of range"
+  },
+  {
+    "offset": 686460,
+    "text": "amSoundSetCurrentPlaybackRate - can't send command to driver"
+  },
+  {
+    "offset": 686524,
+    "text": "amSoundSetVolume - theSound is NULL"
+  },
+  {
+    "offset": 686560,
+    "text": "amSoundSetVolume - Warning: newVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 686640,
+    "text": "amSoundSetVolume - can't send driver command"
+  },
+  {
+    "offset": 686688,
+    "text": "amSoundSetPan - theSound is NULL"
+  },
+  {
+    "offset": 686724,
+    "text": "amSoundSetPan - Warning: newPan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 686796,
+    "text": "amSoundSetPan - can't send driver command"
+  },
+  {
+    "offset": 686840,
+    "text": "amSoundSetCallback - theSound is NULL"
+  },
+  {
+    "offset": 686880,
+    "text": "amSoundSetPan - can't set the callback while sound is playing"
+  },
+  {
+    "offset": 686944,
+    "text": "amSoundIsPlaying - theSound is NULL"
+  },
+  {
+    "offset": 686980,
+    "text": "amSoundStop - theSound is NULL"
+  },
+  {
+    "offset": 687012,
+    "text": "amSoundStop - unable to stop sound after 20 retries"
+  },
+  {
+    "offset": 687168,
+    "text": "amSoundPlay - theSound is NULL"
+  },
+  {
+    "offset": 687200,
+    "text": "amSoundPlay - uninitialized voice channel"
+  },
+  {
+    "offset": 687244,
+    "text": "amSoundPlay - unable to get random pitch amount"
+  },
+  {
+    "offset": 687292,
+    "text": "amSoundPlayRaw - voice channel not initialized"
+  },
+  {
+    "offset": 687340,
+    "text": "amSoundPlayRaw - sizeInBytes is 0"
+  },
+  {
+    "offset": 687376,
+    "text": "amSoundPlayRaw - address is 0x00"
+  },
+  {
+    "offset": 687412,
+    "text": "amSoundPlayRaw - sampleRate is out of range"
+  },
+  {
+    "offset": 687456,
+    "text": "amSoundPlayRaw - aicaAudioType is out of range"
+  },
+  {
+    "offset": 687504,
+    "text": "amSoundPlayRaw - dryVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 687572,
+    "text": "amSoundPlayRaw - wetVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 687640,
+    "text": "amSoundPlayRaw - channelVolume is out of range, reset to AM_MAX_CHANNEL_VOLUME"
+  },
+  {
+    "offset": 687720,
+    "text": "amSoundPlayRaw - pan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 687780,
+    "text": "amSoundPlayRaw - mixerChannel is out of range"
+  },
+  {
+    "offset": 687828,
+    "text": "amSoundPlayRaw - effectsOnOrOff is out of range"
+  },
+  {
+    "offset": 687876,
+    "text": "amSoundPlayRaw - can't send driver command"
+  },
+  {
+    "offset": 687920,
+    "text": "amSoundPlayRaw - play failed can't send driver command"
+  },
+  {
+    "offset": 687976,
+    "text": "amSoundPlayRaw - Warning: acDspSetQSoundAngle() failed"
+  },
+  {
+    "offset": 688032,
+    "text": "amVoiceFree - voiceChannel is out of range"
+  },
+  {
+    "offset": 688208,
+    "text": "amVoiceSetStreamIsr - voiceChannel is out of range"
+  },
+  {
+    "offset": 688260,
+    "text": "amVoiceInstallUserCallback - voiceChannel is out of range"
+  },
+  {
+    "offset": 688320,
+    "text": "amVoiceAllocate - voiceChannel is NULL"
+  },
+  {
+    "offset": 688360,
+    "text": "amVoiceAllocate - voiceType must be AM_ONESHOT_VOICE, AM_MIDI_VOICE or AM_STREAM_VOICE"
+  },
+  {
+    "offset": 688448,
+    "text": "amVoiceAllocate - TOTAL CACAPHONY&@*&@*&^@$ all voices are in use"
+  },
+  {
+    "offset": 688957,
+    "text": "ntInf Ver 2.00 Build:Mar 31 1999 14:13:50"
+  },
+  {
+    "offset": 689000,
+    "text": "amUtilGetAicaVolume - aicaVolume is NULL"
+  },
+  {
+    "offset": 689044,
+    "text": "amUtilGetAicaVolume - Warning: midiVolume is out of range, truncated to 127"
+  },
+  {
+    "offset": 689120,
+    "text": "amUtilAlignNumber - theAlignment is 0, cant divide by 0"
+  },
+  {
+    "offset": 689176,
+    "text": "amUtilAlignNumber - theResult is NULL"
+  },
+  {
+    "offset": 689216,
+    "text": "amUtilGetLengthInFrames - channels is 0, can't divide by 0"
+  },
+  {
+    "offset": 689276,
+    "text": "amUtilGetLengthInFrames - nibblesPerFrame is 0, can't divide by 0"
+  },
+  {
+    "offset": 689344,
+    "text": "amUtilGetNibblesPerFrame - nibblesPerFrame is NULL"
+  },
+  {
+    "offset": 689396,
+    "text": "amUtilGetNibblesPerFrame - unsupported aica audio type"
+  },
+  {
+    "offset": 689452,
+    "text": "amUtilGetSampleRate - sampleRate is NULL"
+  },
+  {
+    "offset": 689496,
+    "text": "amUtilGetSampleRate - unsupported aica sample rate"
+  },
+  {
+    "offset": 689548,
+    "text": "amUtilGetLengthInMs - lengthInMs is NULL"
+  },
+  {
+    "offset": 689592,
+    "text": "amUtilGetLengthInMs - channels is 0, can't divide by 0"
+  },
+  {
+    "offset": 689648,
+    "text": "amUtilGetLengthInMs - size is 0"
+  },
+  {
+    "offset": 689680,
+    "text": "amUtilGetMsPerIrq - msPerIrq is NULL"
+  },
+  {
+    "offset": 689720,
+    "text": "amUtilGetAicaSampleType - aicaSampleType is NULL"
+  },
+  {
+    "offset": 689772,
+    "text": "amUtilGetAicaSampleType - unsupported bit depth"
+  },
+  {
+    "offset": 689820,
+    "text": "amUtilGetAicaSampleRate - aicaSampleRate is NULL"
+  },
+  {
+    "offset": 689872,
+    "text": "amUtilGetAicaSampleRate - unsupported aica sample rate"
+  },
+  {
+    "offset": 689928,
+    "text": "amUtilGetMiddleOfBufferInFrames - middleInFrames is NULL"
+  },
+  {
+    "offset": 689988,
+    "text": "amUtilGetMiddleOfBufferInFrames - bitDepthOfSample must be >= 4"
+  },
+  {
+    "offset": 690052,
+    "text": "amUtilGetMiddleOfBufferInFrames - sizeOfBufferInBytes must be > 0"
+  },
+  {
+    "offset": 690120,
+    "text": "amUtilGetMiddleOfBufferInFrames - bitDepthOfSample must be 4,8 or 16"
+  },
+  {
+    "offset": 1069785,
+    "text": "syStart Ver 1.17 Build:Dec 01 1999 12:17:57"
+  },
+  {
+    "offset": 1069833,
+    "text": "mwPly Ver.2.05 Build:Mar 07 2000 21:16:39"
+  },
+  {
+    "offset": 1069877,
+    "text": "mwSfd Ver.2.28 Build:Feb 25 2000 10:52:13"
+  },
+  {
+    "offset": 1071341,
+    "text": "Shinobi Ver 1.68 Build:Mar 02 2000 14:42:43"
+  },
+  {
+    "offset": 1071533,
+    "text": "gdFs Ver 1.09 Build:Nov 25 1999 22:59:21"
+  },
+  {
+    "offset": 1071577,
+    "text": "pdLcd Ver 1.04 Build:Apr 26 1999 16:55:25"
+  },
+  {
+    "offset": 1071721,
+    "text": "ov Ver.1.00Build:Apr 23 1999 22:13:01"
+  },
+  {
+    "offset": 1071761,
+    "text": "pd Ver 1.50 Build:Jul 30 1999 15:01:33"
+  },
+  {
+    "offset": 1071841,
+    "text": "pdVib Ver 2.01 Build:Feb 15 2000 12:20:25"
+  },
+  {
+    "offset": 1072025,
+    "text": "syRtc Ver 1.02 Build:May 31 1999 09:05:20"
+  },
+  {
+    "offset": 1072073,
+    "text": "syBt Ver 1.06 Build:May 26 1999 13:59:55"
+  },
+  {
+    "offset": 1072117,
+    "text": "syCfg Ver 1.15 Build:Apr 26 1999 14:38:59"
+  },
+  {
+    "offset": 1072165,
+    "text": "syTmr Ver 1.04 Build:Apr 26 1999 14:43:51"
+  },
+  {
+    "offset": 1072213,
+    "text": "syCache Ver 2.01 Build:Mar 01 2000 22:08:51"
+  },
+  {
+    "offset": 1072269,
+    "text": "syChain Ver 1.50 Build:May 31 1999 16:35:21"
+  },
+  {
+    "offset": 1072317,
+    "text": "syHw Ver 1.07 Build:Apr 26 1999 16:55:31"
+  },
+  {
+    "offset": 1073097,
+    "text": "bu Ver 1.47 Build:May 25 1999 17:27:29"
+  },
+  {
+    "offset": 1073259,
+    "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+  },
+  {
+    "offset": 1073569,
+    "text": "mwMng Ver.2.05 Build:Mar 07 2000 21:16:38"
+  },
+  {
+    "offset": 1073677,
+    "text": "mwGsc Ver.1.31 Build:Mar 07 2000 19:22:24"
+  },
+  {
+    "offset": 1073721,
+    "text": "mwRnv2 Ver.2.13km2 Build:Jan 27 2000 21:22:57"
+  },
+  {
+    "offset": 1074489,
+    "text": "mwRna Ver.1.33 Build:Mar 06 2000 20:49:50"
+  },
+  {
+    "offset": 1074565,
+    "text": "SJ Ver.5.53 Build:Feb 25 2000 10:11:30"
+  },
+  {
+    "offset": 1074757,
+    "text": "CRI SFD  Ver.1.31 Build:Nov 26 1999 20:51:41"
+  },
+  {
+    "offset": 1075473,
+    "text": "SFA Ver.5.76 Build:Jan 28 2000 20:33:28"
+  },
+  {
+    "offset": 1075757,
+    "text": "fmMng Ver 1.04 Build:Apr 26 1999 14:34:41"
+  },
+  {
+    "offset": 1076461,
+    "text": "kd Ver 1.48 Build:Jul 30 1999 14:59:52"
+  },
+  {
+    "offset": 1076509,
+    "text": "syCbl Ver 1.10 Build:Apr 27 1999 13:54:09"
+  },
+  {
+    "offset": 1076561,
+    "text": "syInt Ver 1.50 Build:May 31 1999 16:38:10"
+  },
+  {
+    "offset": 1076613,
+    "text": "sySq Ver 1.50 Build:May 31 1999 16:26:00"
+  },
+  {
+    "offset": 1076657,
+    "text": "syBtCfg Ver 1.03 Build:Apr 26 1999 14:36:52"
+  },
+  {
+    "offset": 1077153,
+    "text": "mwLib Ver.2.30 Build:Mar 07 2000 21:16:40"
+  },
+  {
+    "offset": 1077340,
+    "text": "E1227:acDigiOpen fail in mwSndOpenPort"
+  },
+  {
+    "offset": 1077380,
+    "text": "E1226:acDigiClose fail in mwSndOpenPort"
+  },
+  {
+    "offset": 1077420,
+    "text": "E1230:acDigiMultiSetMask fail in mwSndSetNumChan"
+  },
+  {
+    "offset": 1077472,
+    "text": "E1228:acDigiMultiPlay fail in mwSndPlay"
+  },
+  {
+    "offset": 1077512,
+    "text": "E1229:acDigiMultiStop fail in mwSndStop"
+  },
+  {
+    "offset": 1077552,
+    "text": "E1231:acDigiGetCurrentReadPosition fail in mwSndGetPlayPos"
+  },
+  {
+    "offset": 1077612,
+    "text": "E1238:acDigiOpen fail in mwSndSetBitPerSmpl"
+  },
+  {
+    "offset": 1077656,
+    "text": "E1232:acDigiSetVolume fail in mwSndSetVol"
+  },
+  {
+    "offset": 1077700,
+    "text": "E1233:acDigiSetPan fail in mwSndSetPan"
+  },
+  {
+    "offset": 1077865,
+    "text": "mwAc Ver.1.33 Build:Mar 06 2000 20:49:53"
+  },
+  {
+    "offset": 1079045,
+    "text": "syFbr Ver 1.13 Build:Jun 11 1999 21:40:19"
+  },
+  {
+    "offset": 1079725,
+    "text": "syMmu Ver 1.50 Build:May 31 1999 16:25:13"
+  },
+  {
+    "offset": 1079769,
+    "text": "syG2 Ver 1.01.12 Build:Dec 06 1999 03:26:29"
+  },
+  {
+    "offset": 1079923,
+    "text": "kmdk Ver 1,3,2,0 Build:Oct 25 1999 14:49:43"
+  },
+  {
+    "offset": 1081158,
+    "text": "CRI SFH  Ver.1.06 Build:Oct 08 1999 19:24:14"
+  },
+  {
+    "offset": 1081244,
+    "text": "ADXENC.DLL Ver.1.00 Jan 28 2000"
+  },
+  {
+    "offset": 1081277,
+    "text": "ADXENC Ver.1.00 Build:Jan 28 2000 20:33:34"
+  },
+  {
+    "offset": 1083045,
+    "text": "ADXF Ver.5.55 Build:Sep 08 1999 21:25:47"
+  },
+  {
+    "offset": 1083122,
+    "text": "CRI DCT Ver.1.18 Build:Oct 08 1999 18:12:51"
+  }
+]

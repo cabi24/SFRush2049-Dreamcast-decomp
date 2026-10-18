@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "path": "git-head.json",
+      "size": 202,
+      "sha256": "6c76826e02001d361f7dd7263b004828ecec0cc00e2943c11edb465506d1a55f"
+    },
+    {
+      "path": "pilot-selection.json",
+      "size": 2325,
+      "sha256": "3a6a7369c0732a394cdcc19fb1d3b0a627bf5efe17490bd288976d6c0b78b0b0"
+    },
+    {
+      "path": "reference-file-hashes.json",
+      "size": 5540,
+      "sha256": "a522bb23c68c3bfd9f8b41807c42dd3a067fa968a53dc679425af32c626dd10c"
+    },
+    {
+      "path": "resource-agreement.json",
+      "size": 94853,
+      "sha256": "5798635f4b7d4c0c9686d36817b1d61e806ef68912c622a451b4fb61e3001b0a"
+    },
+    {
+      "path": "summary.json",
+      "size": 9282,
+      "sha256": "96e33c88ebcf8a72d2719a334cab0b29209067e055b6351f47e4810b31240bca"
+    },
+    {
+      "path": "tool-inventory.json",
+      "size": 3409,
+      "sha256": "74b809e1fe8a6c192fdfb14c165b926a0585e3af3baab237a8f447d39438277a"
+    }
+  ],
+  "note": "Read-only derived JSON only; no source or game binary copies. Manifest excludes itself."
+}

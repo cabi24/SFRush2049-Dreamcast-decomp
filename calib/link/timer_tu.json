@@ -1,0 +1,78 @@
+{
+ "name": "timer_tu",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT timer_tu.abs",
+  "FORM A",
+  "START P(8C0100A4)",
+  "START D(8C0B8C24)",
+  "START B(8C12253C)",
+  "DEFINE _SetInterruptMask(8C018000)",
+  "DEFINE _RegisterRetraceCallback(8C0D9484)",
+  "PRINT timer_tu.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "calib/out/timer-tu-1/shc-v5.1r11/timer_tu.obj",
+   "sha256": "eea4265c651abe2a39d9963adab33e008e5e12a850fb31b1a1e1dd0b1d2fc239"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C0100A4",
+   "length": 368
+  },
+  {
+   "name": "D",
+   "address": "8C0B8C24",
+   "length": 16
+  },
+  {
+   "name": "B",
+   "address": "8C12253C",
+   "length": 36
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C0100A4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 110,
+   "first_diff_offset": 0,
+   "sha256": "72e23c79d48fcfab8e408fc6662fb7b15ec1a6250713e863864558d926b40fdf"
+  },
+  {
+   "section": "P",
+   "address": "8C01019A",
+   "size": 112,
+   "exact": false,
+   "diff_bytes": 90,
+   "first_diff_offset": 1,
+   "sha256": "3fffd1197b4566b780522e10b85185954e5dd0579c285ef9f43a14a01e1fa976"
+  },
+  {
+   "section": "P",
+   "address": "8C01020C",
+   "size": 8,
+   "exact": false,
+   "diff_bytes": 5,
+   "first_diff_offset": 0,
+   "sha256": "ffeaf17202aaa989d39479f4a94379e2fa72a037473f27038667f44fa37b9d40"
+  },
+  {
+   "section": "D",
+   "address": "8C0B8C24",
+   "size": 16,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "04525483bea9c557b7874dd67ba69c4420e61e695af7cb28bc914befdc29a271"
+  }
+ ],
+ "all_exact": false
+}

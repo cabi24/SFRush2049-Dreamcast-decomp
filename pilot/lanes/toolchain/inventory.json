@@ -1,0 +1,138 @@
+{
+  "generated_utc": "2026-10-18T02:06:24.837963+00:00",
+  "scope": "PATH, common roots, shallow Downloads/tool-folder inventory, recursive filenames only in six listed tool roots; previous MAT3 tools metadata reused. Not an exhaustive disk or archive-content search.",
+  "path": {
+    "shc": null,
+    "sh-elf-gcc": null,
+    "sh4-elf-gcc": null,
+    "sh-coff-gcc": null,
+    "sh-elf-as": null,
+    "sh4-elf-as": null,
+    "sh-elf-ld": null,
+    "sh4-elf-ld": null,
+    "sh-elf-objdump": null,
+    "sh4-elf-objdump": null,
+    "ghidraRun": null,
+    "analyzeHeadless": null,
+    "java": null,
+    "clang": null,
+    "llvm-objdump": null,
+    "wsl": "C:\\Windows\\system32\\wsl.EXE",
+    "python": "C:\\Users\\cabi2\\AppData\\Local\\Programs\\Python\\Python312\\python.EXE"
+  },
+  "common_roots": {
+    "C:\\tools": false,
+    "C:\\devkitPro": false,
+    "C:\\msys64": false,
+    "C:\\cygwin64": false,
+    "C:\\KATANA": false,
+    "C:\\SEGA": false,
+    "C:\\Renesas": false,
+    "C:\\Hitachi": false,
+    "C:\\Program Files\\Renesas": false,
+    "C:\\Program Files (x86)\\Renesas": false,
+    "C:\\Program Files\\Ghidra": false,
+    "C:\\ghidra": false,
+    "C:\\Program Files\\LLVM": false
+  },
+  "recursive_filename_roots": [
+    "C:\\Program Files\\Git\\usr\\bin",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio",
+    "C:\\Users\\cabi2\\.local",
+    "C:\\Users\\cabi2\\.cache",
+    "C:\\Users\\cabi2\\AppData\\Local\\Programs",
+    "C:\\Users\\cabi2\\LocalAI"
+  ],
+  "recursive_filename_matches": [
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\ARM64\\bin\\clang.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\ARM64\\bin\\lld.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\ARM64\\bin\\llvm-objdump.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\bin\\clang.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\bin\\lld.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\bin\\llvm-objdump.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\lld.exe",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\llvm-objdump.exe"
+  ],
+  "scan_errors": [],
+  "located_llvm": [
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+      "size": 87168096,
+      "sha256": "c5d3d309c036d1666d50500e87be514dc9916adc427e7aec267c95178bec14ff"
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\llvm-objdump.exe",
+      "size": 14935632,
+      "sha256": "3250af97b9d8fd7d379710d561c312dc8b3a89b9a008014a4486805c840175b2"
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\lld.exe",
+      "size": 52877408,
+      "sha256": "35a28f73209073214eff5daa72e4433701a351f8d0912de6050fa13b484cfde1"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "clang version 19.1.5\nTarget: x86_64-pc-windows-msvc\nThread model: posix\nInstalledDir: C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+        "--print-targets"
+      ],
+      "returncode": 0,
+      "stdout": "\n  Registered Targets:\n    aarch64    - AArch64 (little endian)\n    aarch64_32 - AArch64 (little endian ILP32)\n    aarch64_be - AArch64 (big endian)\n    arm        - ARM\n    arm64      - ARM64 (little endian)\n    arm64_32   - ARM64 (little endian ILP32)\n    armeb      - ARM (big endian)\n    thumb      - Thumb\n    thumbeb    - Thumb (big endian)\n    x86        - 32-bit X86: Pentium-Pro and above\n    x86-64     - 64-bit X86: EM64T and AMD64\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\llvm-objdump.exe",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "LLVM (http://llvm.org/):\n  LLVM version 19.1.5\n  Optimized build.\n\n\n  Registered Targets:\n    aarch64    - AArch64 (little endian)\n    aarch64_32 - AArch64 (little endian ILP32)\n    aarch64_be - AArch64 (big endian)\n    arm        - ARM\n    arm64      - ARM64 (little endian)\n    arm64_32   - ARM64 (little endian ILP32)\n    armeb      - ARM (big endian)\n    thumb      - Thumb\n    thumbeb    - Thumb (big endian)\n    x86        - 32-bit X86: Pentium-Pro and above\n    x86-64     - 64-bit X86: EM64T and AMD64\n",
+      "stderr": ""
+    }
+  ],
+  "wsl_probe_observed": {
+    "argv": [
+      "C:\\Windows\\system32\\wsl.exe",
+      "--list",
+      "--verbose"
+    ],
+    "returncode": 1,
+    "stdout": "Access is denied.\r\nError code: Wsl/E_ACCESSDENIED\r\n",
+    "status": "denied; not retried; distribution inventory remains unknown"
+  },
+  "clang_signature_observed": "Valid Authenticode signature; CN=Microsoft 3rd Party Application Component, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+  "target": {
+    "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\dc-pilot\\orig\\1ST_READ.BIN",
+    "size": 1123492,
+    "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+    "printable_compiler_vendor_marker_hits": [
+      {
+        "offset": "0x556EF",
+        "text": "Gcc<7",
+        "assessment": "incidental five printable bytes; no banner/version context; rejected as compiler evidence"
+      }
+    ],
+    "interpretation": "Runtime printable marker search only; absence does not prove a compiler family."
+  },
+  "prior_inventory": "C:\\rush2049-dreamcast\\mat3-to-dreamcast-evidence\\tool-inventory.json",
+  "conclusion": "Microsoft LLVM 19.1.5 supports only registered ARM/AArch64/x86 targets here; no usable SH4 compiler, assembler, linker or stock disassembler established. WSL tools remain unknown because inventory was denied.",
+  "actions_not_performed": [
+    "tool download",
+    "tool install",
+    "game execution",
+    "source compilation",
+    "original input modification",
+    "MAT3 build or matching"
+  ]
+}

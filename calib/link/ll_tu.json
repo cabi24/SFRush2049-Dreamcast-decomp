@@ -1,0 +1,46 @@
+{
+ "name": "ll_tu",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT ll_tu.abs",
+  "FORM A",
+  "START P(8C03A1B8)",
+  "PRINT ll_tu.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "calib/out/ll-tu-final/shc-v5.1r11/ll_tu.obj",
+   "sha256": "27673231d9b7b4a7e8873f19840a980f10feaef76cc0aa4a2fd90c332a37ef05"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C03A1B8",
+   "length": 422
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C03A1B8",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "b87726bfc8bceebd2bf61b6529ff18deb38118565dd761307a7c7fcb27baebcf"
+  },
+  {
+   "section": "P",
+   "address": "8C03A2AE",
+   "size": 176,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2d8ad1f20bbb1332e4244da8a25f6dd73c2d2154434e1a79327fce678b0eb68c"
+  }
+ ],
+ "all_exact": true
+}

@@ -1,0 +1,3159 @@
+{
+  "rows": [
+    {
+      "index": 0,
+      "mat3_filename": "texte.lzs",
+      "retail_filename": "texte.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 11704,
+      "retail_decoded_or_raw_size": 11704,
+      "size_equal": true,
+      "retail_pointer_offset": 738496
+    },
+    {
+      "index": 1,
+      "mat3_filename": "texts.lzs",
+      "retail_filename": "texts.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 12283,
+      "retail_decoded_or_raw_size": 12283,
+      "size_equal": true,
+      "retail_pointer_offset": 738500
+    },
+    {
+      "index": 2,
+      "mat3_filename": "texti.lzs",
+      "retail_filename": "texti.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 11528,
+      "retail_decoded_or_raw_size": 11528,
+      "size_equal": true,
+      "retail_pointer_offset": 738504
+    },
+    {
+      "index": 3,
+      "mat3_filename": "textg.lzs",
+      "retail_filename": "textg.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 12138,
+      "retail_decoded_or_raw_size": 12138,
+      "size_equal": true,
+      "retail_pointer_offset": 738508
+    },
+    {
+      "index": 4,
+      "mat3_filename": "textd.lzs",
+      "retail_filename": "textd.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 12144,
+      "retail_decoded_or_raw_size": 12144,
+      "size_equal": true,
+      "retail_pointer_offset": 738512
+    },
+    {
+      "index": 5,
+      "mat3_filename": "textf.lzs",
+      "retail_filename": "textf.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 12514,
+      "retail_decoded_or_raw_size": 12514,
+      "size_equal": true,
+      "retail_pointer_offset": 738516
+    },
+    {
+      "index": 6,
+      "mat3_filename": "HighScore.rom",
+      "retail_filename": "HighScore.rom",
+      "name_equal": true,
+      "mat3_declared_resource_size": 651908,
+      "retail_decoded_or_raw_size": 651908,
+      "size_equal": true,
+      "retail_pointer_offset": 738520
+    },
+    {
+      "index": 7,
+      "mat3_filename": "Select.rom",
+      "retail_filename": "Select.rom",
+      "name_equal": true,
+      "mat3_declared_resource_size": 564366,
+      "retail_decoded_or_raw_size": 564366,
+      "size_equal": true,
+      "retail_pointer_offset": 738524
+    },
+    {
+      "index": 8,
+      "mat3_filename": "debugfonttex.lzs",
+      "retail_filename": "debugfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738528
+    },
+    {
+      "index": 9,
+      "mat3_filename": "digitlgfonttex.lzs",
+      "retail_filename": "digitlgfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738532
+    },
+    {
+      "index": 10,
+      "mat3_filename": "digitmdfonttex.lzs",
+      "retail_filename": "digitmdfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738536
+    },
+    {
+      "index": 11,
+      "mat3_filename": "digitsmfonttex.lzs",
+      "retail_filename": "digitsmfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3196,
+      "retail_decoded_or_raw_size": 3196,
+      "size_equal": true,
+      "retail_pointer_offset": 738540
+    },
+    {
+      "index": 12,
+      "mat3_filename": "digitxlfonttex.lzs",
+      "retail_filename": "digitxlfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738544
+    },
+    {
+      "index": 13,
+      "mat3_filename": "hudlgfonttex.lzs",
+      "retail_filename": "hudlgfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738548
+    },
+    {
+      "index": 14,
+      "mat3_filename": "hudmdfonttex.lzs",
+      "retail_filename": "hudmdfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738552
+    },
+    {
+      "index": 15,
+      "mat3_filename": "hudsmfonttex.lzs",
+      "retail_filename": "hudsmfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3196,
+      "retail_decoded_or_raw_size": 3196,
+      "size_equal": true,
+      "retail_pointer_offset": 738556
+    },
+    {
+      "index": 16,
+      "mat3_filename": "hudxlfonttex.lzs",
+      "retail_filename": "hudxlfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738560
+    },
+    {
+      "index": 17,
+      "mat3_filename": "hudxxlfonttex.lzs",
+      "retail_filename": "hudxxlfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738564
+    },
+    {
+      "index": 18,
+      "mat3_filename": "menulgfonttex.lzs",
+      "retail_filename": "menulgfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738568
+    },
+    {
+      "index": 19,
+      "mat3_filename": "menumdfonttex.lzs",
+      "retail_filename": "menumdfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738572
+    },
+    {
+      "index": 20,
+      "mat3_filename": "menusmfonttex.lzs",
+      "retail_filename": "menusmfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 6268,
+      "retail_decoded_or_raw_size": 6268,
+      "size_equal": true,
+      "retail_pointer_offset": 738576
+    },
+    {
+      "index": 21,
+      "mat3_filename": "menutitlefonttex.lzs",
+      "retail_filename": "menutitlefonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738580
+    },
+    {
+      "index": 22,
+      "mat3_filename": "pakfonttex.lzs",
+      "retail_filename": "pakfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18556,
+      "retail_decoded_or_raw_size": 18556,
+      "size_equal": true,
+      "retail_pointer_offset": 738584
+    },
+    {
+      "index": 23,
+      "mat3_filename": "testfonttex.lzs",
+      "retail_filename": "testfonttex.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3196,
+      "retail_decoded_or_raw_size": 3196,
+      "size_equal": true,
+      "retail_pointer_offset": 738588
+    },
+    {
+      "index": 24,
+      "mat3_filename": "debugfontdat.lzs",
+      "retail_filename": "debugfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 17936,
+      "retail_decoded_or_raw_size": 17936,
+      "size_equal": true,
+      "retail_pointer_offset": 738592
+    },
+    {
+      "index": 25,
+      "mat3_filename": "digitlgfontdat.lzs",
+      "retail_filename": "digitlgfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 196,
+      "retail_decoded_or_raw_size": 196,
+      "size_equal": true,
+      "retail_pointer_offset": 738596
+    },
+    {
+      "index": 26,
+      "mat3_filename": "digitmdfontdat.lzs",
+      "retail_filename": "digitmdfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 196,
+      "retail_decoded_or_raw_size": 196,
+      "size_equal": true,
+      "retail_pointer_offset": 738600
+    },
+    {
+      "index": 27,
+      "mat3_filename": "digitsmfontdat.lzs",
+      "retail_filename": "digitsmfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 196,
+      "retail_decoded_or_raw_size": 196,
+      "size_equal": true,
+      "retail_pointer_offset": 738604
+    },
+    {
+      "index": 28,
+      "mat3_filename": "digitxlfontdat.lzs",
+      "retail_filename": "digitxlfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 196,
+      "retail_decoded_or_raw_size": 196,
+      "size_equal": true,
+      "retail_pointer_offset": 738608
+    },
+    {
+      "index": 29,
+      "mat3_filename": "hudlgfontdat.lzs",
+      "retail_filename": "hudlgfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 380,
+      "retail_decoded_or_raw_size": 380,
+      "size_equal": true,
+      "retail_pointer_offset": 738612
+    },
+    {
+      "index": 30,
+      "mat3_filename": "hudmdfontdat.lzs",
+      "retail_filename": "hudmdfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 380,
+      "retail_decoded_or_raw_size": 380,
+      "size_equal": true,
+      "retail_pointer_offset": 738616
+    },
+    {
+      "index": 31,
+      "mat3_filename": "hudsmfontdat.lzs",
+      "retail_filename": "hudsmfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 380,
+      "retail_decoded_or_raw_size": 380,
+      "size_equal": true,
+      "retail_pointer_offset": 738620
+    },
+    {
+      "index": 32,
+      "mat3_filename": "hudxlfontdat.lzs",
+      "retail_filename": "hudxlfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 380,
+      "retail_decoded_or_raw_size": 380,
+      "size_equal": true,
+      "retail_pointer_offset": 738624
+    },
+    {
+      "index": 33,
+      "mat3_filename": "hudxxlfontdat.lzs",
+      "retail_filename": "hudxxlfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 380,
+      "retail_decoded_or_raw_size": 380,
+      "size_equal": true,
+      "retail_pointer_offset": 738628
+    },
+    {
+      "index": 34,
+      "mat3_filename": "menulgfontdat.lzs",
+      "retail_filename": "menulgfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738632
+    },
+    {
+      "index": 35,
+      "mat3_filename": "menumdfontdat.lzs",
+      "retail_filename": "menumdfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738636
+    },
+    {
+      "index": 36,
+      "mat3_filename": "menusmfontdat.lzs",
+      "retail_filename": "menusmfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738640
+    },
+    {
+      "index": 37,
+      "mat3_filename": "menutitlefontdat.lzs",
+      "retail_filename": "menutitlefontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738644
+    },
+    {
+      "index": 38,
+      "mat3_filename": "pakfontdat.lzs",
+      "retail_filename": "pakfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738648
+    },
+    {
+      "index": 39,
+      "mat3_filename": "testfontdat.lzs",
+      "retail_filename": "testfontdat.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 8816,
+      "retail_decoded_or_raw_size": 8816,
+      "size_equal": true,
+      "retail_pointer_offset": 738652
+    },
+    {
+      "index": 40,
+      "mat3_filename": "attract.lzs",
+      "retail_filename": "attract.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1370388,
+      "retail_decoded_or_raw_size": 1370388,
+      "size_equal": true,
+      "retail_pointer_offset": 738656
+    },
+    {
+      "index": 41,
+      "mat3_filename": "interface.lzs",
+      "retail_filename": "interface.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3154236,
+      "retail_decoded_or_raw_size": 3154236,
+      "size_equal": true,
+      "retail_pointer_offset": 738660
+    },
+    {
+      "index": 42,
+      "mat3_filename": "selcar.lzs",
+      "retail_filename": "selcar.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 333964,
+      "retail_decoded_or_raw_size": 333964,
+      "size_equal": true,
+      "retail_pointer_offset": 738664
+    },
+    {
+      "index": 43,
+      "mat3_filename": "selcirc.lzs",
+      "retail_filename": "selcirc.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 711756,
+      "retail_decoded_or_raw_size": 711756,
+      "size_equal": true,
+      "retail_pointer_offset": 738668
+    },
+    {
+      "index": 44,
+      "mat3_filename": "selcom.lzs",
+      "retail_filename": "selcom.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 93532,
+      "retail_decoded_or_raw_size": 93532,
+      "size_equal": true,
+      "retail_pointer_offset": 738672
+    },
+    {
+      "index": 45,
+      "mat3_filename": "selopt.lzs",
+      "retail_filename": "selopt.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 239596,
+      "retail_decoded_or_raw_size": 239596,
+      "size_equal": true,
+      "retail_pointer_offset": 738676
+    },
+    {
+      "index": 46,
+      "mat3_filename": "seltrk.lzs",
+      "retail_filename": "seltrk.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 475756,
+      "retail_decoded_or_raw_size": 475756,
+      "size_equal": true,
+      "retail_pointer_offset": 738680
+    },
+    {
+      "index": 47,
+      "mat3_filename": "hud.lzs",
+      "retail_filename": "hud.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 794524,
+      "retail_decoded_or_raw_size": 794524,
+      "size_equal": true,
+      "retail_pointer_offset": 738684
+    },
+    {
+      "index": 48,
+      "mat3_filename": "hudbattle.lzs",
+      "retail_filename": "hudbattle.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 13516,
+      "retail_decoded_or_raw_size": 13516,
+      "size_equal": true,
+      "retail_pointer_offset": 738688
+    },
+    {
+      "index": 49,
+      "mat3_filename": "hudcom.lzs",
+      "retail_filename": "hudcom.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 202012,
+      "retail_decoded_or_raw_size": 202012,
+      "size_equal": true,
+      "retail_pointer_offset": 738692
+    },
+    {
+      "index": 50,
+      "mat3_filename": "hudlogo.lzs",
+      "retail_filename": "hudlogo.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 67708,
+      "retail_decoded_or_raw_size": 67708,
+      "size_equal": true,
+      "retail_pointer_offset": 738696
+    },
+    {
+      "index": 51,
+      "mat3_filename": "hudmulti.lzs",
+      "retail_filename": "hudmulti.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 35084,
+      "retail_decoded_or_raw_size": 35084,
+      "size_equal": true,
+      "retail_pointer_offset": 738700
+    },
+    {
+      "index": 52,
+      "mat3_filename": "hudstunt.lzs",
+      "retail_filename": "hudstunt.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 35220,
+      "retail_decoded_or_raw_size": 35220,
+      "size_equal": true,
+      "retail_pointer_offset": 738704
+    },
+    {
+      "index": 53,
+      "mat3_filename": "targetsnopak.lzs",
+      "retail_filename": "targetsnopak.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 12972,
+      "retail_decoded_or_raw_size": 12972,
+      "size_equal": true,
+      "retail_pointer_offset": 738708
+    },
+    {
+      "index": 54,
+      "mat3_filename": "hiscore.lzs",
+      "retail_filename": "hiscore.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 109852,
+      "retail_decoded_or_raw_size": 109852,
+      "size_equal": true,
+      "retail_pointer_offset": 738712
+    },
+    {
+      "index": 55,
+      "mat3_filename": "weapons.lzs",
+      "retail_filename": "weapons.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 470540,
+      "retail_decoded_or_raw_size": 470540,
+      "size_equal": true,
+      "retail_pointer_offset": 738716
+    },
+    {
+      "index": 56,
+      "mat3_filename": "wings.lzs",
+      "retail_filename": "wings.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 45716,
+      "retail_decoded_or_raw_size": 45716,
+      "size_equal": true,
+      "retail_pointer_offset": 738720
+    },
+    {
+      "index": 57,
+      "mat3_filename": "vehicles.lzs",
+      "retail_filename": "vehicles.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 70508,
+      "retail_decoded_or_raw_size": 70508,
+      "size_equal": true,
+      "retail_pointer_offset": 738724
+    },
+    {
+      "index": 58,
+      "mat3_filename": "targetst1.lzs",
+      "retail_filename": "targetst1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 161500,
+      "retail_decoded_or_raw_size": 161500,
+      "size_equal": true,
+      "retail_pointer_offset": 738728
+    },
+    {
+      "index": 59,
+      "mat3_filename": "targetst2.lzs",
+      "retail_filename": "targetst2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 201796,
+      "retail_decoded_or_raw_size": 201796,
+      "size_equal": true,
+      "retail_pointer_offset": 738732
+    },
+    {
+      "index": 60,
+      "mat3_filename": "targetst3.lzs",
+      "retail_filename": "targetst3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 169300,
+      "retail_decoded_or_raw_size": 169300,
+      "size_equal": true,
+      "retail_pointer_offset": 738736
+    },
+    {
+      "index": 61,
+      "mat3_filename": "targetst4.lzs",
+      "retail_filename": "targetst4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 158564,
+      "retail_decoded_or_raw_size": 158564,
+      "size_equal": true,
+      "retail_pointer_offset": 738740
+    },
+    {
+      "index": 62,
+      "mat3_filename": "targetst5.lzs",
+      "retail_filename": "targetst5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 175188,
+      "retail_decoded_or_raw_size": 175188,
+      "size_equal": true,
+      "retail_pointer_offset": 738744
+    },
+    {
+      "index": 63,
+      "mat3_filename": "targetst6.lzs",
+      "retail_filename": "targetst6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 122044,
+      "retail_decoded_or_raw_size": 122044,
+      "size_equal": true,
+      "retail_pointer_offset": 738748
+    },
+    {
+      "index": 64,
+      "mat3_filename": "car1.lzs",
+      "retail_filename": "car1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 159500,
+      "retail_decoded_or_raw_size": 159500,
+      "size_equal": true,
+      "retail_pointer_offset": 738752
+    },
+    {
+      "index": 65,
+      "mat3_filename": "car2.lzs",
+      "retail_filename": "car2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 150108,
+      "retail_decoded_or_raw_size": 150108,
+      "size_equal": true,
+      "retail_pointer_offset": 738756
+    },
+    {
+      "index": 66,
+      "mat3_filename": "car3.lzs",
+      "retail_filename": "car3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 116692,
+      "retail_decoded_or_raw_size": 116692,
+      "size_equal": true,
+      "retail_pointer_offset": 738760
+    },
+    {
+      "index": 67,
+      "mat3_filename": "car4.lzs",
+      "retail_filename": "car4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 143836,
+      "retail_decoded_or_raw_size": 143836,
+      "size_equal": true,
+      "retail_pointer_offset": 738764
+    },
+    {
+      "index": 68,
+      "mat3_filename": "car5.lzs",
+      "retail_filename": "car5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 145804,
+      "retail_decoded_or_raw_size": 145804,
+      "size_equal": true,
+      "retail_pointer_offset": 738768
+    },
+    {
+      "index": 69,
+      "mat3_filename": "car6.lzs",
+      "retail_filename": "car6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 158052,
+      "retail_decoded_or_raw_size": 158052,
+      "size_equal": true,
+      "retail_pointer_offset": 738772
+    },
+    {
+      "index": 70,
+      "mat3_filename": "car7.lzs",
+      "retail_filename": "car7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 129388,
+      "retail_decoded_or_raw_size": 129388,
+      "size_equal": true,
+      "retail_pointer_offset": 738776
+    },
+    {
+      "index": 71,
+      "mat3_filename": "car8.lzs",
+      "retail_filename": "car8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 133388,
+      "retail_decoded_or_raw_size": 133388,
+      "size_equal": true,
+      "retail_pointer_offset": 738780
+    },
+    {
+      "index": 72,
+      "mat3_filename": "car9.lzs",
+      "retail_filename": "car9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 128140,
+      "retail_decoded_or_raw_size": 128140,
+      "size_equal": true,
+      "retail_pointer_offset": 738784
+    },
+    {
+      "index": 73,
+      "mat3_filename": "car10.lzs",
+      "retail_filename": "car10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 163524,
+      "retail_decoded_or_raw_size": 163524,
+      "size_equal": true,
+      "retail_pointer_offset": 738788
+    },
+    {
+      "index": 74,
+      "mat3_filename": "car11.lzs",
+      "retail_filename": "car11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 147996,
+      "retail_decoded_or_raw_size": 147996,
+      "size_equal": true,
+      "retail_pointer_offset": 738792
+    },
+    {
+      "index": 75,
+      "mat3_filename": "car12.lzs",
+      "retail_filename": "car12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 146588,
+      "retail_decoded_or_raw_size": 146588,
+      "size_equal": true,
+      "retail_pointer_offset": 738796
+    },
+    {
+      "index": 76,
+      "mat3_filename": "car13.lzs",
+      "retail_filename": "car13.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 146708,
+      "retail_decoded_or_raw_size": 146708,
+      "size_equal": true,
+      "retail_pointer_offset": 738800
+    },
+    {
+      "index": 77,
+      "mat3_filename": "car1pj1.lzs",
+      "retail_filename": "car1pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738804
+    },
+    {
+      "index": 78,
+      "mat3_filename": "car1pj2.lzs",
+      "retail_filename": "car1pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738808
+    },
+    {
+      "index": 79,
+      "mat3_filename": "car1pj3.lzs",
+      "retail_filename": "car1pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738812
+    },
+    {
+      "index": 80,
+      "mat3_filename": "car1pj4.lzs",
+      "retail_filename": "car1pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738816
+    },
+    {
+      "index": 81,
+      "mat3_filename": "car1pj5.lzs",
+      "retail_filename": "car1pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738820
+    },
+    {
+      "index": 82,
+      "mat3_filename": "car1pj6.lzs",
+      "retail_filename": "car1pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 117132,
+      "retail_decoded_or_raw_size": 117132,
+      "size_equal": true,
+      "retail_pointer_offset": 738824
+    },
+    {
+      "index": 83,
+      "mat3_filename": "car1pj7.lzs",
+      "retail_filename": "car1pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 117132,
+      "retail_decoded_or_raw_size": 117132,
+      "size_equal": true,
+      "retail_pointer_offset": 738828
+    },
+    {
+      "index": 84,
+      "mat3_filename": "car1pj8.lzs",
+      "retail_filename": "car1pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110940,
+      "retail_decoded_or_raw_size": 110940,
+      "size_equal": true,
+      "retail_pointer_offset": 738832
+    },
+    {
+      "index": 85,
+      "mat3_filename": "car1pj9.lzs",
+      "retail_filename": "car1pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738836
+    },
+    {
+      "index": 86,
+      "mat3_filename": "car1pj10.lzs",
+      "retail_filename": "car1pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738840
+    },
+    {
+      "index": 87,
+      "mat3_filename": "car1pj11.lzs",
+      "retail_filename": "car1pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738844
+    },
+    {
+      "index": 88,
+      "mat3_filename": "car1pj12.lzs",
+      "retail_filename": "car1pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 120252,
+      "retail_decoded_or_raw_size": 120252,
+      "size_equal": true,
+      "retail_pointer_offset": 738848
+    },
+    {
+      "index": 89,
+      "mat3_filename": "car2pj1.lzs",
+      "retail_filename": "car2pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738852
+    },
+    {
+      "index": 90,
+      "mat3_filename": "car2pj2.lzs",
+      "retail_filename": "car2pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738856
+    },
+    {
+      "index": 91,
+      "mat3_filename": "car2pj3.lzs",
+      "retail_filename": "car2pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738860
+    },
+    {
+      "index": 92,
+      "mat3_filename": "car2pj4.lzs",
+      "retail_filename": "car2pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738864
+    },
+    {
+      "index": 93,
+      "mat3_filename": "car2pj5.lzs",
+      "retail_filename": "car2pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738868
+    },
+    {
+      "index": 94,
+      "mat3_filename": "car2pj6.lzs",
+      "retail_filename": "car2pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738872
+    },
+    {
+      "index": 95,
+      "mat3_filename": "car2pj7.lzs",
+      "retail_filename": "car2pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738876
+    },
+    {
+      "index": 96,
+      "mat3_filename": "car2pj8.lzs",
+      "retail_filename": "car2pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738880
+    },
+    {
+      "index": 97,
+      "mat3_filename": "car2pj9.lzs",
+      "retail_filename": "car2pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738884
+    },
+    {
+      "index": 98,
+      "mat3_filename": "car2pj10.lzs",
+      "retail_filename": "car2pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738888
+    },
+    {
+      "index": 99,
+      "mat3_filename": "car2pj11.lzs",
+      "retail_filename": "car2pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738892
+    },
+    {
+      "index": 100,
+      "mat3_filename": "car2pj12.lzs",
+      "retail_filename": "car2pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99532,
+      "retail_decoded_or_raw_size": 99532,
+      "size_equal": true,
+      "retail_pointer_offset": 738896
+    },
+    {
+      "index": 101,
+      "mat3_filename": "car3pj1.lzs",
+      "retail_filename": "car3pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 32300,
+      "retail_decoded_or_raw_size": 32300,
+      "size_equal": true,
+      "retail_pointer_offset": 738900
+    },
+    {
+      "index": 102,
+      "mat3_filename": "car3pj2.lzs",
+      "retail_filename": "car3pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738904
+    },
+    {
+      "index": 103,
+      "mat3_filename": "car3pj3.lzs",
+      "retail_filename": "car3pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738908
+    },
+    {
+      "index": 104,
+      "mat3_filename": "car3pj4.lzs",
+      "retail_filename": "car3pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738912
+    },
+    {
+      "index": 105,
+      "mat3_filename": "car3pj5.lzs",
+      "retail_filename": "car3pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738916
+    },
+    {
+      "index": 106,
+      "mat3_filename": "car3pj6.lzs",
+      "retail_filename": "car3pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 32300,
+      "retail_decoded_or_raw_size": 32300,
+      "size_equal": true,
+      "retail_pointer_offset": 738920
+    },
+    {
+      "index": 107,
+      "mat3_filename": "car3pj7.lzs",
+      "retail_filename": "car3pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738924
+    },
+    {
+      "index": 108,
+      "mat3_filename": "car3pj8.lzs",
+      "retail_filename": "car3pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 32300,
+      "retail_decoded_or_raw_size": 32300,
+      "size_equal": true,
+      "retail_pointer_offset": 738928
+    },
+    {
+      "index": 109,
+      "mat3_filename": "car3pj9.lzs",
+      "retail_filename": "car3pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738932
+    },
+    {
+      "index": 110,
+      "mat3_filename": "car3pj10.lzs",
+      "retail_filename": "car3pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738936
+    },
+    {
+      "index": 111,
+      "mat3_filename": "car3pj11.lzs",
+      "retail_filename": "car3pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738940
+    },
+    {
+      "index": 112,
+      "mat3_filename": "car3pj12.lzs",
+      "retail_filename": "car3pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30252,
+      "retail_decoded_or_raw_size": 30252,
+      "size_equal": true,
+      "retail_pointer_offset": 738944
+    },
+    {
+      "index": 113,
+      "mat3_filename": "car4pj1.lzs",
+      "retail_filename": "car4pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738948
+    },
+    {
+      "index": 114,
+      "mat3_filename": "car4pj2.lzs",
+      "retail_filename": "car4pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738952
+    },
+    {
+      "index": 115,
+      "mat3_filename": "car4pj3.lzs",
+      "retail_filename": "car4pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738956
+    },
+    {
+      "index": 116,
+      "mat3_filename": "car4pj4.lzs",
+      "retail_filename": "car4pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738960
+    },
+    {
+      "index": 117,
+      "mat3_filename": "car4pj5.lzs",
+      "retail_filename": "car4pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738964
+    },
+    {
+      "index": 118,
+      "mat3_filename": "car4pj6.lzs",
+      "retail_filename": "car4pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 93340,
+      "retail_decoded_or_raw_size": 93340,
+      "size_equal": true,
+      "retail_pointer_offset": 738968
+    },
+    {
+      "index": 119,
+      "mat3_filename": "car4pj7.lzs",
+      "retail_filename": "car4pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738972
+    },
+    {
+      "index": 120,
+      "mat3_filename": "car4pj8.lzs",
+      "retail_filename": "car4pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738976
+    },
+    {
+      "index": 121,
+      "mat3_filename": "car4pj9.lzs",
+      "retail_filename": "car4pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738980
+    },
+    {
+      "index": 122,
+      "mat3_filename": "car4pj10.lzs",
+      "retail_filename": "car4pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738984
+    },
+    {
+      "index": 123,
+      "mat3_filename": "car4pj11.lzs",
+      "retail_filename": "car4pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738988
+    },
+    {
+      "index": 124,
+      "mat3_filename": "car4pj12.lzs",
+      "retail_filename": "car4pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 86684,
+      "retail_decoded_or_raw_size": 86684,
+      "size_equal": true,
+      "retail_pointer_offset": 738992
+    },
+    {
+      "index": 125,
+      "mat3_filename": "car5pj1.lzs",
+      "retail_filename": "car5pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 738996
+    },
+    {
+      "index": 126,
+      "mat3_filename": "car5pj2.lzs",
+      "retail_filename": "car5pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739000
+    },
+    {
+      "index": 127,
+      "mat3_filename": "car5pj3.lzs",
+      "retail_filename": "car5pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739004
+    },
+    {
+      "index": 128,
+      "mat3_filename": "car5pj4.lzs",
+      "retail_filename": "car5pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739008
+    },
+    {
+      "index": 129,
+      "mat3_filename": "car5pj5.lzs",
+      "retail_filename": "car5pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739012
+    },
+    {
+      "index": 130,
+      "mat3_filename": "car5pj6.lzs",
+      "retail_filename": "car5pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739016
+    },
+    {
+      "index": 131,
+      "mat3_filename": "car5pj7.lzs",
+      "retail_filename": "car5pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739020
+    },
+    {
+      "index": 132,
+      "mat3_filename": "car5pj8.lzs",
+      "retail_filename": "car5pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739024
+    },
+    {
+      "index": 133,
+      "mat3_filename": "car5pj9.lzs",
+      "retail_filename": "car5pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739028
+    },
+    {
+      "index": 134,
+      "mat3_filename": "car5pj10.lzs",
+      "retail_filename": "car5pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739032
+    },
+    {
+      "index": 135,
+      "mat3_filename": "car5pj11.lzs",
+      "retail_filename": "car5pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739036
+    },
+    {
+      "index": 136,
+      "mat3_filename": "car5pj12.lzs",
+      "retail_filename": "car5pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 92460,
+      "retail_decoded_or_raw_size": 92460,
+      "size_equal": true,
+      "retail_pointer_offset": 739040
+    },
+    {
+      "index": 137,
+      "mat3_filename": "car6pj1.lzs",
+      "retail_filename": "car6pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739044
+    },
+    {
+      "index": 138,
+      "mat3_filename": "car6pj2.lzs",
+      "retail_filename": "car6pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739048
+    },
+    {
+      "index": 139,
+      "mat3_filename": "car6pj3.lzs",
+      "retail_filename": "car6pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739052
+    },
+    {
+      "index": 140,
+      "mat3_filename": "car6pj4.lzs",
+      "retail_filename": "car6pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739056
+    },
+    {
+      "index": 141,
+      "mat3_filename": "car6pj5.lzs",
+      "retail_filename": "car6pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739060
+    },
+    {
+      "index": 142,
+      "mat3_filename": "car6pj6.lzs",
+      "retail_filename": "car6pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739064
+    },
+    {
+      "index": 143,
+      "mat3_filename": "car6pj7.lzs",
+      "retail_filename": "car6pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739068
+    },
+    {
+      "index": 144,
+      "mat3_filename": "car6pj8.lzs",
+      "retail_filename": "car6pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739072
+    },
+    {
+      "index": 145,
+      "mat3_filename": "car6pj9.lzs",
+      "retail_filename": "car6pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739076
+    },
+    {
+      "index": 146,
+      "mat3_filename": "car6pj10.lzs",
+      "retail_filename": "car6pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739080
+    },
+    {
+      "index": 147,
+      "mat3_filename": "car6pj11.lzs",
+      "retail_filename": "car6pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739084
+    },
+    {
+      "index": 148,
+      "mat3_filename": "car6pj12.lzs",
+      "retail_filename": "car6pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 73740,
+      "retail_decoded_or_raw_size": 73740,
+      "size_equal": true,
+      "retail_pointer_offset": 739088
+    },
+    {
+      "index": 149,
+      "mat3_filename": "car7pj1.lzs",
+      "retail_filename": "car7pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739092
+    },
+    {
+      "index": 150,
+      "mat3_filename": "car7pj2.lzs",
+      "retail_filename": "car7pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739096
+    },
+    {
+      "index": 151,
+      "mat3_filename": "car7pj3.lzs",
+      "retail_filename": "car7pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739100
+    },
+    {
+      "index": 152,
+      "mat3_filename": "car7pj4.lzs",
+      "retail_filename": "car7pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739104
+    },
+    {
+      "index": 153,
+      "mat3_filename": "car7pj5.lzs",
+      "retail_filename": "car7pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739108
+    },
+    {
+      "index": 154,
+      "mat3_filename": "car7pj6.lzs",
+      "retail_filename": "car7pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739112
+    },
+    {
+      "index": 155,
+      "mat3_filename": "car7pj7.lzs",
+      "retail_filename": "car7pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739116
+    },
+    {
+      "index": 156,
+      "mat3_filename": "car7pj8.lzs",
+      "retail_filename": "car7pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739120
+    },
+    {
+      "index": 157,
+      "mat3_filename": "car7pj9.lzs",
+      "retail_filename": "car7pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739124
+    },
+    {
+      "index": 158,
+      "mat3_filename": "car7pj10.lzs",
+      "retail_filename": "car7pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739128
+    },
+    {
+      "index": 159,
+      "mat3_filename": "car7pj11.lzs",
+      "retail_filename": "car7pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739132
+    },
+    {
+      "index": 160,
+      "mat3_filename": "car7pj12.lzs",
+      "retail_filename": "car7pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 83612,
+      "retail_decoded_or_raw_size": 83612,
+      "size_equal": true,
+      "retail_pointer_offset": 739136
+    },
+    {
+      "index": 161,
+      "mat3_filename": "car8pj1.lzs",
+      "retail_filename": "car8pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739140
+    },
+    {
+      "index": 162,
+      "mat3_filename": "car8pj2.lzs",
+      "retail_filename": "car8pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739144
+    },
+    {
+      "index": 163,
+      "mat3_filename": "car8pj3.lzs",
+      "retail_filename": "car8pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739148
+    },
+    {
+      "index": 164,
+      "mat3_filename": "car8pj4.lzs",
+      "retail_filename": "car8pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739152
+    },
+    {
+      "index": 165,
+      "mat3_filename": "car8pj5.lzs",
+      "retail_filename": "car8pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739156
+    },
+    {
+      "index": 166,
+      "mat3_filename": "car8pj6.lzs",
+      "retail_filename": "car8pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739160
+    },
+    {
+      "index": 167,
+      "mat3_filename": "car8pj7.lzs",
+      "retail_filename": "car8pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739164
+    },
+    {
+      "index": 168,
+      "mat3_filename": "car8pj8.lzs",
+      "retail_filename": "car8pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739168
+    },
+    {
+      "index": 169,
+      "mat3_filename": "car8pj9.lzs",
+      "retail_filename": "car8pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739172
+    },
+    {
+      "index": 170,
+      "mat3_filename": "car8pj10.lzs",
+      "retail_filename": "car8pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739176
+    },
+    {
+      "index": 171,
+      "mat3_filename": "car8pj11.lzs",
+      "retail_filename": "car8pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739180
+    },
+    {
+      "index": 172,
+      "mat3_filename": "car8pj12.lzs",
+      "retail_filename": "car8pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 85148,
+      "retail_decoded_or_raw_size": 85148,
+      "size_equal": true,
+      "retail_pointer_offset": 739184
+    },
+    {
+      "index": 173,
+      "mat3_filename": "car9pj1.lzs",
+      "retail_filename": "car9pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739188
+    },
+    {
+      "index": 174,
+      "mat3_filename": "car9pj2.lzs",
+      "retail_filename": "car9pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739192
+    },
+    {
+      "index": 175,
+      "mat3_filename": "car9pj3.lzs",
+      "retail_filename": "car9pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739196
+    },
+    {
+      "index": 176,
+      "mat3_filename": "car9pj4.lzs",
+      "retail_filename": "car9pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739200
+    },
+    {
+      "index": 177,
+      "mat3_filename": "car9pj5.lzs",
+      "retail_filename": "car9pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739204
+    },
+    {
+      "index": 178,
+      "mat3_filename": "car9pj6.lzs",
+      "retail_filename": "car9pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739208
+    },
+    {
+      "index": 179,
+      "mat3_filename": "car9pj7.lzs",
+      "retail_filename": "car9pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739212
+    },
+    {
+      "index": 180,
+      "mat3_filename": "car9pj8.lzs",
+      "retail_filename": "car9pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739216
+    },
+    {
+      "index": 181,
+      "mat3_filename": "car9pj9.lzs",
+      "retail_filename": "car9pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739220
+    },
+    {
+      "index": 182,
+      "mat3_filename": "car9pj10.lzs",
+      "retail_filename": "car9pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739224
+    },
+    {
+      "index": 183,
+      "mat3_filename": "car9pj11.lzs",
+      "retail_filename": "car9pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739228
+    },
+    {
+      "index": 184,
+      "mat3_filename": "car9pj12.lzs",
+      "retail_filename": "car9pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 79980,
+      "retail_decoded_or_raw_size": 79980,
+      "size_equal": true,
+      "retail_pointer_offset": 739232
+    },
+    {
+      "index": 185,
+      "mat3_filename": "car10pj1.lzs",
+      "retail_filename": "car10pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739236
+    },
+    {
+      "index": 186,
+      "mat3_filename": "car10pj2.lzs",
+      "retail_filename": "car10pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739240
+    },
+    {
+      "index": 187,
+      "mat3_filename": "car10pj3.lzs",
+      "retail_filename": "car10pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739244
+    },
+    {
+      "index": 188,
+      "mat3_filename": "car10pj4.lzs",
+      "retail_filename": "car10pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739248
+    },
+    {
+      "index": 189,
+      "mat3_filename": "car10pj5.lzs",
+      "retail_filename": "car10pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739252
+    },
+    {
+      "index": 190,
+      "mat3_filename": "car10pj6.lzs",
+      "retail_filename": "car10pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739256
+    },
+    {
+      "index": 191,
+      "mat3_filename": "car10pj7.lzs",
+      "retail_filename": "car10pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739260
+    },
+    {
+      "index": 192,
+      "mat3_filename": "car10pj8.lzs",
+      "retail_filename": "car10pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739264
+    },
+    {
+      "index": 193,
+      "mat3_filename": "car10pj9.lzs",
+      "retail_filename": "car10pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739268
+    },
+    {
+      "index": 194,
+      "mat3_filename": "car10pj10.lzs",
+      "retail_filename": "car10pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739272
+    },
+    {
+      "index": 195,
+      "mat3_filename": "car10pj11.lzs",
+      "retail_filename": "car10pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739276
+    },
+    {
+      "index": 196,
+      "mat3_filename": "car10pj12.lzs",
+      "retail_filename": "car10pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 110140,
+      "retail_decoded_or_raw_size": 110140,
+      "size_equal": true,
+      "retail_pointer_offset": 739280
+    },
+    {
+      "index": 197,
+      "mat3_filename": "car11pj1.lzs",
+      "retail_filename": "car11pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739284
+    },
+    {
+      "index": 198,
+      "mat3_filename": "car11pj2.lzs",
+      "retail_filename": "car11pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739288
+    },
+    {
+      "index": 199,
+      "mat3_filename": "car11pj3.lzs",
+      "retail_filename": "car11pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739292
+    },
+    {
+      "index": 200,
+      "mat3_filename": "car11pj4.lzs",
+      "retail_filename": "car11pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739296
+    },
+    {
+      "index": 201,
+      "mat3_filename": "car11pj5.lzs",
+      "retail_filename": "car11pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739300
+    },
+    {
+      "index": 202,
+      "mat3_filename": "car11pj6.lzs",
+      "retail_filename": "car11pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739304
+    },
+    {
+      "index": 203,
+      "mat3_filename": "car11pj7.lzs",
+      "retail_filename": "car11pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739308
+    },
+    {
+      "index": 204,
+      "mat3_filename": "car11pj8.lzs",
+      "retail_filename": "car11pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739312
+    },
+    {
+      "index": 205,
+      "mat3_filename": "car11pj9.lzs",
+      "retail_filename": "car11pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739316
+    },
+    {
+      "index": 206,
+      "mat3_filename": "car11pj10.lzs",
+      "retail_filename": "car11pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739320
+    },
+    {
+      "index": 207,
+      "mat3_filename": "car11pj11.lzs",
+      "retail_filename": "car11pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739324
+    },
+    {
+      "index": 208,
+      "mat3_filename": "car11pj12.lzs",
+      "retail_filename": "car11pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 78572,
+      "retail_decoded_or_raw_size": 78572,
+      "size_equal": true,
+      "retail_pointer_offset": 739328
+    },
+    {
+      "index": 209,
+      "mat3_filename": "car12pj1.lzs",
+      "retail_filename": "car12pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739332
+    },
+    {
+      "index": 210,
+      "mat3_filename": "car12pj2.lzs",
+      "retail_filename": "car12pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739336
+    },
+    {
+      "index": 211,
+      "mat3_filename": "car12pj3.lzs",
+      "retail_filename": "car12pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739340
+    },
+    {
+      "index": 212,
+      "mat3_filename": "car12pj4.lzs",
+      "retail_filename": "car12pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739344
+    },
+    {
+      "index": 213,
+      "mat3_filename": "car12pj5.lzs",
+      "retail_filename": "car12pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739348
+    },
+    {
+      "index": 214,
+      "mat3_filename": "car12pj6.lzs",
+      "retail_filename": "car12pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739352
+    },
+    {
+      "index": 215,
+      "mat3_filename": "car12pj7.lzs",
+      "retail_filename": "car12pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739356
+    },
+    {
+      "index": 216,
+      "mat3_filename": "car12pj8.lzs",
+      "retail_filename": "car12pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739360
+    },
+    {
+      "index": 217,
+      "mat3_filename": "car12pj9.lzs",
+      "retail_filename": "car12pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739364
+    },
+    {
+      "index": 218,
+      "mat3_filename": "car12pj10.lzs",
+      "retail_filename": "car12pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739368
+    },
+    {
+      "index": 219,
+      "mat3_filename": "car12pj11.lzs",
+      "retail_filename": "car12pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739372
+    },
+    {
+      "index": 220,
+      "mat3_filename": "car12pj12.lzs",
+      "retail_filename": "car12pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 96620,
+      "retail_decoded_or_raw_size": 96620,
+      "size_equal": true,
+      "retail_pointer_offset": 739376
+    },
+    {
+      "index": 221,
+      "mat3_filename": "car13pj1.lzs",
+      "retail_filename": "car13pj1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739380
+    },
+    {
+      "index": 222,
+      "mat3_filename": "car13pj2.lzs",
+      "retail_filename": "car13pj2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739384
+    },
+    {
+      "index": 223,
+      "mat3_filename": "car13pj3.lzs",
+      "retail_filename": "car13pj3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739388
+    },
+    {
+      "index": 224,
+      "mat3_filename": "car13pj4.lzs",
+      "retail_filename": "car13pj4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739392
+    },
+    {
+      "index": 225,
+      "mat3_filename": "car13pj5.lzs",
+      "retail_filename": "car13pj5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739396
+    },
+    {
+      "index": 226,
+      "mat3_filename": "car13pj6.lzs",
+      "retail_filename": "car13pj6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739400
+    },
+    {
+      "index": 227,
+      "mat3_filename": "car13pj7.lzs",
+      "retail_filename": "car13pj7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739404
+    },
+    {
+      "index": 228,
+      "mat3_filename": "car13pj8.lzs",
+      "retail_filename": "car13pj8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739408
+    },
+    {
+      "index": 229,
+      "mat3_filename": "car13pj9.lzs",
+      "retail_filename": "car13pj9.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739412
+    },
+    {
+      "index": 230,
+      "mat3_filename": "car13pj10.lzs",
+      "retail_filename": "car13pj10.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739416
+    },
+    {
+      "index": 231,
+      "mat3_filename": "car13pj11.lzs",
+      "retail_filename": "car13pj11.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739420
+    },
+    {
+      "index": 232,
+      "mat3_filename": "car13pj12.lzs",
+      "retail_filename": "car13pj12.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 99692,
+      "retail_decoded_or_raw_size": 99692,
+      "size_equal": true,
+      "retail_pointer_offset": 739424
+    },
+    {
+      "index": 233,
+      "mat3_filename": "track1.lzs",
+      "retail_filename": "track1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3043644,
+      "retail_decoded_or_raw_size": 3043644,
+      "size_equal": true,
+      "retail_pointer_offset": 739428
+    },
+    {
+      "index": 234,
+      "mat3_filename": "track2.lzs",
+      "retail_filename": "track2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2733972,
+      "retail_decoded_or_raw_size": 2733972,
+      "size_equal": true,
+      "retail_pointer_offset": 739432
+    },
+    {
+      "index": 235,
+      "mat3_filename": "track3.lzs",
+      "retail_filename": "track3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2747476,
+      "retail_decoded_or_raw_size": 2747476,
+      "size_equal": true,
+      "retail_pointer_offset": 739436
+    },
+    {
+      "index": 236,
+      "mat3_filename": "track4.lzs",
+      "retail_filename": "track4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3000684,
+      "retail_decoded_or_raw_size": 3000684,
+      "size_equal": true,
+      "retail_pointer_offset": 739440
+    },
+    {
+      "index": 237,
+      "mat3_filename": "track5.lzs",
+      "retail_filename": "track5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2977772,
+      "retail_decoded_or_raw_size": 2977772,
+      "size_equal": true,
+      "retail_pointer_offset": 739444
+    },
+    {
+      "index": 238,
+      "mat3_filename": "track6.lzs",
+      "retail_filename": "track6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3062404,
+      "retail_decoded_or_raw_size": 3062404,
+      "size_equal": true,
+      "retail_pointer_offset": 739448
+    },
+    {
+      "index": 239,
+      "mat3_filename": "dm1.lzs",
+      "retail_filename": "dm1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 784772,
+      "retail_decoded_or_raw_size": 784772,
+      "size_equal": true,
+      "retail_pointer_offset": 739452
+    },
+    {
+      "index": 240,
+      "mat3_filename": "dm2.lzs",
+      "retail_filename": "dm2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 196444,
+      "retail_decoded_or_raw_size": 196444,
+      "size_equal": true,
+      "retail_pointer_offset": 739456
+    },
+    {
+      "index": 241,
+      "mat3_filename": "dm3.lzs",
+      "retail_filename": "dm3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 782684,
+      "retail_decoded_or_raw_size": 782684,
+      "size_equal": true,
+      "retail_pointer_offset": 739460
+    },
+    {
+      "index": 242,
+      "mat3_filename": "dm4.lzs",
+      "retail_filename": "dm4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 845604,
+      "retail_decoded_or_raw_size": 845604,
+      "size_equal": true,
+      "retail_pointer_offset": 739464
+    },
+    {
+      "index": 243,
+      "mat3_filename": "dm5.lzs",
+      "retail_filename": "dm5.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1206180,
+      "retail_decoded_or_raw_size": 1206180,
+      "size_equal": true,
+      "retail_pointer_offset": 739468
+    },
+    {
+      "index": 244,
+      "mat3_filename": "dm6.lzs",
+      "retail_filename": "dm6.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 925828,
+      "retail_decoded_or_raw_size": 925828,
+      "size_equal": true,
+      "retail_pointer_offset": 739472
+    },
+    {
+      "index": 245,
+      "mat3_filename": "dm7.lzs",
+      "retail_filename": "dm7.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1078364,
+      "retail_decoded_or_raw_size": 1078364,
+      "size_equal": true,
+      "retail_pointer_offset": 739476
+    },
+    {
+      "index": 246,
+      "mat3_filename": "dm8.lzs",
+      "retail_filename": "dm8.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 809364,
+      "retail_decoded_or_raw_size": 809364,
+      "size_equal": true,
+      "retail_pointer_offset": 739480
+    },
+    {
+      "index": 247,
+      "mat3_filename": "stunt1.lzs",
+      "retail_filename": "stunt1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 272540,
+      "retail_decoded_or_raw_size": 272540,
+      "size_equal": true,
+      "retail_pointer_offset": 739484
+    },
+    {
+      "index": 248,
+      "mat3_filename": "stunt2.lzs",
+      "retail_filename": "stunt2.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 319740,
+      "retail_decoded_or_raw_size": 319740,
+      "size_equal": true,
+      "retail_pointer_offset": 739488
+    },
+    {
+      "index": 249,
+      "mat3_filename": "stunt3.lzs",
+      "retail_filename": "stunt3.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 773516,
+      "retail_decoded_or_raw_size": 773516,
+      "size_equal": true,
+      "retail_pointer_offset": 739492
+    },
+    {
+      "index": 250,
+      "mat3_filename": "stunt4.lzs",
+      "retail_filename": "stunt4.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 411140,
+      "retail_decoded_or_raw_size": 411140,
+      "size_equal": true,
+      "retail_pointer_offset": 739496
+    },
+    {
+      "index": 251,
+      "mat3_filename": "obstacle1.lzs",
+      "retail_filename": "obstacle1.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1467172,
+      "retail_decoded_or_raw_size": 1467172,
+      "size_equal": true,
+      "retail_pointer_offset": 739500
+    },
+    {
+      "index": 252,
+      "mat3_filename": "track1worlds.lzs",
+      "retail_filename": "track1worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 17040,
+      "retail_decoded_or_raw_size": 17040,
+      "size_equal": true,
+      "retail_pointer_offset": 739504
+    },
+    {
+      "index": 253,
+      "mat3_filename": "track2worlds.lzs",
+      "retail_filename": "track2worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 34304,
+      "retail_decoded_or_raw_size": 34304,
+      "size_equal": true,
+      "retail_pointer_offset": 739508
+    },
+    {
+      "index": 254,
+      "mat3_filename": "track3worlds.lzs",
+      "retail_filename": "track3worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 15048,
+      "retail_decoded_or_raw_size": 15048,
+      "size_equal": true,
+      "retail_pointer_offset": 739512
+    },
+    {
+      "index": 255,
+      "mat3_filename": "track4worlds.lzs",
+      "retail_filename": "track4worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 23824,
+      "retail_decoded_or_raw_size": 23824,
+      "size_equal": true,
+      "retail_pointer_offset": 739516
+    },
+    {
+      "index": 256,
+      "mat3_filename": "track5worlds.lzs",
+      "retail_filename": "track5worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 13304,
+      "retail_decoded_or_raw_size": 13304,
+      "size_equal": true,
+      "retail_pointer_offset": 739520
+    },
+    {
+      "index": 257,
+      "mat3_filename": "track6worlds.lzs",
+      "retail_filename": "track6worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 17016,
+      "retail_decoded_or_raw_size": 17016,
+      "size_equal": true,
+      "retail_pointer_offset": 739524
+    },
+    {
+      "index": 258,
+      "mat3_filename": "dm1worlds.lzs",
+      "retail_filename": "dm1worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2696,
+      "retail_decoded_or_raw_size": 2696,
+      "size_equal": true,
+      "retail_pointer_offset": 739528
+    },
+    {
+      "index": 259,
+      "mat3_filename": "dm2worlds.lzs",
+      "retail_filename": "dm2worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1840,
+      "retail_decoded_or_raw_size": 1840,
+      "size_equal": true,
+      "retail_pointer_offset": 739532
+    },
+    {
+      "index": 260,
+      "mat3_filename": "dm3worlds.lzs",
+      "retail_filename": "dm3worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2712,
+      "retail_decoded_or_raw_size": 2712,
+      "size_equal": true,
+      "retail_pointer_offset": 739536
+    },
+    {
+      "index": 261,
+      "mat3_filename": "dm4worlds.lzs",
+      "retail_filename": "dm4worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3440,
+      "retail_decoded_or_raw_size": 3440,
+      "size_equal": true,
+      "retail_pointer_offset": 739540
+    },
+    {
+      "index": 262,
+      "mat3_filename": "dm5worlds.lzs",
+      "retail_filename": "dm5worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3520,
+      "retail_decoded_or_raw_size": 3520,
+      "size_equal": true,
+      "retail_pointer_offset": 739544
+    },
+    {
+      "index": 263,
+      "mat3_filename": "dm6worlds.lzs",
+      "retail_filename": "dm6worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2360,
+      "retail_decoded_or_raw_size": 2360,
+      "size_equal": true,
+      "retail_pointer_offset": 739548
+    },
+    {
+      "index": 264,
+      "mat3_filename": "dm7worlds.lzs",
+      "retail_filename": "dm7worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2688,
+      "retail_decoded_or_raw_size": 2688,
+      "size_equal": true,
+      "retail_pointer_offset": 739552
+    },
+    {
+      "index": 265,
+      "mat3_filename": "dm8worlds.lzs",
+      "retail_filename": "dm8worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3304,
+      "retail_decoded_or_raw_size": 3304,
+      "size_equal": true,
+      "retail_pointer_offset": 739556
+    },
+    {
+      "index": 266,
+      "mat3_filename": "stunt1worlds.lzs",
+      "retail_filename": "stunt1worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4968,
+      "retail_decoded_or_raw_size": 4968,
+      "size_equal": true,
+      "retail_pointer_offset": 739560
+    },
+    {
+      "index": 267,
+      "mat3_filename": "stunt2worlds.lzs",
+      "retail_filename": "stunt2worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 5392,
+      "retail_decoded_or_raw_size": 5392,
+      "size_equal": true,
+      "retail_pointer_offset": 739564
+    },
+    {
+      "index": 268,
+      "mat3_filename": "stunt3worlds.lzs",
+      "retail_filename": "stunt3worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 5936,
+      "retail_decoded_or_raw_size": 5936,
+      "size_equal": true,
+      "retail_pointer_offset": 739568
+    },
+    {
+      "index": 269,
+      "mat3_filename": "stunt4worlds.lzs",
+      "retail_filename": "stunt4worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 5384,
+      "retail_decoded_or_raw_size": 5384,
+      "size_equal": true,
+      "retail_pointer_offset": 739572
+    },
+    {
+      "index": 270,
+      "mat3_filename": "obstacle1worlds.lzs",
+      "retail_filename": "obstacle1worlds.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 3016,
+      "retail_decoded_or_raw_size": 3016,
+      "size_equal": true,
+      "retail_pointer_offset": 739576
+    },
+    {
+      "index": 271,
+      "mat3_filename": "track1road.lzs",
+      "retail_filename": "track1road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 350889,
+      "retail_decoded_or_raw_size": 350889,
+      "size_equal": true,
+      "retail_pointer_offset": 739580
+    },
+    {
+      "index": 272,
+      "mat3_filename": "track2road.lzs",
+      "retail_filename": "track2road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 447401,
+      "retail_decoded_or_raw_size": 447401,
+      "size_equal": true,
+      "retail_pointer_offset": 739584
+    },
+    {
+      "index": 273,
+      "mat3_filename": "track3road.lzs",
+      "retail_filename": "track3road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 523409,
+      "retail_decoded_or_raw_size": 523409,
+      "size_equal": true,
+      "retail_pointer_offset": 739588
+    },
+    {
+      "index": 274,
+      "mat3_filename": "track4road.lzs",
+      "retail_filename": "track4road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 314553,
+      "retail_decoded_or_raw_size": 314553,
+      "size_equal": true,
+      "retail_pointer_offset": 739592
+    },
+    {
+      "index": 275,
+      "mat3_filename": "track5road.lzs",
+      "retail_filename": "track5road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 447437,
+      "retail_decoded_or_raw_size": 447437,
+      "size_equal": true,
+      "retail_pointer_offset": 739596
+    },
+    {
+      "index": 276,
+      "mat3_filename": "track6road.lzs",
+      "retail_filename": "track6road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 468148,
+      "retail_decoded_or_raw_size": 468148,
+      "size_equal": true,
+      "retail_pointer_offset": 739600
+    },
+    {
+      "index": 277,
+      "mat3_filename": "dm1road.lzs",
+      "retail_filename": "dm1road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 19061,
+      "retail_decoded_or_raw_size": 19061,
+      "size_equal": true,
+      "retail_pointer_offset": 739604
+    },
+    {
+      "index": 278,
+      "mat3_filename": "dm2road.lzs",
+      "retail_filename": "dm2road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 18291,
+      "retail_decoded_or_raw_size": 18291,
+      "size_equal": true,
+      "retail_pointer_offset": 739608
+    },
+    {
+      "index": 279,
+      "mat3_filename": "dm3road.lzs",
+      "retail_filename": "dm3road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 35546,
+      "retail_decoded_or_raw_size": 35546,
+      "size_equal": true,
+      "retail_pointer_offset": 739612
+    },
+    {
+      "index": 280,
+      "mat3_filename": "dm4road.lzs",
+      "retail_filename": "dm4road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 11899,
+      "retail_decoded_or_raw_size": 11899,
+      "size_equal": true,
+      "retail_pointer_offset": 739616
+    },
+    {
+      "index": 281,
+      "mat3_filename": "dm5road.lzs",
+      "retail_filename": "dm5road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 19991,
+      "retail_decoded_or_raw_size": 19991,
+      "size_equal": true,
+      "retail_pointer_offset": 739620
+    },
+    {
+      "index": 282,
+      "mat3_filename": "dm6road.lzs",
+      "retail_filename": "dm6road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 34990,
+      "retail_decoded_or_raw_size": 34990,
+      "size_equal": true,
+      "retail_pointer_offset": 739624
+    },
+    {
+      "index": 283,
+      "mat3_filename": "dm7road.lzs",
+      "retail_filename": "dm7road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 16326,
+      "retail_decoded_or_raw_size": 16326,
+      "size_equal": true,
+      "retail_pointer_offset": 739628
+    },
+    {
+      "index": 284,
+      "mat3_filename": "dm8road.lzs",
+      "retail_filename": "dm8road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 34305,
+      "retail_decoded_or_raw_size": 34305,
+      "size_equal": true,
+      "retail_pointer_offset": 739632
+    },
+    {
+      "index": 285,
+      "mat3_filename": "stunt1road.lzs",
+      "retail_filename": "stunt1road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 157711,
+      "retail_decoded_or_raw_size": 157711,
+      "size_equal": true,
+      "retail_pointer_offset": 739636
+    },
+    {
+      "index": 286,
+      "mat3_filename": "stunt2road.lzs",
+      "retail_filename": "stunt2road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 101012,
+      "retail_decoded_or_raw_size": 101012,
+      "size_equal": true,
+      "retail_pointer_offset": 739640
+    },
+    {
+      "index": 287,
+      "mat3_filename": "stunt3road.lzs",
+      "retail_filename": "stunt3road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 167821,
+      "retail_decoded_or_raw_size": 167821,
+      "size_equal": true,
+      "retail_pointer_offset": 739644
+    },
+    {
+      "index": 288,
+      "mat3_filename": "stunt4road.lzs",
+      "retail_filename": "stunt4road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 136736,
+      "retail_decoded_or_raw_size": 136736,
+      "size_equal": true,
+      "retail_pointer_offset": 739648
+    },
+    {
+      "index": 289,
+      "mat3_filename": "obstacle1road.lzs",
+      "retail_filename": "obstacle1road.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 160485,
+      "retail_decoded_or_raw_size": 160485,
+      "size_equal": true,
+      "retail_pointer_offset": 739652
+    },
+    {
+      "index": 290,
+      "mat3_filename": "track1path.lzs",
+      "retail_filename": "track1path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 30626,
+      "retail_decoded_or_raw_size": 30626,
+      "size_equal": true,
+      "retail_pointer_offset": 739656
+    },
+    {
+      "index": 291,
+      "mat3_filename": "track2path.lzs",
+      "retail_filename": "track2path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 40126,
+      "retail_decoded_or_raw_size": 40126,
+      "size_equal": true,
+      "retail_pointer_offset": 739660
+    },
+    {
+      "index": 292,
+      "mat3_filename": "track3path.lzs",
+      "retail_filename": "track3path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 38628,
+      "retail_decoded_or_raw_size": 38628,
+      "size_equal": true,
+      "retail_pointer_offset": 739664
+    },
+    {
+      "index": 293,
+      "mat3_filename": "track4path.lzs",
+      "retail_filename": "track4path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 39606,
+      "retail_decoded_or_raw_size": 39606,
+      "size_equal": true,
+      "retail_pointer_offset": 739668
+    },
+    {
+      "index": 294,
+      "mat3_filename": "track5path.lzs",
+      "retail_filename": "track5path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 36352,
+      "retail_decoded_or_raw_size": 36352,
+      "size_equal": true,
+      "retail_pointer_offset": 739672
+    },
+    {
+      "index": 295,
+      "mat3_filename": "track6path.lzs",
+      "retail_filename": "track6path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 56120,
+      "retail_decoded_or_raw_size": 56120,
+      "size_equal": true,
+      "retail_pointer_offset": 739676
+    },
+    {
+      "index": 296,
+      "mat3_filename": "dm1path.lzs",
+      "retail_filename": "dm1path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4890,
+      "retail_decoded_or_raw_size": 4890,
+      "size_equal": true,
+      "retail_pointer_offset": 739680
+    },
+    {
+      "index": 297,
+      "mat3_filename": "dm2path.lzs",
+      "retail_filename": "dm2path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4416,
+      "retail_decoded_or_raw_size": 4416,
+      "size_equal": true,
+      "retail_pointer_offset": 739684
+    },
+    {
+      "index": 298,
+      "mat3_filename": "dm3path.lzs",
+      "retail_filename": "dm3path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1894,
+      "retail_decoded_or_raw_size": 1894,
+      "size_equal": true,
+      "retail_pointer_offset": 739688
+    },
+    {
+      "index": 299,
+      "mat3_filename": "dm4path.lzs",
+      "retail_filename": "dm4path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4764,
+      "retail_decoded_or_raw_size": 4764,
+      "size_equal": true,
+      "retail_pointer_offset": 739692
+    },
+    {
+      "index": 300,
+      "mat3_filename": "dm5path.lzs",
+      "retail_filename": "dm5path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 5192,
+      "retail_decoded_or_raw_size": 5192,
+      "size_equal": true,
+      "retail_pointer_offset": 739696
+    },
+    {
+      "index": 301,
+      "mat3_filename": "dm6path.lzs",
+      "retail_filename": "dm6path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4578,
+      "retail_decoded_or_raw_size": 4578,
+      "size_equal": true,
+      "retail_pointer_offset": 739700
+    },
+    {
+      "index": 302,
+      "mat3_filename": "dm7path.lzs",
+      "retail_filename": "dm7path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1840,
+      "retail_decoded_or_raw_size": 1840,
+      "size_equal": true,
+      "retail_pointer_offset": 739704
+    },
+    {
+      "index": 303,
+      "mat3_filename": "dm8path.lzs",
+      "retail_filename": "dm8path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1798,
+      "retail_decoded_or_raw_size": 1798,
+      "size_equal": true,
+      "retail_pointer_offset": 739708
+    },
+    {
+      "index": 304,
+      "mat3_filename": "stunt1path.lzs",
+      "retail_filename": "stunt1path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2952,
+      "retail_decoded_or_raw_size": 2952,
+      "size_equal": true,
+      "retail_pointer_offset": 739712
+    },
+    {
+      "index": 305,
+      "mat3_filename": "stunt2path.lzs",
+      "retail_filename": "stunt2path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 4990,
+      "retail_decoded_or_raw_size": 4990,
+      "size_equal": true,
+      "retail_pointer_offset": 739716
+    },
+    {
+      "index": 306,
+      "mat3_filename": "stunt3path.lzs",
+      "retail_filename": "stunt3path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2044,
+      "retail_decoded_or_raw_size": 2044,
+      "size_equal": true,
+      "retail_pointer_offset": 739720
+    },
+    {
+      "index": 307,
+      "mat3_filename": "stunt4path.lzs",
+      "retail_filename": "stunt4path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 2362,
+      "retail_decoded_or_raw_size": 2362,
+      "size_equal": true,
+      "retail_pointer_offset": 739724
+    },
+    {
+      "index": 308,
+      "mat3_filename": "obstacle1path.lzs",
+      "retail_filename": "obstacle1path.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 1218,
+      "retail_decoded_or_raw_size": 1218,
+      "size_equal": true,
+      "retail_pointer_offset": 739728
+    },
+    {
+      "index": 309,
+      "mat3_filename": "track1pathback.lzs",
+      "retail_filename": "track1pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 28758,
+      "retail_decoded_or_raw_size": 28758,
+      "size_equal": true,
+      "retail_pointer_offset": 739732
+    },
+    {
+      "index": 310,
+      "mat3_filename": "track2pathback.lzs",
+      "retail_filename": "track2pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 39108,
+      "retail_decoded_or_raw_size": 39108,
+      "size_equal": true,
+      "retail_pointer_offset": 739736
+    },
+    {
+      "index": 311,
+      "mat3_filename": "track3pathback.lzs",
+      "retail_filename": "track3pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 39224,
+      "retail_decoded_or_raw_size": 39224,
+      "size_equal": true,
+      "retail_pointer_offset": 739740
+    },
+    {
+      "index": 312,
+      "mat3_filename": "track4pathback.lzs",
+      "retail_filename": "track4pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 39672,
+      "retail_decoded_or_raw_size": 39672,
+      "size_equal": true,
+      "retail_pointer_offset": 739744
+    },
+    {
+      "index": 313,
+      "mat3_filename": "track5pathback.lzs",
+      "retail_filename": "track5pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 35828,
+      "retail_decoded_or_raw_size": 35828,
+      "size_equal": true,
+      "retail_pointer_offset": 739748
+    },
+    {
+      "index": 314,
+      "mat3_filename": "track6pathback.lzs",
+      "retail_filename": "track6pathback.lzs",
+      "name_equal": true,
+      "mat3_declared_resource_size": 55828,
+      "retail_decoded_or_raw_size": 55828,
+      "size_equal": true,
+      "retail_pointer_offset": 739752
+    }
+  ],
+  "names_equal": 315,
+  "sizes_equal": 315,
+  "count": 315,
+  "caveat": "Equal names/order/sizes anchor resource IDs; payload equality between GC and DC was not tested.",
+  "original_elf_verified_names_and_sizes": 315
+}

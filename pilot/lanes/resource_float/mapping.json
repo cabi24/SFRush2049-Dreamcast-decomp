@@ -1,0 +1,780 @@
+{
+  "schema": 1,
+  "scope": "bounded static correspondence; no target compilation, held-out tuning or exact-match claim",
+  "target": {
+    "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\dc-pilot\\orig\\1ST_READ.BIN",
+    "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+    "base": "0x8C010000",
+    "byte_order": "little",
+    "isa": "SH-4"
+  },
+  "mappings": [
+    {
+      "function": "BodyVector",
+      "set": "training",
+      "status": "I_identified",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\fmath.c",
+        "sha256": "dc2b38176f2cde208697603c632cdffcc62d60ccc1d5da0f8b990fc9af7edbc5"
+      },
+      "source_line": 239,
+      "code": {
+        "file_start": "0x16B00",
+        "file_end_exclusive": "0x16B5E",
+        "va_start": "0x8C026B00",
+        "va_end_exclusive": "0x8C026B5E",
+        "size": 94,
+        "sha256": "b809e1fe7e3c46b3aca383e7d6e94c86f094c7bd1108f039c53a5df6e7cf90d6"
+      },
+      "owned_data_spans": [],
+      "identity_score": {
+        "behavior": 30,
+        "neighborhood": 20,
+        "fields": 20,
+        "uncommon_constants": 0,
+        "independent_call_contract": 10,
+        "total": 80
+      },
+      "runner_up": {
+        "function": "WorldVector",
+        "score": 45,
+        "veto": "row/column matrix addressing is transposed"
+      },
+      "abi": {
+        "src": "r4",
+        "dst": "r5",
+        "matrix": "r6",
+        "return": "void",
+        "gpr_clobbers": [
+          "r0",
+          "r1",
+          "r2",
+          "r6",
+          "r7"
+        ],
+        "fpr_clobbers": [
+          "fr0",
+          "fr2",
+          "fr3"
+        ],
+        "stack_bytes": 0
+      },
+      "fp_strategy": "Per row: FMUL src[2]*matrix[row][2], then FMAC src[1]*matrix[row][1]+acc, then FMAC src[0]*matrix[row][0]+acc. Opcode trace establishes order; exact FMAC rounding/FPSCR remain unresolved.",
+      "alias_contract": "Source is reloaded for every row after previous dst store. Do not hoist src[0..2] or assume restrict. Final dst[2] store occupies RTS delay slot at file0x16B5C.",
+      "calls": [],
+      "literal_load_xrefs": [
+        {
+          "file": "0x3940",
+          "pool_file": "0x39F4",
+          "register": "r3"
+        },
+        {
+          "file": "0xA738",
+          "pool_file": "0xA864",
+          "register": "r3"
+        },
+        {
+          "file": "0xD65E",
+          "pool_file": "0xD694",
+          "register": "r3"
+        },
+        {
+          "file": "0xD704",
+          "pool_file": "0xD7C8",
+          "register": "r3"
+        },
+        {
+          "file": "0xD836",
+          "pool_file": "0xD91C",
+          "register": "r2"
+        },
+        {
+          "file": "0xD878",
+          "pool_file": "0xD91C",
+          "register": "r3"
+        },
+        {
+          "file": "0xD95A",
+          "pool_file": "0xD9A0",
+          "register": "r2"
+        },
+        {
+          "file": "0xDA98",
+          "pool_file": "0xDAFC",
+          "register": "r3"
+        },
+        {
+          "file": "0xDBD0",
+          "pool_file": "0xDC6C",
+          "register": "r3"
+        },
+        {
+          "file": "0xDCFE",
+          "pool_file": "0xDD50",
+          "register": "r3"
+        },
+        {
+          "file": "0xDDE8",
+          "pool_file": "0xDE60",
+          "register": "r3"
+        },
+        {
+          "file": "0xDF24",
+          "pool_file": "0xDFAC",
+          "register": "r2"
+        },
+        {
+          "file": "0xE10C",
+          "pool_file": "0xE1D8",
+          "register": "r3"
+        },
+        {
+          "file": "0xE198",
+          "pool_file": "0xE1D8",
+          "register": "r3"
+        },
+        {
+          "file": "0xE346",
+          "pool_file": "0xE434",
+          "register": "r2"
+        },
+        {
+          "file": "0x13AD0",
+          "pool_file": "0x13B3C",
+          "register": "r3"
+        },
+        {
+          "file": "0x13D78",
+          "pool_file": "0x13E08",
+          "register": "r3"
+        },
+        {
+          "file": "0x14432",
+          "pool_file": "0x14590",
+          "register": "r3"
+        },
+        {
+          "file": "0x14E34",
+          "pool_file": "0x14F20",
+          "register": "r3"
+        },
+        {
+          "file": "0x2848E",
+          "pool_file": "0x28554",
+          "register": "r2"
+        },
+        {
+          "file": "0x2BE5C",
+          "pool_file": "0x2BEF8",
+          "register": "r1"
+        },
+        {
+          "file": "0x2C120",
+          "pool_file": "0x2C19C",
+          "register": "r2"
+        },
+        {
+          "file": "0x3A9D4",
+          "pool_file": "0x3AA28",
+          "register": "r3"
+        },
+        {
+          "file": "0x41804",
+          "pool_file": "0x41884",
+          "register": "r3"
+        },
+        {
+          "file": "0x419E6",
+          "pool_file": "0x41A88",
+          "register": "r3"
+        },
+        {
+          "file": "0x41D5E",
+          "pool_file": "0x41DA8",
+          "register": "r3"
+        },
+        {
+          "file": "0x41EC4",
+          "pool_file": "0x41F68",
+          "register": "r3"
+        },
+        {
+          "file": "0x41F04",
+          "pool_file": "0x41F68",
+          "register": "r3"
+        },
+        {
+          "file": "0x43EC0",
+          "pool_file": "0x43F80",
+          "register": "r2"
+        },
+        {
+          "file": "0x43FF2",
+          "pool_file": "0x440A8",
+          "register": "r2"
+        },
+        {
+          "file": "0x4420E",
+          "pool_file": "0x44278",
+          "register": "r3"
+        },
+        {
+          "file": "0x442AA",
+          "pool_file": "0x4439C",
+          "register": "r3"
+        },
+        {
+          "file": "0x44310",
+          "pool_file": "0x4439C",
+          "register": "r3"
+        },
+        {
+          "file": "0x4473E",
+          "pool_file": "0x44818",
+          "register": "r3"
+        },
+        {
+          "file": "0x44BD0",
+          "pool_file": "0x44C84",
+          "register": "r3"
+        },
+        {
+          "file": "0x47EE0",
+          "pool_file": "0x47F68",
+          "register": "r3"
+        },
+        {
+          "file": "0x4887E",
+          "pool_file": "0x488BC",
+          "register": "r3"
+        },
+        {
+          "file": "0x48CFA",
+          "pool_file": "0x48D60",
+          "register": "r2"
+        },
+        {
+          "file": "0x4B5FE",
+          "pool_file": "0x4B704",
+          "register": "r3"
+        },
+        {
+          "file": "0x4B6AA",
+          "pool_file": "0x4B704",
+          "register": "r3"
+        },
+        {
+          "file": "0x53E12",
+          "pool_file": "0x53E94",
+          "register": "r3"
+        },
+        {
+          "file": "0x59C2E",
+          "pool_file": "0x59D34",
+          "register": "r3"
+        },
+        {
+          "file": "0x5FF1C",
+          "pool_file": "0x5FFA4",
+          "register": "r3"
+        },
+        {
+          "file": "0x664C0",
+          "pool_file": "0x66678",
+          "register": "r3"
+        },
+        {
+          "file": "0x664D2",
+          "pool_file": "0x66678",
+          "register": "r2"
+        },
+        {
+          "file": "0x86694",
+          "pool_file": "0x866D4",
+          "register": "r3"
+        },
+        {
+          "file": "0x8689C",
+          "pool_file": "0x86954",
+          "register": "r3"
+        },
+        {
+          "file": "0x86A62",
+          "pool_file": "0x86AFC",
+          "register": "r3"
+        },
+        {
+          "file": "0x86E04",
+          "pool_file": "0x86E24",
+          "register": "r3"
+        },
+        {
+          "file": "0x8705C",
+          "pool_file": "0x87104",
+          "register": "r3"
+        },
+        {
+          "file": "0x87F10",
+          "pool_file": "0x87F74",
+          "register": "r2"
+        },
+        {
+          "file": "0x87F32",
+          "pool_file": "0x87F74",
+          "register": "r3"
+        },
+        {
+          "file": "0x87FE4",
+          "pool_file": "0x88068",
+          "register": "r3"
+        }
+      ],
+      "confirmed_call_examples": [
+        {
+          "jsr_file": "0x14436",
+          "target_load_file": "0x14432",
+          "arg_setup": "r4=model+0x2D4, r5=model+0x208, r6=model+0x2EC"
+        }
+      ],
+      "negative_control": {
+        "name": "WorldVector",
+        "code": {
+          "file_start": "0x16B8C",
+          "file_end_exclusive": "0x16BE4",
+          "va_start": "0x8C026B8C",
+          "va_end_exclusive": "0x8C026BE4",
+          "size": 88,
+          "sha256": "424185a8d3b4968234cc4f7407c09b91b7a8bbe7ea8586f3aa0bf4f95f964539"
+        },
+        "difference": "Reads matrix columns across offsets0,12,24; BodyVector reads consecutive row fields0,4,8 then rows+12,+24."
+      },
+      "static_training_trace": {
+        "file": "body-trace.json",
+        "normal_result": [
+          14,
+          32,
+          50
+        ],
+        "src_eq_dst_result": [
+          14,
+          84,
+          797
+        ],
+        "WorldVector_wrong_candidate_result": [
+          30,
+          36,
+          42
+        ],
+        "limit": "integer-exact static fixture does not resolve general FP semantics"
+      },
+      "decoder_review": "decoder-review.json",
+      "acceptance_limits": [
+        "No equivalent-C completion claim until FP policy is established.",
+        "No emitted object or local linked bytes exist.",
+        "Compiler family/version not identified."
+      ]
+    },
+    {
+      "function": "UpdateFrameTimer",
+      "set": "held_out",
+      "status": "I_identified_no_compilation_or_tuning",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\timer.c",
+        "sha256": "dfc26bcf3a0020221fcb37a5cd7483d27449f0d5f2cbde7dc594189741f0a2d4"
+      },
+      "source_line": 45,
+      "code": {
+        "file_start": "0x10A",
+        "file_end_exclusive": "0x176",
+        "va_start": "0x8C01010A",
+        "va_end_exclusive": "0x8C010176",
+        "size": 108,
+        "sha256": "4882d6f779a5c816e63dd4ad0f3688113b83ae07a17620c0e8078358a7ddf308"
+      },
+      "identity_score": {
+        "behavior": 30,
+        "neighborhood": 25,
+        "fields": 20,
+        "uncommon_constants": 15,
+        "independent_call_contract": 0,
+        "total": 90
+      },
+      "shared_pool_dependencies": [
+        {
+          "role": "frameCounter",
+          "span": {
+            "file_start": "0x1C4",
+            "file_end_exclusive": "0x1C8",
+            "va_start": "0x8C0101C4",
+            "va_end_exclusive": "0x8C0101C8",
+            "size": 4,
+            "sha256": "c087e4ba1c695249b10319260594f3190c0833bf586c986e10c5c0ea2e8c22d8"
+          },
+          "value": "0x8C12253C",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "lastFrameCounter",
+          "span": {
+            "file_start": "0x1D8",
+            "file_end_exclusive": "0x1DC",
+            "va_start": "0x8C0101D8",
+            "va_end_exclusive": "0x8C0101DC",
+            "size": 4,
+            "sha256": "8cb214f89fa7b010ec76287b44d11bb9bb427e751b9a0f5f8c9592bc8562e705"
+          },
+          "value": "0x8C12255C",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "retraceTime",
+          "span": {
+            "file_start": "0x1DC",
+            "file_end_exclusive": "0x1E0",
+            "va_start": "0x8C0101DC",
+            "va_end_exclusive": "0x8C0101E0",
+            "size": 4,
+            "sha256": "b326d24e1fda4b009dd45a37d5a7b3a696272053a1f8de8c11e96375c3b58894"
+          },
+          "value": "0x8C0B8C2C",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "frameSeconds",
+          "span": {
+            "file_start": "0x1E0",
+            "file_end_exclusive": "0x1E4",
+            "va_start": "0x8C0101E0",
+            "va_end_exclusive": "0x8C0101E4",
+            "size": 4,
+            "sha256": "0f85ed814314af91ebd0a06796a1c75144da4fc3a6ca5515fa30a67e56c3a3bd"
+          },
+          "value": "0x8C12254C",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "seconds",
+          "span": {
+            "file_start": "0x1E4",
+            "file_end_exclusive": "0x1E8",
+            "va_start": "0x8C0101E4",
+            "va_end_exclusive": "0x8C0101E8",
+            "size": 4,
+            "sha256": "7bcc4bb889fe127db6cbde41d9334fcd093e17bd07b8114aabeba72d60c25d95"
+          },
+          "value": "0x8C122548",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "timerPaused",
+          "span": {
+            "file_start": "0x1E8",
+            "file_end_exclusive": "0x1EC",
+            "va_start": "0x8C0101E8",
+            "va_end_exclusive": "0x8C0101EC",
+            "size": 4,
+            "sha256": "543a3772debdaa3371034f6021238cbf417303cbe2e77085a733e12614c6369a"
+          },
+          "value": "0x8C0B8C24",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "lastFrameCount",
+          "span": {
+            "file_start": "0x1EC",
+            "file_end_exclusive": "0x1F0",
+            "va_start": "0x8C0101EC",
+            "va_end_exclusive": "0x8C0101F0",
+            "size": 4,
+            "sha256": "dc87fd986eadd9efb9799c0abb4ddb9e8c3922b85ed8fd366b2ac9c551191252"
+          },
+          "value": "0x8C122550",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "countdownStart",
+          "span": {
+            "file_start": "0x1F0",
+            "file_end_exclusive": "0x1F4",
+            "va_start": "0x8C0101F0",
+            "va_end_exclusive": "0x8C0101F4",
+            "size": 4,
+            "sha256": "daf218e2a63e84d6ae52a0fee6b3fedeb20829828221105d8281e0e8d6171423"
+          },
+          "value": "0x8C122558",
+          "ownership": "shared_timer_pool_not_exclusive"
+        },
+        {
+          "role": "countdownEnd",
+          "span": {
+            "file_start": "0x1F4",
+            "file_end_exclusive": "0x1F8",
+            "va_start": "0x8C0101F4",
+            "va_end_exclusive": "0x8C0101F8",
+            "size": 4,
+            "sha256": "f2a5fe764dc3f0dd40b6a45e78d93c104d60dfde8c844273dfe61a0c63b585c8"
+          },
+          "value": "0x8C122554",
+          "ownership": "shared_timer_pool_not_exclusive"
+        }
+      ],
+      "calls": [],
+      "abi": {
+        "arguments": [],
+        "return": "void",
+        "gpr_clobbers": [
+          "r0",
+          "r1",
+          "r2",
+          "r3",
+          "r4",
+          "r5"
+        ],
+        "fpr_clobbers": [
+          "fr2",
+          "fr3"
+        ],
+        "stack_bytes": 0
+      },
+      "behavior": [
+        "frameCounter-lastFrameCounter stored before lastFrameCounter reload/update",
+        "paused: add lastFrameCount to both countdownStart and countdownEnd",
+        "running: signed conversion of frameCounter-countdownStart times retraceTime stored seconds",
+        "signed >5 clamp on lastFrameCount",
+        "signed FLOAT lastFrameCount times retraceTime stored frameSeconds in RTS delay slot"
+      ],
+      "drift": [
+        {
+          "kind": "platform_clock",
+          "evidence": "DC counter0x8C12253C incremented by callback0x8C0100A4, registered by InitializeTimer0x8C0100AE at call0x8C0100D0; MAT3 instead uses sc.frameCount.",
+          "consequence": "Use a DC counter declaration; do not import GC sc structure or scheduler wrapper."
+        }
+      ],
+      "neighbor_functions": {
+        "InitializeTimer": "0x8C0100AE",
+        "PauseTimer": "0x8C0100FA",
+        "ResumeTimer": "0x8C010102",
+        "SetCountdownTimer": "0x8C010176",
+        "AddCountdownTime": "0x8C010194",
+        "GetCountdownTimeRemaining": "0x8C0101A8",
+        "CountdownTimeOut": "0x8C0101FC"
+      },
+      "acceptance_limits": [
+        "Shared timer literal pool cannot be counted as exclusively owned by this function.",
+        "No held-out compilation, numerical validation or configuration tuning performed."
+      ]
+    },
+    {
+      "function": "GetWaveByIndex",
+      "set": "held_out",
+      "status": "not_found_possible_GC_addition",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\waves.c",
+        "sha256": "905f8f3f962760a0371fb666edd0d9b8071970040b80ac1343919c268569b1bb"
+      },
+      "source_line": 325,
+      "code": null,
+      "identity_score": null,
+      "verified_DC_layout": {
+        "base": "0x8C15FA20",
+        "stride": 20,
+        "count": 64,
+        "wave_offset": 6,
+        "wave_type": "unsigned16",
+        "ptr_offset": 12,
+        "loaded_offset": 0,
+        "ready_offset": 1,
+        "model_offset": 3,
+        "handle_offset": 5
+      },
+      "anchors": {
+        "finder": "0x8C0656E2",
+        "loader": "0x8C06575C",
+        "filename_table": "0x8C0C44C0",
+        "setup_dispatch": "0x8C065862"
+      },
+      "search": "All aligned MOV.L PC-relative loads within file0..0x96000 whose literal equals wave-instance base through +19 were examined. This is bounded evidence, not proof that no getter/inlined equivalent exists anywhere.",
+      "base_field_literal_xrefs": [
+        {
+          "file": "0x54FFC",
+          "pool_file": "0x550C8",
+          "register": "r13",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x552CE",
+          "pool_file": "0x553A0",
+          "register": "r14",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x553B4",
+          "pool_file": "0x554D8",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55482",
+          "pool_file": "0x554D8",
+          "register": "r7",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55564",
+          "pool_file": "0x55644",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55612",
+          "pool_file": "0x55644",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55668",
+          "pool_file": "0x557E8",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55692",
+          "pool_file": "0x557E8",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x556C0",
+          "pool_file": "0x557E8",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x556EA",
+          "pool_file": "0x557E8",
+          "register": "r13",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x5573C",
+          "pool_file": "0x557E8",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55770",
+          "pool_file": "0x557E8",
+          "register": "r3",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55828",
+          "pool_file": "0x55904",
+          "register": "r3",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x5589E",
+          "pool_file": "0x55904",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55930",
+          "pool_file": "0x55A5C",
+          "register": "r3",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55BA0",
+          "pool_file": "0x55C70",
+          "register": "r3",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55BFC",
+          "pool_file": "0x55C70",
+          "register": "r3",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x55C2E",
+          "pool_file": "0x55C70",
+          "register": "r2",
+          "value": "0x8C15FA20",
+          "field_offset": 0
+        },
+        {
+          "file": "0x5526C",
+          "pool_file": "0x552AC",
+          "register": "r1",
+          "value": "0x8C15FA21",
+          "field_offset": 1
+        },
+        {
+          "file": "0x551E2",
+          "pool_file": "0x552A4",
+          "register": "r0",
+          "value": "0x8C15FA23",
+          "field_offset": 3
+        },
+        {
+          "file": "0x55712",
+          "pool_file": "0x557F0",
+          "register": "r0",
+          "value": "0x8C15FA25",
+          "field_offset": 5
+        },
+        {
+          "file": "0x55868",
+          "pool_file": "0x55908",
+          "register": "r0",
+          "value": "0x8C15FA26",
+          "field_offset": 6
+        },
+        {
+          "file": "0x5528E",
+          "pool_file": "0x552B0",
+          "register": "r1",
+          "value": "0x8C15FA2C",
+          "field_offset": 12
+        }
+      ],
+      "only_base_plus_6_literal": {
+        "pool": "0x55908",
+        "load": "0x55868",
+        "consumer": "0x8C065862 reads wave index, chooses texture mode, tail-branches setup0x8C06588C; does not return wave value"
+      },
+      "MAT3_caller_evidence": {
+        "only_source_caller": "C:/rush2049-mat3/decomp/src/NGC/ngcZoid.c:922",
+        "context": "GC renderer uses wave>=0xE9 to discriminate track drawing"
+      },
+      "interpretation": "Likely helper introduced for GC backend; not established. Keep all seven pilot slots and mark this slot unscored/absent-pending rather than substituting a wave-field access or counting a match."
+    }
+  ],
+  "not_performed": [
+    "held-out compilation or option tuning",
+    "compiler acquisition/install",
+    "game execution",
+    "MAT3 writes",
+    "canonical source/configuration edits",
+    "emitted/local exact-match claims"
+  ]
+}

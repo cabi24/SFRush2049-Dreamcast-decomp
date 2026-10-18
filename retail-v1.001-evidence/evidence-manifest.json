@@ -1,0 +1,76 @@
+{
+  "inspection_date": "2026-10-18",
+  "files": [
+    {
+      "path": "Apr_10_2000_prototype_resource_candidates.json",
+      "size": 39122,
+      "sha256": "e48bc7727f37690ec3e72af50e4a48d40cdfbd2548e89bc8105e785c938fba03"
+    },
+    {
+      "path": "browser_literals.json",
+      "size": 1060,
+      "sha256": "6f181c9890d41752c1d9dee7f57b406995a72fdd48ef3e0b92141c5a1723a4e0"
+    },
+    {
+      "path": "diagnostics.json",
+      "size": 41564,
+      "sha256": "041e46aa02d812612ada9f5fb0409624109117cb726c196c13c779a63b2d6d8f"
+    },
+    {
+      "path": "Feb_17_2000_Dreamcast_Prototype_resource_candidates.json",
+      "size": 30500,
+      "sha256": "d58f4cb329122ab85d7fe901792ea9543039680727ff80d4ebe334830e9f360d"
+    },
+    {
+      "path": "inventory.json",
+      "size": 239526,
+      "sha256": "e0eb23db5dc57f077143e9c1ec7546a4f54f71bd41e1b88f29709187ee1daee0"
+    },
+    {
+      "path": "layout_anchors.json",
+      "size": 2249,
+      "sha256": "8a46c95fc3207b26c81d33186a7bfb8f005ddca2306b169419c3cdfaaf25d5b9"
+    },
+    {
+      "path": "lzs.py",
+      "size": 826,
+      "sha256": "32e2568ec6475e9fe216e32929780dae8218168ab3c939f1e296acb5956e29a8"
+    },
+    {
+      "path": "prototype_comparison.json",
+      "size": 329323,
+      "sha256": "e0992298c7220029df43ed8f7ed3e1811091d6c5eb782e68917d9131dccdec9a"
+    },
+    {
+      "path": "resource_filename_table.json",
+      "size": 63031,
+      "sha256": "950ff012e3fd06db3cb1816e706bfde08d3fc11ad5c923aa344069cf400d775f"
+    },
+    {
+      "path": "scan.json",
+      "size": 489020,
+      "sha256": "53a563caed431bf410b85df7c63690599e4e2d3839e8811aeb9807f15cddbc94"
+    },
+    {
+      "path": "starsky_difference.json",
+      "size": 587,
+      "sha256": "83d5a70553a012acf8f527bd334254bce270a055959446ef87f0d4c6c89c06d6"
+    },
+    {
+      "path": "summary.json",
+      "size": 6493,
+      "sha256": "33d0cf671025f83c78bc979f057062ecaf886227185d703827cc695981512f30"
+    },
+    {
+      "path": "tracks.json",
+      "size": 857,
+      "sha256": "224758d7d428fa9a14ec812187856bd9e4eead98c679fe65523d67d86bd001eb"
+    },
+    {
+      "path": "verify_retail.py",
+      "size": 4900,
+      "sha256": "47b31a7c7c64287bb06fb4710d679dda07b4ee9c9423975406061578004a67cb"
+    }
+  ],
+  "scope": "Generated reports/Python only; no game binaries. Manifest excludes itself."
+}

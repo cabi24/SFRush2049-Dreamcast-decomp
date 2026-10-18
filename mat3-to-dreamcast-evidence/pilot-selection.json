@@ -1,0 +1,72 @@
+[
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\bsearch.c",
+    "function": "bsearch",
+    "source_line": 5,
+    "ppc_address": "0x80005E50",
+    "ppc_size": 224,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "indirect comparator, loop, integer args"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\ll.c",
+    "function": "InsertLLE",
+    "source_line": 22,
+    "ppc_address": "0x80025374",
+    "ppc_size": 340,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "branching, pointer-to-pointer structures"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c",
+    "function": "interp",
+    "source_line": 182,
+    "ppc_address": "0x8000F234",
+    "ppc_size": 24,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "signed division, narrow return, leaf"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c",
+    "function": "enginetorque",
+    "source_line": 143,
+    "ppc_address": "0x8000F090",
+    "ppc_size": 420,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "integer lookup/clamps plus floating scale"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\fmath.c",
+    "function": "BodyVector",
+    "source_line": 239,
+    "ppc_address": "0x8009C0B4",
+    "ppc_size": 124,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "single-precision arithmetic/order, matrix data"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\timer.c",
+    "function": "UpdateFrameTimer",
+    "source_line": 45,
+    "ppc_address": "0x80050CD0",
+    "ppc_size": 208,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "globals, volatile loads and scheduler wrapper"
+  },
+  {
+    "source": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\waves.c",
+    "function": "GetWaveByIndex",
+    "source_line": 325,
+    "ppc_address": "0x8005BF6C",
+    "ppc_size": 24,
+    "recorded_fuzzy_percent": 100.0,
+    "unit_configured_matching": true,
+    "role": "direct lookup/global resource state"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "pc": 2348875804,
+    "target": 2349671552,
+    "instruction": "jmp @r0",
+    "register": "r0",
+    "evidence_pcs": [
+      2348875802
+    ],
+    "confidence": "straight-line constant candidate; code reachability not established"
+  }
+]

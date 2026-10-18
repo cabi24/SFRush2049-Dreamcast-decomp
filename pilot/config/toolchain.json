@@ -1,0 +1,39 @@
+{
+ "status": "frozen",
+ "frozen": true,
+ "compiler": "C:\\rush2049-dreamcast\\tools\\shc_cc.cmd",
+ "compiler_sha256": "057735370088a3dc6169b26a80c28bbf3a3093239715ffec39dc15dccb6f652a",
+ "compile_argv": [
+  "{source}",
+  "{object}"
+ ],
+ "underlying_compiler": "C:\\rush2049-dreamcast\\tools\\shc\\shc-v5.1r11\\bin\\shc.exe",
+ "underlying_compiler_sha256": "10d544d829edabc0ac3b26161e311e8bd09edeba00f0bf76ad80743f3299eca6",
+ "underlying_banner": "SH SERIES C/C++ Compiler Ver. 5.1(Release11)",
+ "flags": [
+  "-comment=nonest",
+  "-cpu=sh4",
+  "-division=cpu",
+  "-fpu=single",
+  "-endian=little",
+  "-macsave=0",
+  "-sjis",
+  "-string=const",
+  "-speed",
+  "-noinline"
+ ],
+ "flags_note": "decomp.me DREAMCAST_CC base without its scratch extras (-aggressive=2 -extra=asm=1800 -pic=0); -speed and -noinline added from ll.c evidence; -macsave=0 confirmed by interp (bsearch is SDK library code built with macsave=1)",
+ "version_range": "byte-identical output on all pilot spans for shc-v5.0r32, 5.1r01, r03, r04, r08, r11, r13; 5.0r10/r28 differ; 5.0r26/r31 reject the flag set",
+ "assembler": null,
+ "linker": "C:\\rush2049-dreamcast\\tools\\shc\\shc-v5.1r13\\bin\\LNK.EXE",
+ "linker_sha256": "9671d37b5705ca27ad7fd6ced14eddd958326bcc3da8cbfe902b256608d4b04c",
+ "linker_banner": "H SERIES LINKAGE EDITOR Ver. 6.0E",
+ "link_driver": "C:\\rush2049-dreamcast\\tools\\shc_link.py",
+ "object_converter": "C:\\rush2049-dreamcast\\tools\\rof2elf\\rof2elf.py",
+ "provenance": "decomp.me compiler archive (github.com/decompme/compilers release 'compilers'), SHA-256s in tools/downloads/MANIFEST.json",
+ "trial_cap": 16,
+ "distinct_flag_configurations_tried": 13,
+ "trials_log": "C:\\rush2049-dreamcast\\calib\\trials.jsonl",
+ "frozen_utc": "2026-10-18",
+ "note": "Frozen before the held-out compiles were examined; held-out source shapes were iterated (<=3 each) but no flag or version was changed afterwards."
+}

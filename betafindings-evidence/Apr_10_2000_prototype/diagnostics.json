@@ -1,0 +1,2078 @@
+[
+  {
+    "offset": 441348,
+    "text": "Bad listener"
+  },
+  {
+    "offset": 441476,
+    "text": "Bad emitter"
+  },
+  {
+    "offset": 444264,
+    "text": "amBankGetSize( %s, bankSize = %u ) failed"
+  },
+  {
+    "offset": 444308,
+    "text": "amBankLoad( %s, %x, %u ) failed"
+  },
+  {
+    "offset": 444340,
+    "text": "amHeapGetFree( &freeMem ) failed"
+  },
+  {
+    "offset": 444376,
+    "text": "amHeapAlloc( 0x%x, %u, %u, AM_PURGABLE_MEMORY, NULL ) failed (%u avail, need %u more)"
+  },
+  {
+    "offset": 444464,
+    "text": "amBankTransfer( 0x%x, 0x%x, %u ) failed"
+  },
+  {
+    "offset": 444504,
+    "text": "amHeapFree( 0x%x ) failed"
+  },
+  {
+    "offset": 444704,
+    "text": "Invalid command (%d) in audio sfx command queue!"
+  },
+  {
+    "offset": 444756,
+    "text": "Audio sfx command (%s) has failed %d times in a row"
+  },
+  {
+    "offset": 444960,
+    "text": "Fatal Error"
+  },
+  {
+    "offset": 445008,
+    "text": "amHeapGetFree( &freeMem ) failed"
+  },
+  {
+    "offset": 445044,
+    "text": "amHeapAlloc( 0x%x, %u, %u, AM_PURGABLE_MEMORY, NULL ) FAIL (%u avail, need %u more)"
+  },
+  {
+    "offset": 445132,
+    "text": "Invalid song number (%d)"
+  },
+  {
+    "offset": 445180,
+    "text": "amStreamInitFile( theStream, %s ) failed"
+  },
+  {
+    "offset": 445224,
+    "text": "amStreamSetBuffers( theStream, 0x%x, %u, 0x%x, %u ) failed"
+  },
+  {
+    "offset": 445284,
+    "text": "amStreamSetHeaderBuffer( theStream, 0x%x ) failed"
+  },
+  {
+    "offset": 445336,
+    "text": "amStreamStart( theStream ) == false"
+  },
+  {
+    "offset": 445372,
+    "text": "acSetTransferMode( AC_TRANSFER_DMA ) failed"
+  },
+  {
+    "offset": 445416,
+    "text": "a64FileInit failed"
+  },
+  {
+    "offset": 445436,
+    "text": "acIntInit failed"
+  },
+  {
+    "offset": 445480,
+    "text": "Invalid driver type in _AcSetup"
+  },
+  {
+    "offset": 445512,
+    "text": "a64FileGetSize failed"
+  },
+  {
+    "offset": 445536,
+    "text": "a64FileLoad failed"
+  },
+  {
+    "offset": 445556,
+    "text": "acSystemInit failed"
+  },
+  {
+    "offset": 445576,
+    "text": "amInit failed"
+  },
+  {
+    "offset": 446164,
+    "text": "SelectBlit(%s) bad blit, blit:%p info:%p"
+  },
+  {
+    "offset": 446235,
+    "text": ">Not enough memory to allocate car textures"
+  },
+  {
+    "offset": 454304,
+    "text": "kmSetBorderColor"
+  },
+  {
+    "offset": 454324,
+    "text": "kmSetSystemConfiguration"
+  },
+  {
+    "offset": 454352,
+    "text": "kmBeginScene"
+  },
+  {
+    "offset": 454368,
+    "text": "kmBeginPass"
+  },
+  {
+    "offset": 454380,
+    "text": "kmEndPass"
+  },
+  {
+    "offset": 454392,
+    "text": "kmEndScene"
+  },
+  {
+    "offset": 454416,
+    "text": "Bad command in text buffer"
+  },
+  {
+    "offset": 459840,
+    "text": "Jose Amparan"
+  },
+  {
+    "offset": 460500,
+    "text": "AMMOCOUNT"
+  },
+  {
+    "offset": 461038,
+    "text": "=?Clearing memory.... "
+  },
+  {
+    "offset": 461064,
+    "text": "Trying to allocate zero-size memory chunk"
+  },
+  {
+    "offset": 461108,
+    "text": "Not enough contiguous memory."
+  },
+  {
+    "offset": 461400,
+    "text": "AllocateMemoryAt: Not enough contiguous memory at Ptr (%x) for size (%ld)"
+  },
+  {
+    "offset": 461476,
+    "text": "AllocateMemoryAt: Ptr (%x) not in any memory chunk!"
+  },
+  {
+    "offset": 461532,
+    "text": "AllocateMemoryAt: Ptr (%x) too close to beginning of memory!"
+  },
+  {
+    "offset": 461596,
+    "text": "Trying to reallocate to zero-size memory chunk"
+  },
+  {
+    "offset": 461644,
+    "text": "Can't grow pointer (%x) because it's the last chunk in memory."
+  },
+  {
+    "offset": 462756,
+    "text": "(buffer + size) > &gPaks[kMaxPaks] in PfsSetBlock"
+  },
+  {
+    "offset": 464516,
+    "text": "COLLISION"
+  },
+  {
+    "offset": 470292,
+    "text": "no car camera when one expected"
+  },
+  {
+    "offset": 474844,
+    "text": "Bad wave number (%d)"
+  },
+  {
+    "offset": 474868,
+    "text": "Bad newWave in ReplaceWave"
+  },
+  {
+    "offset": 475052,
+    "text": "Bad model index (%d)"
+  },
+  {
+    "offset": 475076,
+    "text": "Bad wave instance index (%d)"
+  },
+  {
+    "offset": 475236,
+    "text": "kWaveTextE"
+  },
+  {
+    "offset": 475248,
+    "text": "kWaveTextS"
+  },
+  {
+    "offset": 475260,
+    "text": "kWaveTextI"
+  },
+  {
+    "offset": 475272,
+    "text": "kWaveTextG"
+  },
+  {
+    "offset": 475284,
+    "text": "kWaveTextD"
+  },
+  {
+    "offset": 475296,
+    "text": "kWaveTextF"
+  },
+  {
+    "offset": 475308,
+    "text": "kWaveDebugFontTex"
+  },
+  {
+    "offset": 475328,
+    "text": "kWaveDigitLgFontTex"
+  },
+  {
+    "offset": 475348,
+    "text": "kWaveDigitMdFontTex"
+  },
+  {
+    "offset": 475368,
+    "text": "kWaveDigitSmFontTex"
+  },
+  {
+    "offset": 475388,
+    "text": "kWaveDigitXLFontTex"
+  },
+  {
+    "offset": 475408,
+    "text": "kWaveHudLgFontTex"
+  },
+  {
+    "offset": 475428,
+    "text": "kWaveHudMdFontTex"
+  },
+  {
+    "offset": 475448,
+    "text": "kWaveHudSmFontTex"
+  },
+  {
+    "offset": 475468,
+    "text": "kWaveHudXLFontTex"
+  },
+  {
+    "offset": 475488,
+    "text": "kWaveHudXXLFontTex"
+  },
+  {
+    "offset": 475508,
+    "text": "kWaveLegalFontTex"
+  },
+  {
+    "offset": 475528,
+    "text": "kWaveMenuLgFontTex"
+  },
+  {
+    "offset": 475548,
+    "text": "kWaveMenuMdFontTex"
+  },
+  {
+    "offset": 475568,
+    "text": "kWaveMenuSmFontTex"
+  },
+  {
+    "offset": 475588,
+    "text": "kWaveMenuTitleFontTex"
+  },
+  {
+    "offset": 475612,
+    "text": "kWaveTestFontTex"
+  },
+  {
+    "offset": 475632,
+    "text": "kWaveDebugFontDat"
+  },
+  {
+    "offset": 475652,
+    "text": "kWaveDigitLgFontDat"
+  },
+  {
+    "offset": 475672,
+    "text": "kWaveDigitMdFontDat"
+  },
+  {
+    "offset": 475692,
+    "text": "kWaveDigitSmFontDat"
+  },
+  {
+    "offset": 475712,
+    "text": "kWaveDigitXLFontDat"
+  },
+  {
+    "offset": 475732,
+    "text": "kWaveHudLgFontDat"
+  },
+  {
+    "offset": 475752,
+    "text": "kWaveHudMdFontDat"
+  },
+  {
+    "offset": 475772,
+    "text": "kWaveHudSmFontDat"
+  },
+  {
+    "offset": 475792,
+    "text": "kWaveHudXLFontDat"
+  },
+  {
+    "offset": 475812,
+    "text": "kWaveHudXXLFontDat"
+  },
+  {
+    "offset": 475832,
+    "text": "kWaveLegalFontDat"
+  },
+  {
+    "offset": 475852,
+    "text": "kWaveMenuLgFontDat"
+  },
+  {
+    "offset": 475872,
+    "text": "kWaveMenuMdFontDat"
+  },
+  {
+    "offset": 475892,
+    "text": "kWaveMenuSmFontDat"
+  },
+  {
+    "offset": 475912,
+    "text": "kWaveMenuTitleFontDat"
+  },
+  {
+    "offset": 475936,
+    "text": "kWaveTestFontDat"
+  },
+  {
+    "offset": 475956,
+    "text": "kWaveAttract"
+  },
+  {
+    "offset": 475972,
+    "text": "kWaveSelCom"
+  },
+  {
+    "offset": 475984,
+    "text": "kWaveSelOpt"
+  },
+  {
+    "offset": 475996,
+    "text": "kWaveSelTrk"
+  },
+  {
+    "offset": 476008,
+    "text": "kWaveSelCar"
+  },
+  {
+    "offset": 476020,
+    "text": "kWaveInterface"
+  },
+  {
+    "offset": 476048,
+    "text": "kWaveHud1"
+  },
+  {
+    "offset": 476060,
+    "text": "kWaveTargets"
+  },
+  {
+    "offset": 476076,
+    "text": "kWaveHiscore"
+  },
+  {
+    "offset": 476092,
+    "text": "kWaveGameTextE"
+  },
+  {
+    "offset": 476108,
+    "text": "kWaveGameTextS"
+  },
+  {
+    "offset": 476124,
+    "text": "kWaveGameTextI"
+  },
+  {
+    "offset": 476140,
+    "text": "kWaveGameTextG"
+  },
+  {
+    "offset": 476156,
+    "text": "kWaveGameTextD"
+  },
+  {
+    "offset": 476172,
+    "text": "kWaveGameTextF"
+  },
+  {
+    "offset": 476188,
+    "text": "kWaveWeapons"
+  },
+  {
+    "offset": 476204,
+    "text": "kWaveWings"
+  },
+  {
+    "offset": 476216,
+    "text": "kWaveVehicles"
+  },
+  {
+    "offset": 476232,
+    "text": "kWaveCar1"
+  },
+  {
+    "offset": 476244,
+    "text": "kWaveCar2"
+  },
+  {
+    "offset": 476256,
+    "text": "kWaveCar3"
+  },
+  {
+    "offset": 476268,
+    "text": "kWaveCar4"
+  },
+  {
+    "offset": 476280,
+    "text": "kWaveCar5"
+  },
+  {
+    "offset": 476292,
+    "text": "kWaveCar6"
+  },
+  {
+    "offset": 476304,
+    "text": "kWaveCar7"
+  },
+  {
+    "offset": 476316,
+    "text": "kWaveCar8"
+  },
+  {
+    "offset": 476328,
+    "text": "kWaveCar9"
+  },
+  {
+    "offset": 476340,
+    "text": "kWaveCar10"
+  },
+  {
+    "offset": 476352,
+    "text": "kWaveCar11"
+  },
+  {
+    "offset": 476364,
+    "text": "kWaveCar12"
+  },
+  {
+    "offset": 476376,
+    "text": "kWaveCar13"
+  },
+  {
+    "offset": 476388,
+    "text": "kWaveTrack1"
+  },
+  {
+    "offset": 476400,
+    "text": "kWaveTrack2"
+  },
+  {
+    "offset": 476412,
+    "text": "kWaveTrack3"
+  },
+  {
+    "offset": 476424,
+    "text": "kWaveTrack4"
+  },
+  {
+    "offset": 476436,
+    "text": "kWaveTrack5"
+  },
+  {
+    "offset": 476448,
+    "text": "kWaveTrack6"
+  },
+  {
+    "offset": 476568,
+    "text": "kWaveDm10"
+  },
+  {
+    "offset": 476580,
+    "text": "kWaveStunt1"
+  },
+  {
+    "offset": 476592,
+    "text": "kWaveStunt2"
+  },
+  {
+    "offset": 476604,
+    "text": "kWaveStunt3"
+  },
+  {
+    "offset": 476616,
+    "text": "kWaveStunt4"
+  },
+  {
+    "offset": 476628,
+    "text": "kWaveObstacle1"
+  },
+  {
+    "offset": 476644,
+    "text": "kWaveWorldTrack1"
+  },
+  {
+    "offset": 476664,
+    "text": "kWaveWorldTrack2"
+  },
+  {
+    "offset": 476684,
+    "text": "kWaveWorldTrack3"
+  },
+  {
+    "offset": 476704,
+    "text": "kWaveWorldTrack4"
+  },
+  {
+    "offset": 476724,
+    "text": "kWaveWorldTrack5"
+  },
+  {
+    "offset": 476744,
+    "text": "kWaveWorldTrack6"
+  },
+  {
+    "offset": 476764,
+    "text": "kWaveWorldDm1"
+  },
+  {
+    "offset": 476780,
+    "text": "kWaveWorldDm2"
+  },
+  {
+    "offset": 476796,
+    "text": "kWaveWorldDm3"
+  },
+  {
+    "offset": 476812,
+    "text": "kWaveWorldDm4"
+  },
+  {
+    "offset": 476828,
+    "text": "kWaveWorldDm5"
+  },
+  {
+    "offset": 476844,
+    "text": "kWaveWorldDm6"
+  },
+  {
+    "offset": 476860,
+    "text": "kWaveWorldDm7"
+  },
+  {
+    "offset": 476876,
+    "text": "kWaveWorldDm8"
+  },
+  {
+    "offset": 476892,
+    "text": "kWaveWorldDm9"
+  },
+  {
+    "offset": 476908,
+    "text": "kWaveWorldDm10"
+  },
+  {
+    "offset": 476924,
+    "text": "kWaveWorldStunt1"
+  },
+  {
+    "offset": 476944,
+    "text": "kWaveWorldStunt2"
+  },
+  {
+    "offset": 476964,
+    "text": "kWaveWorldStunt3"
+  },
+  {
+    "offset": 476984,
+    "text": "kWaveWorldStunt4"
+  },
+  {
+    "offset": 477004,
+    "text": "kWaveWorldObstacle1"
+  },
+  {
+    "offset": 477024,
+    "text": "kWaveRoadTrack1"
+  },
+  {
+    "offset": 477040,
+    "text": "kWaveRoadTrack2"
+  },
+  {
+    "offset": 477056,
+    "text": "kWaveRoadTrack3"
+  },
+  {
+    "offset": 477072,
+    "text": "kWaveRoadTrack4"
+  },
+  {
+    "offset": 477088,
+    "text": "kWaveRoadTrack5"
+  },
+  {
+    "offset": 477104,
+    "text": "kWaveRoadTrack6"
+  },
+  {
+    "offset": 477120,
+    "text": "kWaveRoadDm1"
+  },
+  {
+    "offset": 477136,
+    "text": "kWaveRoadDm2"
+  },
+  {
+    "offset": 477152,
+    "text": "kWaveRoadDm3"
+  },
+  {
+    "offset": 477168,
+    "text": "kWaveRoadDm4"
+  },
+  {
+    "offset": 477184,
+    "text": "kWaveRoadDm5"
+  },
+  {
+    "offset": 477200,
+    "text": "kWaveRoadDm6"
+  },
+  {
+    "offset": 477216,
+    "text": "kWaveRoadDm7"
+  },
+  {
+    "offset": 477232,
+    "text": "kWaveRoadDm8"
+  },
+  {
+    "offset": 477248,
+    "text": "kWaveRoadDm9"
+  },
+  {
+    "offset": 477264,
+    "text": "kWaveRoadDm10"
+  },
+  {
+    "offset": 477280,
+    "text": "kWaveRoadStunt1"
+  },
+  {
+    "offset": 477296,
+    "text": "kWaveRoadStunt2"
+  },
+  {
+    "offset": 477312,
+    "text": "kWaveRoadStunt3"
+  },
+  {
+    "offset": 477328,
+    "text": "kWaveRoadStunt4"
+  },
+  {
+    "offset": 477344,
+    "text": "kWaveRoadObstacle1"
+  },
+  {
+    "offset": 477364,
+    "text": "kWavePathTrack1"
+  },
+  {
+    "offset": 477380,
+    "text": "kWavePathTrack2"
+  },
+  {
+    "offset": 477396,
+    "text": "kWavePathTrack3"
+  },
+  {
+    "offset": 477412,
+    "text": "kWavePathTrack4"
+  },
+  {
+    "offset": 477428,
+    "text": "kWavePathTrack5"
+  },
+  {
+    "offset": 477444,
+    "text": "kWavePathTrack6"
+  },
+  {
+    "offset": 477460,
+    "text": "kWavePathDm1"
+  },
+  {
+    "offset": 477476,
+    "text": "kWavePathDm2"
+  },
+  {
+    "offset": 477492,
+    "text": "kWavePathDm3"
+  },
+  {
+    "offset": 477508,
+    "text": "kWavePathDm4"
+  },
+  {
+    "offset": 477524,
+    "text": "kWavePathDm5"
+  },
+  {
+    "offset": 477540,
+    "text": "kWavePathDm6"
+  },
+  {
+    "offset": 477556,
+    "text": "kWavePathDm7"
+  },
+  {
+    "offset": 477572,
+    "text": "kWavePathDm8"
+  },
+  {
+    "offset": 477588,
+    "text": "kWavePathDm9"
+  },
+  {
+    "offset": 477604,
+    "text": "kWavePathDm10"
+  },
+  {
+    "offset": 477620,
+    "text": "kWavePathStunt1"
+  },
+  {
+    "offset": 477636,
+    "text": "kWavePathStunt2"
+  },
+  {
+    "offset": 477652,
+    "text": "kWavePathStunt3"
+  },
+  {
+    "offset": 477668,
+    "text": "kWavePathStunt4"
+  },
+  {
+    "offset": 477684,
+    "text": "kWavePathObstacle1"
+  },
+  {
+    "offset": 477704,
+    "text": "kWavePathBackTrack1"
+  },
+  {
+    "offset": 477724,
+    "text": "kWavePathBackTrack2"
+  },
+  {
+    "offset": 477744,
+    "text": "kWavePathBackTrack3"
+  },
+  {
+    "offset": 477764,
+    "text": "kWavePathBackTrack4"
+  },
+  {
+    "offset": 477784,
+    "text": "kWavePathBackTrack5"
+  },
+  {
+    "offset": 477804,
+    "text": "kWavePathBackTrack6"
+  },
+  {
+    "offset": 480276,
+    "text": "FindWorld(\"%s\") Failed"
+  },
+  {
+    "offset": 480372,
+    "text": "Could not find instance of object '%s'"
+  },
+  {
+    "offset": 480668,
+    "text": "Unable to initialize GDFS (%s)!"
+  },
+  {
+    "offset": 480700,
+    "text": "UNKNOWN ERROR"
+  },
+  {
+    "offset": 480716,
+    "text": "gdFsOpen( %s, 0 ) failed"
+  },
+  {
+    "offset": 480744,
+    "text": "gdFsGetFileSize (%s) returned size %d"
+  },
+  {
+    "offset": 480784,
+    "text": "GDFS_LoadFile( %s ): Given buffer is too small (%d bytes, needs to be %d bytes)"
+  },
+  {
+    "offset": 480864,
+    "text": "gdFsRead (%s) returned %s"
+  },
+  {
+    "offset": 481524,
+    "text": "Can't find texdef (0x%.8x) in AddTexture! (gNumTextures = %d, kMaxTextures = %d)"
+  },
+  {
+    "offset": 481608,
+    "text": "Out of textures (%d), increase kMaxTextures."
+  },
+  {
+    "offset": 481656,
+    "text": "kmCreateTextureSurface"
+  },
+  {
+    "offset": 481680,
+    "text": "kmLoadTexture"
+  },
+  {
+    "offset": 481696,
+    "text": "kmFreeTexture"
+  },
+  {
+    "offset": 481712,
+    "text": "**** Invalid Display Mode in function %s"
+  },
+  {
+    "offset": 481756,
+    "text": "**** Invalid video Mode in function %s"
+  },
+  {
+    "offset": 481796,
+    "text": "**** Invalid not enough memory in function %s"
+  },
+  {
+    "offset": 481844,
+    "text": "**** Invalid mipmap texture in function %s"
+  },
+  {
+    "offset": 481928,
+    "text": "**** Invalid address in function %s"
+  },
+  {
+    "offset": 482012,
+    "text": "**** Invalid Setting in function %s"
+  },
+  {
+    "offset": 482052,
+    "text": "**** Invalid Vertex Type in function %s"
+  },
+  {
+    "offset": 482136,
+    "text": "**** Invalid Parameter in function %s"
+  },
+  {
+    "offset": 482176,
+    "text": "**** Unknown error %d in function %s"
+  },
+  {
+    "offset": 482256,
+    "text": "kmSetFogTableColor"
+  },
+  {
+    "offset": 482276,
+    "text": "kmSetFogDensity"
+  },
+  {
+    "offset": 482292,
+    "text": "kmSetFogTable"
+  },
+  {
+    "offset": 482308,
+    "text": "kmEndPass"
+  },
+  {
+    "offset": 482320,
+    "text": "kmEndScene"
+  },
+  {
+    "offset": 482332,
+    "text": "kmBeginScene"
+  },
+  {
+    "offset": 482348,
+    "text": "kmBeginPass"
+  },
+  {
+    "offset": 488364,
+    "text": "a64FileOpen - No more free file handles"
+  },
+  {
+    "offset": 488404,
+    "text": "a64FileOpen - file not found"
+  },
+  {
+    "offset": 488436,
+    "text": "a64FileClose - fd is invalid"
+  },
+  {
+    "offset": 488544,
+    "text": "a64FileRead - buffer must be in SH4 memory"
+  },
+  {
+    "offset": 488612,
+    "text": "a64FileRead - gdFsRead failed"
+  },
+  {
+    "offset": 488644,
+    "text": "a64FileRead - fd is invalid"
+  },
+  {
+    "offset": 488760,
+    "text": "a64FileReadAsync - buffer must be in SH4 memory"
+  },
+  {
+    "offset": 488840,
+    "text": "a64FileReadAsync - gdFsReqRd32 failed"
+  },
+  {
+    "offset": 488880,
+    "text": "a64FileReadAsync - fd is invalid"
+  },
+  {
+    "offset": 488956,
+    "text": "a64FileGetSize - gdFsOpen fail (file not found)"
+  },
+  {
+    "offset": 489004,
+    "text": "a64FileGetSize - gdFsGetFileSize fail"
+  },
+  {
+    "offset": 489044,
+    "text": "a64FileRewind - gdFsSeek fail"
+  },
+  {
+    "offset": 489076,
+    "text": "a64FileRewind - fd is invalid"
+  },
+  {
+    "offset": 489148,
+    "text": "a64FileGetStatus - fd is invalid"
+  },
+  {
+    "offset": 492816,
+    "text": "acDigiRequestEvent - failed to set event request"
+  },
+  {
+    "offset": 494629,
+    "text": "Audio64 Ver 10.0.f.1 Build:Mar 21 2000 16:28:21"
+  },
+  {
+    "offset": 494680,
+    "text": "Internal Error: The Error Message Is NULL"
+  },
+  {
+    "offset": 494780,
+    "text": "acIntInit - failed to add the ARM interrupt handler to the chain"
+  },
+  {
+    "offset": 494848,
+    "text": "acIntInit - failed to add the polled message handler to the vblank taks list"
+  },
+  {
+    "offset": 495344,
+    "text": "acSystemCheckDriverRevision - driver in AICA memory, must be in SH4 memory"
+  },
+  {
+    "offset": 495464,
+    "text": "acSystemGetDriverRevision - driver in AICA memory, must be in SH4 memory"
+  },
+  {
+    "offset": 495540,
+    "text": "acSystemInit - driverType is invalid"
+  },
+  {
+    "offset": 495988,
+    "text": "acSystemInstallDriver - driver and lib revisions are not in sync."
+  },
+  {
+    "offset": 496100,
+    "text": "acSetTransferMode - add handler failed"
+  },
+  {
+    "offset": 496172,
+    "text": "acTransfer - target must be in AICA memory"
+  },
+  {
+    "offset": 496216,
+    "text": "acTransfer - source must be in SH4 memory"
+  },
+  {
+    "offset": 496408,
+    "text": "amStreamAllocateVoiceChannels - theStream is NULL"
+  },
+  {
+    "offset": 496460,
+    "text": "amStreamAllocateVoiceChannels - the stream is corrupt"
+  },
+  {
+    "offset": 496516,
+    "text": "amStreamSetVolume - theStream is NULL"
+  },
+  {
+    "offset": 496556,
+    "text": "amStreamSetVolume - newVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 496628,
+    "text": "amStreamSetVolume - trackNumber is out of range"
+  },
+  {
+    "offset": 496676,
+    "text": "amStreamSetVolume - can't send driver command"
+  },
+  {
+    "offset": 496724,
+    "text": "amStreamSetVolume - the stream is corrupt"
+  },
+  {
+    "offset": 496768,
+    "text": "amStreamSetPan - theStream is NULL"
+  },
+  {
+    "offset": 496804,
+    "text": "amStreamSetPan - Warning: newPan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 496876,
+    "text": "amStreamSetPan - trackNumber is out of range"
+  },
+  {
+    "offset": 496924,
+    "text": "amStreamSetPan - can't send driver command"
+  },
+  {
+    "offset": 496968,
+    "text": "amStreamSetPan - Warning: can't set the pan on a stereo stream"
+  },
+  {
+    "offset": 497032,
+    "text": "amStreamClose - theStream is NULL"
+  },
+  {
+    "offset": 497068,
+    "text": "amStreamIsDone - theStream is NULL"
+  },
+  {
+    "offset": 497104,
+    "text": "amStreamIsDone - isDone is NULL"
+  },
+  {
+    "offset": 497136,
+    "text": "amStreamIsIdle - theStream is NULL"
+  },
+  {
+    "offset": 497172,
+    "text": "amStreamIsIdle - isIdle is NULL"
+  },
+  {
+    "offset": 497204,
+    "text": "amStreamIsPlaying - theStream is NULL"
+  },
+  {
+    "offset": 497244,
+    "text": "amStreamIsPlaying - isPlaying is NULL"
+  },
+  {
+    "offset": 497284,
+    "text": "amStreamSetHeaderBuffer - theStream/headerBuffer is NULL"
+  },
+  {
+    "offset": 497344,
+    "text": "amStreamSetHeaderBuffer - headerBuffer isnot 32-byte aligned"
+  },
+  {
+    "offset": 497408,
+    "text": "amStreamStart - theStream is NULL"
+  },
+  {
+    "offset": 497444,
+    "text": "amStreamStart - headerBuffer/transferBuffer/playBuffer/isr is NULL"
+  },
+  {
+    "offset": 497512,
+    "text": "amStreamSetBuffers - theStream or is transferBuffer or playBuffer is NULL"
+  },
+  {
+    "offset": 497588,
+    "text": "amStreamSetBuffers - transferBuffer/playBuffer must be 32-byte aligned"
+  },
+  {
+    "offset": 497660,
+    "text": "amStreamSetBuffers - transferBufferSize/playBufferSize must be a multuple of 2048"
+  },
+  {
+    "offset": 497744,
+    "text": "amStreamSetBuffers - transferBuffer must be in SH4 memory"
+  },
+  {
+    "offset": 497804,
+    "text": "amStreamSetBuffers - playBuffer must be in AICA memory"
+  },
+  {
+    "offset": 497860,
+    "text": "amStreamSetIsr - theStream/theIsr is NULL"
+  },
+  {
+    "offset": 497904,
+    "text": "amStreamInit - theStream or fileName is NULL"
+  },
+  {
+    "offset": 497952,
+    "text": "amStreamInit - fileName is too long"
+  },
+  {
+    "offset": 497988,
+    "text": "amStreamStop - theStream is NULL"
+  },
+  {
+    "offset": 498024,
+    "text": "amStreamStop - theStream is corrupt"
+  },
+  {
+    "offset": 498060,
+    "text": "amStreamStop - can't send driver command after 20 retries"
+  },
+  {
+    "offset": 498120,
+    "text": "amStreamStop - can't send acDigiClose() mono port command"
+  },
+  {
+    "offset": 498180,
+    "text": "amStreamStop - can't send acDigiClose() left port command"
+  },
+  {
+    "offset": 498240,
+    "text": "amStreamStop - can't send acDigiClose() right port command"
+  },
+  {
+    "offset": 498828,
+    "text": "_amStreamPrepare - corrupt stream object"
+  },
+  {
+    "offset": 498872,
+    "text": "amStreamStart - streams must use even sample rates"
+  },
+  {
+    "offset": 498924,
+    "text": "amStreamStart - can't send driver command"
+  },
+  {
+    "offset": 498968,
+    "text": "amStreamStart - the stream is corrupt"
+  },
+  {
+    "offset": 499048,
+    "text": "amBankAssetTypeIs - theBank is NULL"
+  },
+  {
+    "offset": 499084,
+    "text": "amBankAssetTypeIs - Bank does not contain this many assets"
+  },
+  {
+    "offset": 499144,
+    "text": "amBankTransfer - target or source is NULL"
+  },
+  {
+    "offset": 499188,
+    "text": "amBankTransfer - target is not a 32 byte aligned address"
+  },
+  {
+    "offset": 499248,
+    "text": "amBankTransfer - source is not a 32 byte aligned address"
+  },
+  {
+    "offset": 499308,
+    "text": "amBankTransfer - target buffer must be in sound memory"
+  },
+  {
+    "offset": 499364,
+    "text": "amBankGetSize - bankSize or filename is NULL"
+  },
+  {
+    "offset": 499412,
+    "text": "amBankLoad - sh4buffer or filename is NULL"
+  },
+  {
+    "offset": 499456,
+    "text": "amBankLoad - sh4buffer is not a 32 byte aligned address"
+  },
+  {
+    "offset": 499512,
+    "text": "amBankLoad - can't read an asset into aica memory using gdfs"
+  },
+  {
+    "offset": 499576,
+    "text": "amBankFetchMidiPpqn - Null pointer passed as argument"
+  },
+  {
+    "offset": 499632,
+    "text": "amBankFetchMidiPpqn - Bank does not contain this many assets"
+  },
+  {
+    "offset": 499696,
+    "text": "amBankFetchMidiPpqn - not a midi type asset"
+  },
+  {
+    "offset": 499740,
+    "text": "amBankFetchMidiVolume - theBank or masterVolume is NULL"
+  },
+  {
+    "offset": 499796,
+    "text": "amBankFetchMidiVolume - assetNumber out of range"
+  },
+  {
+    "offset": 499848,
+    "text": "amBankFetchMidiVolume - not a midi type asset"
+  },
+  {
+    "offset": 499896,
+    "text": "amBankFetchMidiGmModeFlag - theBank is NULL"
+  },
+  {
+    "offset": 499940,
+    "text": "amBankFetchMidiGmModeFlag - assetNumber out of range"
+  },
+  {
+    "offset": 499996,
+    "text": "amBankFetchMidiGmModeFlag - not a MIDI type asset"
+  },
+  {
+    "offset": 500048,
+    "text": "amBankFetchAssetParameters - theBank or parameters is NULL"
+  },
+  {
+    "offset": 500108,
+    "text": "amBankFetchAssetParameters - assetNumber out of range"
+  },
+  {
+    "offset": 500164,
+    "text": "amBankFetchWaveLoopFlag - theBank or loopFlag is NULL"
+  },
+  {
+    "offset": 500220,
+    "text": "amBankFetchWaveLoopFlag - assetNumber out of range"
+  },
+  {
+    "offset": 500272,
+    "text": "amBankFetchWaveLoopFlag - not a WAVE type asset"
+  },
+  {
+    "offset": 500320,
+    "text": "amBankFetchWaveRandomPitch - theBank or randomPitchAmount is NULL"
+  },
+  {
+    "offset": 500388,
+    "text": "amBankFetchWaveRandomPitch - assetNumber out of range"
+  },
+  {
+    "offset": 500444,
+    "text": "amBankFetchWaveRandomPitch - not a WAVE type asset"
+  },
+  {
+    "offset": 500496,
+    "text": "amBankFetchWaveSampleRate - theBank or sampleRate is NULL"
+  },
+  {
+    "offset": 500556,
+    "text": "amBankFetchWaveSampleRate - assetNumber out of range"
+  },
+  {
+    "offset": 500612,
+    "text": "amBankFetchWaveSampleRate - not a WAVE type asset"
+  },
+  {
+    "offset": 500664,
+    "text": "amBankFetchWaveBitDepth - theBank or bitDepth is NULL"
+  },
+  {
+    "offset": 500720,
+    "text": "amBankFetchWaveBitDepth - assetNumber out of range"
+  },
+  {
+    "offset": 500772,
+    "text": "amBankFetchWaveBitDepth - not a WAVE type asset"
+  },
+  {
+    "offset": 500820,
+    "text": "amBankFetchUnknownParameters - theBank or parameterValue is NULL"
+  },
+  {
+    "offset": 500888,
+    "text": "amBankFetchUnknownParameters - parameterNumber out of range"
+  },
+  {
+    "offset": 500948,
+    "text": "amBankFetchUnknownParameters - assetNumber out of range"
+  },
+  {
+    "offset": 501004,
+    "text": "amBankFetchUnknownParameters - not a UNKNOWN type asset"
+  },
+  {
+    "offset": 501060,
+    "text": "amBankFetchAsset - theBank, parameterValue, *theAsset or assetSize is NULL"
+  },
+  {
+    "offset": 501136,
+    "text": "amBankFetchAsset - assetNumber out of range"
+  },
+  {
+    "offset": 501180,
+    "text": "amBankGetAssetSize - theBank or assetSize is NULL"
+  },
+  {
+    "offset": 501232,
+    "text": "amBankGetAssetSize - assetNumber out of range"
+  },
+  {
+    "offset": 501280,
+    "text": "amBankGetNumberOfAssets - numberOfAssets is NULL"
+  },
+  {
+    "offset": 501332,
+    "text": "amBankGetNumberOfAssets - theBank is NULL"
+  },
+  {
+    "offset": 501376,
+    "text": "amBankGetHeaderSize - headerSize is NULL"
+  },
+  {
+    "offset": 501420,
+    "text": "amBankGetHeaderSize - theBank is NULL"
+  },
+  {
+    "offset": 501460,
+    "text": "Internal Error: The Error Message Is NULL"
+  },
+  {
+    "offset": 501504,
+    "text": "amHeapGetInfo - freeSoundMemory is NULL"
+  },
+  {
+    "offset": 501544,
+    "text": "amHeapGetInfo - size is NULL"
+  },
+  {
+    "offset": 501576,
+    "text": "amHeapGetInfo - the sound driver has not been installed"
+  },
+  {
+    "offset": 501632,
+    "text": "amHeapGetFree - audio heap not initialized"
+  },
+  {
+    "offset": 501676,
+    "text": "amHeapGetFree - freeMemory is NULL"
+  },
+  {
+    "offset": 501712,
+    "text": "amHeapAlloc - audio heap not initialized"
+  },
+  {
+    "offset": 501756,
+    "text": "amHeapAlloc - buffer is NULL"
+  },
+  {
+    "offset": 501788,
+    "text": "amHeapAlloc - size is 0"
+  },
+  {
+    "offset": 501812,
+    "text": "amHeapAlloc - alignment must be 4 or 32"
+  },
+  {
+    "offset": 501852,
+    "text": "amHeapAlloc - memory type must be AM_FIXED_MEMORY or AM_PURGABLE_MEMORY"
+  },
+  {
+    "offset": 501924,
+    "text": "amHeapGetMaxPurgable - maxPurgable is NULL"
+  },
+  {
+    "offset": 501968,
+    "text": "amHeapGetMaxPurgable - audio heap not initialized"
+  },
+  {
+    "offset": 502020,
+    "text": "amHeapPurge - Heap is not initialized"
+  },
+  {
+    "offset": 502060,
+    "text": "amHeapPurge - sizeNeeded is 0"
+  },
+  {
+    "offset": 502092,
+    "text": "amHeapPurge - insufficient purgable memory to fill request"
+  },
+  {
+    "offset": 502152,
+    "text": "amHeapFree - buffer is NULL"
+  },
+  {
+    "offset": 502180,
+    "text": "amHeapFree - you must free the blocks in reverse order from their allocation"
+  },
+  {
+    "offset": 502260,
+    "text": "amHeapFree - a block with that start address was not found"
+  },
+  {
+    "offset": 502324,
+    "text": "_amHeapAllocFromTop - Heap is not initialized"
+  },
+  {
+    "offset": 502372,
+    "text": "_amHeapAllocFromTop - Warning: Insufficient memory to fill request"
+  },
+  {
+    "offset": 502520,
+    "text": "_amHeapAllocFromBottom - Internal Error: fingerprint address not dword aligned"
+  },
+  {
+    "offset": 502600,
+    "text": "_amHeapAllocFromBottom - out of memory control blocks"
+  },
+  {
+    "offset": 502660,
+    "text": "_amHeapAllocFromBottom - Heap is not initialized"
+  },
+  {
+    "offset": 502712,
+    "text": "_amHeapAllocFromBottom - Warning: Insufficient memory to fill request"
+  },
+  {
+    "offset": 502872,
+    "text": "amHeapInit - memoryPool is NULL"
+  },
+  {
+    "offset": 502904,
+    "text": "amHeapInit - size is 0"
+  },
+  {
+    "offset": 502928,
+    "text": "amHeapInit - heap is already initialized"
+  },
+  {
+    "offset": 502972,
+    "text": "amHeapClear - the heap has not been initialized"
+  },
+  {
+    "offset": 503020,
+    "text": "amHeapClear - memoryType must be AM_FIXED_MEMORY or AM_PURGABLE_MEMORY"
+  },
+  {
+    "offset": 503092,
+    "text": "amHeapCheck - the heap has not been initialized"
+  },
+  {
+    "offset": 503140,
+    "text": "amHeapCheck - the bottom heap zone (PURGABLE) is corrupt"
+  },
+  {
+    "offset": 503200,
+    "text": "amHeapCheck - the top heap zone (FIXED) is corrupt"
+  },
+  {
+    "offset": 503252,
+    "text": "amInit - Driver already installed"
+  },
+  {
+    "offset": 503288,
+    "text": "amInit - amHeapGetInfo() failed"
+  },
+  {
+    "offset": 503320,
+    "text": "amInit - amHeapInit() failed"
+  },
+  {
+    "offset": 503352,
+    "text": "amSoundSetQChannels - firstQChannel is out of range (0-15)"
+  },
+  {
+    "offset": 503412,
+    "text": "amSoundSetQChannels - numberOfQChannels is out of range (0-16)"
+  },
+  {
+    "offset": 503476,
+    "text": "amSoundSetEffectsBuss - theSound is NULL"
+  },
+  {
+    "offset": 503520,
+    "text": "amSoundSetEffectsBuss - dspMixerChannel is out of range (0-15)"
+  },
+  {
+    "offset": 503584,
+    "text": "amSoundSetEffectsBuss - sourceMix is out of range (0-100)"
+  },
+  {
+    "offset": 503644,
+    "text": "amSoundSetEffectsBuss - effects buss can not be set while playing"
+  },
+  {
+    "offset": 503712,
+    "text": "amSoundSetEffectsBuss - theSound is not initialized, call amSoundFetchSample() first"
+  },
+  {
+    "offset": 503864,
+    "text": "amSoundSetEffectsBuss - wetLevel is NULL"
+  },
+  {
+    "offset": 503908,
+    "text": "amSoundSetEffectsBuss - dryLevel is NULL"
+  },
+  {
+    "offset": 503952,
+    "text": "amSoundReleaseVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 504000,
+    "text": "amSoundFetchSample - theSound is NULL"
+  },
+  {
+    "offset": 504040,
+    "text": "amSoundFetchSample - theBank is NULL"
+  },
+  {
+    "offset": 504080,
+    "text": "amSoundIsLooping - loopFlag is NULL"
+  },
+  {
+    "offset": 504116,
+    "text": "amSoundIsLooping - theSound is NULL"
+  },
+  {
+    "offset": 504152,
+    "text": "amSoundAllocateVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 504200,
+    "text": "amSoundGetSampleRate - realWorldSampleRate is NULL"
+  },
+  {
+    "offset": 504252,
+    "text": "amSoundGetSampleRate - theSound is NULL"
+  },
+  {
+    "offset": 504292,
+    "text": "amSoundGetVolume - aicaVolume is NULL"
+  },
+  {
+    "offset": 504332,
+    "text": "amSoundGetVolume - theSound is NULL"
+  },
+  {
+    "offset": 504368,
+    "text": "amSoundGetPan - pan is NULL"
+  },
+  {
+    "offset": 504396,
+    "text": "amSoundGetPan - theSound is NULL"
+  },
+  {
+    "offset": 504432,
+    "text": "amSoundGetVoiceChannel - voiceChannel is NULL"
+  },
+  {
+    "offset": 504480,
+    "text": "amSoundGetVoiceChannel - theSound is NULL"
+  },
+  {
+    "offset": 504524,
+    "text": "amSoundGetCallback - *theCallback is NULL"
+  },
+  {
+    "offset": 504568,
+    "text": "amSoundGetCallback - theSound is NULL"
+  },
+  {
+    "offset": 504608,
+    "text": "amSoundSetCurrentPlaybackRate - theSound is NULL"
+  },
+  {
+    "offset": 504660,
+    "text": "amSoundSetCurrentPlaybackRate - sampleRate is out of range"
+  },
+  {
+    "offset": 504720,
+    "text": "amSoundSetCurrentPlaybackRate - can't send command to driver"
+  },
+  {
+    "offset": 504784,
+    "text": "amSoundSetVolume - theSound is NULL"
+  },
+  {
+    "offset": 504820,
+    "text": "amSoundSetVolume - Warning: newVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 504900,
+    "text": "amSoundSetVolume - can't send driver command"
+  },
+  {
+    "offset": 504948,
+    "text": "amSoundSetPan - theSound is NULL"
+  },
+  {
+    "offset": 504984,
+    "text": "amSoundSetPan - Warning: newPan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 505056,
+    "text": "amSoundSetPan - can't send driver command"
+  },
+  {
+    "offset": 505100,
+    "text": "amSoundSetCallback - theSound is NULL"
+  },
+  {
+    "offset": 505140,
+    "text": "amSoundSetPan - can't set the callback while sound is playing"
+  },
+  {
+    "offset": 505204,
+    "text": "amSoundIsPlaying - theSound is NULL"
+  },
+  {
+    "offset": 505240,
+    "text": "amSoundStop - theSound is NULL"
+  },
+  {
+    "offset": 505272,
+    "text": "amSoundStop - unable to stop sound after 20 retries"
+  },
+  {
+    "offset": 505428,
+    "text": "amSoundPlay - theSound is NULL"
+  },
+  {
+    "offset": 505460,
+    "text": "amSoundPlay - uninitialized voice channel"
+  },
+  {
+    "offset": 505504,
+    "text": "amSoundPlay - unable to get random pitch amount"
+  },
+  {
+    "offset": 505552,
+    "text": "amSoundPlayRaw - voice channel not initialized"
+  },
+  {
+    "offset": 505600,
+    "text": "amSoundPlayRaw - sizeInBytes is 0"
+  },
+  {
+    "offset": 505636,
+    "text": "amSoundPlayRaw - address is 0x00"
+  },
+  {
+    "offset": 505672,
+    "text": "amSoundPlayRaw - sampleRate is out of range"
+  },
+  {
+    "offset": 505716,
+    "text": "amSoundPlayRaw - aicaAudioType is out of range"
+  },
+  {
+    "offset": 505764,
+    "text": "amSoundPlayRaw - dryVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 505832,
+    "text": "amSoundPlayRaw - wetVolume is out of range, reset to AM_MAX_VOLUME"
+  },
+  {
+    "offset": 505900,
+    "text": "amSoundPlayRaw - channelVolume is out of range, reset to AM_MAX_CHANNEL_VOLUME"
+  },
+  {
+    "offset": 505980,
+    "text": "amSoundPlayRaw - pan is out of range, reset to AM_MAX_PAN"
+  },
+  {
+    "offset": 506040,
+    "text": "amSoundPlayRaw - mixerChannel is out of range"
+  },
+  {
+    "offset": 506088,
+    "text": "amSoundPlayRaw - effectsOnOrOff is out of range"
+  },
+  {
+    "offset": 506136,
+    "text": "amSoundPlayRaw - can't send driver command"
+  },
+  {
+    "offset": 506180,
+    "text": "amSoundPlayRaw - play failed can't send driver command"
+  },
+  {
+    "offset": 506236,
+    "text": "amSoundPlayRaw - Warning: acDspSetQSoundAngle() failed"
+  },
+  {
+    "offset": 506301,
+    "text": "ntInf Ver 2.00 Build:Mar 31 1999 14:13:50"
+  },
+  {
+    "offset": 506856,
+    "text": "amUtilGetAicaVolume - aicaVolume is NULL"
+  },
+  {
+    "offset": 506900,
+    "text": "amUtilGetAicaVolume - Warning: midiVolume is out of range, truncated to 127"
+  },
+  {
+    "offset": 506976,
+    "text": "amUtilAlignNumber - theAlignment is 0, cant divide by 0"
+  },
+  {
+    "offset": 507032,
+    "text": "amUtilAlignNumber - theResult is NULL"
+  },
+  {
+    "offset": 507072,
+    "text": "amUtilGetLengthInFrames - channels is 0, can't divide by 0"
+  },
+  {
+    "offset": 507132,
+    "text": "amUtilGetLengthInFrames - nibblesPerFrame is 0, can't divide by 0"
+  },
+  {
+    "offset": 507200,
+    "text": "amUtilGetNibblesPerFrame - nibblesPerFrame is NULL"
+  },
+  {
+    "offset": 507252,
+    "text": "amUtilGetNibblesPerFrame - unsupported aica audio type"
+  },
+  {
+    "offset": 507308,
+    "text": "amUtilGetSampleRate - sampleRate is NULL"
+  },
+  {
+    "offset": 507352,
+    "text": "amUtilGetSampleRate - unsupported aica sample rate"
+  },
+  {
+    "offset": 507404,
+    "text": "amUtilGetLengthInMs - lengthInMs is NULL"
+  },
+  {
+    "offset": 507448,
+    "text": "amUtilGetLengthInMs - channels is 0, can't divide by 0"
+  },
+  {
+    "offset": 507504,
+    "text": "amUtilGetLengthInMs - size is 0"
+  },
+  {
+    "offset": 507536,
+    "text": "amUtilGetMsPerIrq - msPerIrq is NULL"
+  },
+  {
+    "offset": 507576,
+    "text": "amUtilGetAicaSampleType - aicaSampleType is NULL"
+  },
+  {
+    "offset": 507628,
+    "text": "amUtilGetAicaSampleType - unsupported bit depth"
+  },
+  {
+    "offset": 507676,
+    "text": "amUtilGetAicaSampleRate - aicaSampleRate is NULL"
+  },
+  {
+    "offset": 507728,
+    "text": "amUtilGetAicaSampleRate - unsupported aica sample rate"
+  },
+  {
+    "offset": 507784,
+    "text": "amUtilGetMiddleOfBufferInFrames - middleInFrames is NULL"
+  },
+  {
+    "offset": 507844,
+    "text": "amUtilGetMiddleOfBufferInFrames - bitDepthOfSample must be >= 4"
+  },
+  {
+    "offset": 507908,
+    "text": "amUtilGetMiddleOfBufferInFrames - sizeOfBufferInBytes must be > 0"
+  },
+  {
+    "offset": 507976,
+    "text": "amUtilGetMiddleOfBufferInFrames - bitDepthOfSample must be 4,8 or 16"
+  },
+  {
+    "offset": 508048,
+    "text": "amVoiceFree - voiceChannel is out of range"
+  },
+  {
+    "offset": 508224,
+    "text": "amVoiceSetStreamIsr - voiceChannel is out of range"
+  },
+  {
+    "offset": 508276,
+    "text": "amVoiceInstallUserCallback - voiceChannel is out of range"
+  },
+  {
+    "offset": 508336,
+    "text": "amVoiceAllocate - voiceChannel is NULL"
+  },
+  {
+    "offset": 508376,
+    "text": "amVoiceAllocate - voiceType must be AM_ONESHOT_VOICE, AM_MIDI_VOICE or AM_STREAM_VOICE"
+  },
+  {
+    "offset": 508464,
+    "text": "amVoiceAllocate - TOTAL CACAPHONY&@*&@*&^@$ all voices are in use"
+  },
+  {
+    "offset": 805037,
+    "text": "syStart Ver 1.17 Build:Dec 01 1999 12:17:57"
+  },
+  {
+    "offset": 805085,
+    "text": "mwPly Ver.2.05 Build:Feb 02 2000 15:43:55"
+  },
+  {
+    "offset": 805129,
+    "text": "mwSfd Ver.2.27 Build:Feb 02 2000 14:29:14"
+  },
+  {
+    "offset": 806468,
+    "text": " Shinobi Library for Dreamcast Version 1.65"
+  },
+  {
+    "offset": 806593,
+    "text": "Shinobi Ver 1.65 Build:Dec 07 1999 10:48:27"
+  },
+  {
+    "offset": 806861,
+    "text": "gdFs Ver 1.09 Build:Nov 25 1999 22:59:21"
+  },
+  {
+    "offset": 806905,
+    "text": "pd Ver 1.50 Build:Jul 30 1999 15:01:33"
+  },
+  {
+    "offset": 806993,
+    "text": "syCache Ver 1.52 Build:Jul 22 1999 18:55:18"
+  },
+  {
+    "offset": 807049,
+    "text": "syChain Ver 1.50 Build:May 31 1999 16:35:21"
+  },
+  {
+    "offset": 807121,
+    "text": "syMalloc Ver 1.50 Build:May 31 1999 16:39:06"
+  },
+  {
+    "offset": 807269,
+    "text": "syRtc Ver 1.02 Build:May 31 1999 09:05:20"
+  },
+  {
+    "offset": 807313,
+    "text": "syHw Ver 1.07 Build:Apr 26 1999 16:55:31"
+  },
+  {
+    "offset": 808097,
+    "text": "syTmr Ver 1.04 Build:Apr 26 1999 14:43:51"
+  },
+  {
+    "offset": 808141,
+    "text": "pdLcd Ver 1.04 Build:Apr 26 1999 16:55:25"
+  },
+  {
+    "offset": 808253,
+    "text": "syCbl Ver 1.10 Build:Apr 27 1999 13:54:09"
+  },
+  {
+    "offset": 808297,
+    "text": "syCfg Ver 1.15 Build:Apr 26 1999 14:38:59"
+  },
+  {
+    "offset": 808345,
+    "text": "syBt Ver 1.06 Build:May 26 1999 13:59:55"
+  },
+  {
+    "offset": 808451,
+    "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+  },
+  {
+    "offset": 808761,
+    "text": "mwMng Ver.2.05 Build:Feb 02 2000 15:43:54"
+  },
+  {
+    "offset": 808836,
+    "text": "MWGSC Version 1.30 1999-03-09"
+  },
+  {
+    "offset": 808869,
+    "text": "mwGsc Ver.1.30 Build:Jun 10 1999 19:20:57"
+  },
+  {
+    "offset": 808913,
+    "text": "mwRnv2 Ver.2.13km2 Build:Jan 27 2000 21:22:57"
+  },
+  {
+    "offset": 809080,
+    "text": "mwRnv2AllocTex: can't alloc KMSURFACEDESC"
+  },
+  {
+    "offset": 809124,
+    "text": "mwRnv2FreeTex: can't free KMSURFACEDESC"
+  },
+  {
+    "offset": 809681,
+    "text": "mwRna Ver.1.30 Build:Jan 20 2000 14:28:14"
+  },
+  {
+    "offset": 809757,
+    "text": "SJ Ver.5.52 Build:Sep 08 1999 20:30:28"
+  },
+  {
+    "offset": 809949,
+    "text": "CRI SFD  Ver.1.31 Build:Nov 26 1999 20:51:41"
+  },
+  {
+    "offset": 809996,
+    "text": "SFD Version 1.31 1999-11-26"
+  },
+  {
+    "offset": 810665,
+    "text": "SFA Ver.5.76 Build:Jan 28 2000 20:33:28"
+  },
+  {
+    "offset": 811529,
+    "text": "syInt Ver 1.50 Build:May 31 1999 16:38:10"
+  },
+  {
+    "offset": 811581,
+    "text": "sySq Ver 1.50 Build:May 31 1999 16:26:00"
+  },
+  {
+    "offset": 811648,
+    "text": "***FATAL ERROR:Cannot get semaphore!"
+  },
+  {
+    "offset": 811689,
+    "text": "kd Ver 1.48 Build:Jul 30 1999 14:59:52"
+  },
+  {
+    "offset": 811757,
+    "text": "fmMng Ver 1.04 Build:Apr 26 1999 14:34:41"
+  },
+  {
+    "offset": 811801,
+    "text": "syBtCfg Ver 1.03 Build:Apr 26 1999 14:36:52"
+  },
+  {
+    "offset": 812269,
+    "text": "mwLib Ver.2.27 Build:Feb 02 2000 15:43:56"
+  },
+  {
+    "offset": 812980,
+    "text": "MPS Version 1.31 1999-11-26"
+  },
+  {
+    "offset": 813092,
+    "text": "MPV Version 1.31 1999-11-26"
+  },
+  {
+    "offset": 813424,
+    "text": "E8101208: parameter error (ADXT_SetOutPan)"
+  },
+  {
+    "offset": 814105,
+    "text": "syMmu Ver 1.50 Build:May 31 1999 16:25:13"
+  },
+  {
+    "offset": 814149,
+    "text": "syG2 Ver 1.01.12 Build:Dec 06 1999 03:26:29"
+  },
+  {
+    "offset": 814196,
+    "text": "***FATAL ERROR:Cannot get semaphore!"
+  },
+  {
+    "offset": 814240,
+    "text": "***FATAL ERROR:Cannot get semaphore!"
+  },
+  {
+    "offset": 814845,
+    "text": "syFbr Ver 1.13 Build:Jun 11 1999 21:40:19"
+  },
+  {
+    "offset": 814963,
+    "text": "kmdk Ver 1,3,2,0 Build:Oct 25 1999 14:49:43"
+  },
+  {
+    "offset": 816140,
+    "text": "SFH Version 1.06 1999-10-08"
+  },
+  {
+    "offset": 816198,
+    "text": "CRI SFH  Ver.1.06 Build:Oct 08 1999 19:24:14"
+  },
+  {
+    "offset": 816317,
+    "text": "ADXENC Ver.1.00 Build:Jan 28 2000 20:33:34"
+  },
+  {
+    "offset": 816688,
+    "text": "E9040805:read error'%s'.(ADXF_LoadPartition)"
+  },
+  {
+    "offset": 816880,
+    "text": "E9040809:read error'%s'.(ADXF_LoadPartition)"
+  },
+  {
+    "offset": 817016,
+    "text": "E9040902:can't get file size(sct) '%s'.(ADXF_Open)"
+  },
+  {
+    "offset": 817068,
+    "text": "E9040903:can't get file size(byte) '%s'.(ADXF_Open)"
+  },
+  {
+    "offset": 818085,
+    "text": "ADXF Ver.5.55 Build:Sep 08 1999 21:25:47"
+  },
+  {
+    "offset": 818128,
+    "text": "FSI Module: FSG / SHINOBI(GDFS)"
+  },
+  {
+    "offset": 818162,
+    "text": "CRI DCT Ver.1.18 Build:Oct 08 1999 18:12:51"
+  }
+]

@@ -1,0 +1,4201 @@
+{
+  "entry": 2348953776,
+  "base": 2348875776,
+  "bounds": [
+    2348953776,
+    2348954066
+  ],
+  "instructions": [
+    {
+      "pc": 2348953776,
+      "word": 12262,
+      "mnemonic": "mov.l",
+      "operands": "r14,@-r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14",
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r14,@-r15",
+      "known": true
+    },
+    {
+      "pc": 2348953778,
+      "word": 12246,
+      "mnemonic": "mov.l",
+      "operands": "r13,@-r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r13",
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r13,@-r15",
+      "known": true
+    },
+    {
+      "pc": 2348953780,
+      "word": 12230,
+      "mnemonic": "mov.l",
+      "operands": "r12,@-r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r12",
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r12,@-r15",
+      "known": true
+    },
+    {
+      "pc": 2348953782,
+      "word": 12214,
+      "mnemonic": "mov.l",
+      "operands": "r11,@-r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r11",
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r11,@-r15",
+      "known": true
+    },
+    {
+      "pc": 2348953784,
+      "word": 20258,
+      "mnemonic": "sts.l",
+      "operands": "pr,@-r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15",
+        "pr"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sts.l pr,@-r15",
+      "known": true
+    },
+    {
+      "pc": 2348953786,
+      "word": 32748,
+      "mnemonic": "add",
+      "operands": "#-20,r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": -20,
+      "note": "",
+      "text": "add #-20,r15",
+      "known": true
+    },
+    {
+      "pc": 2348953788,
+      "word": 37038,
+      "mnemonic": "mov.w",
+      "operands": "@(0x8C02321C,pc),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954140,
+      "literal_value": 1150,
+      "literal_size": 2,
+      "reads": [],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.w @(0x8C02321C,pc),r0",
+      "known": true
+    },
+    {
+      "pc": 2348953790,
+      "word": 24927,
+      "mnemonic": "exts.w",
+      "operands": "r5,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r5,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953792,
+      "word": 54105,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023228,pc),r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954152,
+      "literal_value": 2349446784,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023228,pc),r3",
+      "known": true
+    },
+    {
+      "pc": 2348953794,
+      "word": 12050,
+      "mnemonic": "mov.l",
+      "operands": "r1,@r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r1",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r1,@r15",
+      "known": true
+    },
+    {
+      "pc": 2348953796,
+      "word": 17163,
+      "mnemonic": "jsr",
+      "operands": "@r3",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r3",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r3",
+      "known": true
+    },
+    {
+      "pc": 2348953798,
+      "word": 9,
+      "mnemonic": "nop",
+      "operands": "",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "nop",
+      "known": true
+    },
+    {
+      "pc": 2348953800,
+      "word": 25859,
+      "mnemonic": "mov",
+      "operands": "r0,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953802,
+      "word": 53848,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C02322C,pc),r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954156,
+      "literal_value": 2349447212,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C02322C,pc),r2",
+      "known": true
+    },
+    {
+      "pc": 2348953804,
+      "word": 37030,
+      "mnemonic": "mov.w",
+      "operands": "@(0x8C02321C,pc),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954140,
+      "literal_value": 1150,
+      "literal_size": 2,
+      "reads": [],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.w @(0x8C02321C,pc),r0",
+      "known": true
+    },
+    {
+      "pc": 2348953806,
+      "word": 25074,
+      "mnemonic": "mov.l",
+      "operands": "@r15,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953808,
+      "word": 16907,
+      "mnemonic": "jsr",
+      "operands": "@r2",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r2",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r2",
+      "known": true
+    },
+    {
+      "pc": 2348953810,
+      "word": 9,
+      "mnemonic": "nop",
+      "operands": "",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "nop",
+      "known": true
+    },
+    {
+      "pc": 2348953812,
+      "word": 25439,
+      "mnemonic": "exts.w",
+      "operands": "r5,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r5,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953814,
+      "word": 17169,
+      "mnemonic": "cmp/pz",
+      "operands": "r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "cmp/pz r3",
+      "known": true
+    },
+    {
+      "pc": 2348953816,
+      "word": 36098,
+      "mnemonic": "bt/s",
+      "operands": "0x8C0230E0",
+      "kind": "branch",
+      "target": 2348953824,
+      "delay_slot": true,
+      "conditional": true,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "t"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "bt/s 0x8C0230E0",
+      "known": true
+    },
+    {
+      "pc": 2348953818,
+      "word": 27907,
+      "mnemonic": "mov",
+      "operands": "r0,r13",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r13"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r13",
+      "known": true
+    },
+    {
+      "pc": 2348953820,
+      "word": 60672,
+      "mnemonic": "mov",
+      "operands": "#0,r13",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r13"
+      ],
+      "indirect_register": null,
+      "immediate": 0,
+      "note": "",
+      "text": "mov #0,r13",
+      "known": true
+    },
+    {
+      "pc": 2348953822,
+      "word": 58624,
+      "mnemonic": "mov",
+      "operands": "#0,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": 0,
+      "note": "",
+      "text": "mov #0,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953824,
+      "word": 57867,
+      "mnemonic": "mov",
+      "operands": "#11,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": 11,
+      "note": "",
+      "text": "mov #11,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953826,
+      "word": 39836,
+      "mnemonic": "mov.w",
+      "operands": "@(0x8C02321E,pc),r11",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954142,
+      "literal_value": 1149,
+      "literal_size": 2,
+      "reads": [],
+      "writes": [
+        "r11"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.w @(0x8C02321E,pc),r11",
+      "known": true
+    },
+    {
+      "pc": 2348953828,
+      "word": 25439,
+      "mnemonic": "exts.w",
+      "operands": "r5,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r5,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953830,
+      "word": 13091,
+      "mnemonic": "cmp/ge",
+      "operands": "r2,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r3"
+      ],
+      "writes": [
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "cmp/ge r2,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953832,
+      "word": 36610,
+      "mnemonic": "bf/s",
+      "operands": "0x8C0230F0",
+      "kind": "branch",
+      "target": 2348953840,
+      "delay_slot": true,
+      "conditional": true,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "t"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "bf/s 0x8C0230F0",
+      "known": true
+    },
+    {
+      "pc": 2348953834,
+      "word": 60430,
+      "mnemonic": "mov",
+      "operands": "#14,r12",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r12"
+      ],
+      "indirect_register": null,
+      "immediate": 14,
+      "note": "",
+      "text": "mov #14,r12",
+      "known": true
+    },
+    {
+      "pc": 2348953836,
+      "word": 28083,
+      "mnemonic": "mov",
+      "operands": "r11,r13",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r11"
+      ],
+      "writes": [
+        "r13"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r11,r13",
+      "known": true
+    },
+    {
+      "pc": 2348953838,
+      "word": 58634,
+      "mnemonic": "mov",
+      "operands": "#10,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": 10,
+      "note": "",
+      "text": "mov #10,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953840,
+      "word": 53839,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023230,pc),r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954160,
+      "literal_value": 2349447132,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023230,pc),r2",
+      "known": true
+    },
+    {
+      "pc": 2348953842,
+      "word": 24931,
+      "mnemonic": "mov",
+      "operands": "r6,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r6"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r6,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953844,
+      "word": 16907,
+      "mnemonic": "jsr",
+      "operands": "@r2",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r2",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r2",
+      "known": true
+    },
+    {
+      "pc": 2348953846,
+      "word": 24771,
+      "mnemonic": "mov",
+      "operands": "r12,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r12"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r12,r0",
+      "known": true
+    },
+    {
+      "pc": 2348953848,
+      "word": 54094,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023234,pc),r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954164,
+      "literal_value": 2349447596,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023234,pc),r3",
+      "known": true
+    },
+    {
+      "pc": 2348953850,
+      "word": 24931,
+      "mnemonic": "mov",
+      "operands": "r6,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r6"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r6,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953852,
+      "word": 28163,
+      "mnemonic": "mov",
+      "operands": "r0,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953854,
+      "word": 17163,
+      "mnemonic": "jsr",
+      "operands": "@r3",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r3",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r3",
+      "known": true
+    },
+    {
+      "pc": 2348953856,
+      "word": 24771,
+      "mnemonic": "mov",
+      "operands": "r12,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r12"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r12,r0",
+      "known": true
+    },
+    {
+      "pc": 2348953858,
+      "word": 58121,
+      "mnemonic": "mov",
+      "operands": "#9,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": 9,
+      "note": "",
+      "text": "mov #9,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953860,
+      "word": 25327,
+      "mnemonic": "exts.w",
+      "operands": "r14,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r14,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953862,
+      "word": 12851,
+      "mnemonic": "cmp/ge",
+      "operands": "r3,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3",
+        "r2"
+      ],
+      "writes": [
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "cmp/ge r3,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953864,
+      "word": 36610,
+      "mnemonic": "bf/s",
+      "operands": "0x8C023110",
+      "kind": "branch",
+      "target": 2348953872,
+      "delay_slot": true,
+      "conditional": true,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "t"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "bf/s 0x8C023110",
+      "known": true
+    },
+    {
+      "pc": 2348953866,
+      "word": 26115,
+      "mnemonic": "mov",
+      "operands": "r0,r6",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r6"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r6",
+      "known": true
+    },
+    {
+      "pc": 2348953868,
+      "word": 58893,
+      "mnemonic": "mov",
+      "operands": "#13,r6",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r6"
+      ],
+      "indirect_register": null,
+      "immediate": 13,
+      "note": "",
+      "text": "mov #13,r6",
+      "known": true
+    },
+    {
+      "pc": 2348953870,
+      "word": 60936,
+      "mnemonic": "mov",
+      "operands": "#8,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": 8,
+      "note": "",
+      "text": "mov #8,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953872,
+      "word": 25583,
+      "mnemonic": "exts.w",
+      "operands": "r14,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r14,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953874,
+      "word": 25139,
+      "mnemonic": "mov",
+      "operands": "r3,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r3,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953876,
+      "word": 17152,
+      "mnemonic": "shll",
+      "operands": "r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r3",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r3",
+      "known": true
+    },
+    {
+      "pc": 2348953878,
+      "word": 13100,
+      "mnemonic": "add",
+      "operands": "r2,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r3"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r2,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953880,
+      "word": 25951,
+      "mnemonic": "exts.w",
+      "operands": "r5,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r5,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953882,
+      "word": 17160,
+      "mnemonic": "shll2",
+      "operands": "r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll2 r3",
+      "known": true
+    },
+    {
+      "pc": 2348953884,
+      "word": 17152,
+      "mnemonic": "shll",
+      "operands": "r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r3",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r3",
+      "known": true
+    },
+    {
+      "pc": 2348953886,
+      "word": 17664,
+      "mnemonic": "shll",
+      "operands": "r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r5",
+      "known": true
+    },
+    {
+      "pc": 2348953888,
+      "word": 13148,
+      "mnemonic": "add",
+      "operands": "r5,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r3"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r5,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953890,
+      "word": 8019,
+      "mnemonic": "mov.l",
+      "operands": "r5,@(12,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r5,@(12,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953892,
+      "word": 13180,
+      "mnemonic": "add",
+      "operands": "r7,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r7",
+        "r3"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r7,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953894,
+      "word": 25907,
+      "mnemonic": "mov",
+      "operands": "r3,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r3,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953896,
+      "word": 29954,
+      "mnemonic": "add",
+      "operands": "#2,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": 2,
+      "note": "",
+      "text": "add #2,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953898,
+      "word": 28127,
+      "mnemonic": "exts.w",
+      "operands": "r13,r13",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r13"
+      ],
+      "writes": [
+        "r13"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r13,r13",
+      "known": true
+    },
+    {
+      "pc": 2348953900,
+      "word": 7985,
+      "mnemonic": "mov.l",
+      "operands": "r3,@(4,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r3,@(4,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953902,
+      "word": 8116,
+      "mnemonic": "mov.l",
+      "operands": "r11,@(16,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r11",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r11,@(16,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953904,
+      "word": 8146,
+      "mnemonic": "mov.l",
+      "operands": "r13,@(8,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r13",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r13,@(8,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953906,
+      "word": 25169,
+      "mnemonic": "mov.w",
+      "operands": "@r5,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r5,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953908,
+      "word": 12066,
+      "mnemonic": "mov.l",
+      "operands": "r2,@r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r2,@r15",
+      "known": true
+    },
+    {
+      "pc": 2348953910,
+      "word": 25905,
+      "mnemonic": "mov.w",
+      "operands": "@r3,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r3,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953912,
+      "word": 20978,
+      "mnemonic": "mov.l",
+      "operands": "@(8,r15),r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @(8,r15),r1",
+      "known": true
+    },
+    {
+      "pc": 2348953914,
+      "word": 12888,
+      "mnemonic": "sub",
+      "operands": "r5,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r2"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sub r5,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953916,
+      "word": 535,
+      "mnemonic": "mul.l",
+      "operands": "r1,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r1",
+        "r2"
+      ],
+      "writes": [
+        "macl"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mul.l r1,r2",
+      "known": true
+    },
+    {
+      "pc": 2348953918,
+      "word": 53818,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023228,pc),r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954152,
+      "literal_value": 2349446784,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023228,pc),r2",
+      "known": true
+    },
+    {
+      "pc": 2348953920,
+      "word": 282,
+      "mnemonic": "sts",
+      "operands": "macl,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "macl"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sts macl,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953922,
+      "word": 16907,
+      "mnemonic": "jsr",
+      "operands": "@r2",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r2",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r2",
+      "known": true
+    },
+    {
+      "pc": 2348953924,
+      "word": 20724,
+      "mnemonic": "mov.l",
+      "operands": "@(16,r15),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @(16,r15),r0",
+      "known": true
+    },
+    {
+      "pc": 2348953926,
+      "word": 28399,
+      "mnemonic": "exts.w",
+      "operands": "r14,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r14,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953928,
+      "word": 32257,
+      "mnemonic": "add",
+      "operands": "#1,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": 1,
+      "note": "",
+      "text": "add #1,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953930,
+      "word": 25571,
+      "mnemonic": "mov",
+      "operands": "r14,r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r14,r3",
+      "known": true
+    },
+    {
+      "pc": 2348953932,
+      "word": 19968,
+      "mnemonic": "shll",
+      "operands": "r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r14",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r14",
+      "known": true
+    },
+    {
+      "pc": 2348953934,
+      "word": 15932,
+      "mnemonic": "add",
+      "operands": "r3,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3",
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r3,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953936,
+      "word": 54069,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023228,pc),r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954152,
+      "literal_value": 2349446784,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023228,pc),r3",
+      "known": true
+    },
+    {
+      "pc": 2348953938,
+      "word": 19976,
+      "mnemonic": "shll2",
+      "operands": "r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll2 r14",
+      "known": true
+    },
+    {
+      "pc": 2348953940,
+      "word": 19968,
+      "mnemonic": "shll",
+      "operands": "r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r14",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r14",
+      "known": true
+    },
+    {
+      "pc": 2348953942,
+      "word": 12380,
+      "mnemonic": "add",
+      "operands": "r5,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r5,r0",
+      "known": true
+    },
+    {
+      "pc": 2348953944,
+      "word": 33266,
+      "mnemonic": "mov.w",
+      "operands": "r0,@(4,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w r0,@(4,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953946,
+      "word": 21235,
+      "mnemonic": "mov.l",
+      "operands": "@(12,r15),r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @(12,r15),r2",
+      "known": true
+    },
+    {
+      "pc": 2348953948,
+      "word": 15916,
+      "mnemonic": "add",
+      "operands": "r2,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r2,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953950,
+      "word": 15996,
+      "mnemonic": "add",
+      "operands": "r7,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r7",
+        "r14"
+      ],
+      "writes": [
+        "r14"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r7,r14",
+      "known": true
+    },
+    {
+      "pc": 2348953952,
+      "word": 26083,
+      "mnemonic": "mov",
+      "operands": "r14,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r14,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953954,
+      "word": 29954,
+      "mnemonic": "add",
+      "operands": "#2,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": 2,
+      "note": "",
+      "text": "add #2,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953956,
+      "word": 12258,
+      "mnemonic": "mov.l",
+      "operands": "r14,@r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r14",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r14,@r15",
+      "known": true
+    },
+    {
+      "pc": 2348953958,
+      "word": 8115,
+      "mnemonic": "mov.l",
+      "operands": "r11,@(12,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r11",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r11,@(12,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953960,
+      "word": 26449,
+      "mnemonic": "mov.w",
+      "operands": "@r5,r7",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r7"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r5,r7",
+      "known": true
+    },
+    {
+      "pc": 2348953962,
+      "word": 26098,
+      "mnemonic": "mov.l",
+      "operands": "@r15,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953964,
+      "word": 20978,
+      "mnemonic": "mov.l",
+      "operands": "@(8,r15),r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @(8,r15),r1",
+      "known": true
+    },
+    {
+      "pc": 2348953966,
+      "word": 25937,
+      "mnemonic": "mov.w",
+      "operands": "@r5,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r5,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953968,
+      "word": 14168,
+      "mnemonic": "sub",
+      "operands": "r5,r7",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r7"
+      ],
+      "writes": [
+        "r7"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sub r5,r7",
+      "known": true
+    },
+    {
+      "pc": 2348953970,
+      "word": 1815,
+      "mnemonic": "mul.l",
+      "operands": "r1,r7",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r1",
+        "r7"
+      ],
+      "writes": [
+        "macl"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mul.l r1,r7",
+      "known": true
+    },
+    {
+      "pc": 2348953972,
+      "word": 282,
+      "mnemonic": "sts",
+      "operands": "macl,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "macl"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sts macl,r1",
+      "known": true
+    },
+    {
+      "pc": 2348953974,
+      "word": 17163,
+      "mnemonic": "jsr",
+      "operands": "@r3",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r3",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r3",
+      "known": true
+    },
+    {
+      "pc": 2348953976,
+      "word": 24755,
+      "mnemonic": "mov",
+      "operands": "r11,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r11"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r11,r0",
+      "known": true
+    },
+    {
+      "pc": 2348953978,
+      "word": 12380,
+      "mnemonic": "add",
+      "operands": "r5,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r5,r0",
+      "known": true
+    },
+    {
+      "pc": 2348953980,
+      "word": 54058,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023228,pc),r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954152,
+      "literal_value": 2349446784,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023228,pc),r3",
+      "known": true
+    },
+    {
+      "pc": 2348953982,
+      "word": 12033,
+      "mnemonic": "mov.w",
+      "operands": "r0,@r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w r0,@r15",
+      "known": true
+    },
+    {
+      "pc": 2348953984,
+      "word": 26479,
+      "mnemonic": "exts.w",
+      "operands": "r6,r7",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r6"
+      ],
+      "writes": [
+        "r7"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r6,r7",
+      "known": true
+    },
+    {
+      "pc": 2348953986,
+      "word": 8130,
+      "mnemonic": "mov.l",
+      "operands": "r12,@(8,r15)",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r12",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l r12,@(8,r15)",
+      "known": true
+    },
+    {
+      "pc": 2348953988,
+      "word": 34290,
+      "mnemonic": "mov.w",
+      "operands": "@(4,r15),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @(4,r15),r0",
+      "known": true
+    },
+    {
+      "pc": 2348953990,
+      "word": 26353,
+      "mnemonic": "mov.w",
+      "operands": "@r15,r6",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r6"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r15,r6",
+      "known": true
+    },
+    {
+      "pc": 2348953992,
+      "word": 25859,
+      "mnemonic": "mov",
+      "operands": "r0,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r5",
+      "known": true
+    },
+    {
+      "pc": 2348953994,
+      "word": 13912,
+      "mnemonic": "sub",
+      "operands": "r5,r6",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r6"
+      ],
+      "writes": [
+        "r6"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sub r5,r6",
+      "known": true
+    },
+    {
+      "pc": 2348953996,
+      "word": 1655,
+      "mnemonic": "mul.l",
+      "operands": "r7,r6",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r7",
+        "r6"
+      ],
+      "writes": [
+        "macl"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mul.l r7,r6",
+      "known": true
+    },
+    {
+      "pc": 2348953998,
+      "word": 282,
+      "mnemonic": "sts",
+      "operands": "macl,r1",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "macl"
+      ],
+      "writes": [
+        "r1"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sts macl,r1",
+      "known": true
+    },
+    {
+      "pc": 2348954000,
+      "word": 17163,
+      "mnemonic": "jsr",
+      "operands": "@r3",
+      "kind": "call",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3"
+      ],
+      "writes": [
+        "pr"
+      ],
+      "indirect_register": "r3",
+      "immediate": null,
+      "note": "",
+      "text": "jsr @r3",
+      "known": true
+    },
+    {
+      "pc": 2348954002,
+      "word": 24771,
+      "mnemonic": "mov",
+      "operands": "r12,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r12"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r12,r0",
+      "known": true
+    },
+    {
+      "pc": 2348954004,
+      "word": 12380,
+      "mnemonic": "add",
+      "operands": "r5,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5",
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r5,r0",
+      "known": true
+    },
+    {
+      "pc": 2348954006,
+      "word": 12033,
+      "mnemonic": "mov.w",
+      "operands": "r0,@r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0",
+        "r15"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w r0,@r15",
+      "known": true
+    },
+    {
+      "pc": 2348954008,
+      "word": 33868,
+      "mnemonic": "mov.b",
+      "operands": "@(12,r4),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r4"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.b @(12,r4),r0",
+      "known": true
+    },
+    {
+      "pc": 2348954010,
+      "word": 26097,
+      "mnemonic": "mov.w",
+      "operands": "@r15,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.w @r15,r5",
+      "known": true
+    },
+    {
+      "pc": 2348954012,
+      "word": 25091,
+      "mnemonic": "mov",
+      "operands": "r0,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r0,r2",
+      "known": true
+    },
+    {
+      "pc": 2348954014,
+      "word": 16384,
+      "mnemonic": "shll",
+      "operands": "r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r0",
+        "t"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll r0",
+      "known": true
+    },
+    {
+      "pc": 2348954016,
+      "word": 12332,
+      "mnemonic": "add",
+      "operands": "r2,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r2,r0",
+      "known": true
+    },
+    {
+      "pc": 2348954018,
+      "word": 53797,
+      "mnemonic": "mov.l",
+      "operands": "@(0x8C023238,pc),r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": 2348954168,
+      "literal_value": 2349579340,
+      "literal_size": 4,
+      "reads": [],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "PC-relative calculation assumes this is not a delay-slot instruction",
+      "text": "mov.l @(0x8C023238,pc),r2",
+      "known": true
+    },
+    {
+      "pc": 2348954020,
+      "word": 16392,
+      "mnemonic": "shll2",
+      "operands": "r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll2 r0",
+      "known": true
+    },
+    {
+      "pc": 2348954022,
+      "word": 21313,
+      "mnemonic": "mov.l",
+      "operands": "@(4,r4),r3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r4"
+      ],
+      "writes": [
+        "r3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @(4,r4),r3",
+      "known": true
+    },
+    {
+      "pc": 2348954024,
+      "word": 12812,
+      "mnemonic": "add",
+      "operands": "r0,r2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0",
+        "r2"
+      ],
+      "writes": [
+        "r2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "add r0,r2",
+      "known": true
+    },
+    {
+      "pc": 2348954026,
+      "word": 33867,
+      "mnemonic": "mov.b",
+      "operands": "@(11,r4),r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r4"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.b @(11,r4),r0",
+      "known": true
+    },
+    {
+      "pc": 2348954028,
+      "word": 25951,
+      "mnemonic": "exts.w",
+      "operands": "r5,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "exts.w r5,r5",
+      "known": true
+    },
+    {
+      "pc": 2348954030,
+      "word": 16392,
+      "mnemonic": "shll2",
+      "operands": "r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r0"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "shll2 r0",
+      "known": true
+    },
+    {
+      "pc": 2348954032,
+      "word": 17754,
+      "mnemonic": "lds",
+      "operands": "r5,fpul",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "fpul"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "lds r5,fpul",
+      "known": true
+    },
+    {
+      "pc": 2348954034,
+      "word": 62246,
+      "mnemonic": "fmov",
+      "operands": "@(r0,r2),fr3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r2",
+        "r0"
+      ],
+      "writes": [
+        "fr3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "fmov @(r0,r2),fr3",
+      "known": true
+    },
+    {
+      "pc": 2348954036,
+      "word": 57352,
+      "mnemonic": "mov",
+      "operands": "#8,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": 8,
+      "note": "",
+      "text": "mov #8,r0",
+      "known": true
+    },
+    {
+      "pc": 2348954038,
+      "word": 62006,
+      "mnemonic": "fmov",
+      "operands": "@(r0,r3),fr2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r3",
+        "r0"
+      ],
+      "writes": [
+        "fr2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "fmov @(r0,r3),fr2",
+      "known": true
+    },
+    {
+      "pc": 2348954040,
+      "word": 62002,
+      "mnemonic": "fmul",
+      "operands": "fr3,fr2",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "fr3",
+        "fr2"
+      ],
+      "writes": [
+        "fr2"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "fmul fr3,fr2",
+      "known": true
+    },
+    {
+      "pc": 2348954042,
+      "word": 62253,
+      "mnemonic": "float",
+      "operands": "fpul,fr3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "fpul"
+      ],
+      "writes": [
+        "fr3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "float fpul,fr3",
+      "known": true
+    },
+    {
+      "pc": 2348954044,
+      "word": 62242,
+      "mnemonic": "fmul",
+      "operands": "fr2,fr3",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "fr2",
+        "fr3"
+      ],
+      "writes": [
+        "fr3"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "fmul fr2,fr3",
+      "known": true
+    },
+    {
+      "pc": 2348954046,
+      "word": 62269,
+      "mnemonic": "ftrc",
+      "operands": "fr3,fpul",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "fr3"
+      ],
+      "writes": [
+        "fpul"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "FR fields shown; effective FPU register width/bank depends on FPSCR.PR/SZ/FR",
+      "text": "ftrc fr3,fpul",
+      "known": true
+    },
+    {
+      "pc": 2348954048,
+      "word": 1370,
+      "mnemonic": "sts",
+      "operands": "fpul,r5",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "fpul"
+      ],
+      "writes": [
+        "r5"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "sts fpul,r5",
+      "known": true
+    },
+    {
+      "pc": 2348954050,
+      "word": 24659,
+      "mnemonic": "mov",
+      "operands": "r5,r0",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r5"
+      ],
+      "writes": [
+        "r0"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov r5,r0",
+      "known": true
+    },
+    {
+      "pc": 2348954052,
+      "word": 32532,
+      "mnemonic": "add",
+      "operands": "#20,r15",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": 20,
+      "note": "",
+      "text": "add #20,r15",
+      "known": true
+    },
+    {
+      "pc": 2348954054,
+      "word": 20262,
+      "mnemonic": "lds.l",
+      "operands": "@r15+,pr",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r15",
+        "pr"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "lds.l @r15+,pr",
+      "known": true
+    },
+    {
+      "pc": 2348954056,
+      "word": 27638,
+      "mnemonic": "mov.l",
+      "operands": "@r15+,r11",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r11",
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15+,r11",
+      "known": true
+    },
+    {
+      "pc": 2348954058,
+      "word": 27894,
+      "mnemonic": "mov.l",
+      "operands": "@r15+,r12",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r12",
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15+,r12",
+      "known": true
+    },
+    {
+      "pc": 2348954060,
+      "word": 28150,
+      "mnemonic": "mov.l",
+      "operands": "@r15+,r13",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r13",
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15+,r13",
+      "known": true
+    },
+    {
+      "pc": 2348954062,
+      "word": 11,
+      "mnemonic": "rts",
+      "operands": "",
+      "kind": "return",
+      "target": null,
+      "delay_slot": true,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "pr"
+      ],
+      "writes": [],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "rts",
+      "known": true
+    },
+    {
+      "pc": 2348954064,
+      "word": 28406,
+      "mnemonic": "mov.l",
+      "operands": "@r15+,r14",
+      "kind": "normal",
+      "target": null,
+      "delay_slot": false,
+      "conditional": false,
+      "literal_address": null,
+      "literal_value": null,
+      "literal_size": 0,
+      "reads": [
+        "r15"
+      ],
+      "writes": [
+        "r14",
+        "r15"
+      ],
+      "indirect_register": null,
+      "immediate": null,
+      "note": "",
+      "text": "mov.l @r15+,r14",
+      "known": true
+    }
+  ],
+  "edges": [
+    {
+      "from": 2348953776,
+      "to": 2348953778,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953778,
+      "to": 2348953780,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953780,
+      "to": 2348953782,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953782,
+      "to": 2348953784,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953784,
+      "to": 2348953786,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953786,
+      "to": 2348953788,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953788,
+      "to": 2348953790,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953790,
+      "to": 2348953792,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953792,
+      "to": 2348953794,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953794,
+      "to": 2348953796,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953796,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r3"
+    },
+    {
+      "from": 2348953796,
+      "to": 2348953800,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953800,
+      "to": 2348953802,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953802,
+      "to": 2348953804,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953804,
+      "to": 2348953806,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953806,
+      "to": 2348953808,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953808,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r2"
+    },
+    {
+      "from": 2348953808,
+      "to": 2348953812,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953812,
+      "to": 2348953814,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953814,
+      "to": 2348953816,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953816,
+      "to": 2348953824,
+      "kind": "taken"
+    },
+    {
+      "from": 2348953816,
+      "to": 2348953820,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953820,
+      "to": 2348953822,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953822,
+      "to": 2348953824,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953824,
+      "to": 2348953826,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953826,
+      "to": 2348953828,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953828,
+      "to": 2348953830,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953830,
+      "to": 2348953832,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953832,
+      "to": 2348953840,
+      "kind": "taken"
+    },
+    {
+      "from": 2348953832,
+      "to": 2348953836,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953836,
+      "to": 2348953838,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953838,
+      "to": 2348953840,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953840,
+      "to": 2348953842,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953842,
+      "to": 2348953844,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953844,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r2"
+    },
+    {
+      "from": 2348953844,
+      "to": 2348953848,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953848,
+      "to": 2348953850,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953850,
+      "to": 2348953852,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953852,
+      "to": 2348953854,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953854,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r3"
+    },
+    {
+      "from": 2348953854,
+      "to": 2348953858,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953858,
+      "to": 2348953860,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953860,
+      "to": 2348953862,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953862,
+      "to": 2348953864,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953864,
+      "to": 2348953872,
+      "kind": "taken"
+    },
+    {
+      "from": 2348953864,
+      "to": 2348953868,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953868,
+      "to": 2348953870,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953870,
+      "to": 2348953872,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953872,
+      "to": 2348953874,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953874,
+      "to": 2348953876,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953876,
+      "to": 2348953878,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953878,
+      "to": 2348953880,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953880,
+      "to": 2348953882,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953882,
+      "to": 2348953884,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953884,
+      "to": 2348953886,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953886,
+      "to": 2348953888,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953888,
+      "to": 2348953890,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953890,
+      "to": 2348953892,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953892,
+      "to": 2348953894,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953894,
+      "to": 2348953896,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953896,
+      "to": 2348953898,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953898,
+      "to": 2348953900,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953900,
+      "to": 2348953902,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953902,
+      "to": 2348953904,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953904,
+      "to": 2348953906,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953906,
+      "to": 2348953908,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953908,
+      "to": 2348953910,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953910,
+      "to": 2348953912,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953912,
+      "to": 2348953914,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953914,
+      "to": 2348953916,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953916,
+      "to": 2348953918,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953918,
+      "to": 2348953920,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953920,
+      "to": 2348953922,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953922,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r2"
+    },
+    {
+      "from": 2348953922,
+      "to": 2348953926,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953926,
+      "to": 2348953928,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953928,
+      "to": 2348953930,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953930,
+      "to": 2348953932,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953932,
+      "to": 2348953934,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953934,
+      "to": 2348953936,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953936,
+      "to": 2348953938,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953938,
+      "to": 2348953940,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953940,
+      "to": 2348953942,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953942,
+      "to": 2348953944,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953944,
+      "to": 2348953946,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953946,
+      "to": 2348953948,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953948,
+      "to": 2348953950,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953950,
+      "to": 2348953952,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953952,
+      "to": 2348953954,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953954,
+      "to": 2348953956,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953956,
+      "to": 2348953958,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953958,
+      "to": 2348953960,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953960,
+      "to": 2348953962,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953962,
+      "to": 2348953964,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953964,
+      "to": 2348953966,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953966,
+      "to": 2348953968,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953968,
+      "to": 2348953970,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953970,
+      "to": 2348953972,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953972,
+      "to": 2348953974,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953974,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r3"
+    },
+    {
+      "from": 2348953974,
+      "to": 2348953978,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348953978,
+      "to": 2348953980,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953980,
+      "to": 2348953982,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953982,
+      "to": 2348953984,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953984,
+      "to": 2348953986,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953986,
+      "to": 2348953988,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953988,
+      "to": 2348953990,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953990,
+      "to": 2348953992,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953992,
+      "to": 2348953994,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953994,
+      "to": 2348953996,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953996,
+      "to": 2348953998,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348953998,
+      "to": 2348954000,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954000,
+      "to": null,
+      "kind": "call",
+      "indirect_register": "r3"
+    },
+    {
+      "from": 2348954000,
+      "to": 2348954004,
+      "kind": "return_fallthrough"
+    },
+    {
+      "from": 2348954004,
+      "to": 2348954006,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954006,
+      "to": 2348954008,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954008,
+      "to": 2348954010,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954010,
+      "to": 2348954012,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954012,
+      "to": 2348954014,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954014,
+      "to": 2348954016,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954016,
+      "to": 2348954018,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954018,
+      "to": 2348954020,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954020,
+      "to": 2348954022,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954022,
+      "to": 2348954024,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954024,
+      "to": 2348954026,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954026,
+      "to": 2348954028,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954028,
+      "to": 2348954030,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954030,
+      "to": 2348954032,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954032,
+      "to": 2348954034,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954034,
+      "to": 2348954036,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954036,
+      "to": 2348954038,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954038,
+      "to": 2348954040,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954040,
+      "to": 2348954042,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954042,
+      "to": 2348954044,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954044,
+      "to": 2348954046,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954046,
+      "to": 2348954048,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954048,
+      "to": 2348954050,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954050,
+      "to": 2348954052,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954052,
+      "to": 2348954054,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954054,
+      "to": 2348954056,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954056,
+      "to": 2348954058,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954058,
+      "to": 2348954060,
+      "kind": "fallthrough"
+    },
+    {
+      "from": 2348954060,
+      "to": 2348954062,
+      "kind": "fallthrough"
+    }
+  ],
+  "delay_slots": [
+    2348953798,
+    2348953810,
+    2348953818,
+    2348953834,
+    2348953846,
+    2348953856,
+    2348953866,
+    2348953924,
+    2348953976,
+    2348954002,
+    2348954064
+  ],
+  "warnings": [],
+  "truncated": false,
+  "note": "Static candidates only; indirect jumps, jump tables and function boundaries require review."
+}

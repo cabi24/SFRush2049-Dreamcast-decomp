@@ -1,0 +1,539 @@
+{
+  "scope": "training static trace only; no held-out validation",
+  "fixture": {
+    "src": [
+      1,
+      2,
+      3
+    ],
+    "matrix": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9
+      ]
+    ],
+    "arithmetic_limit": "Small integer-exact products/sums; does not distinguish MAC rounding policies"
+  },
+  "checks": {
+    "row_vs_transposed_negative_control": true,
+    "aliasing_reload_negative_control": true
+  },
+  "BodyVector": {
+    "code_start": "0x8c026b00",
+    "code_end_exclusive": "0x8c026b5e",
+    "src_equals_dst": false,
+    "loads": [
+      {
+        "pc": "0x8c026b08",
+        "address": "0x3008",
+        "value": "m[0][2]"
+      },
+      {
+        "pc": "0x8c026b0c",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b12",
+        "address": "0x3004",
+        "value": "m[0][1]"
+      },
+      {
+        "pc": "0x8c026b16",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026b20",
+        "address": "0x3000",
+        "value": "m[0][0]"
+      },
+      {
+        "pc": "0x8c026b22",
+        "address": "0x1000",
+        "value": "src[0]"
+      },
+      {
+        "pc": "0x8c026b28",
+        "address": "0x3014",
+        "value": "m[1][2]"
+      },
+      {
+        "pc": "0x8c026b2c",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b2e",
+        "address": "0x3010",
+        "value": "m[1][1]"
+      },
+      {
+        "pc": "0x8c026b32",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026b36",
+        "address": "0x300c",
+        "value": "m[1][0]"
+      },
+      {
+        "pc": "0x8c026b38",
+        "address": "0x1000",
+        "value": "src[0]"
+      },
+      {
+        "pc": "0x8c026b42",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b46",
+        "address": "0x3020",
+        "value": "m[2][2]"
+      },
+      {
+        "pc": "0x8c026b4a",
+        "address": "0x301c",
+        "value": "m[2][1]"
+      },
+      {
+        "pc": "0x8c026b50",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026b54",
+        "address": "0x3018",
+        "value": "m[2][0]"
+      },
+      {
+        "pc": "0x8c026b56",
+        "address": "0x1000",
+        "value": "src[0]"
+      }
+    ],
+    "operations": [
+      {
+        "pc": "0x8c026b14",
+        "op": "FMUL",
+        "expression": "MUL(m[0][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b1e",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[0][1],MUL(m[0][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b24",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b30",
+        "op": "FMUL",
+        "expression": "MUL(m[1][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b34",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[1][1],MUL(m[1][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b3c",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b4e",
+        "op": "FMUL",
+        "expression": "MUL(m[2][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b52",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[2][1],MUL(m[2][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b58",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[2][0],MAC(src[1],m[2][1],MUL(m[2][2],src[2])))"
+      }
+    ],
+    "stores": [
+      {
+        "pc": "0x8c026b26",
+        "destination_index": 0,
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))",
+        "integer_exact_fixture": 14
+      },
+      {
+        "pc": "0x8c026b3e",
+        "destination_index": 1,
+        "expression": "MAC(src[0],m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2])))",
+        "integer_exact_fixture": 32
+      },
+      {
+        "pc": "0x8c026b5c",
+        "destination_index": 2,
+        "expression": "MAC(src[0],m[2][0],MAC(src[1],m[2][1],MUL(m[2][2],src[2])))",
+        "integer_exact_fixture": 50
+      }
+    ],
+    "result": [
+      14,
+      32,
+      50
+    ]
+  },
+  "BodyVector_src_eq_dst": {
+    "code_start": "0x8c026b00",
+    "code_end_exclusive": "0x8c026b5e",
+    "src_equals_dst": true,
+    "loads": [
+      {
+        "pc": "0x8c026b08",
+        "address": "0x3008",
+        "value": "m[0][2]"
+      },
+      {
+        "pc": "0x8c026b0c",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b12",
+        "address": "0x3004",
+        "value": "m[0][1]"
+      },
+      {
+        "pc": "0x8c026b16",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026b20",
+        "address": "0x3000",
+        "value": "m[0][0]"
+      },
+      {
+        "pc": "0x8c026b22",
+        "address": "0x1000",
+        "value": "src[0]"
+      },
+      {
+        "pc": "0x8c026b28",
+        "address": "0x3014",
+        "value": "m[1][2]"
+      },
+      {
+        "pc": "0x8c026b2c",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b2e",
+        "address": "0x3010",
+        "value": "m[1][1]"
+      },
+      {
+        "pc": "0x8c026b32",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026b36",
+        "address": "0x300c",
+        "value": "m[1][0]"
+      },
+      {
+        "pc": "0x8c026b38",
+        "address": "0x1000",
+        "value": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b42",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026b46",
+        "address": "0x3020",
+        "value": "m[2][2]"
+      },
+      {
+        "pc": "0x8c026b4a",
+        "address": "0x301c",
+        "value": "m[2][1]"
+      },
+      {
+        "pc": "0x8c026b50",
+        "address": "0x1004",
+        "value": "MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b54",
+        "address": "0x3018",
+        "value": "m[2][0]"
+      },
+      {
+        "pc": "0x8c026b56",
+        "address": "0x1000",
+        "value": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))"
+      }
+    ],
+    "operations": [
+      {
+        "pc": "0x8c026b14",
+        "op": "FMUL",
+        "expression": "MUL(m[0][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b1e",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[0][1],MUL(m[0][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b24",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b30",
+        "op": "FMUL",
+        "expression": "MUL(m[1][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b34",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[1][1],MUL(m[1][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b3c",
+        "op": "FMAC",
+        "expression": "MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2])))"
+      },
+      {
+        "pc": "0x8c026b4e",
+        "op": "FMUL",
+        "expression": "MUL(m[2][2],src[2])"
+      },
+      {
+        "pc": "0x8c026b52",
+        "op": "FMAC",
+        "expression": "MAC(MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2]))),m[2][1],MUL(m[2][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026b58",
+        "op": "FMAC",
+        "expression": "MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[2][0],MAC(MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2]))),m[2][1],MUL(m[2][2],src[2])))"
+      }
+    ],
+    "stores": [
+      {
+        "pc": "0x8c026b26",
+        "destination_index": 0,
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2])))",
+        "integer_exact_fixture": 14
+      },
+      {
+        "pc": "0x8c026b3e",
+        "destination_index": 1,
+        "expression": "MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2])))",
+        "integer_exact_fixture": 84
+      },
+      {
+        "pc": "0x8c026b5c",
+        "destination_index": 2,
+        "expression": "MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[2][0],MAC(MAC(MAC(src[0],m[0][0],MAC(src[1],m[0][1],MUL(m[0][2],src[2]))),m[1][0],MAC(src[1],m[1][1],MUL(m[1][2],src[2]))),m[2][1],MUL(m[2][2],src[2])))",
+        "integer_exact_fixture": 797
+      }
+    ],
+    "result": [
+      14,
+      84,
+      797
+    ]
+  },
+  "WorldVector_wrong_candidate": {
+    "code_start": "0x8c026b8c",
+    "code_end_exclusive": "0x8c026be4",
+    "src_equals_dst": false,
+    "loads": [
+      {
+        "pc": "0x8c026b9c",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026ba0",
+        "address": "0x3018",
+        "value": "m[2][0]"
+      },
+      {
+        "pc": "0x8c026ba4",
+        "address": "0x300c",
+        "value": "m[1][0]"
+      },
+      {
+        "pc": "0x8c026baa",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026bac",
+        "address": "0x3000",
+        "value": "m[0][0]"
+      },
+      {
+        "pc": "0x8c026bb0",
+        "address": "0x1000",
+        "value": "src[0]"
+      },
+      {
+        "pc": "0x8c026bb6",
+        "address": "0x301c",
+        "value": "m[2][1]"
+      },
+      {
+        "pc": "0x8c026bb8",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026bba",
+        "address": "0x3010",
+        "value": "m[1][1]"
+      },
+      {
+        "pc": "0x8c026bbe",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026bc2",
+        "address": "0x3004",
+        "value": "m[0][1]"
+      },
+      {
+        "pc": "0x8c026bc4",
+        "address": "0x1000",
+        "value": "src[0]"
+      },
+      {
+        "pc": "0x8c026bca",
+        "address": "0x1008",
+        "value": "src[2]"
+      },
+      {
+        "pc": "0x8c026bce",
+        "address": "0x3020",
+        "value": "m[2][2]"
+      },
+      {
+        "pc": "0x8c026bd0",
+        "address": "0x3014",
+        "value": "m[1][2]"
+      },
+      {
+        "pc": "0x8c026bd4",
+        "address": "0x1004",
+        "value": "src[1]"
+      },
+      {
+        "pc": "0x8c026bd8",
+        "address": "0x3008",
+        "value": "m[0][2]"
+      },
+      {
+        "pc": "0x8c026bda",
+        "address": "0x1000",
+        "value": "src[0]"
+      }
+    ],
+    "operations": [
+      {
+        "pc": "0x8c026ba8",
+        "op": "FMUL",
+        "expression": "MUL(m[2][0],src[2])"
+      },
+      {
+        "pc": "0x8c026bae",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[1][0],MUL(m[2][0],src[2]))"
+      },
+      {
+        "pc": "0x8c026bb2",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[1][0],MUL(m[2][0],src[2])))"
+      },
+      {
+        "pc": "0x8c026bbc",
+        "op": "FMUL",
+        "expression": "MUL(m[2][1],src[2])"
+      },
+      {
+        "pc": "0x8c026bc0",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[1][1],MUL(m[2][1],src[2]))"
+      },
+      {
+        "pc": "0x8c026bc6",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[0][1],MAC(src[1],m[1][1],MUL(m[2][1],src[2])))"
+      },
+      {
+        "pc": "0x8c026bd2",
+        "op": "FMUL",
+        "expression": "MUL(m[2][2],src[2])"
+      },
+      {
+        "pc": "0x8c026bd6",
+        "op": "FMAC",
+        "expression": "MAC(src[1],m[1][2],MUL(m[2][2],src[2]))"
+      },
+      {
+        "pc": "0x8c026bdc",
+        "op": "FMAC",
+        "expression": "MAC(src[0],m[0][2],MAC(src[1],m[1][2],MUL(m[2][2],src[2])))"
+      }
+    ],
+    "stores": [
+      {
+        "pc": "0x8c026bb4",
+        "destination_index": 0,
+        "expression": "MAC(src[0],m[0][0],MAC(src[1],m[1][0],MUL(m[2][0],src[2])))",
+        "integer_exact_fixture": 30
+      },
+      {
+        "pc": "0x8c026bc8",
+        "destination_index": 1,
+        "expression": "MAC(src[0],m[0][1],MAC(src[1],m[1][1],MUL(m[2][1],src[2])))",
+        "integer_exact_fixture": 36
+      },
+      {
+        "pc": "0x8c026bde",
+        "destination_index": 2,
+        "expression": "MAC(src[0],m[0][2],MAC(src[1],m[1][2],MUL(m[2][2],src[2])))",
+        "integer_exact_fixture": 42
+      }
+    ],
+    "result": [
+      30,
+      36,
+      42
+    ]
+  }
+}

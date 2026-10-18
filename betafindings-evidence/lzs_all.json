@@ -1,0 +1,5377 @@
+[
+  {
+    "build": "San Francisco Rush 2049 (Aug 1, 2000 prototype)",
+    "files": [
+      {
+        "path": "ATTRACT.LZS",
+        "compressed": 703119,
+        "decompressed": 1370388,
+        "sha256": "6797815766ee0906331d20f27c7902e8a26c751e5472c8e2ed60f08401e90295",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 366645,
+            "text": "[.c.c/c.c/c.c/c/c/c/c/c/c/c/c/cOc/cOcOcPcOcpkpk"
+          },
+          {
+            "offset": 366879,
+            "text": "Z/c/c.cOc.c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/cOc/cOcOcOcOcpkpc"
+          },
+          {
+            "offset": 367365,
+            "text": "[/c.c/c/cOc/c/c/c/c/c/c/c/c/c/c/c/c/c/c.c/c/c/c/c/c/c/c/c/c/c/c/c/cOcOcOcpcpk"
+          },
+          {
+            "offset": 367799,
+            "text": "kpkpkpkpkpcpcpcpkpcpkokpkOcpkOcpkPkpkpkpkOcpk/c.c"
+          },
+          {
+            "offset": 965755,
+            "text": "ZOsOsOs.sOk.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR1.LZS",
+        "compressed": 84255,
+        "decompressed": 159500,
+        "sha256": "457ca9cdd3339c70efe73531bb2c505d9303b7c9a0357891f976fdf3343a4ec7",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 126644,
+            "text": ".....................B.DAYAF.C..EADE2*@2?HGoFX,XW?W[....CECE....CECE,X,YW[W[,Y,YW[W[t"
+          }
+        ]
+      },
+      {
+        "path": "CAR10.LZS",
+        "compressed": 94202,
+        "decompressed": 163524,
+        "sha256": "bbea428735c2452ec6ebfef61ac2f3e7bf3c8dca7fee608241b37fa5c4d0242c",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 70520,
+            "text": "h.h.    "
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ1.LZS",
+        "compressed": 52941,
+        "decompressed": 110140,
+        "sha256": "62f35e21fd74a1f15fdf466e100ff82efac5229a701821dc79500716298641bb",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63352,
+            "text": "h.h.    "
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ10.LZS",
+        "compressed": 47415,
+        "decompressed": 110140,
+        "sha256": "86db962e38b7dfb29493ebc4c04746fe30523c17fc9d5bf10479ee04a4f514a8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78624,
+            "text": "VV:lVV:\\"
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ11.LZS",
+        "compressed": 47415,
+        "decompressed": 110140,
+        "sha256": "86db962e38b7dfb29493ebc4c04746fe30523c17fc9d5bf10479ee04a4f514a8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78624,
+            "text": "VV:lVV:\\"
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ12.LZS",
+        "compressed": 47415,
+        "decompressed": 110140,
+        "sha256": "86db962e38b7dfb29493ebc4c04746fe30523c17fc9d5bf10479ee04a4f514a8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78624,
+            "text": "VV:lVV:\\"
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ2.LZS",
+        "compressed": 52840,
+        "decompressed": 110140,
+        "sha256": "e355b0db8fc126f498b343f3009fa5b2ba4fc5a38c62bfc0feb69192856b3e0b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR10PJ3.LZS",
+        "compressed": 54567,
+        "decompressed": 110140,
+        "sha256": "86f223df6b7a4eedb477baab53a833ca9460f684bad0d816cda7d576a268898c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR10PJ4.LZS",
+        "compressed": 49373,
+        "decompressed": 110140,
+        "sha256": "848057827aee8d047619cb2cfe381d2ad80e9c7b6f7c96e25d913d9ba6736687",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78494,
+            "text": "F%hIp>s.a.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ5.LZS",
+        "compressed": 47415,
+        "decompressed": 110140,
+        "sha256": "86db962e38b7dfb29493ebc4c04746fe30523c17fc9d5bf10479ee04a4f514a8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78624,
+            "text": "VV:lVV:\\"
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ6.LZS",
+        "compressed": 51437,
+        "decompressed": 110140,
+        "sha256": "6afa7edb7424d9d53a5c82d3c73edaab10b03ae2a59dcb975a8f40d4ec241190",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR10PJ7.LZS",
+        "compressed": 53541,
+        "decompressed": 110140,
+        "sha256": "e753e26a4e258bdf9f1799023dfb6406bc94c49c8a26eee8b3e4460da571dc14",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 74001,
+            "text": "d!d.....d..dddd........C!1Cd.d."
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ8.LZS",
+        "compressed": 49212,
+        "decompressed": 110140,
+        "sha256": "8eafe6bf1f6ab488e6be1ad4c2cb3af390042334b1db87f6d675d19dfae74877",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR10PJ9.LZS",
+        "compressed": 47415,
+        "decompressed": 110140,
+        "sha256": "86db962e38b7dfb29493ebc4c04746fe30523c17fc9d5bf10479ee04a4f514a8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 78624,
+            "text": "VV:lVV:\\"
+          }
+        ]
+      },
+      {
+        "path": "CAR11.LZS",
+        "compressed": 97912,
+        "decompressed": 147996,
+        "sha256": "b0d34b6c74e64de8973e2d2a6a06b79530b0ecb5bae2b34ced71bfc4427d33a3",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 38123,
+            "text": "j)R)Rosos-k-k.c.c"
+          },
+          {
+            "offset": 102233,
+            "text": "c.c.cNkNc"
+          },
+          {
+            "offset": 102989,
+            "text": "c.cNknk.cNk-cnk.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ1.LZS",
+        "compressed": 44748,
+        "decompressed": 78572,
+        "sha256": "24490196404067f3575cbd67b5bf4dc482f6dd5ddc54563da4d799e15c7bea8c",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16619,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ10.LZS",
+        "compressed": 44893,
+        "decompressed": 78572,
+        "sha256": "cbff63186863f97470eed81bc6e77264bb33af149d88e0df5c12fe5fa6ed1436",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16611,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ11.LZS",
+        "compressed": 44893,
+        "decompressed": 78572,
+        "sha256": "cbff63186863f97470eed81bc6e77264bb33af149d88e0df5c12fe5fa6ed1436",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16611,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ12.LZS",
+        "compressed": 44893,
+        "decompressed": 78572,
+        "sha256": "cbff63186863f97470eed81bc6e77264bb33af149d88e0df5c12fe5fa6ed1436",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16611,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ2.LZS",
+        "compressed": 44131,
+        "decompressed": 78572,
+        "sha256": "cf6e4e67f3e70dcddcad7ea5c149faeb1054cb4447e49f2a7bc490f1429578a7",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 2100,
+            "text": ".C/DReSfu"
+          },
+          {
+            "offset": 16551,
+            "text": "{NkNknsns.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ3.LZS",
+        "compressed": 44502,
+        "decompressed": 78572,
+        "sha256": "8f59d8d4795d94027a9e42f07977c9e9160795f58f31073c7cb1e1c14ef35ad0",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16627,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ4.LZS",
+        "compressed": 44828,
+        "decompressed": 78572,
+        "sha256": "f900f4210e839a8855fd441312fc043d6b780045d3df8b0e63f5aac23e04e302",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 5063,
+            "text": "+E!E!.c.c"
+          },
+          {
+            "offset": 13915,
+            "text": "lllllYlQlllll OMO:\\OZ= =;LZLZQlQlllllQlQlllll"
+          },
+          {
+            "offset": 16655,
+            "text": "jnsnsnsns.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ5.LZS",
+        "compressed": 45450,
+        "decompressed": 78572,
+        "sha256": "a603fd530b9cb64a5a8a03e3da988e6c6fdd1693cb40df634dfbdacdf6719e30",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16611,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ6.LZS",
+        "compressed": 43598,
+        "decompressed": 78572,
+        "sha256": "1208ba7103ad7469aa943d17cbd6a495b28ee7c1851a5df42f58ee751ca13b26",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16635,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ7.LZS",
+        "compressed": 54726,
+        "decompressed": 78572,
+        "sha256": "ff552a407c60dfbda6216bc4e8352905f32dedab5d42b1e71e468f074540bba5",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 17183,
+            "text": "9c!c!c!c!.c.cOkOk"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ8.LZS",
+        "compressed": 44270,
+        "decompressed": 78572,
+        "sha256": "6c2dc5874f4d2f3aa76f7dc140fed58e71b4d11ca69a717a712839f4855551b9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR11PJ9.LZS",
+        "compressed": 44893,
+        "decompressed": 78572,
+        "sha256": "cbff63186863f97470eed81bc6e77264bb33af149d88e0df5c12fe5fa6ed1436",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16611,
+            "text": "j)R)Rosos-k-k.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR12.LZS",
+        "compressed": 85602,
+        "decompressed": 146588,
+        "sha256": "07f94927b65f8e40d32874ff6a6796cdb886f377091b56e3a09d6a122727a588",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ1.LZS",
+        "compressed": 48904,
+        "decompressed": 96620,
+        "sha256": "cf90ca021950f451b5c57e2663bbdd8e5b9f2da0f5a195eb3bde2a063dab22af",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 25381,
+            "text": "c3cJ[I[c.c"
+          },
+          {
+            "offset": 52122,
+            "text": "c.$'#'c.c.#"
+          },
+          {
+            "offset": 53060,
+            "text": ".2.c..02"
+          }
+        ]
+      },
+      {
+        "path": "CAR12PJ10.LZS",
+        "compressed": 49143,
+        "decompressed": 96620,
+        "sha256": "1d6528cf16b957af4f5fd5adb50c5b6a2bf52c66985f5acf5ad8cb20b1b949c7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ11.LZS",
+        "compressed": 49143,
+        "decompressed": 96620,
+        "sha256": "1d6528cf16b957af4f5fd5adb50c5b6a2bf52c66985f5acf5ad8cb20b1b949c7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ12.LZS",
+        "compressed": 49143,
+        "decompressed": 96620,
+        "sha256": "1d6528cf16b957af4f5fd5adb50c5b6a2bf52c66985f5acf5ad8cb20b1b949c7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ2.LZS",
+        "compressed": 49009,
+        "decompressed": 96620,
+        "sha256": "e30425f3a77912894baee0c699f10bbf8f6c3f57e8354d33539fb6ff0d78ab7e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ3.LZS",
+        "compressed": 49581,
+        "decompressed": 96620,
+        "sha256": "efd0fcee94cfc0cfc10a63842e6e7b33b51091919c071cd99183a662344a63f1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ4.LZS",
+        "compressed": 48987,
+        "decompressed": 96620,
+        "sha256": "8056676543816720b74e637caf59c52b457b9657e84fe48917cc74b06cdbac59",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ5.LZS",
+        "compressed": 49143,
+        "decompressed": 96620,
+        "sha256": "1d6528cf16b957af4f5fd5adb50c5b6a2bf52c66985f5acf5ad8cb20b1b949c7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ6.LZS",
+        "compressed": 48941,
+        "decompressed": 96620,
+        "sha256": "fc6f2f051a80f53c0dba590a241daf18e10c12a7ebe6f8512285a3550bfa2bbd",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ7.LZS",
+        "compressed": 49290,
+        "decompressed": 96620,
+        "sha256": "9ba3bb52bf4d0c6d9f902bd254b15fa73dc2b44e5b5df5dc339d274f0ea412e6",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ8.LZS",
+        "compressed": 47732,
+        "decompressed": 96620,
+        "sha256": "2e906afc0187b2c03cfd1c0abdfa79cecc001b6991b5e7f17603763eaad0024a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ9.LZS",
+        "compressed": 49143,
+        "decompressed": 96620,
+        "sha256": "1d6528cf16b957af4f5fd5adb50c5b6a2bf52c66985f5acf5ad8cb20b1b949c7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13.LZS",
+        "compressed": 82454,
+        "decompressed": 146708,
+        "sha256": "d30f31e5645470f0241bf348b66a31962f1d41167b4f0367a2e4c9072bdda2d4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ1.LZS",
+        "compressed": 47329,
+        "decompressed": 99692,
+        "sha256": "a51a9313170bcf28f3f6a0d5ab61d8e23f1052f25d9389760fab2575ee1df340",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ10.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR13PJ11.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR13PJ12.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR13PJ2.LZS",
+        "compressed": 43775,
+        "decompressed": 99692,
+        "sha256": "23783444135fa7c2003f5be4f5d968ee49b12fce917c43762ac0ae9c1c032ef5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ3.LZS",
+        "compressed": 44618,
+        "decompressed": 99692,
+        "sha256": "e641d3fa2d07c192c4517e5e113135af131c525920761da6ab084860ee3e2bff",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ4.LZS",
+        "compressed": 42589,
+        "decompressed": 99692,
+        "sha256": "69eb8dceb4e5b246a5f67b269a5c2809bbca5b7521dc7ff86039bb8308afcb71",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ5.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR13PJ6.LZS",
+        "compressed": 42652,
+        "decompressed": 99692,
+        "sha256": "37544fe446f3bfc01e5982e89ffd2a132853850c780a06b7659b99087ac97144",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 91860,
+            "text": "TCTTU.U.....U.C....."
+          },
+          {
+            "offset": 93976,
+            "text": "C.C},U..C}C}.-}."
+          },
+          {
+            "offset": 94049,
+            "text": ".C.-....U}UU.UU}.}}UU.U........U.UU..U."
+          },
+          {
+            "offset": 94139,
+            "text": "TTTTTTTTTTTTT}}}}}.}}}}.}}}}}UU.UUUUU}.}}UU}.C}TC}}}}TTTTC}TC}}}}}}}}}}}}}}}}"
+          }
+        ]
+      },
+      {
+        "path": "CAR13PJ7.LZS",
+        "compressed": 47923,
+        "decompressed": 99692,
+        "sha256": "b3cdcc92e52a67acfa5a2ed58417199bbec5b25bdfc7b71785d99b640bc9c7e8",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ8.LZS",
+        "compressed": 42425,
+        "decompressed": 99692,
+        "sha256": "c0895164ea55184a0fa1f8b561112b2a43ed41ef33718039acffa3f6e95a98f1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ9.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ1.LZS",
+        "compressed": 43716,
+        "decompressed": 120252,
+        "sha256": "ff0bd18eac446a00f4da3592cb56dd40e7d2df052f2bd3727cd3a078380096ef",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR1PJ10.LZS",
+        "compressed": 44461,
+        "decompressed": 120252,
+        "sha256": "1eab9bc5fd0c030cba3f3749e5878aa4d37ceae2662a7c19b362598bd5adf249",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63791,
+            "text": ";--;;;;..H+-8ZH:--H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ11.LZS",
+        "compressed": 44461,
+        "decompressed": 120252,
+        "sha256": "1eab9bc5fd0c030cba3f3749e5878aa4d37ceae2662a7c19b362598bd5adf249",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63791,
+            "text": ";--;;;;..H+-8ZH:--H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ12.LZS",
+        "compressed": 44461,
+        "decompressed": 120252,
+        "sha256": "1eab9bc5fd0c030cba3f3749e5878aa4d37ceae2662a7c19b362598bd5adf249",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63791,
+            "text": ";--;;;;..H+-8ZH:--H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ2.LZS",
+        "compressed": 44656,
+        "decompressed": 120252,
+        "sha256": "0c4be4e13009ad21c596f80b692d0d794f5338e5bb98ad0640eaaac9ac4dd2da",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR1PJ3.LZS",
+        "compressed": 45146,
+        "decompressed": 120252,
+        "sha256": "4cb25dfad5f12702486e7dcfa8ee4153635236fde72a0d9fe7458006e396385c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR1PJ4.LZS",
+        "compressed": 45594,
+        "decompressed": 120252,
+        "sha256": "5afd3f10cc3c43ea0b141ed9a9a803059e2b8ff90ee5e98447344bf4cc4a20e3",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 16807,
+            "text": "Fb6c6b6c6a.a.a.a.A.a.A.a.c>c6c>c6"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ5.LZS",
+        "compressed": 46053,
+        "decompressed": 120252,
+        "sha256": "602245247f555383d4c0de3014521a0afc5abb85254c9d38556ac08439864ecb",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63791,
+            "text": ";--;;;;..H+-8ZH:--H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ6.LZS",
+        "compressed": 40627,
+        "decompressed": 117132,
+        "sha256": "39ec84b517ebe2b16774f95b1a0f5d9e46469dc84d578483ab6f5ab268509921",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR1PJ7.LZS",
+        "compressed": 43154,
+        "decompressed": 117132,
+        "sha256": "b3efcfdf50db043ecb41d11b8b559f8aaa14eaddd586cf1949908830e3eda161",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 64787,
+            "text": "3C.C................."
+          },
+          {
+            "offset": 64819,
+            "text": "3C.C................./"
+          },
+          {
+            "offset": 64913,
+            "text": "3z3C.C................."
+          },
+          {
+            "offset": 64939,
+            "text": "3C.C.1313C.C................./"
+          },
+          {
+            "offset": 65287,
+            "text": "~1313C.C.13_3C.C..............EE"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ8.LZS",
+        "compressed": 29219,
+        "decompressed": 110940,
+        "sha256": "c188e220ebf347fa85783d5dc0de1ede439d8cddbe580e14826a0253a2e41dee",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR1PJ9.LZS",
+        "compressed": 44461,
+        "decompressed": 120252,
+        "sha256": "1eab9bc5fd0c030cba3f3749e5878aa4d37ceae2662a7c19b362598bd5adf249",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 63791,
+            "text": ";--;;;;..H+-8ZH:--H"
+          }
+        ]
+      },
+      {
+        "path": "CAR2.LZS",
+        "compressed": 84470,
+        "decompressed": 150108,
+        "sha256": "1b381404b1938661bd8ed07bac807491d931468814f3f6d38786305b5a01e8e3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ1.LZS",
+        "compressed": 42893,
+        "decompressed": 99532,
+        "sha256": "7c629ffbcf502a0e756d2030be7abf3e995a8f1a7785333832840d8bb87ba4a5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ10.LZS",
+        "compressed": 43041,
+        "decompressed": 99532,
+        "sha256": "6659495355892a1f37b468a7669db6d90789869217e65c86a01cef8898ea94bc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ11.LZS",
+        "compressed": 43041,
+        "decompressed": 99532,
+        "sha256": "6659495355892a1f37b468a7669db6d90789869217e65c86a01cef8898ea94bc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ12.LZS",
+        "compressed": 43041,
+        "decompressed": 99532,
+        "sha256": "6659495355892a1f37b468a7669db6d90789869217e65c86a01cef8898ea94bc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ2.LZS",
+        "compressed": 43269,
+        "decompressed": 99532,
+        "sha256": "edd6f6d79082f629f90a30e76d7b8f845a9dedfbc58f50d15de811e6aab54d27",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ3.LZS",
+        "compressed": 43610,
+        "decompressed": 99532,
+        "sha256": "75ad472eeac1bf4abeca2141960943052b8b3602167b6d72e44c30037624de5f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ4.LZS",
+        "compressed": 43799,
+        "decompressed": 99532,
+        "sha256": "76c1e4cfabfdbfd28c065798a559a3e2eac854bc7d821615ba81c67bee008c80",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ5.LZS",
+        "compressed": 43041,
+        "decompressed": 99532,
+        "sha256": "6659495355892a1f37b468a7669db6d90789869217e65c86a01cef8898ea94bc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ6.LZS",
+        "compressed": 43781,
+        "decompressed": 99532,
+        "sha256": "7b22560a32874abb7c5c6e0323c26e2b6db0daa14d070e76ed7831a52ef3d87f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ7.LZS",
+        "compressed": 45633,
+        "decompressed": 99532,
+        "sha256": "3fad101e94208aa72ad76c1bf4e4fc91114cca27180d1fdaf331ba5b67544cc0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ8.LZS",
+        "compressed": 44359,
+        "decompressed": 99532,
+        "sha256": "be4bf50cf9f8e110deb44584e0b58cb687a6a2aa0fe7d5c37a1eb3dcf56e1411",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ9.LZS",
+        "compressed": 43041,
+        "decompressed": 99532,
+        "sha256": "6659495355892a1f37b468a7669db6d90789869217e65c86a01cef8898ea94bc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3.LZS",
+        "compressed": 69544,
+        "decompressed": 116692,
+        "sha256": "eb5cf34ff9d88614b3cb1282aa3aaf878874bc24a31e9660fe70e61c30b8b188",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ1.LZS",
+        "compressed": 16208,
+        "decompressed": 32300,
+        "sha256": "626542c91a8f6c03fa76b826f9ccbe0664fb1f9fa41db8a94cb57860cd577432",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ10.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ11.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ12.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ2.LZS",
+        "compressed": 15435,
+        "decompressed": 30252,
+        "sha256": "78a6350c1b2fe495ade2b044137c6db4bf7080b47b99e55d6a6e1476e726d06d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ3.LZS",
+        "compressed": 15951,
+        "decompressed": 30252,
+        "sha256": "eaecbda08181a51e501b372b36ab6ec4f7344a3f0adce2328f5e5c270db55192",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ4.LZS",
+        "compressed": 15875,
+        "decompressed": 30252,
+        "sha256": "34788623a272d865a20372eaba9c16463f8c9403c9d0088da43fd797643b8723",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ5.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ6.LZS",
+        "compressed": 16166,
+        "decompressed": 32300,
+        "sha256": "1e5ae40d6f0f7753e1ed05a5e233251d3e7d30f4ec6fec1943a7172226e4f278",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ7.LZS",
+        "compressed": 16140,
+        "decompressed": 30252,
+        "sha256": "780910da485a13e8b233050ff463b15edb177b6dbf467b2a7997e900d5250db3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ8.LZS",
+        "compressed": 16128,
+        "decompressed": 32300,
+        "sha256": "63fed0c74513c08f2be272e611d6029fde3774fed1520f01c4cfc16697c20d83",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ9.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4.LZS",
+        "compressed": 86848,
+        "decompressed": 143836,
+        "sha256": "a3ea4cfdf82e1c7bca94b26ba431aaa1e6bb15f284a688c71655d127be408128",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 5745,
+            "text": "9*BkJ*B.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR4PJ1.LZS",
+        "compressed": 43810,
+        "decompressed": 86684,
+        "sha256": "07200fc02f2e0943215a6efb038e794b51b940a64f77db5eb76594c595d90de2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ10.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ11.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ12.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ2.LZS",
+        "compressed": 43567,
+        "decompressed": 86684,
+        "sha256": "4480b61e4ee01c6d99a2545c7536c8740310ea159124ee7760faf2b568345b5c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ3.LZS",
+        "compressed": 46513,
+        "decompressed": 86684,
+        "sha256": "9aadeb0d382c5cbf80bec4e89d2ac61b322b8c815ff8334a856f9b900b1bacdc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ4.LZS",
+        "compressed": 45617,
+        "decompressed": 86684,
+        "sha256": "1af962810cf169f34efbe84c84aa8e0d46200fbf61e7f78d2b6f29464288cea0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ5.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ6.LZS",
+        "compressed": 35505,
+        "decompressed": 93340,
+        "sha256": "e9b423354c429acb044a65604e1dcd26fe43ae5b18682ff5d947ad278646822a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ7.LZS",
+        "compressed": 42770,
+        "decompressed": 86684,
+        "sha256": "c74e25c9c2fda50565e31d10431e725406f19535b2487b96bc48d8c83f9304c1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ8.LZS",
+        "compressed": 35014,
+        "decompressed": 86684,
+        "sha256": "5e88caac0d265f8761b6f01a6118b2bae14d720dab6b58cec9ae7d223d08a178",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4PJ9.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5.LZS",
+        "compressed": 75690,
+        "decompressed": 145804,
+        "sha256": "2ab953e0d69e7b0e8b1ed0df570e2900fe6d8e64a09225928d14fd677c3f5597",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ1.LZS",
+        "compressed": 24711,
+        "decompressed": 92460,
+        "sha256": "59b3ea1d18c07c340573c35b7b9b8d691c7dcfdd4946716e0d5d1c0060578e3b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ10.LZS",
+        "compressed": 26826,
+        "decompressed": 92460,
+        "sha256": "2fc4891249fe714ba1bf0c57f67b706c6727c3e2f426cafe24716dce180f8886",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ11.LZS",
+        "compressed": 26826,
+        "decompressed": 92460,
+        "sha256": "2fc4891249fe714ba1bf0c57f67b706c6727c3e2f426cafe24716dce180f8886",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ12.LZS",
+        "compressed": 26826,
+        "decompressed": 92460,
+        "sha256": "2fc4891249fe714ba1bf0c57f67b706c6727c3e2f426cafe24716dce180f8886",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ2.LZS",
+        "compressed": 29949,
+        "decompressed": 92460,
+        "sha256": "55a9980f9eaa919f0ca3423191bcd64b93e4d748d7df9ccbcdd9d9aa6fc4ce60",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ3.LZS",
+        "compressed": 30626,
+        "decompressed": 92460,
+        "sha256": "e881e0db5f1d4fa0814a40c9299078d564599beb80e380cbd4787ea9ba1c0006",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ4.LZS",
+        "compressed": 35219,
+        "decompressed": 92460,
+        "sha256": "7f98d1735dee625a04f494efba2488f3a5411e75dee49634fd7da38921a881f9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ5.LZS",
+        "compressed": 26826,
+        "decompressed": 92460,
+        "sha256": "2fc4891249fe714ba1bf0c57f67b706c6727c3e2f426cafe24716dce180f8886",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ6.LZS",
+        "compressed": 28432,
+        "decompressed": 92460,
+        "sha256": "72ed15c0ad98f81bdf07cd65f9d51009eab4b352451aa6a444ce6eca2210118a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ7.LZS",
+        "compressed": 27734,
+        "decompressed": 92460,
+        "sha256": "54cacabbd83325749335f2981ec85db38c49c4b0d3d6965587de3195fc8aede3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ8.LZS",
+        "compressed": 26933,
+        "decompressed": 92460,
+        "sha256": "1c5c3b182c133098045955183bd1d97b5ef167b5fa3ab3ca4883e9da8b9e3670",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ9.LZS",
+        "compressed": 26826,
+        "decompressed": 92460,
+        "sha256": "2fc4891249fe714ba1bf0c57f67b706c6727c3e2f426cafe24716dce180f8886",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6.LZS",
+        "compressed": 88370,
+        "decompressed": 158052,
+        "sha256": "a0d5c3ba18611c76a658ed7e84f4be3c8c07517cc8640022871bcaefd794a653",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ1.LZS",
+        "compressed": 27911,
+        "decompressed": 73740,
+        "sha256": "51e08a78f5aae9cc58fb5eca99120d4915bb21c8c066d71c00691677ddda8acc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ10.LZS",
+        "compressed": 27426,
+        "decompressed": 73740,
+        "sha256": "204425926297fff7fd8b31bd80bd3c99d127abee57544f8d10d95040d36ff520",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ11.LZS",
+        "compressed": 27426,
+        "decompressed": 73740,
+        "sha256": "204425926297fff7fd8b31bd80bd3c99d127abee57544f8d10d95040d36ff520",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ12.LZS",
+        "compressed": 27426,
+        "decompressed": 73740,
+        "sha256": "204425926297fff7fd8b31bd80bd3c99d127abee57544f8d10d95040d36ff520",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ2.LZS",
+        "compressed": 29655,
+        "decompressed": 73740,
+        "sha256": "1b7ce1fef25593330b3a0f335e9784f7ff85ca43e6b4c15d2df9906f09c40536",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ3.LZS",
+        "compressed": 31739,
+        "decompressed": 73740,
+        "sha256": "47ab35a282ae8acc1d9dfcb23fd90490e09edf58f37e94260834752d2b61ab4a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ4.LZS",
+        "compressed": 26757,
+        "decompressed": 73740,
+        "sha256": "1c803e084cc6eceb5b0aa6f013ff318a037f6c0fc43f2f44731ad5660c315bef",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ5.LZS",
+        "compressed": 27426,
+        "decompressed": 73740,
+        "sha256": "204425926297fff7fd8b31bd80bd3c99d127abee57544f8d10d95040d36ff520",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ6.LZS",
+        "compressed": 23170,
+        "decompressed": 73740,
+        "sha256": "6795baa1cd5e4b0e1880145dd097fb681f50efb4cb570c16b9941f39845bd6f1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ7.LZS",
+        "compressed": 27866,
+        "decompressed": 73740,
+        "sha256": "2ae5daa6d10b862613e7f8474e62d6777d927b7c9662f5af0b09052401ff365f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ8.LZS",
+        "compressed": 29281,
+        "decompressed": 73740,
+        "sha256": "c396997962a3af80a8181a794c575db615c6c2ad894a1191f213b27d1e4cb960",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ9.LZS",
+        "compressed": 27426,
+        "decompressed": 73740,
+        "sha256": "204425926297fff7fd8b31bd80bd3c99d127abee57544f8d10d95040d36ff520",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7.LZS",
+        "compressed": 68122,
+        "decompressed": 129388,
+        "sha256": "5fe1b93c85c2815787aa597eae85b19fe24252b8d38266a893df9c2ddeb3f92f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ1.LZS",
+        "compressed": 30386,
+        "decompressed": 83612,
+        "sha256": "6f5445c821da30c3694204f239f48354fe40631ea9f26f636d3e5c99a9b88ff7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ10.LZS",
+        "compressed": 30941,
+        "decompressed": 83612,
+        "sha256": "a7cf91f2af7228836e86f7a2e6c4064b0de39b51ae1e25cc9fa82bf6e072993f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ11.LZS",
+        "compressed": 30941,
+        "decompressed": 83612,
+        "sha256": "a7cf91f2af7228836e86f7a2e6c4064b0de39b51ae1e25cc9fa82bf6e072993f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ12.LZS",
+        "compressed": 30941,
+        "decompressed": 83612,
+        "sha256": "a7cf91f2af7228836e86f7a2e6c4064b0de39b51ae1e25cc9fa82bf6e072993f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ2.LZS",
+        "compressed": 30819,
+        "decompressed": 83612,
+        "sha256": "4cc651278dd2bacbd01bddadee42fc9cadf1e0405595393a428f5762ab8d489b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ3.LZS",
+        "compressed": 35267,
+        "decompressed": 83612,
+        "sha256": "c2d16f02f5c5cca4f30854fdbd4aafb0d6db05c38749a1ab505384bd89b6f0f2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ4.LZS",
+        "compressed": 32971,
+        "decompressed": 83612,
+        "sha256": "934b2d36b89a5c2119fb917b32220cab848190d4e3892a4f5bbf0f5cdd2653f8",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ5.LZS",
+        "compressed": 30941,
+        "decompressed": 83612,
+        "sha256": "a7cf91f2af7228836e86f7a2e6c4064b0de39b51ae1e25cc9fa82bf6e072993f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ6.LZS",
+        "compressed": 32892,
+        "decompressed": 83612,
+        "sha256": "d6c08480b7feb6add68f59251e9532d434db80bc221af870c36ecb15c4c9817b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ7.LZS",
+        "compressed": 30652,
+        "decompressed": 83612,
+        "sha256": "4f9fb6b040c8d51ce52069ab929d09ca508a136ce050445ef4b3a5405393bf3b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ8.LZS",
+        "compressed": 40361,
+        "decompressed": 83612,
+        "sha256": "6e00048c6789cff15e1b76bc131acffb13b1b1676f4fe2460fa12c076a567216",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ9.LZS",
+        "compressed": 30941,
+        "decompressed": 83612,
+        "sha256": "a7cf91f2af7228836e86f7a2e6c4064b0de39b51ae1e25cc9fa82bf6e072993f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8.LZS",
+        "compressed": 72074,
+        "decompressed": 133388,
+        "sha256": "3faee581add6423e2a58267caa1bd3fea727626d28d014cf0b508b0a1f9370bd",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ1.LZS",
+        "compressed": 37196,
+        "decompressed": 85148,
+        "sha256": "79fd4a0864ff069702f175f3360866107fe940cfda9290c361611049bc18a2e1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ10.LZS",
+        "compressed": 31158,
+        "decompressed": 85148,
+        "sha256": "e9b3d8e871f9b1a7142247018727271937b2e12979eca582d3810d6fc02da616",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ11.LZS",
+        "compressed": 31158,
+        "decompressed": 85148,
+        "sha256": "e9b3d8e871f9b1a7142247018727271937b2e12979eca582d3810d6fc02da616",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ12.LZS",
+        "compressed": 31158,
+        "decompressed": 85148,
+        "sha256": "e9b3d8e871f9b1a7142247018727271937b2e12979eca582d3810d6fc02da616",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ2.LZS",
+        "compressed": 35643,
+        "decompressed": 85148,
+        "sha256": "610daec53516bb9c97aa1d5d681a631fd8ed2ad53a6686b903f642f4675e782f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ3.LZS",
+        "compressed": 35987,
+        "decompressed": 85148,
+        "sha256": "c2858aac97c4e16ff3c911f4ead84402daded6f82600d36c21581f2ba8a60938",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ4.LZS",
+        "compressed": 32076,
+        "decompressed": 85148,
+        "sha256": "91f1fcfe6405339f17e73d237440f53988e47ec138a12492efc6d5f9ae025113",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ5.LZS",
+        "compressed": 31158,
+        "decompressed": 85148,
+        "sha256": "e9b3d8e871f9b1a7142247018727271937b2e12979eca582d3810d6fc02da616",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ6.LZS",
+        "compressed": 36981,
+        "decompressed": 85148,
+        "sha256": "57e9eec6460a9efe7defb6ffd29c9c366cacf048f5e19ae1b88e0901c71c45e9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ7.LZS",
+        "compressed": 36616,
+        "decompressed": 85148,
+        "sha256": "dfe5093eca3000561e5965ab61719e096d59efbeea06bd7a851c346e2626e627",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ8.LZS",
+        "compressed": 31460,
+        "decompressed": 85148,
+        "sha256": "4216a70a0f3c5f8e82a6a6dd55030a738785302126a2edaafa37860b4ecf946d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ9.LZS",
+        "compressed": 31158,
+        "decompressed": 85148,
+        "sha256": "e9b3d8e871f9b1a7142247018727271937b2e12979eca582d3810d6fc02da616",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9.LZS",
+        "compressed": 67236,
+        "decompressed": 128140,
+        "sha256": "03d68f3c27020f922eccf502b20fd1651466658bd628017e1c356d27a6baa425",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ1.LZS",
+        "compressed": 30678,
+        "decompressed": 79980,
+        "sha256": "c3258b7c75bc63630a7d0df4dd82040f9cccf20f2a8e1c4d86828fb0f5f32d3f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ10.LZS",
+        "compressed": 29379,
+        "decompressed": 79980,
+        "sha256": "da3a9fe74d3459dd97cdc5787bd529346da92f68194c5b1bbf0cbf4b6d5d11d2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ11.LZS",
+        "compressed": 29379,
+        "decompressed": 79980,
+        "sha256": "da3a9fe74d3459dd97cdc5787bd529346da92f68194c5b1bbf0cbf4b6d5d11d2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ12.LZS",
+        "compressed": 29379,
+        "decompressed": 79980,
+        "sha256": "da3a9fe74d3459dd97cdc5787bd529346da92f68194c5b1bbf0cbf4b6d5d11d2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ2.LZS",
+        "compressed": 31209,
+        "decompressed": 79980,
+        "sha256": "74a12460755da6816b9e1796a65a6a00597e640c321346a794dba30d075af16b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ3.LZS",
+        "compressed": 34012,
+        "decompressed": 79980,
+        "sha256": "45acfc960b61d51a1cc5d04ca979c70e6caaccd5fc90f3d55b10961f81011ee1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ4.LZS",
+        "compressed": 23543,
+        "decompressed": 79980,
+        "sha256": "ad6265a31b88af538a5dba12ed359a5b9a12c6b9dac3c1f0d68a4b0189c8d4f1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ5.LZS",
+        "compressed": 29379,
+        "decompressed": 79980,
+        "sha256": "da3a9fe74d3459dd97cdc5787bd529346da92f68194c5b1bbf0cbf4b6d5d11d2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ6.LZS",
+        "compressed": 30438,
+        "decompressed": 79980,
+        "sha256": "e0552ba51c80b243f402969df924a8ae234b8d75fd8f2887518bdfd3d2324f68",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ7.LZS",
+        "compressed": 32141,
+        "decompressed": 79980,
+        "sha256": "f41e65ecbbd3a8ccdc737e7739ccefdc0cff99d7e0f9c3db4a937544fa60aa03",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ8.LZS",
+        "compressed": 31832,
+        "decompressed": 79980,
+        "sha256": "a866c1bc6d5bbae2d964232d6b84b197e360cccb7de0fc41d073c514bd45714d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ9.LZS",
+        "compressed": 29379,
+        "decompressed": 79980,
+        "sha256": "da3a9fe74d3459dd97cdc5787bd529346da92f68194c5b1bbf0cbf4b6d5d11d2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DEBUGFONTDAT.LZS",
+        "compressed": 5004,
+        "decompressed": 17936,
+        "sha256": "911d0d70bcec4e1bdf09a0249ecb9c57bb7484c1c80fafe59854f424c3ec8f3e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DEBUGFONTTEX.LZS",
+        "compressed": 4728,
+        "decompressed": 18556,
+        "sha256": "4ea71006fb1e9241cda9f0bf91f44debf3ba8e17fe71a0c39b088bf982ed176d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITLGFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "1226f8b9e305c543f459b6ab715e4524cb749282e0b676df08149ac7251598ac",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITLGFONTTEX.LZS",
+        "compressed": 2371,
+        "decompressed": 6268,
+        "sha256": "f61744c056bd46ffda8a28c20336ff5870aa54ea74342f5c6a6633188b407b05",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITMDFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "32878c443f4d6fc61544dc48355880fab0df0b234b504bbcd947ebe4dae352c2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITMDFONTTEX.LZS",
+        "compressed": 1922,
+        "decompressed": 6268,
+        "sha256": "39e05246f5fbfc06bc224ae80d64d93ef2ff7f85147ce57c606b43d289bb6eda",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITSMFONTDAT.LZS",
+        "compressed": 137,
+        "decompressed": 196,
+        "sha256": "87d9bf20f79b06350a8e40b093b77ac1001d94c533bebce7bbfa02b18cbe45e9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITSMFONTTEX.LZS",
+        "compressed": 1269,
+        "decompressed": 3196,
+        "sha256": "dfb047dc778ef9a28e3ae3234e19132142257abbec0e1983cfb3fdd360abd1e3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITXLFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "95cf89b21528c854a5febdb92eaff0c69aa8a45e64a9e2e05e9ff358df1d0129",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITXLFONTTEX.LZS",
+        "compressed": 2576,
+        "decompressed": 6268,
+        "sha256": "8fa01099ce93bf565bc0cb03914c20692d36194ad7b49c1fd0a9f6a6290a3885",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1.LZS",
+        "compressed": 450335,
+        "decompressed": 784772,
+        "sha256": "445eec25de09322825a7683f3bbba9537e88a37f6934f0f0e3f6e825a400dbe4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1PATH.LZS",
+        "compressed": 2419,
+        "decompressed": 4890,
+        "sha256": "76636ccab771fccf91180796a27199bb2758e7a617af0c1bc6fd1a322e2874ee",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1ROAD.LZS",
+        "compressed": 13077,
+        "decompressed": 19061,
+        "sha256": "6ef79544e277522f8a495dbaba5a4464a7116f856b87b1b7af4e47ef7425d3e2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1WORLDS.LZS",
+        "compressed": 1020,
+        "decompressed": 2696,
+        "sha256": "5265e1689b5cdcd18ae71e82b8049a522e455c5dffdac514983a722ce232e31d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM2.LZS",
+        "compressed": 127658,
+        "decompressed": 196444,
+        "sha256": "9e6f9963a319257a74fb96dd4ced49b0dd8aa01c0a71650ea3dddd93deb2b62c",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 170598,
+            "text": "Nc.cNc.c"
+          }
+        ]
+      },
+      {
+        "path": "DM2PATH.LZS",
+        "compressed": 1985,
+        "decompressed": 4416,
+        "sha256": "7dadabd7a38b23cc8a0fd167ca48eab7e7d34b3a1d97335b74b0dec1ddf51687",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM2ROAD.LZS",
+        "compressed": 12418,
+        "decompressed": 18291,
+        "sha256": "a443b53326bfabd7eb3246e10e1f7a96a5233d8991746230fbbed992f602c837",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM2WORLDS.LZS",
+        "compressed": 698,
+        "decompressed": 1840,
+        "sha256": "16e673894e6ec5e35c2e8cb4ce958ed60bac3470a14cc4dbfd9be2aeb77248e5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM3.LZS",
+        "compressed": 390269,
+        "decompressed": 782684,
+        "sha256": "6590680672982dbe6f615f508b3858deec6b717c40c31089bc846ce907dab73a",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 91709,
+            "text": ".rpHq,.'.C>&>6h7_oRhhpBjIhh<!SpQJN"
+          },
+          {
+            "offset": 652349,
+            "text": "qVqCCDC^cCcDD..C^DC[YbY"
+          },
+          {
+            "offset": 671639,
+            "text": "c/c/cNcNcNcNc.c.c"
+          },
+          {
+            "offset": 671691,
+            "text": "|okok.c.c"
+          },
+          {
+            "offset": 671803,
+            "text": "s/k/k-c-cNkNkokok.c.cNkNknknkOkOk"
+          }
+        ]
+      },
+      {
+        "path": "DM3PATH.LZS",
+        "compressed": 1309,
+        "decompressed": 1894,
+        "sha256": "116750a346af7f1077873160d496a9d3d67aaf3c3ba42284d4284bafe2b0a09b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM3ROAD.LZS",
+        "compressed": 22432,
+        "decompressed": 35546,
+        "sha256": "91b86e4d6a7a056508ecc220a60c7a9a426f3783180915131b7104586df00ef0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM3WORLDS.LZS",
+        "compressed": 1040,
+        "decompressed": 2712,
+        "sha256": "6dea8f940e7450f65e933860ada8bcddaa9aa102ea11f0b831acc375be34172d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM4.LZS",
+        "compressed": 538941,
+        "decompressed": 845604,
+        "sha256": "7fe1b9ff7740c6c7af84c1df34d18cf20994c05de9b8fffe48637b88b48cfcff",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM4PATH.LZS",
+        "compressed": 2185,
+        "decompressed": 4764,
+        "sha256": "3f2f0c2af95efbbacbb5a3fd5829cf85f7424898355e79df87921f417d7a25af",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM4ROAD.LZS",
+        "compressed": 8347,
+        "decompressed": 11899,
+        "sha256": "c46ddd6440493fdf18e0f98cd4618bdb418bc007df642b4f82bf3361a5f78bee",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM4WORLDS.LZS",
+        "compressed": 1287,
+        "decompressed": 3440,
+        "sha256": "a86bca80a70142b88ec0dd77945254f7f1d2f0dddad1662c03af9e5498751170",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM5.LZS",
+        "compressed": 753475,
+        "decompressed": 1206180,
+        "sha256": "24e88b14b0131c3450d15c4d02e428a05d476541d6d1607e569fc5085ebfc706",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 206464,
+            "text": "./GgCDED.c"
+          },
+          {
+            "offset": 206569,
+            "text": "f._F[i]==(4T..c>=O"
+          },
+          {
+            "offset": 781390,
+            "text": "w0w-,.C,,"
+          },
+          {
+            "offset": 813145,
+            "text": "V}VC70&-.7.C"
+          }
+        ]
+      },
+      {
+        "path": "DM5PATH.LZS",
+        "compressed": 2428,
+        "decompressed": 5192,
+        "sha256": "69306a1c47db11b695e593dad8f1460e88eb9ba6bcabeebf7cef3bd8597d7e3e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM5ROAD.LZS",
+        "compressed": 11730,
+        "decompressed": 19991,
+        "sha256": "406b82fa1cff4fcfb18b59cd0c90e070baf8a87f7cc7fbc6c85829b6e7e9b5b5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM5WORLDS.LZS",
+        "compressed": 1329,
+        "decompressed": 3520,
+        "sha256": "2664e48112904cf2331962c272ab1f6b6a6b26d760a4fa4334e1dc75492765ac",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM6.LZS",
+        "compressed": 619444,
+        "decompressed": 925828,
+        "sha256": "55954daa1206cf20fb5d8eb97a71807878260913f0385dbfe533a185628d7894",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 673740,
+            "text": "w0w-,.C,,"
+          },
+          {
+            "offset": 705495,
+            "text": "V}VC70&-.7.C"
+          }
+        ]
+      },
+      {
+        "path": "DM6PATH.LZS",
+        "compressed": 2154,
+        "decompressed": 4578,
+        "sha256": "133e1e6ec4c53cc9c3ea3c23303c6491e56ba6b58dfb0ff80bd24464b7e3173c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM6ROAD.LZS",
+        "compressed": 24669,
+        "decompressed": 34990,
+        "sha256": "0349dee0ea5daf17d0c3ddc1ab97286c76032b7ce40ffdc9b46b539118cd5471",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM6WORLDS.LZS",
+        "compressed": 965,
+        "decompressed": 2360,
+        "sha256": "0ae9ff9c3e7e6692b07551bd14d1b0c8abdd6c9f85f8fc7dee163a1c50767c73",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM7.LZS",
+        "compressed": 694221,
+        "decompressed": 1078364,
+        "sha256": "0f1164f95b7d99152789670bcfc798656c6f6af7a76a548beef4f550e59f928e",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 77434,
+            "text": "./GgCDED.c"
+          },
+          {
+            "offset": 77539,
+            "text": "f._F[i]==(4T..c>=O"
+          },
+          {
+            "offset": 257026,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 269418,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 273546,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 273672,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 273918,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[/SOSOSOSOSOSPSPSPSOSOSOSOSOSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSOSOSOSPSPSPSPSOSOSOSOSOSPSOSPSPSpSPSpSpSpSpSpSPSPSPSPSpSpSpSpS"
+          },
+          {
+            "offset": 274678,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 319075,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 320035,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 322921,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 323887,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 470187,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 470241,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 470439,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 470479,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 470495,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 471183,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 471199,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 471247,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 471439,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 471455,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOS/S/S/S/S/S/S/SOSOSOS/"
+          },
+          {
+            "offset": 514087,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 514157,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 514175,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 514640,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 940002,
+            "text": "``_`````_`__```d__`````r`r``rrrr_`__```d_____d_```drrr^^rrrr^^fsrrrra`a`^`r`ata_```_`r`r````rrrrr``r__`_drrr`tr_t`__rrrr__a_rrrs_`Z^````_Wa_dd`d^^^dfsesrdddese\\`dWfdd`dW^^dttatddetestrdtttttttrrrrr`rrsr[r`rrrt``rrrssrrsrqsqs\\errsrrrttttrsrs]r]rsqqs[r[srsrtrq`qsps[rsrqshspssssspppssssp"
+          },
+          {
+            "offset": 1017404,
+            "text": "XU^k^:dm:\\bbj"
+          }
+        ]
+      },
+      {
+        "path": "DM7PATH.LZS",
+        "compressed": 1269,
+        "decompressed": 1840,
+        "sha256": "265c08f9f9c244e1cacf588c3b2fac9bbca9a3250d7474fe796a4a3e6d373fde",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM7ROAD.LZS",
+        "compressed": 9222,
+        "decompressed": 16326,
+        "sha256": "c2a0ae9fe8eb30399f55dbe316853e5ba29305b7fcc948945b8fe80268fefbd1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM7WORLDS.LZS",
+        "compressed": 1043,
+        "decompressed": 2688,
+        "sha256": "9c0c2d08bf37c511cc5a0ae56b010be5f74c641e3ec54e9c957757e2d462a8e4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM8.LZS",
+        "compressed": 471373,
+        "decompressed": 809364,
+        "sha256": "8de2bfe716cf3ef92541e253b4c16be29b5c99ff23953ee97b60f2f5ec2bfa4c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM8PATH.LZS",
+        "compressed": 1229,
+        "decompressed": 1798,
+        "sha256": "1077dcca0d4585e677c9d918f5f1110b18cec19d24f4b05e22c7e998efbd50a1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM8ROAD.LZS",
+        "compressed": 22683,
+        "decompressed": 34305,
+        "sha256": "5d8e6cef6efdcc16fa2d77ddd643d46490730bd3896a65b345282130d6acbc47",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM8WORLDS.LZS",
+        "compressed": 1291,
+        "decompressed": 3304,
+        "sha256": "f9dc74e265b571498a89cd6873a91f521c322ced5ae84b5193244c39809b5711",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HISCORE.LZS",
+        "compressed": 28377,
+        "decompressed": 109852,
+        "sha256": "e510363494fb9a91d69ef5c6fbe020b6fd3d64917c550fcb87be6e21c473ddbe",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUD.LZS",
+        "compressed": 492839,
+        "decompressed": 794524,
+        "sha256": "2f75829ce0b7cf034c3a5d220ef2acf5e5e24032234555ef1cd4f2dfe1b565d6",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 108093,
+            "text": "566'\\MMVuM6I\\\\V\\MNNs\\\\\\5hM\\55N.h"
+          },
+          {
+            "offset": 157320,
+            "text": "cTc:tesT"
+          },
+          {
+            "offset": 472672,
+            "text": ".c)B.c)BjJ"
+          }
+        ]
+      },
+      {
+        "path": "HUDBATTLE.LZS",
+        "compressed": 6221,
+        "decompressed": 13516,
+        "sha256": "033be70ec7ca22483b5c7b468491dc7f74de9ce42406f63e2da47eb76fb9037a",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 2101,
+            "text": "[.c.c/c.c/c.c/c/c/c/c/c/c/c/c/cOc/cOcOcPcOcpkpk"
+          },
+          {
+            "offset": 2335,
+            "text": "Z/c/c.cOc.c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/cOc/cOcOcOcOcpkpc"
+          },
+          {
+            "offset": 2821,
+            "text": "[/c.c/c/cOc/c/c/c/c/c/c/c/c/c/c/c/c/c/c.c/c/c/c/c/c/c/c/c/c/c/c/c/cOcOcOcpcpk"
+          },
+          {
+            "offset": 3255,
+            "text": "kpkpkpkpkpcpcpcpkpcpkokpkOcpkOcpkPkpkpkpkOcpk/c.c"
+          }
+        ]
+      },
+      {
+        "path": "HUDCOM.LZS",
+        "compressed": 51455,
+        "decompressed": 202012,
+        "sha256": "5636f321385a614b084dd10b6c6a2a605b27bc6b9cc99c7875f8f0d91324bc1a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLGFONTDAT.LZS",
+        "compressed": 218,
+        "decompressed": 380,
+        "sha256": "cd1dbaec7db54d1fe85f12a0abb66f973ac8444432acce0beaa33083cdb6081c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLGFONTTEX.LZS",
+        "compressed": 2453,
+        "decompressed": 6268,
+        "sha256": "bc0cbc265fe41450cd4d80b881a7dae9738abf2a80fd8bb882ae014a4c9b5f44",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLOGO.LZS",
+        "compressed": 29333,
+        "decompressed": 67708,
+        "sha256": "fcbbf58cc1bbeb90fd8127de73e9892c5d99655bdc77ab179c77dde79d68a03c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMDFONTDAT.LZS",
+        "compressed": 203,
+        "decompressed": 380,
+        "sha256": "a564040b4372e6184c368a0f67f6d82a3b3461342ef468f89a6bed426f21e850",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMDFONTTEX.LZS",
+        "compressed": 2180,
+        "decompressed": 6268,
+        "sha256": "7bcc3d1ca25fbdef7465d963cd41cbb671587cdbc1804b599b99bac101ea937e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMULTI.LZS",
+        "compressed": 8298,
+        "decompressed": 35084,
+        "sha256": "1d30c95bb9bdd4f647b403efa5015f08d865d853cd0b3a0d39b270c657bf0544",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSMFONTDAT.LZS",
+        "compressed": 189,
+        "decompressed": 380,
+        "sha256": "33659e58e899dc1cca709d59915a803c1fb3da6e1ee3cfc9303fb12586419954",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSMFONTTEX.LZS",
+        "compressed": 1489,
+        "decompressed": 3196,
+        "sha256": "7a5f70dfb8b8a95feecfb18f62a2f572c4084b7349f21f712e5179c31332d02d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSTUNT.LZS",
+        "compressed": 25542,
+        "decompressed": 35220,
+        "sha256": "f541a32b74811ae5bae92d67b77ffae89c8c651debe03ba2fe74272471d93645",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXLFONTDAT.LZS",
+        "compressed": 229,
+        "decompressed": 380,
+        "sha256": "3e98c0cf9294257d6d3fc4e87610313d70bdc13919880222b5ddc323578768af",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXLFONTTEX.LZS",
+        "compressed": 2710,
+        "decompressed": 6268,
+        "sha256": "e4f44a4649be681e536eb0a54343a041a747b7ec7eaeb9bfcecaf2998c90412c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXXLFONTDAT.LZS",
+        "compressed": 228,
+        "decompressed": 380,
+        "sha256": "3e78245e59505ae7eed435332cdb8382a24960efec0bdd801647098f86ae7c33",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXXLFONTTEX.LZS",
+        "compressed": 4502,
+        "decompressed": 18556,
+        "sha256": "5ec9d88293aed095bd1f251d1337a47ac72694bf2fdf3652043521dd847f235e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "INTERFACE.LZS",
+        "compressed": 719435,
+        "decompressed": 3154236,
+        "sha256": "15c6c1df831fb9c489d64907608af33e99da12595cb16b0867649d9a96e978b1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENULGFONTDAT.LZS",
+        "compressed": 2566,
+        "decompressed": 8816,
+        "sha256": "62f239659e2f7d32bb8d225c6a55730d86271494764f4b6ba33ffa6bb9abf03f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENULGFONTTEX.LZS",
+        "compressed": 7072,
+        "decompressed": 18556,
+        "sha256": "89f0444a273192a08a548175907d8c7e5f1b789515590b1b8dace69fa11afe4f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUMDFONTDAT.LZS",
+        "compressed": 2714,
+        "decompressed": 8816,
+        "sha256": "4a044408f5ed1d192242a62edea085aaf548bd88086fd79d62bf09cc5ac04658",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUMDFONTTEX.LZS",
+        "compressed": 6553,
+        "decompressed": 18556,
+        "sha256": "ecdd420c07a6f33bb6df6005bde45def9b23949e3a9bd08ec45a1d7e21d29b71",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUSMFONTDAT.LZS",
+        "compressed": 2260,
+        "decompressed": 8816,
+        "sha256": "920412bd54ac9dbcfdaf792c8a18bfca5cbc81431c86aefa86a2564e152080f9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUSMFONTTEX.LZS",
+        "compressed": 3942,
+        "decompressed": 6268,
+        "sha256": "f76b50ea2b7e13893123b7c5bf878814c00c7a415fbd87bd97b2a0218babe922",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUTITLEFONTDAT.LZS",
+        "compressed": 2779,
+        "decompressed": 8816,
+        "sha256": "f2e8ddd07f4648663c2b7188304536b8a5f3bc53b57964a9536ca8666f500915",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUTITLEFONTTEX.LZS",
+        "compressed": 8376,
+        "decompressed": 18556,
+        "sha256": "ebed09be9ee6e9d6d4d2880de991e8abc50724a6d66a08d1137fc1a36f1941ac",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "OBSTACLE1.LZS",
+        "compressed": 865974,
+        "decompressed": 1467172,
+        "sha256": "6c2c9a3a1821f32ee4f168fc359aed4c570604d64bcf10e2458be0c8abd0da68",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 24185,
+            "text": "V;<VK=&.C"
+          },
+          {
+            "offset": 331314,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 343706,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 347834,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 347960,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 348206,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[/SOSOSOSOSOSPSPSPSOSOSOSOSOSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSOSOSOSPSPSPSPSOSOSOSOSOSPSOSPSPSpSPSpSpSpSpSpSPSPSPSPSpSpSpSpS"
+          },
+          {
+            "offset": 348966,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 393363,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 394323,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 397209,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 398175,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 544475,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 544529,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 544727,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 544767,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 544783,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 545471,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 545487,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 545535,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 545727,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 545743,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOS/S/S/S/S/S/S/SOSOSOS/"
+          },
+          {
+            "offset": 588375,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 588445,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 588463,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 588928,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 1174095,
+            "text": "SOKOK0K0K0K0KPK0CPK0K/KPKOK.CNCNCNCOC.C/C.C/C"
+          },
+          {
+            "offset": 1174719,
+            "text": "C.K.C.C.C"
+          },
+          {
+            "offset": 1174729,
+            "text": "C.C.C.C/KOK/C/C0KPK"
+          }
+        ]
+      },
+      {
+        "path": "OBSTACLE1PATH.LZS",
+        "compressed": 609,
+        "decompressed": 1218,
+        "sha256": "14c08cd54888c30e522bbeb690bede60db8b9180f91775478200470939437544",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "OBSTACLE1ROAD.LZS",
+        "compressed": 85839,
+        "decompressed": 160485,
+        "sha256": "3217903ea57e11742738237a3e41eda203e81d44b0d87828cb115215b469fa56",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "OBSTACLE1WORLDS.LZS",
+        "compressed": 1189,
+        "decompressed": 3016,
+        "sha256": "839a3f97b6f75ca8eeaf084da460a590b43591e9f45b538d557dafab1ac4dfb3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "PAKFONTDAT.LZS",
+        "compressed": 2359,
+        "decompressed": 8816,
+        "sha256": "79f9458a1b710a12f446f5add3ce4d6ef48f2e57e0946c381f1ec7020574442f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "PAKFONTTEX.LZS",
+        "compressed": 6301,
+        "decompressed": 18556,
+        "sha256": "d6cf8f8b5ab6582dfc4348526fc2f51d1e4da4bb69a9c509eaa7c152a66f3519",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELCAR.LZS",
+        "compressed": 215456,
+        "decompressed": 333964,
+        "sha256": "d14931c33f09079c797e5d354c1ea9715a2cbcae9104dece9d4430a0b572dba4",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 194536,
+            "text": "E(6C*DFV?Y+'_pA.h|VDERDMXMR?NW*@-J4J2BF244-4'-)?"
+          }
+        ]
+      },
+      {
+        "path": "SELCIRC.LZS",
+        "compressed": 167709,
+        "decompressed": 711756,
+        "sha256": "f338fdcdf4ee9aa65508190be1c3b8d224da64e1fd3ac1753c1fcb3f850d9053",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELCOM.LZS",
+        "compressed": 30795,
+        "decompressed": 93532,
+        "sha256": "e342c40daad026c50f195c43a675d7836e79a80720235a68a61090c53515e99f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELOPT.LZS",
+        "compressed": 118749,
+        "decompressed": 239596,
+        "sha256": "5ffc1e4b7344e85a468643c378258a64babf445f6162b899f26b85f95701886d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELTRK.LZS",
+        "compressed": 330985,
+        "decompressed": 475756,
+        "sha256": "a8f8d75bf880b2a22942b3d0377f4a695c85bce5609c662ab4859ee1a1fb5034",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97860,
+            "text": ">?C.h{h~"
+          },
+          {
+            "offset": 330557,
+            "text": ";@@C.C0@@P.C..@@0PP@@@P.PA/A+/bOC"
+          },
+          {
+            "offset": 330595,
+            "text": "1A.C.PP@P.+/)@P@/+"
+          },
+          {
+            "offset": 330618,
+            "text": "OCCA..PCA.C"
+          },
+          {
+            "offset": 336744,
+            "text": "ACA.OPOPA.C/O/P/"
+          },
+          {
+            "offset": 336839,
+            "text": ".C/.sPOAOE"
+          }
+        ]
+      },
+      {
+        "path": "STUNT1.LZS",
+        "compressed": 172416,
+        "decompressed": 272540,
+        "sha256": "501a5c10f274317df3e3eec73553ccea53008ba0de62b5ae99245629cefdd985",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT1PATH.LZS",
+        "compressed": 2181,
+        "decompressed": 2952,
+        "sha256": "4a148f7334718e134266ba9279cb8adad079e711b74342555f384d6b517f4ceb",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT1ROAD.LZS",
+        "compressed": 108084,
+        "decompressed": 157711,
+        "sha256": "e686e15b8f88252b9d4ef7822a0bad7ffb9df90415a040bf54a982a2d0fc4e8a",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 8648,
+            "text": "%.6.C.R."
+          }
+        ]
+      },
+      {
+        "path": "STUNT1WORLDS.LZS",
+        "compressed": 1744,
+        "decompressed": 4968,
+        "sha256": "802843a55d2c73c21924984b2310996912410332e82a4bacefac11d4ae482618",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT2.LZS",
+        "compressed": 188615,
+        "decompressed": 319740,
+        "sha256": "dd47f4ef0feca50efe022269f9683746aea41eeb4e05ab42423c65f4e2f58b01",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 126062,
+            "text": "^A^A.h.h"
+          }
+        ]
+      },
+      {
+        "path": "STUNT2PATH.LZS",
+        "compressed": 3938,
+        "decompressed": 4990,
+        "sha256": "846ae1b888248137d928c3a370dfb84a3042917abaf1e7eaeb36653a431ccf52",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT2ROAD.LZS",
+        "compressed": 62872,
+        "decompressed": 101012,
+        "sha256": "81144cccf964a471dd796ee234629a132412bd12f5a67e5cec85f7377d0d61c3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT2WORLDS.LZS",
+        "compressed": 1710,
+        "decompressed": 5392,
+        "sha256": "289dde17d9bf6d14fb41835813a290d999962c3cc491a230362d70cdfdb824c1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT3.LZS",
+        "compressed": 582166,
+        "decompressed": 773516,
+        "sha256": "5b90f718f76dcb2fa4b33f362ac7d4d0bc19dd15d9d440b3966ff6c1a0d077f3",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 125485,
+            "text": "Zos.kNk.c.c"
+          },
+          {
+            "offset": 125741,
+            "text": "c.k.c.k.k.c"
+          },
+          {
+            "offset": 128541,
+            "text": "R.k.k.k.c"
+          },
+          {
+            "offset": 131735,
+            "text": "B\\mo:\\m-B"
+          },
+          {
+            "offset": 509677,
+            "text": "E#9kZ$.H*,Au"
+          }
+        ]
+      },
+      {
+        "path": "STUNT3PATH.LZS",
+        "compressed": 1409,
+        "decompressed": 2044,
+        "sha256": "c520e53f70b534dedae8b7e3bd5e2d7406cc62a2629bc66b4d73b553e46488fd",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT3ROAD.LZS",
+        "compressed": 136002,
+        "decompressed": 167821,
+        "sha256": "93d40ae533d7e905a7d770b1d181a5f45aeeb7cac5d7ebea7ab411e1329fee36",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT3WORLDS.LZS",
+        "compressed": 2432,
+        "decompressed": 5936,
+        "sha256": "54b19c96303710100a0061694fbc79b06a001a5305a0cfd2bfa81b28cdf3bf03",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT4.LZS",
+        "compressed": 326478,
+        "decompressed": 411140,
+        "sha256": "0a235865ea8ca1a3f0ac292dcb642ff701b2b1650e3d982951cb638f5c03a5cd",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 75261,
+            "text": "qGeePGP.h"
+          }
+        ]
+      },
+      {
+        "path": "STUNT4PATH.LZS",
+        "compressed": 1739,
+        "decompressed": 2362,
+        "sha256": "ae3c29dd53430397886530511b33c919b58d0281728ef03f74a023f6c3506143",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT4ROAD.LZS",
+        "compressed": 95253,
+        "decompressed": 136736,
+        "sha256": "81fcae0d4dfd17a97dff433bdf1d992c09ee2ed4a803fb37a489406f0f4426dd",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT4WORLDS.LZS",
+        "compressed": 1890,
+        "decompressed": 5384,
+        "sha256": "3a4b35186066ba04f4634a59cfd68fd376c338fbe116d688d76d9766679fbf82",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETSNOPAK.LZS",
+        "compressed": 8678,
+        "decompressed": 12972,
+        "sha256": "4ab6be86faae60ea4d5ca21c73bd3266714cf22af1bfa994bdc829413b9a27c8",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETST1.LZS",
+        "compressed": 90075,
+        "decompressed": 161500,
+        "sha256": "cb3510077ef97998243191bee6beb8595aae389d4dde886943ca293c8fea4b1c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETST2.LZS",
+        "compressed": 107428,
+        "decompressed": 201796,
+        "sha256": "ced071d24458311ca25b916af00bde093c04d43ae4a98cf6503f37d23f1c2899",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 23420,
+            "text": "/8/9Dx#x///8$$-.$$..C<X;<<;;$$.."
+          }
+        ]
+      },
+      {
+        "path": "TARGETST3.LZS",
+        "compressed": 99194,
+        "decompressed": 169300,
+        "sha256": "0ab511fa0072cff1a9729a110091e8a5da92edee73cf436950572930ab2c4671",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 55735,
+            "text": "lOKOK.K.C"
+          }
+        ]
+      },
+      {
+        "path": "TARGETST4.LZS",
+        "compressed": 83784,
+        "decompressed": 158564,
+        "sha256": "5417f447812965fd511d9fbc71ef21c7042adb4d915d670feb8d810023ebef50",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETST5.LZS",
+        "compressed": 71326,
+        "decompressed": 175188,
+        "sha256": "97c8bcfa2828758e666f144cde50c7c77a402f1d7c12dd425e56616c8319254d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETST6.LZS",
+        "compressed": 64691,
+        "decompressed": 122044,
+        "sha256": "1a9f8d10a66864a6a3e686db0caa8d9438439322bc4202d0a2e3dd90e97b2d3b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TESTFONTDAT.LZS",
+        "compressed": 1674,
+        "decompressed": 8816,
+        "sha256": "cd64fb2e6221de474a0e7887e7a68633a1c15daa5ca91da569e573d2277d552c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TESTFONTTEX.LZS",
+        "compressed": 1846,
+        "decompressed": 3196,
+        "sha256": "68f1b6cf1b5d8b9c4085ce78a0464ba255522d57851f9c2394e5affbb0548c64",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TEXTD.LZS",
+        "compressed": 7285,
+        "decompressed": 12144,
+        "sha256": "d1c06f01db9098ff6b1123ef625cad1bcffc340ba23ba6ed81630ec41459c1cb",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6979,
+            "text": "TESTEN 60 HZ-FREQUENTIE..."
+          },
+          {
+            "offset": 7773,
+            "text": "TEST-BEGELEIDER"
+          },
+          {
+            "offset": 7789,
+            "text": "TEST-SUPERVISIE"
+          },
+          {
+            "offset": 7805,
+            "text": "HOOFDTESTER"
+          },
+          {
+            "offset": 9211,
+            "text": "DEBUGGEN"
+          },
+          {
+            "offset": 9220,
+            "text": "PATH EDITOR"
+          }
+        ]
+      },
+      {
+        "path": "TEXTE.LZS",
+        "compressed": 7007,
+        "decompressed": 11704,
+        "sha256": "f9f98900dc401476e97f4cd2146e3a50573151242327b7184acb6831b6f34c36",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6836,
+            "text": "TESTING 60HZ FREQUENCY..."
+          },
+          {
+            "offset": 7594,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7607,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7623,
+            "text": "LEAD TESTER"
+          },
+          {
+            "offset": 8941,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 11609,
+            "text": "FRAME SCALE"
+          }
+        ]
+      },
+      {
+        "path": "TEXTF.LZS",
+        "compressed": 7402,
+        "decompressed": 12514,
+        "sha256": "5dd78d2fb4b9183550cdf0caa7517e064c67b780036a912a9b7a18ef25efc6bd",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7111,
+            "text": "TESTE LA FREQUENCE 60HZ..."
+          },
+          {
+            "offset": 7930,
+            "text": "RESPONSABLE TEST"
+          },
+          {
+            "offset": 7947,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7963,
+            "text": "TESTEURS EN CHEF"
+          },
+          {
+            "offset": 7997,
+            "text": "TESTEURS"
+          },
+          {
+            "offset": 8006,
+            "text": "TESTEURS"
+          }
+        ]
+      },
+      {
+        "path": "TEXTG.LZS",
+        "compressed": 7252,
+        "decompressed": 12138,
+        "sha256": "5fb84dd539987f5a65ccc7fc06abdcb971aea1b043f7b86ae5c569bda096e14c",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7070,
+            "text": "TESTE DIE 60HZ FREQUENZ..."
+          },
+          {
+            "offset": 7858,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7871,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7887,
+            "text": "CHEFTESTER"
+          },
+          {
+            "offset": 9275,
+            "text": "PATH EDITOR"
+          }
+        ]
+      },
+      {
+        "path": "TEXTI.LZS",
+        "compressed": 7068,
+        "decompressed": 11528,
+        "sha256": "307c47abc8b1c21f01a4983624d97e3b01686615a0820c2d90b6c42c15fb01f4",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7485,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 8826,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 10045,
+            "text": "BONUS TESTAC. PERFETTO X15"
+          }
+        ]
+      },
+      {
+        "path": "TEXTJ.LZS",
+        "compressed": 7133,
+        "decompressed": 11698,
+        "sha256": "f282e1da69c17a7e1814aa9e7e24c42dbfaee67c8f51ab41104de9c8ef5f70d9",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6852,
+            "text": "TESTING 60HZ FREQUENCY..."
+          },
+          {
+            "offset": 7610,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7623,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7639,
+            "text": "LEAD TESTER"
+          },
+          {
+            "offset": 8964,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 11603,
+            "text": "FRAME SCALE"
+          }
+        ]
+      },
+      {
+        "path": "TEXTS.LZS",
+        "compressed": 7105,
+        "decompressed": 12283,
+        "sha256": "e63f10b2a9b274fdc64292634b37387cc048ad5a70cdea993f693733f1f441a7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK1.LZS",
+        "compressed": 2217301,
+        "decompressed": 3043644,
+        "sha256": "9d4c44dc0d64cbfae80c75c370ac66c13a031c0e3fb41663c07c6b1c396b2980",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 24185,
+            "text": "V;<VK=&.C"
+          },
+          {
+            "offset": 133160,
+            "text": "okNc.c.c.c"
+          },
+          {
+            "offset": 175515,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 175689,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 269408,
+            "text": ".S.SOS.S.c"
+          },
+          {
+            "offset": 273590,
+            "text": ".c.c2|2|"
+          },
+          {
+            "offset": 273981,
+            "text": "JjJjJ.c.c"
+          },
+          {
+            "offset": 686102,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 698494,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 702622,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 702748,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 702994,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[OSOSPSOSPSPSPSpSpSOSPSOSPSPSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSPSOSPSPSpSpSpSOSPSOSPSPSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpS"
+          },
+          {
+            "offset": 703754,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 748151,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 749111,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 751997,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 752963,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 899263,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 899317,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 899515,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 899555,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 899571,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 900259,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 900275,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 900323,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 900515,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 900531,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOSOSOSOSPSpSPSpS/SOS/SOSPSpSPSpS/"
+          },
+          {
+            "offset": 943163,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 943233,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 943251,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 943716,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 1150583,
+            "text": "[.c.cOc/[.[Oc.[0["
+          },
+          {
+            "offset": 1208076,
+            "text": "w0w-,.C,,"
+          },
+          {
+            "offset": 1239831,
+            "text": "V}VC70&-.7.C"
+          },
+          {
+            "offset": 1842678,
+            "text": "Ki\"4KK14.c.c"
+          },
+          {
+            "offset": 1846817,
+            "text": "A7i7$0B.c"
+          },
+          {
+            "offset": 2178615,
+            "text": "{Ns.c.cos"
+          },
+          {
+            "offset": 2190096,
+            "text": "Nc.cNc.c"
+          },
+          {
+            "offset": 2769053,
+            "text": "(.C@\\mA4"
+          }
+        ]
+      },
+      {
+        "path": "TRACK1PATH.LZS",
+        "compressed": 26319,
+        "decompressed": 30626,
+        "sha256": "9e98e448b3279b89a4a263c43741413c9817efe2191de90920439091975682f3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK1PATHBACK.LZS",
+        "compressed": 24939,
+        "decompressed": 28758,
+        "sha256": "340588be0533886907a9568e959d86be6109a3cbcce0abd2de33d633c5a65faa",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK1ROAD.LZS",
+        "compressed": 291330,
+        "decompressed": 350889,
+        "sha256": "14ef23bf6124b8eee25fbc00ae4666e45d87403b3caa1665bb9c49dbcc4fe23d",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 313818,
+            "text": ".h.l.p.t"
+          }
+        ]
+      },
+      {
+        "path": "TRACK1WORLDS.LZS",
+        "compressed": 6995,
+        "decompressed": 17040,
+        "sha256": "b2a6a8b69c6266257ce579634cf0b080ebbf2c803c261a23e66c39ea035c8208",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK2.LZS",
+        "compressed": 2200898,
+        "decompressed": 2733972,
+        "sha256": "3dc71fa6a896e5a7828b9e22708ab22f8f11079d86492b02e50cf4c87f3fcc3b",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 119358,
+            "text": "................<........C.=.B"
+          },
+          {
+            "offset": 122944,
+            "text": ";0..............................h"
+          },
+          {
+            "offset": 264604,
+            "text": "CCV.V.CVCV--.C"
+          },
+          {
+            "offset": 265948,
+            "text": "\"\"e!e!4!5!x{|00{00|0|01010..??.C??{A"
+          },
+          {
+            "offset": 302113,
+            "text": "\\y\\9TZ\\9TZT:\\"
+          },
+          {
+            "offset": 460718,
+            "text": "@B_j.C.B$$$"
+          },
+          {
+            "offset": 540330,
+            "text": "eI8C8C.I.H"
+          },
+          {
+            "offset": 582205,
+            "text": "D8.h&x8||aa||va]|vv||av||aaz|aa||vv||vvk"
+          },
+          {
+            "offset": 970339,
+            "text": "sNc.cNc.c"
+          },
+          {
+            "offset": 1172779,
+            "text": "C.C.COKOK.K.K"
+          },
+          {
+            "offset": 1646281,
+            "text": "snk-kNk-kNk.c-c.c-c"
+          },
+          {
+            "offset": 1646547,
+            "text": "cok.cok.c-c"
+          },
+          {
+            "offset": 1646563,
+            "text": "k-c.c-c.cMknkMknknkNknkNkMkMkMkMk-c"
+          },
+          {
+            "offset": 1951884,
+            "text": "G.C@pYJD+{DJ"
+          }
+        ]
+      },
+      {
+        "path": "TRACK2PATH.LZS",
+        "compressed": 36842,
+        "decompressed": 40126,
+        "sha256": "877c5bd68f6e6c33d1f62c4aaf82494953dacd7decbd40f81c60e771ff0027db",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK2PATHBACK.LZS",
+        "compressed": 35610,
+        "decompressed": 39108,
+        "sha256": "cc04ba2b073c9be7964ad26ddef7be1ae873daf92c42f9e9abc691a78dd3f7d6",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK2ROAD.LZS",
+        "compressed": 369276,
+        "decompressed": 447401,
+        "sha256": "e869c00f955b9a3a98b8072b06739cf29ff0437999f34a41c9463686884d74ac",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 83000,
+            "text": "E:L:U:\\:-"
+          },
+          {
+            "offset": 395492,
+            "text": ".q.c.g.r.f.s"
+          }
+        ]
+      },
+      {
+        "path": "TRACK2WORLDS.LZS",
+        "compressed": 11956,
+        "decompressed": 34304,
+        "sha256": "f7a8d30bcde552d73dfcd5d702e0ee001c3ac6ea516b2690f68a805a675ed9b5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3.LZS",
+        "compressed": 2012011,
+        "decompressed": 2747476,
+        "sha256": "53b1ee0c404a07059d98aa164b0566728b2cfa57239b43a789f1fe0f8093bc94",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 27257,
+            "text": "V;<VK=&.C"
+          },
+          {
+            "offset": 128127,
+            "text": "[.c.c.c.c.c"
+          },
+          {
+            "offset": 157428,
+            "text": "CCV.V.CVCV--.C"
+          },
+          {
+            "offset": 158772,
+            "text": "\"\"e!e!4!5!x{|00{00|0|01010..??.C??{A"
+          },
+          {
+            "offset": 181659,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 181833,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 245682,
+            "text": "@B_j.C.B$$$"
+          },
+          {
+            "offset": 618514,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 630906,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 635034,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 635160,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 635406,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[OSOSPSOSPSPSPSpSpSOSPSOSPSPSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSPSOSPSPSpSpSpSOSPSOSPSPSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpS"
+          },
+          {
+            "offset": 636166,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 680563,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 681523,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 684409,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 685375,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 831675,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 831729,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 831927,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 831967,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 831983,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 832671,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 832687,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 832735,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 832927,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 832943,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOSOSOSOSPSpSPSpS/SOS/SOSPSpSPSpS/"
+          },
+          {
+            "offset": 875575,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 875645,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 875663,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 876128,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 1281280,
+            "text": ";.C?XFF,EE["
+          },
+          {
+            "offset": 1867677,
+            "text": "D::RY:\\R3NNN"
+          },
+          {
+            "offset": 2205012,
+            "text": "TRITEST1"
+          },
+          {
+            "offset": 2205060,
+            "text": "TRITEST2"
+          }
+        ]
+      },
+      {
+        "path": "TRACK3PATH.LZS",
+        "compressed": 34625,
+        "decompressed": 38628,
+        "sha256": "c59be4e3a89abe032c218986b0c2b2c0276b156c7c607ed37febcdf2517ec6ff",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3PATHBACK.LZS",
+        "compressed": 34958,
+        "decompressed": 39224,
+        "sha256": "a4f8a643a3d0d6617c20983dd283334612707387792334a2d9a1c21027bdc1cc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3ROAD.LZS",
+        "compressed": 413390,
+        "decompressed": 523409,
+        "sha256": "a105bb2d78bb347ddfc4a84af334d7af420d6d72258c497437c94c4f937700ad",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 67408,
+            "text": "H.-.H.W."
+          },
+          {
+            "offset": 82128,
+            "text": ".c?cNcac"
+          },
+          {
+            "offset": 417205,
+            "text": ".I.8.C.J.K"
+          },
+          {
+            "offset": 417306,
+            "text": "s.q.r.h.O.U.s"
+          },
+          {
+            "offset": 417329,
+            "text": ".y /.b.z.w.{.H.|.w.}.E.~.s."
+          }
+        ]
+      },
+      {
+        "path": "TRACK3WORLDS.LZS",
+        "compressed": 6335,
+        "decompressed": 15048,
+        "sha256": "7a04e92e2e199cb26e2b52ed0e41f2ba1f232f51265cf5666dbe4e914115c051",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK4.LZS",
+        "compressed": 2257737,
+        "decompressed": 3000684,
+        "sha256": "86575600a54d7e391382bd2ba04a295e91b6931b760c36dc9243bbe95f9eda3d",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 230029,
+            "text": "[\\\\JhjY8.c"
+          },
+          {
+            "offset": 248883,
+            "text": "C+//./...C/CC/./."
+          },
+          {
+            "offset": 511283,
+            "text": "hhh.h.hX"
+          },
+          {
+            "offset": 514801,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 514975,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 732804,
+            "text": "./GgCDED.c"
+          },
+          {
+            "offset": 732909,
+            "text": "f._F[i]==(4T..c>=O"
+          },
+          {
+            "offset": 826517,
+            "text": "[.c.cOc/[.[Oc.[0["
+          },
+          {
+            "offset": 1065249,
+            "text": "qVqCCDC^cCcDD..C^DC[YbY"
+          },
+          {
+            "offset": 1137459,
+            "text": "T.C-CU}4}"
+          },
+          {
+            "offset": 1179157,
+            "text": "|X{6S)BJB.c"
+          },
+          {
+            "offset": 1672616,
+            "text": ",*n~n{/.0./A/C,@*A.C./BA*B"
+          }
+        ]
+      },
+      {
+        "path": "TRACK4PATH.LZS",
+        "compressed": 35041,
+        "decompressed": 39606,
+        "sha256": "e96928ff1612e364e589b213bc66bee72af5cd98dd1651a94261f4f29dd517ad",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK4PATHBACK.LZS",
+        "compressed": 35174,
+        "decompressed": 39672,
+        "sha256": "3c661e44251e2ef55e2e396decbd12a0bd2ae7a994d6cb1b83983220c07377e6",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK4ROAD.LZS",
+        "compressed": 234438,
+        "decompressed": 314553,
+        "sha256": "ab077bd29030c4818ae044bc33bf3b924e059d6900c3e2f6a4afc3d1dcd3223b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK4WORLDS.LZS",
+        "compressed": 8627,
+        "decompressed": 23824,
+        "sha256": "fb4bc88fb11dc4c4e2f0e85d1fad35c46a3a9eecbab4730d51b74b5ba1ae2ec5",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK5.LZS",
+        "compressed": 2245465,
+        "decompressed": 2977772,
+        "sha256": "f57121e15392a525944695c9d06793556f225b70b5f055a1007b5de72d077846",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 186781,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 186955,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 305934,
+            "text": ".S.SOS.S.c"
+          },
+          {
+            "offset": 630466,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 642858,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 646986,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 647112,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 647358,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[OSOSPSOSPSPSPSpSpSOSPSOSPSPSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSPSOSPSPSpSpSpSOSPSOSPSPSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpS"
+          },
+          {
+            "offset": 648118,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 692515,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 693475,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 696361,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 697327,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 843627,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 843681,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 843879,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 843919,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 843935,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 844623,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 844639,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 844687,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 844879,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 844895,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOSOSOSOSPSpSPSpS/SOS/SOSPSpSPSpS/"
+          },
+          {
+            "offset": 887527,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 887597,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 887615,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 888080,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 1100896,
+            "text": "w0w-,.C,,"
+          },
+          {
+            "offset": 1132651,
+            "text": "V}VC70&-.7.C"
+          },
+          {
+            "offset": 1200395,
+            "text": "R.c,Sm{,Sm{LC"
+          },
+          {
+            "offset": 1587658,
+            "text": "Jc5KrW.C"
+          },
+          {
+            "offset": 1594465,
+            "text": "2.c,c?2?2,"
+          },
+          {
+            "offset": 1974289,
+            "text": "$##$#,5,4IB5.,6,05.II21.H0101IB.H.1CI,I7  ..B;076J/651521M1HHB/I/I^H^;;;,,,,,;,;;,,,,44,,4444,,,,,4,,;;;;;,;,6666;,,,,,,,,,,,,4,3,,4,434333334444444433333<3<43433<3<,,,,4444,,,,4444434433334443333360006;6;05056;6,;,;;+343"
+          },
+          {
+            "offset": 2006880,
+            "text": "7;;* !!1!. B.1 .B-2I.57\"66!!0 8,,,, 4IB22.++.+B1.+.M.H.-.BAAAABAHMAAATC2AC.H.HACTAMM2M+BMAAAAABACAAAAATCTA2MCMTATACCAC,,744544,4,44444I.5.+]+]434HHMB2,,7,4444777744,44-5-.]++43443333MCMMCACAMCBCCAAATAAAAAAAAAAAAATABA]AAAAAMC+MAAMMACACAAAAAACACACAH+H]]]]]MMMMMM]]G<]]<<<GMG?G<GGGMMMM]]M]CCCC?G?G]GGGGG"
+          },
+          {
+            "offset": 2012997,
+            "text": ";* 8*! -*\"!8!-*! ###777777, 17,6 ,.0  125 2 --12B- 2 .-B- --2-.- 1 .B.-B2---2B2B21. B.M+...2.1--AA2B2]MMMA22MMMMMBB 2A21B.+A+2B.+CMC2MM]MCMMMM]M]-2! - !.60B!1.1B-2-2-2-.--B2-..5-2-21.1.! 1 ..20B1-..1BA-B--AA212+-H5++MI.5HMB.BMMCMM]M]CMMMMM]]IB-2.2B22I15B.I+MMH+M]MMH+H+MMMM?>?>>>??^?M?>??>>?>?=DDD>?>"
+          },
+          {
+            "offset": 2322824,
+            "text": "TRITEST1"
+          },
+          {
+            "offset": 2322872,
+            "text": "TRITEST2"
+          }
+        ]
+      },
+      {
+        "path": "TRACK5PATH.LZS",
+        "compressed": 33474,
+        "decompressed": 36352,
+        "sha256": "7e1fa873569b37069d94b762ef5fe0c17102aa7be3995feee8bfccfa36ac427a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK5PATHBACK.LZS",
+        "compressed": 33513,
+        "decompressed": 35828,
+        "sha256": "9dfb3c7358c7cb813a6c3662dd8c7817b055e7a8b3cc1e6f381d3449289b0d5f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK5ROAD.LZS",
+        "compressed": 357960,
+        "decompressed": 447437,
+        "sha256": "5ce850bdcdfc0d723bb0306b6b937c0d2ba627d0084d565276645a9776722a64",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 80516,
+            "text": "[.h.s.~."
+          }
+        ]
+      },
+      {
+        "path": "TRACK5WORLDS.LZS",
+        "compressed": 5643,
+        "decompressed": 13304,
+        "sha256": "08b65e5fa31ae9f9acedcb95bc899ba4726a6713c1c1634439006368c504cd6d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK6.LZS",
+        "compressed": 2293464,
+        "decompressed": 3062404,
+        "sha256": "1f7f832ad422091198253a1ec312e6b65680c0195915535bb689addd2a922d1d",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 116687,
+            "text": "V;<VK=&.C"
+          },
+          {
+            "offset": 163880,
+            "text": "okNc.c.c.c"
+          },
+          {
+            "offset": 230369,
+            "text": "[\\\\JhjY8.c"
+          },
+          {
+            "offset": 249223,
+            "text": "C+//./...C/CC/./."
+          },
+          {
+            "offset": 297029,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 297203,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 466014,
+            "text": ".S.SOS.S.c"
+          },
+          {
+            "offset": 470196,
+            "text": ".c.c2|2|"
+          },
+          {
+            "offset": 470587,
+            "text": "JjJjJ.c.c"
+          },
+          {
+            "offset": 582620,
+            "text": "./GgCDED.c"
+          },
+          {
+            "offset": 582725,
+            "text": "f._F[i]==(4T..c>=O"
+          },
+          {
+            "offset": 665069,
+            "text": "[.c.cOc/[.[Oc.[0["
+          },
+          {
+            "offset": 756354,
+            "text": "w0w-,.C,,"
+          },
+          {
+            "offset": 788109,
+            "text": "V}VC70&-.7.C"
+          },
+          {
+            "offset": 916089,
+            "text": "qVqCCDC^cCcDD..C^DC[YbY"
+          },
+          {
+            "offset": 919971,
+            "text": "[.c.c.c.c/c/[OcPc"
+          },
+          {
+            "offset": 1007127,
+            "text": "|X{6S)BJB.c"
+          },
+          {
+            "offset": 1522092,
+            "text": ",*n~n{/.0./A/C,@*A.C./BA*B"
+          },
+          {
+            "offset": 1876950,
+            "text": "Nc.cNc.c"
+          },
+          {
+            "offset": 1974543,
+            "text": "SOKOK0K0K0K0KPK0CPK0K/KPKOK.CNCNCNCOC.C/C.C/C"
+          },
+          {
+            "offset": 1975167,
+            "text": "C.K.C.C.C"
+          },
+          {
+            "offset": 1975177,
+            "text": "C.C.C.C/KOK/C/C0KPK"
+          },
+          {
+            "offset": 1981645,
+            "text": "SqTNK-C.C"
+          },
+          {
+            "offset": 2869319,
+            "text": "$Ht.C@Vt"
+          },
+          {
+            "offset": 2869839,
+            "text": " Xt.C C3"
+          },
+          {
+            "offset": 2873537,
+            "text": "}(,Ht.C C"
+          },
+          {
+            "offset": 2873678,
+            "text": "0$Ht.C C1"
+          },
+          {
+            "offset": 2874077,
+            "text": "18$Ht.C C1"
+          },
+          {
+            "offset": 2876287,
+            "text": "$Ht.C C!"
+          },
+          {
+            "offset": 2985552,
+            "text": "!'.C(>NBh\""
+          }
+        ]
+      },
+      {
+        "path": "TRACK6PATH.LZS",
+        "compressed": 50137,
+        "decompressed": 56120,
+        "sha256": "4f9dfd82021927add844d64fd8112c83b12404d89c26434c747181f843a4e549",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK6PATHBACK.LZS",
+        "compressed": 50968,
+        "decompressed": 55828,
+        "sha256": "cd02c67dfba4a0b136c229c9ccdf64412e53997d572d097de9db05a1f1f4ed4b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK6ROAD.LZS",
+        "compressed": 381212,
+        "decompressed": 468148,
+        "sha256": "70cfe034c45a60b3aebab61ec48ecb9f62ea3872b03024aaf92baae680a632d1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK6WORLDS.LZS",
+        "compressed": 6923,
+        "decompressed": 17016,
+        "sha256": "362dd7c44d8e0b81532184357ca897171521c8929856213ef26ed1b7ad1017a9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "VEHICLES.LZS",
+        "compressed": 42793,
+        "decompressed": 70508,
+        "sha256": "c57e695340ac0a74274079e909312a41c2577607268e49202106c42cc5fdd007",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "WEAPONS.LZS",
+        "compressed": 342860,
+        "decompressed": 470540,
+        "sha256": "747fe5d8aba8515f5669ddb34e700fdc30f14c321ae736bf4d4565542e1d93e8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 57803,
+            "text": "C.C.COKOKNKNKoKOK"
+          },
+          {
+            "offset": 99752,
+            "text": "4S5SUSUS.C"
+          },
+          {
+            "offset": 313527,
+            "text": "J)B)B)B)B.c"
+          },
+          {
+            "offset": 313552,
+            "text": "JB.cJB.c"
+          },
+          {
+            "offset": 385783,
+            "text": "-XXXXUUXXCX.C"
+          }
+        ]
+      },
+      {
+        "path": "WINGS.LZS",
+        "compressed": 32616,
+        "decompressed": 45716,
+        "sha256": "9c5cb86e2923c387647a771287d87672145375d33c49da38e9e38906549a056e",
+        "markers": [],
+        "interesting_strings": []
+      }
+    ]
+  },
+  {
+    "build": "San Francisco Rush 2049 (Aug 7, 2000 prototype)",
+    "files": [
+      {
+        "path": "ATTRACT.LZS",
+        "compressed": 703119,
+        "decompressed": 1370388,
+        "sha256": "6797815766ee0906331d20f27c7902e8a26c751e5472c8e2ed60f08401e90295",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 366645,
+            "text": "[.c.c/c.c/c.c/c/c/c/c/c/c/c/c/cOc/cOcOcPcOcpkpk"
+          },
+          {
+            "offset": 366879,
+            "text": "Z/c/c.cOc.c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/cOc/cOcOcOcOcpkpc"
+          },
+          {
+            "offset": 367365,
+            "text": "[/c.c/c/cOc/c/c/c/c/c/c/c/c/c/c/c/c/c/c.c/c/c/c/c/c/c/c/c/c/c/c/c/cOcOcOcpcpk"
+          },
+          {
+            "offset": 367799,
+            "text": "kpkpkpkpkpcpcpcpkpcpkokpkOcpkOcpkPkpkpkpkOcpk/c.c"
+          },
+          {
+            "offset": 965755,
+            "text": "ZOsOsOs.sOk.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR1.LZS",
+        "compressed": 84255,
+        "decompressed": 159500,
+        "sha256": "457ca9cdd3339c70efe73531bb2c505d9303b7c9a0357891f976fdf3343a4ec7",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 126644,
+            "text": ".....................B.DAYAF.C..EADE2*@2?HGoFX,XW?W[....CECE....CECE,X,YW[W[,Y,YW[W[t"
+          }
+        ]
+      },
+      {
+        "path": "CAR10.LZS",
+        "compressed": 94202,
+        "decompressed": 163524,
+        "sha256": "bbea428735c2452ec6ebfef61ac2f3e7bf3c8dca7fee608241b37fa5c4d0242c",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 70520,
+            "text": "h.h.    "
+          }
+        ]
+      },
+      {
+        "path": "CAR10PJ3.LZS",
+        "compressed": 54567,
+        "decompressed": 110140,
+        "sha256": "86f223df6b7a4eedb477baab53a833ca9460f684bad0d816cda7d576a268898c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR11.LZS",
+        "compressed": 97912,
+        "decompressed": 147996,
+        "sha256": "b0d34b6c74e64de8973e2d2a6a06b79530b0ecb5bae2b34ced71bfc4427d33a3",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 38123,
+            "text": "j)R)Rosos-k-k.c.c"
+          },
+          {
+            "offset": 102233,
+            "text": "c.c.cNkNc"
+          },
+          {
+            "offset": 102989,
+            "text": "c.cNknk.cNk-cnk.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR11PJ2.LZS",
+        "compressed": 44131,
+        "decompressed": 78572,
+        "sha256": "cf6e4e67f3e70dcddcad7ea5c149faeb1054cb4447e49f2a7bc490f1429578a7",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 2100,
+            "text": ".C/DReSfu"
+          },
+          {
+            "offset": 16551,
+            "text": "{NkNknsns.c.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR12.LZS",
+        "compressed": 85602,
+        "decompressed": 146588,
+        "sha256": "07f94927b65f8e40d32874ff6a6796cdb886f377091b56e3a09d6a122727a588",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR12PJ8.LZS",
+        "compressed": 47732,
+        "decompressed": 96620,
+        "sha256": "2e906afc0187b2c03cfd1c0abdfa79cecc001b6991b5e7f17603763eaad0024a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13.LZS",
+        "compressed": 82454,
+        "decompressed": 146708,
+        "sha256": "d30f31e5645470f0241bf348b66a31962f1d41167b4f0367a2e4c9072bdda2d4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR13PJ5.LZS",
+        "compressed": 44233,
+        "decompressed": 99692,
+        "sha256": "dc4de62938d055ee20532f8a7b671805a2a8b8e0f4bbe20de9bc18c29a976109",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97160,
+            "text": "HDHD2.2.H"
+          }
+        ]
+      },
+      {
+        "path": "CAR1PJ3.LZS",
+        "compressed": 45146,
+        "decompressed": 120252,
+        "sha256": "4cb25dfad5f12702486e7dcfa8ee4153635236fde72a0d9fe7458006e396385c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2.LZS",
+        "compressed": 84470,
+        "decompressed": 150108,
+        "sha256": "1b381404b1938661bd8ed07bac807491d931468814f3f6d38786305b5a01e8e3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR2PJ3.LZS",
+        "compressed": 43610,
+        "decompressed": 99532,
+        "sha256": "75ad472eeac1bf4abeca2141960943052b8b3602167b6d72e44c30037624de5f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3.LZS",
+        "compressed": 69544,
+        "decompressed": 116692,
+        "sha256": "eb5cf34ff9d88614b3cb1282aa3aaf878874bc24a31e9660fe70e61c30b8b188",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ1.LZS",
+        "compressed": 16208,
+        "decompressed": 32300,
+        "sha256": "626542c91a8f6c03fa76b826f9ccbe0664fb1f9fa41db8a94cb57860cd577432",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ10.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ11.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ12.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ2.LZS",
+        "compressed": 15435,
+        "decompressed": 30252,
+        "sha256": "78a6350c1b2fe495ade2b044137c6db4bf7080b47b99e55d6a6e1476e726d06d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ3.LZS",
+        "compressed": 15951,
+        "decompressed": 30252,
+        "sha256": "eaecbda08181a51e501b372b36ab6ec4f7344a3f0adce2328f5e5c270db55192",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ4.LZS",
+        "compressed": 15875,
+        "decompressed": 30252,
+        "sha256": "34788623a272d865a20372eaba9c16463f8c9403c9d0088da43fd797643b8723",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ5.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ6.LZS",
+        "compressed": 16166,
+        "decompressed": 32300,
+        "sha256": "1e5ae40d6f0f7753e1ed05a5e233251d3e7d30f4ec6fec1943a7172226e4f278",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ7.LZS",
+        "compressed": 16140,
+        "decompressed": 30252,
+        "sha256": "780910da485a13e8b233050ff463b15edb177b6dbf467b2a7997e900d5250db3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ8.LZS",
+        "compressed": 16128,
+        "decompressed": 32300,
+        "sha256": "63fed0c74513c08f2be272e611d6029fde3774fed1520f01c4cfc16697c20d83",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR3PJ9.LZS",
+        "compressed": 15753,
+        "decompressed": 30252,
+        "sha256": "c4d84c80edece8f923651948714ac372d93b77c724d4b1b8ab21c7e95f6423d0",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR4.LZS",
+        "compressed": 86848,
+        "decompressed": 143836,
+        "sha256": "a3ea4cfdf82e1c7bca94b26ba431aaa1e6bb15f284a688c71655d127be408128",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 5745,
+            "text": "9*BkJ*B.c"
+          }
+        ]
+      },
+      {
+        "path": "CAR4PJ5.LZS",
+        "compressed": 45244,
+        "decompressed": 86684,
+        "sha256": "0955d8a82f579d83e8e8dd632c432ad9f9f22003f635651c93fea4c8a54d1ec4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5.LZS",
+        "compressed": 75690,
+        "decompressed": 145804,
+        "sha256": "2ab953e0d69e7b0e8b1ed0df570e2900fe6d8e64a09225928d14fd677c3f5597",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR5PJ3.LZS",
+        "compressed": 30626,
+        "decompressed": 92460,
+        "sha256": "e881e0db5f1d4fa0814a40c9299078d564599beb80e380cbd4787ea9ba1c0006",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6.LZS",
+        "compressed": 88370,
+        "decompressed": 158052,
+        "sha256": "a0d5c3ba18611c76a658ed7e84f4be3c8c07517cc8640022871bcaefd794a653",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR6PJ2.LZS",
+        "compressed": 29655,
+        "decompressed": 73740,
+        "sha256": "1b7ce1fef25593330b3a0f335e9784f7ff85ca43e6b4c15d2df9906f09c40536",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7.LZS",
+        "compressed": 68122,
+        "decompressed": 129388,
+        "sha256": "5fe1b93c85c2815787aa597eae85b19fe24252b8d38266a893df9c2ddeb3f92f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR7PJ1.LZS",
+        "compressed": 30386,
+        "decompressed": 83612,
+        "sha256": "6f5445c821da30c3694204f239f48354fe40631ea9f26f636d3e5c99a9b88ff7",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8.LZS",
+        "compressed": 72074,
+        "decompressed": 133388,
+        "sha256": "3faee581add6423e2a58267caa1bd3fea727626d28d014cf0b508b0a1f9370bd",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR8PJ4.LZS",
+        "compressed": 32076,
+        "decompressed": 85148,
+        "sha256": "91f1fcfe6405339f17e73d237440f53988e47ec138a12492efc6d5f9ae025113",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9.LZS",
+        "compressed": 67236,
+        "decompressed": 128140,
+        "sha256": "03d68f3c27020f922eccf502b20fd1651466658bd628017e1c356d27a6baa425",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "CAR9PJ2.LZS",
+        "compressed": 31209,
+        "decompressed": 79980,
+        "sha256": "74a12460755da6816b9e1796a65a6a00597e640c321346a794dba30d075af16b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DEBUGFONTDAT.LZS",
+        "compressed": 5004,
+        "decompressed": 17936,
+        "sha256": "911d0d70bcec4e1bdf09a0249ecb9c57bb7484c1c80fafe59854f424c3ec8f3e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DEBUGFONTTEX.LZS",
+        "compressed": 4728,
+        "decompressed": 18556,
+        "sha256": "4ea71006fb1e9241cda9f0bf91f44debf3ba8e17fe71a0c39b088bf982ed176d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITLGFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "1226f8b9e305c543f459b6ab715e4524cb749282e0b676df08149ac7251598ac",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITLGFONTTEX.LZS",
+        "compressed": 2371,
+        "decompressed": 6268,
+        "sha256": "f61744c056bd46ffda8a28c20336ff5870aa54ea74342f5c6a6633188b407b05",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITMDFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "32878c443f4d6fc61544dc48355880fab0df0b234b504bbcd947ebe4dae352c2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITMDFONTTEX.LZS",
+        "compressed": 1922,
+        "decompressed": 6268,
+        "sha256": "39e05246f5fbfc06bc224ae80d64d93ef2ff7f85147ce57c606b43d289bb6eda",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITSMFONTDAT.LZS",
+        "compressed": 137,
+        "decompressed": 196,
+        "sha256": "87d9bf20f79b06350a8e40b093b77ac1001d94c533bebce7bbfa02b18cbe45e9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITSMFONTTEX.LZS",
+        "compressed": 1269,
+        "decompressed": 3196,
+        "sha256": "dfb047dc778ef9a28e3ae3234e19132142257abbec0e1983cfb3fdd360abd1e3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITXLFONTDAT.LZS",
+        "compressed": 138,
+        "decompressed": 196,
+        "sha256": "95cf89b21528c854a5febdb92eaff0c69aa8a45e64a9e2e05e9ff358df1d0129",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DIGITXLFONTTEX.LZS",
+        "compressed": 2576,
+        "decompressed": 6268,
+        "sha256": "8fa01099ce93bf565bc0cb03914c20692d36194ad7b49c1fd0a9f6a6290a3885",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1.LZS",
+        "compressed": 450335,
+        "decompressed": 784772,
+        "sha256": "445eec25de09322825a7683f3bbba9537e88a37f6934f0f0e3f6e825a400dbe4",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1PATH.LZS",
+        "compressed": 2419,
+        "decompressed": 4890,
+        "sha256": "76636ccab771fccf91180796a27199bb2758e7a617af0c1bc6fd1a322e2874ee",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1ROAD.LZS",
+        "compressed": 13077,
+        "decompressed": 19061,
+        "sha256": "6ef79544e277522f8a495dbaba5a4464a7116f856b87b1b7af4e47ef7425d3e2",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "DM1WORLDS.LZS",
+        "compressed": 1020,
+        "decompressed": 2696,
+        "sha256": "5265e1689b5cdcd18ae71e82b8049a522e455c5dffdac514983a722ce232e31d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HISCORE.LZS",
+        "compressed": 28377,
+        "decompressed": 109852,
+        "sha256": "e510363494fb9a91d69ef5c6fbe020b6fd3d64917c550fcb87be6e21c473ddbe",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUD.LZS",
+        "compressed": 492839,
+        "decompressed": 794524,
+        "sha256": "2f75829ce0b7cf034c3a5d220ef2acf5e5e24032234555ef1cd4f2dfe1b565d6",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 108093,
+            "text": "566'\\MMVuM6I\\\\V\\MNNs\\\\\\5hM\\55N.h"
+          },
+          {
+            "offset": 157320,
+            "text": "cTc:tesT"
+          },
+          {
+            "offset": 472672,
+            "text": ".c)B.c)BjJ"
+          }
+        ]
+      },
+      {
+        "path": "HUDBATTLE.LZS",
+        "compressed": 6221,
+        "decompressed": 13516,
+        "sha256": "033be70ec7ca22483b5c7b468491dc7f74de9ce42406f63e2da47eb76fb9037a",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 2101,
+            "text": "[.c.c/c.c/c.c/c/c/c/c/c/c/c/c/cOc/cOcOcPcOcpkpk"
+          },
+          {
+            "offset": 2335,
+            "text": "Z/c/c.cOc.c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/c/cOc/cOcOcOcOcpkpc"
+          },
+          {
+            "offset": 2821,
+            "text": "[/c.c/c/cOc/c/c/c/c/c/c/c/c/c/c/c/c/c/c.c/c/c/c/c/c/c/c/c/c/c/c/c/cOcOcOcpcpk"
+          },
+          {
+            "offset": 3255,
+            "text": "kpkpkpkpkpcpcpcpkpcpkokpkOcpkOcpkPkpkpkpkOcpk/c.c"
+          }
+        ]
+      },
+      {
+        "path": "HUDCOM.LZS",
+        "compressed": 51455,
+        "decompressed": 202012,
+        "sha256": "5636f321385a614b084dd10b6c6a2a605b27bc6b9cc99c7875f8f0d91324bc1a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLGFONTDAT.LZS",
+        "compressed": 218,
+        "decompressed": 380,
+        "sha256": "cd1dbaec7db54d1fe85f12a0abb66f973ac8444432acce0beaa33083cdb6081c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLGFONTTEX.LZS",
+        "compressed": 2453,
+        "decompressed": 6268,
+        "sha256": "bc0cbc265fe41450cd4d80b881a7dae9738abf2a80fd8bb882ae014a4c9b5f44",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDLOGO.LZS",
+        "compressed": 29333,
+        "decompressed": 67708,
+        "sha256": "fcbbf58cc1bbeb90fd8127de73e9892c5d99655bdc77ab179c77dde79d68a03c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMDFONTDAT.LZS",
+        "compressed": 203,
+        "decompressed": 380,
+        "sha256": "a564040b4372e6184c368a0f67f6d82a3b3461342ef468f89a6bed426f21e850",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMDFONTTEX.LZS",
+        "compressed": 2180,
+        "decompressed": 6268,
+        "sha256": "7bcc3d1ca25fbdef7465d963cd41cbb671587cdbc1804b599b99bac101ea937e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDMULTI.LZS",
+        "compressed": 8298,
+        "decompressed": 35084,
+        "sha256": "1d30c95bb9bdd4f647b403efa5015f08d865d853cd0b3a0d39b270c657bf0544",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSMFONTDAT.LZS",
+        "compressed": 189,
+        "decompressed": 380,
+        "sha256": "33659e58e899dc1cca709d59915a803c1fb3da6e1ee3cfc9303fb12586419954",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSMFONTTEX.LZS",
+        "compressed": 1489,
+        "decompressed": 3196,
+        "sha256": "7a5f70dfb8b8a95feecfb18f62a2f572c4084b7349f21f712e5179c31332d02d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDSTUNT.LZS",
+        "compressed": 25542,
+        "decompressed": 35220,
+        "sha256": "f541a32b74811ae5bae92d67b77ffae89c8c651debe03ba2fe74272471d93645",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXLFONTDAT.LZS",
+        "compressed": 229,
+        "decompressed": 380,
+        "sha256": "3e98c0cf9294257d6d3fc4e87610313d70bdc13919880222b5ddc323578768af",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXLFONTTEX.LZS",
+        "compressed": 2710,
+        "decompressed": 6268,
+        "sha256": "e4f44a4649be681e536eb0a54343a041a747b7ec7eaeb9bfcecaf2998c90412c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXXLFONTDAT.LZS",
+        "compressed": 228,
+        "decompressed": 380,
+        "sha256": "3e78245e59505ae7eed435332cdb8382a24960efec0bdd801647098f86ae7c33",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "HUDXXLFONTTEX.LZS",
+        "compressed": 4502,
+        "decompressed": 18556,
+        "sha256": "5ec9d88293aed095bd1f251d1337a47ac72694bf2fdf3652043521dd847f235e",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "INTERFACE.LZS",
+        "compressed": 719435,
+        "decompressed": 3154236,
+        "sha256": "15c6c1df831fb9c489d64907608af33e99da12595cb16b0867649d9a96e978b1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENULGFONTDAT.LZS",
+        "compressed": 2566,
+        "decompressed": 8816,
+        "sha256": "62f239659e2f7d32bb8d225c6a55730d86271494764f4b6ba33ffa6bb9abf03f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENULGFONTTEX.LZS",
+        "compressed": 7072,
+        "decompressed": 18556,
+        "sha256": "89f0444a273192a08a548175907d8c7e5f1b789515590b1b8dace69fa11afe4f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUMDFONTDAT.LZS",
+        "compressed": 2714,
+        "decompressed": 8816,
+        "sha256": "4a044408f5ed1d192242a62edea085aaf548bd88086fd79d62bf09cc5ac04658",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUMDFONTTEX.LZS",
+        "compressed": 6553,
+        "decompressed": 18556,
+        "sha256": "ecdd420c07a6f33bb6df6005bde45def9b23949e3a9bd08ec45a1d7e21d29b71",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUSMFONTDAT.LZS",
+        "compressed": 2260,
+        "decompressed": 8816,
+        "sha256": "920412bd54ac9dbcfdaf792c8a18bfca5cbc81431c86aefa86a2564e152080f9",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUSMFONTTEX.LZS",
+        "compressed": 3942,
+        "decompressed": 6268,
+        "sha256": "f76b50ea2b7e13893123b7c5bf878814c00c7a415fbd87bd97b2a0218babe922",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUTITLEFONTDAT.LZS",
+        "compressed": 2779,
+        "decompressed": 8816,
+        "sha256": "f2e8ddd07f4648663c2b7188304536b8a5f3bc53b57964a9536ca8666f500915",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "MENUTITLEFONTTEX.LZS",
+        "compressed": 8376,
+        "decompressed": 18556,
+        "sha256": "ebed09be9ee6e9d6d4d2880de991e8abc50724a6d66a08d1137fc1a36f1941ac",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELCAR.LZS",
+        "compressed": 215456,
+        "decompressed": 333964,
+        "sha256": "d14931c33f09079c797e5d354c1ea9715a2cbcae9104dece9d4430a0b572dba4",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 194536,
+            "text": "E(6C*DFV?Y+'_pA.h|VDERDMXMR?NW*@-J4J2BF244-4'-)?"
+          }
+        ]
+      },
+      {
+        "path": "SELCIRC.LZS",
+        "compressed": 167709,
+        "decompressed": 711756,
+        "sha256": "f338fdcdf4ee9aa65508190be1c3b8d224da64e1fd3ac1753c1fcb3f850d9053",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELCOM.LZS",
+        "compressed": 30795,
+        "decompressed": 93532,
+        "sha256": "e342c40daad026c50f195c43a675d7836e79a80720235a68a61090c53515e99f",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELOPT.LZS",
+        "compressed": 118749,
+        "decompressed": 239596,
+        "sha256": "5ffc1e4b7344e85a468643c378258a64babf445f6162b899f26b85f95701886d",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "SELTRK.LZS",
+        "compressed": 330985,
+        "decompressed": 475756,
+        "sha256": "a8f8d75bf880b2a22942b3d0377f4a695c85bce5609c662ab4859ee1a1fb5034",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 97860,
+            "text": ">?C.h{h~"
+          },
+          {
+            "offset": 330557,
+            "text": ";@@C.C0@@P.C..@@0PP@@@P.PA/A+/bOC"
+          },
+          {
+            "offset": 330595,
+            "text": "1A.C.PP@P.+/)@P@/+"
+          },
+          {
+            "offset": 330618,
+            "text": "OCCA..PCA.C"
+          },
+          {
+            "offset": 336744,
+            "text": "ACA.OPOPA.C/O/P/"
+          },
+          {
+            "offset": 336839,
+            "text": ".C/.sPOAOE"
+          }
+        ]
+      },
+      {
+        "path": "STUNT2.LZS",
+        "compressed": 188615,
+        "decompressed": 319740,
+        "sha256": "dd47f4ef0feca50efe022269f9683746aea41eeb4e05ab42423c65f4e2f58b01",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 126062,
+            "text": "^A^A.h.h"
+          }
+        ]
+      },
+      {
+        "path": "STUNT2PATH.LZS",
+        "compressed": 3938,
+        "decompressed": 4990,
+        "sha256": "846ae1b888248137d928c3a370dfb84a3042917abaf1e7eaeb36653a431ccf52",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT2ROAD.LZS",
+        "compressed": 62872,
+        "decompressed": 101012,
+        "sha256": "81144cccf964a471dd796ee234629a132412bd12f5a67e5cec85f7377d0d61c3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "STUNT2WORLDS.LZS",
+        "compressed": 1710,
+        "decompressed": 5392,
+        "sha256": "289dde17d9bf6d14fb41835813a290d999962c3cc491a230362d70cdfdb824c1",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETSNOPAK.LZS",
+        "compressed": 8678,
+        "decompressed": 12972,
+        "sha256": "4ab6be86faae60ea4d5ca21c73bd3266714cf22af1bfa994bdc829413b9a27c8",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TARGETST3.LZS",
+        "compressed": 99194,
+        "decompressed": 169300,
+        "sha256": "0ab511fa0072cff1a9729a110091e8a5da92edee73cf436950572930ab2c4671",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 55735,
+            "text": "lOKOK.K.C"
+          }
+        ]
+      },
+      {
+        "path": "TESTFONTDAT.LZS",
+        "compressed": 1674,
+        "decompressed": 8816,
+        "sha256": "cd64fb2e6221de474a0e7887e7a68633a1c15daa5ca91da569e573d2277d552c",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TESTFONTTEX.LZS",
+        "compressed": 1846,
+        "decompressed": 3196,
+        "sha256": "68f1b6cf1b5d8b9c4085ce78a0464ba255522d57851f9c2394e5affbb0548c64",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TEXTD.LZS",
+        "compressed": 7272,
+        "decompressed": 12131,
+        "sha256": "68cb29950b6b0ba9d865e7542448f0123226a589de44c6cbed0df712be1a1451",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6975,
+            "text": "TESTEN 60 HZ-FREQUENTIE..."
+          },
+          {
+            "offset": 7760,
+            "text": "TEST-BEGELEIDER"
+          },
+          {
+            "offset": 7776,
+            "text": "TEST-SUPERVISIE"
+          },
+          {
+            "offset": 7792,
+            "text": "HOOFDTESTER"
+          },
+          {
+            "offset": 9198,
+            "text": "DEBUGGEN"
+          },
+          {
+            "offset": 9207,
+            "text": "PATH EDITOR"
+          }
+        ]
+      },
+      {
+        "path": "TEXTE.LZS",
+        "compressed": 6990,
+        "decompressed": 11689,
+        "sha256": "465d3a07b091d2fa41db7ce982de498c69678bbe48ce710cf95838375e9155c7",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6830,
+            "text": "TESTING 60HZ FREQUENCY..."
+          },
+          {
+            "offset": 7579,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7592,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7608,
+            "text": "LEAD TESTER"
+          },
+          {
+            "offset": 8926,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 11594,
+            "text": "FRAME SCALE"
+          }
+        ]
+      },
+      {
+        "path": "TEXTF.LZS",
+        "compressed": 7372,
+        "decompressed": 12499,
+        "sha256": "0834758719e8da26ddee35c81572323df6f20ee80a029986fcb08ea39e51c9a3",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7105,
+            "text": "TESTE LA FREQUENCE 60HZ..."
+          },
+          {
+            "offset": 7915,
+            "text": "RESPONSABLE TEST"
+          },
+          {
+            "offset": 7932,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7948,
+            "text": "TESTEURS EN CHEF"
+          },
+          {
+            "offset": 7982,
+            "text": "TESTEURS"
+          },
+          {
+            "offset": 7991,
+            "text": "TESTEURS"
+          }
+        ]
+      },
+      {
+        "path": "TEXTG.LZS",
+        "compressed": 7233,
+        "decompressed": 12123,
+        "sha256": "a9704c30681b3069d12b9c3456edadf66176db74e477f945eeff01008c76758e",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7064,
+            "text": "TESTE DIE 60HZ FREQUENZ..."
+          },
+          {
+            "offset": 7843,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7856,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7872,
+            "text": "CHEFTESTER"
+          },
+          {
+            "offset": 9260,
+            "text": "PATH EDITOR"
+          }
+        ]
+      },
+      {
+        "path": "TEXTI.LZS",
+        "compressed": 7039,
+        "decompressed": 11520,
+        "sha256": "5399a4e96c7d1d5e1dedbf6f485136ea07cd7a5061be9936c9bb22d81dbdcf86",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 7477,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 8818,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 10034,
+            "text": "BONUS TESTAC. PERFETTO X15"
+          }
+        ]
+      },
+      {
+        "path": "TEXTJ.LZS",
+        "compressed": 7107,
+        "decompressed": 11689,
+        "sha256": "72bf7212e317fad67361a487ff60ca89e4fd2af6440bbe418b489b0d0ad106b1",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 6852,
+            "text": "TESTING 60HZ FREQUENCY..."
+          },
+          {
+            "offset": 7601,
+            "text": "TEST MANAGER"
+          },
+          {
+            "offset": 7614,
+            "text": "TEST SUPERVISOR"
+          },
+          {
+            "offset": 7630,
+            "text": "LEAD TESTER"
+          },
+          {
+            "offset": 8955,
+            "text": "PATH EDITOR"
+          },
+          {
+            "offset": 11594,
+            "text": "FRAME SCALE"
+          }
+        ]
+      },
+      {
+        "path": "TEXTS.LZS",
+        "compressed": 7083,
+        "decompressed": 12268,
+        "sha256": "18d6cafbd96f60ae0eb2b871ee0007954fdafda555c7467895f01e285bc1372b",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK1PATH.LZS",
+        "compressed": 26319,
+        "decompressed": 30626,
+        "sha256": "9e98e448b3279b89a4a263c43741413c9817efe2191de90920439091975682f3",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK2PATH.LZS",
+        "compressed": 36842,
+        "decompressed": 40126,
+        "sha256": "877c5bd68f6e6c33d1f62c4aaf82494953dacd7decbd40f81c60e771ff0027db",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3.LZS",
+        "compressed": 2012011,
+        "decompressed": 2747476,
+        "sha256": "53b1ee0c404a07059d98aa164b0566728b2cfa57239b43a789f1fe0f8093bc94",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 27257,
+            "text": "V;<VK=&.C"
+          },
+          {
+            "offset": 128127,
+            "text": "[.c.c.c.c.c"
+          },
+          {
+            "offset": 157428,
+            "text": "CCV.V.CVCV--.C"
+          },
+          {
+            "offset": 158772,
+            "text": "\"\"e!e!4!5!x{|00{00|0|01010..??.C??{A"
+          },
+          {
+            "offset": 181659,
+            "text": "9.c-cNk.c"
+          },
+          {
+            "offset": 181833,
+            "text": "kokokokNk.c"
+          },
+          {
+            "offset": 245682,
+            "text": "@B_j.C.B$$$"
+          },
+          {
+            "offset": 618514,
+            "text": "L{L{L{L{-k-k-k-k-k-kMk-k-s-kLs-k-k-k-k-kNc.c-kNcNcNc.cNc-kNc-c-cNcNc-cNcLsMkLs-k-k-k-k-kLs-sLs,s-k-k,k-k-k-k-k-k-c.c-k.c-k-k-k-kMc-c-k-cococococo[o[ocococococococo[o[o[p[p[o[o[p[p[p[o[o[o[o[o[p[o[o[o[ocococococo[ococococococpco[ococo[o[pco[o[p[o[o[o[o[pco[p[o[p[o[p[p[o[p[p[o[p[p[o[p[o[o[p[p[p[o[o[o["
+          },
+          {
+            "offset": 630906,
+            "text": ",s,s,{,s,s,k,s,kK{,sL{,{,s,s,{,s-c.cNcNcNcNc.cNc-k.cNk.cNcNcNcNc.cNcNcNcNcOcNcNcNcNcNcNcOcNcNcNcNcNcNcNcNcNc.cNc-cNc-cNc.cNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcNcOcNcOcOcOcNcOcOcO[O[O[OcOcOcOcO[O[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[NcOcOcOcO[O[O[O[OcOcO[OcO[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[O[-cNc-c.c.cNc"
+          },
+          {
+            "offset": 635034,
+            "text": ",s,k,s,s,k-k,k,k,{,s,s,s,k,k,s,k-k-k-k-k.c.c-c-c-k-k,k,k-k-k-k-s,s,s,{+{,s,s,s,sL{+{L"
+          },
+          {
+            "offset": 635160,
+            "text": "L{.c.c-c.c.[N[.[.[-k.cMs-k.cN[-cNcO[O[N[O[/[/[/[/[N[O[N[N[N[O[O[/[MsMsM{Ms.k.c-k.cMsMs-s-s-k.c-k.c.[N[.[N[O[/[O[/[.[.[.[N[/[/[.[/[K{L{K{K{L{l"
+          },
+          {
+            "offset": 635406,
+            "text": "L{L{,{,s,s,sL{-sL{M{-k.c-s.cL{M{,{M{-s-cMs-k.[.[.[.[/[/[.[/[.[.[.c.[.[/[.[/[,{L{,sL{M{-km{Ms-k,k,k,kL{MsMsM{.c.[.c.[.[/[.[/[-c.c-c.c.[O[.[O[O[O[/[O[O[OSO[OS/[O[O[O[O[OSO[OSOSPSOSPSPSPSpSpSOSPSOSPSPSPSPSPSO[O[/[O[O[OSO[OS/[O[/[O[OSOSOSOSOSPSOSPSPSpSpSpSOSPSOSPSPSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpSpS"
+          },
+          {
+            "offset": 636166,
+            "text": "K{+{K{K{K{K{+{+{+s,s,s,sL{L{,s-sL{-sL{L{L{L{M{,sL{Ls-c.c-c.c.[O[.cN[-c.c-k-c.[N[.[N[,{,s,s,k,s,s,k-k,s,k,s"
+          },
+          {
+            "offset": 680563,
+            "text": "c-c,c-c-c-c-[-c-kok-cNc-c.c-c-[-cNc-cNcNcN[NcocO[OSO[O[ocOc"
+          },
+          {
+            "offset": 681523,
+            "text": "c,c,k,k-c-c,k-k-[.[-cNc,cLk,k-c-k.c-c-c,k"
+          },
+          {
+            "offset": 684409,
+            "text": "[,k-kMk-k-c.c-c.c-kMk-cMk-c.c-cNcK{K"
+          },
+          {
+            "offset": 685375,
+            "text": "[.[-[.c.[-c-[-[-[-["
+          },
+          {
+            "offset": 831675,
+            "text": "[.[.c.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 831729,
+            "text": "c-c.c-c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.S.[.S.S.S.S.S.S.S.[.S.S.S.S.S.S"
+          },
+          {
+            "offset": 831927,
+            "text": "c.c.[.[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 831967,
+            "text": "k-c-c.c.c.c"
+          },
+          {
+            "offset": 831983,
+            "text": "c-c.c.c-c.c.c.[.[.[.[.[.[.[.c/[.c/[/[.[.[.[.[.[.[.[.S.S.S.S.[.[.[.[.S.S.S.S.S.S.S.S.S.S.S"
+          },
+          {
+            "offset": 832671,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 832687,
+            "text": "c-c.c.c.c.c.[/[.[.[.[.[.[.[.[.[.[.[.[.[.[.["
+          },
+          {
+            "offset": 832735,
+            "text": "c-c-c.c-c.c-c-c-c-c-c.c-c.c.c.[.[.[.[.[.[.[.c.[.[.[.[.[.[.[/[/[.S/[/S/S/S/S.[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S.[/[.[/[/S/S/[/[.[/[.[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S-c-c"
+          },
+          {
+            "offset": 832927,
+            "text": "c-c-c.c-c.c"
+          },
+          {
+            "offset": 832943,
+            "text": "c-c-c.c.c.c.[N[.[N[/[.[/[/[.[.[.[.[/[/[/[/[-c-c-c-c.c.c.c.c-c-c-c-c.c.c.c.c.cN[.[.[/[/[O[.[.[.[.[.[O[/[.[/[.[/[.[/[/[/[/[/S.[.[.[.[/[/[/[/[/S/S/[/[/S/S/S/[/[/S/[/[/S/S/[/[/[.[/[/[.[/[/[/[/[/[O[/[/[/[/[/[/[/[/[/[/S/[/[/[/[/[/[/[/[/[/[/[/S/S/S/S/S/S/S/S/S/S/S/S/S/S/S/SOSOSOSOSPSpSPSpS/SOS/SOSPSpSPSpS/"
+          },
+          {
+            "offset": 875575,
+            "text": "k,k,k-k-k-k-k-c-k-c-k-c-k-c-k.c-c.c,s"
+          },
+          {
+            "offset": 875645,
+            "text": "c-c-c-c.c-c.c-c-c"
+          },
+          {
+            "offset": 875663,
+            "text": "c-c.c.c.c.c"
+          },
+          {
+            "offset": 876128,
+            "text": "L{L{L{L{L{L{L{L{L{L{L{L{L{LsLs,sLs,s,s,s,kLsLsL{Ls,s,sLs,sL{,sL{,s,s,s,s,s,s,s,s,s,s,k,s,k,s,k,k,s,k,k-k-k,s,k,k,k,k-k-k-k,{,s,s,s,k,k,k,k,s,s,s,s,s,k,k,k,k-k-k-k-k-k-k-k,k-k-k-k-k-k-c-c,k-k-k-k-k-c-k-k-k-c-k-c-c-c-k-c-c-c-c-c.c.c.c.c-c-c-c.c.c.c.c.c-c-c-c-c-c-c-c-c-c-c-c-c-c.c.c.c.c.c.c.c.c.c.c.c.c"
+          },
+          {
+            "offset": 1281280,
+            "text": ";.C?XFF,EE["
+          },
+          {
+            "offset": 1867677,
+            "text": "D::RY:\\R3NNN"
+          },
+          {
+            "offset": 2205012,
+            "text": "TRITEST1"
+          },
+          {
+            "offset": 2205060,
+            "text": "TRITEST2"
+          }
+        ]
+      },
+      {
+        "path": "TRACK3PATH.LZS",
+        "compressed": 34625,
+        "decompressed": 38628,
+        "sha256": "c59be4e3a89abe032c218986b0c2b2c0276b156c7c607ed37febcdf2517ec6ff",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3PATHBACK.LZS",
+        "compressed": 34958,
+        "decompressed": 39224,
+        "sha256": "a4f8a643a3d0d6617c20983dd283334612707387792334a2d9a1c21027bdc1cc",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK3ROAD.LZS",
+        "compressed": 413390,
+        "decompressed": 523409,
+        "sha256": "a105bb2d78bb347ddfc4a84af334d7af420d6d72258c497437c94c4f937700ad",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 67408,
+            "text": "H.-.H.W."
+          },
+          {
+            "offset": 82128,
+            "text": ".c?cNcac"
+          },
+          {
+            "offset": 417205,
+            "text": ".I.8.C.J.K"
+          },
+          {
+            "offset": 417306,
+            "text": "s.q.r.h.O.U.s"
+          },
+          {
+            "offset": 417329,
+            "text": ".y /.b.z.w.{.H.|.w.}.E.~.s."
+          }
+        ]
+      },
+      {
+        "path": "TRACK3WORLDS.LZS",
+        "compressed": 6335,
+        "decompressed": 15048,
+        "sha256": "7a04e92e2e199cb26e2b52ed0e41f2ba1f232f51265cf5666dbe4e914115c051",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK4PATH.LZS",
+        "compressed": 35041,
+        "decompressed": 39606,
+        "sha256": "e96928ff1612e364e589b213bc66bee72af5cd98dd1651a94261f4f29dd517ad",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK5PATH.LZS",
+        "compressed": 33474,
+        "decompressed": 36352,
+        "sha256": "7e1fa873569b37069d94b762ef5fe0c17102aa7be3995feee8bfccfa36ac427a",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "TRACK6PATH.LZS",
+        "compressed": 50137,
+        "decompressed": 56120,
+        "sha256": "4f9dfd82021927add844d64fd8112c83b12404d89c26434c747181f843a4e549",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "VEHICLES.LZS",
+        "compressed": 42793,
+        "decompressed": 70508,
+        "sha256": "c57e695340ac0a74274079e909312a41c2577607268e49202106c42cc5fdd007",
+        "markers": [],
+        "interesting_strings": []
+      },
+      {
+        "path": "WEAPONS.LZS",
+        "compressed": 342860,
+        "decompressed": 470540,
+        "sha256": "747fe5d8aba8515f5669ddb34e700fdc30f14c321ae736bf4d4565542e1d93e8",
+        "markers": [],
+        "interesting_strings": [
+          {
+            "offset": 57803,
+            "text": "C.C.COKOKNKNKoKOK"
+          },
+          {
+            "offset": 99752,
+            "text": "4S5SUSUS.C"
+          },
+          {
+            "offset": 313527,
+            "text": "J)B)B)B)B.c"
+          },
+          {
+            "offset": 313552,
+            "text": "JB.cJB.c"
+          },
+          {
+            "offset": 385783,
+            "text": "-XXXXUUXXCX.C"
+          }
+        ]
+      },
+      {
+        "path": "WINGS.LZS",
+        "compressed": 32616,
+        "decompressed": 45716,
+        "sha256": "9c5cb86e2923c387647a771287d87672145375d33c49da38e9e38906549a056e",
+        "markers": [],
+        "interesting_strings": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "scope": "identified code only; dependencies must also pass before any local-link promotion",
+  "spans": [
+    {
+      "function": "InsertLLE",
+      "target_offset": 172488,
+      "size": 198,
+      "kind": "code",
+      "candidate_address": 2349048264,
+      "sha256": "dc75a639b6e1e488cf3cfd105a3608f2642d71d94f87e8ccf9d74493d0e25f11"
+    },
+    {
+      "function": "interp",
+      "target_offset": 78290,
+      "size": 20,
+      "kind": "code",
+      "candidate_address": 2348954066,
+      "sha256": "33061891d8c5fd16d20a4ecfd6a44ddeb7bcb85c07eb35514ff300226f7a14d4"
+    },
+    {
+      "function": "BodyVector",
+      "target_offset": 92928,
+      "size": 94,
+      "kind": "code",
+      "candidate_address": 2348968704,
+      "sha256": "b809e1fe7e3c46b3aca383e7d6e94c86f094c7bd1108f039c53a5df6e7cf90d6"
+    },
+    {
+      "function": "enginetorque",
+      "target_offset": 78000,
+      "size": 290,
+      "kind": "code",
+      "candidate_address": 2348953776,
+      "sha256": "4e190931ed6904e75282874b50f7775006c2d2e75900a1c79ac78ea96d7eaa64"
+    },
+    {
+      "function": "UpdateFrameTimer",
+      "target_offset": 266,
+      "size": 108,
+      "kind": "code",
+      "candidate_address": 2348876042,
+      "sha256": "4882d6f779a5c816e63dd4ad0f3688113b83ae07a17620c0e8078358a7ddf308"
+    }
+  ]
+}

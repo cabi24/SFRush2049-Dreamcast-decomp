@@ -1,0 +1,2528 @@
+{
+  "offset": 738496,
+  "end_exclusive": 739756,
+  "terminator": 0,
+  "count": 315,
+  "entries": [
+    {
+      "table_index": 0,
+      "pointer_offset": 738496,
+      "string_offset": 657844,
+      "filename": "texte.lzs",
+      "present_on_disc": true,
+      "file_size": 7007
+    },
+    {
+      "table_index": 1,
+      "pointer_offset": 738500,
+      "string_offset": 657856,
+      "filename": "texts.lzs",
+      "present_on_disc": true,
+      "file_size": 7105
+    },
+    {
+      "table_index": 2,
+      "pointer_offset": 738504,
+      "string_offset": 657868,
+      "filename": "texti.lzs",
+      "present_on_disc": true,
+      "file_size": 7068
+    },
+    {
+      "table_index": 3,
+      "pointer_offset": 738508,
+      "string_offset": 657880,
+      "filename": "textg.lzs",
+      "present_on_disc": true,
+      "file_size": 7252
+    },
+    {
+      "table_index": 4,
+      "pointer_offset": 738512,
+      "string_offset": 657892,
+      "filename": "textd.lzs",
+      "present_on_disc": true,
+      "file_size": 7285
+    },
+    {
+      "table_index": 5,
+      "pointer_offset": 738516,
+      "string_offset": 657904,
+      "filename": "textf.lzs",
+      "present_on_disc": true,
+      "file_size": 7402
+    },
+    {
+      "table_index": 6,
+      "pointer_offset": 738520,
+      "string_offset": 657916,
+      "filename": "HighScore.rom",
+      "present_on_disc": true,
+      "file_size": 651908
+    },
+    {
+      "table_index": 7,
+      "pointer_offset": 738524,
+      "string_offset": 657932,
+      "filename": "Select.rom",
+      "present_on_disc": true,
+      "file_size": 564366
+    },
+    {
+      "table_index": 8,
+      "pointer_offset": 738528,
+      "string_offset": 657944,
+      "filename": "debugfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 4728
+    },
+    {
+      "table_index": 9,
+      "pointer_offset": 738532,
+      "string_offset": 657964,
+      "filename": "digitlgfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 2371
+    },
+    {
+      "table_index": 10,
+      "pointer_offset": 738536,
+      "string_offset": 657984,
+      "filename": "digitmdfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 1922
+    },
+    {
+      "table_index": 11,
+      "pointer_offset": 738540,
+      "string_offset": 658004,
+      "filename": "digitsmfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 1269
+    },
+    {
+      "table_index": 12,
+      "pointer_offset": 738544,
+      "string_offset": 658024,
+      "filename": "digitxlfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 2576
+    },
+    {
+      "table_index": 13,
+      "pointer_offset": 738548,
+      "string_offset": 658044,
+      "filename": "hudlgfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 2453
+    },
+    {
+      "table_index": 14,
+      "pointer_offset": 738552,
+      "string_offset": 658064,
+      "filename": "hudmdfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 2180
+    },
+    {
+      "table_index": 15,
+      "pointer_offset": 738556,
+      "string_offset": 658084,
+      "filename": "hudsmfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 1489
+    },
+    {
+      "table_index": 16,
+      "pointer_offset": 738560,
+      "string_offset": 658104,
+      "filename": "hudxlfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 2710
+    },
+    {
+      "table_index": 17,
+      "pointer_offset": 738564,
+      "string_offset": 658124,
+      "filename": "hudxxlfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 4502
+    },
+    {
+      "table_index": 18,
+      "pointer_offset": 738568,
+      "string_offset": 658144,
+      "filename": "menulgfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 7072
+    },
+    {
+      "table_index": 19,
+      "pointer_offset": 738572,
+      "string_offset": 658164,
+      "filename": "menumdfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 6553
+    },
+    {
+      "table_index": 20,
+      "pointer_offset": 738576,
+      "string_offset": 658184,
+      "filename": "menusmfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 3942
+    },
+    {
+      "table_index": 21,
+      "pointer_offset": 738580,
+      "string_offset": 658204,
+      "filename": "menutitlefonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 8376
+    },
+    {
+      "table_index": 22,
+      "pointer_offset": 738584,
+      "string_offset": 658228,
+      "filename": "pakfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 6301
+    },
+    {
+      "table_index": 23,
+      "pointer_offset": 738588,
+      "string_offset": 658244,
+      "filename": "testfonttex.lzs",
+      "present_on_disc": true,
+      "file_size": 1846
+    },
+    {
+      "table_index": 24,
+      "pointer_offset": 738592,
+      "string_offset": 658260,
+      "filename": "debugfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 5004
+    },
+    {
+      "table_index": 25,
+      "pointer_offset": 738596,
+      "string_offset": 658280,
+      "filename": "digitlgfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 138
+    },
+    {
+      "table_index": 26,
+      "pointer_offset": 738600,
+      "string_offset": 658300,
+      "filename": "digitmdfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 138
+    },
+    {
+      "table_index": 27,
+      "pointer_offset": 738604,
+      "string_offset": 658320,
+      "filename": "digitsmfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 137
+    },
+    {
+      "table_index": 28,
+      "pointer_offset": 738608,
+      "string_offset": 658340,
+      "filename": "digitxlfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 138
+    },
+    {
+      "table_index": 29,
+      "pointer_offset": 738612,
+      "string_offset": 658360,
+      "filename": "hudlgfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 218
+    },
+    {
+      "table_index": 30,
+      "pointer_offset": 738616,
+      "string_offset": 658380,
+      "filename": "hudmdfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 203
+    },
+    {
+      "table_index": 31,
+      "pointer_offset": 738620,
+      "string_offset": 658400,
+      "filename": "hudsmfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 189
+    },
+    {
+      "table_index": 32,
+      "pointer_offset": 738624,
+      "string_offset": 658420,
+      "filename": "hudxlfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 229
+    },
+    {
+      "table_index": 33,
+      "pointer_offset": 738628,
+      "string_offset": 658440,
+      "filename": "hudxxlfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 228
+    },
+    {
+      "table_index": 34,
+      "pointer_offset": 738632,
+      "string_offset": 658460,
+      "filename": "menulgfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 2566
+    },
+    {
+      "table_index": 35,
+      "pointer_offset": 738636,
+      "string_offset": 658480,
+      "filename": "menumdfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 2714
+    },
+    {
+      "table_index": 36,
+      "pointer_offset": 738640,
+      "string_offset": 658500,
+      "filename": "menusmfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 2260
+    },
+    {
+      "table_index": 37,
+      "pointer_offset": 738644,
+      "string_offset": 658520,
+      "filename": "menutitlefontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 2779
+    },
+    {
+      "table_index": 38,
+      "pointer_offset": 738648,
+      "string_offset": 658544,
+      "filename": "pakfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 2359
+    },
+    {
+      "table_index": 39,
+      "pointer_offset": 738652,
+      "string_offset": 658560,
+      "filename": "testfontdat.lzs",
+      "present_on_disc": true,
+      "file_size": 1674
+    },
+    {
+      "table_index": 40,
+      "pointer_offset": 738656,
+      "string_offset": 658576,
+      "filename": "attract.lzs",
+      "present_on_disc": true,
+      "file_size": 703119
+    },
+    {
+      "table_index": 41,
+      "pointer_offset": 738660,
+      "string_offset": 658588,
+      "filename": "interface.lzs",
+      "present_on_disc": true,
+      "file_size": 719435
+    },
+    {
+      "table_index": 42,
+      "pointer_offset": 738664,
+      "string_offset": 658604,
+      "filename": "selcar.lzs",
+      "present_on_disc": true,
+      "file_size": 215456
+    },
+    {
+      "table_index": 43,
+      "pointer_offset": 738668,
+      "string_offset": 658616,
+      "filename": "selcirc.lzs",
+      "present_on_disc": true,
+      "file_size": 167709
+    },
+    {
+      "table_index": 44,
+      "pointer_offset": 738672,
+      "string_offset": 658628,
+      "filename": "selcom.lzs",
+      "present_on_disc": true,
+      "file_size": 30795
+    },
+    {
+      "table_index": 45,
+      "pointer_offset": 738676,
+      "string_offset": 658640,
+      "filename": "selopt.lzs",
+      "present_on_disc": true,
+      "file_size": 118749
+    },
+    {
+      "table_index": 46,
+      "pointer_offset": 738680,
+      "string_offset": 658652,
+      "filename": "seltrk.lzs",
+      "present_on_disc": true,
+      "file_size": 330985
+    },
+    {
+      "table_index": 47,
+      "pointer_offset": 738684,
+      "string_offset": 658664,
+      "filename": "hud.lzs",
+      "present_on_disc": true,
+      "file_size": 492839
+    },
+    {
+      "table_index": 48,
+      "pointer_offset": 738688,
+      "string_offset": 658672,
+      "filename": "hudbattle.lzs",
+      "present_on_disc": true,
+      "file_size": 6221
+    },
+    {
+      "table_index": 49,
+      "pointer_offset": 738692,
+      "string_offset": 658688,
+      "filename": "hudcom.lzs",
+      "present_on_disc": true,
+      "file_size": 51455
+    },
+    {
+      "table_index": 50,
+      "pointer_offset": 738696,
+      "string_offset": 658700,
+      "filename": "hudlogo.lzs",
+      "present_on_disc": true,
+      "file_size": 29333
+    },
+    {
+      "table_index": 51,
+      "pointer_offset": 738700,
+      "string_offset": 658712,
+      "filename": "hudmulti.lzs",
+      "present_on_disc": true,
+      "file_size": 8298
+    },
+    {
+      "table_index": 52,
+      "pointer_offset": 738704,
+      "string_offset": 658728,
+      "filename": "hudstunt.lzs",
+      "present_on_disc": true,
+      "file_size": 25542
+    },
+    {
+      "table_index": 53,
+      "pointer_offset": 738708,
+      "string_offset": 658744,
+      "filename": "targetsnopak.lzs",
+      "present_on_disc": true,
+      "file_size": 8678
+    },
+    {
+      "table_index": 54,
+      "pointer_offset": 738712,
+      "string_offset": 658764,
+      "filename": "hiscore.lzs",
+      "present_on_disc": true,
+      "file_size": 28377
+    },
+    {
+      "table_index": 55,
+      "pointer_offset": 738716,
+      "string_offset": 658776,
+      "filename": "weapons.lzs",
+      "present_on_disc": true,
+      "file_size": 342860
+    },
+    {
+      "table_index": 56,
+      "pointer_offset": 738720,
+      "string_offset": 658788,
+      "filename": "wings.lzs",
+      "present_on_disc": true,
+      "file_size": 32616
+    },
+    {
+      "table_index": 57,
+      "pointer_offset": 738724,
+      "string_offset": 658800,
+      "filename": "vehicles.lzs",
+      "present_on_disc": true,
+      "file_size": 42793
+    },
+    {
+      "table_index": 58,
+      "pointer_offset": 738728,
+      "string_offset": 658816,
+      "filename": "targetst1.lzs",
+      "present_on_disc": true,
+      "file_size": 90075
+    },
+    {
+      "table_index": 59,
+      "pointer_offset": 738732,
+      "string_offset": 658832,
+      "filename": "targetst2.lzs",
+      "present_on_disc": true,
+      "file_size": 107428
+    },
+    {
+      "table_index": 60,
+      "pointer_offset": 738736,
+      "string_offset": 658848,
+      "filename": "targetst3.lzs",
+      "present_on_disc": true,
+      "file_size": 99194
+    },
+    {
+      "table_index": 61,
+      "pointer_offset": 738740,
+      "string_offset": 658864,
+      "filename": "targetst4.lzs",
+      "present_on_disc": true,
+      "file_size": 83784
+    },
+    {
+      "table_index": 62,
+      "pointer_offset": 738744,
+      "string_offset": 658880,
+      "filename": "targetst5.lzs",
+      "present_on_disc": true,
+      "file_size": 71326
+    },
+    {
+      "table_index": 63,
+      "pointer_offset": 738748,
+      "string_offset": 658896,
+      "filename": "targetst6.lzs",
+      "present_on_disc": true,
+      "file_size": 64691
+    },
+    {
+      "table_index": 64,
+      "pointer_offset": 738752,
+      "string_offset": 658912,
+      "filename": "car1.lzs",
+      "present_on_disc": true,
+      "file_size": 84255
+    },
+    {
+      "table_index": 65,
+      "pointer_offset": 738756,
+      "string_offset": 658924,
+      "filename": "car2.lzs",
+      "present_on_disc": true,
+      "file_size": 84470
+    },
+    {
+      "table_index": 66,
+      "pointer_offset": 738760,
+      "string_offset": 658936,
+      "filename": "car3.lzs",
+      "present_on_disc": true,
+      "file_size": 69544
+    },
+    {
+      "table_index": 67,
+      "pointer_offset": 738764,
+      "string_offset": 658948,
+      "filename": "car4.lzs",
+      "present_on_disc": true,
+      "file_size": 86848
+    },
+    {
+      "table_index": 68,
+      "pointer_offset": 738768,
+      "string_offset": 658960,
+      "filename": "car5.lzs",
+      "present_on_disc": true,
+      "file_size": 75690
+    },
+    {
+      "table_index": 69,
+      "pointer_offset": 738772,
+      "string_offset": 658972,
+      "filename": "car6.lzs",
+      "present_on_disc": true,
+      "file_size": 88370
+    },
+    {
+      "table_index": 70,
+      "pointer_offset": 738776,
+      "string_offset": 658984,
+      "filename": "car7.lzs",
+      "present_on_disc": true,
+      "file_size": 68122
+    },
+    {
+      "table_index": 71,
+      "pointer_offset": 738780,
+      "string_offset": 658996,
+      "filename": "car8.lzs",
+      "present_on_disc": true,
+      "file_size": 72074
+    },
+    {
+      "table_index": 72,
+      "pointer_offset": 738784,
+      "string_offset": 659008,
+      "filename": "car9.lzs",
+      "present_on_disc": true,
+      "file_size": 67236
+    },
+    {
+      "table_index": 73,
+      "pointer_offset": 738788,
+      "string_offset": 659020,
+      "filename": "car10.lzs",
+      "present_on_disc": true,
+      "file_size": 94202
+    },
+    {
+      "table_index": 74,
+      "pointer_offset": 738792,
+      "string_offset": 659032,
+      "filename": "car11.lzs",
+      "present_on_disc": true,
+      "file_size": 97912
+    },
+    {
+      "table_index": 75,
+      "pointer_offset": 738796,
+      "string_offset": 659044,
+      "filename": "car12.lzs",
+      "present_on_disc": true,
+      "file_size": 85602
+    },
+    {
+      "table_index": 76,
+      "pointer_offset": 738800,
+      "string_offset": 659056,
+      "filename": "car13.lzs",
+      "present_on_disc": true,
+      "file_size": 82454
+    },
+    {
+      "table_index": 77,
+      "pointer_offset": 738804,
+      "string_offset": 659068,
+      "filename": "car1pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 43716
+    },
+    {
+      "table_index": 78,
+      "pointer_offset": 738808,
+      "string_offset": 659080,
+      "filename": "car1pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 44656
+    },
+    {
+      "table_index": 79,
+      "pointer_offset": 738812,
+      "string_offset": 659092,
+      "filename": "car1pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 45146
+    },
+    {
+      "table_index": 80,
+      "pointer_offset": 738816,
+      "string_offset": 659104,
+      "filename": "car1pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 45594
+    },
+    {
+      "table_index": 81,
+      "pointer_offset": 738820,
+      "string_offset": 659116,
+      "filename": "car1pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 46053
+    },
+    {
+      "table_index": 82,
+      "pointer_offset": 738824,
+      "string_offset": 659128,
+      "filename": "car1pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 40627
+    },
+    {
+      "table_index": 83,
+      "pointer_offset": 738828,
+      "string_offset": 659140,
+      "filename": "car1pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 43154
+    },
+    {
+      "table_index": 84,
+      "pointer_offset": 738832,
+      "string_offset": 659152,
+      "filename": "car1pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 29219
+    },
+    {
+      "table_index": 85,
+      "pointer_offset": 738836,
+      "string_offset": 659164,
+      "filename": "car1pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 44461
+    },
+    {
+      "table_index": 86,
+      "pointer_offset": 738840,
+      "string_offset": 659176,
+      "filename": "car1pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 44461
+    },
+    {
+      "table_index": 87,
+      "pointer_offset": 738844,
+      "string_offset": 659192,
+      "filename": "car1pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 44461
+    },
+    {
+      "table_index": 88,
+      "pointer_offset": 738848,
+      "string_offset": 659208,
+      "filename": "car1pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 44461
+    },
+    {
+      "table_index": 89,
+      "pointer_offset": 738852,
+      "string_offset": 659224,
+      "filename": "car2pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 42893
+    },
+    {
+      "table_index": 90,
+      "pointer_offset": 738856,
+      "string_offset": 659236,
+      "filename": "car2pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 43269
+    },
+    {
+      "table_index": 91,
+      "pointer_offset": 738860,
+      "string_offset": 659248,
+      "filename": "car2pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 43610
+    },
+    {
+      "table_index": 92,
+      "pointer_offset": 738864,
+      "string_offset": 659260,
+      "filename": "car2pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 43799
+    },
+    {
+      "table_index": 93,
+      "pointer_offset": 738868,
+      "string_offset": 659272,
+      "filename": "car2pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 43041
+    },
+    {
+      "table_index": 94,
+      "pointer_offset": 738872,
+      "string_offset": 659284,
+      "filename": "car2pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 43781
+    },
+    {
+      "table_index": 95,
+      "pointer_offset": 738876,
+      "string_offset": 659296,
+      "filename": "car2pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 45633
+    },
+    {
+      "table_index": 96,
+      "pointer_offset": 738880,
+      "string_offset": 659308,
+      "filename": "car2pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 44359
+    },
+    {
+      "table_index": 97,
+      "pointer_offset": 738884,
+      "string_offset": 659320,
+      "filename": "car2pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 43041
+    },
+    {
+      "table_index": 98,
+      "pointer_offset": 738888,
+      "string_offset": 659332,
+      "filename": "car2pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 43041
+    },
+    {
+      "table_index": 99,
+      "pointer_offset": 738892,
+      "string_offset": 659348,
+      "filename": "car2pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 43041
+    },
+    {
+      "table_index": 100,
+      "pointer_offset": 738896,
+      "string_offset": 659364,
+      "filename": "car2pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 43041
+    },
+    {
+      "table_index": 101,
+      "pointer_offset": 738900,
+      "string_offset": 659380,
+      "filename": "car3pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 16208
+    },
+    {
+      "table_index": 102,
+      "pointer_offset": 738904,
+      "string_offset": 659392,
+      "filename": "car3pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 15435
+    },
+    {
+      "table_index": 103,
+      "pointer_offset": 738908,
+      "string_offset": 659404,
+      "filename": "car3pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 15951
+    },
+    {
+      "table_index": 104,
+      "pointer_offset": 738912,
+      "string_offset": 659416,
+      "filename": "car3pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 15875
+    },
+    {
+      "table_index": 105,
+      "pointer_offset": 738916,
+      "string_offset": 659428,
+      "filename": "car3pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 15753
+    },
+    {
+      "table_index": 106,
+      "pointer_offset": 738920,
+      "string_offset": 659440,
+      "filename": "car3pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 16166
+    },
+    {
+      "table_index": 107,
+      "pointer_offset": 738924,
+      "string_offset": 659452,
+      "filename": "car3pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 16140
+    },
+    {
+      "table_index": 108,
+      "pointer_offset": 738928,
+      "string_offset": 659464,
+      "filename": "car3pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 16128
+    },
+    {
+      "table_index": 109,
+      "pointer_offset": 738932,
+      "string_offset": 659476,
+      "filename": "car3pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 15753
+    },
+    {
+      "table_index": 110,
+      "pointer_offset": 738936,
+      "string_offset": 659488,
+      "filename": "car3pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 15753
+    },
+    {
+      "table_index": 111,
+      "pointer_offset": 738940,
+      "string_offset": 659504,
+      "filename": "car3pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 15753
+    },
+    {
+      "table_index": 112,
+      "pointer_offset": 738944,
+      "string_offset": 659520,
+      "filename": "car3pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 15753
+    },
+    {
+      "table_index": 113,
+      "pointer_offset": 738948,
+      "string_offset": 659536,
+      "filename": "car4pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 43810
+    },
+    {
+      "table_index": 114,
+      "pointer_offset": 738952,
+      "string_offset": 659548,
+      "filename": "car4pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 43567
+    },
+    {
+      "table_index": 115,
+      "pointer_offset": 738956,
+      "string_offset": 659560,
+      "filename": "car4pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 46513
+    },
+    {
+      "table_index": 116,
+      "pointer_offset": 738960,
+      "string_offset": 659572,
+      "filename": "car4pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 45617
+    },
+    {
+      "table_index": 117,
+      "pointer_offset": 738964,
+      "string_offset": 659584,
+      "filename": "car4pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 45244
+    },
+    {
+      "table_index": 118,
+      "pointer_offset": 738968,
+      "string_offset": 659596,
+      "filename": "car4pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 35505
+    },
+    {
+      "table_index": 119,
+      "pointer_offset": 738972,
+      "string_offset": 659608,
+      "filename": "car4pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 42770
+    },
+    {
+      "table_index": 120,
+      "pointer_offset": 738976,
+      "string_offset": 659620,
+      "filename": "car4pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 35014
+    },
+    {
+      "table_index": 121,
+      "pointer_offset": 738980,
+      "string_offset": 659632,
+      "filename": "car4pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 45244
+    },
+    {
+      "table_index": 122,
+      "pointer_offset": 738984,
+      "string_offset": 659644,
+      "filename": "car4pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 45244
+    },
+    {
+      "table_index": 123,
+      "pointer_offset": 738988,
+      "string_offset": 659660,
+      "filename": "car4pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 45244
+    },
+    {
+      "table_index": 124,
+      "pointer_offset": 738992,
+      "string_offset": 659676,
+      "filename": "car4pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 45244
+    },
+    {
+      "table_index": 125,
+      "pointer_offset": 738996,
+      "string_offset": 659692,
+      "filename": "car5pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 24711
+    },
+    {
+      "table_index": 126,
+      "pointer_offset": 739000,
+      "string_offset": 659704,
+      "filename": "car5pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 29949
+    },
+    {
+      "table_index": 127,
+      "pointer_offset": 739004,
+      "string_offset": 659716,
+      "filename": "car5pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 30626
+    },
+    {
+      "table_index": 128,
+      "pointer_offset": 739008,
+      "string_offset": 659728,
+      "filename": "car5pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 35219
+    },
+    {
+      "table_index": 129,
+      "pointer_offset": 739012,
+      "string_offset": 659740,
+      "filename": "car5pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 26826
+    },
+    {
+      "table_index": 130,
+      "pointer_offset": 739016,
+      "string_offset": 659752,
+      "filename": "car5pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 28432
+    },
+    {
+      "table_index": 131,
+      "pointer_offset": 739020,
+      "string_offset": 659764,
+      "filename": "car5pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 27734
+    },
+    {
+      "table_index": 132,
+      "pointer_offset": 739024,
+      "string_offset": 659776,
+      "filename": "car5pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 26933
+    },
+    {
+      "table_index": 133,
+      "pointer_offset": 739028,
+      "string_offset": 659788,
+      "filename": "car5pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 26826
+    },
+    {
+      "table_index": 134,
+      "pointer_offset": 739032,
+      "string_offset": 659800,
+      "filename": "car5pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 26826
+    },
+    {
+      "table_index": 135,
+      "pointer_offset": 739036,
+      "string_offset": 659816,
+      "filename": "car5pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 26826
+    },
+    {
+      "table_index": 136,
+      "pointer_offset": 739040,
+      "string_offset": 659832,
+      "filename": "car5pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 26826
+    },
+    {
+      "table_index": 137,
+      "pointer_offset": 739044,
+      "string_offset": 659848,
+      "filename": "car6pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 27911
+    },
+    {
+      "table_index": 138,
+      "pointer_offset": 739048,
+      "string_offset": 659860,
+      "filename": "car6pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 29655
+    },
+    {
+      "table_index": 139,
+      "pointer_offset": 739052,
+      "string_offset": 659872,
+      "filename": "car6pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 31739
+    },
+    {
+      "table_index": 140,
+      "pointer_offset": 739056,
+      "string_offset": 659884,
+      "filename": "car6pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 26757
+    },
+    {
+      "table_index": 141,
+      "pointer_offset": 739060,
+      "string_offset": 659896,
+      "filename": "car6pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 27426
+    },
+    {
+      "table_index": 142,
+      "pointer_offset": 739064,
+      "string_offset": 659908,
+      "filename": "car6pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 23170
+    },
+    {
+      "table_index": 143,
+      "pointer_offset": 739068,
+      "string_offset": 659920,
+      "filename": "car6pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 27866
+    },
+    {
+      "table_index": 144,
+      "pointer_offset": 739072,
+      "string_offset": 659932,
+      "filename": "car6pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 29281
+    },
+    {
+      "table_index": 145,
+      "pointer_offset": 739076,
+      "string_offset": 659944,
+      "filename": "car6pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 27426
+    },
+    {
+      "table_index": 146,
+      "pointer_offset": 739080,
+      "string_offset": 659956,
+      "filename": "car6pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 27426
+    },
+    {
+      "table_index": 147,
+      "pointer_offset": 739084,
+      "string_offset": 659972,
+      "filename": "car6pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 27426
+    },
+    {
+      "table_index": 148,
+      "pointer_offset": 739088,
+      "string_offset": 659988,
+      "filename": "car6pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 27426
+    },
+    {
+      "table_index": 149,
+      "pointer_offset": 739092,
+      "string_offset": 660004,
+      "filename": "car7pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 30386
+    },
+    {
+      "table_index": 150,
+      "pointer_offset": 739096,
+      "string_offset": 660016,
+      "filename": "car7pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 30819
+    },
+    {
+      "table_index": 151,
+      "pointer_offset": 739100,
+      "string_offset": 660028,
+      "filename": "car7pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 35267
+    },
+    {
+      "table_index": 152,
+      "pointer_offset": 739104,
+      "string_offset": 660040,
+      "filename": "car7pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 32971
+    },
+    {
+      "table_index": 153,
+      "pointer_offset": 739108,
+      "string_offset": 660052,
+      "filename": "car7pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 30941
+    },
+    {
+      "table_index": 154,
+      "pointer_offset": 739112,
+      "string_offset": 660064,
+      "filename": "car7pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 32892
+    },
+    {
+      "table_index": 155,
+      "pointer_offset": 739116,
+      "string_offset": 660076,
+      "filename": "car7pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 30652
+    },
+    {
+      "table_index": 156,
+      "pointer_offset": 739120,
+      "string_offset": 660088,
+      "filename": "car7pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 40361
+    },
+    {
+      "table_index": 157,
+      "pointer_offset": 739124,
+      "string_offset": 660100,
+      "filename": "car7pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 30941
+    },
+    {
+      "table_index": 158,
+      "pointer_offset": 739128,
+      "string_offset": 660112,
+      "filename": "car7pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 30941
+    },
+    {
+      "table_index": 159,
+      "pointer_offset": 739132,
+      "string_offset": 660128,
+      "filename": "car7pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 30941
+    },
+    {
+      "table_index": 160,
+      "pointer_offset": 739136,
+      "string_offset": 660144,
+      "filename": "car7pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 30941
+    },
+    {
+      "table_index": 161,
+      "pointer_offset": 739140,
+      "string_offset": 660160,
+      "filename": "car8pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 37196
+    },
+    {
+      "table_index": 162,
+      "pointer_offset": 739144,
+      "string_offset": 660172,
+      "filename": "car8pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 35643
+    },
+    {
+      "table_index": 163,
+      "pointer_offset": 739148,
+      "string_offset": 660184,
+      "filename": "car8pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 35987
+    },
+    {
+      "table_index": 164,
+      "pointer_offset": 739152,
+      "string_offset": 660196,
+      "filename": "car8pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 32076
+    },
+    {
+      "table_index": 165,
+      "pointer_offset": 739156,
+      "string_offset": 660208,
+      "filename": "car8pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 31158
+    },
+    {
+      "table_index": 166,
+      "pointer_offset": 739160,
+      "string_offset": 660220,
+      "filename": "car8pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 36981
+    },
+    {
+      "table_index": 167,
+      "pointer_offset": 739164,
+      "string_offset": 660232,
+      "filename": "car8pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 36616
+    },
+    {
+      "table_index": 168,
+      "pointer_offset": 739168,
+      "string_offset": 660244,
+      "filename": "car8pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 31460
+    },
+    {
+      "table_index": 169,
+      "pointer_offset": 739172,
+      "string_offset": 660256,
+      "filename": "car8pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 31158
+    },
+    {
+      "table_index": 170,
+      "pointer_offset": 739176,
+      "string_offset": 660268,
+      "filename": "car8pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 31158
+    },
+    {
+      "table_index": 171,
+      "pointer_offset": 739180,
+      "string_offset": 660284,
+      "filename": "car8pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 31158
+    },
+    {
+      "table_index": 172,
+      "pointer_offset": 739184,
+      "string_offset": 660300,
+      "filename": "car8pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 31158
+    },
+    {
+      "table_index": 173,
+      "pointer_offset": 739188,
+      "string_offset": 660316,
+      "filename": "car9pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 30678
+    },
+    {
+      "table_index": 174,
+      "pointer_offset": 739192,
+      "string_offset": 660328,
+      "filename": "car9pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 31209
+    },
+    {
+      "table_index": 175,
+      "pointer_offset": 739196,
+      "string_offset": 660340,
+      "filename": "car9pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 34012
+    },
+    {
+      "table_index": 176,
+      "pointer_offset": 739200,
+      "string_offset": 660352,
+      "filename": "car9pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 23543
+    },
+    {
+      "table_index": 177,
+      "pointer_offset": 739204,
+      "string_offset": 660364,
+      "filename": "car9pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 29379
+    },
+    {
+      "table_index": 178,
+      "pointer_offset": 739208,
+      "string_offset": 660376,
+      "filename": "car9pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 30438
+    },
+    {
+      "table_index": 179,
+      "pointer_offset": 739212,
+      "string_offset": 660388,
+      "filename": "car9pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 32141
+    },
+    {
+      "table_index": 180,
+      "pointer_offset": 739216,
+      "string_offset": 660400,
+      "filename": "car9pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 31832
+    },
+    {
+      "table_index": 181,
+      "pointer_offset": 739220,
+      "string_offset": 660412,
+      "filename": "car9pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 29379
+    },
+    {
+      "table_index": 182,
+      "pointer_offset": 739224,
+      "string_offset": 660424,
+      "filename": "car9pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 29379
+    },
+    {
+      "table_index": 183,
+      "pointer_offset": 739228,
+      "string_offset": 660440,
+      "filename": "car9pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 29379
+    },
+    {
+      "table_index": 184,
+      "pointer_offset": 739232,
+      "string_offset": 660456,
+      "filename": "car9pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 29379
+    },
+    {
+      "table_index": 185,
+      "pointer_offset": 739236,
+      "string_offset": 660472,
+      "filename": "car10pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 52941
+    },
+    {
+      "table_index": 186,
+      "pointer_offset": 739240,
+      "string_offset": 660488,
+      "filename": "car10pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 52840
+    },
+    {
+      "table_index": 187,
+      "pointer_offset": 739244,
+      "string_offset": 660504,
+      "filename": "car10pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 54567
+    },
+    {
+      "table_index": 188,
+      "pointer_offset": 739248,
+      "string_offset": 660520,
+      "filename": "car10pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 49373
+    },
+    {
+      "table_index": 189,
+      "pointer_offset": 739252,
+      "string_offset": 660536,
+      "filename": "car10pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 47415
+    },
+    {
+      "table_index": 190,
+      "pointer_offset": 739256,
+      "string_offset": 660552,
+      "filename": "car10pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 51437
+    },
+    {
+      "table_index": 191,
+      "pointer_offset": 739260,
+      "string_offset": 660568,
+      "filename": "car10pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 53541
+    },
+    {
+      "table_index": 192,
+      "pointer_offset": 739264,
+      "string_offset": 660584,
+      "filename": "car10pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 49212
+    },
+    {
+      "table_index": 193,
+      "pointer_offset": 739268,
+      "string_offset": 660600,
+      "filename": "car10pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 47415
+    },
+    {
+      "table_index": 194,
+      "pointer_offset": 739272,
+      "string_offset": 660616,
+      "filename": "car10pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 47415
+    },
+    {
+      "table_index": 195,
+      "pointer_offset": 739276,
+      "string_offset": 660632,
+      "filename": "car10pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 47415
+    },
+    {
+      "table_index": 196,
+      "pointer_offset": 739280,
+      "string_offset": 660648,
+      "filename": "car10pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 47415
+    },
+    {
+      "table_index": 197,
+      "pointer_offset": 739284,
+      "string_offset": 660664,
+      "filename": "car11pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 44748
+    },
+    {
+      "table_index": 198,
+      "pointer_offset": 739288,
+      "string_offset": 660680,
+      "filename": "car11pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 44131
+    },
+    {
+      "table_index": 199,
+      "pointer_offset": 739292,
+      "string_offset": 660696,
+      "filename": "car11pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 44502
+    },
+    {
+      "table_index": 200,
+      "pointer_offset": 739296,
+      "string_offset": 660712,
+      "filename": "car11pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 44828
+    },
+    {
+      "table_index": 201,
+      "pointer_offset": 739300,
+      "string_offset": 660728,
+      "filename": "car11pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 45450
+    },
+    {
+      "table_index": 202,
+      "pointer_offset": 739304,
+      "string_offset": 660744,
+      "filename": "car11pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 43598
+    },
+    {
+      "table_index": 203,
+      "pointer_offset": 739308,
+      "string_offset": 660760,
+      "filename": "car11pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 54726
+    },
+    {
+      "table_index": 204,
+      "pointer_offset": 739312,
+      "string_offset": 660776,
+      "filename": "car11pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 44270
+    },
+    {
+      "table_index": 205,
+      "pointer_offset": 739316,
+      "string_offset": 660792,
+      "filename": "car11pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 44893
+    },
+    {
+      "table_index": 206,
+      "pointer_offset": 739320,
+      "string_offset": 660808,
+      "filename": "car11pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 44893
+    },
+    {
+      "table_index": 207,
+      "pointer_offset": 739324,
+      "string_offset": 660824,
+      "filename": "car11pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 44893
+    },
+    {
+      "table_index": 208,
+      "pointer_offset": 739328,
+      "string_offset": 660840,
+      "filename": "car11pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 44893
+    },
+    {
+      "table_index": 209,
+      "pointer_offset": 739332,
+      "string_offset": 660856,
+      "filename": "car12pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 48904
+    },
+    {
+      "table_index": 210,
+      "pointer_offset": 739336,
+      "string_offset": 660872,
+      "filename": "car12pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 49009
+    },
+    {
+      "table_index": 211,
+      "pointer_offset": 739340,
+      "string_offset": 660888,
+      "filename": "car12pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 49581
+    },
+    {
+      "table_index": 212,
+      "pointer_offset": 739344,
+      "string_offset": 660904,
+      "filename": "car12pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 48987
+    },
+    {
+      "table_index": 213,
+      "pointer_offset": 739348,
+      "string_offset": 660920,
+      "filename": "car12pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 49143
+    },
+    {
+      "table_index": 214,
+      "pointer_offset": 739352,
+      "string_offset": 660936,
+      "filename": "car12pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 48941
+    },
+    {
+      "table_index": 215,
+      "pointer_offset": 739356,
+      "string_offset": 660952,
+      "filename": "car12pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 49290
+    },
+    {
+      "table_index": 216,
+      "pointer_offset": 739360,
+      "string_offset": 660968,
+      "filename": "car12pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 47732
+    },
+    {
+      "table_index": 217,
+      "pointer_offset": 739364,
+      "string_offset": 660984,
+      "filename": "car12pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 49143
+    },
+    {
+      "table_index": 218,
+      "pointer_offset": 739368,
+      "string_offset": 661000,
+      "filename": "car12pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 49143
+    },
+    {
+      "table_index": 219,
+      "pointer_offset": 739372,
+      "string_offset": 661016,
+      "filename": "car12pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 49143
+    },
+    {
+      "table_index": 220,
+      "pointer_offset": 739376,
+      "string_offset": 661032,
+      "filename": "car12pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 49143
+    },
+    {
+      "table_index": 221,
+      "pointer_offset": 739380,
+      "string_offset": 661048,
+      "filename": "car13pj1.lzs",
+      "present_on_disc": true,
+      "file_size": 47329
+    },
+    {
+      "table_index": 222,
+      "pointer_offset": 739384,
+      "string_offset": 661064,
+      "filename": "car13pj2.lzs",
+      "present_on_disc": true,
+      "file_size": 43775
+    },
+    {
+      "table_index": 223,
+      "pointer_offset": 739388,
+      "string_offset": 661080,
+      "filename": "car13pj3.lzs",
+      "present_on_disc": true,
+      "file_size": 44618
+    },
+    {
+      "table_index": 224,
+      "pointer_offset": 739392,
+      "string_offset": 661096,
+      "filename": "car13pj4.lzs",
+      "present_on_disc": true,
+      "file_size": 42589
+    },
+    {
+      "table_index": 225,
+      "pointer_offset": 739396,
+      "string_offset": 661112,
+      "filename": "car13pj5.lzs",
+      "present_on_disc": true,
+      "file_size": 44233
+    },
+    {
+      "table_index": 226,
+      "pointer_offset": 739400,
+      "string_offset": 661128,
+      "filename": "car13pj6.lzs",
+      "present_on_disc": true,
+      "file_size": 42652
+    },
+    {
+      "table_index": 227,
+      "pointer_offset": 739404,
+      "string_offset": 661144,
+      "filename": "car13pj7.lzs",
+      "present_on_disc": true,
+      "file_size": 47923
+    },
+    {
+      "table_index": 228,
+      "pointer_offset": 739408,
+      "string_offset": 661160,
+      "filename": "car13pj8.lzs",
+      "present_on_disc": true,
+      "file_size": 42425
+    },
+    {
+      "table_index": 229,
+      "pointer_offset": 739412,
+      "string_offset": 661176,
+      "filename": "car13pj9.lzs",
+      "present_on_disc": true,
+      "file_size": 44233
+    },
+    {
+      "table_index": 230,
+      "pointer_offset": 739416,
+      "string_offset": 661192,
+      "filename": "car13pj10.lzs",
+      "present_on_disc": true,
+      "file_size": 44233
+    },
+    {
+      "table_index": 231,
+      "pointer_offset": 739420,
+      "string_offset": 661208,
+      "filename": "car13pj11.lzs",
+      "present_on_disc": true,
+      "file_size": 44233
+    },
+    {
+      "table_index": 232,
+      "pointer_offset": 739424,
+      "string_offset": 661224,
+      "filename": "car13pj12.lzs",
+      "present_on_disc": true,
+      "file_size": 44233
+    },
+    {
+      "table_index": 233,
+      "pointer_offset": 739428,
+      "string_offset": 661240,
+      "filename": "track1.lzs",
+      "present_on_disc": true,
+      "file_size": 2217301
+    },
+    {
+      "table_index": 234,
+      "pointer_offset": 739432,
+      "string_offset": 661252,
+      "filename": "track2.lzs",
+      "present_on_disc": true,
+      "file_size": 2200898
+    },
+    {
+      "table_index": 235,
+      "pointer_offset": 739436,
+      "string_offset": 661264,
+      "filename": "track3.lzs",
+      "present_on_disc": true,
+      "file_size": 2012011
+    },
+    {
+      "table_index": 236,
+      "pointer_offset": 739440,
+      "string_offset": 661276,
+      "filename": "track4.lzs",
+      "present_on_disc": true,
+      "file_size": 2257737
+    },
+    {
+      "table_index": 237,
+      "pointer_offset": 739444,
+      "string_offset": 661288,
+      "filename": "track5.lzs",
+      "present_on_disc": true,
+      "file_size": 2245465
+    },
+    {
+      "table_index": 238,
+      "pointer_offset": 739448,
+      "string_offset": 661300,
+      "filename": "track6.lzs",
+      "present_on_disc": true,
+      "file_size": 2293464
+    },
+    {
+      "table_index": 239,
+      "pointer_offset": 739452,
+      "string_offset": 661312,
+      "filename": "dm1.lzs",
+      "present_on_disc": true,
+      "file_size": 450335
+    },
+    {
+      "table_index": 240,
+      "pointer_offset": 739456,
+      "string_offset": 661320,
+      "filename": "dm2.lzs",
+      "present_on_disc": true,
+      "file_size": 127658
+    },
+    {
+      "table_index": 241,
+      "pointer_offset": 739460,
+      "string_offset": 661328,
+      "filename": "dm3.lzs",
+      "present_on_disc": true,
+      "file_size": 390269
+    },
+    {
+      "table_index": 242,
+      "pointer_offset": 739464,
+      "string_offset": 661336,
+      "filename": "dm4.lzs",
+      "present_on_disc": true,
+      "file_size": 538941
+    },
+    {
+      "table_index": 243,
+      "pointer_offset": 739468,
+      "string_offset": 661344,
+      "filename": "dm5.lzs",
+      "present_on_disc": true,
+      "file_size": 753475
+    },
+    {
+      "table_index": 244,
+      "pointer_offset": 739472,
+      "string_offset": 661352,
+      "filename": "dm6.lzs",
+      "present_on_disc": true,
+      "file_size": 619444
+    },
+    {
+      "table_index": 245,
+      "pointer_offset": 739476,
+      "string_offset": 661360,
+      "filename": "dm7.lzs",
+      "present_on_disc": true,
+      "file_size": 694221
+    },
+    {
+      "table_index": 246,
+      "pointer_offset": 739480,
+      "string_offset": 661368,
+      "filename": "dm8.lzs",
+      "present_on_disc": true,
+      "file_size": 471373
+    },
+    {
+      "table_index": 247,
+      "pointer_offset": 739484,
+      "string_offset": 661376,
+      "filename": "stunt1.lzs",
+      "present_on_disc": true,
+      "file_size": 172416
+    },
+    {
+      "table_index": 248,
+      "pointer_offset": 739488,
+      "string_offset": 661388,
+      "filename": "stunt2.lzs",
+      "present_on_disc": true,
+      "file_size": 188615
+    },
+    {
+      "table_index": 249,
+      "pointer_offset": 739492,
+      "string_offset": 661400,
+      "filename": "stunt3.lzs",
+      "present_on_disc": true,
+      "file_size": 582166
+    },
+    {
+      "table_index": 250,
+      "pointer_offset": 739496,
+      "string_offset": 661412,
+      "filename": "stunt4.lzs",
+      "present_on_disc": true,
+      "file_size": 326478
+    },
+    {
+      "table_index": 251,
+      "pointer_offset": 739500,
+      "string_offset": 661424,
+      "filename": "obstacle1.lzs",
+      "present_on_disc": true,
+      "file_size": 865974
+    },
+    {
+      "table_index": 252,
+      "pointer_offset": 739504,
+      "string_offset": 661440,
+      "filename": "track1worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 6995
+    },
+    {
+      "table_index": 253,
+      "pointer_offset": 739508,
+      "string_offset": 661460,
+      "filename": "track2worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 11956
+    },
+    {
+      "table_index": 254,
+      "pointer_offset": 739512,
+      "string_offset": 661480,
+      "filename": "track3worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 6335
+    },
+    {
+      "table_index": 255,
+      "pointer_offset": 739516,
+      "string_offset": 661500,
+      "filename": "track4worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 8627
+    },
+    {
+      "table_index": 256,
+      "pointer_offset": 739520,
+      "string_offset": 661520,
+      "filename": "track5worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 5643
+    },
+    {
+      "table_index": 257,
+      "pointer_offset": 739524,
+      "string_offset": 661540,
+      "filename": "track6worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 6923
+    },
+    {
+      "table_index": 258,
+      "pointer_offset": 739528,
+      "string_offset": 661560,
+      "filename": "dm1worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1020
+    },
+    {
+      "table_index": 259,
+      "pointer_offset": 739532,
+      "string_offset": 661576,
+      "filename": "dm2worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 698
+    },
+    {
+      "table_index": 260,
+      "pointer_offset": 739536,
+      "string_offset": 661592,
+      "filename": "dm3worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1040
+    },
+    {
+      "table_index": 261,
+      "pointer_offset": 739540,
+      "string_offset": 661608,
+      "filename": "dm4worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1287
+    },
+    {
+      "table_index": 262,
+      "pointer_offset": 739544,
+      "string_offset": 661624,
+      "filename": "dm5worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1329
+    },
+    {
+      "table_index": 263,
+      "pointer_offset": 739548,
+      "string_offset": 661640,
+      "filename": "dm6worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 965
+    },
+    {
+      "table_index": 264,
+      "pointer_offset": 739552,
+      "string_offset": 661656,
+      "filename": "dm7worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1043
+    },
+    {
+      "table_index": 265,
+      "pointer_offset": 739556,
+      "string_offset": 661672,
+      "filename": "dm8worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1291
+    },
+    {
+      "table_index": 266,
+      "pointer_offset": 739560,
+      "string_offset": 661688,
+      "filename": "stunt1worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1744
+    },
+    {
+      "table_index": 267,
+      "pointer_offset": 739564,
+      "string_offset": 661708,
+      "filename": "stunt2worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1710
+    },
+    {
+      "table_index": 268,
+      "pointer_offset": 739568,
+      "string_offset": 661728,
+      "filename": "stunt3worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 2432
+    },
+    {
+      "table_index": 269,
+      "pointer_offset": 739572,
+      "string_offset": 661748,
+      "filename": "stunt4worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1890
+    },
+    {
+      "table_index": 270,
+      "pointer_offset": 739576,
+      "string_offset": 661768,
+      "filename": "obstacle1worlds.lzs",
+      "present_on_disc": true,
+      "file_size": 1189
+    },
+    {
+      "table_index": 271,
+      "pointer_offset": 739580,
+      "string_offset": 661788,
+      "filename": "track1road.lzs",
+      "present_on_disc": true,
+      "file_size": 291330
+    },
+    {
+      "table_index": 272,
+      "pointer_offset": 739584,
+      "string_offset": 661804,
+      "filename": "track2road.lzs",
+      "present_on_disc": true,
+      "file_size": 369276
+    },
+    {
+      "table_index": 273,
+      "pointer_offset": 739588,
+      "string_offset": 661820,
+      "filename": "track3road.lzs",
+      "present_on_disc": true,
+      "file_size": 413390
+    },
+    {
+      "table_index": 274,
+      "pointer_offset": 739592,
+      "string_offset": 661836,
+      "filename": "track4road.lzs",
+      "present_on_disc": true,
+      "file_size": 234438
+    },
+    {
+      "table_index": 275,
+      "pointer_offset": 739596,
+      "string_offset": 661852,
+      "filename": "track5road.lzs",
+      "present_on_disc": true,
+      "file_size": 357960
+    },
+    {
+      "table_index": 276,
+      "pointer_offset": 739600,
+      "string_offset": 661868,
+      "filename": "track6road.lzs",
+      "present_on_disc": true,
+      "file_size": 381212
+    },
+    {
+      "table_index": 277,
+      "pointer_offset": 739604,
+      "string_offset": 661884,
+      "filename": "dm1road.lzs",
+      "present_on_disc": true,
+      "file_size": 13077
+    },
+    {
+      "table_index": 278,
+      "pointer_offset": 739608,
+      "string_offset": 661896,
+      "filename": "dm2road.lzs",
+      "present_on_disc": true,
+      "file_size": 12418
+    },
+    {
+      "table_index": 279,
+      "pointer_offset": 739612,
+      "string_offset": 661908,
+      "filename": "dm3road.lzs",
+      "present_on_disc": true,
+      "file_size": 22432
+    },
+    {
+      "table_index": 280,
+      "pointer_offset": 739616,
+      "string_offset": 661920,
+      "filename": "dm4road.lzs",
+      "present_on_disc": true,
+      "file_size": 8347
+    },
+    {
+      "table_index": 281,
+      "pointer_offset": 739620,
+      "string_offset": 661932,
+      "filename": "dm5road.lzs",
+      "present_on_disc": true,
+      "file_size": 11730
+    },
+    {
+      "table_index": 282,
+      "pointer_offset": 739624,
+      "string_offset": 661944,
+      "filename": "dm6road.lzs",
+      "present_on_disc": true,
+      "file_size": 24669
+    },
+    {
+      "table_index": 283,
+      "pointer_offset": 739628,
+      "string_offset": 661956,
+      "filename": "dm7road.lzs",
+      "present_on_disc": true,
+      "file_size": 9222
+    },
+    {
+      "table_index": 284,
+      "pointer_offset": 739632,
+      "string_offset": 661968,
+      "filename": "dm8road.lzs",
+      "present_on_disc": true,
+      "file_size": 22683
+    },
+    {
+      "table_index": 285,
+      "pointer_offset": 739636,
+      "string_offset": 661980,
+      "filename": "stunt1road.lzs",
+      "present_on_disc": true,
+      "file_size": 108084
+    },
+    {
+      "table_index": 286,
+      "pointer_offset": 739640,
+      "string_offset": 661996,
+      "filename": "stunt2road.lzs",
+      "present_on_disc": true,
+      "file_size": 62872
+    },
+    {
+      "table_index": 287,
+      "pointer_offset": 739644,
+      "string_offset": 662012,
+      "filename": "stunt3road.lzs",
+      "present_on_disc": true,
+      "file_size": 136002
+    },
+    {
+      "table_index": 288,
+      "pointer_offset": 739648,
+      "string_offset": 662028,
+      "filename": "stunt4road.lzs",
+      "present_on_disc": true,
+      "file_size": 95253
+    },
+    {
+      "table_index": 289,
+      "pointer_offset": 739652,
+      "string_offset": 662044,
+      "filename": "obstacle1road.lzs",
+      "present_on_disc": true,
+      "file_size": 85839
+    },
+    {
+      "table_index": 290,
+      "pointer_offset": 739656,
+      "string_offset": 662064,
+      "filename": "track1path.lzs",
+      "present_on_disc": true,
+      "file_size": 26319
+    },
+    {
+      "table_index": 291,
+      "pointer_offset": 739660,
+      "string_offset": 662080,
+      "filename": "track2path.lzs",
+      "present_on_disc": true,
+      "file_size": 36842
+    },
+    {
+      "table_index": 292,
+      "pointer_offset": 739664,
+      "string_offset": 662096,
+      "filename": "track3path.lzs",
+      "present_on_disc": true,
+      "file_size": 34625
+    },
+    {
+      "table_index": 293,
+      "pointer_offset": 739668,
+      "string_offset": 662112,
+      "filename": "track4path.lzs",
+      "present_on_disc": true,
+      "file_size": 35041
+    },
+    {
+      "table_index": 294,
+      "pointer_offset": 739672,
+      "string_offset": 662128,
+      "filename": "track5path.lzs",
+      "present_on_disc": true,
+      "file_size": 33474
+    },
+    {
+      "table_index": 295,
+      "pointer_offset": 739676,
+      "string_offset": 662144,
+      "filename": "track6path.lzs",
+      "present_on_disc": true,
+      "file_size": 50137
+    },
+    {
+      "table_index": 296,
+      "pointer_offset": 739680,
+      "string_offset": 662160,
+      "filename": "dm1path.lzs",
+      "present_on_disc": true,
+      "file_size": 2419
+    },
+    {
+      "table_index": 297,
+      "pointer_offset": 739684,
+      "string_offset": 662172,
+      "filename": "dm2path.lzs",
+      "present_on_disc": true,
+      "file_size": 1985
+    },
+    {
+      "table_index": 298,
+      "pointer_offset": 739688,
+      "string_offset": 662184,
+      "filename": "dm3path.lzs",
+      "present_on_disc": true,
+      "file_size": 1309
+    },
+    {
+      "table_index": 299,
+      "pointer_offset": 739692,
+      "string_offset": 662196,
+      "filename": "dm4path.lzs",
+      "present_on_disc": true,
+      "file_size": 2185
+    },
+    {
+      "table_index": 300,
+      "pointer_offset": 739696,
+      "string_offset": 662208,
+      "filename": "dm5path.lzs",
+      "present_on_disc": true,
+      "file_size": 2428
+    },
+    {
+      "table_index": 301,
+      "pointer_offset": 739700,
+      "string_offset": 662220,
+      "filename": "dm6path.lzs",
+      "present_on_disc": true,
+      "file_size": 2154
+    },
+    {
+      "table_index": 302,
+      "pointer_offset": 739704,
+      "string_offset": 662232,
+      "filename": "dm7path.lzs",
+      "present_on_disc": true,
+      "file_size": 1269
+    },
+    {
+      "table_index": 303,
+      "pointer_offset": 739708,
+      "string_offset": 662244,
+      "filename": "dm8path.lzs",
+      "present_on_disc": true,
+      "file_size": 1229
+    },
+    {
+      "table_index": 304,
+      "pointer_offset": 739712,
+      "string_offset": 662256,
+      "filename": "stunt1path.lzs",
+      "present_on_disc": true,
+      "file_size": 2181
+    },
+    {
+      "table_index": 305,
+      "pointer_offset": 739716,
+      "string_offset": 662272,
+      "filename": "stunt2path.lzs",
+      "present_on_disc": true,
+      "file_size": 3938
+    },
+    {
+      "table_index": 306,
+      "pointer_offset": 739720,
+      "string_offset": 662288,
+      "filename": "stunt3path.lzs",
+      "present_on_disc": true,
+      "file_size": 1409
+    },
+    {
+      "table_index": 307,
+      "pointer_offset": 739724,
+      "string_offset": 662304,
+      "filename": "stunt4path.lzs",
+      "present_on_disc": true,
+      "file_size": 1739
+    },
+    {
+      "table_index": 308,
+      "pointer_offset": 739728,
+      "string_offset": 662320,
+      "filename": "obstacle1path.lzs",
+      "present_on_disc": true,
+      "file_size": 609
+    },
+    {
+      "table_index": 309,
+      "pointer_offset": 739732,
+      "string_offset": 662340,
+      "filename": "track1pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 24939
+    },
+    {
+      "table_index": 310,
+      "pointer_offset": 739736,
+      "string_offset": 662360,
+      "filename": "track2pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 35610
+    },
+    {
+      "table_index": 311,
+      "pointer_offset": 739740,
+      "string_offset": 662380,
+      "filename": "track3pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 34958
+    },
+    {
+      "table_index": 312,
+      "pointer_offset": 739744,
+      "string_offset": 662400,
+      "filename": "track4pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 35174
+    },
+    {
+      "table_index": 313,
+      "pointer_offset": 739748,
+      "string_offset": 662420,
+      "filename": "track5pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 33513
+    },
+    {
+      "table_index": 314,
+      "pointer_offset": 739752,
+      "string_offset": 662440,
+      "filename": "track6pathback.lzs",
+      "present_on_disc": true,
+      "file_size": 50968
+    }
+  ]
+}

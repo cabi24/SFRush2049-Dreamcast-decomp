@@ -1,0 +1,1 @@
+The verified 1ST_READ.BIN extraction remains in task scratch, outside the saved C:\rush2049-dreamcast\pilot kit. config/target.json records its local working_copy path and expected SHA256. Tools prefer a local ignored orig/1ST_READ.BIN if one already exists, then that scratch path. No disc image or executable is included in the saved kit. Original media remains read-only.

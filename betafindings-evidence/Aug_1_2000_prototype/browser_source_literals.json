@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "file": "2_DP.BIN",
+      "offset": 1033436,
+      "text": "../common/melan.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1040516,
+      "text": "cursor.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1056928,
+      "text": "../common/mpgaudio.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1060556,
+      "text": "kgevt.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1060620,
+      "text": "kgactstr.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1060668,
+      "text": "kgfil.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1060868,
+      "text": "kgtrnstr.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1061232,
+      "text": "kgtrn.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1078712,
+      "text": "kgtrnweb.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1078800,
+      "text": "kgfsh.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1080560,
+      "text": "uthmn.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1080728,
+      "text": "utvct.c"
+    },
+    {
+      "file": "2_DP.BIN",
+      "offset": 1113268,
+      "text": "utbit.c"
+    }
+  ],
+  "assertions": [
+    {
+      "file": "2_DP.BIN",
+      "offset": 1080488,
+      "text": "assertion %s failed in %s, at line %ld!"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "generated_utc": "2026-10-18T04:05:40.553418+00:00",
+  "target": {
+    "target": "Dreamcast Rush 2049 US v1.001",
+    "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+    "size": 1123492,
+    "load_address": 2348875776,
+    "source_gdi": "C:\\rush2049-dreamcast\\San Francisco RUSH 2049 v1.001\\San Francisco RUSH 2049 v1.001 (2000)(Midway)(NTSC)(US)[!].gdi",
+    "source_lba": 548451,
+    "originals": "read-only; local extraction only",
+    "mat3_reference": "C:\\rush2049-mat3",
+    "training": [
+      "bsearch",
+      "InsertLLE",
+      "interp",
+      "BodyVector"
+    ],
+    "heldout": [
+      "enginetorque",
+      "UpdateFrameTimer",
+      "GetWaveByIndex"
+    ],
+    "configuration_trial_cap": 16,
+    "heldout_tuning_forbidden": true,
+    "working_copy": "C:\\rush2049-dreamcast\\pilot\\orig\\1ST_READ.BIN"
+  },
+  "functions": [
+    {
+      "function": "bsearch",
+      "set": "training",
+      "MAT3_semantic_identity_accepted": false,
+      "api_counterpart_only": true,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "identified API counterpart; different source/library implementation",
+      "score_annotation": 85,
+      "evidence": "lanes/integer/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\bsearch.c",
+        "sha256": "de922acb2ce928c344b5c49431c7bb2b0052a75ecea44c6e9a8ab6b37c744d6f"
+      },
+      "code": {
+        "file_start": "0x8bc04",
+        "file_end_exclusive": "0x8bc7a",
+        "va_start": "0x8c09bc04",
+        "size": 118,
+        "sha256": "6cb6b1c68df13cdd5c94548fb3f1fe98036c77a034eabdc3a849b596fce31fc0"
+      }
+    },
+    {
+      "function": "InsertLLE",
+      "set": "training",
+      "MAT3_semantic_identity_accepted": true,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "identified; full branch/side-effect sequence traced",
+      "score_annotation": 85,
+      "evidence": "lanes/integer/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\ll.c",
+        "sha256": "182ad7483879d32534b4f0ff21315b7a228c95e3e30a84d7c86c52c50cb2ed25"
+      },
+      "code": {
+        "file_start": "0x2a1c8",
+        "file_end_exclusive": "0x2a28e",
+        "va_start": "0x8c03a1c8",
+        "size": 198,
+        "sha256": "dc75a639b6e1e488cf3cfd105a3608f2642d71d94f87e8ccf9d74493d0e25f11"
+      }
+    },
+    {
+      "function": "interp",
+      "set": "training",
+      "MAT3_semantic_identity_accepted": true,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "identified arithmetic helper; source return width unresolved",
+      "score_annotation": 90,
+      "evidence": "lanes/integer/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c",
+        "sha256": "a4cd272f9b3852cca6e70c90a4f24423d339179d0d57db3eae5164c6d87cc9f4"
+      },
+      "code": {
+        "file_start": "0x131d2",
+        "file_end_exclusive": "0x131e6",
+        "va_start": "0x8c0231d2",
+        "size": 20,
+        "sha256": "33061891d8c5fd16d20a4ecfd6a44ddeb7bcb85c07eb35514ff300226f7a14d4"
+      }
+    },
+    {
+      "function": "BodyVector",
+      "set": "training",
+      "MAT3_semantic_identity_accepted": true,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "I_identified",
+      "score_annotation": 80,
+      "evidence": "lanes/resource_float/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\fmath.c",
+        "sha256": "dc2b38176f2cde208697603c632cdffcc62d60ccc1d5da0f8b990fc9af7edbc5"
+      },
+      "code": {
+        "file_start": "0x16b00",
+        "file_end_exclusive": "0x16b5e",
+        "va_start": "0x8c026b00",
+        "size": 94,
+        "sha256": "b809e1fe7e3c46b3aca383e7d6e94c86f094c7bd1108f039c53a5df6e7cf90d6"
+      }
+    },
+    {
+      "function": "enginetorque",
+      "set": "heldout",
+      "MAT3_semantic_identity_accepted": true,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "identified only; held-out compilation/configuration tuning not performed",
+      "score_annotation": 98,
+      "evidence": "lanes/integer/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c",
+        "sha256": "a4cd272f9b3852cca6e70c90a4f24423d339179d0d57db3eae5164c6d87cc9f4"
+      },
+      "code": {
+        "file_start": "0x130b0",
+        "file_end_exclusive": "0x131d2",
+        "va_start": "0x8c0230b0",
+        "size": 290,
+        "sha256": "4e190931ed6904e75282874b50f7775006c2d2e75900a1c79ac78ea96d7eaa64"
+      }
+    },
+    {
+      "function": "UpdateFrameTimer",
+      "set": "heldout",
+      "MAT3_semantic_identity_accepted": true,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "I_identified_no_compilation_or_tuning",
+      "score_annotation": 90,
+      "evidence": "lanes/resource_float/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\timer.c",
+        "sha256": "dfc26bcf3a0020221fcb37a5cd7483d27449f0d5f2cbde7dc594189741f0a2d4"
+      },
+      "code": {
+        "file_start": "0x10a",
+        "file_end_exclusive": "0x176",
+        "va_start": "0x8c01010a",
+        "size": 108,
+        "sha256": "4882d6f779a5c816e63dd4ad0f3688113b83ae07a17620c0e8078358a7ddf308"
+      }
+    },
+    {
+      "function": "GetWaveByIndex",
+      "set": "heldout",
+      "MAT3_semantic_identity_accepted": false,
+      "api_counterpart_only": false,
+      "equivalent_C_accepted": false,
+      "compiled_SH_objects": 0,
+      "exact_local_link": false,
+      "status": "not_found_possible_GC_addition",
+      "score_annotation": null,
+      "evidence": "lanes/resource_float/mapping.json",
+      "source": {
+        "path": "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\waves.c",
+        "sha256": "905f8f3f962760a0371fb666edd0d9b8071970040b80ac1343919c268569b1bb"
+      },
+      "code": null
+    }
+  ],
+  "code_spans": [
+    {
+      "function": "InsertLLE",
+      "target_offset": 172488,
+      "size": 198,
+      "kind": "code",
+      "candidate_address": 2349048264,
+      "sha256": "dc75a639b6e1e488cf3cfd105a3608f2642d71d94f87e8ccf9d74493d0e25f11"
+    },
+    {
+      "function": "interp",
+      "target_offset": 78290,
+      "size": 20,
+      "kind": "code",
+      "candidate_address": 2348954066,
+      "sha256": "33061891d8c5fd16d20a4ecfd6a44ddeb7bcb85c07eb35514ff300226f7a14d4"
+    },
+    {
+      "function": "BodyVector",
+      "target_offset": 92928,
+      "size": 94,
+      "kind": "code",
+      "candidate_address": 2348968704,
+      "sha256": "b809e1fe7e3c46b3aca383e7d6e94c86f094c7bd1108f039c53a5df6e7cf90d6"
+    },
+    {
+      "function": "enginetorque",
+      "target_offset": 78000,
+      "size": 290,
+      "kind": "code",
+      "candidate_address": 2348953776,
+      "sha256": "4e190931ed6904e75282874b50f7775006c2d2e75900a1c79ac78ea96d7eaa64"
+    },
+    {
+      "function": "UpdateFrameTimer",
+      "target_offset": 266,
+      "size": 108,
+      "kind": "code",
+      "candidate_address": 2348876042,
+      "sha256": "4882d6f779a5c816e63dd4ad0f3688113b83ae07a17620c0e8078358a7ddf308"
+    }
+  ],
+  "API_counterpart_code_spans": [
+    {
+      "function": "bsearch",
+      "target_offset": 572420,
+      "size": 118,
+      "kind": "code",
+      "candidate_address": 2349448196,
+      "sha256": "6cb6b1c68df13cdd5c94548fb3f1fe98036c77a034eabdc3a849b596fce31fc0"
+    }
+  ],
+  "literal_dependency_groups": [
+    {
+      "group": "timer_shared",
+      "target_offset": 452,
+      "size": 4,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "c087e4ba1c695249b10319260594f3190c0833bf586c986e10c5c0ea2e8c22d8"
+    },
+    {
+      "group": "timer_shared",
+      "target_offset": 472,
+      "size": 32,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "2fc495c0d74de9a6bd585479bd37acf4913cdf8b69eb54a5b42c703b3e9c8577"
+    },
+    {
+      "group": "drivetra_shared",
+      "target_offset": 78364,
+      "size": 4,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "7c258edf9c39c9e767867bf6e793aec5bab766afeb25777c7c4ec8ceeadf1227"
+    },
+    {
+      "group": "drivetra_shared",
+      "target_offset": 78376,
+      "size": 20,
+      "kind": "literal",
+      "ownership": "central dependency group; not exclusive function ownership",
+      "sha256": "03e6f418226534fd8d7761502320d2565cfac9205926454ede8c2c80b2e9820e"
+    }
+  ],
+  "counts": {
+    "fixed_pilot_slots": 7,
+    "accepted_MAT3_semantic_identities": 5,
+    "additional_API_counterpart_with_source_drift": 1,
+    "unlocated_slots": 1,
+    "equivalent_C_accepted": 0,
+    "SH_compiler_invocations": 0,
+    "configuration_trials_used": 0,
+    "configuration_trial_cap": 16,
+    "emitted_SH_objects": 0,
+    "exact_local_links": 0,
+    "accepted_identity_code_union_bytes": 710,
+    "additional_API_counterpart_code_bytes": 118,
+    "shared_literal_dependency_union_bytes": 60,
+    "earned_source_code_bytes": 0,
+    "earned_source_data_bytes": 0,
+    "full_image_source_coverage_bytes": 0,
+    "full_image_denominator_bytes": 1123492,
+    "historical_object_identity": "unmeasurable: no original DC objects",
+    "whole_image_exact_rebuild": false
+  },
+  "limitations": [
+    "Identified functions are static correspondences, not matching C.",
+    "Five accepted semantic identities exclude the drifted bsearch API counterpart.",
+    "GetWaveByIndex stays in the denominator; absence is not proven.",
+    "Shared pools assigned once; surrounding padding/data remains unowned.",
+    "Heldout functions were identified only; no heldout compilation or configuration tuning.",
+    "No original DC object metadata; no relocation masking or original-byte source credit.",
+    "No paired DC-only timing comparison; no quantified reuse speedup claim."
+  ]
+}

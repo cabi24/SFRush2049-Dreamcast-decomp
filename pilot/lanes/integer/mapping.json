@@ -1,0 +1,524 @@
+{
+  "target": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\dc-pilot\\orig\\1ST_READ.BIN",
+  "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+  "base": "0x8c010000",
+  "scope": "Static mapping only; no compiler execution or byte-match/C recovery claims.",
+  "source_hashes": {
+    "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\bsearch.c": "de922acb2ce928c344b5c49431c7bb2b0052a75ecea44c6e9a8ab6b37c744d6f",
+    "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\ll.c": "182ad7483879d32534b4f0ff21315b7a228c95e3e30a84d7c86c52c50cb2ed25",
+    "C:\\rush2049-mat3\\decomp\\src\\GameSource\\src\\drivetra.c": "a4cd272f9b3852cca6e70c90a4f24423d339179d0d57db3eae5164c6d87cc9f4"
+  },
+  "mappings": {
+    "bsearch": {
+      "set": "training",
+      "entry": 2349448196,
+      "status": "identified API counterpart; different source/library implementation",
+      "source": "bsearch.c:5",
+      "spans": [
+        {
+          "file_start": 572420,
+          "file_end": 572538,
+          "start_hex": "0x8bc04",
+          "end_hex": "0x8bc7a",
+          "va_start": "0x8c09bc04",
+          "va_end": "0x8c09bc7a",
+          "size": 118,
+          "kind": "code",
+          "ownership": "exclusive",
+          "sha256": "6cb6b1c68df13cdd5c94548fb3f1fe98036c77a034eabdc3a849b596fce31fc0"
+        }
+      ],
+      "score": 85,
+      "score_parts": {
+        "behavior": 30,
+        "call_neighborhood": 25,
+        "layout_abi": 20,
+        "rare_constants": 0,
+        "second_contract": 10
+      },
+      "runner_up": {
+        "name": "unlocated MAT3 custom bsearch body",
+        "score": null,
+        "decision": "No alternative with MAT3 limit/fallback or zero-size guard located. Do not assert exhaustive absence."
+      },
+      "abi": {
+        "arguments": [
+          "r4 key",
+          "r5 base",
+          "r6 nmemb",
+          "r7 element_size",
+          "entry SP+0 comparator"
+        ],
+        "result": "r0 pointer or0",
+        "callee_preserved": "r8-r14 plus saved PR/MACL",
+        "frame": "40 bytes: 7 callee-save GPRs (28), PR(4), MACL(4), local(4)"
+      },
+      "evidence": [
+        "Comparator entry arg5 loaded from post-prologue SP+40 at0x8C09BC2C and called indirectly at0x8C09BC3A; R4 key andR5 selected element.",
+        "Unsigned lower index1 and upper nmemb; midpoint lower+((upper-lower)>>1); element base+(mid-1)*size; comparator sign lowers upper or raises lower.",
+        "MBOX object lookup caller0x8C03D424 uses element_size72, model-active loop,16-char name buffer, comparator0x8C03D286; matches MAT3 mbox.c MBOX_FindObject_WORK call contract.",
+        "FindWorld caller0x8C065DEC uses element_size20, comparator0x8C065DB0 comparing names at+4, WorldTable/count globals and stack name key; matches MAT3 world.c:FindWorld contract."
+      ],
+      "drift": [
+        "MAT3 bsearch.c rejects size==0, computes an end limit, uses nmemb halves and a final fallback comparator. DC routine has none of these. Equal-key comparator traversal can differ.",
+        "Name/API correspondence is strong; direct reuse of MAT3 body is not an equivalent source claim for all inputs. A distinct DC candidate is required."
+      ],
+      "entry_hex": "0x8c09bc04",
+      "references": {
+        "direct_bsr_candidates": [],
+        "literal_pointer_candidates": [
+          {
+            "pool": "0x8c03d458",
+            "loads": [
+              "0x8c03d402"
+            ]
+          },
+          {
+            "pool": "0x8c03d640",
+            "loads": [
+              "0x8c03d4f0",
+              "0x8c03d5b4"
+            ]
+          },
+          {
+            "pool": "0x8c065f20",
+            "loads": [
+              "0x8c065de6"
+            ]
+          }
+        ],
+        "scope": "BSR scan through file0x98000; pointer scan whole file; data false positives possible until each site is traced."
+      },
+      "cfg_instruction_count": 59,
+      "cfg_warnings": [],
+      "cfg_truncated": false,
+      "code_sha256": "6cb6b1c68df13cdd5c94548fb3f1fe98036c77a034eabdc3a849b596fce31fc0"
+    },
+    "InsertLLE": {
+      "set": "training",
+      "entry": 2349048264,
+      "status": "identified; full branch/side-effect sequence traced",
+      "source": "ll.c:22",
+      "spans": [
+        {
+          "file_start": 172488,
+          "file_end": 172686,
+          "start_hex": "0x2a1c8",
+          "end_hex": "0x2a28e",
+          "va_start": "0x8c03a1c8",
+          "va_end": "0x8c03a28e",
+          "size": 198,
+          "kind": "code",
+          "ownership": "exclusive",
+          "sha256": "dc75a639b6e1e488cf3cfd105a3608f2642d71d94f87e8ccf9d74493d0e25f11"
+        }
+      ],
+      "score": 85,
+      "score_parts": {
+        "behavior": 30,
+        "call_neighborhood": 25,
+        "layout_abi": 20,
+        "rare_constants": 0,
+        "second_contract": 10
+      },
+      "runner_up": {
+        "name": "neighbor RemoveLLE",
+        "entry": "0x8C03A28E",
+        "score": 45,
+        "decision": "Rejected: removes/rewires nodes and decrements count; opposite side effects."
+      },
+      "abi": {
+        "arguments": [
+          "r4 list",
+          "r5 insert",
+          "r6 before"
+        ],
+        "result": "void; no reliable output register contract",
+        "callee_preserved": "r14 saved at0x8C03A1CA and restored in RTS delay slot0x8C03A28C"
+      },
+      "field_map": {
+        "list.handle": 0,
+        "list.dbl": 1,
+        "list.numElements": 4,
+        "list.head": 8,
+        "list.tail": 12,
+        "node.next": 0,
+        "node.prev": 4
+      },
+      "evidence": [
+        "Null insert branches to common epilogue after preservingR14.",
+        "Handle mode dereferences insert and optional before once; direct mode uses pointers unchanged.",
+        "Before+double path rewires previous next or listhead, copies before.prev to insert.prev then updates before.prev.",
+        "Before+single path traverses direct or handle next links; matches the original lack of earlybreak after a replacement.",
+        "Append path conditionally sets prev, rewires tail next or head, assigns tail; common path writes insert.next=before and increments count.",
+        "Neighbor0x8C03A1B8 stores handle/dbl then falls through to ClearLL0x8C03A1BE zeroing head/tail/count; RemoveLLE0x8C03A28E has matching inverse layout."
+      ],
+      "drift": [],
+      "entry_hex": "0x8c03a1c8",
+      "references": {
+        "direct_bsr_candidates": [],
+        "literal_pointer_candidates": [
+          {
+            "pool": "0x8c013c98",
+            "loads": [
+              "0x8c013b74"
+            ]
+          },
+          {
+            "pool": "0x8c0143e4",
+            "loads": [
+              "0x8c01439c"
+            ]
+          },
+          {
+            "pool": "0x8c014614",
+            "loads": [
+              "0x8c014426",
+              "0x8c01444a",
+              "0x8c01447a"
+            ]
+          },
+          {
+            "pool": "0x8c0150dc",
+            "loads": [
+              "0x8c015018",
+              "0x8c015094"
+            ]
+          },
+          {
+            "pool": "0x8c0153a8",
+            "loads": [
+              "0x8c015186",
+              "0x8c0152f6"
+            ]
+          },
+          {
+            "pool": "0x8c01568c",
+            "loads": [
+              "0x8c0155e2"
+            ]
+          },
+          {
+            "pool": "0x8c015de4",
+            "loads": [
+              "0x8c015c04",
+              "0x8c015d24"
+            ]
+          },
+          {
+            "pool": "0x8c0166f8",
+            "loads": [
+              "0x8c016648"
+            ]
+          },
+          {
+            "pool": "0x8c01683c",
+            "loads": [
+              "0x8c01679c"
+            ]
+          },
+          {
+            "pool": "0x8c016a44",
+            "loads": [
+              "0x8c0168fe"
+            ]
+          },
+          {
+            "pool": "0x8c04d09c",
+            "loads": [
+              "0x8c04cf6c"
+            ]
+          },
+          {
+            "pool": "0x8c04dc0c",
+            "loads": [
+              "0x8c04db9e"
+            ]
+          },
+          {
+            "pool": "0x8c04de4c",
+            "loads": [
+              "0x8c04ddae"
+            ]
+          },
+          {
+            "pool": "0x8c04e588",
+            "loads": [
+              "0x8c04e508"
+            ]
+          },
+          {
+            "pool": "0x8c069f38",
+            "loads": [
+              "0x8c069e64"
+            ]
+          },
+          {
+            "pool": "0x8c06a180",
+            "loads": [
+              "0x8c06a0c0"
+            ]
+          },
+          {
+            "pool": "0x8c06a380",
+            "loads": [
+              "0x8c06a2d6",
+              "0x8c06a36c"
+            ]
+          },
+          {
+            "pool": "0x8c06a5cc",
+            "loads": [
+              "0x8c06a598"
+            ]
+          },
+          {
+            "pool": "0x8c06a734",
+            "loads": [
+              "0x8c06a6e2"
+            ]
+          },
+          {
+            "pool": "0x8c06ab14",
+            "loads": [
+              "0x8c06aaf0"
+            ]
+          },
+          {
+            "pool": "0x8c06bce8",
+            "loads": [
+              "0x8c06bc74",
+              "0x8c06bc98"
+            ]
+          },
+          {
+            "pool": "0x8c06be38",
+            "loads": [
+              "0x8c06bd98"
+            ]
+          },
+          {
+            "pool": "0x8c06bf60",
+            "loads": [
+              "0x8c06be6c"
+            ]
+          },
+          {
+            "pool": "0x8c06c080",
+            "loads": [
+              "0x8c06bffe"
+            ]
+          },
+          {
+            "pool": "0x8c06d450",
+            "loads": [
+              "0x8c06d330",
+              "0x8c06d398"
+            ]
+          },
+          {
+            "pool": "0x8c06da20",
+            "loads": [
+              "0x8c06d906",
+              "0x8c06d914"
+            ]
+          }
+        ],
+        "scope": "BSR scan through file0x98000; pointer scan whole file; data false positives possible until each site is traced."
+      },
+      "cfg_instruction_count": 99,
+      "cfg_warnings": [],
+      "cfg_truncated": false,
+      "code_sha256": "dc75a639b6e1e488cf3cfd105a3608f2642d71d94f87e8ccf9d74493d0e25f11"
+    },
+    "interp": {
+      "set": "training",
+      "entry": 2348954066,
+      "status": "identified arithmetic helper; source return width unresolved",
+      "source": "drivetra.c:182",
+      "spans": [
+        {
+          "file_start": 78290,
+          "file_end": 78310,
+          "start_hex": "0x131d2",
+          "end_hex": "0x131e6",
+          "va_start": "0x8c0231d2",
+          "va_end": "0x8c0231e6",
+          "size": 20,
+          "kind": "code",
+          "ownership": "exclusive",
+          "sha256": "33061891d8c5fd16d20a4ecfd6a44ddeb7bcb85c07eb35514ff300226f7a14d4"
+        }
+      ],
+      "dependencies": [
+        {
+          "file_start": 78376,
+          "file_end": 78380,
+          "start_hex": "0x13228",
+          "end_hex": "0x1322c",
+          "va_start": "0x8c023228",
+          "va_end": "0x8c02322c",
+          "size": 4,
+          "kind": "literal",
+          "ownership": "shared torque/interp pool; central integrator assigns owner once",
+          "sha256": "493e7e689061dc6a0ea3258132e25ab7bf4af5f286b602076193e87270e53ca6"
+        }
+      ],
+      "score": 90,
+      "score_parts": {
+        "behavior": 30,
+        "call_neighborhood": 25,
+        "layout_abi": 20,
+        "rare_constants": 5,
+        "second_contract": 10
+      },
+      "runner_up": {
+        "name": "unlocated same-expression helper",
+        "score": null,
+        "decision": "Exact SUB R4,R5 plus nearby MUL pattern found only at0x131D2; equivalent differently allocated helpers not exhaustively excluded."
+      },
+      "abi": {
+        "arguments": [
+          "r4 a",
+          "r5 b",
+          "r6 rem",
+          "r7 total"
+        ],
+        "result": "r0 full32-bit a+signed_quotient; no explicit16-bit sign extension",
+        "preservation": "PR pushed/popped; helper preservesR2/R3 and observedR4-R7; standalone mutatesR5,R1,R3 and flags",
+        "raw_expression": "uint32 wrapping product from (b-a)*rem; signed32 division helper; wrapping add to a. Restrict candidate C fixtures to defined arithmetic until overflow/INT_MIN/-1 behavior is specified."
+      },
+      "evidence": [
+        "0x131D2 SUB R4,R5;0x131D6 MUL.L R6,R5;0x131DA STS MACL,R1;0x131DC JSR helper; delay-slot MOV R7,R0; return delay-slot ADD R4,R0.",
+        "Helper pointer shared at0x13228 ->0x8C09B680; signedDIV0S plus32 DIV1 steps implements signed32 division, R1 numerator/R0 denominator, returnR0.",
+        "Three instances of the same arithmetic are inlined in enginetorque; intermediates are explicitly stored/loaded as signed16-bit.",
+        "No directBSR or static literal-pointer reference to standalone interp found in bounded code/whole-file pointer scan; it appears retained out-of-line despite inline callers."
+      ],
+      "drift": [
+        "MAT3 declaration returns signedshort; DC standalone has no EXTS.W and has no located out-of-line callers to establish whether source declaration was int or short. Expose raw32 and low16 separately in validation; do not silently impose the GC return type."
+      ],
+      "entry_hex": "0x8c0231d2",
+      "references": {
+        "direct_bsr_candidates": [],
+        "literal_pointer_candidates": [],
+        "scope": "BSR scan through file0x98000; pointer scan whole file; data false positives possible until each site is traced."
+      },
+      "cfg_instruction_count": 10,
+      "cfg_warnings": [],
+      "cfg_truncated": false,
+      "code_sha256": "33061891d8c5fd16d20a4ecfd6a44ddeb7bcb85c07eb35514ff300226f7a14d4"
+    },
+    "enginetorque": {
+      "set": "held_out",
+      "entry": 2348953776,
+      "status": "identified only; held-out compilation/configuration tuning not performed",
+      "source": "drivetra.c:143",
+      "spans": [
+        {
+          "file_start": 78000,
+          "file_end": 78290,
+          "start_hex": "0x130b0",
+          "end_hex": "0x131d2",
+          "va_start": "0x8c0230b0",
+          "va_end": "0x8c0231d2",
+          "size": 290,
+          "kind": "code",
+          "ownership": "exclusive",
+          "sha256": "4e190931ed6904e75282874b50f7775006c2d2e75900a1c79ac78ea96d7eaa64"
+        }
+      ],
+      "dependencies": [
+        {
+          "file_start": 78364,
+          "file_end": 78368,
+          "start_hex": "0x1321c",
+          "end_hex": "0x13220",
+          "va_start": "0x8c02321c",
+          "va_end": "0x8c023220",
+          "size": 4,
+          "kind": "literal",
+          "ownership": "torque constants",
+          "sha256": "7c258edf9c39c9e767867bf6e793aec5bab766afeb25777c7c4ec8ceeadf1227"
+        },
+        {
+          "file_start": 78376,
+          "file_end": 78396,
+          "start_hex": "0x13228",
+          "end_hex": "0x1323c",
+          "va_start": "0x8c023228",
+          "va_end": "0x8c02323c",
+          "size": 20,
+          "kind": "literal",
+          "ownership": "shared pool with interp; includes helper pointers and scale-table pointer",
+          "sha256": "03e6f418226534fd8d7761502320d2565cfac9205926454ede8c2c80b2e9820e"
+        }
+      ],
+      "score": 98,
+      "score_parts": {
+        "behavior": 30,
+        "call_neighborhood": 23,
+        "layout_abi": 20,
+        "rare_constants": 15,
+        "second_contract": 10
+      },
+      "runner_up": {
+        "name": "neighbor engine",
+        "entry": "0x8C0231E6",
+        "score": 45,
+        "decision": "Calls this routine with rpm/throttle/curve; lacks torque table lookup/clamps, so excluded as the torque routine."
+      },
+      "abi": {
+        "arguments": [
+          "r4 model",
+          "r5 rpm narrowed atentry viaEXTS.W",
+          "r6 throttle narrowed by16-bit division helper",
+          "r7 signedshort torque curve"
+        ],
+        "result": "r0 low16 meaningful; engine callerEXTS.W at0x8C023210 verifies torque return usage",
+        "callee_preserved": "r11-r14,PR;20bytes locals"
+      },
+      "field_map": {
+        "model.tune_pointer": 4,
+        "model.handling_byte": 11,
+        "model.engine_type_byte": 12,
+        "tune.torque_scale_float": 8,
+        "carEngineTorque_row_stride": 12,
+        "torque_curve_row_stride": 24
+      },
+      "evidence": [
+        "Adjacent signed16 literals1150 and1149 at0x1321C/0x1321E anchor rpm division/remainder and upper-clamp rem1149; negative-rpm index/rem both zero; clampindex11to10.",
+        "Throttle division/remainder14; clampindex9to8, rem13.",
+        "Signedshort curve addressing tindex*24+rindex*2, two adjacent12-short rows, and three inline interpolation steps with denominators1149,1149,14.",
+        "Final scale reads model+4 tune pointer/tune+8 and table0x8C0BBC4C indexed by signedbytes model+12 times12 andmodel+11 times4; FMUL/FLOAT/FTRC sequence.",
+        "Directengine calls0x8C02320C,0x8C023264,0x8C023284; caller converts rpm/throttle FPtointeger and narrows torque result to signed16."
+      ],
+      "drift": [
+        "No compilation, flag search, held-out semantic fixture tuning, or exact-byte claim was performed. FP execution mode remains unverified."
+      ],
+      "entry_hex": "0x8c0230b0",
+      "references": {
+        "direct_bsr_candidates": [
+          "0x8c02320c",
+          "0x8c023264",
+          "0x8c023284"
+        ],
+        "literal_pointer_candidates": [],
+        "scope": "BSR scan through file0x98000; pointer scan whole file; data false positives possible until each site is traced."
+      },
+      "cfg_instruction_count": 145,
+      "cfg_warnings": [],
+      "cfg_truncated": false,
+      "code_sha256": "4e190931ed6904e75282874b50f7775006c2d2e75900a1c79ac78ea96d7eaa64"
+    }
+  },
+  "summary": {
+    "identified_api_or_semantic_counterparts": 4,
+    "equivalent_c_proven": 0,
+    "object_emission_matches": 0,
+    "exact_local_link_matches": 0,
+    "whole_image_verified": false,
+    "code_bytes_union": 626,
+    "original_object_identity": "Not measurable from flat target."
+  },
+  "decoder_note": "Custom dependency-free decoder; known encodings/CFG reviewed against byte-level instructions. Not an established analyzer; execution and compiler corroboration still required."
+}

@@ -1,0 +1,353 @@
+{
+  "source": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\dc-pilot",
+  "destination": "C:\\rush2049-dreamcast\\pilot",
+  "binary_files_included": 0,
+  "originals_modified": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 126,
+      "sha256": "c7bfc44fd2977c261011713497862ac3fa5123d27a833f4d29e7db715089de0e"
+    },
+    {
+      "path": "analysis/dependency-spans.json",
+      "size": 1268,
+      "sha256": "63b0726f3c093aa21684afd9a799694d3f7a5ad1168f0a8d14397cb1f2fef8ea"
+    },
+    {
+      "path": "analysis/identity-code-spans.json",
+      "size": 1351,
+      "sha256": "093e9eab7e038bf81f07ed62cadde4db6ef3f118eca578895713d752fac3a0c4"
+    },
+    {
+      "path": "analysis/manifest.json",
+      "size": 10857,
+      "sha256": "cf1c4aa4cc51237c1c8cb01bfba66d0fe796322b1b96b953e0ebfc6e5b87f52a"
+    },
+    {
+      "path": "analysis/progress.json",
+      "size": 807,
+      "sha256": "cc71d82eb803c6b51560a4a7272718f6dc3b043f1dc271ee0e79cfe45e7a616b"
+    },
+    {
+      "path": "analysis/reference-recheck.json",
+      "size": 9239,
+      "sha256": "b77251847f2323891986229f69af5ae809d4aa4f3ef49e3e3310d4fa437e833f"
+    },
+    {
+      "path": "analysis/source-provenance.json",
+      "size": 1208,
+      "sha256": "36eb0eb34ce4e623c667f7ce1e2116353968c9ed119c63f5e4a3e0a31ca18bf6"
+    },
+    {
+      "path": "analysis/span-checks.json",
+      "size": 1320,
+      "sha256": "90ee942a21c69d202e5b01d38125483cdb91b4e130c314158ba96ebee6b5074a"
+    },
+    {
+      "path": "analysis/target-self-control.json",
+      "size": 5603,
+      "sha256": "bacac56365103ad23727166d45934c4cf749287375ccae82111c197f9020cd55"
+    },
+    {
+      "path": "analysis/validation.json",
+      "size": 7690,
+      "sha256": "28ec1c0d2701ae4b3511d0f18f8ff5e3ed3d9bf7a8c4c93eefc395cf92ef857c"
+    },
+    {
+      "path": "config/target.json",
+      "size": 800,
+      "sha256": "777539487e07d9cb1f10732a587d99b1dccb2661c6b97c12fccd388695bfd3d2"
+    },
+    {
+      "path": "config/toolchain.json",
+      "size": 260,
+      "sha256": "b4740cc2df28ac14f87b1912e569b8f2656ab96251125e44c75d2a4973ba4b22"
+    },
+    {
+      "path": "lanes/decoder/README.md",
+      "size": 4482,
+      "sha256": "58abf11abca62c19f49b0c7dde68bd14c7b5bdd103eb56a0a083abda2a8eafe5"
+    },
+    {
+      "path": "lanes/decoder/selftest.json",
+      "size": 813,
+      "sha256": "01d8245b06e5cd5c8bb1c26ba5fe271c3a9e140cd358c8d0c99ea43824607c28"
+    },
+    {
+      "path": "lanes/decoder/startup-cfg.json",
+      "size": 10028,
+      "sha256": "c8111ae71761c9458eb35f83a2f2e2b6a5eb88576da58c255c423f0815d729cd"
+    },
+    {
+      "path": "lanes/decoder/startup-indirect.json",
+      "size": 258,
+      "sha256": "f14ebeb04854122594a499613d18d1568ef63cb535edc8b2b173ceecd2f72b5a"
+    },
+    {
+      "path": "lanes/decoder/startup.json",
+      "size": 7602,
+      "sha256": "f777c2fa898236e4f3a76fc95d9f6dd6b914bac404c46da1e9fb519ae17f6d06"
+    },
+    {
+      "path": "lanes/integer/bsearch.cfg.json",
+      "size": 37543,
+      "sha256": "1a58e41ce8ae794e3fcd4b59590e488b8e202a953362bfc8bbfdb2e4284d0eee"
+    },
+    {
+      "path": "lanes/integer/bsearch.disasm.txt",
+      "size": 1718,
+      "sha256": "4da4a89a2260bea98828c7f28305a552a79ad92c8537097499b45165ca4f14c4"
+    },
+    {
+      "path": "lanes/integer/build_evidence.py",
+      "size": 10466,
+      "sha256": "0b5b9ec1ae87b8d795118883630fe5ffc49863db4316da03d41e4589437f19e3"
+    },
+    {
+      "path": "lanes/integer/candidates.c",
+      "size": 3684,
+      "sha256": "a2e15aca5a03985f2228baa8ef0f83f4838351ccc2d17d5afd191ac94caaead9"
+    },
+    {
+      "path": "lanes/integer/enginetorque.cfg.json",
+      "size": 92350,
+      "sha256": "5537111dac3933b01affe0c60ee8fe1fe427c5dd840ee292276878170cb50acd"
+    },
+    {
+      "path": "lanes/integer/enginetorque.disasm.txt",
+      "size": 4501,
+      "sha256": "cc5c7c82f0a64b4bbf0cbf4ce45eb52e0054edb3d052aa2c039e10c5bd9b52f2"
+    },
+    {
+      "path": "lanes/integer/InsertLLE.cfg.json",
+      "size": 61924,
+      "sha256": "beab02a6697a62a2566d561b5755e224dd80c7374f00ae892398ee6f45ba40de"
+    },
+    {
+      "path": "lanes/integer/InsertLLE.disasm.txt",
+      "size": 2913,
+      "sha256": "394460200c547aed1d4cc5987066ef7b49292a414413502bc93ca3c4ec97fa12"
+    },
+    {
+      "path": "lanes/integer/interp.cfg.json",
+      "size": 6528,
+      "sha256": "967debc36a51a8013c2ed3523b3e1fee0e3d60e18474faedcb2d2ef3f136f4b9"
+    },
+    {
+      "path": "lanes/integer/interp.disasm.txt",
+      "size": 303,
+      "sha256": "4d3d85ad03cf71d4cc156ec14d088e9f2a19c680134151e1e7154f5952da3379"
+    },
+    {
+      "path": "lanes/integer/list_search.py",
+      "size": 319,
+      "sha256": "631c42fc4d4ba4d04df4697df492ab71363600b55b9309283dd2a69f716f2c94"
+    },
+    {
+      "path": "lanes/integer/mapping.json",
+      "size": 18794,
+      "sha256": "6a8b9d3dd423d6c8943351cff1be1be3648445d5fbfdef656219e099459b46d8"
+    },
+    {
+      "path": "lanes/integer/minimal_decode.py",
+      "size": 3075,
+      "sha256": "eb80d5ac3186e4bdca1893a5b28b657ab67121bb091db74013aabc08e2203b90"
+    },
+    {
+      "path": "lanes/integer/notes.md",
+      "size": 6455,
+      "sha256": "0ee333e6b2029bd9ed8617a67886c2a1439dfdededcaee3ae75f978f2d0ead69"
+    },
+    {
+      "path": "lanes/integer/search.py",
+      "size": 426,
+      "sha256": "d4bfd1131d8589e51fb712a0db1b02c28bc728f9aafa26c851c1887160d5a7ff"
+    },
+    {
+      "path": "lanes/integer/xref.py",
+      "size": 607,
+      "sha256": "373565bac949e861a1e3a37c7e5456637bf674a4325b86002ffe97eb0557fae9"
+    },
+    {
+      "path": "lanes/resource_float/body-trace.json",
+      "size": 13307,
+      "sha256": "e023abcbe853d64937b3cd6b085c0d7aaf3c44dddcbfb4045833c3fcd67e6fa9"
+    },
+    {
+      "path": "lanes/resource_float/body_trace.py",
+      "size": 3137,
+      "sha256": "e48288d7e365c77a9f3f8f5905a63dc1f341b7142fd82166428f2a2afae4942e"
+    },
+    {
+      "path": "lanes/resource_float/BodyVector-candidate.c",
+      "size": 1035,
+      "sha256": "e7574c21890689e79f27dfa1423947634aabe55972d717d744fd56ef54b15d09"
+    },
+    {
+      "path": "lanes/resource_float/BodyVector.sh4.txt",
+      "size": 1367,
+      "sha256": "2ce16d47b3240b8e7051fc35218ff81f32cc6d987465a70d5d33ac96f2fce5ca"
+    },
+    {
+      "path": "lanes/resource_float/decoder-review.json",
+      "size": 205700,
+      "sha256": "26f67978c9e13dcc188d56ea4113c9f12650a2979b0246a60da3faa66dcb2ece"
+    },
+    {
+      "path": "lanes/resource_float/lane_sh4.py",
+      "size": 4490,
+      "sha256": "9571ea32d9faeccc5ed718fb33f34d63711938cbe0915cf5a6fab62184822901"
+    },
+    {
+      "path": "lanes/resource_float/mapping.json",
+      "size": 22841,
+      "sha256": "573e07945fef4220cceb10f16a12f1e9153ffadbed31c16a9ca818db17eedc47"
+    },
+    {
+      "path": "lanes/resource_float/notes.md",
+      "size": 3976,
+      "sha256": "1e927c101060bddc93284931b38fca935e74450454540dbc4efeb9df54775b58"
+    },
+    {
+      "path": "lanes/resource_float/resource-finder-loader.sh4.txt",
+      "size": 6469,
+      "sha256": "e89dc22d3ca0cf0100456220e02ed31b3581a3504c0bc6287fe54d2ce2632a2a"
+    },
+    {
+      "path": "lanes/resource_float/timer-neighborhood.sh4.txt",
+      "size": 4939,
+      "sha256": "178257c9c08dca60ed0cb47cafbf58fa0737173e08fd2aab8e504a5a31f3fdbb"
+    },
+    {
+      "path": "lanes/resource_float/UpdateFrameTimer.sh4.txt",
+      "size": 1915,
+      "sha256": "bb699ca17d61d00939f6d55d635ad7a4173a2958140b927be8b407b2e363a5b8"
+    },
+    {
+      "path": "lanes/resource_float/wave-mirror-control.sh4.txt",
+      "size": 1323,
+      "sha256": "e1c46da99a6f0bd11d32bc56652bac613d3c8c54c545efef36577f026b085760"
+    },
+    {
+      "path": "lanes/resource_float/WorldVector-control.sh4.txt",
+      "size": 1308,
+      "sha256": "07bd62edc5473efbb07d41b2b4a0f6d2894ece35c40ac0e99be4706f326fa74f"
+    },
+    {
+      "path": "lanes/resource_float/write_evidence.py",
+      "size": 7862,
+      "sha256": "9c60f7270c4cc856e81c7a65d09568b5737f3855d6c8031bf1e761eca6621f4c"
+    },
+    {
+      "path": "lanes/toolchain/collect_inventory.py",
+      "size": 6085,
+      "sha256": "09489a12b737f69ade16579f2148000ff0b37a63d75d5d100afd327975ac9c19"
+    },
+    {
+      "path": "lanes/toolchain/inventory.json",
+      "size": 6886,
+      "sha256": "de9ffb05a09def9cb05b3d3809af9b592f2171c01008b8403a2f4fdee3752167"
+    },
+    {
+      "path": "lanes/toolchain/research.md",
+      "size": 7319,
+      "sha256": "6f38ab9ad4e9a65c6c3651b2fdb0350d123e193fc6f0ef38bfde20216aa594c7"
+    },
+    {
+      "path": "orig/README.md",
+      "size": 376,
+      "sha256": "6515ca2107f020f290a6b35795ab1ead9d10fca00ec7dce4e40e762874b29367"
+    },
+    {
+      "path": "PILOT-RESULTS.md",
+      "size": 6537,
+      "sha256": "f296a5b482251e3ba5eec8eeed68f36738c5ec6d677cfab4bb6dce45eebbe46b"
+    },
+    {
+      "path": "README.md",
+      "size": 3709,
+      "sha256": "94907f1c5b53fadf289fe8e85e02098c4ca1627cb19b3f8c36db74f42015bb36"
+    },
+    {
+      "path": "src/heldout/README.md",
+      "size": 427,
+      "sha256": "b2acecedd22e4c0433d615970542ea6a86f792249f5d8187d554655b62beab8b"
+    },
+    {
+      "path": "src/training/BodyVector.c",
+      "size": 1035,
+      "sha256": "e7574c21890689e79f27dfa1423947634aabe55972d717d744fd56ef54b15d09"
+    },
+    {
+      "path": "src/training/bsearch.c",
+      "size": 934,
+      "sha256": "fc0cd8fb89c4af9884303c44c3ed20689cd5004f15b5a10b3bc420d893fe038a"
+    },
+    {
+      "path": "src/training/InsertLLE.c",
+      "size": 2447,
+      "sha256": "8a4f55031d2f8e395fff93a87daec22d37b75f3563e3915890e7d844d987aa05"
+    },
+    {
+      "path": "src/training/interp.c",
+      "size": 506,
+      "sha256": "1c98e88409ead2a877c282eb0239630926d810ebdddad0832fe0286c917ff9a1"
+    },
+    {
+      "path": "src/training/README.md",
+      "size": 962,
+      "sha256": "ec075e4ab41cfd7e31c155017f5d33f888a97a4a4853bfd3ec2c0e167832c1eb"
+    },
+    {
+      "path": "tools/compare.py",
+      "size": 5259,
+      "sha256": "9a8809542c3f65025ebddabdf941cbe8e311b48c3362b63cefb20c31e6da2e56"
+    },
+    {
+      "path": "tools/consolidate.py",
+      "size": 7755,
+      "sha256": "c86d41aac9ed28b5c800e4ea688fafd4c0048ca9bfefd00858de4879fbf192b5"
+    },
+    {
+      "path": "tools/dc_target.py",
+      "size": 532,
+      "sha256": "445925db47498ed3986ae86a69d21a7506810538d37a1a845b35f755779085af"
+    },
+    {
+      "path": "tools/object_info.py",
+      "size": 2205,
+      "sha256": "a4faa429bc8a6f01d58bb2175c121ad3ac667ed7a0350648ac126c51a8dcb663"
+    },
+    {
+      "path": "tools/prepare_sources.py",
+      "size": 4537,
+      "sha256": "4d4e5108f3787b7ade5891744886053b3ab5935cdc2307f3e1e5c48af9b8d894"
+    },
+    {
+      "path": "tools/probe.py",
+      "size": 4229,
+      "sha256": "f5d2d373c1067a1df5fa0dddcd705429b947d0ba414fcc884c3f139382d38019"
+    },
+    {
+      "path": "tools/sh4.py",
+      "size": 27330,
+      "sha256": "d0dd1085d5245ae3285fc102420fc82fe9ecf6e75ace8e192197c44589a51678"
+    },
+    {
+      "path": "tools/test_compare.py",
+      "size": 2340,
+      "sha256": "fbb42398c0841e46f110702dc288ac0996feadfbb43736d040c5754913919e9c"
+    },
+    {
+      "path": "tools/test_object_info.py",
+      "size": 1334,
+      "sha256": "a63197c422b4793b4e28fa87cca20e11c93f1e737385894760b05cfa39097ed7"
+    },
+    {
+      "path": "tools/validate.py",
+      "size": 1814,
+      "sha256": "2337cb8e7499a72b4832913c1aba32038c53cff6977a097462d03d5438189706"
+    }
+  ]
+}

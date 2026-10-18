@@ -1,0 +1,365 @@
+{
+  "scope": "Four build directories read-only; both filesystem sessions; all listed files; raw-track marker scans; all LZS assets decoded in scratch. No game execution or installs.",
+  "builds": [
+    {
+      "build": "San Francisco Rush 2049 (Apr 10, 2000 prototype)",
+      "ip_metadata": {
+        "hardware": "SEGA SEGAKATANA",
+        "maker": "SEGA ENTERPRISES",
+        "media": "7007 GD-ROM1/1",
+        "regions": "U",
+        "peripherals": "0799810",
+        "product": "T0000M",
+        "version": "V0.800",
+        "date": "20000403",
+        "boot": "1ST_READ.BIN",
+        "company": "SEGA LC-T-00",
+        "title": "THIS IS A SAMPLE DISK FOR USE OFFICE ONLY / DO NOT SELL / DO NOT CARRY OUT FROM THE OFFICE"
+      },
+      "ip_sha256": "6657c9806ba46f21a0f4fbb4d7b62a540cacc8aba4fcbd053eb8bf28e0059974",
+      "volume": "RUSH31",
+      "volume_timestamp_raw_hex": "32303030303332303135303031323030e0",
+      "listed_file_counts": {
+        "1": 4,
+        "3": 396
+      },
+      "main_executable": {
+        "filename": "1ST_READ.BIN",
+        "size": 858148,
+        "iso9660_recorded_timestamp": "2000-04-10T15:20:28-08:00",
+        "sha256": "f1f414602df378069199931f54093480bc43e09c4168fd612cd9bdef12e11776",
+        "format": "headerless little-endian SH-4 executable; nominal load address 0x8C010000",
+        "lba": 548580
+      },
+      "recovered_formal_debug_metadata": {
+        "valid_elf_files": 0,
+        "valid_coff_files": 0,
+        "symbol_table_entries": 0,
+        "debug_type_records": 0,
+        "source_line_records": 0,
+        "map_or_object_companions": 0
+      },
+      "runtime_resource_name_filename_pairs": 160,
+      "resource_table_offsets": {
+        "name_pointer_table": 536420,
+        "filename_pointer_table": 537060
+      },
+      "browser_source_filename_literals": [
+        {
+          "file": "2_DP.BIN",
+          "offset": 847636,
+          "text": "cursor.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 863216,
+          "text": "../common/mpgaudio.c"
+        }
+      ],
+      "browser_assertion_format_literals": [],
+      "sdk_fingerprint_literals": [
+        {
+          "offset": 494629,
+          "text": "Audio64 Ver 10.0.f.1 Build:Mar 21 2000 16:28:21"
+        },
+        {
+          "offset": 806593,
+          "text": "Shinobi Ver 1.65 Build:Dec 07 1999 10:48:27"
+        },
+        {
+          "offset": 808451,
+          "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+        }
+      ],
+      "lzs_files_successfully_decoded": 0,
+      "lzs_decode_errors": 0,
+      "limitations": [
+        "Static inspection only; game not executed; debug-menu reachability untested.",
+        "Formal debug counts refer to recognized, recoverable metadata, not proof that arbitrary opaque data cannot hide a proprietary format.",
+        "Compiler vendor/version not established from runtime-library banners."
+      ]
+    },
+    {
+      "build": "San Francisco Rush 2049 (Aug 1, 2000 prototype)",
+      "ip_metadata": {
+        "hardware": "SEGA SEGAKATANA",
+        "maker": "SEGA ENTERPRISES",
+        "media": "CE39 GD-ROM1/1",
+        "regions": "U",
+        "peripherals": "0799A10",
+        "product": "T9707N",
+        "version": "V0.900",
+        "date": "20000630",
+        "boot": "1ST_READ.BIN",
+        "company": "SEGA LC-T-97",
+        "title": "SAN FRANCISCO RUSH 2049"
+      },
+      "ip_sha256": "ed30d037b9c8a680f39d3533cce745a6e3930a9c4da1bc4585116e79bb77c2db",
+      "volume": "US",
+      "volume_timestamp_raw_hex": "32303030303733313137313635373030e0",
+      "listed_file_counts": {
+        "1": 4,
+        "3": 791
+      },
+      "main_executable": {
+        "filename": "1ST_READ.BIN",
+        "size": 1123492,
+        "iso9660_recorded_timestamp": "2000-08-01T17:08:20-08:00",
+        "sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+        "format": "headerless little-endian SH-4 executable; nominal load address 0x8C010000",
+        "lba": 548451
+      },
+      "recovered_formal_debug_metadata": {
+        "valid_elf_files": 0,
+        "valid_coff_files": 0,
+        "symbol_table_entries": 0,
+        "debug_type_records": 0,
+        "source_line_records": 0,
+        "map_or_object_companions": 0
+      },
+      "runtime_resource_name_filename_pairs": 0,
+      "resource_table_offsets": null,
+      "browser_source_filename_literals": [
+        {
+          "file": "2_DP.BIN",
+          "offset": 1033436,
+          "text": "../common/melan.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1040516,
+          "text": "cursor.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1056928,
+          "text": "../common/mpgaudio.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1060556,
+          "text": "kgevt.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1060620,
+          "text": "kgactstr.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1060668,
+          "text": "kgfil.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1060868,
+          "text": "kgtrnstr.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1061232,
+          "text": "kgtrn.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1078712,
+          "text": "kgtrnweb.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1078800,
+          "text": "kgfsh.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1080560,
+          "text": "uthmn.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1080728,
+          "text": "utvct.c"
+        },
+        {
+          "file": "2_DP.BIN",
+          "offset": 1113268,
+          "text": "utbit.c"
+        }
+      ],
+      "browser_assertion_format_literals": [
+        {
+          "file": "2_DP.BIN",
+          "offset": 1080488,
+          "text": "assertion %s failed in %s, at line %ld!"
+        }
+      ],
+      "sdk_fingerprint_literals": [
+        {
+          "offset": 675857,
+          "text": "Audio64 Ver 10.0.f.2 Build:May 16 2000 17:18:37"
+        },
+        {
+          "offset": 1071341,
+          "text": "Shinobi Ver 1.68 Build:Mar 02 2000 14:42:43"
+        },
+        {
+          "offset": 1073259,
+          "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+        }
+      ],
+      "lzs_files_successfully_decoded": 314,
+      "lzs_decode_errors": 0,
+      "limitations": [
+        "Static inspection only; game not executed; debug-menu reachability untested.",
+        "Formal debug counts refer to recognized, recoverable metadata, not proof that arbitrary opaque data cannot hide a proprietary format.",
+        "Compiler vendor/version not established from runtime-library banners."
+      ]
+    },
+    {
+      "build": "San Francisco Rush 2049 (Aug 7, 2000 prototype)",
+      "ip_metadata": {
+        "hardware": "SEGA SEGAKATANA",
+        "maker": "SEGA ENTERPRISES",
+        "media": "4AAB GD-ROM1/1",
+        "regions": "E",
+        "peripherals": "079BA10",
+        "product": "9D-0800-50",
+        "version": "V1.000",
+        "date": "20000807",
+        "boot": "1ST_READ.BIN",
+        "company": "MIDWAY",
+        "title": "RUSH 2049"
+      },
+      "ip_sha256": "b8a55231c3743304a0652c24c7d1a626b368e400072dd74729e763e635287bec",
+      "volume": "2049PAL1",
+      "volume_timestamp_raw_hex": "32303030303830373138343132312d3332",
+      "listed_file_counts": {
+        "1": 4,
+        "3": 125
+      },
+      "main_executable": {
+        "filename": "1ST_READ.BIN",
+        "size": 1131300,
+        "iso9660_recorded_timestamp": "2000-08-07T16:40:00-08:00",
+        "sha256": "fd713902764734adb6bb3f2234560ef197108bfe7dbc2ff1ad112647e446d263",
+        "format": "headerless little-endian SH-4 executable; nominal load address 0x8C010000",
+        "lba": 548447
+      },
+      "recovered_formal_debug_metadata": {
+        "valid_elf_files": 0,
+        "valid_coff_files": 0,
+        "symbol_table_entries": 0,
+        "debug_type_records": 0,
+        "source_line_records": 0,
+        "map_or_object_companions": 0
+      },
+      "runtime_resource_name_filename_pairs": 0,
+      "resource_table_offsets": null,
+      "browser_source_filename_literals": [],
+      "browser_assertion_format_literals": [],
+      "sdk_fingerprint_literals": [
+        {
+          "offset": 675453,
+          "text": "Audio64 Ver 10.0.f.2 Build:May 16 2000 17:18:37"
+        },
+        {
+          "offset": 1079085,
+          "text": "Shinobi Ver 1.68 Build:Mar 02 2000 14:42:43"
+        },
+        {
+          "offset": 1081003,
+          "text": "kamui2 Ver 16,3,4,0 Build:Oct 25 1999 14:51:45"
+        }
+      ],
+      "lzs_files_successfully_decoded": 111,
+      "lzs_decode_errors": 0,
+      "limitations": [
+        "Static inspection only; game not executed; debug-menu reachability untested.",
+        "Formal debug counts refer to recognized, recoverable metadata, not proof that arbitrary opaque data cannot hide a proprietary format.",
+        "Compiler vendor/version not established from runtime-library banners."
+      ]
+    },
+    {
+      "build": "San Francisco Rush 2049 (Feb 17, 2000 Dreamcast Prototype)",
+      "ip_metadata": {
+        "hardware": "SEGA SEGAKATANA",
+        "maker": "SEGA ENTERPRISES",
+        "media": "E91A GD-ROM1/1",
+        "regions": "JUE",
+        "peripherals": "0799010",
+        "product": "T9708N",
+        "version": "V1.000",
+        "date": "20000218",
+        "boot": "1ST_READ.BIN",
+        "company": "SEGA LC-T-97",
+        "title": "RUSH 2049"
+      },
+      "ip_sha256": "f6022f342833088f4713459a413c8d677c29f25d7ebc09d809ff65d944582f7a",
+      "volume": "RUSH1",
+      "volume_timestamp_raw_hex": "32303030303232313135343832372d3332",
+      "listed_file_counts": {
+        "1": 4,
+        "3": 179
+      },
+      "main_executable": {
+        "filename": "1ST_READ.BIN",
+        "size": 591856,
+        "iso9660_recorded_timestamp": "2000-02-17T17:29:50-08:00",
+        "sha256": "fa3535c44bdfd6b8268dd009c2f02e0125906f0d2b335640d9d63efd5be5dc0d",
+        "format": "headerless little-endian SH-4 executable; nominal load address 0x8C010000",
+        "lba": 548711
+      },
+      "recovered_formal_debug_metadata": {
+        "valid_elf_files": 0,
+        "valid_coff_files": 0,
+        "symbol_table_entries": 0,
+        "debug_type_records": 0,
+        "source_line_records": 0,
+        "map_or_object_companions": 0
+      },
+      "runtime_resource_name_filename_pairs": 155,
+      "resource_table_offsets": {
+        "name_pointer_table": 479212,
+        "filename_pointer_table": 479832
+      },
+      "browser_source_filename_literals": [],
+      "browser_assertion_format_literals": [],
+      "sdk_fingerprint_literals": [
+        {
+          "offset": 458193,
+          "text": "Audio64 Ver 9.0.b.3 Build:Nov 01 1999 14:19:38"
+        },
+        {
+          "offset": 588365,
+          "text": "Shinobi Ver 1.43 Build:Jul 23 1999 16:13:51"
+        },
+        {
+          "offset": 589815,
+          "text": "kamui2 Ver 16,3,2,4 Build:Jul 23 1999 11:31:35"
+        }
+      ],
+      "lzs_files_successfully_decoded": 0,
+      "lzs_decode_errors": 0,
+      "limitations": [
+        "Static inspection only; game not executed; debug-menu reachability untested.",
+        "Formal debug counts refer to recognized, recoverable metadata, not proof that arbitrary opaque data cannot hide a proprietary format.",
+        "Compiler vendor/version not established from runtime-library banners."
+      ]
+    }
+  ],
+  "totals": {
+    "listed_files": 1507,
+    "raw_track_files_hashed": 20,
+    "raw_track_bytes": 4763632608,
+    "lzs_files_decoded": 425
+  },
+  "false_positive_elf": {
+    "build": "Aug 1",
+    "file": "WINGEY.STR",
+    "file_offset": 43346228,
+    "raw_track05_offset": 1093040580,
+    "e_ident_hex": "7f454c46004ae948de491f4ea6503651",
+    "reason": "EI_CLASS 0, EI_DATA 0x4A, EI_VERSION 0xE9 invalid; audio sample bytes, not an ELF header."
+  },
+  "technical_reference": "https://mc.pp.se/dc/ip.bin.html"
+}
