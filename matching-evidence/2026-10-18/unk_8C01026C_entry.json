@@ -1,0 +1,22 @@
+{
+  "unit": "unk_8C01026C_entry",
+  "text_nonpadding": 56,
+  "data_nonpadding": 0,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C01026C",
+      "8C0102A4"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "a741d6abeaa0a7f7412976e6f20411c4e7915db9b62aed99537a90d13203d272",
+  "expanded_source_sha256": "ea185a951b9f5f99ad37a4cc4bc856be002bd160cd0ca03b2a7987d6504ee5f5",
+  "compiler_input_sha256": "286dd455ee5c33985709968db6ab0b4acadf3417351fad257bca8f9755b5db4a",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "4f064e0f6f186f5c0088734e55e3391449135de0a0bf7c9a7e70d6ff458ed784",
+  "object_sha256": "07662668267377b71ad95f6e601aec8b66747443e0d1bc8e41c54d22c82234b8",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
