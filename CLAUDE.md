@@ -84,22 +84,28 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 
 ## Status (2026-10-18)
 
-Game text/literal credit: **6,540 / 569,664 bytes (1.1480%)**. Initialized data: 544 bytes.
-Whole-image credit: **7,084 / 1,123,492 bytes (0.6305%)**, 39 exact functions, 12 source units.
-Nine new units add 5,324 text/literal + 528 data bytes and 29 functions. The inherited text baseline
-is 1,216, corrected from historical 1,218 by excluding two drivetra linker-fill bytes.
 
-`matching-evidence/2026-10-18/integration-first9.json` and `evidence/strict-integration-receipt.json`
-record emitted address spans, source/header/tool/output hashes and the zero-overlap audit.
-All links are separate translation-unit links at real addresses; no full image was built.
-`python -B tools/audit_report.py` rechecks saved outputs without invoking the compiler.
-Six private matching lanes continue under root-owned disjoint assignments; later private packets
-earn canonical credit only after integration. `HANDOFF.md` has the per-unit table.
+Game text/literal credit: **15,636 /569,664 (2.7448%)**, plus **2,937 initialized data bytes**.
+Whole-image credit: **18,573 /1,123,492 (1.6531%)**, **97 exact source functions**, 21 source units.
+Eighteen new units add 17,341 image bytes and 87 functions to the strict inherited baseline
+(1,216 text +16 data,10 functions). Two historical drivetra linker-fill bytes were removed.
+All linker fill, gaps and alignment are excluded; BSS earns no image credit.
 
-Parked residuals remain in enginetorque and UpdateFrameTimer. New partials are statll InitStatLL
-(instruction ordering), atan fsatan (register allocation), and textureanim InitTextureAnimations
-(register allocation). Respect each function's source-shape cap; do not restart parked searches
-without new evidence. Timer has 8/9 diagnostic instruction-shape matches but zero strict text credit.
+Per-unit commits and complete audit are recorded through `db56faa`.
+`matching-evidence/2026-10-18/integration-next9.json` records source/tool/output hashes, current
+expanded compiler-input hashes and disjoint earned spans. `python -B tools/audit_report.py`
+rechecks saved outputs without compiling. Five padding-credit tests pass.
+
+Map review merged mbox's generated comparator epilogue into its source function, corrected
+bstree to six source functions and left streaks' final original BSS end unclaimed.
+The compensating function corrections retain the denominators 4,726 overall /1,564 game.
+
+The six-worker wave continues with disjoint private assignments. Later private packets are
+excluded until integration. Capped functions stay parked without new evidence, including the
+original enginetorque/UpdateFrameTimer. Ghost, initiali and tires have zero strict text credit
+and stay private with their evidence. MAT3 remains read-only. No full image has been built.
+
+The current per-unit table is in `HANDOFF.md`.
 
 ## Map (`map/units.json`)
 

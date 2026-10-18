@@ -1,7 +1,7 @@
 # include/ — Dreamcast type layouts
 
 `dc_types.h` holds the Dreamcast (SHC 5.x, SH-4 little-endian) layouts of the game structures that
-matched or calibrating source uses. It is shared by every compiled unit; one definition per struct.
+matched or calibrating source uses. Common types have one definition there. Unit headers reuse them and keep unique target-backed overlays.
 
 ## Conventions
 
@@ -59,3 +59,15 @@ When a new unit touches a struct:
 Globals (`carEngineTorque`, `carTransGearRatio`, ...) are declared in the units that use them for now,
 with their DC addresses from the pool words; a shared declarations header can follow once more than
 one unit needs the same global.
+
+## Integrated renderer layouts
+
+The matching wave consolidated `tRGBA`, `tTexture`, `tPolyVert`, `tPoly`, `tUVMatrix`, `tStatList`,
+`tViewport`, `tScissor` and `tWindowInfo` into `dc_types.h`. Sky aliases the full verified window
+layout. Mbox proves the texture name in the previously opaque first16 bytes. Qualified overlays
+remain separate for distinct slices; a partial overlay never proves a full allocation end.
+Use `#include "dc_types.h"`; the build tool expands quoted includes before compiling.
+
+Separate native unit links and existing-unit regressions preserved exact results after this
+merge. The audit now rejects saved preprocessed inputs that differ from current expanded headers,
+so header-only changes cannot silently retain stale credited outputs.
