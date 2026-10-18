@@ -31,3 +31,15 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   and16-bit flags. The target-backed layout made all seven source functions exact on build1.
 - The four-byte unreachable epilogue after objcmp's tail jump is generated code belonging to
   that comparator, not a separate source function. Its byte credit is retained after merging.
+
+- Physical versus reckoned suspension: canonical `model.suscomp` is +0x5CC, while
+  `model.reckon.suscomp` is +0x75C. Skids uses the latter. Shared model size0x808 and car size0x3CC
+  are independently proved by indexed arrays, not by padding to the MAT3 sizes. Existing native
+  matches survive the consolidated field definitions.
+- DC fixed-memory arrays can require typed address macros to preserve separate base/field
+  operations. Model's gGameCar at0x8C004000 and circuit's gPlayers at0x8C006000 provide target-backed
+  examples; an extern symbol can fold the field into its pool address. These lessons do not
+  authorize arbitrary address macros or restarting a capped source search.
+- Internal literal islands in a differing mapped function remain uncredited under the frozen
+  function-ownership policy (headlights). An explicitly mapped external pool can earn bytes on its
+  own only when its full real-address range matches and raw emitted runs prove each credited byte.

@@ -71,3 +71,12 @@ Use `#include "dc_types.h"`; the build tool expands quoted includes before compi
 Separate native unit links and existing-unit regressions preserved exact results after this
 merge. The audit now rejects saved preprocessed inputs that differ from current expanded headers,
 so header-only changes cannot silently retain stale credited outputs.
+
+## Physical and reckoned model fields
+
+The shared model now has target-proven indexed stride0x808; the shared game-car record has stride
+0x3CC. Rekon's physical suspension at+0x5CC differs from its reckoned copy at+0x75C. Skids refers
+to `m->reckon.suscomp` and `m->resurrect.moving_state`; flat private overlay names were reconciled
+without moving fields. Header regression links preserve existing physics and renderer matches.
+The shared WAD record's pointer/count/TOC fields and the world-header name now replace opaque
+same-sized placeholders. Current saved compiler inputs are checked against all included headers.

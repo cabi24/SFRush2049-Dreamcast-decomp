@@ -85,25 +85,25 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **15,636 /569,664 (2.7448%)**, plus **2,937 initialized data bytes**.
-Whole-image credit: **18,573 /1,123,492 (1.6531%)**, **97 exact source functions**, 21 source units.
-Eighteen new units add 17,341 image bytes and 87 functions to the strict inherited baseline
-(1,216 text +16 data,10 functions). Two historical drivetra linker-fill bytes were removed.
-All linker fill, gaps and alignment are excluded; BSS earns no image credit.
+Game text/literal credit: **22,916 /569,664 (4.0227%)**, plus **3,467 initialized data bytes**.
+Whole-image credit: **26,383 /1,123,492 (2.3483%)**, **135 exact source functions**, 31 source units.
+New integration contributes 25,151 image bytes and 125 functions relative to
+the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
+were removed. All linker fill, gaps and alignment are excluded; BSS earns no image credit.
 
-Per-unit commits and complete audit are recorded through `db56faa`.
-`matching-evidence/2026-10-18/integration-next9.json` records source/tool/output hashes, current
-expanded compiler-input hashes and disjoint earned spans. `python -B tools/audit_report.py`
-rechecks saved outputs without compiling. Five padding-credit tests pass.
+Per-unit commits and complete third-batch audit are recorded through `ba6a093`.
+`matching-evidence/2026-10-18/integration-third.json` records current source/header/compiler-input,
+tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
+validates saved outputs without compiling. Five padding-credit tests pass.
 
-Map review merged mbox's generated comparator epilogue into its source function, corrected
-bstree to six source functions and left streaks' final original BSS end unclaimed.
-The compensating function corrections retain the denominators 4,726 overall /1,564 game.
+Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
+and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
+ends in streaks and skids remain unclaimed. Total/game function denominators stay4,726/1,564.
 
-The six-worker wave continues with disjoint private assignments. Later private packets are
-excluded until integration. Capped functions stay parked without new evidence, including the
-original enginetorque/UpdateFrameTimer. Ghost, initiali and tires have zero strict text credit
-and stay private with their evidence. MAT3 remains read-only. No full image has been built.
+Six private lanes continue on disjoint units. Later private packets are excluded until integration.
+Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.
+Ghost, initiali and tires retain zero strict text credit privately. MAT3 stays read-only.
+No full game image has been built; validation uses separate fixed-address translation-unit links.
 
 The current per-unit table is in `HANDOFF.md`.
 
