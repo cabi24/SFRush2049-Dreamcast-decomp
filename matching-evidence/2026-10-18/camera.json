@@ -1,0 +1,35 @@
+{
+  "unit": "camera",
+  "text_nonpadding": 108,
+  "data_nonpadding": 1642,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C018DF2",
+      "8C018E52"
+    ],
+    [
+      "8C018E54",
+      "8C018E60"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BB228",
+      "8C0BB246"
+    ],
+    [
+      "8C0BB248",
+      "8C0BB894"
+    ]
+  ],
+  "source_sha256": "621a5330bdc005cad370f451296f8fc1315e9829fe2f8aae5a26ac7cded3fcb6",
+  "expanded_source_sha256": "1b34f1fba5e5ba0bebdced889307c73c4c4f3df156bede2b247637d5d9168c4c",
+  "compiler_input_sha256": "43a8cbdf4e1acb5597697141f0e2113683b8c8586ad69e4730bfb03cb9c4996d",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "9e4f2f35ec312c215ad958e8de198debdb23751c13ca9efdc487dd20fb5a9384",
+  "object_sha256": "3a03480b60675d5a64e4e2ae6f849a32e65586ce0c05f0966a5b4866215c2280",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
