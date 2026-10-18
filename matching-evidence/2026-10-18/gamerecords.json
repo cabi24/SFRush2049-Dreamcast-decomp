@@ -1,0 +1,22 @@
+{
+  "unit": "gamerecords",
+  "text_nonpadding": 192,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C02B114",
+      "8C02B1D4"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "78d59cf89ec754155509b8326f153905f689d61df16c697bc449c57da366f369",
+  "expanded_source_sha256": "b0fae87dbb8564a980b57025d95dc695c368cd8db111fbfa24747737e3c8f89e",
+  "compiler_input_sha256": "1b6b000be72cf46df60b4de6732daa1717e77e2bb010e15e67dc1d61ba7e55d9",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "b401b119d7fcefe317e466d688d54705d66ae97d63bb7c76a139a9a3ac861db1",
+  "object_sha256": "5fc168ca70543493d831f61afc296492fd3fff1ae536f1fbc5aff5c2675d3314",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
