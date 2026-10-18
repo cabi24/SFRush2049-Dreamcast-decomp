@@ -1,0 +1,159 @@
+{
+  "cleanup": {
+    "HAL_text": {
+      "removed_empty_conditions": [
+        "if (gFontHeader->numTextures > 16) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}",
+        "if (gFontIndex == -1) {}"
+      ],
+      "empty_conditions_removed": 13
+    },
+    "audiomgr": {
+      "removed_empty_conditions": [
+        "if (!gInited) {}",
+        "if (!cmd->playEffect.tag->numCmds) {}",
+        "if (!cmd->startEffect.tag->numCmds) {}",
+        "if (!cmd->changeEffect.tag->numCmds) {}",
+        "if (!gInited) {}",
+        "if (gPlayingFxTags.numElements > gMaxSfx) {}",
+        "if(!gListeners || lis<gListeners || lis>gListeners+gNumListeners-1) {}",
+        "if(lis->free) {}",
+        "if(!gEmitters || em<gEmitters || em>gEmitters+gNumEmitters-1) {}",
+        "if(em->free) {}",
+        "if(t->type!=1) {}",
+        "if(t->type!=1) {}",
+        "if(t->type!=1) {}",
+        "if(gCalcDoppler && gActiveListeners.numElements==1) {}"
+      ],
+      "empty_conditions_removed": 14,
+      "target_validators_left_external": [
+        "_ValidateListener",
+        "_ValidateEmitter"
+      ],
+      "private_command_queue": {
+        "qualified_name": "gAudioCommandQueue",
+        "address": "8C122BC4",
+        "unrelated_canonical_gCmds": "8C123C8C"
+      }
+    }
+  },
+  "semantic_aliases": [
+    {
+      "unit": "audiomgr",
+      "original": "func_8C0142FE",
+      "semantic": "_GetCmd",
+      "address": "0x8C0142FE"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C014922",
+      "semantic": "AudChangeEffectLRPan",
+      "address": "0x8C014922"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C014992",
+      "semantic": "AudChangeEffectFBPan",
+      "address": "0x8C014992"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C015236",
+      "semantic": "AudShutdown3D",
+      "address": "0x8C015236"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C015C18",
+      "semantic": "_ConvertSequence",
+      "address": "0x8C015C18"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C015D58",
+      "semantic": "AudStopSequence",
+      "address": "0x8C015D58"
+    },
+    {
+      "unit": "audiomgr",
+      "original": "func_8C015DA2",
+      "semantic": "_StopAllSequences",
+      "address": "0x8C015DA2"
+    },
+    {
+      "unit": "memsys",
+      "original": "func_8C040380",
+      "semantic": "AllocateMemoryHeapHigh",
+      "address": "0x8C040380"
+    }
+  ],
+  "removed_heuristic_entry": {
+    "name": "update_reverb",
+    "start": "8C013D4A",
+    "end": "8C013D4E",
+    "source": null,
+    "credit": 0
+  },
+  "original_and_cleaned_denominators": {
+    "overall": [
+      4718,
+      4717
+    ],
+    "game": [
+      1556,
+      1555
+    ]
+  },
+  "denied_actions_executed": false,
+  "native_units_refreshed": [
+    "HAL_text",
+    "audiomgr"
+  ],
+  "native_units_reused": [
+    "memsys",
+    "collision",
+    "dc_zoid_8C06ED90"
+  ],
+  "new_zoid_compile": false,
+  "denied_actions_untouched": true,
+  "all27_empty_conditions_removed": true,
+  "validators_left_external": [
+    "_ValidateListener",
+    "_ValidateEmitter"
+  ],
+  "actual_post_cleanup_gain": {
+    "text": 428,
+    "initialized": 397,
+    "functions": 4
+  },
+  "shared_header_sha256": "71e7e61402f4f1c1953fff41045a6018c6c6045fdaa4a2f1390bb5b89536c69d",
+  "compiler_sha256": "10d544d829edabc0ac3b26161e311e8bd09edeba00f0bf76ad80743f3299eca6",
+  "linker_sha256": "9671d37b5705ca27ad7fd6ced14eddd958326bcc3da8cbfe902b256608d4b04c",
+  "static_review_receipts": {
+    "ghost": "99088895e1bc290499356d02f8e2d5d121411faa79f7bde1a4e4106545deae3b",
+    "dc_asm_candidates": "6a79c0721fffdbe913a44b47d4dab855c51ed261174b1984301089c0ebd96a79"
+  },
+  "review_utc": "2026-10-18T18:06:25.598521+00:00",
+  "root_gap_check": {
+    "gap_halfwords": [
+      "000B",
+      "0009"
+    ],
+    "full_image_literal_references_to_gap": 0,
+    "following_entry_pointer": {
+      "pool": "8C040CF0",
+      "value": "8C013D4E"
+    },
+    "interpretation": "No independent evidence proves the four-byte gap is a function. It is excluded from the heuristic function denominator, kept unallocated/uncredited, and not asserted to be padding."
+  }
+}

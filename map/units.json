@@ -2341,13 +2341,6 @@
      "confidence": "high"
     },
     {
-     "name": "update_reverb",
-     "start": "0x8C013D4A",
-     "end": "0x8C013D4E",
-     "mat3": "update_reverb",
-     "confidence": "low"
-    },
-    {
      "name": "_PeriodicMaintenance",
      "start": "0x8C013D4E",
      "end": "0x8C013DA2",
@@ -2366,7 +2359,10 @@
      "start": "0x8C0142FE",
      "end": "0x8C014334",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "__GetCmd",
+     "semantic_name": "_GetCmd",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "_GetFxTag",
@@ -2457,14 +2453,20 @@
      "start": "0x8C014922",
      "end": "0x8C014992",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "_AudChangeEffectLRPan",
+     "semantic_name": "AudChangeEffectLRPan",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "func_8C014992",
      "start": "0x8C014992",
      "end": "0x8C014A02",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "_AudChangeEffectFBPan",
+     "semantic_name": "AudChangeEffectFBPan",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "AudChangeEffectPitch",
@@ -2618,7 +2620,10 @@
      "start": "0x8C015236",
      "end": "0x8C015266",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "_AudShutdown3D",
+     "semantic_name": "AudShutdown3D",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "AudAddListener",
@@ -2702,7 +2707,10 @@
      "start": "0x8C015C18",
      "end": "0x8C015C40",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "__ConvertSequence",
+     "semantic_name": "_ConvertSequence",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "AudPlaySequence",
@@ -2716,14 +2724,20 @@
      "start": "0x8C015D58",
      "end": "0x8C015DA2",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "_AudStopSequence",
+     "semantic_name": "AudStopSequence",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "func_8C015DA2",
      "start": "0x8C015DA2",
      "end": "0x8C015DBA",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "__StopAllSequences",
+     "semantic_name": "_StopAllSequences",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "_ProcessSequences",
@@ -2815,9 +2829,34 @@
      "end": "0x8C015EF0"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A7A50",
+     "end": "0x8C0A7B87",
+     "notes": "311 semantic loop flags from MAT3; exact target comparison required"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BAD44",
+     "end": "0x8C0BAD90",
+     "notes": "Target-address-proven initialized globals; natural padding excluded"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 58, MAT3 functions 64, named 51."
+   "notes": "DC functions 58, MAT3 functions 64, named 51. Source-integrity review: 8C013D4A..8C013D4E is an unsourced four-byte RTS/NOP gap, not proved update_reverb, not padding or a sourced function. Meaningful target function starts/ends remain unchanged. Empty diagnostic conditions removed; two actual target validators remain external and unimplemented, without stub definitions.",
+   "data_padding": [
+    {
+     "start": "0x8C0BAD49",
+     "end": "0x8C0BAD4C",
+     "reason": "gInited byte atBAD48; next int gSong atBAD4C, targetpool3DAC/3E60"
+    },
+    {
+     "start": "0x8C0BAD81",
+     "end": "0x8C0BAD84",
+     "reason": "gStarted byte BAD80 from3AAE..3AB8; next gNumFxPlaying int BAD84 from4DDE"
+    }
+   ]
   },
   {
    "name": "audiosfx",
@@ -4442,7 +4481,25 @@
     }
    ],
    "data": [],
-   "bss": [],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C0D0",
+     "end": "0x8C12C0D2",
+     "symbols": [
+      {
+       "name": "gNoCarCollisions",
+       "start": "0x8C12C0D0",
+       "end": "0x8C12C0D1"
+      },
+      {
+       "name": "gSuicideMode",
+       "start": "0x8C12C0D1",
+       "end": "0x8C12C0D2"
+      }
+     ]
+    }
+   ],
    "notes": "DC functions 7, MAT3 functions 7, named 7."
   },
   {
@@ -7946,9 +8003,22 @@
      "end": "0x8C02FCD8"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BDF84",
+     "end": "0x8C0BDF96"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 26, MAT3 functions 29, named 26."
+   "notes": "Private source-integrity review: all real uninitialized text globals use individually target-backed external addresses. No BSS allocation/end claim and no storage for unknown133944..3948 gap. Six genuine initialized objects retained; code bodies unchanged from frozen original diagnostic packet. Unsupported empty diagnostic conditions removed; no assertion-source claim or allocation for unknown prefix storage.",
+   "data_padding": [
+    {
+     "start": "0x8C0BDF85",
+     "end": "0x8C0BDF88",
+     "reason": "Alignment after gFinished byte before fontHeap pointer; targetEEF8/EEC8 identify independent objects. No semantic field or credit."
+    }
+   ]
   },
   {
    "name": "HAL_time",
@@ -10977,7 +11047,10 @@
      "start": "0x8C040380",
      "end": "0x8C040474",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "low",
+     "symbol": "_AllocateMemoryHeapHigh",
+     "semantic_name": "AllocateMemoryHeapHigh",
+     "notes": "Original anonymous map identity retained; semantic C name is reconstructed, not a recovered debug symbol."
     },
     {
      "name": "func_8C040474",
@@ -11119,9 +11192,21 @@
      "end": "0x8C040C24"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 30, MAT3 functions 40, named 17."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BEE7C",
+     "end": "0x8C0BEE7D"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C14CBA4",
+     "end": "0x8C14CBAC"
+    }
+   ],
+   "notes": "DC functions 30, MAT3 functions 40, named 17. Private target-backed initialization/data and AllocateMemoryHeapHigh identity."
   },
   {
    "name": "model",
@@ -21007,7 +21092,7 @@
    ],
    "data": [],
    "bss": [],
-   "notes": "Kamui renderer back end for ZOID (fog table, polygon submission): DC analog of ngcZoid.c."
+   "notes": "Kamui renderer back end for ZOID (fog table, polygon submission): DC analog of ngcZoid.c. Saved admitted baseline01 only: seven supplied bodies,24 unsourced targets. Denied live shape02 untouched and not compiled."
   },
   {
    "name": "dc_asm_8C071C1C",
