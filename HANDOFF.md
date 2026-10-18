@@ -72,26 +72,29 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | text | 450 | 7 | 3/3 |
 | textureanim | 418 | 0 | 1/2 |
 | timer | 0 | 16 | 0/9 |
+| titlescr | 264 | 176 | 1/2 |
 | tracks | 1,116 | 407 | 3/3 |
 | unzip | 26 | 362 | 1/11 |
 | visuals | 44 | 600 | 0/60 |
 | warningscr | 0 | 24 | 0/2 |
+| waves | 1,850 | 630 | 20/22 |
 | weapons | 600 | 1,252 | 3/5 |
 | world | 378 | 0 | 5/6 |
 | worlddam | 500 | 80 | 2/3 |
 | zip | 6,838 | 475 | 19/25 |
+| zoid | 440 | 0 | 7/21 |
 | zoidblit | 464 | 0 | 7/7 |
 | zoidpoly | 848 | 0 | 7/8 |
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **40,376 /569,664 (7.0877%)**, plus **16,804 initialized data bytes**.
-Whole-image credit: **57,180 /1,123,492 (5.0895%)**, **245 exact source functions**, 64 source units.
-The seventh batch adds 1,914 text/literal bytes, 64
-initialized data bytes and 8 exact functions. The audited batch is locally committed
-through `7f641b2`. No remote push was performed.
+Game text/literal credit: **42,930 /569,664 (7.5360%)**, plus **17,610 initialized data bytes**.
+Whole-image credit: **60,540 /1,123,492 (5.3886%)**, **273 exact source functions**, 67 source units.
+The eighth batch adds 2,554 text/literal bytes, 806
+initialized data bytes and 28 exact functions. The audited batch is locally committed
+through `58a20b0`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-seventh.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-eighth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
