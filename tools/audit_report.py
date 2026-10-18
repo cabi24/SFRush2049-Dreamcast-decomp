@@ -21,6 +21,10 @@ def main():
  for e in r['units']:
   name=e['name'];u=next(x for x in m['units'] if x['name']==name)
   assert sha(ROOT/e['source'])==e['source_sha256'],name
+  expanded=B.expand_includes(str(ROOT/e['source']))
+  pp=ROOT/'build/pp'/(name+'.c')
+  if any(B.INCLUDE_RE.match(line) for line in (ROOT/e['source']).read_text(encoding='latin-1').splitlines()):
+   assert pp.read_text(encoding='latin-1')==expanded+'\n','stale expanded header input: '+name
   ap=ROOT/'build/link'/(name+'.abs');sections,runs=read_abs(str(ap));_s,image=B.built_image(str(ap))
   emitted={a+i for _sec,a,data in runs for i in range(len(data))}
   code=set();data=set()
@@ -37,7 +41,7 @@ def main():
   for f in e['functions']:
    ex,_b,_d=B.compare_range(image,int(f['start'],16),int(f['end'],16))
    assert (f['status']=='exact')==ex,(name,f['name'])
-  rows.append({'unit':name,'text_nonpadding':len(code),'data_nonpadding':len(data),'exact_functions':e['functions_exact'],'text_spans':intervals(code),'data_spans':intervals(data),'source_sha256':e['source_sha256'],'expanded_source_sha256':hashlib.sha256(B.expand_includes(str(ROOT/e['source'])).encode('latin-1')).hexdigest(),'linked_abs_sha256':sha(ap),'object_sha256':sha(ROOT/'build/obj'/(name+'.obj'))})
+  rows.append({'unit':name,'text_nonpadding':len(code),'data_nonpadding':len(data),'exact_functions':e['functions_exact'],'text_spans':intervals(code),'data_spans':intervals(data),'source_sha256':e['source_sha256'],'expanded_source_sha256':hashlib.sha256(expanded.encode('latin-1')).hexdigest(),'compiler_input_sha256':sha(pp) if pp.exists() else e['source_sha256'],'compiler_input_matches_current_headers':True,'linked_abs_sha256':sha(ap),'object_sha256':sha(ROOT/'build/obj'/(name+'.obj'))})
  r['summary']=B.summarize(m,{e['name']:e for e in r['units']});r['generated']=time.strftime('%Y-%m-%dT%H:%M:%S')
  r['credit_policy']='Only explicitly emitted bytes in entirely exact fixed-address function/pool/data ranges. All linker-fill, gaps and alignment excluded. No masks.'
  report_path.write_text(json.dumps(r,indent=1)+'\n')

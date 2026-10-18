@@ -1,12 +1,10 @@
+#include "dc_types.h"
 /* Private Dreamcast overlays, proven by zoidtexture target instructions. */
 #ifndef ZOIDTEXTURE_PRIVATE_H
 #define ZOIDTEXTURE_PRIVATE_H
 
-typedef struct tTexture tTexture;
-typedef union tRGBA {
-    unsigned char c[4];
-    unsigned int rgba;
-} tRGBA;
+
+
 
 typedef struct tZoidObjectDC {
     char pad0[0x34];

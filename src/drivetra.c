@@ -1,7 +1,7 @@
 /* drivetra.c - whole translation unit, Dreamcast target 0x8C022CA4..0x8C0232F8 (incl. pools).
    Bodies from MAT3 GameSource/src/drivetra.c; DC layouts from include/dc_types.h.
    Frozen configuration: SHC 5.1r11, base flags + -speed -noinline (interp requested inline). */
-#include "C:\rush2049-dreamcast\include\dc_types.h"
+#include "dc_types.h"
 
 extern float carEngineTorque[][3];    /* 0x8C0BBC4C, pool word 8C023238 */
 extern float carTransGearRatio[][6];  /* 0x8C0BBA48, pool words 8C022FE8, 8C0230AC; row stride 24 */

@@ -1930,25 +1930,32 @@
    },
    "functions": [
     {
-     "name": "ClearBST",
+     "name": "InitBST",
      "start": "0x8C018CBC",
      "end": "0x8C018CC8",
-     "mat3": "ClearBST",
-     "confidence": "low"
+     "mat3": "InitBST",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C018CC8",
+     "name": "ClearBST",
      "start": "0x8C018CC8",
      "end": "0x8C018CD0",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ClearBST",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C018CD0",
+     "name": "InsertBSTE",
      "start": "0x8C018CD0",
+     "end": "0x8C018CE0",
+     "mat3": "InsertBSTE",
+     "confidence": "medium"
+    },
+    {
+     "name": "_InsertBSTE",
+     "start": "0x8C018CE0",
      "end": "0x8C018D36",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_InsertBSTE",
+     "confidence": "medium"
     },
     {
      "name": "WalkBST",
@@ -1968,7 +1975,7 @@
    "pools": [],
    "data": [],
    "bss": [],
-   "notes": "ClearBST/_InsertBSTE/WalkBST/_WalkBST by size and order; alphabetical slot. DC functions 5, MAT3 functions 6, named 3."
+   "notes": "Private correction: first entry InitBST (comparator store), second ClearBST; split InsertBSTE wrapper at following helper prologue8C018CE0. Six MAT3 source functions, 220 bytes, no pools/data."
   },
   {
    "name": "camera",
@@ -4156,9 +4163,22 @@
      "end": "0x8C0278C0"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA91C",
+     "end": "0x8C0AA987",
+     "symbols": []
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BD96C",
+     "end": "0x8C0BDD54",
+     "symbols": []
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 5."
+   "notes": "DC functions 5, MAT3 functions 5, named 5. Private C/D placement proposal from target pools/data; literal alignment excluded from earned bytes."
   },
   {
    "name": "game",
@@ -7035,16 +7055,9 @@
     {
      "name": "objcmp",
      "start": "0x8C03D286",
-     "end": "0x8C03D2AA",
+     "end": "0x8C03D2AE",
      "mat3": "objcmp",
      "confidence": "high"
-    },
-    {
-     "name": "func_8C03D2AA",
-     "start": "0x8C03D2AA",
-     "end": "0x8C03D2AE",
-     "mat3": null,
-     "confidence": "low"
     },
     {
      "name": "MBOX_GetPosition",
@@ -7107,9 +7120,50 @@
      "end": "0x8C03D654"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 14, MAT3 functions 13, named 12."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC0B8",
+     "end": "0x8C0AC0C3"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BEBE8",
+     "end": "0x8C0BEDE8",
+     "symbols": [
+      {
+       "name": "gRomObjDefPtrs",
+       "address": "0x8C0BEBE8",
+       "size": 512
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C14C71C",
+     "end": "0x8C14CB1D",
+     "symbols": [
+      {
+       "name": "gTexDefPtrs",
+       "address": "0x8C14C71C",
+       "size": 512
+      },
+      {
+       "name": "gPalDefPtrs",
+       "address": "0x8C14C91C",
+       "size": 512
+      },
+      {
+       "name": "gNumModels",
+       "address": "0x8C14CB1C",
+       "size": 1
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 14, MAT3 functions 13, named 12. Root review: 8C03D2AA..2AE is generated unreachable objcmp epilogue, not an independent source function; merged into objcmp."
   },
   {
    "name": "mdrive",
@@ -8250,9 +8304,22 @@
      "end": "0x8C044C2C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BF768",
+     "end": "0x8C0BF968",
+     "symbols": [
+      {
+       "name": "gPaneBlits",
+       "start": "0x8C0BF768",
+       "size": 512
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 4."
+   "notes": "DC functions 5, MAT3 functions 5, named 4. Private D proposal: gPaneBlits base pools8C044814/4C24;16*0x20 extent; anonymous identity retained."
   },
   {
    "name": "password",
@@ -10137,8 +10204,69 @@
      "end": "0x8C05138C"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BFD3C",
+     "end": "0x8C0BFD48",
+     "symbols": [
+      {
+       "name": "gGameState",
+       "start": "0x8C0BFD3C",
+       "size": 4
+      },
+      {
+       "name": "gNewGameState",
+       "start": "0x8C0BFD40",
+       "size": 4
+      },
+      {
+       "name": "gSkipToGameState",
+       "start": "0x8C0BFD44",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C158340",
+     "end": "0x8C158346",
+     "symbols": [
+      {
+       "name": "gGameStarted",
+       "start": "0x8C158340",
+       "size": 1
+      },
+      {
+       "name": "gSofdecShown",
+       "start": "0x8C158341",
+       "size": 1
+      },
+      {
+       "name": "gLicenseShown",
+       "start": "0x8C158342",
+       "size": 1
+      },
+      {
+       "name": "gIntroMovieShown",
+       "start": "0x8C158343",
+       "size": 1
+      },
+      {
+       "name": "pfsInited",
+       "start": "0x8C158344",
+       "size": 1
+      },
+      {
+       "name": "lcdInited",
+       "start": "0x8C158345",
+       "size": 1
+      }
+     ]
+    }
+   ],
    "notes": "DC functions 6, MAT3 functions 10, named 6."
   },
   {
@@ -13715,8 +13843,31 @@
     }
    ],
    "data": [],
-   "bss": [],
-   "notes": "DC functions 7, MAT3 functions 10, named 7."
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C170F34",
+     "end": "0x8C17283C",
+     "symbols": [
+      {
+       "name": "gNumBlitInsts",
+       "start": "0x8C170F34",
+       "size": 4
+      },
+      {
+       "name": "gMaxBlitInsts",
+       "start": "0x8C170F38",
+       "size": 4
+      },
+      {
+       "name": "gBlitInstanceList",
+       "start": "0x8C170F3C",
+       "size": 6400
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 7, MAT3 functions 10, named 7. Private BSS proposal from pools8C068E14/EF0/E0C and200bound*0x20stride; DCbyteflags/hide drift."
   },
   {
    "name": "zoidlight",
@@ -13835,8 +13986,31 @@
     }
    ],
    "data": [],
-   "bss": [],
-   "notes": "DC functions 8, MAT3 functions 8, named 8."
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C172844",
+     "end": "0x8C17798C",
+     "symbols": [
+      {
+       "name": "gNumPolyInsts",
+       "start": "0x8C172844",
+       "size": 4
+      },
+      {
+       "name": "gMaxPolyInsts",
+       "start": "0x8C172848",
+       "size": 4
+      },
+      {
+       "name": "PolyInstanceList",
+       "start": "0x8C17284C",
+       "size": 20800
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 8, MAT3 functions 8, named 8. Private BSS proposal: pools 8C069028/902C/9030; array200*0x68 from NewPoly bound and stride."
   },
   {
    "name": "zoidtexture",
@@ -14062,7 +14236,13 @@
      "end": "0x8C069E34"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0C7B4C",
+     "end": "0x8C0C7C2C"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 15, MAT3 functions 15, named 15."
   },
@@ -20002,9 +20182,45 @@
      "end": "0x8C09939C"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 5."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0D1DE0",
+     "end": "0x8C0D1DF0",
+     "symbols": [
+      {
+       "name": "gStreakColors",
+       "start": "0x8C0D1DE0",
+       "size": 16
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C1A33F0",
+     "end": "0x8C1A40A0",
+     "symbols": [
+      {
+       "name": "gStreakList",
+       "start": "0x8C1A33F0",
+       "size": 24
+      },
+      {
+       "name": "gStreakArray",
+       "start": "0x8C1A3408",
+       "size": 3200
+      },
+      {
+       "name": "gStreakPolyList",
+       "start": "0x8C1A4088",
+       "size": 24
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 5, MAT3 functions 5, named 5. Original final backing-array end is unproven. gStreakPolyArray base8C1A40A0 is proven; source-derived end8C1A5108 is not claimed as original extent."
   },
   {
    "name": "weapons",

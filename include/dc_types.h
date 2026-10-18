@@ -146,7 +146,7 @@ typedef char dc_check_tStatList_size[(sizeof(tStatList) == 0x18) ? 1 : -1];
 
 /* Dreamcast texture overlay.  Only fields accessed by this unit are named. */
 typedef struct tTexture {
-    char pad0[0x10];
+    char name[16]; /* mbox name key/copy: 8C03D4C0..4CC; stride0x30. */
     unsigned short width;  /* 0x10: 8C05B44E mov.w, 8C05B450 extu.w */
     unsigned short height; /* 0x12: 8C05B4A0 mov.w, 8C05B4A2 extu.w */
     char pad1[0x24 - 0x14];
@@ -192,7 +192,6 @@ typedef char dc_check_tPaletteAnim_size[(sizeof(tPaletteAnim) == 0x14) ? 1 : -1]
 
 /* Private proposal for include/dc_types.h, proven by countdown target instructions. */
 
-typedef struct tPoly tPoly;
 
 
 /* Target initialized bytes at 8C0BD8C0 are FF FF FF C0. */
@@ -223,10 +222,7 @@ typedef char dc_check_tUVMatrix_size[(sizeof(tUVMatrix) == 0x30) ? 1 : -1];
 typedef char dc_check_tCamera_size[(sizeof(tCamera) == 0x98) ? 1 : -1];
 
 
-typedef struct dcSkyWindowInfo {
-    char pad0[0x44];
-    unsigned char fogcolor[4]; /* +0x44..47 byte reads: 8C04F37C..392; size 0x48: ZOID_GetWindow 8C06972C..73E */
-} dcSkyWindowInfo;
+
 typedef tCamera dcSkyCamera;
 typedef tMatrix3 dcSkyMat3;
 /* Private carload layout proposal. C89; fields/strides follow DC accesses. */
@@ -250,4 +246,43 @@ typedef char dc_check_carload_link_size[(sizeof(tCarLoadLink) == 0x0a) ? 1 : -1]
 typedef char dc_check_carload_drone_size[(sizeof(tCarLoadDroneSlice) == 0x808) ? 1 : -1];
 
 
+typedef struct tPolyVert {
+    float ob[3];           /* +0,+4,+8: 8C0691CC..91EC */
+    float tc[2];           /* +0x0c,+0x10: 8C0690A4,913E */
+    unsigned char cn[4];   /* +0x14..17: 8C0691FE,9208,9216,9222 */
+} tPolyVert;               /* stride0x18: 8C06918A..9194 */
+
+typedef struct tPoly {
+    signed short nverts;  /* +0: 8C068F4A,8C068FD2..FD4 */
+    unsigned short flags; /* +2: 8C068F86,8C069246 */
+    unsigned short texidx;/* +4: 8C068F98,8C068FFE */
+    signed short z;       /* +6: 8C069244 */
+    tPolyVert verts[4];   /* +8: 8C06909A; stride0x68: 8C068F42,8C069272 */
+} tPoly;
+
+typedef union tViewport { struct { float vscale[4]; float vtrans[4]; } vp; } tViewport;
+typedef struct tScissor { unsigned short ulx,uly,lrx,lry; } tScissor;
+typedef struct tWindowInfo {
+    tViewport *vp;         /* 8C06942C +0 pointer */
+    tScissor *s;           /* 8C06942E +4 pointer */
+    unsigned int flags;   /* 8C069608 +8 word */
+    float whviewang;       /* 8C069616 +0C */
+    float wvviewang;       /* 8C06961A +10 */
+    float whvangtan;       /* 8C069626 +14 */
+    float wvvangtan;       /* 8C069632 +18 */
+    float wihvangtan;      /* 8C06964C +1C */
+    float wivvangtan;      /* 8C069642 +20 */
+    float wwidth;          /* 8C0695C2 +24 */
+    float wheight;         /* 8C0695C6 +28 */
+    float whcenter;        /* 8C0695CA +2C */
+    float wvcenter;        /* 8C0695CE +30 */
+    float aspect;          /* 8C0695D4 +34 */
+    float frontclip;       /* 8C069434 +38 */
+    float backclip;        /* 8C06943E +3C */
+    signed short fogmin;  /* 8C06946C +40 word */
+    unsigned short fogmax;/* 8C069470 +42 word */
+    unsigned char fogcolor[4]; /* 8C069476..486 +44..47 bytes */
+} tWindowInfo;             /* stride72, ScaleWindows 8C069590 add#72. */
+
+typedef tWindowInfo dcSkyWindowInfo;
 #endif /* DC_TYPES_H */
