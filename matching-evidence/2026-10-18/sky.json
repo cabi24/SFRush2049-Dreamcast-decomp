@@ -20,10 +20,11 @@
     ]
   ],
   "source_sha256": "8e3b765da7a4b39619a7320075782eb080e5109295dff63d3bb44e0a71fd3b27",
-  "expanded_source_sha256": "4cdc9a9f73c65933999b7b64e78ac30d986dc5513ad48d27c626f30b249a0085",
-  "linked_abs_sha256": "5bcbf7a4508a098cbf09280825136b1b49fdffc927b3562ef44c738d4b3446e7",
-  "object_sha256": "781f7e298e34e831270d5c19f98b6843013530c9eab42582153279eb8481ded6",
-  "policy": "Separate native translation-unit links, not a full integration image build.",
+  "expanded_source_sha256": "083bcceccf29f0ab2edbc16f15e5408d2b875837fff2c26d457c7ceea4f7d038",
+  "compiler_input_sha256": "ae4625fce547afdf072c316123fd357fd61a8ce8407f1cccb6e44172c3926087",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "9446dd862399b6051d440b47b0df7b361d908910aeba65a78eadc135d79839d8",
+  "object_sha256": "d67d9c3196a09578c5348a44c427548d8da8c4a9d9c676f253ea2137d5c5b1a0",
   "comparison_masks": false,
   "linker_fill_credit": 0,
   "bss_image_credit": 0

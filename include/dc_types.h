@@ -83,7 +83,9 @@ typedef struct tRekonState {
 typedef struct tResurrect {
     char pad0[0x64];
     signed short moving_state;
-    char pad1[0x70-0x66];
+    char pad1[7];
+    signed char waterAbort; /* stree pool8C052C12, model+6cd. */
+    char pad2[2];
 } tResurrect;
 
 typedef struct tRoadInit {
@@ -104,10 +106,10 @@ typedef struct tMainIn {
 } tMainIn;
 
 typedef struct surftyp {
- char pad0[0x2];
+ unsigned short flags; /* stree PointInSurf and headlights83: +0. */
  unsigned short snd_flags; /* +002: 3B78/3B7A. */
  signed short uvs[3][3]; /* +004: 3A80..3AAC +4/+6/+8 signedshort. */
- char pad1[0x2]; /* target-proven stride; see checks below. */
+ unsigned short vli; /* stree PointInSurf,+16. */
 } surftyp;
 
 /* ------------------------------------------------------------------ tModelData */
@@ -142,7 +144,7 @@ typedef struct tModelData {
     float grw[3],stuntW[3]; /* drivsym457E/4D8A. */
     float uvs[3][3]; /* CopyUV source 8C047D6E. */
     float roaduvs[4][3][3]; /* road8C04B1BE/B13A..148. */
-    char pad_steer[0x10];
+    struct streetyp *lasttp[4]; /* stree pool8C0529B6, model+3a0. */
     float steerangle; /* drivsym36A8/3630. */
     float torque[4];        /* 0x3b4 drivetrain pool 8C022DC8 (0x03bc = torque[2]), add #4 -> torque[3] */
     float steergain; /* drivsym33CC/333C. */
@@ -192,13 +194,13 @@ typedef struct tModelData {
     float crashthreshold; /* drivsym5344/52D6. */
     signed char crashflag;  /* 0x640 engine (drivetra_part) */
     signed char topscrape,thumpflag; /* drivsym543A/52CE. */
-    char pad_thump[1];
+    signed char mthumpflag; /* audio pool8C0134AA,model+643. */
     signed short thump_side; /* drivsym5342/52C6. */
     char pad_surface[2];
     surftyp *movingSurface; /* road8C04B1BC/B120. */
     char pad_bodyforces[4];
     float bodyForces; /* drivsym4584/4540. */
-    char pad_shift[4];
+    float colrad; /* targets pool8C0588AE,model+654. */
     float shifttime;        /* 0x658 upshift/downshift pool 8C0230A6 (0x0658) */
     signed short bogState; /* drivsym36AE/368E. */
     char pad11[2];
@@ -228,7 +230,7 @@ typedef struct tModelData {
     signed char laps,cpSign,collidable,solid; /* +7e8..7eb: checkpoint 8C01C0DC/1BFCA/1C28A/1C226. */
     float drone_scale,time_boost; /* drones8C02579E/57A0. */
     float time_fudge; /* +7f4: rekon pools 8C047D5E/EE6. */
-    char pad_end[0x808-0x7f8]; /* indexed stride: carload,skids,rekon,headlights. */
+    float skidIntensity[4]; /* audio pool8C0124E0,model+7f8; indexed stride808 unchanged. */
 } tModelData;
 
 /* Layout self-checks (typedefs only, no code or data). SHC rejects address constants such as
@@ -350,7 +352,10 @@ typedef union tUVMatrix {
 typedef struct tCamera {
     tUVMatrix mat;
     tUVMatrix n64; /* 0x30: ShowCountdown 8C0226DA passes matrix to U64WorldVector. */
-    char pad0[0x98 - 0x60]; /* stride 0x98: literal 8C02279E, multiplication 8C0226C4. */
+    tUVMatrix fcam; /* camera+60. */
+    float view2spring; /* camera8C018E50/8E42,+90. */
+    unsigned char slot; /* camera8C018E4E/8E94,+94. */
+    char pad0[3];
 } tCamera;
 
 typedef char dc_check_tRGBA_size[(sizeof(tRGBA) == 4) ? 1 : -1];
@@ -431,18 +436,23 @@ struct tVisual {
 }; /* 0x18; +6/+8/+14 at 8C030576,5AC,5B0; stride at8C02FE02. */
 typedef struct anon_active_invsTime_10 {
     unsigned int active; /* car+3A4: 8C095DAA, read8C095D8C, mask8C095E4C..52 */
-    char pad0[0x10-4];
+    float invsTime,shldTime,shldScale; /* target59 timing stores at3A8/3AC/3B0. */
 } anon_active_invsTime_10;
 typedef struct anon_weapon_health_30 {
-    char pad0[8];
+    struct { signed char type,ammoCnt; } weapon; /* targets battle+0/+1. */
+    signed short health; /* targets battle+2. */
+    char pad0[4];
     anon_active_invsTime_10 defense;
     signed char shoot; /* car+3B4: 8C095DAE, 8C095E58 */
     unsigned char fadeAlpha; /* car+3B5: 8C095DB0, extu.b8C095E04 */
     signed char fadeState; /* car+3B6: 8C095DAC */
-    char pad1[0x20-0x1b];
+    signed char Points; /* gameover8C02A34C..350,car+3b7. */
+    char pad1[0x20-0x1c];
     float fadeTime; /* car+3BC: 8C095E8A, 8C095DF2/DF4 */
     char pad2[0x30-0x24];
 } anon_weapon_health_30;
+typedef struct tPathPoint { char pad0[0x24]; signed short idx; char pad1[2]; signed short path; char pad2[2]; } tPathPoint;
+
 typedef struct tCarData {
     char pad0[4];
     float modelTime; /* checkpoint 8C01BF02. */
@@ -450,14 +460,15 @@ typedef struct tCarData {
     float dr_vel[3]; /* smoke8C04F712..728. */
     char pad1[0x2c-0x20];
     float dr_uvs[3][3];    /* 8C02FFCA base+2C; row2 at+44/+48/+4C. */
-    char pad2[0x74-0x50];
+    float dr_car_uvs[3][3]; /* camera View3Cam,+50. */
     float dr_tirepos[4][3]; /* skids 8C04E8C2. */
-    char pad_pos[0xe8-0xa4];
+    float v[3]; /* camera RearCamera,+a4. */
+    char pad_pos[0xe8-0xb0];
     unsigned int appearance; /* 8C0305D4/5D6. */
     char pad3[2];
     signed char place,place_locked; /* +ee/+ef: checkpoint 8C01BCF0/BCEC. */
     float score; /* +f0: checkpoint 8C01C3B6. */
-    char pad_dist[4];
+    int objnum; /* camera,+f4. */
     signed short rwmph; /* smoke8C04F6B4 and controls8C01E53A. */
     char pad_distance[0x100-0xfa];
     float distance; /* +100: checkpoint 8C01BCEE. */
@@ -470,13 +481,17 @@ typedef struct tCarData {
     float collide_time; /* +324: checkpoint 8C01C288. */
     char pad_collide[1];
     signed char collide_state; /* +329: checkpoint 8C01C21A. */
-    char pad_crash[0x36e-0x32a];
+    char pad_mpctl[2];
+    tPathPoint mpctl; /* camera+32c,idx350/path354. */
+    char pad_crash[0x36e-0x358];
     signed short weight_index; /* drones8C025798/56C2. */
     signed char crash_state,dead; /* +370/+371: checkpoint 8C01BE7C/1BBBC. */
     signed char in_tunnel; /* drivsym420C/4126. */
-    char pad_camera[1];
+    signed char slot; /* camera,+373. */
     signed char camera,view; /* smoke8C05066E/670. */
-    char pad_stunt[0x380-0x376];
+    signed char saveview; /* camera,+376. */
+    signed char carMine; /* targets8C059DD4,+377. */
+    char pad_stunt[0x380-0x378];
     float stuntW[3]; /* stunt553C6/C8/CA. */
     char pad_player[0x398-0x38c];
     struct tPadState *player; /* drivsym4994/48BE..48E0. */
@@ -535,10 +550,14 @@ typedef struct tCircuitTrack {
 typedef struct tPlayerProfile {
     char pad0[8];
     tPS_File **fileh; /* +8: 8C050EF2 mov.l @(8,r4),r4. */
-    char pad_rumble[0x2c-0x0c];
+    char pad_name[8];
+    unsigned char name[13]; /* gameover8C029B14/16,+14,ghost bound13. */
+    char pad_rumble[0x2c-0x21];
     signed char rumble; /* controls8C01ED3C. */
     char pad_datah[0x3c-0x2d];
     tSaveData **datah; /* circuit8C01C57E, profile+3c. */
+    char pad_field48[8];
+    void **field48; /* camera CheckCameraView,+48; distinct from circuit datah+3c, semantic identity unproven. */
 } tPlayerProfile;
 typedef struct tPadState {
     unsigned char slot; /* checkpoint 8C01BF66..6A; demo byte stores. */
@@ -547,7 +566,8 @@ typedef struct tPadState {
     unsigned int edges,levels,autoEdges; /* controls+4/+8/+c. */
     float analog[2]; /* controls+10/+14. */
     unsigned int controls[11]; /* controls8C01EDA8 +18,stride4. */
-    char pad_controls[0x4c-0x44];
+    char pad_controls[4];
+    unsigned int listener; /* audio184A/184C,+48. */
     tPlayerProfile **save; /* state 8C050EE0..EE2; stride50. */
 } tPadState;
 typedef char dc_check_full_model[(sizeof(tModelData)==0x808)?1:-1];
@@ -617,5 +637,18 @@ typedef struct tPadInfo {
  signed char stick1x,stick1y,stick2x,stick2y; /* F43E/F450/F47E */
  unsigned char analog1,analog2; /* F486/F48E;+10/+11 */
 } tPadInfo;
+
+typedef struct CarParts {
+ int frame; /* visualsEE7C. */
+ char pad04[4];
+ int tsheen; /* visualsEF0E,+8. */
+ char pad0c[8];
+ int headlight[4]; /* headlightsFE3A/58/94/B2,+14. */
+ int extraparts[3]; /* headlights306E8,+24. */
+ int hood,sheen; /* visualsEE7C..EEBA/EEE2,+30/+34. */
+ char pad38[4];
+ int tires[4]; /* visuals,+3c. */
+ char pad4c[0x60-0x4c];
+} CarParts;
 
 #endif /* DC_TYPES_H */

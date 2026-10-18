@@ -1,0 +1,22 @@
+{
+  "unit": "ll",
+  "text_nonpadding": 422,
+  "data_nonpadding": 0,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C03A1B8",
+      "8C03A35E"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "9ec5f99fe36bb910a0e6a3b0d351035643fcbe3030e676ea8a87a52a6cad0925",
+  "expanded_source_sha256": "ab2ead025c625330dce36874ba187dd87b6a577082035e15739cc43a63cf7c59",
+  "compiler_input_sha256": "4b1c94eefc254cacf1e6de65c56fe4500fdcad616568e28459956239f980c753",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "52c5b619452686aec9c56195b5010d22f58b3da064c2ad65d3c7c8040bce626c",
+  "object_sha256": "27945a7a06809829d2d4f8a3daca196e2cce8143d8ce5747cca65d5861b886af",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}

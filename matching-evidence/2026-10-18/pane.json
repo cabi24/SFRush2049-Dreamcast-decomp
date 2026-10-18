@@ -91,8 +91,5 @@
   "object_sha256": "6da9a950c31f7d001de6593da2ac69f69946a7704ea1fa2a8e268d3cad4e2acb",
   "comparison_masks": false,
   "linker_fill_credit": 0,
-  "bss_image_credit": 0,
-  "data_padding_excluded": 32,
-  "full_initialized_data_equality_bytes": 512,
-  "reason": "tBlitSet pad0[2] at+A in sixteen 32-byte initialized records"
+  "bss_image_credit": 0
 }

@@ -482,7 +482,7 @@
    ],
    "pools": [
     {
-     "start": "0x8C01137E",
+     "start": "0x8C011380",
      "end": "0x8C0113C0"
     }
    ],
@@ -494,7 +494,7 @@
     }
    ],
    "bss": [],
-   "notes": "Boundary proposal only; not assigned/compiled/edited as a source by unzip worker. Source asincos.c explains fabs/sqrt/rational polynomial and0/1 wrappers. C arrays 0A78A4..0A78AC={0,PIO4} and0A78AC..0A78B4={PIO2,PIO4} are proposed, not compiled or credited by unzip. Root accepted source-boundary evidence; remains unbuilt,0credit. Adds one previously unmapped source function to the denominator."
+   "notes": "Boundary proposal only; not assigned/compiled/edited as a source by unzip worker. Source asincos.c explains fabs/sqrt/rational polynomial and0/1 wrappers. C arrays 0A78A4..0A78AC={0,PIO4} and0A78AC..0A78B4={PIO2,PIO4} are proposed, not compiled or credited by unzip. Root accepted source-boundary evidence; remains unbuilt,0credit. Adds one previously unmapped source function to the denominator. Root source integration accepts literal start1380; target137E alignment earns0, native delay slot there earns0. Selected03 only; denied fourth variant is not retried."
   },
   {
    "name": "atan",
@@ -556,18 +556,20 @@
    },
    "functions": [
     {
-     "name": "func_8C011530",
+     "name": "_InitSoundState",
      "start": "0x8C011530",
      "end": "0x8C01154A",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high",
+     "notes": "Private target semantic boundary proposal; root reviews integration."
     },
     {
-     "name": "func_8C01154A",
+     "name": "_StopSound",
      "start": "0x8C01154A",
      "end": "0x8C01156C",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high",
+     "notes": "Private target semantic boundary proposal; root reviews integration."
     },
     {
      "name": "PlayExitSound",
@@ -607,16 +609,10 @@
     {
      "name": "PlayGameSound",
      "start": "0x8C011606",
-     "end": "0x8C01161E",
-     "mat3": "PlayGameSound",
-     "confidence": "medium"
-    },
-    {
-     "name": "func_8C01161E",
-     "start": "0x8C01161E",
      "end": "0x8C011622",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "PlayGameSound",
+     "confidence": "medium",
+     "notes": "Target161E/1620 generated unreachable compiler epilogue; merged anonymous map entry. Private proposal for root review."
     },
     {
      "name": "EmitGameSound",
@@ -640,18 +636,20 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C011718",
+     "name": "PauseGameMusic",
      "start": "0x8C011718",
      "end": "0x8C011722",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high",
+     "notes": "Private target semantic boundary proposal; root reviews integration."
     },
     {
-     "name": "func_8C011722",
+     "name": "ResumeGameMusic",
      "start": "0x8C011722",
      "end": "0x8C011726",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high",
+     "notes": "Private target semantic boundary proposal; root reviews integration."
     },
     {
      "name": "StartListeners",
@@ -911,9 +909,1362 @@
      "end": "0x8C013A40"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "one atom holds MAT3 audiodebug.c (_InitSoundState, _StopSound) and audio.c functions: on DC they are one unit. DC functions 31, MAT3 functions 28, named 26."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A78B4",
+     "end": "0x8C0A78D4",
+     "notes": "Bump LR signedshort[16] semantic fields only."
+    },
+    {
+     "section": "C",
+     "start": "0x8C0A78D4",
+     "end": "0x8C0A78F4",
+     "notes": "Bump FB signedshort[16] semantic fields only."
+    },
+    {
+     "section": "C",
+     "start": "0x8C0A78F4",
+     "end": "0x8C0A7904",
+     "notes": "Skid pitch float[4]."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0B92A0",
+     "end": "0x8C0B9498",
+     "notes": "Engine specifications18x1C, natural pad separately excluded."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0B9498",
+     "end": "0x8C0B94AC",
+     "notes": "Enabled byte, active[6], updated[6], alignment3, waterfall int."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0B94AC",
+     "end": "0x8C0BA76C",
+     "notes": "Stationary emitters120x28, natural padding separately excluded."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BA76C",
+     "end": "0x8C0BA7B8",
+     "notes": "Track songs int[19]."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BA7B8",
+     "end": "0x8C0BA7C8",
+     "notes": "Last horn float[4]."
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C122618",
+     "end": "0x8C122BC0",
+     "notes": "Target-backed sound arrays; last thump-time 4-player typed prefix. Allocation after2BC0 unknown; no debug_info extent claimed; zero image credit."
+    }
+   ],
+   "notes": "one atom holds MAT3 audiodebug.c (_InitSoundState, _StopSound) and audio.c functions: on DC they are one unit. DC functions 31, MAT3 functions 28, named 26.",
+   "data_padding": [
+    {
+     "start": "0x8C0B92AE",
+     "end": "0x8C0B92B0",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B92CA",
+     "end": "0x8C0B92CC",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B92E6",
+     "end": "0x8C0B92E8",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B9302",
+     "end": "0x8C0B9304",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B931E",
+     "end": "0x8C0B9320",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B933A",
+     "end": "0x8C0B933C",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B9356",
+     "end": "0x8C0B9358",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B9372",
+     "end": "0x8C0B9374",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B938E",
+     "end": "0x8C0B9390",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B93AA",
+     "end": "0x8C0B93AC",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B93C6",
+     "end": "0x8C0B93C8",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B93E2",
+     "end": "0x8C0B93E4",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B93FE",
+     "end": "0x8C0B9400",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B941A",
+     "end": "0x8C0B941C",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B9436",
+     "end": "0x8C0B9438",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B9452",
+     "end": "0x8C0B9454",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B946E",
+     "end": "0x8C0B9470",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B948A",
+     "end": "0x8C0B948C",
+     "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+     "start": "0x8C0B94A5",
+     "end": "0x8C0B94A8",
+     "reason": "Six-byte update array ends94A5; natural alignment before int waterfall94A8."
+    },
+    {
+     "start": "0x8C0B94AD",
+     "end": "0x8C0B94B0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B94C6",
+     "end": "0x8C0B94C8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B94D5",
+     "end": "0x8C0B94D8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B94EE",
+     "end": "0x8C0B94F0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B94FD",
+     "end": "0x8C0B9500",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9516",
+     "end": "0x8C0B9518",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9525",
+     "end": "0x8C0B9528",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B953E",
+     "end": "0x8C0B9540",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B954D",
+     "end": "0x8C0B9550",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9566",
+     "end": "0x8C0B9568",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9575",
+     "end": "0x8C0B9578",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B958E",
+     "end": "0x8C0B9590",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B959D",
+     "end": "0x8C0B95A0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B95B6",
+     "end": "0x8C0B95B8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B95C5",
+     "end": "0x8C0B95C8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B95DE",
+     "end": "0x8C0B95E0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B95ED",
+     "end": "0x8C0B95F0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9606",
+     "end": "0x8C0B9608",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9615",
+     "end": "0x8C0B9618",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B962E",
+     "end": "0x8C0B9630",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B963D",
+     "end": "0x8C0B9640",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9656",
+     "end": "0x8C0B9658",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9665",
+     "end": "0x8C0B9668",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B967E",
+     "end": "0x8C0B9680",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B968D",
+     "end": "0x8C0B9690",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B96A6",
+     "end": "0x8C0B96A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B96B5",
+     "end": "0x8C0B96B8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B96CE",
+     "end": "0x8C0B96D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B96DD",
+     "end": "0x8C0B96E0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B96F6",
+     "end": "0x8C0B96F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9705",
+     "end": "0x8C0B9708",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B971E",
+     "end": "0x8C0B9720",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B972D",
+     "end": "0x8C0B9730",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9746",
+     "end": "0x8C0B9748",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9755",
+     "end": "0x8C0B9758",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B976E",
+     "end": "0x8C0B9770",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B977D",
+     "end": "0x8C0B9780",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9796",
+     "end": "0x8C0B9798",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B97A5",
+     "end": "0x8C0B97A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B97BE",
+     "end": "0x8C0B97C0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B97CD",
+     "end": "0x8C0B97D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B97E6",
+     "end": "0x8C0B97E8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B97F5",
+     "end": "0x8C0B97F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B980E",
+     "end": "0x8C0B9810",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B981D",
+     "end": "0x8C0B9820",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9836",
+     "end": "0x8C0B9838",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9845",
+     "end": "0x8C0B9848",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B985E",
+     "end": "0x8C0B9860",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B986D",
+     "end": "0x8C0B9870",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9886",
+     "end": "0x8C0B9888",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9895",
+     "end": "0x8C0B9898",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B98AE",
+     "end": "0x8C0B98B0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B98BD",
+     "end": "0x8C0B98C0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B98D6",
+     "end": "0x8C0B98D8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B98E5",
+     "end": "0x8C0B98E8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B98FE",
+     "end": "0x8C0B9900",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B990D",
+     "end": "0x8C0B9910",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9926",
+     "end": "0x8C0B9928",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9935",
+     "end": "0x8C0B9938",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B994E",
+     "end": "0x8C0B9950",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B995D",
+     "end": "0x8C0B9960",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9976",
+     "end": "0x8C0B9978",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9985",
+     "end": "0x8C0B9988",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B999E",
+     "end": "0x8C0B99A0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B99AD",
+     "end": "0x8C0B99B0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B99C6",
+     "end": "0x8C0B99C8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B99D5",
+     "end": "0x8C0B99D8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B99EE",
+     "end": "0x8C0B99F0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B99FD",
+     "end": "0x8C0B9A00",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A16",
+     "end": "0x8C0B9A18",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A25",
+     "end": "0x8C0B9A28",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A3E",
+     "end": "0x8C0B9A40",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A4D",
+     "end": "0x8C0B9A50",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A66",
+     "end": "0x8C0B9A68",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A75",
+     "end": "0x8C0B9A78",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A8E",
+     "end": "0x8C0B9A90",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9A9D",
+     "end": "0x8C0B9AA0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9AB6",
+     "end": "0x8C0B9AB8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9AC5",
+     "end": "0x8C0B9AC8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9ADE",
+     "end": "0x8C0B9AE0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9AED",
+     "end": "0x8C0B9AF0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B06",
+     "end": "0x8C0B9B08",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B15",
+     "end": "0x8C0B9B18",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B2E",
+     "end": "0x8C0B9B30",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B3D",
+     "end": "0x8C0B9B40",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B56",
+     "end": "0x8C0B9B58",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B65",
+     "end": "0x8C0B9B68",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B7E",
+     "end": "0x8C0B9B80",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9B8D",
+     "end": "0x8C0B9B90",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9BA6",
+     "end": "0x8C0B9BA8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9BB5",
+     "end": "0x8C0B9BB8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9BCE",
+     "end": "0x8C0B9BD0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9BDD",
+     "end": "0x8C0B9BE0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9BF6",
+     "end": "0x8C0B9BF8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C05",
+     "end": "0x8C0B9C08",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C1E",
+     "end": "0x8C0B9C20",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C2D",
+     "end": "0x8C0B9C30",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C46",
+     "end": "0x8C0B9C48",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C55",
+     "end": "0x8C0B9C58",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C6E",
+     "end": "0x8C0B9C70",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C7D",
+     "end": "0x8C0B9C80",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9C96",
+     "end": "0x8C0B9C98",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9CA5",
+     "end": "0x8C0B9CA8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9CBE",
+     "end": "0x8C0B9CC0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9CCD",
+     "end": "0x8C0B9CD0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9CE6",
+     "end": "0x8C0B9CE8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9CF5",
+     "end": "0x8C0B9CF8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D0E",
+     "end": "0x8C0B9D10",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D1D",
+     "end": "0x8C0B9D20",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D36",
+     "end": "0x8C0B9D38",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D45",
+     "end": "0x8C0B9D48",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D5E",
+     "end": "0x8C0B9D60",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D6D",
+     "end": "0x8C0B9D70",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D86",
+     "end": "0x8C0B9D88",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9D95",
+     "end": "0x8C0B9D98",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9DAE",
+     "end": "0x8C0B9DB0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9DBD",
+     "end": "0x8C0B9DC0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9DD6",
+     "end": "0x8C0B9DD8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9DE5",
+     "end": "0x8C0B9DE8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9DFE",
+     "end": "0x8C0B9E00",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E0D",
+     "end": "0x8C0B9E10",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E26",
+     "end": "0x8C0B9E28",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E35",
+     "end": "0x8C0B9E38",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E4E",
+     "end": "0x8C0B9E50",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E5D",
+     "end": "0x8C0B9E60",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E76",
+     "end": "0x8C0B9E78",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E85",
+     "end": "0x8C0B9E88",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9E9E",
+     "end": "0x8C0B9EA0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9EAD",
+     "end": "0x8C0B9EB0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9EC6",
+     "end": "0x8C0B9EC8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9ED5",
+     "end": "0x8C0B9ED8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9EEE",
+     "end": "0x8C0B9EF0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9EFD",
+     "end": "0x8C0B9F00",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F16",
+     "end": "0x8C0B9F18",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F25",
+     "end": "0x8C0B9F28",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F3E",
+     "end": "0x8C0B9F40",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F4D",
+     "end": "0x8C0B9F50",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F66",
+     "end": "0x8C0B9F68",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F75",
+     "end": "0x8C0B9F78",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F8E",
+     "end": "0x8C0B9F90",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9F9D",
+     "end": "0x8C0B9FA0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9FB6",
+     "end": "0x8C0B9FB8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9FC5",
+     "end": "0x8C0B9FC8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9FDE",
+     "end": "0x8C0B9FE0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0B9FED",
+     "end": "0x8C0B9FF0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA006",
+     "end": "0x8C0BA008",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA015",
+     "end": "0x8C0BA018",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA02E",
+     "end": "0x8C0BA030",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA03D",
+     "end": "0x8C0BA040",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA056",
+     "end": "0x8C0BA058",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA065",
+     "end": "0x8C0BA068",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA07E",
+     "end": "0x8C0BA080",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA08D",
+     "end": "0x8C0BA090",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA0A6",
+     "end": "0x8C0BA0A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA0B5",
+     "end": "0x8C0BA0B8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA0CE",
+     "end": "0x8C0BA0D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA0DD",
+     "end": "0x8C0BA0E0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA0F6",
+     "end": "0x8C0BA0F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA105",
+     "end": "0x8C0BA108",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA11E",
+     "end": "0x8C0BA120",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA12D",
+     "end": "0x8C0BA130",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA146",
+     "end": "0x8C0BA148",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA155",
+     "end": "0x8C0BA158",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA16E",
+     "end": "0x8C0BA170",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA17D",
+     "end": "0x8C0BA180",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA196",
+     "end": "0x8C0BA198",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA1A5",
+     "end": "0x8C0BA1A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA1BE",
+     "end": "0x8C0BA1C0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA1CD",
+     "end": "0x8C0BA1D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA1E6",
+     "end": "0x8C0BA1E8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA1F5",
+     "end": "0x8C0BA1F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA20E",
+     "end": "0x8C0BA210",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA21D",
+     "end": "0x8C0BA220",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA236",
+     "end": "0x8C0BA238",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA245",
+     "end": "0x8C0BA248",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA25E",
+     "end": "0x8C0BA260",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA26D",
+     "end": "0x8C0BA270",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA286",
+     "end": "0x8C0BA288",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA295",
+     "end": "0x8C0BA298",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA2AE",
+     "end": "0x8C0BA2B0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA2BD",
+     "end": "0x8C0BA2C0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA2D6",
+     "end": "0x8C0BA2D8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA2E5",
+     "end": "0x8C0BA2E8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA2FE",
+     "end": "0x8C0BA300",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA30D",
+     "end": "0x8C0BA310",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA326",
+     "end": "0x8C0BA328",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA335",
+     "end": "0x8C0BA338",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA34E",
+     "end": "0x8C0BA350",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA35D",
+     "end": "0x8C0BA360",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA376",
+     "end": "0x8C0BA378",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA385",
+     "end": "0x8C0BA388",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA39E",
+     "end": "0x8C0BA3A0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA3AD",
+     "end": "0x8C0BA3B0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA3C6",
+     "end": "0x8C0BA3C8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA3D5",
+     "end": "0x8C0BA3D8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA3EE",
+     "end": "0x8C0BA3F0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA3FD",
+     "end": "0x8C0BA400",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA416",
+     "end": "0x8C0BA418",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA425",
+     "end": "0x8C0BA428",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA43E",
+     "end": "0x8C0BA440",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA44D",
+     "end": "0x8C0BA450",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA466",
+     "end": "0x8C0BA468",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA475",
+     "end": "0x8C0BA478",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA48E",
+     "end": "0x8C0BA490",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA49D",
+     "end": "0x8C0BA4A0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA4B6",
+     "end": "0x8C0BA4B8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA4C5",
+     "end": "0x8C0BA4C8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA4DE",
+     "end": "0x8C0BA4E0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA4ED",
+     "end": "0x8C0BA4F0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA506",
+     "end": "0x8C0BA508",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA515",
+     "end": "0x8C0BA518",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA52E",
+     "end": "0x8C0BA530",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA53D",
+     "end": "0x8C0BA540",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA556",
+     "end": "0x8C0BA558",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA565",
+     "end": "0x8C0BA568",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA57E",
+     "end": "0x8C0BA580",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA58D",
+     "end": "0x8C0BA590",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA5A6",
+     "end": "0x8C0BA5A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA5B5",
+     "end": "0x8C0BA5B8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA5CE",
+     "end": "0x8C0BA5D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA5DD",
+     "end": "0x8C0BA5E0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA5F6",
+     "end": "0x8C0BA5F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA605",
+     "end": "0x8C0BA608",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA61E",
+     "end": "0x8C0BA620",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA62D",
+     "end": "0x8C0BA630",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA646",
+     "end": "0x8C0BA648",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA655",
+     "end": "0x8C0BA658",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA66E",
+     "end": "0x8C0BA670",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA67D",
+     "end": "0x8C0BA680",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA696",
+     "end": "0x8C0BA698",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA6A5",
+     "end": "0x8C0BA6A8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA6BE",
+     "end": "0x8C0BA6C0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA6CD",
+     "end": "0x8C0BA6D0",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA6E6",
+     "end": "0x8C0BA6E8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA6F5",
+     "end": "0x8C0BA6F8",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA70E",
+     "end": "0x8C0BA710",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA71D",
+     "end": "0x8C0BA720",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA736",
+     "end": "0x8C0BA738",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA745",
+     "end": "0x8C0BA748",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+     "start": "0x8C0BA75E",
+     "end": "0x8C0BA760",
+     "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    }
+   ]
   },
   {
    "name": "audiomgr",
@@ -2369,8 +3720,95 @@
      "end": "0x8C01B614"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "start": "0x8C0BB228",
+     "end": "0x8C0BB240",
+     "section": "D",
+     "name": "finish_cam_stime"
+    },
+    {
+     "start": "0x8C0BB240",
+     "end": "0x8C0BB246",
+     "section": "D",
+     "name": "finish_cam"
+    },
+    {
+     "start": "0x8C0BB248",
+     "end": "0x8C0BB258",
+     "section": "D",
+     "name": "lastSwitch"
+    },
+    {
+     "start": "0x8C0BB258",
+     "end": "0x8C0BB268",
+     "section": "D",
+     "name": "nextSwitch"
+    },
+    {
+     "start": "0x8C0BB268",
+     "end": "0x8C0BB274",
+     "section": "D",
+     "name": "FSCLS"
+    },
+    {
+     "start": "0x8C0BB274",
+     "end": "0x8C0BB384",
+     "section": "D",
+     "name": "track1Spots"
+    },
+    {
+     "start": "0x8C0BB384",
+     "end": "0x8C0BB444",
+     "section": "D",
+     "name": "track2Spots"
+    },
+    {
+     "start": "0x8C0BB444",
+     "end": "0x8C0BB534",
+     "section": "D",
+     "name": "track3Spots"
+    },
+    {
+     "start": "0x8C0BB534",
+     "end": "0x8C0BB5F4",
+     "section": "D",
+     "name": "track4Spots"
+    },
+    {
+     "start": "0x8C0BB5F4",
+     "end": "0x8C0BB724",
+     "section": "D",
+     "name": "track5Spots"
+    },
+    {
+     "start": "0x8C0BB724",
+     "end": "0x8C0BB874",
+     "section": "D",
+     "name": "track6Spots"
+    },
+    {
+     "start": "0x8C0BB874",
+     "end": "0x8C0BB88C",
+     "section": "D",
+     "name": "trackSpots"
+    },
+    {
+     "start": "0x8C0BB88C",
+     "end": "0x8C0BB894",
+     "section": "D",
+     "name": "legDuration"
+    }
+   ],
+   "bss": [
+    {
+     "start": "0x8C12B644",
+     "end": "0x8C12BAB0",
+     "section": "B",
+     "name": "B",
+     "notes": "Proposed camera globals and function-static B extent; no image credit."
+    }
+   ],
    "notes": "DC functions 23, MAT3 functions 24, named 23."
   },
   {
@@ -4632,7 +6070,19 @@
     }
    ],
    "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 5. Private C/D placement proposal from target pools/data; literal alignment excluded from earned bytes."
+   "notes": "DC functions 5, MAT3 functions 5, named 5. Private C/D placement proposal from target pools/data; literal alignment excluded from earned bytes.",
+   "data_padding": [
+    {
+     "start": "0x8C0AA932",
+     "end": "0x8C0AA934",
+     "reason": "Conservatively uncredited high half of descriptor zdepth: target8C018BB6 reads only low16; uint32 declaration retained, padding versus unused high bits unproven."
+    },
+    {
+     "start": "0x8C0AA956",
+     "end": "0x8C0AA958",
+     "reason": "Same uncertainty in second initialized descriptor, full object equality retained."
+    }
+   ]
   },
   {
    "name": "game",
@@ -4848,7 +6298,7 @@
    "confidence": "high",
    "text": {
     "start": "0x8C0291CC",
-    "end": "0x8C02B1D4"
+    "end": "0x8C02B114"
    },
    "functions": [
     {
@@ -4962,20 +6412,6 @@
      "end": "0x8C02B104",
      "mat3": "drawRect",
      "confidence": "high"
-    },
-    {
-     "name": "func_8C02B114",
-     "start": "0x8C02B114",
-     "end": "0x8C02B174",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C02B174",
-     "start": "0x8C02B174",
-     "end": "0x8C02B1A8",
-     "mat3": null,
-     "confidence": "low"
     }
    ],
    "pools": [
@@ -5094,15 +6530,28 @@
     {
      "start": "0x8C02B104",
      "end": "0x8C02B114"
-    },
-    {
-     "start": "0x8C02B1A8",
-     "end": "0x8C02B1D4"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "last two functions (0x8C02B114, 0x8C02B174) are a separate pool atom; attached here (weak). DC functions 18, MAT3 functions 16, named 16."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA9D4",
+     "end": "0x8C0AAA16"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDF78",
+     "end": "0x8C0BDF80"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C6F0",
+     "end": "0x8C12C6F8"
+    }
+   ],
+   "notes": "Private boundary proposal:16named gameover functions end with drawRect/poolB114. Adjacent8C02B114/174 record helpers unclaimed; original mapping retained in evidence."
   },
   {
    "name": "gamerecords",
@@ -5110,10 +6559,24 @@
    "kind": "game",
    "confidence": "high",
    "text": {
-    "start": "0x8C02B1D4",
+    "start": "0x8C02B114",
     "end": "0x8C02E118"
    },
    "functions": [
+    {
+     "name": "func_8C02B114",
+     "start": "0x8C02B114",
+     "end": "0x8C02B174",
+     "mat3": null,
+     "confidence": "low"
+    },
+    {
+     "name": "func_8C02B174",
+     "start": "0x8C02B174",
+     "end": "0x8C02B1A8",
+     "mat3": null,
+     "confidence": "low"
+    },
     {
      "name": "FindWinner",
      "start": "0x8C02B1D4",
@@ -5278,6 +6741,10 @@
    ],
    "pools": [
     {
+     "start": "0x8C02B1A8",
+     "end": "0x8C02B1D4"
+    },
+    {
      "start": "0x8C02B308",
      "end": "0x8C02B32C"
     },
@@ -5436,7 +6903,7 @@
    ],
    "data": [],
    "bss": [],
-   "notes": "DC functions 23, MAT3 functions 31, named 23."
+   "notes": "DC functions 23, MAT3 functions 31, named 23. First two original anonymous atoms transferred from gameoverscr after independent prologue/caller boundary proof; identities remain conservative."
   },
   {
    "name": "gfx",
@@ -5904,11 +7371,11 @@
    },
    "functions": [
     {
-     "name": "func_8C02FCD8",
+     "name": "HAL_InitTime",
      "start": "0x8C02FCD8",
      "end": "0x8C02FD02",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "HAL_InitTime",
+     "confidence": "high"
     },
     {
      "name": "func_8C02FD02",
@@ -5922,14 +7389,14 @@
      "start": "0x8C02FD2C",
      "end": "0x8C02FD68",
      "mat3": "HAL_InstallOncePerFrameFunc",
-     "confidence": "medium"
+     "confidence": "high"
     },
     {
      "name": "HAL_CallOncePerFrameFuncs",
      "start": "0x8C02FD68",
      "end": "0x8C02FDAA",
      "mat3": "HAL_CallOncePerFrameFuncs",
-     "confidence": "medium"
+     "confidence": "high"
     }
    ],
    "pools": [
@@ -5938,9 +7405,21 @@
      "end": "0x8C02FDC4"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "alphabetical slot; DP prefers HAL_time/HAL_text equally. DC functions 4, MAT3 functions 3, named 2."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BDF98",
+     "end": "0x8C0BDF99"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C133ED8",
+     "end": "0x8C133F00"
+    }
+   ],
+   "notes": "alphabetical slot; DP prefers HAL_time/HAL_text equally. DC functions 4, MAT3 functions 3, named 2. Target/source prove HAL_InitTime and callback installs/calls; extraDCFD02 unsignedtick-to-seconds getter remainsanonymous. Dinitializedflag1byte, Btable40bytes."
   },
   {
    "name": "headlights",
@@ -11205,11 +12684,11 @@
    },
    "functions": [
     {
-     "name": "func_8C05145C",
+     "name": "InitSTree",
      "start": "0x8C05145C",
      "end": "0x8C0514E4",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "InitSTree",
+     "confidence": "high"
     },
     {
      "name": "mats2fcopy",
@@ -11242,16 +12721,9 @@
     {
      "name": "updownleaf",
      "start": "0x8C0516A4",
-     "end": "0x8C051708",
+     "end": "0x8C05170E",
      "mat3": "updownleaf",
      "confidence": "high"
-    },
-    {
-     "name": "func_8C051708",
-     "start": "0x8C051708",
-     "end": "0x8C05170E",
-     "mat3": null,
-     "confidence": "low"
     },
     {
      "name": "DecodeSlist",
@@ -11577,9 +13049,26 @@
      "end": "0x8C054CC8"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "0000 pad before (hard boundary). DC functions 26, MAT3 functions 25, named 24."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0ACA3C",
+     "end": "0x8C0ACA6C"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFD48",
+     "end": "0x8C0BFD60"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C158388",
+     "end": "0x8C1583B0"
+    }
+   ],
+   "notes": "0000 pad before (hard boundary). DC functions 26, MAT3 functions 25, named 24. Private InitSTree identity proved by blob layout, no DC swaps. Preserve original26 atoms until native updownleaf ownership confirmation. Native compiler confirms1708..170E is the unreachable second updownleaf epilogue; merged original atoms into25sourcefunctions, address union unchanged."
   },
   {
    "name": "stunt",
@@ -12389,7 +13878,73 @@
      "end": "0x8C05A6AC"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0ACA70",
+     "end": "0x8C0ACA74"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFD60",
+     "end": "0x8C0BFD68"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFD68",
+     "end": "0x8C0BFD80"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFD80",
+     "end": "0x8C0C1578"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1578",
+     "end": "0x8C0C16D8"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C16D8",
+     "end": "0x8C0C1720"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1720",
+     "end": "0x8C0C172C"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C172C",
+     "end": "0x8C0C1744"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1744",
+     "end": "0x8C0C1764"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1764",
+     "end": "0x8C0C1770"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0ACA74",
+     "end": "0x8C0ACA78"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0ACA78",
+     "end": "0x8C0ACA7D"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0ACA80",
+     "end": "0x8C0ACA8C"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 32, MAT3 functions 35, named 32."
   },
@@ -12589,9 +14144,33 @@
      "end": "0x8C05B09C"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 21, MAT3 functions 21, named 21."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AD628",
+     "end": "0x8C0AD6AC"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1770",
+     "end": "0x8C0C1838"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C15C984",
+     "end": "0x8C15C988"
+    }
+   ],
+   "notes": "DC functions 21, MAT3 functions 21, named 21. Private target-proven Dglobals/Cstring+zeroarray/Bcycle; DCflashcolors by-value union ABI. Three D alignmentbytes excluded fromcredit, equality unchanged.",
+   "data_padding": [
+    {
+     "start": "0x8C0C1771",
+     "end": "0x8C0C1774",
+     "reason": "Three-byte alignment between separate initialized flag byte and gJust int pair; targetA84C/A86C base references. No semantic fields or credit."
+    }
+   ]
   },
   {
    "name": "TB_Vector",
@@ -13896,9 +15475,16 @@
      "end": "0x8C064FDC"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0C3D94",
+     "end": "0x8C0C3FEC",
+     "name": "visuals_initial_colors_dummy_track_TSCLS"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 60, MAT3 functions 64, named 59."
+   "notes": "DC functions 60, MAT3 functions 64, named 59. Private prefix12functions throughInitCarObj; unported table/BSS symbols extern at target-proven addresses, no unported data credit."
   },
   {
    "name": "waves",

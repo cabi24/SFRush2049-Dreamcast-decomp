@@ -160,13 +160,12 @@
     ]
   ],
   "source_sha256": "4cfd5ab158975236141e326386250580c8a23780b21fa8161c681113ee323971",
-  "expanded_source_sha256": "165937cc197f420636b6e2bf7760c130fde7110f77d5bd1dd6724a8841e28a73",
-  "compiler_input_sha256": "6abded51a4b745acbe54c4ac9780f063043aa94b2c8557b2ad6821a17e4c81bf",
+  "expanded_source_sha256": "73525b526cafa9e27d22808be16ff29fdac2082625f4c01d194859736458d78e",
+  "compiler_input_sha256": "d36fedf4f1b991e5bb9437a1ca2aa373aadb46ccf2e35ca4d10c042e99013b97",
   "compiler_input_matches_current_headers": true,
-  "linked_abs_sha256": "fb21389209142513dc7f16851d4e712e6f1bbbeaf4e1a9a7a795b57856343910",
-  "object_sha256": "5c25f7e309e0ecdf5fe9b02d3242c1a82bdb3c6322402848db25b49ac2bb86bc",
+  "linked_abs_sha256": "68c0962b0c38c343729c8e6e84bf97897a02fb8ddd4f031d0cceb62e48528fa2",
+  "object_sha256": "2b6ca3fe38db6be0a131be19b3ba00a5e9e9f3bbb1d977fcb0bb5ed26d4b868f",
   "comparison_masks": false,
   "linker_fill_credit": 0,
-  "bss_image_credit": 0,
-  "initialized_record_padding_excluded": 96
+  "bss_image_credit": 0
 }

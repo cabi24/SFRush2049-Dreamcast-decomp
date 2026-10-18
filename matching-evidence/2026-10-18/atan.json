@@ -16,9 +16,10 @@
   "data_spans": [],
   "source_sha256": "ab94f03f2c7674a4067cc63f2e416a00f835039901187c466986e472a28085aa",
   "expanded_source_sha256": "00deac1613e136a227a9a5b864ee4bfeb9d21680d6c6937b4202df9b51565236",
+  "compiler_input_sha256": "5c610175b90a8e65f17572d30131ab19ce1752f02ae8f4268d7eff8216695f08",
+  "compiler_input_matches_current_headers": true,
   "linked_abs_sha256": "3195f5a3a94c1aedbf03d34e256ee552131e9effac8da259b4fe2c8959c980bb",
   "object_sha256": "622caf0f1879cb6a338d1aa7939c7c8f9e479e63adfdbfc2a4d3ab13df836e87",
-  "policy": "Separate native translation-unit links, not a full integration image build.",
   "comparison_masks": false,
   "linker_fill_credit": 0,
   "bss_image_credit": 0

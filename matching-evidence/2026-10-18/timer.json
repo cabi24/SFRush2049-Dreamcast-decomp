@@ -1,0 +1,22 @@
+{
+  "unit": "timer",
+  "text_nonpadding": 0,
+  "data_nonpadding": 16,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B8C24",
+      "8C0B8C34"
+    ]
+  ],
+  "source_sha256": "7163e810e8646eb224495a47b70f43284bbb07976a13635dcad15506f5fe4032",
+  "expanded_source_sha256": "33ecc31db493d85f078c381f9532534ac2d61928e55a9169ff39986c4c23b1a2",
+  "compiler_input_sha256": "7163e810e8646eb224495a47b70f43284bbb07976a13635dcad15506f5fe4032",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "6c57c9728e46fb8030311f94420ae9cc53fb00cbf76aa23a3e41974ebf42a1f6",
+  "object_sha256": "d2b9a707dc951f1c0b0c16e6534c5d7961eeba901b7c288ba55adcdb880bd83e",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}

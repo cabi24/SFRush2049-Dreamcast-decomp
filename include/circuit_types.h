@@ -10,7 +10,7 @@
  /* stride4c:8C01C70E,8C01C6D6 */
  /* stride5:8C01C8B2..BA */
 typedef char dc_check_circuit[(sizeof(tCircuit)==0x4c)?1:-1];
-typedef char dc_check_circuit_profile[(sizeof(tPlayerProfile)==0x40)?1:-1];
+typedef char dc_check_circuit_profile[(sizeof(tPlayerProfile)==0x4c)?1:-1];
 typedef char dc_check_circuit_player[(sizeof(tPadState)==0x50)?1:-1];
 typedef char dc_check_circuit_car[(sizeof(tCircuitCar)==0x4c)?1:-1];
 typedef char dc_check_circuit_track[(sizeof(tCircuitTrack)==5)?1:-1];

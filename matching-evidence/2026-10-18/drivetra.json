@@ -1,0 +1,26 @@
+{
+  "unit": "drivetra",
+  "text_nonpadding": 794,
+  "data_nonpadding": 0,
+  "exact_functions": 6,
+  "text_spans": [
+    [
+      "8C022D94",
+      "8C0230AA"
+    ],
+    [
+      "8C0230AC",
+      "8C0230B0"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "bdd4530d5eed19703fbd40e99a2994e62d00182690e331ae4526b9999322b399",
+  "expanded_source_sha256": "123f72a7b8cc3cf0b51d09bdc6f574010d1348e2e0e3192ea3691bc5cfd66e5a",
+  "compiler_input_sha256": "b758e59819d2801e193872b31aa713e456f59d9c1431a628436ffee2f4e57762",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "2b7d5b323f52c6ee3f2dc6dfd46684adba2d68df5e0e3ad3761dafedbaa50f97",
+  "object_sha256": "17293f5573a3ca4184899dfb9ffc9858883b394756506e4976b8613e5db91ec3",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
