@@ -85,13 +85,13 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **46,462 /569,664 (8.1560%)**, plus **30,803 initialized data bytes**.
-Whole-image credit: **77,265 /1,123,492 (6.8772%)**, **297 exact source functions**, 81 source units.
-The eleventh batch adds 1,952 text/literal bytes, 12,514
-initialized data bytes and 11 exact functions. The audited batch is locally committed
-through `9642b7edaab5a040c49a69a24e6e745598f2a2bc`. No remote push was performed.
+Game text/literal credit: **47,114 /569,664 (8.2705%)**, plus **34,558 initialized data bytes**.
+Whole-image credit: **81,672 /1,123,492 (7.2695%)**, **303 exact source functions**, 91 source units.
+The twelfth batch adds 652 text/literal bytes, 3,755
+initialized data bytes and 6 exact functions. The audited batch is locally committed
+through `4d7dcf671e7ff4a67ed0da7716015c9fbaea44e9`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-eleventh.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-twelfth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -99,7 +99,7 @@ Compiler, linker and flags remain frozen. Only units whose compiler input change
 native link; byte-identical inputs may retain the already-verified native artifacts.
 
 The audio/stree generated epilogues are part of their source functions. Current total/game
-function denominators are 4,726/1,564. The two original gameover tail atoms and their
+function denominators are 4,725/1,563. The two original gameover tail atoms and their
 external pool belong to gamerecords; identities stay conservative pending mapping review.
 Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
 no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
@@ -109,7 +109,8 @@ Target-backed camera, full surface and audio fields preserve model0x808/car0x3CC
 Player profiles use the proved0x40 stride and data handle at+0x3C for camera and circuit.
 The unsupported+0x48 profile field was removed. CarParts uses the proved0x60 stride.
 The external SetNewPathIndex entry is split from SetDroneResPathIndex with unchanged byte union;
-this adds one source function to the denominator and earns no extra bytes.
+that split adds one source function and earns no extra bytes. Videoscr removes one unproven
+empty stub from the heuristic denominator; its four RTS/NOP bytes remain an unsourced gap.
 World and circuit retain their original function-address aliases after semantic map renames.
 Six private matching lanes continue on disjoint units; later private packets are excluded until
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
