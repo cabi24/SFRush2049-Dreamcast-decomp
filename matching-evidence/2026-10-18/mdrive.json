@@ -1,0 +1,30 @@
+{
+  "unit": "mdrive",
+  "text_nonpadding": 0,
+  "data_nonpadding": 378,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0AC0C4",
+      "8C0AC1AC"
+    ],
+    [
+      "8C0BEDE8",
+      "8C0BEDEA"
+    ],
+    [
+      "8C0BEDEC",
+      "8C0BEE7C"
+    ]
+  ],
+  "source_sha256": "378bdef97dbbbaea4472ca95a5dd2cbf87b6e47d97a527a12cea34e018f92256",
+  "expanded_source_sha256": "8167bb0e58bed5fc3283faac2853bb638c388ef0eeeb3521725b5c1e4f9d8a3f",
+  "compiler_input_sha256": "8b73f6a542e3cc7bb4826bcb7bbe566cb22537fded4188b653fef6c4b949b06c",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "17ca6ee8c943852b201b4181f06ef19bc488288257d1c0a61d6e0edaee256e5a",
+  "object_sha256": "7527916891446541d71f6bc0f881b282ad37519a5ed42a7424fb04adfc9cc858",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
