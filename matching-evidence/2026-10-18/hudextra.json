@@ -1,0 +1,166 @@
+{
+  "unit": "hudextra",
+  "text_nonpadding": 0,
+  "data_nonpadding": 1788,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B2F48",
+      "8C0B2F5E"
+    ],
+    [
+      "8C0B2F60",
+      "8C0B2F82"
+    ],
+    [
+      "8C0B2F84",
+      "8C0B2FA6"
+    ],
+    [
+      "8C0B2FA8",
+      "8C0B2FCA"
+    ],
+    [
+      "8C0B2FCC",
+      "8C0B2FEE"
+    ],
+    [
+      "8C0B2FF0",
+      "8C0B3012"
+    ],
+    [
+      "8C0B3014",
+      "8C0B3036"
+    ],
+    [
+      "8C0B3038",
+      "8C0B305A"
+    ],
+    [
+      "8C0B305C",
+      "8C0B307E"
+    ],
+    [
+      "8C0B3080",
+      "8C0B30A2"
+    ],
+    [
+      "8C0B30A4",
+      "8C0B30C6"
+    ],
+    [
+      "8C0B30C8",
+      "8C0B30EA"
+    ],
+    [
+      "8C0B30EC",
+      "8C0B310E"
+    ],
+    [
+      "8C0B3110",
+      "8C0B3132"
+    ],
+    [
+      "8C0B3134",
+      "8C0B3156"
+    ],
+    [
+      "8C0B3158",
+      "8C0B317A"
+    ],
+    [
+      "8C0B317C",
+      "8C0B3188"
+    ],
+    [
+      "8C0B3314",
+      "8C0B3321"
+    ],
+    [
+      "8C0B3324",
+      "8C0B3327"
+    ],
+    [
+      "8C0B3328",
+      "8C0B3347"
+    ],
+    [
+      "8C0B3348",
+      "8C0B3358"
+    ],
+    [
+      "8C0B3368",
+      "8C0B3373"
+    ],
+    [
+      "8C0B3374",
+      "8C0B3377"
+    ],
+    [
+      "8C0B3378",
+      "8C0B337B"
+    ],
+    [
+      "8C0B337C",
+      "8C0B33B6"
+    ],
+    [
+      "8C0B33B8",
+      "8C0B33C3"
+    ],
+    [
+      "8C0B33C4",
+      "8C0B33F1"
+    ],
+    [
+      "8C0B33F4",
+      "8C0B3403"
+    ],
+    [
+      "8C0B3404",
+      "8C0B3413"
+    ],
+    [
+      "8C0B3414",
+      "8C0B3425"
+    ],
+    [
+      "8C0B3428",
+      "8C0B3436"
+    ],
+    [
+      "8C0B3438",
+      "8C0B3441"
+    ],
+    [
+      "8C0B3444",
+      "8C0B344E"
+    ],
+    [
+      "8C0B3450",
+      "8C0B345D"
+    ],
+    [
+      "8C0B3460",
+      "8C0B347B"
+    ],
+    [
+      "8C0B347C",
+      "8C0B348A"
+    ],
+    [
+      "8C0D19E8",
+      "8C0D1D7C"
+    ]
+  ],
+  "source_sha256": "038cb1d78c9aede507fd5e53e228c669fd3a53ee901abe348a7590339f5075df",
+  "expanded_source_sha256": "6676049bc292cc4aaaa93b69e98f67392ad330647175f97622181188fcf7ef54",
+  "compiler_input_sha256": "b2116f4ceca619214f5bee044bff6f9049cfa9b36b3cecb0e5ac244ee59ab1a7",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "dac26187988f6d246c61581cb5c38c1fbef36f78a4d52cef8caff0d33f7860e1",
+  "object_sha256": "428d137d9e30b05710fbc203500ba3465473a18002e1249e62bcb4a066955167",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
