@@ -1,0 +1,22 @@
+{
+  "unit": "zoidblit",
+  "text_nonpadding": 464,
+  "data_nonpadding": 0,
+  "exact_functions": 7,
+  "text_spans": [
+    [
+      "8C068D2C",
+      "8C068EFC"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "0d95bf4dc17ff4adc6a8105f70041ec1a5e1497567b4b080bb05658d506d79e6",
+  "expanded_source_sha256": "022f811674ac36639be36b87166383bd197a117d2a81128ab0c725c52dc27e54",
+  "compiler_input_sha256": "014eff869994ca485057171479bae802dbe18a4a5de98ab8a75fc26f8b167874",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "c440122daaf96fd56f9a1689f8c12feb816310e9bb1b613863896ecda20f660a",
+  "object_sha256": "fa5351f3c5cec8afa1354198052cefbf007b85f089085038e997b4028be01f7c",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
