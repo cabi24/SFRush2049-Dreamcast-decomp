@@ -1,0 +1,26 @@
+{
+  "unit": "unk_8C01021C_video",
+  "text_nonpadding": 78,
+  "data_nonpadding": 0,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C01021C",
+      "8C01025E"
+    ],
+    [
+      "8C010260",
+      "8C01026C"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "e8c812e67715c5cd4b008f0fa29c834c800ec045014d06e1adb061f7d083b443",
+  "expanded_source_sha256": "c17bbb891bb65aa6214a5bf1368bda7fd53886f87cef0873895bf1401505d095",
+  "compiler_input_sha256": "b462a3b2186ff6256900f9e6a8c0b5c7ec0cff157baf9f59ee24c0d66111532f",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "a0a568a4119f864cd632ec1e0402a966d708e23cb423119a8a1683bb2443e08e",
+  "object_sha256": "c3c709d7fd348d48f0d841ed9626e78af40dacc425362bbcf4c4c4433364d3a7",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
