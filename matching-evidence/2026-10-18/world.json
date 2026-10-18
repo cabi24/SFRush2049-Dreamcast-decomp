@@ -1,0 +1,26 @@
+{
+  "unit": "world",
+  "text_nonpadding": 378,
+  "data_nonpadding": 0,
+  "exact_functions": 5,
+  "text_spans": [
+    [
+      "8C065DB0",
+      "8C065EE2"
+    ],
+    [
+      "8C065EE4",
+      "8C065F2C"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "39d4f0ae9f628259495a9fa01ebe553a124d4d9cde2db29a9f78f9dadbaa521e",
+  "expanded_source_sha256": "1b8ad4a6e6d2c3b5f18366b358c88a65dd1fce4fe692462f20067fb4ddb00fc5",
+  "compiler_input_sha256": "1ba5d8bd18a37eb2a8e1c85d3b5939ba181cce20ae2cbc0e9bc158e68f149142",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "c7dfdeb77c7b043e7e44122543764ee6af38b7d55f3df585eeb84385ac13512c",
+  "object_sha256": "c9c2423905f9e1f7287e3419c4ca309979888ab723375a5e936281ddcc572aac",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
