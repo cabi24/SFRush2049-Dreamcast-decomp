@@ -1,39 +1,39 @@
 {
   "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
-  "map_sha256": "46cab11bcacc45b1917d055079633c95cc6ba12248d3dd291ed1b420cb2b17b5",
+  "map_sha256": "4009cbb3fa066fcf6165d4f812802fa86841c4cf86e59c34bd90ee9199b2f448",
   "summary": {
     "game_code": {
-      "exact_bytes": 43740,
+      "exact_bytes": 44510,
       "total_bytes": 569664,
-      "percent": 7.6782
+      "percent": 7.8134
     },
     "image": {
-      "exact_bytes": 61847,
+      "exact_bytes": 62799,
       "total_bytes": 1123492,
-      "percent": 5.5049
+      "percent": 5.5896
     },
     "map_coverage": {
       "text_bytes": 1123492,
-      "data_bytes": 25776,
+      "data_bytes": 25964,
       "unique_file_bytes": 1123492,
       "image_bytes": 1123492,
       "percent": 100.0
     },
     "functions": {
-      "exact": 282,
+      "exact": 286,
       "total": 4725,
-      "game_exact": 282,
+      "game_exact": 286,
       "game_total": 1563
     },
     "units": {
       "mapped": 155,
       "game": 120,
-      "with_source": 70,
-      "partial": 52,
-      "exact": 18
+      "with_source": 73,
+      "partial": 54,
+      "exact": 19
     }
   },
-  "credited_union_bytes": 61847,
+  "credited_union_bytes": 62799,
   "overlap": false,
   "comparison_masks": false,
   "compiler_executed_by_audit": false,
@@ -3505,6 +3505,97 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "90aabc9274aa3b899eb2681d1afe068b3d5eb4f102e320b45cd1d45f4853e469",
       "object_sha256": "af2229868bc2f550b6bf4c28fe3dc9aa0d9511803274c130f65c50ffb5cb0921"
+    },
+    {
+      "unit": "licensescr",
+      "text_nonpadding": 526,
+      "data_nonpadding": 143,
+      "exact_functions": 2,
+      "text_spans": [
+        [
+          "8C07D9F8",
+          "8C07DADE"
+        ],
+        [
+          "8C07DAE0",
+          "8C07DC08"
+        ]
+      ],
+      "data_spans": [
+        [
+          "8C0B243C",
+          "8C0B24BB"
+        ],
+        [
+          "8C0B24BC",
+          "8C0B24C3"
+        ],
+        [
+          "8C0CDB84",
+          "8C0CDB8D"
+        ]
+      ],
+      "source_sha256": "dd990569785ea23679c01b869a80059dd8b66fc222929c635eb5d53d6da7c715",
+      "expanded_source_sha256": "053c90e48e9b660bcc13b8863bc4cbc635e4bd29c916546f0e321ab5d743cf0f",
+      "compiler_input_sha256": "ba39a734d5646cc53a4b6b43e7d7f160ff76768c920df198606cc0220a712764",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "bd43b4242b3857cefd6f52dbfdd36edea57b27b2e198599ea0471d0e5de963ba",
+      "object_sha256": "1822657b474825c78e6fb1aad4f86994dcbc903fd966393adf5d1dd142303afc"
+    },
+    {
+      "unit": "selectcarload",
+      "text_nonpadding": 244,
+      "data_nonpadding": 4,
+      "exact_functions": 2,
+      "text_spans": [
+        [
+          "8C08AED0",
+          "8C08AFC4"
+        ]
+      ],
+      "data_spans": [
+        [
+          "8C0B27C0",
+          "8C0B27C4"
+        ]
+      ],
+      "source_sha256": "62133d207f7e46443b76095fddab7e8f88f0e05ebe91269a9e195c3d5975c855",
+      "expanded_source_sha256": "3c4fd3a1cca4a52a1234b518da290ecebb8cfdb225461461e1190f4e4e5450fc",
+      "compiler_input_sha256": "ec0af810a595b6bcff268b4587a12073efed2711f3af1bf19ee10535fa2fc6eb",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "b3e575af6259a8f9bb2d30afdfba6bf54c728b80c70accf4acc0588821ff89b3",
+      "object_sha256": "a4bfed7e50b7e6aaa2b9ca0aa22a08196af310f4fb645325ca408f1b7e127582"
+    },
+    {
+      "unit": "save",
+      "text_nonpadding": 0,
+      "data_nonpadding": 35,
+      "exact_functions": 0,
+      "text_spans": [],
+      "data_spans": [
+        [
+          "8C0AC4BC",
+          "8C0AC4C5"
+        ],
+        [
+          "8C0AC4C8",
+          "8C0AC4CA"
+        ],
+        [
+          "8C0AC4CC",
+          "8C0AC4D0"
+        ],
+        [
+          "8C0BFCE0",
+          "8C0BFCF4"
+        ]
+      ],
+      "source_sha256": "43aa41d848f8ea09d664fbee70753fa7301cf453e86350f8a90ea6953d01360d",
+      "expanded_source_sha256": "77ee8cda54396bc04d5d67e539d8f82b26de48882bb05e6695bc8d55f723b7ee",
+      "compiler_input_sha256": "f1f090b5ce9f44e939d0c5c175c393446ac68f4cfb6de7917dc5afee8fafae73",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "e8a0e94611905fc1b0bcba3a736d527950b7d40102c8b5c70a402d9be2d6dba5",
+      "object_sha256": "86ac6c58790a73ad4000da93f87c33fd090378b04a00a545896dd2b3f0f0d550"
     }
   ]
 }
