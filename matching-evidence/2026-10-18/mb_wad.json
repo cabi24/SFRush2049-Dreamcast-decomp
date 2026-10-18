@@ -1,0 +1,22 @@
+{
+  "unit": "mb_wad",
+  "text_nonpadding": 182,
+  "data_nonpadding": 0,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C03CFDA",
+      "8C03D090"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "6c5207260b87a2196e159d6e89377aa2dc4b410412a0a652edf7e56d07cdef6c",
+  "expanded_source_sha256": "2b2172033e11188d8576942be1042e4c3f2b82ede75bcfcd41c17f1402e2a681",
+  "compiler_input_sha256": "b1c344d8a390434e08600cf8c51d747fcb7dd0d1052e035467d0da190fc86451",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "b7388cba4fdbc051cc15a4e1ceeada8922a1d521065eef1b71815b542a0174bf",
+  "object_sha256": "b2b27aef682a1dcbadbc4439d9b982fef403d3422f618c093906dc836ee1e30c",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
