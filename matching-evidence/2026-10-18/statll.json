@@ -1,0 +1,21 @@
+{
+  "unit": "statll",
+  "text_nonpadding": 130,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C0513D8",
+      "8C05145A"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "c42331e41f735d5c169639d87551765e96cdfd275b2ebce4bd9ce48c7cfca52f",
+  "expanded_source_sha256": "53125537eb69c457080e101c19e1f7fd38028bd0a07904054d9fbb14ff4a04a9",
+  "linked_abs_sha256": "563e4f45be41f288c17a6c4b5b4fa8246513c4915c7befb85f4e3c2e445416d0",
+  "object_sha256": "f8bcffd23199d5e5449903dc0e6648332d505637b7369cbdc5376d833148e39c",
+  "policy": "Separate native translation-unit links, not a full integration image build.",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
