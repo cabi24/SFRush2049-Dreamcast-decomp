@@ -1,0 +1,31 @@
+{
+  "unit": "worlddam",
+  "text_nonpadding": 500,
+  "data_nonpadding": 80,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C09ACD8",
+      "8C09AECC"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B3724",
+      "8C0B3730"
+    ],
+    [
+      "8C0D22D0",
+      "8C0D2314"
+    ]
+  ],
+  "source_sha256": "043f361116d2db292d656b9aeaa42e5e70cebb09c2ee9ceba28ec55e85eac4da",
+  "expanded_source_sha256": "dc98e997423bb533da7c5a6735dfb990d5eee8b97219dfa8e390e01c071dc9eb",
+  "compiler_input_sha256": "af006238353dd4d0d79da6dc1fcc71a390a8a5252f55084dca05c3a7fe0f0e11",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "af2bb7d5640405a9e093c856f39c1181a41df0128eac3d95ec953b2b2d0186ca",
+  "object_sha256": "ff637b3d5b8cad066cc9b8fb5cf1c1a4d50e8c59d6435cbd1cf571d463982642",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
