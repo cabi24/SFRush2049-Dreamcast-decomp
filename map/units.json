@@ -15703,7 +15703,25 @@
      "end": "0x8C065C78"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B0250",
+     "end": "0x8C0B04C6",
+     "symbols": [
+      {
+       "name": "gWaveModel",
+       "start": "0x8C0B0250",
+       "size": 315
+      },
+      {
+       "name": "gWaveReplace",
+       "start": "0x8C0B038B",
+       "size": 315
+      }
+     ]
+    }
+   ],
    "bss": [],
    "notes": "resource table users; gWaveFilenames order anchor. DC functions 22, MAT3 functions 28, named 18."
   },
@@ -16192,39 +16210,39 @@
      "confidence": "high"
     },
     {
-     "name": "func_8C0687B6",
+     "name": "ZOID_FindObjInstance",
      "start": "0x8C0687B6",
      "end": "0x8C068868",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_FindObjInstance",
+     "confidence": "high"
     },
     {
-     "name": "func_8C068868",
+     "name": "ZOID_ObjParent",
      "start": "0x8C068868",
      "end": "0x8C068896",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_ObjParent",
+     "confidence": "high"
     },
     {
-     "name": "func_8C068896",
+     "name": "ZOID_TrueObjParent",
      "start": "0x8C068896",
      "end": "0x8C0688EC",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_TrueObjParent",
+     "confidence": "high"
     },
     {
-     "name": "func_8C0688EC",
+     "name": "ZOID_ObjPrevObj",
      "start": "0x8C0688EC",
      "end": "0x8C06891A",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_ObjPrevObj",
+     "confidence": "high"
     },
     {
-     "name": "func_8C06891A",
+     "name": "ZOID_LastSibling",
      "start": "0x8C06891A",
      "end": "0x8C06893C",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_LastSibling",
+     "confidence": "high"
     },
     {
      "name": "ZOID_InsertObject",
@@ -16248,11 +16266,11 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C068B9A",
+     "name": "ZOID_RemoveObjectTree",
      "start": "0x8C068B9A",
      "end": "0x8C068B9E",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_RemoveObjectTree",
+     "confidence": "high"
     },
     {
      "name": "ZOID_RemoveObject",
@@ -16323,8 +16341,14 @@
     }
    ],
    "data": [],
-   "bss": [],
-   "notes": "boundary: 4-byte function 0x8C0686F0 left in zip.c (pool atom). DC functions 21, MAT3 functions 23, named 13."
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C160860",
+     "end": "0x8C160870"
+    }
+   ],
+   "notes": "boundary: 4-byte function 0x8C0686F0 left in zip.c (pool atom). DC functions 21, MAT3 functions 23, named 13. Private names proved by exact source algorithms; arrays/head remain extern across unknown B region; no neighboring boundary edits."
   },
   {
    "name": "zoidblit",
@@ -21522,9 +21546,25 @@
      "end": "0x8C08D1D0"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B2884",
+     "end": "0x8C0B28F0"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B28F0",
+     "end": "0x8C0B292E"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0D02A4",
+     "end": "0x8C0D02B0"
+    }
+   ],
    "bss": [],
-   "notes": "0x8C08CF50 follows MAT3 updateTitleScreen call for call (NewMultiBlit, SetCountdownTimer, ClearRushControls, RemoveBlit, AudPlayEffect) plus the DC logo movies (midwaylogo.sfd/rushlogo.sfd); 0x8C08D138 = animText; alphabetical slot startscr < titlescr < trackscr. DC functions 2, MAT3 functions 3, named 2."
+   "notes": "0x8C08CF50 follows MAT3 updateTitleScreen call for call (NewMultiBlit, SetCountdownTimer, ClearRushControls, RemoveBlit, AudPlayEffect) plus the DC logo movies (midwaylogo.sfd/rushlogo.sfd); 0x8C08D138 = animText; alphabetical slot startscr < titlescr < trackscr. DC functions 2, MAT3 functions 3, named 2. Private data proposals:3 descriptors CFCA/D008 count3, D104 startB2884; movie/splash literals through292E; local inited/blit/movieIdx D0FC/D100/D0D8 prove D02A4/A8/AC, next pointer object2B0 unclaimed."
   },
   {
    "name": "trackscr",
