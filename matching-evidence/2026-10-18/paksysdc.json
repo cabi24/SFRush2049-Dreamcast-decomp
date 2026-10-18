@@ -1,0 +1,74 @@
+{
+  "unit": "paksysdc",
+  "text_nonpadding": 0,
+  "data_nonpadding": 102,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B1CEC",
+      "8C0B1CF2"
+    ],
+    [
+      "8C0B1CF4",
+      "8C0B1CF7"
+    ],
+    [
+      "8C0B1CF8",
+      "8C0B1CFB"
+    ],
+    [
+      "8C0B1CFC",
+      "8C0B1CFF"
+    ],
+    [
+      "8C0B1D00",
+      "8C0B1D03"
+    ],
+    [
+      "8C0B1D04",
+      "8C0B1D07"
+    ],
+    [
+      "8C0B1D08",
+      "8C0B1D0B"
+    ],
+    [
+      "8C0B1D0C",
+      "8C0B1D0F"
+    ],
+    [
+      "8C0B1D10",
+      "8C0B1D13"
+    ],
+    [
+      "8C0B1D14",
+      "8C0B1D16"
+    ],
+    [
+      "8C0B1D18",
+      "8C0B1D1A"
+    ],
+    [
+      "8C0B1D1C",
+      "8C0B1D1E"
+    ],
+    [
+      "8C0B1D20",
+      "8C0B1D22"
+    ],
+    [
+      "8C0C96F4",
+      "8C0C9734"
+    ]
+  ],
+  "source_sha256": "daf3e1452cf5c9c004765b2ca0678edcc862347692921159592221cc502feb85",
+  "expanded_source_sha256": "18f0183879596d226860eb80e94135c472a682b13cebeb03170f49995f475143",
+  "compiler_input_sha256": "ffcfb6beb63557240ca3eae5ff3bd3bd2cc3f2547eb157fe51b7df6edcd567bb",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "0a2a503f3ee2ad61f4420d7aa97dcf05ddaf396760c08e59a19ef1fa909e7c3a",
+  "object_sha256": "adfb7aabe434446e5913ecd4bb5fc196780416a3f3da9712a67940a477c24be4",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
