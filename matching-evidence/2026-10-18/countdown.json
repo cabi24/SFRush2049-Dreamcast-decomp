@@ -1,0 +1,34 @@
+{
+  "unit": "countdown",
+  "text_nonpadding": 770,
+  "data_nonpadding": 69,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C022654",
+      "8C022912"
+    ],
+    [
+      "8C022914",
+      "8C022958"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AA8D8",
+      "8C0AA8E9"
+    ],
+    [
+      "8C0BD8C0",
+      "8C0BD8F4"
+    ]
+  ],
+  "source_sha256": "0f39af088db7a90d9d317f68b7f44021649cb8023bb81211324883fe294d2417",
+  "expanded_source_sha256": "76894b0588cab06b939597bd2336d83cbb0af1353ac0ee598ea2de45d2087b37",
+  "linked_abs_sha256": "869071437a8087e28e03bd59a6d133fe4853c6ff7f675ceed2bc657821c5dcfd",
+  "object_sha256": "021e58517f2df72329c71ae77283e8b707d01702dc75a7433219c0f86c06f1e4",
+  "policy": "Separate native translation-unit links, not a full integration image build.",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
