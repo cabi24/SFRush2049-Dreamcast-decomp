@@ -20,10 +20,15 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 
 | Unit | Exact text/literals | Initialized data | Exact functions |
 |---|---:|---:|---:|
+| HAL_time | 234 | 1 | 4/4 |
 | TB_Vector | 132 | 0 | 2/2 |
+| TB_text | 492 | 329 | 10/21 |
+| asincos | 64 | 16 | 0/3 |
 | atan | 286 | 0 | 3/4 |
+| audio | 580 | 4,857 | 13/30 |
 | blit | 1,038 | 4 | 8/10 |
 | bstree | 220 | 0 | 6/6 |
+| camera | 108 | 1,642 | 1/23 |
 | carload | 1,024 | 0 | 1/1 |
 | checkpoint | 118 | 24 | 3/8 |
 | circuit | 144 | 376 | 1/5 |
@@ -35,7 +40,8 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | drivsym | 244 | 44 | 1/17 |
 | drones | 46 | 0 | 2/4 |
 | fmath | 28 | 72 | 1/31 |
-| front | 1,880 | 1,106 | 5/5 |
+| front | 1,880 | 1,102 | 5/5 |
+| gameoverscr | 122 | 7 | 1/16 |
 | gfx | 576 | 88 | 8/10 |
 | headlights | 308 | 172 | 1/4 |
 | ll | 422 | 0 | 4/4 |
@@ -55,13 +61,16 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | state | 290 | 12 | 5/6 |
 | statll | 130 | 0 | 2/3 |
 | streaks | 1,116 | 16 | 4/5 |
+| stree | 58 | 72 | 1/25 |
 | stunt | 1,016 | 0 | 6/13 |
 | targetpaths | 302 | 4 | 2/12 |
+| targets | 0 | 525 | 0/32 |
 | text | 450 | 7 | 3/3 |
 | textureanim | 418 | 0 | 1/2 |
 | timer | 0 | 16 | 0/9 |
 | tracks | 1,116 | 407 | 3/3 |
 | unzip | 26 | 362 | 1/11 |
+| visuals | 44 | 600 | 0/60 |
 | warningscr | 0 | 24 | 0/2 |
 | weapons | 600 | 1,252 | 3/5 |
 | world | 378 | 0 | 5/6 |
@@ -72,28 +81,31 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **36,760 /569,664 (6.4529%)**, plus **8,695 initialized data bytes**.
-Whole-image credit: **45,455 /1,123,492 (4.0459%)**, **207 exact source functions**, 51 source units.
-New integration contributes 44,223 image bytes and 197 functions relative to
-the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
-were removed. All linker fill, gaps, alignment and proven initialized record padding are excluded; BSS earns no image credit.
+Game text/literal credit: **38,462 /569,664 (6.7517%)**, plus **16,740 initialized data bytes**.
+Whole-image credit: **55,202 /1,123,492 (4.9134%)**, **237 exact source functions**,60 source units.
+The sixth batch adds1,702 text/literal bytes,8,049 initialized data bytes and30 exact functions.
+Four inherited front-screen zdepth high-halfword bytes are conservatively excluded because their
+field meaning remains uncertain; full equality is still checked. Net image increment is9,747.
 
-Per-unit commits and complete fifth-batch audit are recorded through `2167c6c`.
-`matching-evidence/2026-10-18/integration-fifth.json` records current source/header/compiler-input,
-tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
-validates saved outputs without compiling. Six padding-credit tests pass.
+The sixth batch is locally committed through `9da44aa` (55,202 bytes/237 functions). Its first
+commit request was denied before execution; the identical reviewed retry passed after explicit
+human approval. No remote push was performed.
+`matching-evidence/2026-10-18/integration-sixth.json` records current source/header/compiler-input,
+tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
+the saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or
+BSS earns image credit. Compiler, linker and flags remain frozen.
 
-Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
-and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
-ends in streaks, skids, smoke, circuit and zip remain unclaimed. DoDrones is a separate source wrapper;
-AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes, and optionscr excludes96.
-The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. The unzip/asincos split also identifies one previously unmapped farcsine body, so total/game
-function denominators are now4,727/1,565; unbuilt asincos earns no byte credit.
+The audio/stree generated epilogues are part of their source functions, reducing total/game
+function denominators to4,725/1,563. The two original gameover tail atoms and their external pool
+now belong to gamerecords; identities stay conservative. Asincos selected03 retains16 C bytes
+and64 independently bounded external literal bytes, without recompilation or a fourth variant.
+The original `_func_8C05145C` alias of InitSTree is retained for world's existing caller.
 
-Six private lanes continue on disjoint units. Later private packets are excluded until integration.
-Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.
-Ghost, initiali and tires retain zero strict text credit privately. MAT3 stays read-only.
-No full game image has been built; validation uses separate fixed-address translation-unit links.
+Target-backed camera, full surface and audio fields preserve model0x808/car0x3CC strides.
+Camera profile+0x48 remains a distinct qualified field from circuit+0x3C. CarParts uses the proved
+0x60 stride. Required native header regressions preserve all inherited code/function matches.
+Six private lanes remain assigned; the approved Resurrect repair retry is resuming. Later private packets
+are excluded here until integration. MAT3 stays read-only. No full game image build was run.
 
 ## Resume
 

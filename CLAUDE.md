@@ -85,28 +85,31 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **36,760 /569,664 (6.4529%)**, plus **8,695 initialized data bytes**.
-Whole-image credit: **45,455 /1,123,492 (4.0459%)**, **207 exact source functions**, 51 source units.
-New integration contributes 44,223 image bytes and 197 functions relative to
-the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
-were removed. All linker fill, gaps, alignment and proven initialized record padding are excluded; BSS earns no image credit.
+Game text/literal credit: **38,462 /569,664 (6.7517%)**, plus **16,740 initialized data bytes**.
+Whole-image credit: **55,202 /1,123,492 (4.9134%)**, **237 exact source functions**,60 source units.
+The sixth batch adds1,702 text/literal bytes,8,049 initialized data bytes and30 exact functions.
+Four inherited front-screen zdepth high-halfword bytes are conservatively excluded because their
+field meaning remains uncertain; full equality is still checked. Net image increment is9,747.
 
-Per-unit commits and complete fifth-batch audit are recorded through `2167c6c`.
-`matching-evidence/2026-10-18/integration-fifth.json` records current source/header/compiler-input,
-tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
-validates saved outputs without compiling. Six padding-credit tests pass.
+The sixth batch is locally committed through `9da44aa` (55,202 bytes/237 functions). Its first
+commit request was denied before execution; the identical reviewed retry passed after explicit
+human approval. No remote push was performed.
+`matching-evidence/2026-10-18/integration-sixth.json` records current source/header/compiler-input,
+tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
+the saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or
+BSS earns image credit. Compiler, linker and flags remain frozen.
 
-Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
-and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
-ends in streaks, skids, smoke, circuit and zip remain unclaimed. DoDrones is a separate source wrapper;
-AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes, and optionscr excludes96.
-The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. The unzip/asincos split also identifies one previously unmapped farcsine body, so total/game
-function denominators are now4,727/1,565; unbuilt asincos earns no byte credit.
+The audio/stree generated epilogues are part of their source functions, reducing total/game
+function denominators to4,725/1,563. The two original gameover tail atoms and their external pool
+now belong to gamerecords; identities stay conservative. Asincos selected03 retains16 C bytes
+and64 independently bounded external literal bytes, without recompilation or a fourth variant.
+The original `_func_8C05145C` alias of InitSTree is retained for world's existing caller.
 
-Six private lanes continue on disjoint units. Later private packets are excluded until integration.
-Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.
-Ghost, initiali and tires retain zero strict text credit privately. MAT3 stays read-only.
-No full game image has been built; validation uses separate fixed-address translation-unit links.
+Target-backed camera, full surface and audio fields preserve model0x808/car0x3CC strides.
+Camera profile+0x48 remains a distinct qualified field from circuit+0x3C. CarParts uses the proved
+0x60 stride. Required native header regressions preserve all inherited code/function matches.
+Six private lanes remain assigned; the approved Resurrect repair retry is resuming. Later private packets
+are excluded here until integration. MAT3 stays read-only. No full game image build was run.
 
 The current per-unit table is in `HANDOFF.md`.
 

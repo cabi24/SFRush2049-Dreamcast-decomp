@@ -89,3 +89,11 @@ volatile lvalues locally, while game controls read ordinary snapshot fields. Nat
 the five exact controlsys functions and all inherited matches. Shared model fields now also cover
 road initialization at+6D0, main controls at+720, drone state and target-proven object/blit layouts.
 Unused tSmoke+38 remains unnamed padding; no semantic name is inferred from the GameCube source.
+
+## Camera, surfaces and audio
+
+The sixth integration consolidates target-proven camera offsets, the full24-byte surface view,
+audio model fields and the60h CarParts stride. Camera's profile field48 is distinct from circuit's
+datah field3C; their semantic relationship is not assumed. Existing stride/offset checks and
+required native unit regressions retain prior matches. Audio record padding and uncertain HUD
+zdepth high halfwords receive no byte credit while full fixed-address equality remains required.
