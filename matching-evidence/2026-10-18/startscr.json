@@ -1,0 +1,78 @@
+{
+  "unit": "startscr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 1270,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B27E8",
+      "8C0B27EF"
+    ],
+    [
+      "8C0B27F0",
+      "8C0B27F7"
+    ],
+    [
+      "8C0B27F8",
+      "8C0B27FB"
+    ],
+    [
+      "8C0B27FC",
+      "8C0B27FF"
+    ],
+    [
+      "8C0B2800",
+      "8C0B2807"
+    ],
+    [
+      "8C0B2808",
+      "8C0B2816"
+    ],
+    [
+      "8C0B2818",
+      "8C0B2821"
+    ],
+    [
+      "8C0B2824",
+      "8C0B2845"
+    ],
+    [
+      "8C0B2848",
+      "8C0B285F"
+    ],
+    [
+      "8C0B2860",
+      "8C0B286B"
+    ],
+    [
+      "8C0B286C",
+      "8C0B2875"
+    ],
+    [
+      "8C0B2878",
+      "8C0B2881"
+    ],
+    [
+      "8C0CFE00",
+      "8C0CFE01"
+    ],
+    [
+      "8C0CFE04",
+      "8C0CFE12"
+    ],
+    [
+      "8C0CFE14",
+      "8C0D0274"
+    ]
+  ],
+  "source_sha256": "01700b13431890e393240bd286d35cb51093b2681398fc3cf6eed728a58337ec",
+  "expanded_source_sha256": "dba8d7d88fc0ef0c81d036356727d755afe9174432d6a9519ff66632d6f9c754",
+  "compiler_input_sha256": "2e80ba2618c500213733a5651186b06b824d8c45c968fc3384ff40f5271155c2",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "39eaffa367cacfe3c530161fa4abeb2a9a5dfd2730f56400f72085d8d6cf792e",
+  "object_sha256": "a5a3e1a771257cef45ff2c458ea46a37be9c091e5e1fdc3419e9069448eaece8",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
