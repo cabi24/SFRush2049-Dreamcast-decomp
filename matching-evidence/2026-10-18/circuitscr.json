@@ -1,0 +1,134 @@
+{
+  "unit": "circuitscr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 949,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B2300",
+      "8C0B2315"
+    ],
+    [
+      "8C0B2318",
+      "8C0B231F"
+    ],
+    [
+      "8C0B2324",
+      "8C0B2329"
+    ],
+    [
+      "8C0B232C",
+      "8C0B2332"
+    ],
+    [
+      "8C0B2334",
+      "8C0B233A"
+    ],
+    [
+      "8C0B233C",
+      "8C0B233F"
+    ],
+    [
+      "8C0B2340",
+      "8C0B234A"
+    ],
+    [
+      "8C0B234C",
+      "8C0B2353"
+    ],
+    [
+      "8C0B2354",
+      "8C0B235B"
+    ],
+    [
+      "8C0B235C",
+      "8C0B235F"
+    ],
+    [
+      "8C0B2360",
+      "8C0B2367"
+    ],
+    [
+      "8C0B2368",
+      "8C0B2376"
+    ],
+    [
+      "8C0B2378",
+      "8C0B2399"
+    ],
+    [
+      "8C0B239C",
+      "8C0B23B3"
+    ],
+    [
+      "8C0B23B4",
+      "8C0B23BF"
+    ],
+    [
+      "8C0B23C0",
+      "8C0B23C9"
+    ],
+    [
+      "8C0B23CC",
+      "8C0B23D5"
+    ],
+    [
+      "8C0CC894",
+      "8C0CC8F5"
+    ],
+    [
+      "8C0CC8F8",
+      "8C0CC935"
+    ],
+    [
+      "8C0CC938",
+      "8C0CC975"
+    ],
+    [
+      "8C0CC978",
+      "8C0CC9B5"
+    ],
+    [
+      "8C0CC9B8",
+      "8C0CC9F5"
+    ],
+    [
+      "8C0CC9F8",
+      "8C0CCA35"
+    ],
+    [
+      "8C0CCA38",
+      "8C0CCA75"
+    ],
+    [
+      "8C0CCA78",
+      "8C0CCAB5"
+    ],
+    [
+      "8C0CCAB8",
+      "8C0CCAF5"
+    ],
+    [
+      "8C0CCAF8",
+      "8C0CCB35"
+    ],
+    [
+      "8C0CCB38",
+      "8C0CCB75"
+    ],
+    [
+      "8C0CCB78",
+      "8C0CCBB5"
+    ]
+  ],
+  "source_sha256": "d608578acb4c743fa39102e4f93c060602249ab5e987d5805ccf351b90443202",
+  "expanded_source_sha256": "45302ee5cd0bbecc05f8d56e0951c7eb30950dc590ea8969122e536da837621c",
+  "compiler_input_sha256": "4d216290f6d23e26ffc2b175d75ebff3433ef0bcdd301f53baa9ebe1e9c9d9de",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "ccd46622f94090ad5d272418074881b5add162d1fa0c8d0f7f95700113219adf",
+  "object_sha256": "71028a37c16f4464fe26d669fe505070b4febe16968654e8590a8982ffc905a3",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
