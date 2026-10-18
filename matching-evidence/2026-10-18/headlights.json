@@ -1,0 +1,31 @@
+{
+  "unit": "headlights",
+  "text_nonpadding": 308,
+  "data_nonpadding": 172,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C02FDC4",
+      "8C02FEF8"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AAA7C",
+      "8C0AAA8C"
+    ],
+    [
+      "8C0BDF9C",
+      "8C0BE038"
+    ]
+  ],
+  "source_sha256": "e482a71afee2145872ef039abb23525642dbcb36c6506dcbdee3a120730595ea",
+  "expanded_source_sha256": "ef5b1f23b9b8062de214e908d3e88be394c6f73fad14dd5e822f53c4d7ec9bf1",
+  "compiler_input_sha256": "9619c64c185a72a26f6256e32314cb6c3244e97e8fd40580c8cdfaf319eca807",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "78f53ebe569174a111717fdf85f4e01071e4ac8ed18de74c0d2575940dd56203",
+  "object_sha256": "ecaa91b1427075ce2c5ec067be903b652a8d88905a88db98fd11b97c2a1d07d5",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
