@@ -1,0 +1,43 @@
+{
+  "unit": "waves",
+  "text_nonpadding": 1850,
+  "data_nonpadding": 630,
+  "exact_functions": 20,
+  "text_spans": [
+    [
+      "8C0651AA",
+      "8C06539E"
+    ],
+    [
+      "8C0653A0",
+      "8C06563E"
+    ],
+    [
+      "8C065640",
+      "8C0657E6"
+    ],
+    [
+      "8C0657E8",
+      "8C06588C"
+    ],
+    [
+      "8C065C1A",
+      "8C065C78"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B0250",
+      "8C0B04C6"
+    ]
+  ],
+  "source_sha256": "46c9fe33d3af01c79876ad74ac7bfee7311598b94c0b39e9abb5e54386a059a9",
+  "expanded_source_sha256": "e0658ca2f3ee4ede24c44666b15b02b00dedbe27c9d45bc0240ad2ac157d1e31",
+  "compiler_input_sha256": "63da043ec31e21c60734cb52d67b48004667879b28ce23dce4d8b32316be6176",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "27a2d1253235105aab01dd6cc1d238f689fb630a6c77185f92d9edd72d4f6fd1",
+  "object_sha256": "e88592095d11a05271ecfb78521e86feff344c27af7c78c39153a630be927eb1",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
