@@ -1,0 +1,175 @@
+{
+  "batch": "fifteenth",
+  "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+  "boundary_reviews": {
+    "hudextra-root-prefix-review.json": {
+      "approved_private_ownership_transfer": true,
+      "canonical_transfer_pending": true,
+      "range": {
+        "start": "0x8C0951C0",
+        "end": "0x8C095C90"
+      },
+      "callback": {
+        "descriptor_base": "8C0B31AC",
+        "record": 9,
+        "stride": "0x24",
+        "callback_offset": "0x1c",
+        "address": "8C0B330C",
+        "value": "8C0951C0"
+      },
+      "semantic_reference": "MAT3 hudextra.c BattleMultiBlit[9].animBattlePoints; name remains reconstructed semantic identity",
+      "function_count_preserved": true,
+      "byte_union_preserved": true,
+      "merge_whole_unclaimed_unit": true,
+      "original_anonymous_ID_to_retain": "func_8C0951C0",
+      "scope": "One meaningful animation body plus its eight pools; no additional ranges."
+    },
+    "startup-root-boundary-review.json": {
+      "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+      "proposal_sha256": "3d2bb11685520bae6dddf983f321c21ce793cb60515c38ed0a5b08a027be66fe",
+      "function_identity_and_bounds_unchanged": true,
+      "covered_union_bytes": 264,
+      "pc_relative_loads": [
+        {
+          "pc": "0x8c010224",
+          "word": "0xd20e",
+          "pool": "0x8c010260",
+          "value": "0x8c1225a4"
+        },
+        {
+          "pc": "0x8c010226",
+          "word": "0xd00f",
+          "pool": "0x8c010264",
+          "value": "0x8c1225a6"
+        },
+        {
+          "pc": "0x8c01023e",
+          "word": "0xd108",
+          "pool": "0x8c010260",
+          "value": "0x8c1225a4"
+        },
+        {
+          "pc": "0x8c01024c",
+          "word": "0xd105",
+          "pool": "0x8c010264",
+          "value": "0x8c1225a6"
+        },
+        {
+          "pc": "0x8c010250",
+          "word": "0xd304",
+          "pool": "0x8c010264",
+          "value": "0x8c1225a6"
+        },
+        {
+          "pc": "0x8c010252",
+          "word": "0xd203",
+          "pool": "0x8c010260",
+          "value": "0x8c1225a4"
+        },
+        {
+          "pc": "0x8c010256",
+          "word": "0xd104",
+          "pool": "0x8c010268",
+          "value": "0x8c0dae20"
+        },
+        {
+          "pc": "0x8c01026e",
+          "word": "0xd308",
+          "pool": "0x8c010290",
+          "value": "0x8c0726f4"
+        },
+        {
+          "pc": "0x8c010270",
+          "word": "0x940c",
+          "pool": "0x8c01028c",
+          "value": "0x400"
+        },
+        {
+          "pc": "0x8c010276",
+          "word": "0xd208",
+          "pool": "0x8c010298",
+          "value": "0x8c09be04"
+        },
+        {
+          "pc": "0x8c010278",
+          "word": "0xd406",
+          "pool": "0x8c010294",
+          "value": "0x8c004000"
+        },
+        {
+          "pc": "0x8c01027a",
+          "word": "0x9608",
+          "pool": "0x8c01028e",
+          "value": "0x4000"
+        },
+        {
+          "pc": "0x8c010280",
+          "word": "0xd306",
+          "pool": "0x8c01029c",
+          "value": "0x8c03954a"
+        },
+        {
+          "pc": "0x8c010286",
+          "word": "0xd206",
+          "pool": "0x8c0102a0",
+          "value": "0x8c03a3ae"
+        },
+        {
+          "pc": "0x8c0102b4",
+          "word": "0x9a32",
+          "pool": "0x8c01031c",
+          "value": "0xf0"
+        }
+      ],
+      "raw_halfwords": {
+        "0x8c010218": "0xb",
+        "0x8c01021a": "0x9",
+        "0x8c01025a": "0x412b",
+        "0x8c01025c": "0x6421",
+        "0x8c010288": "0x422b",
+        "0x8c01028a": "0x4f26",
+        "0x8c010318": "0xb",
+        "0x8c01031a": "0x6ef6",
+        "0x8c01031c": "0xf0",
+        "0x8c01031e": "0x0"
+      },
+      "decision": "Accept private compilation-group hypothesis only; no historical filename proof; empty218 remains source-null and uncredited; fixed-address actual emitted spans only."
+    }
+  },
+  "original_function_identities_and_total_preserved": true,
+  "original_total_functions": 4718,
+  "original_game_functions": 1556,
+  "expected_gains": {
+    "text_nonpadding": 392,
+    "initialized_data": 14011,
+    "exact_functions": 5
+  },
+  "preserved_shared_header_sha256": "71e7e61402f4f1c1953fff41045a6018c6c6045fdaa4a2f1390bb5b89536c69d",
+  "hud_namespace": {
+    "private": "blit",
+    "canonical_qualified": "gHudExtraBlit",
+    "address": "8C1A192C",
+    "unrelated_canonical_blit": "8C0BB1F4",
+    "string_and_comment_tokens_preserved": true,
+    "private_zoidblit_header_unit_qualified": true
+  },
+  "native_integration_checks": [
+    "hudextra"
+  ],
+  "saved_native_artifacts_reused_with_identical_expanded_input": [
+    "unk_8C065F2C",
+    "unk_8C01021C_video",
+    "unk_8C01026C_entry",
+    "unk_8C0102A4_lz"
+  ],
+  "compiler_sha256": "10d544d829edabc0ac3b26161e311e8bd09edeba00f0bf76ad80743f3299eca6",
+  "linker_sha256": "9671d37b5705ca27ad7fd6ced14eddd958326bcc3da8cbfe902b256608d4b04c",
+  "compiler_flags_changed": false,
+  "denied_actions_not_attempted": [
+    "dc_zoid attempt02",
+    "recordscr05-repaired",
+    "sequence baseline",
+    "pathcommon resume1"
+  ],
+  "review_utc": "2026-10-18T17:48:25.632031+00:00"
+}

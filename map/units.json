@@ -220,13 +220,13 @@
    "notes": "anchor unit (calibration); text includes the trailing literal pool 0x8C010210..0x8C010218. DC functions 9, MAT3 functions 8, named 8."
   },
   {
-   "name": "unk_8C010218",
+   "name": "unk_8C010218_empty",
    "source": null,
    "kind": "game",
    "confidence": "low",
    "text": {
     "start": "0x8C010218",
-    "end": "0x8C010320"
+    "end": "0x8C01021C"
    },
    "functions": [
     {
@@ -235,7 +235,23 @@
      "end": "0x8C01021C",
      "mat3": null,
      "confidence": "low"
-    },
+    }
+   ],
+   "pools": [],
+   "data": [],
+   "bss": [],
+   "notes": "Private compilation-boundary hypothesis; root review pending; originalfunctionIDs/boundsretained. No historicalfilenameclaim. Root accepted target pool-closed compilation groups; historical file boundaries and names remain unknown. Empty218 has no independent entry proof, source or credit."
+  },
+  {
+   "name": "unk_8C01021C_video",
+   "source": "src/unk_8C01021C_video.c",
+   "kind": "game",
+   "confidence": "medium",
+   "text": {
+    "start": "0x8C01021C",
+    "end": "0x8C01026C"
+   },
+   "functions": [
     {
      "name": "func_8C01021C",
      "start": "0x8C01021C",
@@ -256,14 +272,56 @@
      "end": "0x8C01025E",
      "mat3": null,
      "confidence": "low"
-    },
+    }
+   ],
+   "pools": [
+    {
+     "start": "0x8C01025E",
+     "end": "0x8C01026C"
+    }
+   ],
+   "data": [],
+   "bss": [],
+   "notes": "Private compilation-boundary hypothesis; root review pending; originalfunctionIDs/boundsretained. No historicalfilenameclaim."
+  },
+  {
+   "name": "unk_8C01026C_entry",
+   "source": "src/unk_8C01026C_entry.c",
+   "kind": "game",
+   "confidence": "medium",
+   "text": {
+    "start": "0x8C01026C",
+    "end": "0x8C0102A4"
+   },
+   "functions": [
     {
      "name": "func_8C01026C",
      "start": "0x8C01026C",
      "end": "0x8C01028C",
      "mat3": null,
      "confidence": "low"
-    },
+    }
+   ],
+   "pools": [
+    {
+     "start": "0x8C01028C",
+     "end": "0x8C0102A4"
+    }
+   ],
+   "data": [],
+   "bss": [],
+   "notes": "Private compilation-boundary hypothesis; root review pending; originalfunctionIDs/boundsretained. No historicalfilenameclaim."
+  },
+  {
+   "name": "unk_8C0102A4_lz",
+   "source": "src/unk_8C0102A4_lz.c",
+   "kind": "game",
+   "confidence": "medium",
+   "text": {
+    "start": "0x8C0102A4",
+    "end": "0x8C010320"
+   },
+   "functions": [
     {
      "name": "func_8C0102A4",
      "start": "0x8C0102A4",
@@ -274,21 +332,13 @@
    ],
    "pools": [
     {
-     "start": "0x8C01025E",
-     "end": "0x8C01026C"
-    },
-    {
-     "start": "0x8C01028C",
-     "end": "0x8C0102A4"
-    },
-    {
      "start": "0x8C01031C",
      "end": "0x8C01031E"
     }
    ],
    "data": [],
    "bss": [],
-   "notes": "DC-only glue before unzip.c: empty stub, VideoSetOffset-like Kamui call (0x8C010232), the function called first by the startup code (0x8C01026C, main-like), an LZS-style decoder called by _ReadWave (0x8C0102A4). File split unknown."
+   "notes": "Private compilation-boundary hypothesis; root review pending; originalfunctionIDs/boundsretained. No historicalfilenameclaim."
   },
   {
    "name": "unzip",
@@ -17579,9 +17629,349 @@
      "end": "0x8C0663D4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "8C0C49B0",
+     "end": "8C0C5100",
+     "symbols": [
+      {
+       "name": "track1Parts",
+       "symbol": "_track1Parts",
+       "address": "8C0C49B0",
+       "size": 1872
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C5100",
+     "end": "8C0C5850",
+     "symbols": [
+      {
+       "name": "track2Parts",
+       "symbol": "_track2Parts",
+       "address": "8C0C5100",
+       "size": 1872
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C5850",
+     "end": "8C0C5FA0",
+     "symbols": [
+      {
+       "name": "track3Parts",
+       "symbol": "_track3Parts",
+       "address": "8C0C5850",
+       "size": 1872
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C5FA0",
+     "end": "8C0C6730",
+     "symbols": [
+      {
+       "name": "track4Parts",
+       "symbol": "_track4Parts",
+       "address": "8C0C5FA0",
+       "size": 1936
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C6730",
+     "end": "8C0C6DA0",
+     "symbols": [
+      {
+       "name": "track5Parts",
+       "symbol": "_track5Parts",
+       "address": "8C0C6730",
+       "size": 1648
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C6DA0",
+     "end": "8C0C7540",
+     "symbols": [
+      {
+       "name": "track6Parts",
+       "symbol": "_track6Parts",
+       "address": "8C0C6DA0",
+       "size": 1952
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7540",
+     "end": "8C0C7550",
+     "symbols": [
+      {
+       "name": "dm1Parts",
+       "symbol": "_dm1Parts",
+       "address": "8C0C7540",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7550",
+     "end": "8C0C7560",
+     "symbols": [
+      {
+       "name": "dm2Parts",
+       "symbol": "_dm2Parts",
+       "address": "8C0C7550",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7560",
+     "end": "8C0C7570",
+     "symbols": [
+      {
+       "name": "dm3Parts",
+       "symbol": "_dm3Parts",
+       "address": "8C0C7560",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7570",
+     "end": "8C0C7580",
+     "symbols": [
+      {
+       "name": "dm4Parts",
+       "symbol": "_dm4Parts",
+       "address": "8C0C7570",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7580",
+     "end": "8C0C7660",
+     "symbols": [
+      {
+       "name": "dm5Parts",
+       "symbol": "_dm5Parts",
+       "address": "8C0C7580",
+       "size": 224
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7660",
+     "end": "8C0C7670",
+     "symbols": [
+      {
+       "name": "dm6Parts",
+       "symbol": "_dm6Parts",
+       "address": "8C0C7660",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7670",
+     "end": "8C0C7680",
+     "symbols": [
+      {
+       "name": "dm7Parts",
+       "symbol": "_dm7Parts",
+       "address": "8C0C7670",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7680",
+     "end": "8C0C7690",
+     "symbols": [
+      {
+       "name": "dm8Parts",
+       "symbol": "_dm8Parts",
+       "address": "8C0C7680",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7690",
+     "end": "8C0C76A0",
+     "symbols": [
+      {
+       "name": "stunt1Parts",
+       "symbol": "_stunt1Parts",
+       "address": "8C0C7690",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C76A0",
+     "end": "8C0C76B0",
+     "symbols": [
+      {
+       "name": "stunt2Parts",
+       "symbol": "_stunt2Parts",
+       "address": "8C0C76A0",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C76B0",
+     "end": "8C0C76C0",
+     "symbols": [
+      {
+       "name": "stunt3Parts",
+       "symbol": "_stunt3Parts",
+       "address": "8C0C76B0",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C76C0",
+     "end": "8C0C76D0",
+     "symbols": [
+      {
+       "name": "stunt4Parts",
+       "symbol": "_stunt4Parts",
+       "address": "8C0C76C0",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C76D0",
+     "end": "8C0C7860",
+     "symbols": [
+      {
+       "name": "obstacle1Parts",
+       "symbol": "_obstacle1Parts",
+       "address": "8C0C76D0",
+       "size": 400
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7860",
+     "end": "8C0C7873",
+     "symbols": [
+      {
+       "name": "trackParts",
+       "symbol": "_trackParts",
+       "address": "8C0C7860",
+       "size": 19
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7874",
+     "end": "8C0C7884",
+     "symbols": [
+      {
+       "name": "showAllParts",
+       "symbol": "_showAllParts",
+       "address": "8C0C7874",
+       "size": 16
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7884",
+     "end": "8C0C78A4",
+     "symbols": [
+      {
+       "name": "track1Fog",
+       "symbol": "_track1Fog",
+       "address": "8C0C7884",
+       "size": 32
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C78A4",
+     "end": "8C0C78F0",
+     "symbols": [
+      {
+       "name": "trackFog",
+       "symbol": "_trackFog",
+       "address": "8C0C78A4",
+       "size": 76
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C78F0",
+     "end": "8C0C7910",
+     "symbols": [
+      {
+       "name": "fogDistance",
+       "symbol": "_fogDistance",
+       "address": "8C0C78F0",
+       "size": 32
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7910",
+     "end": "8C0C7950",
+     "symbols": [
+      {
+       "name": "fogMin",
+       "symbol": "_fogMin",
+       "address": "8C0C7910",
+       "size": 64
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "8C0C7950",
+     "end": "8C0C7970",
+     "symbols": [
+      {
+       "name": "fogMax",
+       "symbol": "_fogMax",
+       "address": "8C0C7950",
+       "size": 32
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "three functions between world.c and zip.c (one called by ZOID_EndFrame, one by PrePlay/_UpdateGame); no MAT3 match."
+   "notes": "three functions between world.c and zip.c (one called by ZOID_EndFrame, one by PrePlay/_UpdateGame); no MAT3 match.",
+   "data_padding": []
   },
   {
    "name": "zip",
@@ -26224,7 +26614,7 @@
    "confidence": "high",
    "text": {
     "start": "0x8C0938E8",
-    "end": "0x8C0951C0"
+    "end": "0x8C095C90"
    },
    "functions": [
     {
@@ -26309,6 +26699,13 @@
      "start": "0x8C095082",
      "end": "0x8C0951AA",
      "mat3": "_AddBattlePoint",
+     "confidence": "high"
+    },
+    {
+     "name": "func_8C0951C0",
+     "start": "0x8C0951C0",
+     "end": "0x8C095C52",
+     "mat3": "animBattlePoints",
      "confidence": "high"
     }
    ],
@@ -26400,31 +26797,7 @@
     {
      "start": "0x8C0951AA",
      "end": "0x8C0951C0"
-    }
-   ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 12, MAT3 functions 13, named 12."
-  },
-  {
-   "name": "unk_8C0951C0",
-   "source": null,
-   "kind": "game",
-   "confidence": "low",
-   "text": {
-    "start": "0x8C0951C0",
-    "end": "0x8C095C90"
-   },
-   "functions": [
-    {
-     "name": "func_8C0951C0",
-     "start": "0x8C0951C0",
-     "end": "0x8C095C52",
-     "mat3": null,
-     "confidence": "low"
-    }
-   ],
-   "pools": [
+    },
     {
      "start": "0x8C095302",
      "end": "0x8C095344"
@@ -26458,9 +26831,585 @@
      "end": "0x8C095C90"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "stuntCoinTexNames",
+     "start": "0x8C0D19E8",
+     "end": "0x8C0D1A10",
+     "section": "D"
+    },
+    {
+     "name": "powerupIconNames",
+     "start": "0x8C0D1A10",
+     "end": "0x8C0D1A1C",
+     "section": "D"
+    },
+    {
+     "name": "whichCam",
+     "start": "0x8C0D1A1C",
+     "end": "0x8C0D1A2C",
+     "section": "D"
+    },
+    {
+     "name": "stuntPos",
+     "start": "0x8C0D1A2C",
+     "end": "0x8C0D1AAC",
+     "section": "D"
+    },
+    {
+     "name": "stuntCoinPos",
+     "start": "0x8C0D1AAC",
+     "end": "0x8C0D1B2C",
+     "section": "D"
+    },
+    {
+     "name": "coinStuntPos",
+     "start": "0x8C0D1B2C",
+     "end": "0x8C0D1BAC",
+     "section": "D"
+    },
+    {
+     "name": "fragPos",
+     "start": "0x8C0D1BAC",
+     "end": "0x8C0D1C2C",
+     "section": "D"
+    },
+    {
+     "name": "healthPos",
+     "start": "0x8C0D1C2C",
+     "end": "0x8C0D1CAC",
+     "section": "D"
+    },
+    {
+     "name": "ammoPos",
+     "start": "0x8C0D1CAC",
+     "end": "0x8C0D1CEC",
+     "section": "D"
+    },
+    {
+     "name": "powerupPos",
+     "start": "0x8C0D1CEC",
+     "end": "0x8C0D1D2C",
+     "section": "D"
+    },
+    {
+     "name": "playerPaneColors",
+     "start": "0x8C0D1D2C",
+     "end": "0x8C0D1D4C",
+     "section": "D"
+    },
+    {
+     "name": "playerColor",
+     "start": "0x8C0D1D4C",
+     "end": "0x8C0D1D5C",
+     "section": "D"
+    },
+    {
+     "name": "healthColor",
+     "start": "0x8C0D1D5C",
+     "end": "0x8C0D1D7C",
+     "section": "D"
+    },
+    {
+     "name": "StuntMultiBlit_0",
+     "start": "0x8C0B2F48",
+     "end": "0x8C0B2F6C",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_1",
+     "start": "0x8C0B2F6C",
+     "end": "0x8C0B2F90",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_2",
+     "start": "0x8C0B2F90",
+     "end": "0x8C0B2FB4",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_3",
+     "start": "0x8C0B2FB4",
+     "end": "0x8C0B2FD8",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_4",
+     "start": "0x8C0B2FD8",
+     "end": "0x8C0B2FFC",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_5",
+     "start": "0x8C0B2FFC",
+     "end": "0x8C0B3020",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_6",
+     "start": "0x8C0B3020",
+     "end": "0x8C0B3044",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_7",
+     "start": "0x8C0B3044",
+     "end": "0x8C0B3068",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_8",
+     "start": "0x8C0B3068",
+     "end": "0x8C0B308C",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_9",
+     "start": "0x8C0B308C",
+     "end": "0x8C0B30B0",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_10",
+     "start": "0x8C0B30B0",
+     "end": "0x8C0B30D4",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_11",
+     "start": "0x8C0B30D4",
+     "end": "0x8C0B30F8",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_12",
+     "start": "0x8C0B30F8",
+     "end": "0x8C0B311C",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_13",
+     "start": "0x8C0B311C",
+     "end": "0x8C0B3140",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_14",
+     "start": "0x8C0B3140",
+     "end": "0x8C0B3164",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_15",
+     "start": "0x8C0B3164",
+     "end": "0x8C0B3188",
+     "section": "C"
+    },
+    {
+     "name": "StuntMultiBlit_16",
+     "start": "0x8C0B3188",
+     "end": "0x8C0B31AC",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_0",
+     "start": "0x8C0B31AC",
+     "end": "0x8C0B31D0",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_1",
+     "start": "0x8C0B31D0",
+     "end": "0x8C0B31F4",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_2",
+     "start": "0x8C0B31F4",
+     "end": "0x8C0B3218",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_3",
+     "start": "0x8C0B3218",
+     "end": "0x8C0B323C",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_4",
+     "start": "0x8C0B323C",
+     "end": "0x8C0B3260",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_5",
+     "start": "0x8C0B3260",
+     "end": "0x8C0B3284",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_6",
+     "start": "0x8C0B3284",
+     "end": "0x8C0B32A8",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_7",
+     "start": "0x8C0B32A8",
+     "end": "0x8C0B32CC",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_8",
+     "start": "0x8C0B32CC",
+     "end": "0x8C0B32F0",
+     "section": "C"
+    },
+    {
+     "name": "BattleMultiBlit_9",
+     "start": "0x8C0B32F0",
+     "end": "0x8C0B3314",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_0",
+     "start": "0x8C0B3314",
+     "end": "0x8C0B331C",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_1",
+     "start": "0x8C0B331C",
+     "end": "0x8C0B3321",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_2",
+     "start": "0x8C0B3324",
+     "end": "0x8C0B3327",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_3",
+     "start": "0x8C0B3328",
+     "end": "0x8C0B3330",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_4",
+     "start": "0x8C0B3340",
+     "end": "0x8C0B3343",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_5",
+     "start": "0x8C0B3368",
+     "end": "0x8C0B3373",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_6",
+     "start": "0x8C0B3374",
+     "end": "0x8C0B3377",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_7",
+     "start": "0x8C0B3378",
+     "end": "0x8C0B337B",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_8",
+     "start": "0x8C0B337C",
+     "end": "0x8C0B3388",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_9",
+     "start": "0x8C0B3388",
+     "end": "0x8C0B3394",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_10",
+     "start": "0x8C0B3394",
+     "end": "0x8C0B33A0",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_11",
+     "start": "0x8C0B33A0",
+     "end": "0x8C0B33AC",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_12",
+     "start": "0x8C0B33AC",
+     "end": "0x8C0B33B6",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_13",
+     "start": "0x8C0B33B8",
+     "end": "0x8C0B33C3",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_14",
+     "start": "0x8C0B33C4",
+     "end": "0x8C0B33D0",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_15",
+     "start": "0x8C0B33D0",
+     "end": "0x8C0B33DC",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_16",
+     "start": "0x8C0B33DC",
+     "end": "0x8C0B33E8",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_17",
+     "start": "0x8C0B33E8",
+     "end": "0x8C0B33F1",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_18",
+     "start": "0x8C0B33F4",
+     "end": "0x8C0B3403",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_19",
+     "start": "0x8C0B3404",
+     "end": "0x8C0B3413",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_20",
+     "start": "0x8C0B3414",
+     "end": "0x8C0B341C",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_21",
+     "start": "0x8C0B341C",
+     "end": "0x8C0B3425",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_22",
+     "start": "0x8C0B3428",
+     "end": "0x8C0B3436",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_23",
+     "start": "0x8C0B3438",
+     "end": "0x8C0B3441",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_24",
+     "start": "0x8C0B3444",
+     "end": "0x8C0B344E",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_25",
+     "start": "0x8C0B3450",
+     "end": "0x8C0B345D",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_26",
+     "start": "0x8C0B3460",
+     "end": "0x8C0B346C",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_27",
+     "start": "0x8C0B346C",
+     "end": "0x8C0B347B",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_string_28",
+     "start": "0x8C0B347C",
+     "end": "0x8C0B348A",
+     "section": "C"
+    },
+    {
+     "name": "hudextra_STUNTCOING1",
+     "start": "0x8C0B3334",
+     "end": "0x8C0B3340",
+     "section": "C"
+    },
+    {
+     "name": "stuntCoinColor_initializer",
+     "start": "0x8C0B3330",
+     "end": "0x8C0B3334",
+     "section": "C"
+    },
+    {
+     "name": "weaponColor_initializer",
+     "start": "0x8C0B3343",
+     "end": "0x8C0B3347",
+     "section": "C"
+    },
+    {
+     "name": "battleCoinTextureNames_initializer",
+     "start": "0x8C0B3348",
+     "end": "0x8C0B3358",
+     "section": "C"
+    }
+   ],
    "bss": [],
-   "notes": "one function between hudextra.c and powerups.c."
+   "notes": "Root-approved whole adjacent unknown-unit transfer. Original anonymous func_8C0951C0 ID retained; BattleMultiBlit record9 callback at8C0B330C and MAT3 animBattlePoints prove entry/semantic identity.13source functions. Complete source-present strings/local initializer ranges added after saved nativeattempt2 at unchanged P/D/C linkstarts; no source/compiler input changes or native rerun. Root accepted complete anonymous951C0 tail transfer; original anonymous function identity and total byte union retained.",
+   "data_padding": [
+    {
+     "start": "0x8C0B2F5E",
+     "end": "0x8C0B2F60",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B2F82",
+     "end": "0x8C0B2F84",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B2FA6",
+     "end": "0x8C0B2FA8",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B2FCA",
+     "end": "0x8C0B2FCC",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B2FEE",
+     "end": "0x8C0B2FF0",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3012",
+     "end": "0x8C0B3014",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3036",
+     "end": "0x8C0B3038",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B305A",
+     "end": "0x8C0B305C",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B307E",
+     "end": "0x8C0B3080",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B30A2",
+     "end": "0x8C0B30A4",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B30C6",
+     "end": "0x8C0B30C8",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B30EA",
+     "end": "0x8C0B30EC",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B310E",
+     "end": "0x8C0B3110",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3132",
+     "end": "0x8C0B3134",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3156",
+     "end": "0x8C0B3158",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B317A",
+     "end": "0x8C0B317C",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B319E",
+     "end": "0x8C0B31A0",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B31C2",
+     "end": "0x8C0B31C4",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B31E6",
+     "end": "0x8C0B31E8",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B320A",
+     "end": "0x8C0B320C",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B322E",
+     "end": "0x8C0B3230",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3252",
+     "end": "0x8C0B3254",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3276",
+     "end": "0x8C0B3278",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B329A",
+     "end": "0x8C0B329C",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B32BE",
+     "end": "0x8C0B32C0",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B32E2",
+     "end": "0x8C0B32E4",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    },
+    {
+     "start": "0x8C0B3306",
+     "end": "0x8C0B3308",
+     "reason": "Conservatively uncredited zdepth high halfword, as canonical HUD. NewMultiBlit018BB6 only proves low16 of+14; uint32 versus uint16+padding unresolved. Full record equality still required."
+    }
+   ]
   },
   {
    "name": "powerups",

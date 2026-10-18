@@ -1510,3 +1510,24 @@ _func_8C0DBD60 0x8c0dbd60
 _func_8C0DBFE0 0x8c0dbfe0
 _func_8C0DC0A0 0x8c0dc0a0
 _func_8C0DC100 0x8c0dc100
+
+_WYawUV 0x8c026474
+_RecordBattlePoints 0x8c02c59a
+_ZOID_WindowTo3D 0x8c069d48
+_battleCoin 0x8c1a17f8
+_battlePoint 0x8c1a18c8
+_battlePointCnt 0x8c1a1928
+_gHudExtraBlit 0x8c1a192c
+_bonuscnt 0x8c1a1930
+_gBlitInstanceList 0x8c170f3c
+_gOutOfTime 0x8c12c64d
+_healthPal 0x8c1a0ab8
+_powerupIcon 0x8c1a1728
+_stuntCoin 0x8c1a0b18
+_weaponIcon 0x8c1a1658
+_dcVideoOffsetX 0x8c1225a4
+_dcVideoOffsetY 0x8c1225a6
+_func_8C0DAE20 0x8c0dae20
+_dcStartupBuffer 0x8c004000
+_func_8C03954A 0x8c03954a
+_func_8C03A3AE 0x8c03a3ae
