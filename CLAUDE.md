@@ -85,13 +85,13 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **48,474 /569,664 (8.5092%)**, plus **54,899 initialized data bytes**.
-Whole-image credit: **103,373 /1,123,492 (9.2010%)**, **315 exact source functions**, 100 source units.
-The thirteenth batch adds 1,360 text/literal bytes, 20,341
-initialized data bytes and 12 exact functions. The audited batch is locally committed
-through `a3020169d77ff300ea6ca4e304109fd42548b512`. No remote push was performed.
+Game text/literal credit: **48,910 /569,664 (8.5858%)**, plus **54,923 initialized data bytes**.
+Whole-image credit: **103,833 /1,123,492 (9.2420%)**, **319 exact source functions**, 102 source units.
+The fourteenth batch adds 436 text/literal bytes, 24
+initialized data bytes and 4 exact functions. The audited batch is locally committed
+through `ef8974831007bc3b2913d010dde116ba5d7fe8c3`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-thirteenth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-fourteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
