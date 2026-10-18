@@ -53,10 +53,13 @@ only command you need. Run Python **without `-I`**: the `--verbose` listing impo
 
 ## What "exact" means
 
-- A range is **exact** only if every byte in it was produced by this build and equals the target
+- A range is **exact** only if its linked image equals the target
   at the same address. Nothing is masked: pool displacements, pool contents, and branch offsets all
   count. Bytes inside a linked section that LNK leaves unwritten (alignment holes) are taken as
-  `0x00`, the linker's fill. Bytes outside every linked section were not built and never match.
+  `0x00`, the linker's fill. Bytes outside every linked section were not built and never match. Earned byte credit uses only
+  raw emitted SYSROF data runs within entirely exact function, pool and initialized-data ranges.
+  Internal linker fill, gaps, trailing alignment and string padding earn zero bytes; an explicitly
+  emitted zero byte can count. BSS never counts toward image bytes.
 - **align**: at most 3 trailing bytes after a unit that the unit's own link does not produce (the
   next unit's section alignment), and that are zero in the target. They are listed separately and
   are **not** counted as exact. Example: `ll` is 422 exact of 424 bytes, with 2 align bytes.
@@ -70,7 +73,7 @@ only command you need. Run Python **without `-I`**: the `--verbose` listing impo
 
 ## Progress metric
 
-`report.json` → `summary`:
+`report.json` â†’ `summary`:
 
 - `game_code`: exact text bytes of units with `kind: "game"`, divided by the text bytes of all game
   units in the map.
@@ -113,3 +116,12 @@ by SHC objects, so they are missing on the base side.
 - The map's function and pool boundaries decide how a unit is cut into ranges. Because each range
   counts only when all of it is exact, wrong boundaries can change both the per-function results and
   the exact byte count. Fix the map, not the comparison.
+
+## Auditing published results
+
+`python -B tools/audit_report.py` reads the saved raw `.abs` and object files, validates current
+source hashes, recomputes emitted exact address sets and rejects overlapping credit. It writes
+`build/report.json` and `evidence/strict-integration-receipt.json` without running the compiler.
+`python -B tools/test_progress_credit.py` checks internal fill, explicit zeros, differing ranges,
+out-of-range bytes and overlapping map coverage. Native execution only: a policy denial must be
+reported, with no WSL/wibo fallback or security-setting changes.

@@ -1,4 +1,4 @@
-# CLAUDE.md — Rush 2049 Dreamcast matching decompilation
+# CLAUDE.md â€” Rush 2049 Dreamcast matching decompilation
 
 Project: byte-matching decompilation of San Francisco Rush 2049 (Sega Dreamcast, US v1.001, Midway 2000).
 Target `1ST_READ.BIN`, raw little-endian SH-4 at `0x8C010000`, 1,123,492 bytes,
@@ -20,9 +20,7 @@ types, algorithms, source bodies. It is **read-only**: never edit, build or comm
 - Per function: at most three evidence-backed source-shape changes or ~45 minutes, then park it with
   the first differing instruction recorded. Compiler/ABI doubts are lane-wide stops; a drifted
   function is an isolated stop.
-- Never change Windows security settings. Smart App Control blocks `shc-v5.1r13` and r03 natively;
-  `tools/shc_cc.py` falls back to WSL (`rocky` distro + wibo) by itself. The MAT3 CodeWarrior compiler
-  is blocked the same way.
+- Native compiler execution only. A Windows policy denial is terminal for that action; report it and use normal reviewed approval. Never change security settings or use WSL/wibo as a fallback.
 - Record every new codegen lesson (in `calib/drivetra/notes.md` or `calib/lessons.md`) and keep the
   table in `HANDOFF.md` current. Commit per unit with the bytes/functions exact in the message.
 
@@ -30,12 +28,12 @@ types, algorithms, source bodies. It is **read-only**: never edit, build or comm
 
 | Tool | Use |
 |---|---|
-| `shc/shc-v5.0r10 … 5.1r13` | Hitachi SH SERIES C/C++ Compiler packages (decomp.me archive); `shc.exe`, `asmsh.exe`, `LNK.EXE`, `elfcnv.exe` |
-| `shc_cc.py` / `shc_cc.cmd` | compile one file the decomp.me way (CRLF, bin copied to cwd, `SHC_LIB=.`) → SYSROF `.obj` + ELF via `rof2elf/rof2elf.py`; `.cmd` is the frozen config |
+| `shc/shc-v5.0r10 â€¦ 5.1r13` | Hitachi SH SERIES C/C++ Compiler packages (decomp.me archive); `shc.exe`, `asmsh.exe`, `LNK.EXE`, `elfcnv.exe` |
+| `shc_cc.py` / `shc_cc.cmd` | compile one file the decomp.me way (CRLF, bin copied to cwd, `SHC_LIB=.`) â†’ SYSROF `.obj` + ELF via `rof2elf/rof2elf.py`; `.cmd` is the frozen config |
 | `shc_link.py` + `sysrof_abs.py` | fixed-address link with `LNK.EXE` (`START P/D/B`, `DEFINE` externals), reads the absolute SYSROF output, compares unmasked |
-| `dc_split.py`, `dc_build.py`, `dc_objdiff.py`, `dc_common.py` | the project loop: map → target objects → compile/link/compare → `build/report.json`, `objdiff.json` |
+| `dc_split.py`, `dc_build.py`, `dc_objdiff.py`, `dc_common.py` | the project loop: map â†’ target objects â†’ compile/link/compare â†’ `build/report.json`, `objdiff.json` |
 | `objdiff/objdiff.exe`, `objdiff-cli.exe` | 3.8.2, SuperH backend; open `objdiff.json` |
-| `ghidra/` + `jdk/` + `ghidra.ps1` | Ghidra 12.1.4, project `ghidra-project/RushDC.gpr` fully labeled from the map; headless via `ghidra.ps1 -Headless … -postScript DumpRanges.java out.txt start-end` |
+| `ghidra/` + `jdk/` + `ghidra.ps1` | Ghidra 12.1.4, project `ghidra-project/RushDC.gpr` fully labeled from the map; headless via `ghidra.ps1 -Headless â€¦ -postScript DumpRanges.java out.txt start-end` |
 | `calib/sh4dis.py`, `calib/unitcmp.py`, `calib/run_calib.py` | word-exact SH-4 decoder (capstone lacks FPU ops), per-function unit comparison, calibration driver |
 
 ## Frozen compiler configuration
@@ -55,10 +53,10 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 1. **Pools are placed by the compiler per translation unit**, after unconditional branches/returns and
    merged across neighbouring functions (drivetra's pool for three functions sits inside `engine`).
    Compile whole units; single-function pool displacements are only comparable masked.
-2. **Float literals are truncated, not rounded** (double→float toward zero): `9.549305f` → 0x4118C9F4
-   but the target has 0x4118C9F3, so write `9.5493045f`; `0.925f` → use `0.92500002f`; `0.8f` → `0.80000002f`.
-3. **Division helpers:** `short / short-typed` with a short result → `__divws`/`__modws` (16-bit,
-   0x8C09B7DC/0x8C09B9AC); anything int-typed → `__divls`/`__modls` (0x8C09B680/0x8C09B82C). The game
+2. **Float literals are truncated, not rounded** (doubleâ†’float toward zero): `9.549305f` â†’ 0x4118C9F4
+   but the target has 0x4118C9F3, so write `9.5493045f`; `0.925f` â†’ use `0.92500002f`; `0.8f` â†’ `0.80000002f`.
+3. **Division helpers:** `short / short-typed` with a short result â†’ `__divws`/`__modws` (16-bit,
+   0x8C09B7DC/0x8C09B9AC); anything int-typed â†’ `__divls`/`__modls` (0x8C09B680/0x8C09B82C). The game
    divides `throttle` by a short-typed 14 (`(signed short)14`) and `rpm` by int 1150.
 4. **Float products are written left to right.** SHC rewrites `a * (b * c)` as `(a * b) * c`; the target
    never shows the rewritten form. `x * y` loads `y` first and multiplies into `x`'s register.
@@ -69,8 +67,7 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 7. **`-macsave=0`** (interp does not save MACL). `bsearch` saves it: it is SDK libc, not game code.
 8. **Volatile set** for timer.c is MAT3's inferred one (frame counter, gSeconds, gFrameSeconds,
    gLastFrameCount, gLastFrameCounter); other sets are worse.
-9. **Struct layouts recovered so far equal the GameCube ones** (tModelData, tTire 0x5C, tCar, tTune,
-   tDLList, tDLLE). Treat MAT3 offsets as hints; prove each with a displacement or stride (rules in `include/README.md`).
+9. **Prove each DC field with a displacement or stride** (rules in `include/README.md`). Many physics fields agree with MAT3; renderer layouts differ, including the DC object stride 0x58 and texture fields +0x24/+0x28/+0x2C.
 10. **Headers:** C89 only; include with the absolute backslash path
     `#include "C:\rush2049-dreamcast\include\dc_types.h"` (SHC rejects `-` in `-include=` paths and
     forward slashes); `dc_build.py` pre-expands quoted includes.
@@ -78,7 +75,7 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
     `gTimerPaused`, `gRetraceRate`, `gRetraceTime`, `sInited = 0`); a function-local static with an
     initializer lands in D. Section table in startup at 0x8C0A77B4: D = 0x8C0B8C20..0x8C0D2480, B = 0x8C1224C0..0x8C1A9014.
 12. **Link order:** startup stub, timer.c, Dreamcast glue, unzip.c, then GameSource files in
-    case-insensitive alphabetical order (atan.c … zoidwindow.c), then the Dreamcast platform group
+    case-insensitive alphabetical order (atan.c â€¦ zoidwindow.c), then the Dreamcast platform group
     (Audio64 wrappers, paksysdc.c, Kamui renderer), front-end screens, late gameplay files, C runtime, Audio64.
 13. **Source drift from MAT3 is real but small:** DC `bsearch` is a different (library) algorithm;
     `InitializeTimer` brackets itself with an interrupt-mask call and registers a retrace callback
@@ -87,12 +84,22 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 
 ## Status (2026-10-18)
 
-Game code exact: 1,218 / 569,664 bytes. Units: `ll` exact (422/424), `drivetra` 6/10 functions
-(796/1620), `timer` 8/9 functions but 0/372 strict (one 2-byte residual shifts its pool).
-Parked residuals: `enginetorque` (three inlined `interp` expansions put their temporaries in different
-stack slots: target order b, low_ptr, rem, rindex·2, total) and `UpdateFrameTimer` (the `else` arm
-re-materialises `&gFrameCounter` into r0 from the pool where SHC reuses r1). Both are allocator
-behaviour, unchanged across releases, optimization modes and `-aggressive=2`; likely source-shape.
+Game text/literal credit: **6,540 / 569,664 bytes (1.1480%)**. Initialized data: 544 bytes.
+Whole-image credit: **7,084 / 1,123,492 bytes (0.6305%)**, 39 exact functions, 12 source units.
+Nine new units add 5,324 text/literal + 528 data bytes and 29 functions. The inherited text baseline
+is 1,216, corrected from historical 1,218 by excluding two drivetra linker-fill bytes.
+
+`matching-evidence/2026-10-18/integration-first9.json` and `evidence/strict-integration-receipt.json`
+record emitted address spans, source/header/tool/output hashes and the zero-overlap audit.
+All links are separate translation-unit links at real addresses; no full image was built.
+`python -B tools/audit_report.py` rechecks saved outputs without invoking the compiler.
+Six private matching lanes continue under root-owned disjoint assignments; later private packets
+earn canonical credit only after integration. `HANDOFF.md` has the per-unit table.
+
+Parked residuals remain in enginetorque and UpdateFrameTimer. New partials are statll InitStatLL
+(instruction ordering), atan fsatan (register allocation), and textureanim InitTextureAnimations
+(register allocation). Respect each function's source-shape cap; do not restart parked searches
+without new evidence. Timer has 8/9 diagnostic instruction-shape matches but zero strict text credit.
 
 ## Map (`map/units.json`)
 
