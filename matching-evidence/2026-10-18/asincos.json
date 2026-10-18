@@ -1,0 +1,27 @@
+{
+  "unit": "asincos",
+  "text_nonpadding": 64,
+  "data_nonpadding": 16,
+  "exact_functions": 0,
+  "text_spans": [
+    [
+      "8C011380",
+      "8C0113C0"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0A78A4",
+      "8C0A78B4"
+    ]
+  ],
+  "source_sha256": "f701af23b85e47bf8d379977cbc33d2431e119138b54dab556c64b4cbc8763f0",
+  "expanded_source_sha256": "b32feb7ddd176f9c70b56238a7f1dc3f11e668528afa1c218ee6edaa40afbd61",
+  "compiler_input_sha256": "76dd848472ec18c4a364d90662a09e550307d3fb47c53711668f06727a246c03",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "b72d5ffefa20440103ab8f80e5de032b945bfb3c4b5cd2690d77ffd2b6ccf5c4",
+  "object_sha256": "69e47b5260ed6370364136f8cb9c68b3ba8a11a6969d0cb358923aae93cbb25d",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
