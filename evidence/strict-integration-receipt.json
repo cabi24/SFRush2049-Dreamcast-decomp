@@ -1,39 +1,39 @@
 {
   "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
-  "map_sha256": "4651c35a3f3bc73d46a3242827b8fa06f8ffd9f8bd73d82ddfd0e8788838cd29",
+  "map_sha256": "6e188c59f06934e574a913b19f270538c205302d20da32ae3c7fb2dc8967ebca",
   "summary": {
     "game_code": {
-      "exact_bytes": 40376,
+      "exact_bytes": 42930,
       "total_bytes": 569664,
-      "percent": 7.0877
+      "percent": 7.536
     },
     "image": {
-      "exact_bytes": 57180,
+      "exact_bytes": 60540,
       "total_bytes": 1123492,
-      "percent": 5.0895
+      "percent": 5.3886
     },
     "map_coverage": {
       "text_bytes": 1123492,
-      "data_bytes": 24238,
+      "data_bytes": 25050,
       "unique_file_bytes": 1123492,
       "image_bytes": 1123492,
       "percent": 100.0
     },
     "functions": {
-      "exact": 245,
+      "exact": 273,
       "total": 4725,
-      "game_exact": 245,
+      "game_exact": 273,
       "game_total": 1563
     },
     "units": {
       "mapped": 155,
       "game": 120,
-      "with_source": 64,
-      "partial": 47,
+      "with_source": 67,
+      "partial": 50,
       "exact": 17
     }
   },
-  "credited_union_bytes": 57180,
+  "credited_union_bytes": 60540,
   "overlap": false,
   "comparison_masks": false,
   "compiler_executed_by_audit": false,
@@ -2894,6 +2894,46 @@
       "object_sha256": "8b2c710be175d5bcc18fc2e77a16e84f7099c4e9a6a0937cbc899c217821ed35"
     },
     {
+      "unit": "waves",
+      "text_nonpadding": 1850,
+      "data_nonpadding": 630,
+      "exact_functions": 20,
+      "text_spans": [
+        [
+          "8C0651AA",
+          "8C06539E"
+        ],
+        [
+          "8C0653A0",
+          "8C06563E"
+        ],
+        [
+          "8C065640",
+          "8C0657E6"
+        ],
+        [
+          "8C0657E8",
+          "8C06588C"
+        ],
+        [
+          "8C065C1A",
+          "8C065C78"
+        ]
+      ],
+      "data_spans": [
+        [
+          "8C0B0250",
+          "8C0B04C6"
+        ]
+      ],
+      "source_sha256": "46c9fe33d3af01c79876ad74ac7bfee7311598b94c0b39e9abb5e54386a059a9",
+      "expanded_source_sha256": "e0658ca2f3ee4ede24c44666b15b02b00dedbe27c9d45bc0240ad2ac157d1e31",
+      "compiler_input_sha256": "63da043ec31e21c60734cb52d67b48004667879b28ce23dce4d8b32316be6176",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "27a2d1253235105aab01dd6cc1d238f689fb630a6c77185f92d9edd72d4f6fd1",
+      "object_sha256": "e88592095d11a05271ecfb78521e86feff344c27af7c78c39153a630be927eb1"
+    },
+    {
       "unit": "world",
       "text_nonpadding": 378,
       "data_nonpadding": 0,
@@ -2979,6 +3019,33 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "4ef5b43a2ef6415a763f9fe04f0a9808dc9efff1e3ca9f3546e5e5b6dc92dbd1",
       "object_sha256": "6de38351c25ad69a966244e96e74a3402eac9643330aa16c9f5b8717c2361943"
+    },
+    {
+      "unit": "zoid",
+      "text_nonpadding": 440,
+      "data_nonpadding": 0,
+      "exact_functions": 7,
+      "text_spans": [
+        [
+          "8C0686F4",
+          "8C06880A"
+        ],
+        [
+          "8C06880C",
+          "8C068896"
+        ],
+        [
+          "8C068A70",
+          "8C068A88"
+        ]
+      ],
+      "data_spans": [],
+      "source_sha256": "98bbd3b6322d5a54d36e0feeb8f9531a82cc1136b71dd2fb09a9737ecb6c908b",
+      "expanded_source_sha256": "812111719b73b78bf88d7ad345d31d1e21eec09cb3890e2ca8750c25e1f10669",
+      "compiler_input_sha256": "0c528c9dce682d17b5c1143c51629530d2009cc2f43064037577aea6577089f1",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "5823e4332803a1121644d5cd6dd62d611e609dd5dc7b5dded4e6335478a59089",
+      "object_sha256": "5b15de2fa8a5a8431287e7022719dac13a11618bcbb270d42995b652a6870703"
     },
     {
       "unit": "zoidblit",
@@ -3124,6 +3191,46 @@
       "compiler_input_matches_current_headers": true,
       "linked_abs_sha256": "5dfae5a2040b4c2cf3a733885edb454efad07caebcefe237431020a579149381",
       "object_sha256": "b7e358f88816c6ac4fbe6db4dd7859a072b53beb692c8be840d04b610f7fbd24"
+    },
+    {
+      "unit": "titlescr",
+      "text_nonpadding": 264,
+      "data_nonpadding": 176,
+      "exact_functions": 1,
+      "text_spans": [
+        [
+          "8C08D0C8",
+          "8C08D1D0"
+        ]
+      ],
+      "data_spans": [
+        [
+          "8C0B2884",
+          "8C0B28FF"
+        ],
+        [
+          "8C0B2900",
+          "8C0B290D"
+        ],
+        [
+          "8C0B2910",
+          "8C0B291E"
+        ],
+        [
+          "8C0B2920",
+          "8C0B292E"
+        ],
+        [
+          "8C0D02A4",
+          "8C0D02B0"
+        ]
+      ],
+      "source_sha256": "00776d4dcac678b73a38ee29cb560440ee38661cf689b32509147456b92ee15c",
+      "expanded_source_sha256": "20f57f0690c29eba10d652c9bef9c98de844cabaeb8afdbc66319d04e8b3a1c8",
+      "compiler_input_sha256": "ea2bd7b81ac1bcdf67a1a1b399b357bd7d42a354c7261c523f8085e68bdc5b73",
+      "compiler_input_matches_current_headers": true,
+      "linked_abs_sha256": "25166f93642d3f014e2e8e6337807a4627eb6ebac1051a462a054fb7673aa2da",
+      "object_sha256": "47de21833b2e060b6bb7680249dc78d376068ea0c75a3242df3e020adfbdb996"
     },
     {
       "unit": "warningscr",
