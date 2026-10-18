@@ -1,0 +1,17 @@
+{
+  "unit": "dc_kamui_tex_8C06E5B4",
+  "text_nonpadding": 0,
+  "data_nonpadding": 0,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [],
+  "source_sha256": "553f9eedd22cccebb58a49098cb90e35ce1c29297784a425cb522261bafd7bf5",
+  "expanded_source_sha256": "0c06b6069a5203c79b783e219fa51fd8b495822f45dd42e73279c02ed1480eda",
+  "compiler_input_sha256": "6c82ec41df313a014a585c29a509908e9ee7b54a5726065febd7c4b09881a30e",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "c03f59c7acefb454fdf5f1363f9aad1d43bbee8bc29bd5a8f2b3d509d8c84ed0",
+  "object_sha256": "02636c6c0c22a4a84fabacb0a5a9e5fd93706666d109e44815c265112362e91b",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
