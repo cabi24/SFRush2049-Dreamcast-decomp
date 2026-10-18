@@ -70,7 +70,7 @@ void AnimateForwardLights(int idx, int slot, float *backpos, float *frontpos)
     float delta[3]; /* target stack+56, declared before uvs */
     float surface_uvs[3][3]; /* stack+20 */
     float (*uvs)[3] = surface_uvs; /* target retained address r8 */
-    surftyp *surf; /* r0 */
+    tHeadlightSurface *surf; /* r0 */
     tRGBA clr = {255,255,255,243}; /* stack */
 
     surf = ShotToWorldCollision(backpos, frontpos, uvs, 0.5f, 1, 65535);
@@ -132,7 +132,7 @@ void AnimateDownwardLights(int idx, int slot, float *backpos, float *frontpos)
     float (*uvs)[3] = surface_uvs; /* target retained address r8 */
     float scf; /* f30 */
     float scl; /* f29 */
-    surftyp *surf; /* r0 */
+    tHeadlightSurface *surf; /* r0 */
     tRGBA clr = {255,255,255,243}; /* stack */
 
     surf = ShotToWorldCollision(backpos, frontpos, uvs, 1.0f, 1, 65535);

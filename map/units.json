@@ -297,7 +297,7 @@
    "confidence": "medium",
    "text": {
     "start": "0x8C010320",
-    "end": "0x8C0113C0"
+    "end": "0x8C011290"
    },
    "functions": [
     {
@@ -357,11 +357,11 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C011206",
+     "name": "get_buffer",
      "start": "0x8C011206",
      "end": "0x8C01120A",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "get_buffer",
+     "confidence": "high"
     },
     {
      "name": "func_8C01120A",
@@ -376,20 +376,6 @@
      "end": "0x8C01126E",
      "mat3": "unzipdata",
      "confidence": "medium"
-    },
-    {
-     "name": "func_8C011376",
-     "start": "0x8C011376",
-     "end": "0x8C01137A",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C01137A",
-     "start": "0x8C01137A",
-     "end": "0x8C01137E",
-     "mat3": null,
-     "confidence": "low"
     }
    ],
    "pools": [
@@ -444,15 +430,71 @@
     {
      "start": "0x8C01126E",
      "end": "0x8C011290"
+    }
+   ],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0B8C34",
+     "end": "0x8C0B8DA0"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C1225F0",
+     "end": "0x8C122610"
+    }
+   ],
+   "notes": "Inflater ends1290 after unzipdata pool. Old tail1290..13C0 is independent MAT3 asincos.c farcsine/fasin/facos, not owned/compiled here. DC allocates/frees12000-byte scratch; no s_buf BSS array. get_buffer proven call fallback; second zero stub remains anonymous."
+  },
+  {
+   "name": "asincos",
+   "source": "GameSource/src/asincos.c",
+   "kind": "game",
+   "confidence": "high",
+   "text": {
+    "start": "0x8C011290",
+    "end": "0x8C0113C0"
+   },
+   "functions": [
+    {
+     "name": "farcsine",
+     "start": "0x8C011290",
+     "end": "0x8C011376",
+     "mat3": "farcsine",
+     "confidence": "high"
     },
+    {
+     "name": "fasin",
+     "start": "0x8C011376",
+     "end": "0x8C01137A",
+     "mat3": "fasin",
+     "confidence": "high"
+    },
+    {
+     "name": "facos",
+     "start": "0x8C01137A",
+     "end": "0x8C01137E",
+     "mat3": "facos",
+     "confidence": "high"
+    }
+   ],
+   "pools": [
     {
      "start": "0x8C01137E",
      "end": "0x8C0113C0"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A78A4",
+     "end": "0x8C0A78B4"
+    }
+   ],
    "bss": [],
-   "notes": "inflate family in MAT3 order (alloc_zip_mem, huft_build, inflate_codes/stored/fixed/dynamic/block, inflate, get_buffer, unzipdata); called from _DecodeGhost. Not in alphabetical position (placed before atan.c). DC functions 13, MAT3 functions 12, named 9."
+   "notes": "Boundary proposal only; not assigned/compiled/edited as a source by unzip worker. Source asincos.c explains fabs/sqrt/rational polynomial and0/1 wrappers. C arrays 0A78A4..0A78AC={0,PIO4} and0A78AC..0A78B4={PIO2,PIO4} are proposed, not compiled or credited by unzip. Root accepted source-boundary evidence; remains unbuilt,0credit. Adds one previously unmapped source function to the denominator."
   },
   {
    "name": "atan",
@@ -3996,8 +4038,71 @@
      "end": "0x8C02555C"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA910",
+     "end": "0x8C0AA91C",
+     "notes": "forces1 addressed negative literals -30/-40/-.7 atpool423C/4318/431C; produced bytes only."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BD904",
+     "end": "0x8C0BD924",
+     "symbols": [
+      {
+       "name": "gWingDrag",
+       "start": "0x8C0BD904",
+       "size": 12
+      },
+      {
+       "name": "gWingLift",
+       "start": "0x8C0BD910",
+       "size": 12
+      },
+      {
+       "name": "gWingAngVDrag",
+       "start": "0x8C0BD91C",
+       "size": 8
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C568",
+     "end": "0x8C12C573",
+     "symbols": [
+      {
+       "name": "gWind",
+       "start": "0x8C12C568",
+       "size": 1
+      },
+      {
+       "name": "gGravity",
+       "start": "0x8C12C56C",
+       "size": 4
+      },
+      {
+       "name": "gSuperSpeed",
+       "start": "0x8C12C570",
+       "size": 1
+      },
+      {
+       "name": "gInvincible",
+       "start": "0x8C12C571",
+       "size": 1
+      },
+      {
+       "name": "gSpecialTires",
+       "start": "0x8C12C572",
+       "size": 1
+      }
+     ],
+     "notes": "C573..C574 unknown possible alignment; no BSS image credit."
+    }
+   ],
    "notes": "DC functions 17, MAT3 functions 17, named 17."
   },
   {
@@ -4263,18 +4368,18 @@
      "confidence": "high"
     },
     {
-     "name": "WRollUV",
+     "name": "WPitchUV",
      "start": "0x8C026524",
      "end": "0x8C0265D2",
-     "mat3": "WRollUV",
+     "mat3": "WPitchUV",
      "confidence": "high"
     },
     {
-     "name": "func_8C0265D2",
+     "name": "WRollUV",
      "start": "0x8C0265D2",
      "end": "0x8C026674",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "WRollUV",
+     "confidence": "high"
     },
     {
      "name": "RotateUV",
@@ -4429,9 +4534,16 @@
      "end": "0x8C027164"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BD924",
+     "end": "0x8C0BD96C",
+     "name": "unitmatrix_uvector_rvector"
+    }
+   ],
    "bss": [],
-   "notes": "BodyVector/WorldVector anchors. DC functions 31, MAT3 functions 31, named 27."
+   "notes": "BodyVector/WorldVector anchors. DC functions 31, MAT3 functions 31, named 27. Private correction: 6524 rotates columns 1/2 (WPitch); 65D2 columns 0/1 (WRoll). Data unique MAT3 initializer match."
   },
   {
    "name": "front",
@@ -8407,9 +8519,182 @@
      "end": "0x8C0435F4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC1AC",
+     "end": "0x8C0AC2DC"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BEECC",
+     "end": "0x8C0BF75D"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 11, MAT3 functions 11, named 11."
+   "notes": "DC functions 11, MAT3 functions 11, named 11.",
+   "data_padding": [
+    {
+     "start": "0x8C0BEF45",
+     "end": "0x8C0BEF48",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BEF85",
+     "end": "0x8C0BEF88",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BEFC5",
+     "end": "0x8C0BEFC8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF005",
+     "end": "0x8C0BF008",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF045",
+     "end": "0x8C0BF048",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF085",
+     "end": "0x8C0BF088",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF0C5",
+     "end": "0x8C0BF0C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF105",
+     "end": "0x8C0BF108",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF145",
+     "end": "0x8C0BF148",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF185",
+     "end": "0x8C0BF188",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF1C5",
+     "end": "0x8C0BF1C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF205",
+     "end": "0x8C0BF208",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF245",
+     "end": "0x8C0BF248",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF285",
+     "end": "0x8C0BF288",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF2C5",
+     "end": "0x8C0BF2C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF305",
+     "end": "0x8C0BF308",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF345",
+     "end": "0x8C0BF348",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF385",
+     "end": "0x8C0BF388",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF3C5",
+     "end": "0x8C0BF3C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF405",
+     "end": "0x8C0BF408",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF445",
+     "end": "0x8C0BF448",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF485",
+     "end": "0x8C0BF488",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF4C5",
+     "end": "0x8C0BF4C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF505",
+     "end": "0x8C0BF508",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF545",
+     "end": "0x8C0BF548",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF585",
+     "end": "0x8C0BF588",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF5C5",
+     "end": "0x8C0BF5C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF605",
+     "end": "0x8C0BF608",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF645",
+     "end": "0x8C0BF648",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF685",
+     "end": "0x8C0BF688",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF6C5",
+     "end": "0x8C0BF6C8",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+     "start": "0x8C0BF705",
+     "end": "0x8C0BF708",
+     "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    }
+   ]
   },
   {
    "name": "pakerr",
@@ -11481,7 +11766,15 @@
     }
    ],
    "data": [],
-   "bss": [],
+   "bss": [
+    {
+     "start": "0x8C1583B0",
+     "end": "0x8C1585D4",
+     "name": "B",
+     "section": "B",
+     "notes": "Private target-backed proposal: gStuntInfo[4] then chW0..okToStart, GCabsW[3], eTime; validate native extent."
+    }
+   ],
    "notes": "DC functions 13, MAT3 functions 13, named 13."
   },
   {
@@ -11677,7 +11970,13 @@
      "end": "0x8C057634"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0ACA6C",
+     "end": "0x8C0ACA70"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 12, MAT3 functions 12, named 11."
   },
@@ -12305,24 +12604,24 @@
    },
    "functions": [
     {
-     "name": "func_8C05B09C",
+     "name": "TB_Vector2Normalize",
      "start": "0x8C05B09C",
      "end": "0x8C05B0D4",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "TB_Vector2Normalize",
+     "confidence": "high"
     },
     {
      "name": "TB_Vector3Normalize",
      "start": "0x8C05B0D4",
      "end": "0x8C05B120",
      "mat3": "TB_Vector3Normalize",
-     "confidence": "medium"
+     "confidence": "high"
     }
    ],
    "pools": [],
    "data": [],
    "bss": [],
-   "notes": "DC functions 2, MAT3 functions 2, named 1."
+   "notes": "Two MAT3 normalization functions proven by target FPU, component access and zero defaults. B09C..B0D4 is TB_Vector2Normalize; B0D4..B120 is TB_Vector3Normalize. No pools/data/BSS."
   },
   {
    "name": "text",
@@ -14237,9 +14536,23 @@
      "end": "0x8C0686F0"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "deflate family in MAT3 order (tr_static_init ... deflate_slow). DC functions 25, MAT3 functions 25, named 11."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0C7970",
+     "end": "0x8C0C7B4C",
+     "name": "zip_configuration_trees_initflag"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C15FF7C",
+     "end": "0x8C15FF7D",
+     "name": "zip_known_B_base_only"
+    }
+   ],
+   "notes": "deflate family in MAT3 order (tr_static_init ... deflate_slow). DC functions 25, MAT3 functions 25, named 11. Private B end160860 is source-derived scaffold, no image credit/end claim; six array starts proven by pools. Anonymous aliases retained; empty final4-byte function implemented with no invented semantic name. B base15FF7C known; final static allocation end160860 unproven and not claimed, single-byte placement prefix only."
   },
   {
    "name": "zoid",

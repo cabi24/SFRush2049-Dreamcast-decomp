@@ -16,7 +16,19 @@
 /* Only the drivetrain tail is proven. MAT3 size 0xb4 is consistent (downshiftangvel ends at 0xb4)
    but the struct is never indexed on DC yet, so its size is not evidence-backed. */
 typedef struct tCar {
-    char pad0[0x70];
+
+ char pad0[0xc];
+ float invi[3]; /* +00C: calcaa50AE/50B2(+c),50B4/50BC(+10),50C6/50CA(+14). */
+ float springrate[4]; /* +018: 3EFE mov#18,3F04 loadFR7; following tire calls+4. */
+ float farspringrate; /* +028: 3EF4 mov#28/3EFA loadFR8. */
+ char pad1[0x4];
+ float cdamping[4]; /* +030: 3EE6 mov#30/3EF0 loadFR9; following tire calls+4. */
+ float rdamping[4]; /* +040: 3EF8 add#40/3EFC loadFR10; following tire calls+4. */
+ char pad2[0x8];
+ float srefpcybo2; /* +058: 4166 mov#58/load4168. */
+ float rollresist; /* +05C: 417C mov#5c/load4180. */
+ char pad3[0x10];
+
     float tireR[4][3]; /* road8C04AC44..AC52: +70. */
     float enginvmi;         /* 0xa0  whatslips pool 8C022EE8 (0x00a0), mov.l @r4 = m->car */
     float dwratio;          /* 0xa4  transmission pool 8C022FDE (0x00a4), find_best_gear 8C0230A2 */
@@ -27,11 +39,14 @@ typedef struct tCar {
 
 /* ------------------------------------------------------------------ tTune (MAT3 anon_diffbl_weight_scale_2c) */
 typedef struct tTune {
-    char pad0[0x08];
+    float diffbl; /* drivsym42E0/42E6. */
+    char pad0[4];
     float torque_scale;     /* 0x08  enginetorque (drivetra_part), m->tune->torque_scale */
     float trans_scale;      /* 0x0c  transmission 8C022FB6 mov #0xc; fmov.s @(r0,r3) */
     float clutchmaxtk;      /* 0x10  whatslips 8C022E44 mov #0x10 */
     float shiftk;           /* 0x14  autoshift 8C022F16 mov #0x14 */
+    char pad_antispin[0x24-0x18];
+    float antispin; /* drivsym39F4/39FC. */
 } tTune;
 
 /* ------------------------------------------------------------------ tTire (MAT3 anon_tradius_springK_5c) */
@@ -47,8 +62,9 @@ typedef struct tTire {
 /* ------------------------------------------------------------------ tFastIn (MAT3 anon_modelIteration_modelTime_10) */
 /* size not proven on DC (MAT3: 0x10); nothing after it in tModelData is used yet. */
 typedef struct tFastIn {
-    char pad0[0x04];
+    int modelIteration; /* drivsym34C8. */
     float modelTime;        /* 0x04  upshift/downshift pool 8C0230A8 (0x0714 = fastin 0x710 + 4) */
+    float dt; /* drivsym33C8,model+718. */
 } tFastIn;
 
 typedef struct tRekonState {
@@ -78,7 +94,7 @@ typedef struct tRoadInit {
 } tRoadInit;
 typedef struct tMainIn {
  volatile float wheel; /* +720:poolE81C/loadE756/storeE816. */
- char pad0[4];
+ volatile float clutch; /* drivsym33CE,model+724. */
  volatile float brake; /* +728:poolE61C,storeE6C4. */
  volatile float throttle; /* +72c:poolE61A,storeE590. */
  volatile signed char gear; /* +730:poolE538,load/storeE49C..4CE. */
@@ -86,6 +102,13 @@ typedef struct tMainIn {
  volatile signed char abort; /* +732:poolEBE0/storeEBBC. */
  char pad1[0x14-0x13]; /* mainin region to734; extent named only through732. */
 } tMainIn;
+
+typedef struct surftyp {
+ char pad0[0x2];
+ unsigned short snd_flags; /* +002: 3B78/3B7A. */
+ signed short uvs[3][3]; /* +004: 3A80..3AAC +4/+6/+8 signedshort. */
+ char pad1[0x2]; /* target-proven stride; see checks below. */
+} surftyp;
 
 /* ------------------------------------------------------------------ tModelData */
 typedef struct tModelData {
@@ -96,31 +119,45 @@ typedef struct tModelData {
     signed char autotrans;  /* 0x00a drivetrain 8C022CAC mov.b @(0xa,r14) */
     signed char handling;   /* 0x00b enginetorque (drivetra_part) */
     signed char engine_type;/* 0x00c enginetorque (drivetra_part) */
-    char pad1[0x4c-0x0d];
+    char pad1[3];
+    float f[3],m[3],a[3],aa[3],v[3]; /* drivsym4962..4972,3E4C. */
     float w[3]; /* rekon 8C047D0C..2A. */
-    char pad_w[0x64-0x58];
+    float d[3]; /* drivsym4118..411C. */
     float tireForce[4][3];  /* 0x064 drivetrain 8C022CDE add #0x64; [3][1] at +0x28, [2][1] at +0x1c; pool 8C022DC6 (0x80), 8C022DCA (0x8c) */
-    char pad2[0xc4-0x94];
+    float tireV[4][3]; /* drivsym3FA0/3E1E. */
     float bodyForce[4][3]; /* road8C04B0E6/B0F0. */
     float bodyR[4][3]; /* road pool8C04AEC0. */
-    char pad_rwa[0x214-0x124];
+ float centerForce[3]; /* +124: pool 8C023832/load 8C0236EC. */
+ float centerForceLast[3]; /* +130:38AE base124,38B2 add#c/store38B4; nextcomponents38BC/C4. */
+ float centerMoment[3]; /* +13C: pool 8C02499A/load 8C024916. */
+ float peak_body_force[2][3]; /* +148: pool 8C023838/load 8C02374C. */
+ float peak_center_force[2][3]; /* +160: pool 8C023834/load 8C0236F0. */
+ float tireuvs[4][3][3]; /* +178: pool 8C023FA2/load 8C023E22. */
+ float g[3]; /* +208: pool 8C02457C/load 8C02442A. */
     float rwa[3]; /* rekon pool 8C047EDC. */
     float rwv[3]; /* rekon pool 8C047D60. */
     float rwr[3]; /* rekon pool 8C047D64. */
-    char pad_uvs[0x244-0x238];
+    float rwr2[3]; /* drivsym4C70..C92. */
     float tireRwr[4][3],bodyrwr[4][3],bodyrwr2[4][3]; /* road8C04ACE6/AEBC/AEC2. */
-    char pad_model_uvs[0x2ec-0x2d4];
+    float grw[3],stuntW[3]; /* drivsym457E/4D8A. */
     float uvs[3][3]; /* CopyUV source 8C047D6E. */
     float roaduvs[4][3][3]; /* road8C04B1BE/B13A..148. */
-    char pad_torque[0x3b4-0x3a0];
+    char pad_steer[0x10];
+    float steerangle; /* drivsym36A8/3630. */
     float torque[4];        /* 0x3b4 drivetrain pool 8C022DC8 (0x03bc = torque[2]), add #4 -> torque[3] */
-    char pad3[0x3cc - 0x3c4];
+    float steergain; /* drivsym33CC/333C. */
+    char pad_clutch[4];
     float clutch;           /* 0x3cc whatslips pool 8C022DD6 (0x03cc) */
     float throttle;         /* 0x3d0 autoshift pool 8C022FD2 (0x03d0) */
-    char pad4[0x3f4 - 0x3d4];
+    float brake; /* drivsym33D6/3388. */
+    char pad_brake[4];
+    float brakegain[4]; /* drivsym34CE/346E. */
+    char pad_magvel[4];
+    float magvel; /* drivsym3A18/396E. */
     signed short gear;      /* 0x3f4 pools 8C022EE4, 8C022FD8, 8C0230A0 (mov.w @(r0,r4)) */
     signed short commandgear; /* 0x3f6 autoshift pool 8C022FD6 (0x03f6) */
-    char pad5[0x400-0x3f8];
+    signed short wing; /* stunt55BD8 and drivsym4212. */
+    char pad5[6];
     float catchup; /* model 8C040CD2/8C040C8C. */
     float engtorque;        /* 0x404 whatslips pool 8C022EEA (0x0404) */
     float engangvel;        /* 0x408 whatslips pool 8C022DD4, autoshift 8C022FDA (0x0408) */
@@ -136,7 +173,12 @@ typedef struct tModelData {
     tTire tires[4];         /* 0x430 drivetrain pool 8C022DBC (0x0430) used as the array base */
     unsigned short tiresli[4]; /* skids 8C04EF10..F20. */
     signed char magicdiff;  /* 0x5a8 drivetrain pool 8C022DC2 (0x05a8), mov.b @(r0,r14) */
-    char pad7[0x5cc-0x5a9];
+    signed char nothrusttorque; /* drivsym430E. */
+    char pad_drift[2];
+    float drift; /* drivsym3A14. */
+    char pad_offroad[4];
+    float offroadtires,wingEffect,weight,mass; /* drivsym4218/4996/499C/3B28. */
+    char pad_suscomp[8];
     float suscomp[4]; /* physical: rekon 8C047ED4. */
     float tpcomp[4]; /* road pool8C04ACEA. */
     float airdist[4]; /* physical: rekon 8C047ED8. */
@@ -147,17 +189,23 @@ typedef struct tModelData {
     unsigned short sound_flags[4]; /* road8C04ACF2. */
     float dt;               /* 0x634 whatslips pool 8C022EEC (0x0634) */
     float idt; /* road8C04B30C/B24A. */
-    char pad9[0x640-0x63c];
+    float crashthreshold; /* drivsym5344/52D6. */
     signed char crashflag;  /* 0x640 engine (drivetra_part) */
-    char pad10[0x648-0x641];
-    void *movingSurface; /* road8C04B1BC/B120. */
-    char pad_shift[0x658-0x64c];
+    signed char topscrape,thumpflag; /* drivsym543A/52CE. */
+    char pad_thump[1];
+    signed short thump_side; /* drivsym5342/52C6. */
+    char pad_surface[2];
+    surftyp *movingSurface; /* road8C04B1BC/B120. */
+    char pad_bodyforces[4];
+    float bodyForces; /* drivsym4584/4540. */
+    char pad_shift[4];
     float shifttime;        /* 0x658 upshift/downshift pool 8C0230A6 (0x0658) */
-    char pad11[0x660-0x65c];
+    signed short bogState; /* drivsym36AE/368E. */
+    char pad11[2];
     tResurrect resurrect; /* moving_state+6c4: headlights 8C0305C4/C6. */
     tRoadInit initin; /* road base6D0, pools8C04ACCE..704. */
     tFastIn fastin;         /* 0x710 (modelTime at 0x714, pool 8C0230A8) */
-    char pad_main[0x720-0x718];
+    char pad_main[0x720-0x71c];
     tMainIn mainin; /* controls wheel720..abort732, region to734. */
     tRekonState reckon; /* +734..7c4, all fields proven in rekon. */
     char pad_slot[2];
@@ -165,7 +213,9 @@ typedef struct tModelData {
     signed short in_game; /* +7c8: rekon 8C047C2A. */
     signed short we_control; /* drones pool8C025C0A. */
     signed char drone_type; /* +7cc: checkpoint 8C01C3BC. */
-    char pad_appearance[0x7d4-0x7cd];
+    char pad_rpm[3];
+    signed short rpm; /* drivsym369E/35EE. */
+    char pad_appearance[2];
     unsigned int appearance; /* checkpoint 8C01C28C. */
     char pad_started[0x7dc-0x7d8];
     signed char started; /* checkpoint 8C01C0DA. */
@@ -187,7 +237,7 @@ typedef struct tModelData {
 typedef char dc_check_tTire_size[(sizeof(tTire) == 0x5c) ? 1 : -1];
 typedef char dc_check_tModelData_size[(sizeof(tModelData) == 0x808) ? 1 : -1];
 typedef char dc_check_tCar_size[(sizeof(tCar) == 0xb4) ? 1 : -1];
-typedef char dc_check_tTune_size[(sizeof(tTune) == 0x18) ? 1 : -1];
+typedef char dc_check_tTune_size[(sizeof(tTune) == 0x28) ? 1 : -1];
 
 
 /* Shared layouts integrated from frozen worker receipts, 2026-10-18. */
@@ -423,9 +473,13 @@ typedef struct tCarData {
     char pad_crash[0x36e-0x32a];
     signed short weight_index; /* drones8C025798/56C2. */
     signed char crash_state,dead; /* +370/+371: checkpoint 8C01BE7C/1BBBC. */
-    char pad_camera[2];
+    signed char in_tunnel; /* drivsym420C/4126. */
+    char pad_camera[1];
     signed char camera,view; /* smoke8C05066E/670. */
-    char pad_battle[0x39c-0x376];
+    char pad_stunt[0x380-0x376];
+    float stuntW[3]; /* stunt553C6/C8/CA. */
+    char pad_player[0x398-0x38c];
+    struct tPadState *player; /* drivsym4994/48BE..48E0. */
     anon_weapon_health_30 battle; /* powerups +39c, stride3cc. */
 } tCarData;
 

@@ -17,7 +17,7 @@ typedef struct CarParts {
     char pad1[0x60-0x30];
 } CarParts;                /* slot*3*32,8C02FDF2..FDFE. */
       /* target8C02FE60/66 stride58. */
-typedef struct surftyp { unsigned short flags; } surftyp; /* only+0 word known. */
+typedef struct tHeadlightSurface { unsigned short flags; } tHeadlightSurface; /* only+0 word known. */
 extern tCarData gGameCar[];
 extern tModelData model[];
 extern CarParts gCarParts[];
@@ -30,7 +30,7 @@ signed short MBOX_NewObject(int,tUVMatrix *,int,unsigned int);
 void MBOX_HideObject(int,int,int);
 void MBOX_ShowObject(int,int,int);
 void ZOID_SetColor(signed short,tRGBA *);
-surftyp *ShotToWorldCollision(float *,float *,float (*)[3],float,int,int);
+tHeadlightSurface *ShotToWorldCollision(float *,float *,float (*)[3],float,int,int);
 void CopyUV(float (*)[3],float (*)[3]);
 float NormalVector(float *);
 void WorldVector(float *,float *,float (*)[3]);
