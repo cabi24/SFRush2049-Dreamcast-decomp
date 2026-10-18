@@ -1,0 +1,42 @@
+{
+  "unit": "demo",
+  "text_nonpadding": 842,
+  "data_nonpadding": 45,
+  "exact_functions": 7,
+  "text_spans": [
+    [
+      "8C022958",
+      "8C022C76"
+    ],
+    [
+      "8C022C78",
+      "8C022CA4"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AA8EC",
+      "8C0AA910"
+    ],
+    [
+      "8C0BD8F4",
+      "8C0BD8F5"
+    ],
+    [
+      "8C0BD8F8",
+      "8C0BD8FD"
+    ],
+    [
+      "8C0BD8FE",
+      "8C0BD901"
+    ]
+  ],
+  "source_sha256": "254cebbefff47adf4a2e9a019f9a8488e2539280bc1cd2e070ac3852315e889f",
+  "expanded_source_sha256": "72fc065a00e32c5c3915d822abcb59706214b6972aaac2ed6be89c37bee14d52",
+  "linked_abs_sha256": "e80622d67670dff22f10cb23dd836cc0d945e7e8e9ab6912f58a60bc13d013b0",
+  "object_sha256": "5473f9c8352270f294b7dce9173f87437d280a9e886914f66e67ee8cb5903012",
+  "policy": "Separate native translation-unit links, not a full integration image build.",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
