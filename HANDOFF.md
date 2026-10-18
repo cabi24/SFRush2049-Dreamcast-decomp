@@ -34,14 +34,20 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | bstree | 220 | 0 | 6/6 |
 | camera | 108 | 1,642 | 1/23 |
 | carload | 1,024 | 0 | 1/1 |
+| carscr | 0 | 9,760 | 0/22 |
 | cheatscr | 1,482 | 52 | 4/5 |
 | checkpoint | 118 | 24 | 3/8 |
 | circuit | 144 | 376 | 1/5 |
+| circuitscr | 0 | 949 | 0/19 |
 | controls | 1,190 | 104 | 5/11 |
 | controlscr | 0 | 4,999 | 0/11 |
 | controlsys | 438 | 122 | 5/11 |
 | countdown | 770 | 69 | 2/2 |
+| dc_audio64_init_8C06ADD4 | 108 | 317 | 2/16 |
+| dc_blit_8C06B2EC | 1,252 | 5 | 10/12 |
+| dc_misc_8C06B80C | 0 | 24 | 0/13 |
 | dc_sound_8C069F78 | 0 | 28 | 0/23 |
+| dc_unk_8C069E34 | 0 | 0 | 0/1 |
 | demo | 842 | 45 | 7/7 |
 | drivetra | 794 | 0 | 6/10 |
 | drivsym | 244 | 44 | 1/17 |
@@ -71,12 +77,14 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | pane | 1,082 | 480 | 3/5 |
 | password | 884 | 305 | 5/6 |
 | pausescr | 6 | 445 | 1/12 |
+| playerscr | 0 | 6,038 | 0/30 |
 | powerups | 1,580 | 8 | 8/8 |
 | rekon | 770 | 0 | 4/4 |
 | resurrect | 0 | 328 | 0/19 |
 | road | 18 | 0 | 0/3 |
 | save | 0 | 35 | 0/62 |
 | selectcarload | 244 | 4 | 2/7 |
+| shots | 0 | 280 | 0/16 |
 | skids | 2,186 | 20 | 6/8 |
 | sky | 458 | 7 | 3/3 |
 | smoke | 92 | 154 | 2/6 |
@@ -94,6 +102,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | timer | 0 | 16 | 0/9 |
 | titlescr | 264 | 176 | 1/2 |
 | tracks | 1,116 | 407 | 3/3 |
+| trackscr | 0 | 2,968 | 0/29 |
 | unk_8C03A360 | 46 | 5 | 0/2 |
 | unk_8C055F38 | 56 | 0 | 0/1 |
 | unzip | 26 | 362 | 1/11 |
@@ -112,13 +121,13 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **47,114 /569,664 (8.2705%)**, plus **34,558 initialized data bytes**.
-Whole-image credit: **81,672 /1,123,492 (7.2695%)**, **303 exact source functions**, 91 source units.
-The twelfth batch adds 652 text/literal bytes, 3,755
-initialized data bytes and 6 exact functions. The audited batch is locally committed
-through `4d7dcf671e7ff4a67ed0da7716015c9fbaea44e9`. No remote push was performed.
+Game text/literal credit: **48,474 /569,664 (8.5092%)**, plus **54,899 initialized data bytes**.
+Whole-image credit: **103,373 /1,123,492 (9.2010%)**, **315 exact source functions**, 100 source units.
+The thirteenth batch adds 1,360 text/literal bytes, 20,341
+initialized data bytes and 12 exact functions. The audited batch is locally committed
+through `a3020169d77ff300ea6ca4e304109fd42548b512`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-twelfth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-thirteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -126,7 +135,7 @@ Compiler, linker and flags remain frozen. Only units whose compiler input change
 native link; byte-identical inputs may retain the already-verified native artifacts.
 
 The audio/stree generated epilogues are part of their source functions. Current total/game
-function denominators are 4,725/1,563. The two original gameover tail atoms and their
+function denominators are 4,718/1,556. The two original gameover tail atoms and their
 external pool belong to gamerecords; identities stay conservative pending mapping review.
 Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
 no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
@@ -139,6 +148,11 @@ The external SetNewPathIndex entry is split from SetDroneResPathIndex with uncha
 that split adds one source function and earns no extra bytes. Videoscr removes one unproven
 empty stub from the heuristic denominator; its four RTS/NOP bytes remain an unsourced gap.
 World and circuit retain their original function-address aliases after semantic map renames.
+Carscr merges seven internal fragments into its real updateCarScreen stack frame (-7 heuristic
+functions); playerscr owns its proved two-function button prefix from recordscr, with count unchanged.
+ZIP uses the normal allocator at0x8C040256; the distinct high-end allocator is0x8C040380.
+Queue SDK status tests have no failure action and are omitted; their earlier private88 pool bytes
+are uncredited. Three uncertain primitive-color RGB bytes also remain uncredited.
 Six private matching lanes continue on disjoint units; later private packets are excluded until
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
 no full game image build or game execution was performed.
