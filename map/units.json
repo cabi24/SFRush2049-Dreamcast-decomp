@@ -11838,11 +11838,11 @@
      "confidence": "high"
     },
     {
-     "name": "_NewPlayer",
+     "name": "_AlreadyReadPlayer",
      "start": "0x8C04CDC0",
      "end": "0x8C04CDE2",
-     "mat3": "_NewPlayer",
-     "confidence": "low"
+     "mat3": "_AlreadyReadPlayer",
+     "confidence": "high"
     },
     {
      "name": "_ReadPlayer",
@@ -11908,11 +11908,11 @@
      "confidence": "low"
     },
     {
-     "name": "func_8C04DC90",
+     "name": "_AlreadyReadGhost",
      "start": "0x8C04DC90",
      "end": "0x8C04DCB2",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_AlreadyReadGhost",
+     "confidence": "high"
     },
     {
      "name": "_ReadGhostHeader",
@@ -12188,9 +12188,46 @@
      "end": "0x8C04E880"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "SaveServer.gamePrefix",
+     "section": "C",
+     "start": "0x8C0AC4BC",
+     "end": "0x8C0AC4C8"
+    },
+    {
+     "name": "SaveServer.playerExtension",
+     "section": "C",
+     "start": "0x8C0AC4C8",
+     "end": "0x8C0AC4CC"
+    },
+    {
+     "name": "SaveServer.trainingExtension",
+     "section": "C",
+     "start": "0x8C0AC4CC",
+     "end": "0x8C0AC4D0"
+    },
+    {
+     "name": "save_flags_and_scan_state",
+     "section": "D",
+     "start": "0x8C0BFCE0",
+     "end": "0x8C0BFCF4"
+    }
+   ],
    "bss": [],
-   "notes": "SaveInit, SaveServer (\"RUSH2049\", \"TRN\") first. DC functions 62, MAT3 functions 67, named 55."
+   "notes": "SaveInit, SaveServer (\"RUSH2049\", \"TRN\") first. DC functions 62, MAT3 functions 67, named 55. Private bounded packet: first5 source functions only, later57 functions remain external/unported. Two target-proven AlreadyRead identities replace misleading original names, same boundaries.",
+   "data_padding": [
+    {
+     "start": "0x8C0AC4C5",
+     "end": "0x8C0AC4C8",
+     "reason": "RUSH2049 NUL endsC4C5; independently addressed P string startsC4C8."
+    },
+    {
+     "start": "0x8C0AC4CA",
+     "end": "0x8C0AC4CC",
+     "reason": "P NUL endsC4CA; independent TRN string startsC4CC."
+    }
+   ]
   },
   {
    "name": "skids",
@@ -19971,7 +20008,7 @@
    "confidence": "low",
    "text": {
     "start": "0x8C07D90C",
-    "end": "0x8C07DB38"
+    "end": "0x8C07D9F8"
    },
    "functions": [
     {
@@ -19994,23 +20031,12 @@
      "end": "0x8C07D9DA",
      "mat3": null,
      "confidence": "low"
-    },
-    {
-     "name": "func_8C07D9F8",
-     "start": "0x8C07D9F8",
-     "end": "0x8C07DADE",
-     "mat3": null,
-     "confidence": "low"
     }
    ],
    "pools": [
     {
      "start": "0x8C07D9DA",
      "end": "0x8C07D9F8"
-    },
-    {
-     "start": "0x8C07DADE",
-     "end": "0x8C07DB38"
     }
    ],
    "data": [],
@@ -20023,10 +20049,17 @@
    "kind": "game",
    "confidence": "medium",
    "text": {
-    "start": "0x8C07DB38",
+    "start": "0x8C07D9F8",
     "end": "0x8C07DC08"
    },
    "functions": [
+    {
+     "name": "func_8C07D9F8",
+     "start": "0x8C07D9F8",
+     "end": "0x8C07DADE",
+     "mat3": null,
+     "confidence": "low"
+    },
     {
      "name": "animText",
      "start": "0x8C07DB38",
@@ -20037,13 +20070,38 @@
    ],
    "pools": [
     {
+     "start": "0x8C07DADE",
+     "end": "0x8C07DB38"
+    },
+    {
      "start": "0x8C07DBCC",
      "end": "0x8C07DC08"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B243C",
+     "end": "0x8C0B2460"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B2460",
+     "end": "0x8C0B24A8"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B24A8",
+     "end": "0x8C0B24C3"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CDB84",
+     "end": "0x8C0CDB8D"
+    }
+   ],
    "bss": [],
-   "notes": "\"Built %s %s\" string. DC functions 1, MAT3 functions 2, named 1."
+   "notes": "\"Built %s %s\" string. DC functions 1, MAT3 functions 2, named 1. Root-reviewed license update body and pool transferred from adjacent anonymous unit. Original anonymous function ID retained; updateLicenseScreen role is source/caller/field proven. No byte or source-count credit from transfer. Data: SOFDEC1/MIDWAY2 descriptors viaDB08/DB20;format and names through24C3; sofdecBlit/blit/inited viaDAF8/DB1C/DB18 atCDB84/88/8C through8D. Final C/D alignment unclaimed."
   },
   {
    "name": "modescr",
@@ -21476,7 +21534,13 @@
      "end": "0x8C08B914"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B27C0",
+     "end": "0x8C0B27C4"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 7, MAT3 functions 7, named 5."
   },

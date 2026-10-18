@@ -1,0 +1,18 @@
+{
+  "approved_private_ownership_transfer": true,
+  "source_owner": "licensescr",
+  "original_function_id": "func_8C07D9F8",
+  "semantic_role": "updateLicenseScreen",
+  "function_start": "0x8C07D9F8",
+  "function_end": "0x8C07DADE",
+  "pool_end": "0x8C07DB38",
+  "target_words_independently_verified": 160,
+  "raw_target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+  "adjacent_unit": "unk_8C07D90C",
+  "byte_union_preserved": true,
+  "source_function_count_preserved": true,
+  "existing_front_alias_retained": true,
+  "canonical_changed": false,
+  "canonical_acceptance_batch": "tenth",
+  "review_scope": "Original anonymous ID and front dispatch alias retained; full byte union and source count unchanged."
+}
