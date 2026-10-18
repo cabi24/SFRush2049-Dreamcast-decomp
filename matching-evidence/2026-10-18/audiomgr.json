@@ -1,0 +1,34 @@
+{
+  "unit": "audiomgr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 381,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0A7A50",
+      "8C0A7B87"
+    ],
+    [
+      "8C0BAD44",
+      "8C0BAD49"
+    ],
+    [
+      "8C0BAD4C",
+      "8C0BAD81"
+    ],
+    [
+      "8C0BAD84",
+      "8C0BAD90"
+    ]
+  ],
+  "source_sha256": "cf7a93ff2669ee3733b423686a41885aa73422d7afd24d9aa8ff2b9aa8f47ee3",
+  "expanded_source_sha256": "33ed61b73ebda3f139e7df6a157f4b7c18697d3e391184d72c614c326e5a18a5",
+  "compiler_input_sha256": "932a668c74466d5a70c51c07b79d834badeb9552637fe08dd011cfad5bcc4c23",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "d596cf6f11461ca43c65af77345d66551cd0872747c5e7e34e72a8bd05fc6c57",
+  "object_sha256": "cca5cd8791399cc89cef9f28a36c1ce8bf0c5e408dcbf427b5a5d670118c7bcc",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
