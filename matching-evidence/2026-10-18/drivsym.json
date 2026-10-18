@@ -1,0 +1,31 @@
+{
+  "unit": "drivsym",
+  "text_nonpadding": 244,
+  "data_nonpadding": 44,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C02393C",
+      "8C023A30"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AA910",
+      "8C0AA91C"
+    ],
+    [
+      "8C0BD904",
+      "8C0BD924"
+    ]
+  ],
+  "source_sha256": "d9315eec53f9a94c03f37793b8b3f54c00ade314f8670dac81cd6e3a320337fe",
+  "expanded_source_sha256": "5b6f84b1e82f6cb2bf3ca35a206d20243ad8bbe0c161b742b2abd616efb8ba57",
+  "compiler_input_sha256": "5415ee7a68b90c736f88ab6a34e8f5bf3704845a2940fde336cbf39f91cb1e92",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "de828512647ad54c20ee0f1888f14ec60015f168252a7d01e5004e7e9928c5f8",
+  "object_sha256": "f88947d27f0313e79a6d87a89a8a27d2be3a61aa739f76eab8730acb637c023f",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
