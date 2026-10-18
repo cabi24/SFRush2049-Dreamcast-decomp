@@ -21,11 +21,39 @@
   ],
   "progress_categories": [
     {
+      "id": "startup",
+      "name": "Startup"
+    },
+    {
       "id": "game",
       "name": "Game code"
+    },
+    {
+      "id": "library",
+      "name": "Library"
+    },
+    {
+      "id": "sdk",
+      "name": "SDK"
+    },
+    {
+      "id": "data",
+      "name": "Data"
     }
   ],
   "units": [
+    {
+      "name": "startup",
+      "target_path": "build/target/startup.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "startup"
+        ],
+        "auto_generated": true
+      }
+    },
     {
       "name": "timer",
       "target_path": "build/target/timer.o",
@@ -41,8 +69,454 @@
       }
     },
     {
+      "name": "unk_8C010218",
+      "target_path": "build/target/unk_8C010218.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unzip",
+      "target_path": "build/target/unzip.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "atan",
+      "target_path": "build/target/atan.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "audio",
+      "target_path": "build/target/audio.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "audiomgr",
+      "target_path": "build/target/audiomgr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "audiosfx",
+      "target_path": "build/target/audiosfx.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "audioscr",
+      "target_path": "build/target/audioscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "blit",
+      "target_path": "build/target/blit.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "bstree",
+      "target_path": "build/target/bstree.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "camera",
+      "target_path": "build/target/camera.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "carload",
+      "target_path": "build/target/carload.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "checkpoint",
+      "target_path": "build/target/checkpoint.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "circuit",
+      "target_path": "build/target/circuit.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "collision",
+      "target_path": "build/target/collision.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "controls",
+      "target_path": "build/target/controls.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "controlsys",
+      "target_path": "build/target/controlsys.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "controlscr",
+      "target_path": "build/target/controlscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "countdown",
+      "target_path": "build/target/countdown.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "demo",
+      "target_path": "build/target/demo.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "drivetra",
       "target_path": "build/target/drivetra.o",
+      "base_path": "build/obj/drivetra.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false,
+        "source_path": "src/drivetra.c"
+      }
+    },
+    {
+      "name": "drivsym",
+      "target_path": "build/target/drivsym.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "drones",
+      "target_path": "build/target/drones.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C0260F0",
+      "target_path": "build/target/unk_8C0260F0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fmath",
+      "target_path": "build/target/fmath.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "front",
+      "target_path": "build/target/front.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "game",
+      "target_path": "build/target/game.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "gameoverscr",
+      "target_path": "build/target/gameoverscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "gamerecords",
+      "target_path": "build/target/gamerecords.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "gfx",
+      "target_path": "build/target/gfx.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "ghost",
+      "target_path": "build/target/ghost.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "HAL_Support",
+      "target_path": "build/target/HAL_Support.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "HAL_text",
+      "target_path": "build/target/HAL_text.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "HAL_time",
+      "target_path": "build/target/HAL_time.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "headlights",
+      "target_path": "build/target/headlights.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "highscorescr",
+      "target_path": "build/target/highscorescr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "hud",
+      "target_path": "build/target/hud.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "Init",
+      "target_path": "build/target/Init.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "initiali",
+      "target_path": "build/target/initiali.o",
       "metadata": {
         "complete": false,
         "reverse_fn_order": false,
@@ -64,6 +538,1362 @@
         ],
         "auto_generated": false,
         "source_path": "src/ll.c"
+      }
+    },
+    {
+      "name": "unk_8C03A360",
+      "target_path": "build/target/unk_8C03A360.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "maxpath",
+      "target_path": "build/target/maxpath.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "mb_wad",
+      "target_path": "build/target/mb_wad.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "mbox",
+      "target_path": "build/target/mbox.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "mdrive",
+      "target_path": "build/target/mdrive.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "memsys",
+      "target_path": "build/target/memsys.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "model",
+      "target_path": "build/target/model.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "options",
+      "target_path": "build/target/options.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "optionscr",
+      "target_path": "build/target/optionscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "pakerr",
+      "target_path": "build/target/pakerr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "pane",
+      "target_path": "build/target/pane.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "password",
+      "target_path": "build/target/password.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "pathcommon",
+      "target_path": "build/target/pathcommon.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "pausescr",
+      "target_path": "build/target/pausescr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "stdlib",
+      "target_path": "build/target/stdlib.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "rekon",
+      "target_path": "build/target/rekon.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "resurrect",
+      "target_path": "build/target/resurrect.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "road",
+      "target_path": "build/target/road.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "save",
+      "target_path": "build/target/save.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "skids",
+      "target_path": "build/target/skids.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sky",
+      "target_path": "build/target/sky.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "smoke",
+      "target_path": "build/target/smoke.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "state",
+      "target_path": "build/target/state.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "statll",
+      "target_path": "build/target/statll.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "stree",
+      "target_path": "build/target/stree.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "stunt",
+      "target_path": "build/target/stunt.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C055F38",
+      "target_path": "build/target/unk_8C055F38.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "targetpaths",
+      "target_path": "build/target/targetpaths.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "targets",
+      "target_path": "build/target/targets.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "TB_text",
+      "target_path": "build/target/TB_text.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "TB_Vector",
+      "target_path": "build/target/TB_Vector.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "text",
+      "target_path": "build/target/text.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "textureanim",
+      "target_path": "build/target/textureanim.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "tires",
+      "target_path": "build/target/tires.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "tracks",
+      "target_path": "build/target/tracks.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "videoscr",
+      "target_path": "build/target/videoscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "visuals",
+      "target_path": "build/target/visuals.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "waves",
+      "target_path": "build/target/waves.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "world",
+      "target_path": "build/target/world.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C065F2C",
+      "target_path": "build/target/unk_8C065F2C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zip",
+      "target_path": "build/target/zip.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoid",
+      "target_path": "build/target/zoid.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoidblit",
+      "target_path": "build/target/zoidblit.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoidlight",
+      "target_path": "build/target/zoidlight.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoidpoly",
+      "target_path": "build/target/zoidpoly.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoidtexture",
+      "target_path": "build/target/zoidtexture.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "zoidwindow",
+      "target_path": "build/target/zoidwindow.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_unk_8C069E34",
+      "target_path": "build/target/dc_unk_8C069E34.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_sound_8C069F78",
+      "target_path": "build/target/dc_sound_8C069F78.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_audio64_init_8C06ADD4",
+      "target_path": "build/target/dc_audio64_init_8C06ADD4.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_blit_8C06B2EC",
+      "target_path": "build/target/dc_blit_8C06B2EC.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_misc_8C06B80C",
+      "target_path": "build/target/dc_misc_8C06B80C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_misc_8C06C08C",
+      "target_path": "build/target/dc_misc_8C06C08C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "paksysdc",
+      "target_path": "build/target/paksysdc.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_kamui_tex_8C06E5B4",
+      "target_path": "build/target/dc_kamui_tex_8C06E5B4.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_zoid_8C06ED90",
+      "target_path": "build/target/dc_zoid_8C06ED90.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "dc_asm_8C071C1C",
+      "target_path": "build/target/dc_asm_8C071C1C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "carscr",
+      "target_path": "build/target/carscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "cheatscr",
+      "target_path": "build/target/cheatscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "circuitscr",
+      "target_path": "build/target/circuitscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C07D90C",
+      "target_path": "build/target/unk_8C07D90C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "licensescr",
+      "target_path": "build/target/licensescr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "modescr",
+      "target_path": "build/target/modescr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "pakscr",
+      "target_path": "build/target/pakscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "playerscr",
+      "target_path": "build/target/playerscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "recordscr",
+      "target_path": "build/target/recordscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C0898D8",
+      "target_path": "build/target/unk_8C0898D8.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "selectcarload",
+      "target_path": "build/target/selectcarload.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "startscr",
+      "target_path": "build/target/startscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "titlescr",
+      "target_path": "build/target/titlescr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "trackscr",
+      "target_path": "build/target/trackscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "warningscr",
+      "target_path": "build/target/warningscr.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "hudextra",
+      "target_path": "build/target/hudextra.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "unk_8C0951C0",
+      "target_path": "build/target/unk_8C0951C0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "powerups",
+      "target_path": "build/target/powerups.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "shots",
+      "target_path": "build/target/shots.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "streaks",
+      "target_path": "build/target/streaks.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "weapons",
+      "target_path": "build/target/weapons.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "worlddam",
+      "target_path": "build/target/worlddam.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "shc_runtime_libc_1",
+      "target_path": "build/target/shc_runtime_libc_1.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "library"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "audio64",
+      "target_path": "build/target/audio64.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "shc_runtime_libc_2",
+      "target_path": "build/target/shc_runtime_libc_2.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "library"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "section_table",
+      "target_path": "build/target/section_table.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "startup"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "C_game",
+      "target_path": "build/target/C_game.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "C_libs",
+      "target_path": "build/target/C_libs.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "D_game",
+      "target_path": "build/target/D_game.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "D_libs",
+      "target_path": "build/target/D_libs.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_startup_8C0D2480",
+      "target_path": "build/target/sdk_startup_8C0D2480.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "startup"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_sofdec_8C0D26BC",
+      "target_path": "build/target/sdk_cri_sofdec_8C0D26BC.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_gdfs_8C0D4EC4",
+      "target_path": "build/target/sdk_gdfs_8C0D4EC4.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_shinobi_8C0D6F54",
+      "target_path": "build/target/sdk_shinobi_8C0D6F54.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_shinobi_dpldr_8C0DAA4C",
+      "target_path": "build/target/sdk_shinobi_dpldr_8C0DAA4C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_kamui2_8C0DAE60",
+      "target_path": "build/target/sdk_kamui2_8C0DAE60.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mw_mng_8C0DC480",
+      "target_path": "build/target/sdk_cri_mw_mng_8C0DC480.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mw_rnv_8C0DD9B4",
+      "target_path": "build/target/sdk_cri_mw_rnv_8C0DD9B4.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mw_rna_snd_8C0DF648",
+      "target_path": "build/target/sdk_cri_mw_rna_snd_8C0DF648.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_sofdec_8C0E2B10",
+      "target_path": "build/target/sdk_cri_sofdec_8C0E2B10.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_adx_fs_8C0E771C",
+      "target_path": "build/target/sdk_cri_adx_fs_8C0E771C.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_shinobi_flash_8C0E8C98",
+      "target_path": "build/target/sdk_shinobi_flash_8C0E8C98.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_sdk_fatal_8C0E9FC0",
+      "target_path": "build/target/sdk_sdk_fatal_8C0E9FC0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mw_rna_snd_8C0F8664",
+      "target_path": "build/target/sdk_cri_mw_rna_snd_8C0F8664.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mps_8C0FA968",
+      "target_path": "build/target/sdk_cri_mps_8C0FA968.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_mpv_8C0FB544",
+      "target_path": "build/target/sdk_cri_mpv_8C0FB544.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_adx_fs_8C0FF2F4",
+      "target_path": "build/target/sdk_cri_adx_fs_8C0FF2F4.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_sdk_fatal_8C1001A0",
+      "target_path": "build/target/sdk_sdk_fatal_8C1001A0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_shinobi_debug_8C101EF0",
+      "target_path": "build/target/sdk_shinobi_debug_8C101EF0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_kamui2_8C1081F8",
+      "target_path": "build/target/sdk_kamui2_8C1081F8.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_adx_fs_8C110060",
+      "target_path": "build/target/sdk_cri_adx_fs_8C110060.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_cri_sofdec_8C1101D0",
+      "target_path": "build/target/sdk_cri_sofdec_8C1101D0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_data_8C1151DC",
+      "target_path": "build/target/sdk_data_8C1151DC.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_code_8C11A4A0",
+      "target_path": "build/target/sdk_code_8C11A4A0.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_data_8C11BB0E",
+      "target_path": "build/target/sdk_data_8C11BB0E.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "data"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "sdk_code_8C121F60",
+      "target_path": "build/target/sdk_code_8C121F60.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": true
       }
     }
   ]
