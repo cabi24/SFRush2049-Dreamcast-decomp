@@ -80,3 +80,12 @@ to `m->reckon.suscomp` and `m->resurrect.moving_state`; flat private overlay nam
 without moving fields. Header regression links preserve existing physics and renderer matches.
 The shared WAD record's pointer/count/TOC fields and the world-header name now replace opaque
 same-sized placeholders. Current saved compiler inputs are checked against all included headers.
+
+
+## Controller snapshots and IRQ access
+
+The shared tPadInfo is the20-byte controller record; controller-system IRQ access preserves
+volatile lvalues locally, while game controls read ordinary snapshot fields. Native links retain
+the five exact controlsys functions and all inherited matches. Shared model fields now also cover
+road initialization at+6D0, main controls at+720, drone state and target-proven object/blit layouts.
+Unused tSmoke+38 remains unnamed padding; no semantic name is inferred from the GameCube source.

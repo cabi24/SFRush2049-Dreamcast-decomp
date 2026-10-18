@@ -43,3 +43,14 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
 - Internal literal islands in a differing mapped function remain uncredited under the frozen
   function-ownership policy (headlights). An explicitly mapped external pool can earn bytes on its
   own only when its full real-address range matches and raw emitted runs prove each credited byte.
+
+- Initialized record padding earns no credit even when the compiler emits explicit zero bytes.
+  Pane's sixteen tBlitSet records each contain two pad bytes at+A..B; all512 bytes still compare,
+  but only480 earn data credit. Map data_padding records are evidence exclusions from credit,
+  not masks: every byte remains part of fixed-address equality. Six focused credit controls pass.
+- Source ownership includes a real DoDrones wrapper before its helper and excludes AnimateWeapon's
+  generated epilogue from the source-function count. Caller targets, prologues and branches prove
+  those corrections; the net total/game function denominators remain unchanged.
+- SetInterruptMask is the SH4 SR helper at8C010080, proved by startup code and timer/controller
+  pool references. The previous8C018000 mapping was incorrect. Correcting the address does not
+  reopen the capped UpdateFrameTimer source-shape search.

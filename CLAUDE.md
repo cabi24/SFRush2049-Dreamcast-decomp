@@ -85,20 +85,22 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **22,916 /569,664 (4.0227%)**, plus **3,467 initialized data bytes**.
-Whole-image credit: **26,383 /1,123,492 (2.3483%)**, **135 exact source functions**, 31 source units.
-New integration contributes 25,151 image bytes and 125 functions relative to
+Game text/literal credit: **28,008 /569,664 (4.9166%)**, plus **5,646 initialized data bytes**.
+Whole-image credit: **33,654 /1,123,492 (2.9955%)**, **174 exact source functions**, 43 source units.
+New integration contributes 32,422 image bytes and 164 functions relative to
 the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
-were removed. All linker fill, gaps and alignment are excluded; BSS earns no image credit.
+were removed. All linker fill, gaps, alignment and proven initialized record padding are excluded; BSS earns no image credit.
 
-Per-unit commits and complete third-batch audit are recorded through `ba6a093`.
-`matching-evidence/2026-10-18/integration-third.json` records current source/header/compiler-input,
+Per-unit commits and complete fourth-batch audit are recorded through `48eba24`.
+`matching-evidence/2026-10-18/integration-fourth.json` records current source/header/compiler-input,
 tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
-validates saved outputs without compiling. Five padding-credit tests pass.
+validates saved outputs without compiling. Six padding-credit tests pass.
 
 Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
 and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
-ends in streaks and skids remain unclaimed. Total/game function denominators stay4,726/1,564.
+ends in streaks, skids, smoke and circuit remain unclaimed. DoDrones is a separate source wrapper;
+AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes.
+The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. Total/game function denominators stay4,726/1,564.
 
 Six private lanes continue on disjoint units. Later private packets are excluded until integration.
 Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.
