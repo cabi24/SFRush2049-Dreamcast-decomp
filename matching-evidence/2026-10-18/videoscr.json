@@ -1,0 +1,126 @@
+{
+  "unit": "videoscr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 939,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0ADF70",
+      "8C0ADF81"
+    ],
+    [
+      "8C0ADF84",
+      "8C0ADF89"
+    ],
+    [
+      "8C0ADF8C",
+      "8C0ADF8E"
+    ],
+    [
+      "8C0ADF90",
+      "8C0ADF91"
+    ],
+    [
+      "8C0ADF94",
+      "8C0ADF97"
+    ],
+    [
+      "8C0ADF98",
+      "8C0ADF9F"
+    ],
+    [
+      "8C0ADFA0",
+      "8C0ADFAF"
+    ],
+    [
+      "8C0ADFB0",
+      "8C0ADFB3"
+    ],
+    [
+      "8C0ADFB4",
+      "8C0ADFBB"
+    ],
+    [
+      "8C0ADFBC",
+      "8C0ADFCA"
+    ],
+    [
+      "8C0ADFCC",
+      "8C0ADFF9"
+    ],
+    [
+      "8C0ADFFC",
+      "8C0AE013"
+    ],
+    [
+      "8C0AE014",
+      "8C0AE01F"
+    ],
+    [
+      "8C0AE020",
+      "8C0AE029"
+    ],
+    [
+      "8C0AE02C",
+      "8C0AE035"
+    ],
+    [
+      "8C0C39F4",
+      "8C0C3A55"
+    ],
+    [
+      "8C0C3A58",
+      "8C0C3A95"
+    ],
+    [
+      "8C0C3A98",
+      "8C0C3AD5"
+    ],
+    [
+      "8C0C3AD8",
+      "8C0C3B15"
+    ],
+    [
+      "8C0C3B18",
+      "8C0C3B55"
+    ],
+    [
+      "8C0C3B58",
+      "8C0C3B95"
+    ],
+    [
+      "8C0C3B98",
+      "8C0C3BD5"
+    ],
+    [
+      "8C0C3BD8",
+      "8C0C3C15"
+    ],
+    [
+      "8C0C3C18",
+      "8C0C3C55"
+    ],
+    [
+      "8C0C3C58",
+      "8C0C3C95"
+    ],
+    [
+      "8C0C3C98",
+      "8C0C3CD5"
+    ],
+    [
+      "8C0C3CD8",
+      "8C0C3D15"
+    ]
+  ],
+  "source_sha256": "4ba11ff7072427f2aeda1de72883a51f5ab5754686ccf64b38dabf97d5e9f957",
+  "expanded_source_sha256": "b60e043fe9f21c9cc2ec2bafc081ab7abc33b8d8f384ec8c818f2c9ab7a7b864",
+  "compiler_input_sha256": "aa565f3c371b54de4fc8ab3e04eb2d088884ece262223a5709be473db397e09b",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "03d36172bec747c081c0a2d1632acbcc6435ed4119110e5c9550172ad03135b7",
+  "object_sha256": "90cd9ad7777ac845e2778dd6a27b53fbd06b130def5ee8c2bda92e43819dc493",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
