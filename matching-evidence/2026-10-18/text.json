@@ -1,0 +1,35 @@
+{
+  "unit": "text",
+  "text_nonpadding": 450,
+  "data_nonpadding": 7,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C05B120",
+      "8C05B2AE"
+    ],
+    [
+      "8C05B2B0",
+      "8C05B2E4"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AD6AC",
+      "8C0AD6B2"
+    ],
+    [
+      "8C0C1838",
+      "8C0C1839"
+    ]
+  ],
+  "source_sha256": "03e43dae338cef37483da20f276c3b1f7270f33687651a132c06c715543cd0a7",
+  "expanded_source_sha256": "73f8f9c48236402333f38b2556df4f8a732efd35da54b73f44b7799d40d3d7f0",
+  "compiler_input_sha256": "4243670653d5e01706ad1aba9d70f90f39693acda03e0ed29cda72b776e4981d",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "70a4847842953c991e95ca726737dfe3e70a800d117b8e5f64d3a6abf3822a1a",
+  "object_sha256": "98a831e2da627187d03938e3752346feb5583560622edf3e1a61b688303e0be7",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
