@@ -1456,3 +1456,57 @@ _func_8C0D6C94 0x8c0d6c94
 
 _func_8C072820 0x8C072820 # retained front caller alias after carscr boundary correction
 dcQueueWorkWord8C0C7C34 0x8C0C7C34 # opaque unsigned32 view of dc_sound-owned slot
+
+_dcLcdDigits 0x8c0c8288
+_dcLcdIcons 0x8c0c831e
+_dcLcdLabelA 0x8c0c8382
+_dcLcdLabelB 0x8c0c840e
+_dcLcdLargeDigits 0x8c0c8486
+_dcLcdSmallIcon 0x8c0c8372
+_dcLcdSplash 0x8c0c7c88
+_func_8C06ED2A 0x8c06ed2a
+_func_8C06ED90 0x8c06ed90
+_func_8C0A3BF2 0x8c0a3bf2
+_func_8C0D2628 0x8c0d2628
+_func_8C0D262E 0x8c0d262e
+_func_8C0D265C 0x8c0d265c
+_func_8C0D26EA 0x8c0d26ea
+_func_8C0D2A40 0x8c0d2a40
+_func_8C0D3E70 0x8c0d3e70
+_func_8C0D3ECC 0x8c0d3ecc
+_func_8C0D437C 0x8c0d437c
+_func_8C0D448A 0x8c0d448a
+_func_8C0D461A 0x8c0d461a
+_func_8C0D4764 0x8c0d4764
+_func_8C0D4952 0x8c0d4952
+_func_8C0D6D7C 0x8c0d6d7c
+_func_8C0D6DDA 0x8c0d6dda
+_func_8C0D6DEC 0x8c0d6dec
+_func_8C0DAA98 0x8c0daa98
+_dcControllerPresent 0x8c12c114
+_dcCreateTextureName 0x8c0b1d24
+_dcFreeTextureName 0x8c0b1d4c
+_dcKmContexts 0x8c18d900
+_dcKmDefaultContext 0x8c19f460
+_dcKmOtherContext 0x8c19f4a0
+_dcKmSurfaces 0x8c185900
+_dcLoadTextureName 0x8c0b1d3c
+_dcTextureCount 0x8c0c9744
+_dcTextureRamHigh 0x8c1858e4
+_dcTextureScanIndex 0x8c0c9740
+_dcTextureTable 0x8c19d900
+_dcVibrationEnabled 0x8c0c973d
+_dcVibrationPorts 0x8c0c9734
+_dcVibrationRecords 0x8c185144
+_func_8C06E51A 0x8c06e51a
+_func_8C0D7954 0x8c0d7954
+_func_8C0D7A2E 0x8c0d7a2e
+_func_8C0D7B2A 0x8c0d7b2a
+_func_8C0D7CFC 0x8c0d7cfc
+_func_8C0D9076 0x8c0d9076
+_func_8C0DB9C0 0x8c0db9c0
+_func_8C0DBBE0 0x8c0dbbe0
+_func_8C0DBD60 0x8c0dbd60
+_func_8C0DBFE0 0x8c0dbfe0
+_func_8C0DC0A0 0x8c0dc0a0
+_func_8C0DC100 0x8c0dc100

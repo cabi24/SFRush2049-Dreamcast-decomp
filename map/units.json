@@ -19655,8 +19655,22 @@
      "end": "0x8C06CADC"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "name": "peripheral_active_and_state_translation",
+     "section": "D",
+     "start": "0x8C0C96DC",
+     "end": "0x8C0C96F4"
+    }
+   ],
+   "bss": [
+    {
+     "name": "peripheral_parameters_record_and_status",
+     "section": "B",
+     "start": "0x8C18507C",
+     "end": "0x8C1850C0"
+    }
+   ],
    "notes": "helpers used by updateTitleScreen and SaveServer (VMU/peripheral?); unknown file(s)."
   },
   {
