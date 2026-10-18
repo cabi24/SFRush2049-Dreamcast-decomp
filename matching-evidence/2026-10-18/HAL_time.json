@@ -1,0 +1,31 @@
+{
+  "unit": "HAL_time",
+  "text_nonpadding": 234,
+  "data_nonpadding": 1,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C02FCD8",
+      "8C02FDAA"
+    ],
+    [
+      "8C02FDAC",
+      "8C02FDC4"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BDF98",
+      "8C0BDF99"
+    ]
+  ],
+  "source_sha256": "251b8f3feb42c455a791d1efd3d3268343d9dc54e1098ce1f8d20ca82777271f",
+  "expanded_source_sha256": "99a3b4623b0db479b2ad13dc7a7e811671cf999cc251f3b78fdb6f3454525b6b",
+  "compiler_input_sha256": "0bdb81f189ebe4a5b5ba4587fd28da6d40fe8a03619b049dcfc6af1e494cfb27",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "19aec5cd05a69b11c350d2452f2fb07654e3d2869ddb848401b65f4d51391ffb",
+  "object_sha256": "54bdb8e5e204abc0f8f5ed014695a0b40465e7073890abc6fca9ea8553288918",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
