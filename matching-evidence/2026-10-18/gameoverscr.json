@@ -1,0 +1,35 @@
+{
+  "unit": "gameoverscr",
+  "text_nonpadding": 122,
+  "data_nonpadding": 7,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C029298",
+      "8C0292C2"
+    ],
+    [
+      "8C0292C4",
+      "8C029314"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BDF78",
+      "8C0BDF7B"
+    ],
+    [
+      "8C0BDF7C",
+      "8C0BDF80"
+    ]
+  ],
+  "source_sha256": "16dabb44a0938b6590db03099515959c5fc47b1ecfe45082301481d118ccca97",
+  "expanded_source_sha256": "b19b56e77a7af6a339fc80da035c59e21e74ff92905aad73940ef6e7d00c5fc7",
+  "compiler_input_sha256": "1d286c482479a3272bd2802950d0703cf91faa755437bc0db6de30acb89b3282",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "a487a6eca689882c3d1078ac721911dfd1ab39de0450f5634e5751471186a154",
+  "object_sha256": "738590a1cf455e4b3fc5be83514cdda7100cabc6d495099baf3594ec61ee387a",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
