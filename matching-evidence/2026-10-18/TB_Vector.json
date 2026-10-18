@@ -1,0 +1,22 @@
+{
+  "unit": "TB_Vector",
+  "text_nonpadding": 132,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C05B09C",
+      "8C05B120"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "cffe669b5c4726ab284699e111ed47ee19adcd9aeac9dc0feec5df544ac4a179",
+  "expanded_source_sha256": "ea2f08e7f544cc212c9b5a582bc5fdb20c004d7a7e62cf5791f27cf97d87b389",
+  "compiler_input_sha256": "c416a02885d5ce33272fd11cb2eeb8f455da23d6c29c23d95ad459e579b0dc1d",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "ca92790ac8bbc50c11a944801ee53280e80298a56ff4d0e2a24eab3f5950cd62",
+  "object_sha256": "bc161f4e3d65879a171d94b17ef6fe20e3d3419d3aafb407ef505098e371ec63",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
