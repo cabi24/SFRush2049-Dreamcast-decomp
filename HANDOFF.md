@@ -20,6 +20,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 
 | Unit | Exact text/literals | Initialized data | Exact functions |
 |---|---:|---:|---:|
+| TB_Vector | 132 | 0 | 2/2 |
 | atan | 286 | 0 | 3/4 |
 | blit | 1,038 | 4 | 8/10 |
 | bstree | 220 | 0 | 6/6 |
@@ -31,7 +32,9 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | countdown | 770 | 69 | 2/2 |
 | demo | 842 | 45 | 7/7 |
 | drivetra | 794 | 0 | 6/10 |
+| drivsym | 244 | 44 | 1/17 |
 | drones | 46 | 0 | 2/4 |
+| fmath | 28 | 72 | 1/31 |
 | front | 1,880 | 1,106 | 5/5 |
 | gfx | 576 | 88 | 8/10 |
 | headlights | 308 | 172 | 1/4 |
@@ -40,6 +43,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | mbox | 530 | 523 | 6/13 |
 | model | 118 | 1 | 2/3 |
 | options | 756 | 0 | 1/4 |
+| optionscr | 166 | 2,092 | 1/11 |
 | pane | 1,082 | 480 | 3/5 |
 | password | 884 | 305 | 5/6 |
 | powerups | 1,580 | 8 | 8/8 |
@@ -51,35 +55,40 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | state | 290 | 12 | 5/6 |
 | statll | 130 | 0 | 2/3 |
 | streaks | 1,116 | 16 | 4/5 |
+| stunt | 1,016 | 0 | 6/13 |
+| targetpaths | 302 | 4 | 2/12 |
 | text | 450 | 7 | 3/3 |
 | textureanim | 418 | 0 | 1/2 |
 | timer | 0 | 16 | 0/9 |
 | tracks | 1,116 | 407 | 3/3 |
+| unzip | 26 | 362 | 1/11 |
 | warningscr | 0 | 24 | 0/2 |
 | weapons | 600 | 1,252 | 3/5 |
 | world | 378 | 0 | 5/6 |
 | worlddam | 500 | 80 | 2/3 |
+| zip | 6,838 | 475 | 19/25 |
 | zoidblit | 464 | 0 | 7/7 |
 | zoidpoly | 848 | 0 | 7/8 |
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **28,008 /569,664 (4.9166%)**, plus **5,646 initialized data bytes**.
-Whole-image credit: **33,654 /1,123,492 (2.9955%)**, **174 exact source functions**, 43 source units.
-New integration contributes 32,422 image bytes and 164 functions relative to
+Game text/literal credit: **36,760 /569,664 (6.4529%)**, plus **8,695 initialized data bytes**.
+Whole-image credit: **45,455 /1,123,492 (4.0459%)**, **207 exact source functions**, 51 source units.
+New integration contributes 44,223 image bytes and 197 functions relative to
 the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
 were removed. All linker fill, gaps, alignment and proven initialized record padding are excluded; BSS earns no image credit.
 
-Per-unit commits and complete fourth-batch audit are recorded through `48eba24`.
-`matching-evidence/2026-10-18/integration-fourth.json` records current source/header/compiler-input,
+Per-unit commits and complete fifth-batch audit are recorded through `2167c6c`.
+`matching-evidence/2026-10-18/integration-fifth.json` records current source/header/compiler-input,
 tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
 validates saved outputs without compiling. Six padding-credit tests pass.
 
 Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
 and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
-ends in streaks, skids, smoke and circuit remain unclaimed. DoDrones is a separate source wrapper;
-AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes.
-The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. Total/game function denominators stay4,726/1,564.
+ends in streaks, skids, smoke, circuit and zip remain unclaimed. DoDrones is a separate source wrapper;
+AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes, and optionscr excludes96.
+The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. The unzip/asincos split also identifies one previously unmapped farcsine body, so total/game
+function denominators are now4,727/1,565; unbuilt asincos earns no byte credit.
 
 Six private lanes continue on disjoint units. Later private packets are excluded until integration.
 Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.

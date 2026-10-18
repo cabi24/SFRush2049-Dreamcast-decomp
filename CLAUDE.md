@@ -85,22 +85,23 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **28,008 /569,664 (4.9166%)**, plus **5,646 initialized data bytes**.
-Whole-image credit: **33,654 /1,123,492 (2.9955%)**, **174 exact source functions**, 43 source units.
-New integration contributes 32,422 image bytes and 164 functions relative to
+Game text/literal credit: **36,760 /569,664 (6.4529%)**, plus **8,695 initialized data bytes**.
+Whole-image credit: **45,455 /1,123,492 (4.0459%)**, **207 exact source functions**, 51 source units.
+New integration contributes 44,223 image bytes and 197 functions relative to
 the strict inherited baseline (1,216 text +16 data,10 functions). Two historical drivetra fill bytes
 were removed. All linker fill, gaps, alignment and proven initialized record padding are excluded; BSS earns no image credit.
 
-Per-unit commits and complete fourth-batch audit are recorded through `48eba24`.
-`matching-evidence/2026-10-18/integration-fourth.json` records current source/header/compiler-input,
+Per-unit commits and complete fifth-batch audit are recorded through `2167c6c`.
+`matching-evidence/2026-10-18/integration-fifth.json` records current source/header/compiler-input,
 tool and output hashes plus disjoint earned address spans. `python -B tools/audit_report.py`
 validates saved outputs without compiling. Six padding-credit tests pass.
 
 Map reviews count bstree's six source functions, merge mbox's generated comparator epilogue,
 and transfer ReadCheckpointData from password to pathcommon. The original final backing-array
-ends in streaks, skids, smoke and circuit remain unclaimed. DoDrones is a separate source wrapper;
-AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes.
-The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. Total/game function denominators stay4,726/1,564.
+ends in streaks, skids, smoke, circuit and zip remain unclaimed. DoDrones is a separate source wrapper;
+AnimateWeapon owns its generated epilogue. Pane data credit excludes32 explicit record-padding bytes, and optionscr excludes96.
+The target-proven interrupt helper is8C010080; retained address aliases preserve existing dispatch calls. The unzip/asincos split also identifies one previously unmapped farcsine body, so total/game
+function denominators are now4,727/1,565; unbuilt asincos earns no byte credit.
 
 Six private lanes continue on disjoint units. Later private packets are excluded until integration.
 Capped functions remain parked without new evidence, including original enginetorque/UpdateFrameTimer.

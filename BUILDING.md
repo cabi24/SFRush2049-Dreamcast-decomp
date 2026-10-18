@@ -123,5 +123,11 @@ by SHC objects, so they are missing on the base side.
 source hashes, recomputes emitted exact address sets and rejects overlapping credit. It writes
 `build/report.json` and `evidence/strict-integration-receipt.json` without running the compiler.
 `python -B tools/test_progress_credit.py` checks internal fill, explicit zeros, differing ranges,
-out-of-range bytes and overlapping map coverage. Native execution only: a policy denial must be
+out-of-range bytes, initialized record padding and overlapping map coverage. Native execution only: a policy denial must be
 reported, with no WSL/wibo fallback or security-setting changes.
+
+Initialized structure padding can be recorded in a unit's `data_padding` array, with `start`,
+`end` and a target/type evidence `reason`. Each range must lie wholly inside mapped initialized
+`data`. These bytes remain part of full fixed-address equality and native section placement;
+only progress credit excludes them. Pane excludes16x2 bytes, optionscr32x3 bytes. The six focused
+controls distinguish semantic zero initializers (credited) from proven record padding (uncredited).

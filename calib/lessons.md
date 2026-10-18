@@ -54,3 +54,15 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
 - SetInterruptMask is the SH4 SR helper at8C010080, proved by startup code and timer/controller
   pool references. The previous8C018000 mapping was incorrect. Correcting the address does not
   reopen the capped UpdateFrameTimer source-shape search.
+
+- Physics wing rows are a slice: drivsym pools422C/4588 referenceBBE14, while the existing
+  full-table view used by smoke isBBE07. The physics view is gPhysicsWingRows; its row0
+  is the full table's row1. Keeping a qualified slice preserves the actual row arithmetic
+  without redefining a global base from a folded operand.
+- WPitchUV starts8C026524 and WRollUV starts8C0265D2, proved by their axis operations and
+  option-screen callers. Full source bodies that match at displaced addresses earn zero;
+  fmath retains only magnitude's28 bytes and72 data bytes at their actual target addresses.
+- The inflater ends8C011290. A distinct farcsine body follows, and fasin/facos are tiny
+  wrappers selecting argument0/1. The unbuilt asincos unit owns this region through13C0;
+  one previously unmapped body increases source-function denominators by one, with zero
+  byte credit from this boundary correction.
