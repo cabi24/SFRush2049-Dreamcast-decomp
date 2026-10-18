@@ -661,7 +661,7 @@ unsigned int zip(unsigned char *mem, unsigned int len, unsigned char *compr, uns
     c_stream.avail_in = len;
     c_stream.next_out = compr;
     c_stream.avail_out = comprLen;
-    s = AllocateMemoryHeapHigh(0, sizeof(internal_state));
+    s = AllocateMemoryHeap(0, sizeof(internal_state));
     c_stream.total_in = 0;
     c_stream.total_out = 0;
     c_stream.state = s;
@@ -673,11 +673,11 @@ unsigned int zip(unsigned char *mem, unsigned int len, unsigned char *compr, uns
     s->hash_size = 1 << s->hash_bits;
     s->hash_mask = s->hash_size - 1;
     s->hash_shift = (s->hash_bits + MIN_MATCH - 1) / MIN_MATCH;
-    s->window = AllocateMemoryHeapHigh(0, s->w_size * 2);
-    s->prev = AllocateMemoryHeapHigh(0, s->w_size * 2);
-    s->head = AllocateMemoryHeapHigh(0, s->hash_size * 2);
+    s->window = AllocateMemoryHeap(0, s->w_size * 2);
+    s->prev = AllocateMemoryHeap(0, s->w_size * 2);
+    s->head = AllocateMemoryHeap(0, s->hash_size * 2);
     s->lit_bufsize = 1 << (memlevel + 6);
-    overlay = AllocateMemoryHeapHigh(0, s->lit_bufsize * 4);
+    overlay = AllocateMemoryHeap(0, s->lit_bufsize * 4);
     s->pending_buf = (unsigned char *)overlay;
     s->d_buf = overlay + s->lit_bufsize / 2;
     s->l_buf = s->pending_buf + 3 * s->lit_bufsize;

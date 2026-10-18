@@ -1,0 +1,145 @@
+{
+  "scope": "Root thirteenth-batch source/type and boundary review",
+  "carscr": {
+    "accepted_private_map_proposal": true,
+    "canonical_integration_pending": true,
+    "old_functions": 29,
+    "new_functions": 22,
+    "denominator_change": -7,
+    "function_byte_union_preserved": true,
+    "unit_text_preserved": true,
+    "target_instruction_windows_checked": [
+      {
+        "start": "8C072820",
+        "end": "8C072828",
+        "reason": "only entry prologue: saveR8/FR12/PR,allocate44",
+        "sha256": "022804145de217ff50fbcd452295f034f50e2228b3e6094bc64342f65faf24d5"
+      },
+      {
+        "start": "8C0728F0",
+        "end": "8C072904",
+        "reason": "early return jumps shared epilogue with active frame",
+        "sha256": "f2c1aae7f0cd68b8f1144902bec246dcdec3cfb5be848beadd29efde25fb4e20"
+      },
+      {
+        "start": "8C072AD0",
+        "end": "8C072ADE",
+        "reason": "jump to internal74450 preserves frame/loop locals",
+        "sha256": "50322103f1ec62eff4e79e97602c193e4e56ce24bab775888d35cbe1ceec5157"
+      },
+      {
+        "start": "8C072B3C",
+        "end": "8C072B48",
+        "reason": "old named start reads live stack locals without prologue",
+        "sha256": "cdd100d7d591b22782f1e1881d4ed1463b53987ad5e95f4026ab805d20d2cde3"
+      },
+      {
+        "start": "8C074142",
+        "end": "8C074160",
+        "reason": "internal sound block uses existingSP+24/+28",
+        "sha256": "a8236648b1ef9e3a2a3b7c02b9ef4aed0bdb3e240d8aa881207240f68558df01"
+      },
+      {
+        "start": "8C07459A",
+        "end": "8C0745A4",
+        "reason": "single shared epilogue restores frame and saved registers",
+        "sha256": "9965ac442d0fc0e9caa9dbb4bc35476dae7e281bd093a57064bc50f798f775c3"
+      },
+      {
+        "start": "8C076A60",
+        "end": "8C076A88",
+        "reason": "clearCarComponents p>0 guard and row23C/record34",
+        "sha256": "2f9abe2debe312e940755f657ffc761cb77d3e288e4d5ae570f9d03c56a24ed4"
+      },
+      {
+        "start": "8C076B04",
+        "end": "8C076B26",
+        "reason": "clearCarComponents frame cleanup and full epilogue",
+        "sha256": "a03741f79101cd98b5c06c4769d0dc1a1741cb4d64f8f0b32916cdbd8b0a915d"
+      }
+    ],
+    "independent_external_entry_caller": {
+      "load": "8C027266",
+      "pool": "8C0272F4",
+      "value": "8C072820",
+      "transfers": [
+        "8C027268"
+      ]
+    },
+    "proposal_sha256": "6ce2f096a7d684891681ada966ecf5f17e5f873ef6b192ae2587068ba9e025fe",
+    "credit_from_boundary_correction": 0,
+    "reason": "One stack-frame prologue and shared epilogue; former internal entries consume established stack state and branch to common return. Native unsupported main body remains external; no code credit inferred."
+  },
+  "playerscr": {
+    "accepted_private_ownership_transfer": true,
+    "canonical_transfer_pending_integration": true,
+    "range": {
+      "start": "0x8C084104",
+      "end": "0x8C085894",
+      "bytes": 6032,
+      "target_sha256": "20e35b2dec943eadf878460d94e4991601c8b68bbfa37fd61e3d3b9d94321b54"
+    },
+    "verified_target_callers": [
+      {
+        "load": "0x8c07fcec",
+        "word": "0xd36d",
+        "call": "0x8c07fcee",
+        "pool": "0x8c07fea4",
+        "target": "0x8c0841b2"
+      },
+      {
+        "load": "0x8c0800ee",
+        "word": "0xd32c",
+        "call": "0x8c0800f0",
+        "pool": "0x8c0801a0",
+        "target": "0x8c084104"
+      },
+      {
+        "load": "0x8c0809d8",
+        "word": "0xd310",
+        "call": "0x8c0809da",
+        "pool": "0x8c080a1c",
+        "target": "0x8c0841b2"
+      }
+    ],
+    "function_count_preserved": true,
+    "byte_union_preserved": true,
+    "original_anonymous_IDs_retained": true,
+    "proposal_sha256": "6dc549954d48f6d5479365e92dbb110cbc0cbb288bf65e77bbd2ff621b362a08",
+    "worker_may_compile_transferred_prefix": true
+  },
+  "queue": {
+    "empty_status_tests_removed": true,
+    "target_failure_action": "none; unused T flags overwritten before consumers",
+    "SDK_output": "one32bitword, canonicalunsignedint*prototype and qualified scalarstorageview",
+    "proof_sha256": "4a5a1ece72d95e1ab500644d411db66689ca9e13964f50bbbcb0d4718c24d694",
+    "D_storage_owner": "dc_sound; no newqueueDcredit",
+    "not_a_matching_shape_search": true,
+    "root_credit_after_cleanup": 0,
+    "prior_private_pool_credit_not_carried_forward": 88
+  },
+  "zip": {
+    "five_calls_and_prototype_renamed": "AllocateMemoryHeap",
+    "preserved_binding": "8C040256",
+    "actual_high_end_allocator": "8C040380",
+    "other_canonical_callers_of_old_name": 0,
+    "arguments_unchanged": true,
+    "independent_target_proof_sha256": "see notes/manifest with five JSRs067EAE/7EFC/7F06/7F10/7F26 and pool68018"
+  },
+  "dc_blit": {
+    "uncertain_primitive_RGB_bytes_excluded": [
+      "8C0C7C78",
+      "8C0C7C7B"
+    ],
+    "alpha_and_other_full_color_bytes_credited_if_exact": true,
+    "meaningful_classifier_entry_lowconfidence": "no incoming caller found; full nativebody exact, anonymous identity retained",
+    "noop_finish_entry": "independent EndGraphics call/pool proves entry"
+  },
+  "shared_header_changed": false,
+  "denied_actions_not_retried_or_reassigned": [
+    "recordscr",
+    "hudextra",
+    "dc_zoid_8C06ED90"
+  ],
+  "conservative_private_credit_reduction": 91
+}

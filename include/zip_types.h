@@ -115,7 +115,7 @@ struct z_stream_s {
     unsigned int total_out; /* 0x14 */
     internal_state *state; /* 0x18 */
 };
-void *AllocateMemoryHeapHigh(void *,unsigned int);
+void *AllocateMemoryHeap(void *,unsigned int);
 void appFree(void *);
 void *memcpy(void *,const void *,unsigned int);
 void *memset(void *,int,unsigned int);

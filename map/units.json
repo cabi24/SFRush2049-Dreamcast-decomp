@@ -18609,7 +18609,7 @@
    ],
    "data": [],
    "bss": [],
-   "notes": "one function resembling audiomgr.c AudInit3D, called by the audio init wrapper 0x8C06ADD4; DC platform group starts here."
+   "notes": "Anonymous DC MIDI/stream queue and bufferinitializer;AudInit3D resemblance insufficient foridentity. Entry tailcall06AE40/42 via06AF04. All D0C7C2C..40 dependencies belong frozen dc_sound,0Dcredit here;all B lists/nodes external,0BSScredit. One0x44C-stride node ineach group;unknown8-byte intergroupgap remainsunclaimed. Boundariesunchanged."
   },
   {
    "name": "dc_sound_8C069F78",
@@ -18985,9 +18985,66 @@
      "end": "0x8C06B2EC"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "Audio64 setup wrapper: a64FileInit/acIntInit/amInit/\"audio64.drv\" strings; called by AudioInit."
+   "data": [
+    {
+     "name": "audio64_setup_error_and_driver_names",
+     "section": "C",
+     "start": "0x8C0B1BBC",
+     "end": "0x8C0B1CD6"
+    },
+    {
+     "name": "audio64_error_fade_and_timer_state",
+     "section": "D",
+     "start": "0x8C0C7C48",
+     "end": "0x8C0C7C78"
+    }
+   ],
+   "bss": [
+    {
+     "name": "audio64_current_levels_time_tick",
+     "section": "B",
+     "start": "0x8C17843C",
+     "end": "0x8C17844C"
+    }
+   ],
+   "notes": "Audio64 setup wrapper: a64FileInit/acIntInit/amInit/\"audio64.drv\" strings; called by AudioInit.",
+   "data_padding": [
+    {
+     "start": "0x8C0B1BFB",
+     "end": "0x8C0B1BFC",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0B1C0D",
+     "end": "0x8C0B1C10",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0B1C27",
+     "end": "0x8C0B1C28",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0B1C5E",
+     "end": "0x8C0B1C60",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0B1C73",
+     "end": "0x8C0B1C74",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0B1C96",
+     "end": "0x8C0B1C98",
+     "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+     "start": "0x8C0C7C51",
+     "end": "0x8C0C7C54",
+     "reason": "Natural alignment after mono signed byte; no semantic data credit."
+    }
+   ]
   },
   {
    "name": "dc_blit_8C06B2EC",
@@ -19007,77 +19064,77 @@
      "confidence": "low"
     },
     {
-     "name": "func_8C06B35A",
+     "name": "BlitInit",
      "start": "0x8C06B35A",
      "end": "0x8C06B3A6",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B3A6",
+     "name": "BlitFinish",
      "start": "0x8C06B3A6",
      "end": "0x8C06B3AA",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B3AA",
+     "name": "BlitSetAttribute",
      "start": "0x8C06B3AA",
      "end": "0x8C06B3BE",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B3BE",
+     "name": "BlitClearAttribute",
      "start": "0x8C06B3BE",
      "end": "0x8C06B3D2",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B414",
+     "name": "BlitZDist",
      "start": "0x8C06B414",
      "end": "0x8C06B42E",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B42E",
+     "name": "BlitXLU",
      "start": "0x8C06B42E",
      "end": "0x8C06B44C",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B44C",
+     "name": "BlitScissor",
      "start": "0x8C06B44C",
      "end": "0x8C06B48A",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B48A",
+     "name": "BlitClearColors",
      "start": "0x8C06B48A",
      "end": "0x8C06B4A0",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B4A0",
+     "name": "BlitColors",
      "start": "0x8C06B4A0",
      "end": "0x8C06B4B4",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B4E0",
+     "name": "BlitDraw",
      "start": "0x8C06B4E0",
      "end": "0x8C06B6DA",
      "mat3": null,
      "confidence": "low"
     },
     {
-     "name": "func_8C06B710",
+     "name": "BlitRect",
      "start": "0x8C06B710",
      "end": "0x8C06B7E4",
      "mat3": null,
@@ -19102,9 +19159,83 @@
      "end": "0x8C06B80C"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC analog of blit_pc.c (text/blit primitives for _DrawText, StartGraphics/EndGraphics)."
+   "data": [
+    {
+     "name": "blitPrimColor",
+     "start": "0x8C0C7C78",
+     "end": "0x8C0C7C7C"
+    },
+    {
+     "name": "blitColor",
+     "start": "0x8C0C7C7C",
+     "end": "0x8C0C7C80"
+    }
+   ],
+   "bss": [
+    {
+     "name": "blitAttribute",
+     "start": "0x8C17844C",
+     "end": "0x8C178450"
+    },
+    {
+     "name": "blitXmin",
+     "start": "0x8C178450",
+     "end": "0x8C178454"
+    },
+    {
+     "name": "blitXmax",
+     "start": "0x8C178454",
+     "end": "0x8C178458"
+    },
+    {
+     "name": "blitYmin",
+     "start": "0x8C178458",
+     "end": "0x8C17845C"
+    },
+    {
+     "name": "blitYmax",
+     "start": "0x8C17845C",
+     "end": "0x8C178460"
+    },
+    {
+     "name": "blitZDist",
+     "start": "0x8C178460",
+     "end": "0x8C178462"
+    },
+    {
+     "name": "blitLUT",
+     "start": "0x8C178464",
+     "end": "0x8C178468"
+    },
+    {
+     "name": "blitDLnum",
+     "start": "0x8C178468",
+     "end": "0x8C17846C"
+    },
+    {
+     "name": "blitMode",
+     "start": "0x8C17846C",
+     "end": "0x8C178470"
+    },
+    {
+     "name": "blitColors",
+     "start": "0x8C178470",
+     "end": "0x8C178474"
+    },
+    {
+     "name": "gZValue",
+     "start": "0x8C178474",
+     "end": "0x8C178478"
+    }
+   ],
+   "notes": "Private source/name/storage proposal. Eleven MAT3 blit_pc.c roles backed by target semantics/callers; anonymous classifier first has no incoming references and retains low entry confidence. DC Ymax479/depth1000.1,+0.1; textureflags1C/strip2C andvertexstride20. All original12textatoms/boundaries/pools preserved. BSS178462..64 is alignment, not a namedobject and0imagecredit.",
+   "data_padding": [
+    {
+     "start": "0x8C0C7C78",
+     "end": "0x8C0C7C7B",
+     "reason": "Primitive RGB object ownership inferred, not independently accessed; conservative exclusion of three bytes."
+    }
+   ]
   },
   {
    "name": "dc_misc_8C06B80C",
@@ -19234,8 +19365,28 @@
      "end": "0x8C06C08C"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "name": "disc_probe_filename",
+     "section": "C",
+     "start": "0x8C0B1CD8",
+     "end": "0x8C0B1CEB"
+    },
+    {
+     "name": "cache_heap_and_disc_error",
+     "section": "D",
+     "start": "0x8C0C7C80",
+     "end": "0x8C0C7C85"
+    }
+   ],
+   "bss": [
+    {
+     "name": "gdfs_cache_state_prefix",
+     "section": "B",
+     "start": "0x8C18483C",
+     "end": "0x8C18487C"
+    }
+   ],
    "notes": "font/LZS resource loaders (\"digitsmfontdat.lzs\", _ReadWave helper); unknown file(s)."
   },
   {
@@ -20777,60 +20928,12 @@
    },
    "functions": [
     {
-     "name": "func_8C072820",
-     "start": "0x8C072820",
-     "end": "0x8C072B3C",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
      "name": "updateCarScreen",
-     "start": "0x8C072B3C",
-     "end": "0x8C074142",
-     "mat3": "updateCarScreen",
-     "confidence": "high"
-    },
-    {
-     "name": "func_8C074142",
-     "start": "0x8C074142",
-     "end": "0x8C074160",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C074160",
-     "start": "0x8C074160",
-     "end": "0x8C074220",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C074220",
-     "start": "0x8C074220",
-     "end": "0x8C074446",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C074446",
-     "start": "0x8C074446",
-     "end": "0x8C074450",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C074450",
-     "start": "0x8C074450",
-     "end": "0x8C07459A",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C07459A",
-     "start": "0x8C07459A",
+     "start": "0x8C072820",
      "end": "0x8C0745A4",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "updateCarScreen",
+     "confidence": "high",
+     "boundary_proposal": "actual prologue72820/shared epilogue7459A..745A4; former first8entries internal"
     },
     {
      "name": "showCarSelect",
@@ -20868,11 +20971,12 @@
      "confidence": "high"
     },
     {
-     "name": "animSlider",
+     "name": "clearCarComponents",
      "start": "0x8C076A60",
      "end": "0x8C076B26",
-     "mat3": "animSlider",
-     "confidence": "medium"
+     "mat3": "clearCarComponents",
+     "confidence": "high",
+     "name_proposal": "p>0 guard;11records with52Bstride; signedshortidx/level; frame cleanup"
     },
     {
      "name": "animNewSlider",
@@ -21286,9 +21390,819 @@
      "end": "0x8C07A21C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0C99E0",
+     "end": "0x8C0CC1E0",
+     "name": "buttonInfo",
+     "evidence": "button array base pool78A54/78F98;4rows from player slots,40records/row,64-byte stride; all fields target checked"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 29, MAT3 functions 24, named 22."
+   "notes": "DC functions 29, MAT3 functions 24, named 22.",
+   "data_padding": [
+    {
+     "start": "0x8C0C9A1D",
+     "end": "0x8C0C9A20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9A5D",
+     "end": "0x8C0C9A60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9A9D",
+     "end": "0x8C0C9AA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9ADD",
+     "end": "0x8C0C9AE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9B1D",
+     "end": "0x8C0C9B20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9B5D",
+     "end": "0x8C0C9B60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9B9D",
+     "end": "0x8C0C9BA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9BDD",
+     "end": "0x8C0C9BE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9C1D",
+     "end": "0x8C0C9C20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9C5D",
+     "end": "0x8C0C9C60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9C9D",
+     "end": "0x8C0C9CA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9CDD",
+     "end": "0x8C0C9CE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9D1D",
+     "end": "0x8C0C9D20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9D5D",
+     "end": "0x8C0C9D60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9D9D",
+     "end": "0x8C0C9DA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9DDD",
+     "end": "0x8C0C9DE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9E1D",
+     "end": "0x8C0C9E20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9E5D",
+     "end": "0x8C0C9E60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9E9D",
+     "end": "0x8C0C9EA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9EDD",
+     "end": "0x8C0C9EE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9F1D",
+     "end": "0x8C0C9F20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9F5D",
+     "end": "0x8C0C9F60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9F9D",
+     "end": "0x8C0C9FA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0C9FDD",
+     "end": "0x8C0C9FE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA01D",
+     "end": "0x8C0CA020",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA05D",
+     "end": "0x8C0CA060",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA09D",
+     "end": "0x8C0CA0A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA0DD",
+     "end": "0x8C0CA0E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA11D",
+     "end": "0x8C0CA120",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA15D",
+     "end": "0x8C0CA160",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA19D",
+     "end": "0x8C0CA1A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA1DD",
+     "end": "0x8C0CA1E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA21D",
+     "end": "0x8C0CA220",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA25D",
+     "end": "0x8C0CA260",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA29D",
+     "end": "0x8C0CA2A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA2DD",
+     "end": "0x8C0CA2E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA31D",
+     "end": "0x8C0CA320",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA35D",
+     "end": "0x8C0CA360",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA39D",
+     "end": "0x8C0CA3A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA3DD",
+     "end": "0x8C0CA3E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA41D",
+     "end": "0x8C0CA420",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA45D",
+     "end": "0x8C0CA460",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA49D",
+     "end": "0x8C0CA4A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA4DD",
+     "end": "0x8C0CA4E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA51D",
+     "end": "0x8C0CA520",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA55D",
+     "end": "0x8C0CA560",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA59D",
+     "end": "0x8C0CA5A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA5DD",
+     "end": "0x8C0CA5E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA61D",
+     "end": "0x8C0CA620",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA65D",
+     "end": "0x8C0CA660",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA69D",
+     "end": "0x8C0CA6A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA6DD",
+     "end": "0x8C0CA6E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA71D",
+     "end": "0x8C0CA720",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA75D",
+     "end": "0x8C0CA760",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA79D",
+     "end": "0x8C0CA7A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA7DD",
+     "end": "0x8C0CA7E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA81D",
+     "end": "0x8C0CA820",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA85D",
+     "end": "0x8C0CA860",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA89D",
+     "end": "0x8C0CA8A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA8DD",
+     "end": "0x8C0CA8E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA91D",
+     "end": "0x8C0CA920",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA95D",
+     "end": "0x8C0CA960",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA99D",
+     "end": "0x8C0CA9A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CA9DD",
+     "end": "0x8C0CA9E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAA1D",
+     "end": "0x8C0CAA20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAA5D",
+     "end": "0x8C0CAA60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAA9D",
+     "end": "0x8C0CAAA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAADD",
+     "end": "0x8C0CAAE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAB1D",
+     "end": "0x8C0CAB20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAB5D",
+     "end": "0x8C0CAB60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAB9D",
+     "end": "0x8C0CABA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CABDD",
+     "end": "0x8C0CABE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAC1D",
+     "end": "0x8C0CAC20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAC5D",
+     "end": "0x8C0CAC60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAC9D",
+     "end": "0x8C0CACA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CACDD",
+     "end": "0x8C0CACE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAD1D",
+     "end": "0x8C0CAD20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAD5D",
+     "end": "0x8C0CAD60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAD9D",
+     "end": "0x8C0CADA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CADDD",
+     "end": "0x8C0CADE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAE1D",
+     "end": "0x8C0CAE20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAE5D",
+     "end": "0x8C0CAE60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAE9D",
+     "end": "0x8C0CAEA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAEDD",
+     "end": "0x8C0CAEE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAF1D",
+     "end": "0x8C0CAF20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAF5D",
+     "end": "0x8C0CAF60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAF9D",
+     "end": "0x8C0CAFA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CAFDD",
+     "end": "0x8C0CAFE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB01D",
+     "end": "0x8C0CB020",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB05D",
+     "end": "0x8C0CB060",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB09D",
+     "end": "0x8C0CB0A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB0DD",
+     "end": "0x8C0CB0E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB11D",
+     "end": "0x8C0CB120",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB15D",
+     "end": "0x8C0CB160",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB19D",
+     "end": "0x8C0CB1A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB1DD",
+     "end": "0x8C0CB1E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB21D",
+     "end": "0x8C0CB220",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB25D",
+     "end": "0x8C0CB260",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB29D",
+     "end": "0x8C0CB2A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB2DD",
+     "end": "0x8C0CB2E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB31D",
+     "end": "0x8C0CB320",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB35D",
+     "end": "0x8C0CB360",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB39D",
+     "end": "0x8C0CB3A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB3DD",
+     "end": "0x8C0CB3E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB41D",
+     "end": "0x8C0CB420",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB45D",
+     "end": "0x8C0CB460",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB49D",
+     "end": "0x8C0CB4A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB4DD",
+     "end": "0x8C0CB4E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB51D",
+     "end": "0x8C0CB520",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB55D",
+     "end": "0x8C0CB560",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB59D",
+     "end": "0x8C0CB5A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB5DD",
+     "end": "0x8C0CB5E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB61D",
+     "end": "0x8C0CB620",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB65D",
+     "end": "0x8C0CB660",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB69D",
+     "end": "0x8C0CB6A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB6DD",
+     "end": "0x8C0CB6E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB71D",
+     "end": "0x8C0CB720",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB75D",
+     "end": "0x8C0CB760",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB79D",
+     "end": "0x8C0CB7A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB7DD",
+     "end": "0x8C0CB7E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB81D",
+     "end": "0x8C0CB820",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB85D",
+     "end": "0x8C0CB860",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB89D",
+     "end": "0x8C0CB8A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB8DD",
+     "end": "0x8C0CB8E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB91D",
+     "end": "0x8C0CB920",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB95D",
+     "end": "0x8C0CB960",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB99D",
+     "end": "0x8C0CB9A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CB9DD",
+     "end": "0x8C0CB9E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBA1D",
+     "end": "0x8C0CBA20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBA5D",
+     "end": "0x8C0CBA60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBA9D",
+     "end": "0x8C0CBAA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBADD",
+     "end": "0x8C0CBAE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBB1D",
+     "end": "0x8C0CBB20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBB5D",
+     "end": "0x8C0CBB60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBB9D",
+     "end": "0x8C0CBBA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBBDD",
+     "end": "0x8C0CBBE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBC1D",
+     "end": "0x8C0CBC20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBC5D",
+     "end": "0x8C0CBC60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBC9D",
+     "end": "0x8C0CBCA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBCDD",
+     "end": "0x8C0CBCE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBD1D",
+     "end": "0x8C0CBD20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBD5D",
+     "end": "0x8C0CBD60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBD9D",
+     "end": "0x8C0CBDA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBDDD",
+     "end": "0x8C0CBDE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBE1D",
+     "end": "0x8C0CBE20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBE5D",
+     "end": "0x8C0CBE60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBE9D",
+     "end": "0x8C0CBEA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBEDD",
+     "end": "0x8C0CBEE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBF1D",
+     "end": "0x8C0CBF20",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBF5D",
+     "end": "0x8C0CBF60",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBF9D",
+     "end": "0x8C0CBFA0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CBFDD",
+     "end": "0x8C0CBFE0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC01D",
+     "end": "0x8C0CC020",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC05D",
+     "end": "0x8C0CC060",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC09D",
+     "end": "0x8C0CC0A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC0DD",
+     "end": "0x8C0CC0E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC11D",
+     "end": "0x8C0CC120",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC15D",
+     "end": "0x8C0CC160",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC19D",
+     "end": "0x8C0CC1A0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    },
+    {
+     "start": "0x8C0CC1DD",
+     "end": "0x8C0CC1E0",
+     "reason": "tCarScreenMenuButton alpha+3C is last semantic byte; proven64B stride adds3trailing padding bytes (78E96/78ED0,optionscr common-type proof)."
+    }
+   ]
   },
   {
    "name": "cheatscr",
@@ -21680,9 +22594,234 @@
      "end": "0x8C07D90C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "buttonNames",
+     "start": "0x8C0CC894",
+     "end": "0x8C0CC8B8",
+     "section": "D"
+    },
+    {
+     "name": "buttonInfo",
+     "start": "0x8C0CC8B8",
+     "end": "0x8C0CCBB8",
+     "section": "D"
+    },
+    {
+     "name": "mblit",
+     "start": "0x8C0B22DC",
+     "end": "0x8C0B2300",
+     "section": "C"
+    },
+    {
+     "name": "delete_label_pointer",
+     "start": "0x8C0B2320",
+     "end": "0x8C0B2324",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2300",
+     "start": "0x8C0B2300",
+     "end": "0x8C0B2315",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2318",
+     "start": "0x8C0B2318",
+     "end": "0x8C0B231F",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2324",
+     "start": "0x8C0B2324",
+     "end": "0x8C0B2329",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B232C",
+     "start": "0x8C0B232C",
+     "end": "0x8C0B2332",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2334",
+     "start": "0x8C0B2334",
+     "end": "0x8C0B233A",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B233C",
+     "start": "0x8C0B233C",
+     "end": "0x8C0B233F",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2340",
+     "start": "0x8C0B2340",
+     "end": "0x8C0B2344",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2344",
+     "start": "0x8C0B2344",
+     "end": "0x8C0B2346",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B234C",
+     "start": "0x8C0B234C",
+     "end": "0x8C0B2353",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2354",
+     "start": "0x8C0B2354",
+     "end": "0x8C0B235B",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B235C",
+     "start": "0x8C0B235C",
+     "end": "0x8C0B235F",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2360",
+     "start": "0x8C0B2360",
+     "end": "0x8C0B2363",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2368",
+     "start": "0x8C0B2368",
+     "end": "0x8C0B2376",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2378",
+     "start": "0x8C0B2378",
+     "end": "0x8C0B2384",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2384",
+     "start": "0x8C0B2384",
+     "end": "0x8C0B2390",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B2390",
+     "start": "0x8C0B2390",
+     "end": "0x8C0B2399",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B239C",
+     "start": "0x8C0B239C",
+     "end": "0x8C0B23A8",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B23A8",
+     "start": "0x8C0B23A8",
+     "end": "0x8C0B23B3",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B23B4",
+     "start": "0x8C0B23B4",
+     "end": "0x8C0B23BF",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B23C0",
+     "start": "0x8C0B23C0",
+     "end": "0x8C0B23C9",
+     "section": "C"
+    },
+    {
+     "name": "string_8C0B23CC",
+     "start": "0x8C0B23CC",
+     "end": "0x8C0B23D5",
+     "section": "C"
+    },
+    {
+     "name": "button_rgba_8C0B2346",
+     "start": "0x8C0B2346",
+     "end": "0x8C0B234A",
+     "section": "C"
+    },
+    {
+     "name": "button_rgba_8C0B2363",
+     "start": "0x8C0B2363",
+     "end": "0x8C0B2367",
+     "section": "C"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 19, MAT3 functions 20, named 19."
+   "notes": "DC functions 19, MAT3 functions 20, named 19.",
+   "data_padding": [
+    {
+     "start": "0x8C0CC8F5",
+     "end": "0x8C0CC8F8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CC935",
+     "end": "0x8C0CC938",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CC975",
+     "end": "0x8C0CC978",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CC9B5",
+     "end": "0x8C0CC9B8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CC9F5",
+     "end": "0x8C0CC9F8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCA35",
+     "end": "0x8C0CCA38",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCA75",
+     "end": "0x8C0CCA78",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCAB5",
+     "end": "0x8C0CCAB8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCAF5",
+     "end": "0x8C0CCAF8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCB35",
+     "end": "0x8C0CCB38",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCB75",
+     "end": "0x8C0CCB78",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    },
+    {
+     "start": "0x8C0CCBB5",
+     "end": "0x8C0CCBB8",
+     "reason": "MenuButton stride0x40, last alpha byte+3c, three trailing padding bytes; target CE4C..CE9A stride and D4B4 alpha access."
+    }
+   ]
   },
   {
    "name": "unk_8C07D90C",
@@ -22252,7 +23391,7 @@
    "confidence": "high",
    "text": {
     "start": "0x8C07FAE0",
-    "end": "0x8C084104"
+    "end": "0x8C085894"
    },
    "functions": [
     {
@@ -22305,11 +23444,15 @@
      "confidence": "high"
     },
     {
-     "name": "controlFormatMC",
+     "name": "controlCreatePlayer",
      "start": "0x8C080A20",
      "end": "0x8C080E28",
-     "mat3": "controlFormatMC",
-     "confidence": "high"
+     "mat3": "controlCreatePlayer",
+     "confidence": "high",
+     "aliases": [
+      "controlFormatMC"
+     ],
+     "notes": "Private semantic name correction: target name-grid navigation; original alias retained."
     },
     {
      "name": "controlDeletePlayer",
@@ -22450,6 +23593,28 @@
      "end": "0x8C0840D4",
      "mat3": "initButtons",
      "confidence": "high"
+    },
+    {
+     "name": "func_8C084104",
+     "start": "0x8C084104",
+     "end": "0x8C0841B2",
+     "mat3": "uninitButtons",
+     "confidence": "high",
+     "aliases": [
+      "uninitButtons"
+     ],
+     "notes": "Private proposal only; original anonymous ID retained."
+    },
+    {
+     "name": "func_8C0841B2",
+     "start": "0x8C0841B2",
+     "end": "0x8C085872",
+     "mat3": "updateButtons",
+     "confidence": "high",
+     "aliases": [
+      "updateButtons"
+     ],
+     "notes": "Private proposal only; original anonymous ID retained."
     }
    ],
    "pools": [
@@ -22656,11 +23821,572 @@
     {
      "start": "0x8C0840D4",
      "end": "0x8C084104"
+    },
+    {
+     "start": "0x8C0841FE",
+     "end": "0x8C084218"
+    },
+    {
+     "start": "0x8C08430E",
+     "end": "0x8C084324"
+    },
+    {
+     "start": "0x8C08441C",
+     "end": "0x8C084430"
+    },
+    {
+     "start": "0x8C0844FA",
+     "end": "0x8C084520"
+    },
+    {
+     "start": "0x8C084686",
+     "end": "0x8C0846D8"
+    },
+    {
+     "start": "0x8C0847EC",
+     "end": "0x8C084808"
+    },
+    {
+     "start": "0x8C08489C",
+     "end": "0x8C0848CC"
+    },
+    {
+     "start": "0x8C0849D4",
+     "end": "0x8C0849FC"
+    },
+    {
+     "start": "0x8C084B1A",
+     "end": "0x8C084B38"
+    },
+    {
+     "start": "0x8C084B7A",
+     "end": "0x8C084B8C"
+    },
+    {
+     "start": "0x8C084CB8",
+     "end": "0x8C084CE4"
+    },
+    {
+     "start": "0x8C084D9C",
+     "end": "0x8C084DB8"
+    },
+    {
+     "start": "0x8C084EC8",
+     "end": "0x8C084EFC"
+    },
+    {
+     "start": "0x8C085042",
+     "end": "0x8C08506C"
+    },
+    {
+     "start": "0x8C0850EC",
+     "end": "0x8C085104"
+    },
+    {
+     "start": "0x8C0851F4",
+     "end": "0x8C085208"
+    },
+    {
+     "start": "0x8C08537C",
+     "end": "0x8C0853CC"
+    },
+    {
+     "start": "0x8C085428",
+     "end": "0x8C08543C"
+    },
+    {
+     "start": "0x8C08557A",
+     "end": "0x8C0855B8"
+    },
+    {
+     "start": "0x8C0856A0",
+     "end": "0x8C0856DC"
+    },
+    {
+     "start": "0x8C0857BE",
+     "end": "0x8C0857EC"
+    },
+    {
+     "start": "0x8C085872",
+     "end": "0x8C085894"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B25C0",
+     "end": "0x8C0B268D"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CDF54",
+     "end": "0x8C0CDF84"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CDF84",
+     "end": "0x8C0CF584"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CF584",
+     "end": "0x8C0CF5A4"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CF5A4",
+     "end": "0x8C0CF5C8"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CF5C8",
+     "end": "0x8C0CF760"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 28, MAT3 functions 33, named 28."
+   "notes": "DC functions 28, MAT3 functions 33, named 28. Private target28-body candidate: mapped controlFormatMC is creation; no extent transfer. Button row22/validity14,8VMS counters;264 record pad bytes excluded. BSS externs only. Private target28-body candidate: mapped controlFormatMC is creation; no extent transfer. Button row22/validity14,8VMS counters;264 record pad bytes excluded. BSS externs only.",
+   "data_padding": [
+    {
+     "start": "0x8C0CDFC1",
+     "end": "0x8C0CDFC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE001",
+     "end": "0x8C0CE004",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE041",
+     "end": "0x8C0CE044",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE081",
+     "end": "0x8C0CE084",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE0C1",
+     "end": "0x8C0CE0C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE101",
+     "end": "0x8C0CE104",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE141",
+     "end": "0x8C0CE144",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE181",
+     "end": "0x8C0CE184",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE1C1",
+     "end": "0x8C0CE1C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE201",
+     "end": "0x8C0CE204",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE241",
+     "end": "0x8C0CE244",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE281",
+     "end": "0x8C0CE284",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE2C1",
+     "end": "0x8C0CE2C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE301",
+     "end": "0x8C0CE304",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE341",
+     "end": "0x8C0CE344",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE381",
+     "end": "0x8C0CE384",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE3C1",
+     "end": "0x8C0CE3C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE401",
+     "end": "0x8C0CE404",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE441",
+     "end": "0x8C0CE444",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE481",
+     "end": "0x8C0CE484",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE4C1",
+     "end": "0x8C0CE4C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE501",
+     "end": "0x8C0CE504",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE541",
+     "end": "0x8C0CE544",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE581",
+     "end": "0x8C0CE584",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE5C1",
+     "end": "0x8C0CE5C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE601",
+     "end": "0x8C0CE604",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE641",
+     "end": "0x8C0CE644",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE681",
+     "end": "0x8C0CE684",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE6C1",
+     "end": "0x8C0CE6C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE701",
+     "end": "0x8C0CE704",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE741",
+     "end": "0x8C0CE744",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE781",
+     "end": "0x8C0CE784",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE7C1",
+     "end": "0x8C0CE7C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE801",
+     "end": "0x8C0CE804",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE841",
+     "end": "0x8C0CE844",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE881",
+     "end": "0x8C0CE884",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE8C1",
+     "end": "0x8C0CE8C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE901",
+     "end": "0x8C0CE904",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE941",
+     "end": "0x8C0CE944",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE981",
+     "end": "0x8C0CE984",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CE9C1",
+     "end": "0x8C0CE9C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEA01",
+     "end": "0x8C0CEA04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEA41",
+     "end": "0x8C0CEA44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEA81",
+     "end": "0x8C0CEA84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEAC1",
+     "end": "0x8C0CEAC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEB01",
+     "end": "0x8C0CEB04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEB41",
+     "end": "0x8C0CEB44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEB81",
+     "end": "0x8C0CEB84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEBC1",
+     "end": "0x8C0CEBC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEC01",
+     "end": "0x8C0CEC04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEC41",
+     "end": "0x8C0CEC44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEC81",
+     "end": "0x8C0CEC84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CECC1",
+     "end": "0x8C0CECC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CED01",
+     "end": "0x8C0CED04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CED41",
+     "end": "0x8C0CED44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CED81",
+     "end": "0x8C0CED84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEDC1",
+     "end": "0x8C0CEDC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEE01",
+     "end": "0x8C0CEE04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEE41",
+     "end": "0x8C0CEE44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEE81",
+     "end": "0x8C0CEE84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEEC1",
+     "end": "0x8C0CEEC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEF01",
+     "end": "0x8C0CEF04",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEF41",
+     "end": "0x8C0CEF44",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEF81",
+     "end": "0x8C0CEF84",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CEFC1",
+     "end": "0x8C0CEFC4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF001",
+     "end": "0x8C0CF004",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF041",
+     "end": "0x8C0CF044",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF081",
+     "end": "0x8C0CF084",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF0C1",
+     "end": "0x8C0CF0C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF101",
+     "end": "0x8C0CF104",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF141",
+     "end": "0x8C0CF144",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF181",
+     "end": "0x8C0CF184",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF1C1",
+     "end": "0x8C0CF1C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF201",
+     "end": "0x8C0CF204",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF241",
+     "end": "0x8C0CF244",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF281",
+     "end": "0x8C0CF284",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF2C1",
+     "end": "0x8C0CF2C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF301",
+     "end": "0x8C0CF304",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF341",
+     "end": "0x8C0CF344",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF381",
+     "end": "0x8C0CF384",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF3C1",
+     "end": "0x8C0CF3C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF401",
+     "end": "0x8C0CF404",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF441",
+     "end": "0x8C0CF444",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF481",
+     "end": "0x8C0CF484",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF4C1",
+     "end": "0x8C0CF4C4",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF501",
+     "end": "0x8C0CF504",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF541",
+     "end": "0x8C0CF544",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    },
+    {
+     "start": "0x8C0CF581",
+     "end": "0x8C0CF584",
+     "reason": "22x4 initialized button-record tail+3d..40"
+    }
+   ]
   },
   {
    "name": "recordscr",
@@ -22668,24 +24394,10 @@
    "kind": "game",
    "confidence": "high",
    "text": {
-    "start": "0x8C084104",
+    "start": "0x8C085894",
     "end": "0x8C0898D8"
    },
    "functions": [
-    {
-     "name": "func_8C084104",
-     "start": "0x8C084104",
-     "end": "0x8C0841B2",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C0841B2",
-     "start": "0x8C0841B2",
-     "end": "0x8C085872",
-     "mat3": null,
-     "confidence": "low"
-    },
     {
      "name": "updateRecordScreen",
      "start": "0x8C085894",
@@ -22870,94 +24582,6 @@
     }
    ],
    "pools": [
-    {
-     "start": "0x8C0841FE",
-     "end": "0x8C084218"
-    },
-    {
-     "start": "0x8C08430E",
-     "end": "0x8C084324"
-    },
-    {
-     "start": "0x8C08441C",
-     "end": "0x8C084430"
-    },
-    {
-     "start": "0x8C0844FA",
-     "end": "0x8C084520"
-    },
-    {
-     "start": "0x8C084686",
-     "end": "0x8C0846D8"
-    },
-    {
-     "start": "0x8C0847EC",
-     "end": "0x8C084808"
-    },
-    {
-     "start": "0x8C08489C",
-     "end": "0x8C0848CC"
-    },
-    {
-     "start": "0x8C0849D4",
-     "end": "0x8C0849FC"
-    },
-    {
-     "start": "0x8C084B1A",
-     "end": "0x8C084B38"
-    },
-    {
-     "start": "0x8C084B7A",
-     "end": "0x8C084B8C"
-    },
-    {
-     "start": "0x8C084CB8",
-     "end": "0x8C084CE4"
-    },
-    {
-     "start": "0x8C084D9C",
-     "end": "0x8C084DB8"
-    },
-    {
-     "start": "0x8C084EC8",
-     "end": "0x8C084EFC"
-    },
-    {
-     "start": "0x8C085042",
-     "end": "0x8C08506C"
-    },
-    {
-     "start": "0x8C0850EC",
-     "end": "0x8C085104"
-    },
-    {
-     "start": "0x8C0851F4",
-     "end": "0x8C085208"
-    },
-    {
-     "start": "0x8C08537C",
-     "end": "0x8C0853CC"
-    },
-    {
-     "start": "0x8C085428",
-     "end": "0x8C08543C"
-    },
-    {
-     "start": "0x8C08557A",
-     "end": "0x8C0855B8"
-    },
-    {
-     "start": "0x8C0856A0",
-     "end": "0x8C0856DC"
-    },
-    {
-     "start": "0x8C0857BE",
-     "end": "0x8C0857EC"
-    },
-    {
-     "start": "0x8C085872",
-     "end": "0x8C085894"
-    },
     {
      "start": "0x8C08591E",
      "end": "0x8C085954"
@@ -23746,11 +25370,13 @@
      "confidence": "high"
     },
     {
-     "name": "AnimZ",
+     "name": "animArrows",
      "start": "0x8C08E5B4",
      "end": "0x8C08E78E",
-     "mat3": "AnimZ",
-     "confidence": "high"
+     "mat3": "animArrows",
+     "confidence": "high",
+     "symbol": "_animArrows",
+     "original_name_for_review": "AnimZ"
     },
     {
      "name": "animFan",
@@ -24188,9 +25814,328 @@
      "end": "0x8C093604"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": 2349541680,
+     "end": 2349542328,
+     "symbols": [
+      {
+       "name": "trackBlitDefs",
+       "symbol": "_trackBlitDefs",
+       "address": 2349541680,
+       "size": 648,
+       "section": "C"
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": 2349542328,
+     "end": 2349542360,
+     "symbols": []
+    },
+    {
+     "section": "D",
+     "start": 2349662896,
+     "end": 2349662932,
+     "symbols": [
+      {
+       "name": "trackButtonNames",
+       "symbol": "_trackButtonNames",
+       "address": 2349662896,
+       "size": 36,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349662932,
+     "end": 2349666004,
+     "symbols": [
+      {
+       "name": "trackButtonInfo",
+       "symbol": "_trackButtonInfo",
+       "address": 2349662932,
+       "size": 3072,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349666004,
+     "end": 2349666008,
+     "symbols": [
+      {
+       "name": "trackButtonsInited",
+       "symbol": "_trackButtonsInited",
+       "address": 2349666004,
+       "size": 4,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349666008,
+     "end": 2349666012,
+     "symbols": [
+      {
+       "name": "trackButtonsJustInited",
+       "symbol": "_trackButtonsJustInited",
+       "address": 2349666008,
+       "size": 4,
+       "section": "D"
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "includes its 7.8 KB updateButtons at 0x8C09175C (called by showTrackSelect). DC functions 29, MAT3 functions 35, named 29."
+   "notes": "includes its 7.8 KB updateButtons at 0x8C09175C (called by showTrackSelect). DC functions 29, MAT3 functions 35, named 29.",
+   "data_padding": [
+    {
+     "start": 2349662993,
+     "end": 2349662996,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663057,
+     "end": 2349663060,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663121,
+     "end": 2349663124,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663185,
+     "end": 2349663188,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663249,
+     "end": 2349663252,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663313,
+     "end": 2349663316,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663377,
+     "end": 2349663380,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663441,
+     "end": 2349663444,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663505,
+     "end": 2349663508,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663569,
+     "end": 2349663572,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663633,
+     "end": 2349663636,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663697,
+     "end": 2349663700,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663761,
+     "end": 2349663764,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663825,
+     "end": 2349663828,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663889,
+     "end": 2349663892,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349663953,
+     "end": 2349663956,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664017,
+     "end": 2349664020,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664081,
+     "end": 2349664084,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664145,
+     "end": 2349664148,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664209,
+     "end": 2349664212,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664273,
+     "end": 2349664276,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664337,
+     "end": 2349664340,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664401,
+     "end": 2349664404,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664465,
+     "end": 2349664468,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664529,
+     "end": 2349664532,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664593,
+     "end": 2349664596,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664657,
+     "end": 2349664660,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664721,
+     "end": 2349664724,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664785,
+     "end": 2349664788,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664849,
+     "end": 2349664852,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664913,
+     "end": 2349664916,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349664977,
+     "end": 2349664980,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665041,
+     "end": 2349665044,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665105,
+     "end": 2349665108,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665169,
+     "end": 2349665172,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665233,
+     "end": 2349665236,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665297,
+     "end": 2349665300,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665361,
+     "end": 2349665364,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665425,
+     "end": 2349665428,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665489,
+     "end": 2349665492,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665553,
+     "end": 2349665556,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665617,
+     "end": 2349665620,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665681,
+     "end": 2349665684,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665745,
+     "end": 2349665748,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665809,
+     "end": 2349665812,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665873,
+     "end": 2349665876,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349665937,
+     "end": 2349665940,
+     "reason": "three structural tail-padding bytes in menu button"
+    },
+    {
+     "start": 2349666001,
+     "end": 2349666004,
+     "reason": "three structural tail-padding bytes in menu button"
+    }
+   ]
   },
   {
    "name": "warningscr",
@@ -24707,18 +26652,18 @@
      "confidence": "high"
     },
     {
-     "name": "func_8C097306",
+     "name": "_CreateShotObject",
      "start": "0x8C097306",
      "end": "0x8C097352",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_CreateShotObject",
+     "confidence": "high"
     },
     {
-     "name": "_CreateShotObject",
+     "name": "_UpdateShotObject",
      "start": "0x8C097352",
      "end": "0x8C09744A",
-     "mat3": "_CreateShotObject",
-     "confidence": "medium"
+     "mat3": "_UpdateShotObject",
+     "confidence": "high"
     },
     {
      "name": "_InitNewShot",
@@ -24903,7 +26848,22 @@
      "end": "0x8C098E4C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B3494",
+     "end": "0x8C0B3584",
+     "name": "shot_offset_and_resource_name_tables",
+     "evidence": "CaseOffsets12,ShotOffsets120; typednameptrarrays40/28/20/20 atpool97264/270/278/284; noembeddedstringcredit"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0D1D7C",
+     "end": "0x8C0D1DA4",
+     "name": "sWeaponFx",
+     "evidence": "resourceeffectIDs referenced97B4A/pool97BF4 and9880C/pool98884;10int32IDsagreeMAT3"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 16, MAT3 functions 16, named 15."
   },
