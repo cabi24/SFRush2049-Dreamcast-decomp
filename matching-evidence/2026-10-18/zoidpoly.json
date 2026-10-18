@@ -1,0 +1,34 @@
+{
+  "unit": "zoidpoly",
+  "text_nonpadding": 848,
+  "data_nonpadding": 0,
+  "exact_functions": 7,
+  "text_spans": [
+    [
+      "8C068F28",
+      "8C069146"
+    ],
+    [
+      "8C069148",
+      "8C06926C"
+    ],
+    [
+      "8C06929C",
+      "8C06929E"
+    ],
+    [
+      "8C0692A0",
+      "8C0692AC"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "ed004bd45cb7fc51df616410194a54104000877fd742d00658ebc47b9ee6da0c",
+  "expanded_source_sha256": "00e29e9ef3dd079534e4838d712a28ef7c684bab4e26c5d36566351298f799ba",
+  "compiler_input_sha256": "044419b6db98e244b17c496cd1bae883a95ed724a91948a8c13abba612d6e649",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "a36d953f58d02d919a93762c6b8ea90214f3b906f56e74f16fae91472db4a198",
+  "object_sha256": "082859cc93b45cbbcdbc6d1fb27ae5f518419065bbb47b904705598ef1c6da9d",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
