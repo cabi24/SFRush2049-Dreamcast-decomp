@@ -1,0 +1,17 @@
+{
+  "unit": "unk_8C0102A4_lz",
+  "text_nonpadding": 0,
+  "data_nonpadding": 0,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [],
+  "source_sha256": "4228726af9ae61305a338fc8d078be1ec1b65d929824bf5ef8606757af8783c7",
+  "expanded_source_sha256": "08bcf9a8641f104f2a9189952d60ca9bdad7dc5bd82ed9e5f750850d12711820",
+  "compiler_input_sha256": "71bd4a575250badebddac81a74d67d19bfb553f5c3bc52c3328d9c0ee74106fc",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "aa675a5bf5d91358417d9604c16c5b6201216edc3df0281f2188d1bc9118fbc8",
+  "object_sha256": "7edb6bd197320cafe9ad7872a565ae6ad6e089203b659fc667ef0680dab54565",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
