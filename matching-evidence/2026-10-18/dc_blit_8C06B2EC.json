@@ -1,0 +1,39 @@
+{
+  "unit": "dc_blit_8C06B2EC",
+  "text_nonpadding": 1252,
+  "data_nonpadding": 5,
+  "exact_functions": 10,
+  "text_spans": [
+    [
+      "8C06B2EC",
+      "8C06B414"
+    ],
+    [
+      "8C06B44C",
+      "8C06B4BA"
+    ],
+    [
+      "8C06B4BC",
+      "8C06B6DA"
+    ],
+    [
+      "8C06B6DC",
+      "8C06B80C"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0C7C7B",
+      "8C0C7C80"
+    ]
+  ],
+  "source_sha256": "e1de5d6a0c04091cd2fc571de0dd1da02bc32c8080b2f374321aa9e235fab503",
+  "expanded_source_sha256": "5495b1d9343b2400032e968316a20ce21e1686688794fe883645a7f865c6ef7c",
+  "compiler_input_sha256": "367f07c65ede69093d1789e6d3004d4380a17088c52835623f960455f3d0bc63",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "f32a775e20d6820bf3ed7fbf6ce9ed10c0c49ba8cd90508658a797a56076c3fc",
+  "object_sha256": "b084b8aa0115f7086d931b8537cbed63239eb3e801cc1458a347778f4e9bc496",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
