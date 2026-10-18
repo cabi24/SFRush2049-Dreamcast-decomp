@@ -1,0 +1,43 @@
+{
+  "unit": "cheatscr",
+  "text_nonpadding": 1482,
+  "data_nonpadding": 52,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C07A21C",
+      "8C07A756"
+    ],
+    [
+      "8C07A758",
+      "8C07A7DC"
+    ],
+    [
+      "8C07ABD4",
+      "8C07ABE0"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B22B4",
+      "8C0B22DB"
+    ],
+    [
+      "8C0CC884",
+      "8C0CC885"
+    ],
+    [
+      "8C0CC888",
+      "8C0CC894"
+    ]
+  ],
+  "source_sha256": "4d78d0000a5635b396b3cc7456e22ef828ebce410a71821977702f5986d2e487",
+  "expanded_source_sha256": "f1d8346d5b68eddb2cee0a873a0f622a74a8e21b57d9e91a384d3df13714f0a9",
+  "compiler_input_sha256": "72c952ccb4944aaeeaaf22a101a172631a35ff757a71cde067be5a34f8f70e87",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "5dfae5a2040b4c2cf3a733885edb454efad07caebcefe237431020a579149381",
+  "object_sha256": "b7e358f88816c6ac4fbe6db4dd7859a072b53beb692c8be840d04b610f7fbd24",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
