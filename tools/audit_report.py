@@ -33,7 +33,7 @@ def main():
    if ex and seg['kind'] in ['func','pool']:code.update(a for a in range(seg['start'],seg['end']) if a in emitted)
   for d in u['data']:
    ex,_built,_diff=B.compare_range(image,d['start'],d['end'])
-   if ex:data.update(a for a in range(d['start'],d['end']) if a in emitted)
+   if ex:data.update(a for a in range(d['start'],d['end']) if a in emitted and not any(p['start']<=a<p['end'] for p in u.get('data_padding',[])))
   assert len(code)==e['exact_text_bytes'] and len(data)==e['exact_data_bytes'],name
   for a in code|data:
    if a in owners:raise ValueError(f'credit overlap {a:08X}: {owners[a]} / {name}')

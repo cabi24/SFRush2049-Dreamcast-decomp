@@ -1,7 +1,7 @@
 {
   "unit": "pane",
   "text_nonpadding": 1082,
-  "data_nonpadding": 512,
+  "data_nonpadding": 480,
   "exact_functions": 3,
   "text_spans": [
     [
@@ -16,6 +16,70 @@
   "data_spans": [
     [
       "8C0BF768",
+      "8C0BF772"
+    ],
+    [
+      "8C0BF774",
+      "8C0BF792"
+    ],
+    [
+      "8C0BF794",
+      "8C0BF7B2"
+    ],
+    [
+      "8C0BF7B4",
+      "8C0BF7D2"
+    ],
+    [
+      "8C0BF7D4",
+      "8C0BF7F2"
+    ],
+    [
+      "8C0BF7F4",
+      "8C0BF812"
+    ],
+    [
+      "8C0BF814",
+      "8C0BF832"
+    ],
+    [
+      "8C0BF834",
+      "8C0BF852"
+    ],
+    [
+      "8C0BF854",
+      "8C0BF872"
+    ],
+    [
+      "8C0BF874",
+      "8C0BF892"
+    ],
+    [
+      "8C0BF894",
+      "8C0BF8B2"
+    ],
+    [
+      "8C0BF8B4",
+      "8C0BF8D2"
+    ],
+    [
+      "8C0BF8D4",
+      "8C0BF8F2"
+    ],
+    [
+      "8C0BF8F4",
+      "8C0BF912"
+    ],
+    [
+      "8C0BF914",
+      "8C0BF932"
+    ],
+    [
+      "8C0BF934",
+      "8C0BF952"
+    ],
+    [
+      "8C0BF954",
       "8C0BF968"
     ]
   ],
@@ -27,5 +91,8 @@
   "object_sha256": "6da9a950c31f7d001de6593da2ac69f69946a7704ea1fa2a8e268d3cad4e2acb",
   "comparison_masks": false,
   "linker_fill_credit": 0,
-  "bss_image_credit": 0
+  "bss_image_credit": 0,
+  "data_padding_excluded": 32,
+  "full_initialized_data_equality_bytes": 512,
+  "reason": "tBlitSet pad0[2] at+A in sixteen 32-byte initialized records"
 }

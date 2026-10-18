@@ -2,6 +2,7 @@
 /* Private C89 overlays: target instruction evidence in evidence/target_listing.txt. */
 #ifndef HEADLIGHTS_PRIVATE_H
 #define HEADLIGHTS_PRIVATE_H
+typedef tZoidObjectDC tHeadlightInstance;
 typedef tMatrix3 tUV3;
 
 
@@ -15,12 +16,7 @@ typedef struct CarParts {
     int extraparts[3];      /* +24 at8C0306E8, preserved original bug. */
     char pad1[0x60-0x30];
 } CarParts;                /* slot*3*32,8C02FDF2..FDFE. */
-typedef struct tHeadlightInstance {
-    unsigned int flags;    /* target8C03065E..662. */
-    char pad0[0x10-4];
-    float w;              /* target8C02FE6A/70. */
-    char pad1[0x58-0x14];
-} tHeadlightInstance;      /* target8C02FE60/66 stride58. */
+      /* target8C02FE60/66 stride58. */
 typedef struct surftyp { unsigned short flags; } surftyp; /* only+0 word known. */
 extern tCarData gGameCar[];
 extern tModelData model[];

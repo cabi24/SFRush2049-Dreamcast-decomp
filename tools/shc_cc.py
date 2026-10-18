@@ -90,6 +90,8 @@ def main():
         banner = ' '.join((r.stdout + r.stderr).split())
         if r.returncode != 0 or not os.path.isfile(obj):
             sys.exit(f'[shc_cc] {args.version} ({mode_used}) failed rc={r.returncode}: {banner}')
+        if banner:
+            print('[shc_cc] compiler diagnostics: ' + banner)
         if args.keep_obj:
             shutil.copy(obj, args.keep_obj)
         os.makedirs(os.path.dirname(os.path.abspath(args.output)) or '.', exist_ok=True)

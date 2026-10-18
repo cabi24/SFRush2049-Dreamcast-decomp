@@ -6,15 +6,7 @@
 
 
 
-typedef struct tZoidObjectDC {
-    char pad0[0x34];
-    tTexture *texture[4];  /* 8C069300..308 stores +34/+38/+3C/+40. */
-    char pad1[0x48 - 0x44];
-    void *field48;         /* 8C06931E r0=48; store at 8C069326. */
-    void *palette;         /* 8C0692E6 r0=4C; store at 8C0692EE. */
-    tRGBA color;           /* 8C0692B4 r0=50; word store at 8C0692BC. */
-    tRGBA envcolor;        /* 8C0692D6 r0=54; word store at 8C0692DE. */
-} tZoidObjectDC;           /* 0x58 stride: 8C0692AC/B0, all setter/getter entries. */
+           /* 0x58 stride: 8C0692AC/B0, all setter/getter entries. */
 
 typedef struct tZoidModelLOD {
     unsigned short texidx; /* 8C069376 and 8C0693A2 word stores. */

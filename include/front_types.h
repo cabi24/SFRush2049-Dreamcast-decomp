@@ -5,16 +5,10 @@
 typedef tPolyVert dcFrontVertex;
 
 
-typedef struct _tBlit _tBlit;
+
 typedef struct _tBlit_2 _tBlit_2;
 
-typedef struct tBlitDef {
-    const char *texname; /* descriptor fields: 8C0AA91C..93C and 8C0AA940..960 */
-    signed short dulx,duly,width,height,top,bot,left,right;
-    unsigned int zdepth,alpha;
-    int (*animfunc)(_tBlit *);
-    unsigned int animid;
-} tBlitDef;
+
 typedef struct anon_minX_maxX_38 {
     float minX; /* +0: 8C0273E4 */
     float maxX; /* +4: 8C027396/3A0 */

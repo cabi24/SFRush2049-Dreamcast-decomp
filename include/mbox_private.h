@@ -2,15 +2,9 @@
 /* Private C89 overlays: offsets and widths from the DC mbox instruction stream. */
 #ifndef MBOX_PRIVATE_H
 #define MBOX_PRIVATE_H
+typedef tZoidObjectDC tMboxInstance;
 
-typedef struct tMboxInstance {
-    char pad0[8];
-    tUVMatrix *mat;        /* 8C03D2D8, +8 pointer; translation+24/+28/+2C. */
-    char pad1[0x2A-0x0C];
-    signed short child;   /* 8C03D114/11C +2A signed word, poolD1AC=base+2A. */
-    signed short next;    /* 8C03D182/18A +2C signed word, poolD1B0=base+2C. */
-    char pad2[0x58-0x2E];
-} tMboxInstance;           /* stride88 from targetD0C8/D0CC andD2BC/D2BE. */
+           /* stride88 from targetD0C8/D0CC andD2BC/D2BE. */
 typedef struct tModelDef {
     char name[16];         /* comparator name at+0, fixed copy16 atD3D6. */
     float radius;          /* D386..D38A: float+10. */

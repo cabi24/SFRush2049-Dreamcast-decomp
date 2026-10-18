@@ -164,7 +164,8 @@ def load_map(path=None):
         seen.add(name)
         unit = {'name': name, 'kind': u.get('kind') or 'unknown', 'source': u.get('source'),
                 'confidence': u.get('confidence'), 'notes': u.get('notes'),
-                'text': None, 'functions': [], 'pools': [], 'data': [], 'bss': [], 'symbols': []}
+                'text': None, 'functions': [], 'pools': [], 'data': [], 'bss': [], 'symbols': [],
+                'data_padding': []}
         text = u.get('text')
         if isinstance(text, list):
             if len(text) > 1:
@@ -213,6 +214,13 @@ def load_map(path=None):
                 unit[key].append({'section': d.get('section') or default_sec, 'start': r[0], 'end': r[1],
                                   'symbols': syms})
                 unit['symbols'] += syms
+        for d in u.get('data_padding') or []:
+            r = _range(d, 'data padding', name)
+            if not r or r[1] is None or r[1] <= r[0] or not d.get('reason'):
+                raise ValueError(f'{name}: data padding requires a range and evidence reason')
+            if not any(x['start'] <= r[0] < r[1] <= x['end'] for x in unit['data']):
+                raise ValueError(f'{name}: data padding is outside mapped initialized data')
+            unit['data_padding'].append({'start': r[0], 'end': r[1], 'reason': d['reason']})
         for s in u.get('symbols') or []:
             sr = _range(s, 'symbol', name)
             if s.get('name') and sr:

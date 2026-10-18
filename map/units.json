@@ -1915,8 +1915,44 @@
      "end": "0x8C018C88"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BB224",
+     "end": "0x8C0BB228",
+     "symbols": [
+      {
+       "name": "gNoTexBlitDefaultColor",
+       "start": "0x8C0BB224",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C128120",
+     "end": "0x8C12B644",
+     "symbols": [
+      {
+       "name": "Blits",
+       "start": "0x8C128120",
+       "size": 12800
+      },
+      {
+       "name": "BlitPtrs",
+       "start": "0x8C12B320",
+       "size": 800
+      },
+      {
+       "name": "NumBlits",
+       "start": "0x8C12B640",
+       "size": 4
+      }
+     ]
+    }
+   ],
    "notes": "DC functions 10, MAT3 functions 10, named 9."
   },
   {
@@ -2589,9 +2625,95 @@
      "end": "0x8C01D41C"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "alphabetical slot + NewCircuit/UpdateCircuit/Get/SetCircuitCode sizes. DC functions 5, MAT3 functions 6, named 3."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BC260",
+     "end": "0x8C0BC3D8",
+     "symbols": [
+      {
+       "name": "gCircuitPoints",
+       "start": "0x8C0BC260",
+       "size": 24
+      },
+      {
+       "name": "gNumCircuitTracks",
+       "start": "0x8C0BC278",
+       "size": 16
+      },
+      {
+       "name": "gCircuitFog",
+       "start": "0x8C0BC288",
+       "size": 16
+      },
+      {
+       "name": "gCircuitWind",
+       "start": "0x8C0BC298",
+       "size": 16
+      },
+      {
+       "name": "gCircuitDiff",
+       "start": "0x8C0BC2A8",
+       "size": 16
+      },
+      {
+       "name": "skills",
+       "start": "0x8C0BC2B8",
+       "size": 288
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12BE4C",
+     "end": "0x8C12C09E",
+     "symbols": [
+      {
+       "name": "gCircuitPlayer",
+       "start": "0x8C12BE4C",
+       "size": 1
+      },
+      {
+       "name": "gCircuitTracks",
+       "start": "0x8C12BE4D",
+       "size": 120
+      },
+      {
+       "name": "gCircuitCars",
+       "start": "0x8C12BEC6",
+       "size": 456
+      },
+      {
+       "name": "gCircuitTrack",
+       "start": "0x8C12C08E",
+       "size": 1
+      },
+      {
+       "name": "gCircuitSize",
+       "start": "0x8C12C08F",
+       "size": 1
+      },
+      {
+       "name": "gCircuitSeed",
+       "start": "0x8C12C090",
+       "size": 4
+      },
+      {
+       "name": "gCircuitNumTrackRaces",
+       "start": "0x8C12C094",
+       "size": 6
+      },
+      {
+       "name": "gTempCircuitFirstTrack",
+       "start": "0x8C12C09A",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "notes": "alphabetical slot + NewCircuit/UpdateCircuit/Get/SetCircuitCode sizes. DC functions 5, MAT3 functions 6, named 3. Final original backing-array end not independently proven; final source-derived extent unclaimed."
   },
   {
    "name": "collision",
@@ -2768,11 +2890,11 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C01E8F8",
+     "name": "UpdateRushControls",
      "start": "0x8C01E8F8",
      "end": "0x8C01EAEA",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "UpdateRushControls",
+     "confidence": "high"
     },
     {
      "name": "UpdateModelControls",
@@ -2833,9 +2955,50 @@
      "end": "0x8C01EDEC"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 11, MAT3 functions 12, named 10."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BC3E0",
+     "end": "0x8C0BC448",
+     "notes": "SetPlayerControls local gControlTable26 words:poolEDE8, ED9E..EDAC."
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C0D4",
+     "end": "0x8C12C111",
+     "symbols": [
+      {
+       "name": "gControlsSet",
+       "start": "0x8C12C0D4",
+       "end": "0x8C12C0D8"
+      },
+      {
+       "name": "gNewControls",
+       "start": "0x8C12C0D8",
+       "end": "0x8C12C104"
+      },
+      {
+       "name": "gDefaultControls",
+       "start": "0x8C12C104",
+       "end": "0x8C12C10F"
+      },
+      {
+       "name": "gMirrorControls",
+       "start": "0x8C12C10F",
+       "end": "0x8C12C110"
+      },
+      {
+       "name": "gNoBrakes",
+       "start": "0x8C12C110",
+       "end": "0x8C12C111"
+      }
+     ],
+     "notes": "Target-referenced arrays/bytes; unproven alignment tail111..114 excluded."
+    }
+   ],
+   "notes": "Private identification UpdateRushControls; DC does not call GC pad backend or contain SetDefaultControls2."
   },
   {
    "name": "controlsys",
@@ -2897,25 +3060,25 @@
      "confidence": "high"
     },
     {
-     "name": "func_8C01F214",
+     "name": "ControllerUpdate",
      "start": "0x8C01F214",
      "end": "0x8C01F4E2",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ControllerUpdate",
+     "confidence": "high"
     },
     {
-     "name": "func_8C01F4E2",
+     "name": "ControlIRQ",
      "start": "0x8C01F4E2",
      "end": "0x8C01FD86",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ControlIRQ",
+     "confidence": "high"
     },
     {
-     "name": "func_8C01FD86",
+     "name": "_PotRange",
      "start": "0x8C01FD86",
      "end": "0x8C01FDA8",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_PotRange",
+     "confidence": "high"
     },
     {
      "name": "func_8C01FDA8",
@@ -2983,9 +3146,105 @@
      "end": "0x8C01FDE8"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "content matches controlsys.c (DP gain 34 vs <3 for neighbours) but it sits before controlscr.c, against the alphabetical order; DC file name may differ. DC functions 11, MAT3 functions 15, named 7."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A9214",
+     "end": "0x8C0A9260",
+     "symbols": [
+      {
+       "name": "gControlTable",
+       "start": "0x8C0A9214",
+       "size": 76
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": "0x8C0A9260",
+     "end": "0x8C0A9270"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0A9270",
+     "end": "0x8C0A9282"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BC448",
+     "end": "0x8C0BC459"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C114",
+     "end": "0x8C12C444",
+     "symbols": [
+      {
+       "name": "gControllerData",
+       "start": "0x8C12C114",
+       "size": 80
+      },
+      {
+       "name": "gContStick",
+       "start": "0x8C12C164",
+       "size": 32
+      },
+      {
+       "name": "gContLevels",
+       "start": "0x8C12C184",
+       "size": 16
+      },
+      {
+       "name": "gContEdges",
+       "start": "0x8C12C194",
+       "size": 16
+      },
+      {
+       "name": "gAutoEdges",
+       "start": "0x8C12C1A4",
+       "size": 16
+      },
+      {
+       "name": "gActiveEdges",
+       "start": "0x8C12C1B4",
+       "size": 4
+      },
+      {
+       "name": "gActiveLevels",
+       "start": "0x8C12C1B8",
+       "size": 4
+      },
+      {
+       "name": "gActiveAutoEdges",
+       "start": "0x8C12C1BC",
+       "size": 4
+      },
+      {
+       "name": "gRealStick",
+       "start": "0x8C12C1C0",
+       "size": 32
+      },
+      {
+       "name": "gRealLevels",
+       "start": "0x8C12C1E0",
+       "size": 16
+      },
+      {
+       "name": "gRealEdges",
+       "start": "0x8C12C1F0",
+       "size": 16
+      },
+      {
+       "name": "gSoftReset",
+       "start": "0x8C12C200",
+       "size": 1
+      }
+     ]
+    }
+   ],
+   "notes": "DC target-proven controlsys semantics, independent controllerSDK layout and ModelThread retrace registration. Three anonymous source identities proposed from semantics; final idle-time getter stays anonymous. MAT3 semaphore helpers inline and no g_Pad/second-stick arrays emitted."
   },
   {
    "name": "controlscr",
@@ -3759,8 +4018,15 @@
      "confidence": "medium"
     },
     {
-     "name": "_AssignDrones",
+     "name": "DoDrones",
      "start": "0x8C025580",
+     "end": "0x8C02558A",
+     "mat3": "DoDrones",
+     "confidence": "high"
+    },
+    {
+     "name": "_AssignDrones",
+     "start": "0x8C02558A",
      "end": "0x8C02606A",
      "mat3": "_AssignDrones",
      "confidence": "high"
@@ -3820,8 +4086,27 @@
     }
    ],
    "data": [],
-   "bss": [],
-   "notes": "DC functions 3, MAT3 functions 4, named 3."
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C574",
+     "end": "0x8C12C5A4",
+     "symbols": [
+      {
+       "name": "old_drone_scale",
+       "start": "0x8C12C574",
+       "end": "0x8C12C58C"
+      },
+      {
+       "name": "old_boost",
+       "start": "0x8C12C58C",
+       "end": "0x8C12C5A4"
+      }
+     ],
+     "notes": "Two six-float arrays:InitDrones scale/boost pool5678/5674 and indexed bound24."
+    }
+   ],
+   "notes": "Private boundary correction:DoDrones5580..558A tail-falls into static _AssignDrones558A..606A. Four source functions."
   },
   {
    "name": "unk_8C0260F0",
@@ -5136,8 +5421,28 @@
      "end": "0x8C02E4B0"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AAA18",
+     "end": "0x8C0AAA7B",
+     "symbols": []
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12D340",
+     "end": "0x8C12D341",
+     "symbols": [
+      {
+       "name": "gRenderInProgress",
+       "start": "0x8C12D340",
+       "end": "0x8C12D341"
+      }
+     ]
+    }
+   ],
    "notes": "Kamui scene/border/config calls (kmBeginScene...) + InitGraphics/UpdateGraphics; DC version of gfx.c. DC functions 10, MAT3 functions 3, named 2."
   },
   {
@@ -8395,7 +8700,89 @@
     }
    ],
    "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 4. Private D proposal: gPaneBlits base pools8C044814/4C24;16*0x20 extent; anonymous identity retained."
+   "notes": "DC functions 5, MAT3 functions 5, named 4. Private D proposal: gPaneBlits base pools8C044814/4C24;16*0x20 extent; anonymous identity retained.",
+   "data_padding": [
+    {
+     "start": "0x8C0BF772",
+     "end": "0x8C0BF774",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF792",
+     "end": "0x8C0BF794",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF7B2",
+     "end": "0x8C0BF7B4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF7D2",
+     "end": "0x8C0BF7D4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF7F2",
+     "end": "0x8C0BF7F4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF812",
+     "end": "0x8C0BF814",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF832",
+     "end": "0x8C0BF834",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF852",
+     "end": "0x8C0BF854",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF872",
+     "end": "0x8C0BF874",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF892",
+     "end": "0x8C0BF894",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF8B2",
+     "end": "0x8C0BF8B4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF8D2",
+     "end": "0x8C0BF8D4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF8F2",
+     "end": "0x8C0BF8F4",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF912",
+     "end": "0x8C0BF914",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF932",
+     "end": "0x8C0BF934",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+     "start": "0x8C0BF952",
+     "end": "0x8C0BF954",
+     "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    }
+   ]
   },
   {
    "name": "password",
@@ -10290,9 +10677,60 @@
      "end": "0x8C050D84"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 6, MAT3 functions 6, named 6."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC9CC",
+     "end": "0x8C0ACA3A"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFD08",
+     "end": "0x8C0BFD3C",
+     "symbols": [
+      {
+       "name": "gCarMiddles",
+       "start": "0x8C0BFD08",
+       "size": 52
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C153DAC",
+     "end": "0x8C158334",
+     "symbols": [
+      {
+       "name": "gCarSmokeDir",
+       "start": "0x8C153DAC",
+       "size": 24
+      },
+      {
+       "name": "gCarBlastSmokeClr",
+       "start": "0x8C153DC4",
+       "size": 6
+      },
+      {
+       "name": "gCarWingSmokePos",
+       "start": "0x8C153DCC",
+       "size": 144
+      },
+      {
+       "name": "gSmokeObjs",
+       "start": "0x8C153E5C",
+       "size": 17600
+      },
+      {
+       "name": "gSmokeList",
+       "start": "0x8C15831C",
+       "size": 24
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 6, MAT3 functions 6, named 6. Final original backing-array end not independently proven; final source-derived extent unclaimed."
   },
   {
    "name": "state",
@@ -11901,21 +12339,21 @@
      "start": "0x8C05B120",
      "end": "0x8C05B164",
      "mat3": "InitTextWave",
-     "confidence": "medium"
+     "confidence": "high"
     },
     {
-     "name": "func_8C05B164",
+     "name": "LoadTextWave",
      "start": "0x8C05B164",
      "end": "0x8C05B1DC",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "LoadTextWave",
+     "confidence": "high"
     },
     {
-     "name": "func_8C05B1DC",
+     "name": "_AdjustTextWavePointers",
      "start": "0x8C05B1DC",
      "end": "0x8C05B2AE",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_AdjustTextWavePointers",
+     "confidence": "high"
     }
    ],
    "pools": [
@@ -11924,9 +12362,55 @@
      "end": "0x8C05B2E4"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "alphabetical slot; weak DP. DC functions 3, MAT3 functions 3, named 1."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AD6AC",
+     "end": "0x8C0AD6B2"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C1838",
+     "end": "0x8C0C1839",
+     "symbols": [
+      {
+       "name": "sInited",
+       "start": "0x8C0C1838",
+       "size": 1
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C15C988",
+     "end": "0x8C15C9BC",
+     "symbols": [
+      {
+       "name": "gLang",
+       "start": "0x8C15C988",
+       "size": 2
+      },
+      {
+       "name": "gText",
+       "start": "0x8C15C98C",
+       "size": 40
+      },
+      {
+       "name": "gTextWave",
+       "start": "0x8C15C9B4",
+       "size": 1
+      },
+      {
+       "name": "gTextWaveInst",
+       "start": "0x8C15C9B8",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "notes": "Three identities proven by target wave calls, six table fixups, and DC localized default-profile names. Native endian; no MAT3 NGC string overrides. BSS inferred from same target pool words and field accesses; no BSS image credit."
   },
   {
    "name": "textureanim",
@@ -19624,11 +20108,11 @@
    },
    "functions": [
     {
-     "name": "func_8C093604",
+     "name": "updateWarningScreen",
      "start": "0x8C093604",
      "end": "0x8C093780",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "updateWarningScreen",
+     "confidence": "high"
     },
     {
      "name": "func_8C093780",
@@ -19652,9 +20136,32 @@
      "end": "0x8C0938E8"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B2F10",
+     "end": "0x8C0B2F34",
+     "symbols": [
+      {
+       "name": "WarningBlit",
+       "start": "0x8C0B2F10",
+       "size": 36
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B2F34",
+     "end": "0x8C0B2F46"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0D19E0",
+     "end": "0x8C0D19E8"
+    }
+   ],
    "bss": [],
-   "notes": "two functions using PS_PakInserted/PS_PakDamaged/PS_GetFreeBlocks at the end of the screens group. DC functions 2, MAT3 functions 2, named 0."
+   "notes": "updateWarningScreen target VMU checks/cleanup semantically corresponds MAT3 simplified body. Drawing callback is anonymous: original name unproven. C/D based on target pool words and initialized blit definition; no BSS claimed. C objects separated at true blitdef/format-string boundary2F34, independently referenced by target pools93720/93884. No arbitrary subrange splitting."
   },
   {
    "name": "hudextra",
@@ -20454,16 +20961,9 @@
     {
      "name": "AnimateWeapon",
      "start": "0x8C0996A2",
-     "end": "0x8C09ACAE",
+     "end": "0x8C09ACCA",
      "mat3": "AnimateWeapon",
      "confidence": "high"
-    },
-    {
-     "name": "func_8C09ACAE",
-     "start": "0x8C09ACAE",
-     "end": "0x8C09ACCA",
-     "mat3": null,
-     "confidence": "low"
     }
    ],
    "pools": [
@@ -20544,9 +21044,50 @@
      "end": "0x8C09ACD8"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 6, MAT3 functions 5, named 5."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B3720",
+     "end": "0x8C0B3724"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0D1DF0",
+     "end": "0x8C0D22D0",
+     "symbols": [
+      {
+       "name": "weaponOffsets",
+       "start": "0x8C0D1DF0",
+       "size": 1248
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C1A6660",
+     "end": "0x8C1A6FB4",
+     "symbols": [
+      {
+       "name": "gCurWeaponType",
+       "start": "0x8C1A6660",
+       "size": 4
+      },
+      {
+       "name": "gGattMuzzleObjs",
+       "start": "0x8C1A6664",
+       "size": 1072
+      },
+      {
+       "name": "gCannMuzzleObjs",
+       "start": "0x8C1A6A94",
+       "size": 1312
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 6, MAT3 functions 5, named 5. Private correction: anonymous AC AE label is the AnimateWeapon common epilogue; five actual source functions. Original six-entry map preserved in evidence."
   },
   {
    "name": "worlddam",
@@ -20598,7 +21139,18 @@
      "end": "0x8C09B1E4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B3724",
+     "end": "0x8C0B3730"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0D22D0",
+     "end": "0x8C0D2314"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 3, MAT3 functions 3, named 3."
   },

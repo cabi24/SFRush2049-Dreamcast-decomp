@@ -16,7 +16,8 @@
 /* Only the drivetrain tail is proven. MAT3 size 0xb4 is consistent (downshiftangvel ends at 0xb4)
    but the struct is never indexed on DC yet, so its size is not evidence-backed. */
 typedef struct tCar {
-    char pad0[0xa0];
+    char pad0[0x70];
+    float tireR[4][3]; /* road8C04AC44..AC52: +70. */
     float enginvmi;         /* 0xa0  whatslips pool 8C022EE8 (0x00a0), mov.l @r4 = m->car */
     float dwratio;          /* 0xa4  transmission pool 8C022FDE (0x00a4), find_best_gear 8C0230A2 */
     float clutchmaxt;       /* 0xa8  whatslips pool 8C022EE2 (0x00a8) */
@@ -69,6 +70,23 @@ typedef struct tResurrect {
     char pad1[0x70-0x66];
 } tResurrect;
 
+typedef struct tRoadInit {
+    char pad0[4];
+    float pos[3];      /* poolsACCE/ACD2/ACD6=6D4/6D8/6DC. */
+    float uvs[3][3];   /* poolACC4=6E0, initin base6D0. */
+    float offset[3];   /* poolACCC=704. */
+} tRoadInit;
+typedef struct tMainIn {
+ volatile float wheel; /* +720:poolE81C/loadE756/storeE816. */
+ char pad0[4];
+ volatile float brake; /* +728:poolE61C,storeE6C4. */
+ volatile float throttle; /* +72c:poolE61A,storeE590. */
+ volatile signed char gear; /* +730:poolE538,load/storeE49C..4CE. */
+ volatile signed char wing; /* +731:poolEBDE/storeEB94. */
+ volatile signed char abort; /* +732:poolEBE0/storeEBBC. */
+ char pad1[0x14-0x13]; /* mainin region to734; extent named only through732. */
+} tMainIn;
+
 /* ------------------------------------------------------------------ tModelData */
 typedef struct tModelData {
     tCar *car;              /* 0x000 whatslips 8C022DEE mov.l @r4,r3 then car fields */
@@ -82,13 +100,19 @@ typedef struct tModelData {
     float w[3]; /* rekon 8C047D0C..2A. */
     char pad_w[0x64-0x58];
     float tireForce[4][3];  /* 0x064 drivetrain 8C022CDE add #0x64; [3][1] at +0x28, [2][1] at +0x1c; pool 8C022DC6 (0x80), 8C022DCA (0x8c) */
-    char pad2[0x214-0x94];
+    char pad2[0xc4-0x94];
+    float bodyForce[4][3]; /* road8C04B0E6/B0F0. */
+    float bodyR[4][3]; /* road pool8C04AEC0. */
+    char pad_rwa[0x214-0x124];
     float rwa[3]; /* rekon pool 8C047EDC. */
     float rwv[3]; /* rekon pool 8C047D60. */
     float rwr[3]; /* rekon pool 8C047D64. */
-    char pad_uvs[0x2ec-0x238];
+    char pad_uvs[0x244-0x238];
+    float tireRwr[4][3],bodyrwr[4][3],bodyrwr2[4][3]; /* road8C04ACE6/AEBC/AEC2. */
+    char pad_model_uvs[0x2ec-0x2d4];
     float uvs[3][3]; /* CopyUV source 8C047D6E. */
-    char pad_torque[0x3b4-0x310];
+    float roaduvs[4][3][3]; /* road8C04B1BE/B13A..148. */
+    char pad_torque[0x3b4-0x3a0];
     float torque[4];        /* 0x3b4 drivetrain pool 8C022DC8 (0x03bc = torque[2]), add #4 -> torque[3] */
     char pad3[0x3cc - 0x3c4];
     float clutch;           /* 0x3cc whatslips pool 8C022DD6 (0x03cc) */
@@ -114,27 +138,32 @@ typedef struct tModelData {
     signed char magicdiff;  /* 0x5a8 drivetrain pool 8C022DC2 (0x05a8), mov.b @(r0,r14) */
     char pad7[0x5cc-0x5a9];
     float suscomp[4]; /* physical: rekon 8C047ED4. */
-    char pad_air[0x5ec-0x5dc];
+    float tpcomp[4]; /* road pool8C04ACEA. */
     float airdist[4]; /* physical: rekon 8C047ED8. */
-    char pad_road[0x60c-0x5fc];
+    float airvel[4]; /* road pool8C04B308. */
     int roadcode[4];        /* 0x60c engine (drivetra_part) */
     unsigned short sviscode[4]; /* skids 8C04EF00..F0C. */
-    char pad8[0x634-0x624];
+    signed short roadboost[4]; /* road8C04ACF0. */
+    unsigned short sound_flags[4]; /* road8C04ACF2. */
     float dt;               /* 0x634 whatslips pool 8C022EEC (0x0634) */
-    char pad9[0x640 - 0x638];
+    float idt; /* road8C04B30C/B24A. */
+    char pad9[0x640-0x63c];
     signed char crashflag;  /* 0x640 engine (drivetra_part) */
-    char pad10[0x658 - 0x641];
+    char pad10[0x648-0x641];
+    void *movingSurface; /* road8C04B1BC/B120. */
+    char pad_shift[0x658-0x64c];
     float shifttime;        /* 0x658 upshift/downshift pool 8C0230A6 (0x0658) */
     char pad11[0x660-0x65c];
     tResurrect resurrect; /* moving_state+6c4: headlights 8C0305C4/C6. */
-    char pad_fast[0x710-0x6d0];
+    tRoadInit initin; /* road base6D0, pools8C04ACCE..704. */
     tFastIn fastin;         /* 0x710 (modelTime at 0x714, pool 8C0230A8) */
-    char pad_reckon[0x734-0x718];
+    char pad_main[0x720-0x718];
+    tMainIn mainin; /* controls wheel720..abort732, region to734. */
     tRekonState reckon; /* +734..7c4, all fields proven in rekon. */
     char pad_slot[2];
     signed short slot; /* +7c6: checkpoint 8C01BBBA. */
     signed short in_game; /* +7c8: rekon 8C047C2A. */
-    char pad_drone[2];
+    signed short we_control; /* drones pool8C025C0A. */
     signed char drone_type; /* +7cc: checkpoint 8C01C3BC. */
     char pad_appearance[0x7d4-0x7cd];
     unsigned int appearance; /* checkpoint 8C01C28C. */
@@ -145,9 +174,9 @@ typedef struct tModelData {
     char pad_cp[2];
     signed short last_cp_index; /* +7e2: checkpoint 8C01C0D8. */
     signed short next_cp_index; /* +7e4: checkpoint 8C01BE80. */
-    char pad_laps[2];
+    signed short drone_target; /* drones8C0259D4/5954. */
     signed char laps,cpSign,collidable,solid; /* +7e8..7eb: checkpoint 8C01C0DC/1BFCA/1C28A/1C226. */
-    char pad_fudge[0x7f4-0x7ec];
+    float drone_scale,time_boost; /* drones8C02579E/57A0. */
     float time_fudge; /* +7f4: rekon pools 8C047D5E/EE6. */
     char pad_end[0x808-0x7f8]; /* indexed stride: carload,skids,rekon,headlights. */
 } tModelData;
@@ -368,7 +397,8 @@ typedef struct tCarData {
     char pad0[4];
     float modelTime; /* checkpoint 8C01BF02. */
     float dr_pos[3];       /* 8C030770/780/792 +8/C/10. */
-    char pad1[0x2C-0x14];
+    float dr_vel[3]; /* smoke8C04F712..728. */
+    char pad1[0x2c-0x20];
     float dr_uvs[3][3];    /* 8C02FFCA base+2C; row2 at+44/+48/+4C. */
     char pad2[0x74-0x50];
     float dr_tirepos[4][3]; /* skids 8C04E8C2. */
@@ -377,7 +407,9 @@ typedef struct tCarData {
     char pad3[2];
     signed char place,place_locked; /* +ee/+ef: checkpoint 8C01BCF0/BCEC. */
     float score; /* +f0: checkpoint 8C01C3B6. */
-    char pad_dist[0x100-0xf4];
+    char pad_dist[4];
+    signed short rwmph; /* smoke8C04F6B4 and controls8C01E53A. */
+    char pad_distance[0x100-0xfa];
     float distance; /* +100: checkpoint 8C01BCEE. */
     char pad_mileage[4];
     float mileage; /* +108: checkpoint 8C01BBB6. */
@@ -388,9 +420,12 @@ typedef struct tCarData {
     float collide_time; /* +324: checkpoint 8C01C288. */
     char pad_collide[1];
     signed char collide_state; /* +329: checkpoint 8C01C21A. */
-    char pad_crash[0x370-0x32a];
+    char pad_crash[0x36e-0x32a];
+    signed short weight_index; /* drones8C025798/56C2. */
     signed char crash_state,dead; /* +370/+371: checkpoint 8C01BE7C/1BBBC. */
-    char pad_battle[0x39c-0x372];
+    char pad_camera[2];
+    signed char camera,view; /* smoke8C05066E/670. */
+    char pad_battle[0x39c-0x376];
     anon_weapon_health_30 battle; /* powerups +39c, stride3cc. */
 } tCarData;
 
@@ -410,17 +445,123 @@ typedef struct anon_base_TOCentries_c {
 } anon_base_TOCentries_c;
 
 typedef struct tPS_File tPS_File;
+typedef struct tCircuit {
+    char pad0[4];
+    unsigned char active; /* +4:8C01C5C2 */
+    unsigned char death; /* +5:8C01C5D0 */
+    unsigned char temp; /* +6:8C01D354 */
+    unsigned char difficulty; /* +7:8C01C5DA */
+    signed char type; /* +8:8C01C5B6 */
+    signed char track; /* +9:8C01CF04/08 */
+    char pad1[2];
+    unsigned int seed; /* +c:8C01C5BE */
+    float totalTime; /* +10:8C01CF0C/12 */
+    unsigned char ranks[6][9]; /* +14,row9:8C01CE40..6A;6car loop */
+} tCircuit;
+typedef struct tSaveData {
+    char pad0[0x6f4];
+    tCircuit circuit; /* +6f4:word8C01C686 */
+} tSaveData;
+typedef struct tCircuitCar {
+    unsigned char name; /* +0:8C01C6DC */
+    unsigned char totalPlace; /* +1:8C01CF66 */
+    unsigned short totalPoints; /* +2:8C01CB08 */
+    unsigned char places[24]; /* +4:8C01CB4C..52 */
+    unsigned char points[24]; /* +1c:8C01CB54..5C */
+    signed short skill[12]; /* +34:8C01C7A4..A8 */
+} tCircuitCar;
+typedef struct tCircuitTrack {
+    unsigned char trackNum; /* +0:8C01C8BE */
+    unsigned char backward; /* +1:8C01C8D8 */
+    unsigned char mirror; /* +2:8C01C8F4 */
+    unsigned char fog; /* +3:8C01CA6E */
+    unsigned char wind; /* +4:8C01CA9C */
+} tCircuitTrack;
+
 typedef struct tPlayerProfile {
     char pad0[8];
     tPS_File **fileh; /* +8: 8C050EF2 mov.l @(8,r4),r4. */
+    char pad_rumble[0x2c-0x0c];
+    signed char rumble; /* controls8C01ED3C. */
+    char pad_datah[0x3c-0x2d];
+    tSaveData **datah; /* circuit8C01C57E, profile+3c. */
 } tPlayerProfile;
 typedef struct tPadState {
     unsigned char slot; /* checkpoint 8C01BF66..6A; demo byte stores. */
-    char pad0[0x4c-1];
+    unsigned char controller; /* controls8C01E472/476. */
+    char pad0[2];
+    unsigned int edges,levels,autoEdges; /* controls+4/+8/+c. */
+    float analog[2]; /* controls+10/+14. */
+    unsigned int controls[11]; /* controls8C01EDA8 +18,stride4. */
+    char pad_controls[0x4c-0x44];
     tPlayerProfile **save; /* state 8C050EE0..EE2; stride50. */
 } tPadState;
 typedef char dc_check_full_model[(sizeof(tModelData)==0x808)?1:-1];
 typedef char dc_check_car_data[(sizeof(tCarData)==0x3cc)?1:-1];
 typedef char dc_check_pad_state[(sizeof(tPadState)==0x50)?1:-1];
+
+typedef struct tZoidObjectDC {
+    unsigned int flags; /* headlights8C03065E..662. */
+    char pad0[4];
+    tUVMatrix *mat; /* mbox8C03D2D8. */
+    float scale,w; /* smoke8C05001C..24 and8C04FC80..8E. */
+    char pad_child[0x2a-0x14];
+    signed short child,next; /* mbox8C03D114/11C,3D182/18A. */
+    char pad_texture[0x34-0x2e];
+    tTexture *texture[4];  /* 8C069300..308 stores +34/+38/+3C/+40. */
+    char pad1[0x48 - 0x44];
+    void *field48;         /* 8C06931E r0=48; store at 8C069326. */
+    void *palette;         /* 8C0692E6 r0=4C; store at 8C0692EE. */
+    tRGBA color;           /* 8C0692B4 r0=50; word store at 8C0692BC. */
+    tRGBA envcolor;        /* 8C0692D6 r0=54; word store at 8C0692DE. */
+} tZoidObjectDC;
+
+typedef struct _tBlit _tBlit;
+struct _tBlit {
+    const char *name; /* +0:8C018898 */
+    void *palette; /* +4:8C0188AE */
+    tTexture *texture; /* +8:8C0188A6 */
+    unsigned short texIndex; /* +c:8C0188A4 */
+    signed short x; /* +e:8C018A0C */
+    signed short y; /* +10:8C018A10 */
+    unsigned short z; /* +12:8C0188EE */
+    signed short width; /* +14:8C0188E2 */
+    signed short height; /* +16:8C0188E6 */
+    unsigned char alpha; /* +18:8C0188F4 */
+    unsigned char flip; /* +19:8C018A18 */
+    signed char hide; /* +1a:8C018A14 */
+    signed char init; /* +1b:8C018A1E */
+    signed short top; /* +1c:8C0188F8 */
+    signed short bot; /* +1e:8C0188FA */
+    signed short left; /* +20:8C0188FE */
+    signed short right; /* +22:8C018902 */
+    signed short color; /* +24:8C018906 */
+    char pad0[2];
+    int (*animFunc)(_tBlit *); /* +28:8C018842 */
+    unsigned int animID; /* +2c:8C018A24 */
+    int animDTA; /* +30:8C018A26 */
+    unsigned short blidx; /* +34:8C0187F2/7F6 */
+    char pad1[2];
+    void *data; /* +38:8C018A28 */
+    _tBlit *child; /* +3c:8C018814 */
+}; /* stride40:8C0187A2/7AC; bound200:8C01887A/9B2 */
+typedef struct tBlitDef {
+    const char *texname; /* +0:8C018BAA */
+    signed short dulx,duly; /* +4/+6:8C018BA4/8B98 */
+    signed short width,height; /* +8/+a:8C018BD0/8BF6 */
+    signed short top,bot; /* +c/+e:8C018BC2/8BCC */
+    signed short left,right; /* +10/+12:8C018BBC/8BC8 */
+    unsigned int zdepth; /* +14:8C018BB6 narrowword store; front descriptor evidence */
+    unsigned int alpha; /* +18:8C018BAC */
+    int (*animfunc)(_tBlit *); /* +1c:8C018C06 */
+    unsigned int animid; /* +20:8C018B9A */
+} tBlitDef; /* stride24:8C018B86..96 */
+
+typedef struct tPadInfo {
+ signed char attached,incompatible; /* F266/F326/F332 */
+ unsigned int availButtons,buttons; /* F282/F3A4,+4/+8 */
+ signed char stick1x,stick1y,stick2x,stick2y; /* F43E/F450/F47E */
+ unsigned char analog1,analog2; /* F486/F48E;+10/+11 */
+} tPadInfo;
 
 #endif /* DC_TYPES_H */

@@ -154,11 +154,12 @@ def compare_range(image, start, end):
     return diff == 0, built, diff
 
 
-def produced_credit(produced, start, end, exact):
+def produced_credit(produced, start, end, exact, padding=()):
     """Earn only explicitly emitted bytes in an entirely exact accepted range.
     Linker zero fill remains part of image equality, but earns no source credit.
     """
-    return sum(a in produced for a in range(start, end)) if exact else 0
+    return sum(a in produced and not any(p['start'] <= a < p['end'] for p in padding)
+               for a in range(start, end)) if exact else 0
 
 
 def interval_union_size(ranges):
@@ -359,12 +360,14 @@ def build_unit(unit, symbols, externs):
                                   'end': f'{d["end"]:08X}', 'exact': ex, 'built': built, 'diff_bytes': diff})
         if ex:
             equal_data_including_fill += d['end'] - d['start']
-            exact_data += produced_credit(produced, d['start'], d['end'], ex)
+            exact_data += produced_credit(produced, d['start'], d['end'], ex, unit.get('data_padding', []))
         else:
             all_exact = False
     entry['exact_data_bytes'] = exact_data
     entry['equal_data_bytes_including_fill'] = equal_data_including_fill
     entry['excluded_exact_data_fill'] = equal_data_including_fill - exact_data
+    entry['excluded_data_padding'] = [dict(start=f'{p["start"]:08X}', end=f'{p["end"]:08X}', reason=p['reason'])
+                                      for p in unit.get('data_padding', [])]
 
     # ---- BSS placement (no bytes; checked by extent)
     for sec in sorted({b['section'] for b in unit['bss']}):
