@@ -1,0 +1,39 @@
+{
+  "unit": "zoidwindow",
+  "text_nonpadding": 2666,
+  "data_nonpadding": 224,
+  "exact_functions": 15,
+  "text_spans": [
+    [
+      "8C0693C4",
+      "8C0694CE"
+    ],
+    [
+      "8C0694D0",
+      "8C069BE2"
+    ],
+    [
+      "8C069BE4",
+      "8C069D32"
+    ],
+    [
+      "8C069D34",
+      "8C069E34"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0C7B4C",
+      "8C0C7C2C"
+    ]
+  ],
+  "source_sha256": "dac47cc6565eb029ee6ca97f1904c2464332a070be68a85bd81b9c94312b2bdc",
+  "expanded_source_sha256": "c32c20aba212a7bf6f679440d19db34a24f88f4399c701ae88207c24321761d6",
+  "compiler_input_sha256": "d7fc875e30a1d2f7ff451736de006dd0b53852043f8c543ac378383bcc27a8a4",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "69a374cfa6b241adb872f227256ced847a4a65c5a5142bfa8b6f8774a8a04fb3",
+  "object_sha256": "51bbdd9c7aa833f7413556e1fe4eb994e8d59bbf60f2f2b3aab059de88da5870",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
