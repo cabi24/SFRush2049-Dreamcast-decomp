@@ -169,7 +169,7 @@ void CheckCameraView(void)
             else if (view != 4 && (player->edges & player->controls[8])) {
                 view++;
                 if (view >= 4) view = 0;
-                if ((*player->save)->field48) SavePlayerCarView(player->save, view);
+                if ((*player->save)->datah) SavePlayerCarView(player->save, view);
                 if (view == 1) {
                     for (i = 0; i < 3; i++) cur_acc[car->camera][i] = 0.0f;
                 } else if (view == 2) {
@@ -754,7 +754,7 @@ void steady_move_cam(signed short mode, tCarData *car, float *pos, float (*uvs)[
         case 2:
             init_view3(car);
             if (!(gGameState & 8)) {
-                car->view = car->saveview = (*car->player->save)->field48 ? GetPlayerCarView(car->player->save) : 2;
+                car->view = car->saveview = (*car->player->save)->datah ? GetPlayerCarView(car->player->save) : 2;
                 if (car->view == 1) {
                     cur_acc[car->camera][0] = 0.0f;
                     cur_acc[car->camera][1] = 0.0f;

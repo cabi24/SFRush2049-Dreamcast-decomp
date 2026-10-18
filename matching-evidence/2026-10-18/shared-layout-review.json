@@ -1,0 +1,46 @@
+{
+  "reviews": [
+    "Storage-preserving shared field merge verified against independent mdrive/modescr instruction reviews; tModelData808/car3cc/Pad50 remain fixed.",
+    "Camera profile chain loads datah at+3c, profile stride40; unsupported+48 view removed. Circuit profile size check corrected.",
+    "Only saved native undefined linker dependencies imported; leading underscore names retained. Static locals are not imported.",
+    "Audio-menu cursor scalar and game cheat byte-slice use qualified names with original target bindings; HAL menu text identities corrected by target-owned map.",
+    "Audiosfx byte0BEBBC renamed gExitGame, zero test and ExitSystem binding preserved.",
+    "Native per-unit header regression links for changed expanded inputs; other native artifacts reused unchanged. No full-image link."
+  ],
+  "proof_inputs": [
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\mdrive\\evidence\\integration-header-review.md",
+      "sha256": "92d81f860c6d7cf449734e7bd08b548c2a65fa4b6aef0baea25647672a74e0fe"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\modescr\\evidence\\integration-field-review.md",
+      "sha256": "b0ab35d2e4759ed2883e79ac4cfd135bc87a0fd662c118f1235c6eacfa62be06"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\videoscr\\evidence\\camera-profile-chain.md",
+      "sha256": "18e8c6ebd56e508f6988946003dfe9497772ae324c4bdd79c76e0ec1f92977c2"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\videoscr\\evidence\\camera-profile-proof.json",
+      "sha256": "c61b5cf4bc9e4feee2ea30fd5ba47082f661634b80327a9bd799f151fb7f01a9"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\save\\evidence\\layout-proof.json",
+      "sha256": "8401ad61e1d5bc95e9d3b059977b8bba1ff08977b419b4a1bd7ba876f3d5a4c9"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\unk_8C03A360\\evidence\\exit-alias-semantic-audit.md",
+      "sha256": "34d5e5680ea9953348c77af61c65ee5348d9c4c208db56c51431b9faf4cc88ee"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\unk_8C03A360\\evidence\\exit-alias-semantic-audit.json",
+      "sha256": "ee0a87790b990a70e26795c0399e2dd482eaefb6ddab38823528997af4867e77"
+    },
+    {
+      "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\mdrive\\evidence\\integration-header-review-receipt.json",
+      "sha256": "16b39360d98d709cc7d4fdb665864fccca13bad921bcaa03398e1eecaae11b47"
+    }
+  ],
+  "compiler_flags_changed": false,
+  "existing_native_artifacts_reused_only_if_expanded_input_identical": true
+}

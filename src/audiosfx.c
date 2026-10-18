@@ -16,7 +16,7 @@ void func_8C015EF0(DcSfxBank *bank, int lock)
         allocationSize = (size + 2047) & ~2047;
         buffer = AllocateMemoryHeap(0, allocationSize);
         if (!func_8C0A0F2A(bank->name, buffer, allocationSize)) {
-            if (gAudReadFailureEnabled) func_8C039718();
+            if (gExitGame) func_8C039718();
         }
     recheck:
             if (!func_8C0A18E6(&available)) { }

@@ -50,7 +50,7 @@ extern DcSfxBank *gAudLoadedBanks[]; /* 8C123CB0; allocation end unresolved. */
 extern int gAudActiveResources[]; /* 8C123CD4; allocation end unresolved. */
 extern DcSfxBank gAudBankTable[9]; /* 8C0A7904; 9*24-byte named-bank records. */
 extern float gSfxMasterVol; /* 8C178440 */
-extern signed char gAudReadFailureEnabled; /* 8C0BEBBC */
+extern signed char gExitGame; /* 8C0BEBBC */
 extern signed char gMono; /* 8C0C7C50 */
 
 extern void *AllocateMemoryHeap(int, unsigned int);

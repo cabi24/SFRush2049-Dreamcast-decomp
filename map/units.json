@@ -3209,9 +3209,87 @@
      "end": "0x8C018790"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A88F4",
+     "end": "0x8C0A8960"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0A8960",
+     "end": "0x8C0A8A0D"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BAEA8",
+     "end": "0x8C0BB1D8"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 12, MAT3 functions 12, named 12."
+   "notes": "DC functions 12, MAT3 functions 12, named 12.",
+   "data_padding": [
+    {
+     "start": "0x8C0BAF09",
+     "end": "0x8C0BAF0C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BAF49",
+     "end": "0x8C0BAF4C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BAF89",
+     "end": "0x8C0BAF8C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BAFC9",
+     "end": "0x8C0BAFCC",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB009",
+     "end": "0x8C0BB00C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB049",
+     "end": "0x8C0BB04C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB089",
+     "end": "0x8C0BB08C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB0C9",
+     "end": "0x8C0BB0CC",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB109",
+     "end": "0x8C0BB10C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB149",
+     "end": "0x8C0BB14C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB189",
+     "end": "0x8C0BB18C",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    },
+    {
+     "start": "0x8C0BB1C9",
+     "end": "0x8C0BB1CC",
+     "reason": "tMenuButton initialized explicit3-byte tail +3d..40"
+    }
+   ]
   },
   {
    "name": "blit",
@@ -4920,9 +4998,382 @@
      "end": "0x8C022654"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0A9284",
+     "end": "0x8C0AA8D8"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BC45C",
+     "end": "0x8C0BD8C0"
+    }
+   ],
    "bss": [],
-   "notes": "includes uninitButtons/updateButtons at 0x8C021B40. DC functions 11, MAT3 functions 12, named 11."
+   "notes": "includes uninitButtons/updateButtons at 0x8C021B40. DC functions 11, MAT3 functions 12, named 11.",
+   "data_padding": [
+    {
+     "start": "0x8C0BC4C5",
+     "end": "0x8C0BC4C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC505",
+     "end": "0x8C0BC508",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC545",
+     "end": "0x8C0BC548",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC585",
+     "end": "0x8C0BC588",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC5C5",
+     "end": "0x8C0BC5C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC605",
+     "end": "0x8C0BC608",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC645",
+     "end": "0x8C0BC648",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC685",
+     "end": "0x8C0BC688",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC6C5",
+     "end": "0x8C0BC6C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC705",
+     "end": "0x8C0BC708",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC745",
+     "end": "0x8C0BC748",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC785",
+     "end": "0x8C0BC788",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC7C5",
+     "end": "0x8C0BC7C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC805",
+     "end": "0x8C0BC808",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC845",
+     "end": "0x8C0BC848",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC885",
+     "end": "0x8C0BC888",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC8C5",
+     "end": "0x8C0BC8C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC905",
+     "end": "0x8C0BC908",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC945",
+     "end": "0x8C0BC948",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC985",
+     "end": "0x8C0BC988",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BC9C5",
+     "end": "0x8C0BC9C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCA05",
+     "end": "0x8C0BCA08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCA45",
+     "end": "0x8C0BCA48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCA85",
+     "end": "0x8C0BCA88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCAC5",
+     "end": "0x8C0BCAC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCB05",
+     "end": "0x8C0BCB08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCB45",
+     "end": "0x8C0BCB48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCB85",
+     "end": "0x8C0BCB88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCBC5",
+     "end": "0x8C0BCBC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCC05",
+     "end": "0x8C0BCC08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCC45",
+     "end": "0x8C0BCC48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCC85",
+     "end": "0x8C0BCC88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCCC5",
+     "end": "0x8C0BCCC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCD05",
+     "end": "0x8C0BCD08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCD45",
+     "end": "0x8C0BCD48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCD85",
+     "end": "0x8C0BCD88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCDC5",
+     "end": "0x8C0BCDC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCE05",
+     "end": "0x8C0BCE08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCE45",
+     "end": "0x8C0BCE48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCE85",
+     "end": "0x8C0BCE88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCEC5",
+     "end": "0x8C0BCEC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCF05",
+     "end": "0x8C0BCF08",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCF45",
+     "end": "0x8C0BCF48",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCF85",
+     "end": "0x8C0BCF88",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BCFC5",
+     "end": "0x8C0BCFC8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD005",
+     "end": "0x8C0BD008",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD045",
+     "end": "0x8C0BD048",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD085",
+     "end": "0x8C0BD088",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD0C5",
+     "end": "0x8C0BD0C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD105",
+     "end": "0x8C0BD108",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD145",
+     "end": "0x8C0BD148",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD185",
+     "end": "0x8C0BD188",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD1C5",
+     "end": "0x8C0BD1C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD205",
+     "end": "0x8C0BD208",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD245",
+     "end": "0x8C0BD248",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD285",
+     "end": "0x8C0BD288",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD2C5",
+     "end": "0x8C0BD2C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD305",
+     "end": "0x8C0BD308",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD345",
+     "end": "0x8C0BD348",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD385",
+     "end": "0x8C0BD388",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD3C5",
+     "end": "0x8C0BD3C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD405",
+     "end": "0x8C0BD408",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD445",
+     "end": "0x8C0BD448",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD485",
+     "end": "0x8C0BD488",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD4C5",
+     "end": "0x8C0BD4C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD505",
+     "end": "0x8C0BD508",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD545",
+     "end": "0x8C0BD548",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD585",
+     "end": "0x8C0BD588",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD5C5",
+     "end": "0x8C0BD5C8",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD605",
+     "end": "0x8C0BD608",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD645",
+     "end": "0x8C0BD648",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+     "start": "0x8C0BD685",
+     "end": "0x8C0BD688",
+     "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    }
+   ]
   },
   {
    "name": "countdown",
@@ -6179,11 +6630,11 @@
      "confidence": "high"
     },
     {
-     "name": "_animScrollText",
+     "name": "func_8C02901E",
      "start": "0x8C02901E",
      "end": "0x8C0291A6",
-     "mat3": "_animScrollText",
-     "confidence": "high"
+     "mat3": null,
+     "confidence": "low"
     },
     {
      "name": "func_8C0291A6",
@@ -6287,9 +6738,98 @@
      "end": "0x8C0291CC"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 14, MAT3 functions 25, named 12."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA988",
+     "end": "0x8C0AA998"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0AA998",
+     "end": "0x8C0AA9BC"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0AA9BC",
+     "end": "0x8C0AA9CC"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0AA9CC",
+     "end": "0x8C0AA9D1"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDD54",
+     "end": "0x8C0BDD56"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDD56",
+     "end": "0x8C0BDDA8"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDA8",
+     "end": "0x8C0BDDB8"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDB8",
+     "end": "0x8C0BDDC0"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDC0",
+     "end": "0x8C0BDDC4"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDC4",
+     "end": "0x8C0BDDC6"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDC6",
+     "end": "0x8C0BDDCA"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDCA",
+     "end": "0x8C0BDDCC"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDCC",
+     "end": "0x8C0BDDD0"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDDD0",
+     "end": "0x8C0BDDD4"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C628",
+     "end": "0x8C12C660"
+    }
+   ],
+   "notes": "DC functions 14, MAT3 functions 25, named 12. Private901E name downgraded: direct warning renderer, GC original spelling not proved.",
+   "data_padding": [
+    {
+     "start": "0x8C0BDDA7",
+     "end": "0x8C0BDDA8",
+     "reason": "81-byte gFogColors after two byte flags; next4-byte playerTextColor aligned atDDA8."
+    },
+    {
+     "start": "0x8C0AA9CB",
+     "end": "0x8C0AA9CC",
+     "reason": "15-byte C format string and zero alignment byte before5-byte alphabet string."
+    }
+   ]
   },
   {
    "name": "gameoverscr",
@@ -7830,9 +8370,41 @@
      "end": "0x8C03478C"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "includes censor/fixword at 0x8C034660. DC functions 20, MAT3 functions 25, named 20."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AAAD4",
+     "end": "0x8C0AAE15",
+     "note": "native censor pointer template88 followed by58defaultname strings and22censor strings; unported earlier descriptors/formatstrings excluded"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BE038",
+     "end": "0x8C0BE208",
+     "note": "default name ptrs232,inited1,align3,blit4,table1,align3,lastplayer16,rects192, DrawNameDEL/END/SPC arrays12 at1FC/200/204"
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C134224",
+     "end": "0x8C13422E",
+     "note": "fixword static op1 pointer4,sp pointer4,cnt short2; target literals34780/784/788; no image credit"
+    }
+   ],
+   "notes": "includes censor/fixword at 0x8C034660. DC functions 20, MAT3 functions 25, named 20.",
+   "data_padding": [
+    {
+     "start": "0x8C0BE121",
+     "end": "0x8C0BE124",
+     "reason": "byte inited to pointer alignment"
+    },
+    {
+     "start": "0x8C0BE129",
+     "end": "0x8C0BE12C",
+     "reason": "byte table to pointer alignment"
+    }
+   ]
   },
   {
    "name": "hud",
@@ -8310,9 +8882,747 @@
      "end": "0x8C039280"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 33, MAT3 functions 38, named 31."
+   "data": [
+    {
+     "name": "RaceMultiBlit",
+     "section": "C",
+     "start": "0x8C0AAE18",
+     "end": "0x8C0ABAC0",
+     "symbols": [
+      {
+       "name": "RaceMultiBlit",
+       "start": "0x8C0AAE18",
+       "end": "0x8C0ABAC0"
+      }
+     ]
+    },
+    {
+     "name": "HudMultiBlit",
+     "section": "C",
+     "start": "0x8C0ABAC0",
+     "end": "0x8C0ABB74",
+     "symbols": [
+      {
+       "name": "HudMultiBlit",
+       "start": "0x8C0ABAC0",
+       "end": "0x8C0ABB74"
+      }
+     ]
+    },
+    {
+     "name": "ResultsMultiBlit",
+     "section": "C",
+     "start": "0x8C0ABB74",
+     "end": "0x8C0ABB98",
+     "symbols": [
+      {
+       "name": "ResultsMultiBlit",
+       "start": "0x8C0ABB74",
+       "end": "0x8C0ABB98"
+      }
+     ]
+    },
+    {
+     "name": "TwoPlayerMultiBlit",
+     "section": "C",
+     "start": "0x8C0ABB98",
+     "end": "0x8C0ABBBC",
+     "symbols": [
+      {
+       "name": "TwoPlayerMultiBlit",
+       "start": "0x8C0ABB98",
+       "end": "0x8C0ABBBC"
+      }
+     ]
+    },
+    {
+     "name": "ThreePlayerMultiBlit",
+     "section": "C",
+     "start": "0x8C0ABBBC",
+     "end": "0x8C0ABBE0",
+     "symbols": [
+      {
+       "name": "ThreePlayerMultiBlit",
+       "start": "0x8C0ABBBC",
+       "end": "0x8C0ABBE0"
+      }
+     ]
+    },
+    {
+     "name": "OverlayMultiBlit",
+     "section": "C",
+     "start": "0x8C0ABBE0",
+     "end": "0x8C0ABC04",
+     "symbols": [
+      {
+       "name": "OverlayMultiBlit",
+       "start": "0x8C0ABBE0",
+       "end": "0x8C0ABC04"
+      }
+     ]
+    },
+    {
+     "name": "CheckResults automatic initializer64",
+     "section": "C",
+     "start": "0x8C0ABC04",
+     "end": "0x8C0ABC44"
+    },
+    {
+     "name": "CheckResults automatic initializer32a",
+     "section": "C",
+     "start": "0x8C0ABC44",
+     "end": "0x8C0ABC64"
+    },
+    {
+     "name": "CheckResults automatic initializer32b",
+     "section": "C",
+     "start": "0x8C0ABC64",
+     "end": "0x8C0ABC84"
+    },
+    {
+     "name": "CheckResults points format",
+     "section": "C",
+     "start": "0x8C0ABC84",
+     "end": "0x8C0ABC8A"
+    },
+    {
+     "name": "CheckResults text format",
+     "section": "C",
+     "start": "0x8C0ABC8C",
+     "end": "0x8C0ABC8F"
+    },
+    {
+     "name": "CheckResults time format",
+     "section": "C",
+     "start": "0x8C0ABC90",
+     "end": "0x8C0ABCA0"
+    },
+    {
+     "name": "cStrCreditNames",
+     "section": "D",
+     "start": "0x8C0BE208",
+     "end": "0x8C0BE470",
+     "symbols": [
+      {
+       "name": "cStrCreditNames",
+       "start": "0x8C0BE208",
+       "end": "0x8C0BE470"
+      }
+     ]
+    },
+    {
+     "name": "whichCam",
+     "section": "D",
+     "start": "0x8C0BE470",
+     "end": "0x8C0BE480",
+     "symbols": [
+      {
+       "name": "whichCam",
+       "start": "0x8C0BE470",
+       "end": "0x8C0BE480"
+      }
+     ]
+    },
+    {
+     "name": "speedPos",
+     "section": "D",
+     "start": "0x8C0BE480",
+     "end": "0x8C0BE500",
+     "symbols": [
+      {
+       "name": "speedPos",
+       "start": "0x8C0BE480",
+       "end": "0x8C0BE500"
+      }
+     ]
+    },
+    {
+     "name": "odometerPos",
+     "section": "D",
+     "start": "0x8C0BE500",
+     "end": "0x8C0BE580",
+     "symbols": [
+      {
+       "name": "odometerPos",
+       "start": "0x8C0BE500",
+       "end": "0x8C0BE580"
+      }
+     ]
+    },
+    {
+     "name": "tachPos",
+     "section": "D",
+     "start": "0x8C0BE580",
+     "end": "0x8C0BE600",
+     "symbols": [
+      {
+       "name": "tachPos",
+       "start": "0x8C0BE580",
+       "end": "0x8C0BE600"
+      }
+     ]
+    },
+    {
+     "name": "gearPos",
+     "section": "D",
+     "start": "0x8C0BE600",
+     "end": "0x8C0BE680",
+     "symbols": [
+      {
+       "name": "gearPos",
+       "start": "0x8C0BE600",
+       "end": "0x8C0BE680"
+      }
+     ]
+    },
+    {
+     "name": "countdownTimerPos",
+     "section": "D",
+     "start": "0x8C0BE680",
+     "end": "0x8C0BE6A0",
+     "symbols": [
+      {
+       "name": "countdownTimerPos",
+       "start": "0x8C0BE680",
+       "end": "0x8C0BE6A0"
+      }
+     ]
+    },
+    {
+     "name": "elapsedTimerPos",
+     "section": "D",
+     "start": "0x8C0BE6A0",
+     "end": "0x8C0BE6C0",
+     "symbols": [
+      {
+       "name": "elapsedTimerPos",
+       "start": "0x8C0BE6A0",
+       "end": "0x8C0BE6C0"
+      }
+     ]
+    },
+    {
+     "name": "placePos",
+     "section": "D",
+     "start": "0x8C0BE6C0",
+     "end": "0x8C0BE740",
+     "symbols": [
+      {
+       "name": "placePos",
+       "start": "0x8C0BE6C0",
+       "end": "0x8C0BE740"
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "name": "ShowHUD local delay/nextSwitch",
+     "section": "B",
+     "start": "0x8C134530",
+     "end": "0x8C134538",
+     "confidence": "high",
+     "note": "ShowHUD pools9D4/9EC point to two source static float locals; no guessed surrounding BSS."
+    }
+   ],
+   "notes": "DC functions 33, MAT3 functions 38, named 31.",
+   "data_padding": [
+    {
+     "start": "0x8C0AAE2E",
+     "end": "0x8C0AAE30",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAE52",
+     "end": "0x8C0AAE54",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAE76",
+     "end": "0x8C0AAE78",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAE9A",
+     "end": "0x8C0AAE9C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAEBE",
+     "end": "0x8C0AAEC0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAEE2",
+     "end": "0x8C0AAEE4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAF06",
+     "end": "0x8C0AAF08",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAF2A",
+     "end": "0x8C0AAF2C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAF4E",
+     "end": "0x8C0AAF50",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAF72",
+     "end": "0x8C0AAF74",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAF96",
+     "end": "0x8C0AAF98",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAFBA",
+     "end": "0x8C0AAFBC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AAFDE",
+     "end": "0x8C0AAFE0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB002",
+     "end": "0x8C0AB004",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB026",
+     "end": "0x8C0AB028",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB04A",
+     "end": "0x8C0AB04C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB06E",
+     "end": "0x8C0AB070",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB092",
+     "end": "0x8C0AB094",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB0B6",
+     "end": "0x8C0AB0B8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB0DA",
+     "end": "0x8C0AB0DC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB0FE",
+     "end": "0x8C0AB100",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB122",
+     "end": "0x8C0AB124",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB146",
+     "end": "0x8C0AB148",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB16A",
+     "end": "0x8C0AB16C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB18E",
+     "end": "0x8C0AB190",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB1B2",
+     "end": "0x8C0AB1B4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB1D6",
+     "end": "0x8C0AB1D8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB1FA",
+     "end": "0x8C0AB1FC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB21E",
+     "end": "0x8C0AB220",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB242",
+     "end": "0x8C0AB244",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB266",
+     "end": "0x8C0AB268",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB28A",
+     "end": "0x8C0AB28C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB2AE",
+     "end": "0x8C0AB2B0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB2D2",
+     "end": "0x8C0AB2D4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB2F6",
+     "end": "0x8C0AB2F8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB31A",
+     "end": "0x8C0AB31C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB33E",
+     "end": "0x8C0AB340",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB362",
+     "end": "0x8C0AB364",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB386",
+     "end": "0x8C0AB388",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB3AA",
+     "end": "0x8C0AB3AC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB3CE",
+     "end": "0x8C0AB3D0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB3F2",
+     "end": "0x8C0AB3F4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB416",
+     "end": "0x8C0AB418",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB43A",
+     "end": "0x8C0AB43C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB45E",
+     "end": "0x8C0AB460",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB482",
+     "end": "0x8C0AB484",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB4A6",
+     "end": "0x8C0AB4A8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB4CA",
+     "end": "0x8C0AB4CC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB4EE",
+     "end": "0x8C0AB4F0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB512",
+     "end": "0x8C0AB514",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB536",
+     "end": "0x8C0AB538",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB55A",
+     "end": "0x8C0AB55C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB57E",
+     "end": "0x8C0AB580",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB5A2",
+     "end": "0x8C0AB5A4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB5C6",
+     "end": "0x8C0AB5C8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB5EA",
+     "end": "0x8C0AB5EC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB60E",
+     "end": "0x8C0AB610",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB632",
+     "end": "0x8C0AB634",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB656",
+     "end": "0x8C0AB658",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB67A",
+     "end": "0x8C0AB67C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB69E",
+     "end": "0x8C0AB6A0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB6C2",
+     "end": "0x8C0AB6C4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB6E6",
+     "end": "0x8C0AB6E8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB70A",
+     "end": "0x8C0AB70C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB72E",
+     "end": "0x8C0AB730",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB752",
+     "end": "0x8C0AB754",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB776",
+     "end": "0x8C0AB778",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB79A",
+     "end": "0x8C0AB79C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB7BE",
+     "end": "0x8C0AB7C0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB7E2",
+     "end": "0x8C0AB7E4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB806",
+     "end": "0x8C0AB808",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB82A",
+     "end": "0x8C0AB82C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB84E",
+     "end": "0x8C0AB850",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB872",
+     "end": "0x8C0AB874",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB896",
+     "end": "0x8C0AB898",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB8BA",
+     "end": "0x8C0AB8BC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB8DE",
+     "end": "0x8C0AB8E0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB902",
+     "end": "0x8C0AB904",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB926",
+     "end": "0x8C0AB928",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB94A",
+     "end": "0x8C0AB94C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB96E",
+     "end": "0x8C0AB970",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB992",
+     "end": "0x8C0AB994",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB9B6",
+     "end": "0x8C0AB9B8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB9DA",
+     "end": "0x8C0AB9DC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0AB9FE",
+     "end": "0x8C0ABA00",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABA22",
+     "end": "0x8C0ABA24",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABA46",
+     "end": "0x8C0ABA48",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABA6A",
+     "end": "0x8C0ABA6C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABA8E",
+     "end": "0x8C0ABA90",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABAB2",
+     "end": "0x8C0ABAB4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABAD6",
+     "end": "0x8C0ABAD8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABAFA",
+     "end": "0x8C0ABAFC",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABB1E",
+     "end": "0x8C0ABB20",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABB42",
+     "end": "0x8C0ABB44",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABB66",
+     "end": "0x8C0ABB68",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABB8A",
+     "end": "0x8C0ABB8C",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABBAE",
+     "end": "0x8C0ABBB0",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABBD2",
+     "end": "0x8C0ABBD4",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    },
+    {
+     "start": "0x8C0ABBF6",
+     "end": "0x8C0ABBF8",
+     "reason": "Conservatively uncredited zdepth high halfword: a word load into a narrower API can come from either a uint32 member or a uint16 plus padding, so it does not prove padding. Common/source uint32 stays unchanged; full record equality remains required. NewMultiBlit8C018BB6 reads low16 at+14."
+    }
+   ]
   },
   {
    "name": "Init",
@@ -8705,23 +10015,33 @@
     {
      "name": "SetDroneResPathIndex",
      "start": "0x8C03C460",
-     "end": "0x8C03C600",
+     "end": "0x8C03C5CE",
      "mat3": "SetDroneResPathIndex",
-     "confidence": "high"
+     "confidence": "high",
+     "notes": "Separate following SetNewPathIndex leaf is called externally from resurrect; see evidence/setnewpath-boundary-proof.json."
     },
     {
-     "name": "func_8C03C620",
+     "name": "SetNewPathIndex",
+     "start": "0x8C03C5CE",
+     "end": "0x8C03C600",
+     "mat3": "SetNewPathIndex",
+     "confidence": "high",
+     "notes": "Native independent source symbol plus target external tail call49248/4924E via pool4926C=C5CE. Preceding callee restore falls through."
+    },
+    {
+     "name": "FindClosestResPathPt",
      "start": "0x8C03C620",
      "end": "0x8C03C696",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high",
+     "notes": "DC-only closest res-path analogue; targetC620..C696 readsinR4 andgResPath root."
     },
     {
-     "name": "func_8C03C696",
+     "name": "FindClosestPathPt",
      "start": "0x8C03C696",
      "end": "0x8C03C71A",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "FindClosestPathPt",
+     "confidence": "high"
     },
     {
      "name": "FindClosestDronePathPtEfficiently",
@@ -8922,7 +10242,20 @@
      "end": "0x8C03CF94"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC0A0",
+     "end": "0x8C0AC0B5",
+     "notes": "Corrupt Maxpath Data plus NUL:21semanticstringbytes"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BEBC4",
+     "end": "0x8C0BEBE8",
+     "notes": "static p0 + gravity float arrays;4+16+16=36semanticbytes"
+    }
+   ],
    "bss": [],
    "notes": "\"Corrupt Maxpath Data\" string. DC functions 24, MAT3 functions 25, named 22."
   },
@@ -11511,8 +12844,28 @@
      "end": "0x8C04AA94"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "name": "pole_pos_offset",
+     "section": "C",
+     "start": "0x8C0AC42C",
+     "end": "0x8C0AC4BC"
+    },
+    {
+     "name": "res_last_time and demo tables",
+     "section": "D",
+     "start": "0x8C0BFC24",
+     "end": "0x8C0BFCDC"
+    }
+   ],
+   "bss": [
+    {
+     "name": "resurrect globals and local arrays",
+     "section": "B",
+     "start": "0x8C1503E4",
+     "end": "0x8C15044C"
+    }
+   ],
    "notes": "DC functions 19, MAT3 functions 19, named 19."
   },
   {

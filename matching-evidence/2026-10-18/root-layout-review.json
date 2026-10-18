@@ -1,0 +1,45 @@
+{
+  "scope": "Root integration-eleventh target/source boundary and compatibility review",
+  "target_sha256": "336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688",
+  "maxpath": {
+    "accepted": true,
+    "original_union": [
+      "8C03C460",
+      "8C03C600"
+    ],
+    "new_ranges": [
+      [
+        "8C03C460",
+        "8C03C5CE"
+      ],
+      [
+        "8C03C5CE",
+        "8C03C600"
+      ]
+    ],
+    "unchanged_byte_union": true,
+    "source_function_denominator_change": 1,
+    "new_credit_from_split": 0,
+    "independent_target_word_checks": {
+      "0x8c049248": "08d3",
+      "0x8c04924e": "2b43",
+      "0x8c04926c": "cec5038c"
+    },
+    "target_slice_sha256": "2d5eb7ccc421793477616490e2124e872a2d6c349ef2cc965f56b0efa8778396",
+    "reason": "Independent external tail call enters C5CE with R4/R5 after caller restoration; leaf has its own body/return, not an epilogue fragment."
+  },
+  "world": {
+    "preserved_alias": "_func_8C0687B6",
+    "address": "8C0687B6",
+    "reason": "Existing source caller and saved exact native pool established this address. Fresh regression exposed missing map-name alias; source behavior unchanged."
+  },
+  "retained_original_address_aliases": [
+    "func_8C044C2C",
+    "func_8C044CA4",
+    "func_8C044D0C",
+    "func_8C044E94",
+    "func_8C03C620",
+    "func_8C03C696"
+  ],
+  "circuit_aliases": "Fresh regression exposed four inherited unresolved names from the password map rename. Original address aliases retained; actual target addresses preserved."
+}
