@@ -1,0 +1,26 @@
+{
+  "unit": "resurrect",
+  "text_nonpadding": 0,
+  "data_nonpadding": 328,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0AC42C",
+      "8C0AC4BC"
+    ],
+    [
+      "8C0BFC24",
+      "8C0BFCDC"
+    ]
+  ],
+  "source_sha256": "c8c39607f53487c4dd37b4f2b67eca1d3c3f0c7ce6fe874e3c816cf4f598d1aa",
+  "expanded_source_sha256": "955d5cedc1358a68926aeaecb29a430054619ceddf8e0e6fda3d5b06ad6945f5",
+  "compiler_input_sha256": "73c531e2f96acf70ec6c0d8744cbce512198d91197e463c0ab053624b7893223",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "98c8810b2b9413a97e0d1c99c32e3a1deb9cf57c35d11a48790669aae5deb161",
+  "object_sha256": "98087b0daf152a59110afe930b801c9c928ae198842cffd46fc100709f435709",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
