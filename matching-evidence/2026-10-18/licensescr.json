@@ -1,0 +1,39 @@
+{
+  "unit": "licensescr",
+  "text_nonpadding": 526,
+  "data_nonpadding": 143,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C07D9F8",
+      "8C07DADE"
+    ],
+    [
+      "8C07DAE0",
+      "8C07DC08"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B243C",
+      "8C0B24BB"
+    ],
+    [
+      "8C0B24BC",
+      "8C0B24C3"
+    ],
+    [
+      "8C0CDB84",
+      "8C0CDB8D"
+    ]
+  ],
+  "source_sha256": "dd990569785ea23679c01b869a80059dd8b66fc222929c635eb5d53d6da7c715",
+  "expanded_source_sha256": "053c90e48e9b660bcc13b8863bc4cbc635e4bd29c916546f0e321ab5d743cf0f",
+  "compiler_input_sha256": "ba39a734d5646cc53a4b6b43e7d7f160ff76768c920df198606cc0220a712764",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "bd43b4242b3857cefd6f52dbfdd36edea57b27b2e198599ea0471d0e5de963ba",
+  "object_sha256": "1822657b474825c78e6fb1aad4f86994dcbc903fd966393adf5d1dd142303afc",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
