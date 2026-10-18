@@ -4,3 +4,5 @@
 # Names are placeholders until the functions are identified.
 _SetInterruptMask 0x8C018000
 _RegisterRetraceCallback 0x8C0D9484
+_carEngineTorque 0x8C0BBC4C
+_carTransGearRatio 0x8C0BBA48

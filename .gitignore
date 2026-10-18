@@ -37,3 +37,6 @@ calib/link/*.abs
 calib/link/*.map
 **/__pycache__/
 *.pyc
+
+# Map pipeline intermediates (regenerable; contain strings extracted from the game image)
+map/raw/
