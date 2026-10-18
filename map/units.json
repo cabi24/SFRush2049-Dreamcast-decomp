@@ -9907,9 +9907,27 @@
      "end": "0x8C03A41C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BEBBC",
+     "end": "0x8C0BEBC4",
+     "symbols": [
+      {
+       "name": "gExitGame",
+       "start": "0x8C0BEBBC",
+       "size": 1
+      },
+      {
+       "name": "exit_savedCounter",
+       "start": "0x8C0BEBC0",
+       "size": 4
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "0000 pad before (hard boundary); two functions called by the main-like 0x8C01026C; no MAT3 match (main.c slot?)."
+   "notes": "Anonymous two-helper unit retained. Target stores exit byte0BEBBC and saved unsigned retrace count0BEBC0; proposedD8 includes3 alignment bytes, no paddingcredit. GameUpdateFrame caller/MAT3 support exit-byte gExitGame identity; audiosfx inherited descriptive alias refers samebyte. Root canonical naming acceptance separate."
   },
   {
    "name": "maxpath",
@@ -10765,9 +10783,36 @@
      "end": "0x8C03FD08"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "munge_gLink_data, init_cars first. DC functions 20, MAT3 functions 20, named 19."
+   "data": [
+    {
+     "name": "drone_sched and tire appearance tables",
+     "section": "C",
+     "start": "0x8C0AC0C4",
+     "end": "0x8C0AC1AC"
+    },
+    {
+     "name": "attractSlot, alignment and percentTable",
+     "section": "D",
+     "start": "0x8C0BEDE8",
+     "end": "0x8C0BEE7C"
+    }
+   ],
+   "bss": [
+    {
+     "name": "model iteration, slot lists and scheduling state",
+     "section": "B",
+     "start": "0x8C14CB60",
+     "end": "0x8C14CBA4"
+    }
+   ],
+   "notes": "munge_gLink_data, init_cars first. DC functions 20, MAT3 functions 20, named 19.",
+   "data_padding": [
+    {
+     "start": "0x8C0BEDEA",
+     "end": "0x8C0BEDEC",
+     "reason": "Two-byte section alignment between source static signed-short attractSlot and four-byte-aligned int percentTable; actual native D extent148 versus semantic146. Always0credit."
+    }
+   ]
   },
   {
    "name": "memsys",
@@ -12464,7 +12509,7 @@
   },
   {
    "name": "stdlib",
-   "source": "GameSource/src/stdlib.c",
+   "source": null,
    "kind": "game",
    "confidence": "low",
    "text": {
@@ -12473,11 +12518,11 @@
    },
    "functions": [
     {
-     "name": "func_8C047BC8",
+     "name": "rand",
      "start": "0x8C047BC8",
      "end": "0x8C047BE4",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "rand",
+     "confidence": "high"
     },
     {
      "name": "rand_r",
@@ -12493,9 +12538,23 @@
      "end": "0x8C047C08"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BFC20",
+     "end": "0x8C0BFC24",
+     "symbols": [
+      {
+       "name": "stdlib_seed",
+       "start": "0x8C0BFC20",
+       "size": 4
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "two small functions; DP prefers MAT3 stdlib.c (1 function) but the slot is alphabetical p..re (random-number file?). DC functions 2, MAT3 functions 1, named 1."
+   "notes": "Private source-reference correction:MAT3actualfileNGC/stdlib.c is a rand_r shim,not the DC implementation. DC rand and seed-pointer rand_r independently proved by targetLCG/callers,sharedliteralpool binds current boundaries. Original DC filename/unit slot confidence stayslow; text boundariesunchanged. D4 stateinitial123456789,pool047C00. Root metadata correction: nonexistent GameSource/src/stdlib.c source path removed. Actual GC reference is NGC/stdlib.c; DC original filename remains unproven.",
+   "mat3_reference": "decomp/src/NGC/stdlib.c (rand_r shim only; not the DC implementation)"
   },
   {
    "name": "rekon",
@@ -16056,13 +16115,6 @@
      "confidence": "high"
     },
     {
-     "name": "checkVideoChange",
-     "start": "0x8C05D42E",
-     "end": "0x8C05D432",
-     "mat3": "checkVideoChange",
-     "confidence": "medium"
-    },
-    {
      "name": "calcMenuRect",
      "start": "0x8C05D432",
      "end": "0x8C05D72A",
@@ -16193,9 +16245,205 @@
      "end": "0x8C05E7A4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0ADEE0",
+     "end": "0x8C0ADF28",
+     "symbols": [
+      {
+       "name": "frontEndBlit",
+       "start": "0x8C0ADEE0",
+       "size": 72
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": "0x8C0ADF28",
+     "end": "0x8C0ADF70",
+     "symbols": [
+      {
+       "name": "pauseBlit",
+       "start": "0x8C0ADF28",
+       "size": 72
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": "0x8C0ADF70",
+     "end": "0x8C0AE035"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C39F4",
+     "end": "0x8C0C3A18",
+     "symbols": [
+      {
+       "name": "buttonNames",
+       "start": "0x8C0C39F4",
+       "size": 36
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C3A18",
+     "end": "0x8C0C3D18",
+     "symbols": [
+      {
+       "name": "buttonInfo",
+       "start": "0x8C0C3A18",
+       "size": 768
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 14, MAT3 functions 15, named 14."
+   "notes": "DC functions 14, MAT3 functions 15, named 14. Root integration removes unproven checkVideoChange source stub and retains05D42E..D432 as an unsourced gap. -1 heuristic source-function denominator; byte union unchanged.",
+   "data_padding": [
+    {
+     "start": "0x8C0ADF81",
+     "end": "0x8C0ADF84",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADF89",
+     "end": "0x8C0ADF8C",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADF8E",
+     "end": "0x8C0ADF90",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADF91",
+     "end": "0x8C0ADF94",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADF97",
+     "end": "0x8C0ADF98",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADF9F",
+     "end": "0x8C0ADFA0",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADFAF",
+     "end": "0x8C0ADFB0",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADFB3",
+     "end": "0x8C0ADFB4",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADFBB",
+     "end": "0x8C0ADFBC",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADFCA",
+     "end": "0x8C0ADFCC",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0ADFF9",
+     "end": "0x8C0ADFFC",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0AE013",
+     "end": "0x8C0AE014",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0AE01F",
+     "end": "0x8C0AE020",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0AE029",
+     "end": "0x8C0AE02C",
+     "reason": "natural string alignment"
+    },
+    {
+     "start": "0x8C0C3A55",
+     "end": "0x8C0C3A58",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3A95",
+     "end": "0x8C0C3A98",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3AD5",
+     "end": "0x8C0C3AD8",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3B15",
+     "end": "0x8C0C3B18",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3B55",
+     "end": "0x8C0C3B58",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3B95",
+     "end": "0x8C0C3B98",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3BD5",
+     "end": "0x8C0C3BD8",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3C15",
+     "end": "0x8C0C3C18",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3C55",
+     "end": "0x8C0C3C58",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3C95",
+     "end": "0x8C0C3C98",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3CD5",
+     "end": "0x8C0C3CD8",
+     "reason": "menu record tail padding"
+    },
+    {
+     "start": "0x8C0C3D15",
+     "end": "0x8C0C3D18",
+     "reason": "menu record tail padding"
+    }
+   ],
+   "unverified_entries": [
+    {
+     "name": "checkVideoChange",
+     "start": "0x8C05D42E",
+     "end": "0x8C05D432",
+     "mat3": "checkVideoChange",
+     "confidence": "medium",
+     "status": "unreferenced RTS/NOP atom; no source definition or credit until independent entry proof"
+    }
+   ]
   },
   {
    "name": "visuals",
@@ -18585,9 +18833,16 @@
      "end": "0x8C06ADD4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "shared_audio_job_storage",
+     "section": "D",
+     "start": "0x8C0C7C2C",
+     "end": "0x8C0C7C48"
+    }
+   ],
    "bss": [],
-   "notes": "DC sound/MIDI layer under audiomgr/audiosfx (_ProcessPriorities callers); unknown file(s)."
+   "notes": "DC sound/MIDI layer under audiomgr/audiosfx (_ProcessPriorities callers); unknown file(s). Private bounded source throughA59E,18 functions; last5 platform/streaming bodies remain external. Anonymous names/bounds preserved."
   },
   {
    "name": "dc_audio64_init_8C06ADD4",
@@ -19632,9 +19887,84 @@
      "end": "0x8C06E5A4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "pak_format_and_slot_controller_names",
+     "section": "C",
+     "start": "0x8C0B1CEC",
+     "end": "0x8C0B1D22"
+    },
+    {
+     "name": "pak_and_controller_name_pointers",
+     "section": "D",
+     "start": "0x8C0C96F4",
+     "end": "0x8C0C9734"
+    }
+   ],
    "bss": [],
-   "notes": "MAT3 keeps a paksysdc.c; PS_* pak-system functions. DC functions 38, MAT3 functions 44, named 28."
+   "notes": "MAT3 keeps a paksysdc.c; PS_* pak-system functions. DC functions 38, MAT3 functions 44, named 28.",
+   "data_padding": [
+    {
+     "start": "0x8C0B1CF2",
+     "end": "0x8C0B1CF4",
+     "reason": "Two-byte alignment after six-byte format string; not semantic data."
+    },
+    {
+     "start": "0x8C0B1CF7",
+     "end": "0x8C0B1CF8",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1CFB",
+     "end": "0x8C0B1CFC",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1CFF",
+     "end": "0x8C0B1D00",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D03",
+     "end": "0x8C0B1D04",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D07",
+     "end": "0x8C0B1D08",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D0B",
+     "end": "0x8C0B1D0C",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D0F",
+     "end": "0x8C0B1D10",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D13",
+     "end": "0x8C0B1D14",
+     "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+     "start": "0x8C0B1D16",
+     "end": "0x8C0B1D18",
+     "reason": "Two-byte alignment after one-character controller name and null."
+    },
+    {
+     "start": "0x8C0B1D1A",
+     "end": "0x8C0B1D1C",
+     "reason": "Two-byte alignment after one-character controller name and null."
+    },
+    {
+     "start": "0x8C0B1D1E",
+     "end": "0x8C0B1D20",
+     "reason": "Two-byte alignment after one-character controller name and null."
+    }
+   ]
   },
   {
    "name": "dc_kamui_tex_8C06E5B4",
@@ -21573,9 +21903,92 @@
      "end": "0x8C07E9AC"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B24C4",
+     "end": "0x8C0B24E8"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B24E8",
+     "end": "0x8C0B256D"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CDB90",
+     "end": "0x8C0CDEF8"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 8, MAT3 functions 8, named 8."
+   "notes": "DC functions 8, MAT3 functions 8, named 8. Private data ends after two source flagsDEF8; unreferenced DEF8..DEFC and DF0C..DF10 values remain unclaimed. Later scalars/validity remain externs.13record tails exclude39bytes; no BSS extent claim.",
+   "data_padding": [
+    {
+     "start": "0x8C0CDBED",
+     "end": "0x8C0CDBF0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDC2D",
+     "end": "0x8C0CDC30",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDC6D",
+     "end": "0x8C0CDC70",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDCAD",
+     "end": "0x8C0CDCB0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDCED",
+     "end": "0x8C0CDCF0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDD2D",
+     "end": "0x8C0CDD30",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDD6D",
+     "end": "0x8C0CDD70",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDDAD",
+     "end": "0x8C0CDDB0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDDED",
+     "end": "0x8C0CDDF0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDE2D",
+     "end": "0x8C0CDE30",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDE6D",
+     "end": "0x8C0CDE70",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDEAD",
+     "end": "0x8C0CDEB0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    },
+    {
+     "start": "0x8C0CDEED",
+     "end": "0x8C0CDEF0",
+     "reason": "tMenuButton explicit initialized tail+3d..40"
+    }
+   ]
   },
   {
    "name": "pakscr",
@@ -21765,9 +22178,72 @@
      "end": "0x8C07FAE0"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 17, MAT3 functions 17, named 17."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B2570",
+     "end": "0x8C0B2594",
+     "note": "updatePakScreen automaticdescriptor literal36byte copy targetE9F0..EA18."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CDF44",
+     "end": "0x8C0CDF54",
+     "note": "initialized initedbyte,blitpointer,drawbyte,pakerrint;6 naturalpaddingbytes excluded."
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B2594",
+     "end": "0x8C0B25BF",
+     "note": "Six target-proven string objects33bytes plus10 intervening alignmentbytes; whole equality unmasked, only explicit nonpaddingrecords count."
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C19FD48",
+     "end": "0x8C19FD6C",
+     "note": "sourceallocationextent36; actualnamedfinalshortatFD68 endsFD6A; nextobjectboundarynotproved. Zeroimagecredit."
+    }
+   ],
+   "notes": "DC functions 17, MAT3 functions 17, named 17.",
+   "data_padding": [
+    {
+     "start": "0x8C0CDF45",
+     "end": "0x8C0CDF48",
+     "reason": "Three natural alignment bytes after initializedgInited byte beforegBlit pointer."
+    },
+    {
+     "start": "0x8C0CDF4D",
+     "end": "0x8C0CDF50",
+     "reason": "Three natural alignment bytes after initializedgDrawText byte beforegPakErr int."
+    },
+    {
+     "start": "0x8C0B2599",
+     "end": "0x8C0B259C",
+     "reason": "Link alignment between distinct pakscr format/text string objects; never credited."
+    },
+    {
+     "start": "0x8C0B25A2",
+     "end": "0x8C0B25A4",
+     "reason": "Link alignment between distinct pakscr format/text string objects; never credited."
+    },
+    {
+     "start": "0x8C0B25A6",
+     "end": "0x8C0B25A8",
+     "reason": "Link alignment between distinct pakscr format/text string objects; never credited."
+    },
+    {
+     "start": "0x8C0B25AB",
+     "end": "0x8C0B25AC",
+     "reason": "Link alignment between distinct pakscr format/text string objects; never credited."
+    },
+    {
+     "start": "0x8C0B25BA",
+     "end": "0x8C0B25BC",
+     "reason": "Link alignment between distinct pakscr format/text string objects; never credited."
+    }
+   ]
   },
   {
    "name": "playerscr",
@@ -23045,9 +23521,129 @@
      "end": "0x8C08CF50"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": 2349541316,
+     "end": 2349541352,
+     "symbols": [
+      {
+       "name": "startBlitDef",
+       "symbol": "_startBlitDef",
+       "address": 2349541316,
+       "size": 36,
+       "section": "C"
+      }
+     ]
+    },
+    {
+     "section": "C",
+     "start": 2349541352,
+     "end": 2349541505,
+     "symbols": []
+    },
+    {
+     "section": "D",
+     "start": 2349661696,
+     "end": 2349661697,
+     "symbols": [
+      {
+       "name": "startInited",
+       "symbol": "_startInited",
+       "address": 2349661696,
+       "size": 1,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349661700,
+     "end": 2349661704,
+     "symbols": [
+      {
+       "name": "startBlit",
+       "symbol": "_startBlit",
+       "address": 2349661700,
+       "size": 4,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349661704,
+     "end": 2349661714,
+     "symbols": [
+      {
+       "name": "startValidOption",
+       "symbol": "_startValidOption",
+       "address": 2349661704,
+       "size": 10,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349661716,
+     "end": 2349661748,
+     "symbols": [
+      {
+       "name": "startButtonNames",
+       "symbol": "_startButtonNames",
+       "address": 2349661716,
+       "size": 32,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349661748,
+     "end": 2349662828,
+     "symbols": [
+      {
+       "name": "startButtonInfo",
+       "symbol": "_startButtonInfo",
+       "address": 2349661748,
+       "size": 1080,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349662828,
+     "end": 2349662832,
+     "symbols": [
+      {
+       "name": "startButtonsInited",
+       "symbol": "_startButtonsInited",
+       "address": 2349662828,
+       "size": 4,
+       "section": "D"
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": 2349662832,
+     "end": 2349662836,
+     "symbols": [
+      {
+       "name": "startButtonsJustInited",
+       "symbol": "_startButtonsJustInited",
+       "address": 2349662832,
+       "size": 4,
+       "section": "D"
+      }
+     ]
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 9, MAT3 functions 9, named 9."
+   "notes": "DC functions 9, MAT3 functions 9, named 9.",
+   "data_padding": []
   },
   {
    "name": "titlescr",

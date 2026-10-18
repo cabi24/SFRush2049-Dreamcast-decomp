@@ -45,7 +45,8 @@ typedef struct tTune {
     float trans_scale;      /* 0x0c  transmission 8C022FB6 mov #0xc; fmov.s @(r0,r3) */
     float clutchmaxtk;      /* 0x10  whatslips 8C022E44 mov #0x10 */
     float shiftk;           /* 0x14  autoshift 8C022F16 mov #0x14 */
-    char pad_antispin[0x24-0x18];
+    char pad_antispin[0x20-0x18];
+    float skidk; /* mdrive F96E..972: tune+20. */
     float antispin; /* drivsym39F4/39FC. */
 } tTune;
 
@@ -56,7 +57,8 @@ typedef struct tTire {
     float invmi;            /* 0x14  drivetrain pool 8C022DCE (0x04fc = 0x430 + 2*0x5c + 0x14), 8C022DD0 (0x0558) */
     char pad1[0x48 - 0x18];
     float angvel;           /* 0x48  drivetrain 8C022CC0..CCA: base 0x430, 0x15c = 3*0x5c+0x48, 0x100 = 2*0x5c+0x48 */
-    char pad2[0x58-0x4c];
+    char pad2[0x50-0x4c];
+    float sideforce,traction; /* mdrive F8CC..F948: tire+50/+54. */
     signed char slipflag; /* mdrive: tire+58, stride5c. */
     char pad_slip[3];
 } tTire;
@@ -129,7 +131,7 @@ typedef struct tModelData {
     signed char autotrans;  /* 0x00a drivetrain 8C022CAC mov.b @(0xa,r14) */
     signed char handling;   /* 0x00b enginetorque (drivetra_part) */
     signed char engine_type;/* 0x00c enginetorque (drivetra_part) */
-    char pad1[3];
+    signed char tire_type,frame,tireRims; /* mdrive DADC/DAF2/DB16: model+d/e/f. */
     float f[3],m[3],a[3],aa[3],v[3]; /* drivsym4962..4972,3E4C. */
     float w[3]; /* rekon 8C047D0C..2A. */
     float d[3]; /* drivsym4118..411C. */
@@ -167,7 +169,8 @@ typedef struct tModelData {
     signed short gear;      /* 0x3f4 pools 8C022EE4, 8C022FD8, 8C0230A0 (mov.w @(r0,r4)) */
     signed short commandgear; /* 0x3f6 autoshift pool 8C022FD6 (0x03f6) */
     signed short wing; /* stunt55BD8 and drivsym4212. */
-    char pad5[6];
+    char pad5[2];
+    int wingSnd; /* mdrive D9AA/DA62: model+3fc. */
     float catchup; /* model 8C040CD2/8C040C8C. */
     float engtorque;        /* 0x404 whatslips pool 8C022EEA (0x0404) */
     float engangvel;        /* 0x408 whatslips pool 8C022DD4, autoshift 8C022FDA (0x0408) */
@@ -222,7 +225,8 @@ typedef struct tModelData {
     signed short in_game; /* +7c8: rekon 8C047C2A. */
     signed short we_control; /* drones pool8C025C0A. */
     signed char drone_type; /* +7cc: checkpoint 8C01C3BC. */
-    char pad_rpm[3];
+    unsigned char PaintJob; /* mdrive DB20/DB4C: model+7cd. */
+    char pad_rpm[2];
     signed short rpm; /* drivsym369E/35EE. */
     char pad_appearance[2];
     unsigned int appearance; /* checkpoint 8C01C28C. */
@@ -448,7 +452,8 @@ typedef struct anon_active_invsTime_10 {
 typedef struct anon_weapon_health_30 {
     struct { signed char type,ammoCnt; } weapon; /* targets battle+0/+1. */
     signed short health; /* targets battle+2. */
-    char pad0[4];
+    signed short damageThisFrame; /* mdrive EC2C/ECFE: battle+4. */
+    char pad0[2];
     anon_active_invsTime_10 defense;
     signed char shoot; /* car+3B4: 8C095DAE, 8C095E58 */
     unsigned char fadeAlpha; /* car+3B5: 8C095DB0, extu.b8C095E04 */
@@ -465,16 +470,17 @@ typedef struct tPathPoint {
 } tPathPoint; /* car+32c..358; maxpath/resurrect target offsets. */
 
 typedef struct tCarData {
-    char pad0[4];
+    int modelIteration; /* mdrive F078..F084: car+0. */
     float modelTime; /* checkpoint 8C01BF02. */
     float dr_pos[3];       /* 8C030770/780/792 +8/C/10. */
     float dr_vel[3]; /* smoke8C04F712..728. */
-    char pad1[0x2c-0x20];
+    float dr_acc[3]; /* mdrive F3C6..F3DC: car+20/24/28. */
     float dr_uvs[3][3];    /* 8C02FFCA base+2C; row2 at+44/+48/+4C. */
     float dr_car_uvs[3][3]; /* camera View3Cam,+50. */
     float dr_tirepos[4][3]; /* skids 8C04E8C2. */
     float v[3]; /* camera RearCamera,+a4. */
-    char pad_pos[0xe8-0xb0];
+    float tireR[4][3]; /* mdrive F29E..F35E: car+b0, stridec. */
+    float pitch,roll; /* mdrive F26E/F402: car+e0/e4. */
     unsigned int appearance; /* 8C0305D4/5D6. */
     signed char data_valid,restart; /* car+ec/ed. */
     signed char place,place_locked; /* +ee/+ef: checkpoint 8C01BCF0/BCEC. */
@@ -580,7 +586,8 @@ typedef struct tPadState {
     float analog[2]; /* controls+10/+14. */
     unsigned int controls[11]; /* controls8C01EDA8 +18,stride4. */
     unsigned short numCrashes; /* player+44. */
-    char pad_controls[2];
+    unsigned char trans; /* mdrive DAA8/DAB2: player+46. */
+    char pad_controls[1];
     unsigned int listener; /* audio184A/184C,+48. */
     tPlayerProfile **save; /* state 8C050EE0..EE2; stride50. */
 } tPadState;

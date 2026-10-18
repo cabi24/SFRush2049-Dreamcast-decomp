@@ -1,0 +1,91 @@
+{
+  "scope": "twelfth source and ownership review",
+  "videoscr": {
+    "removed_unproven_empty_C_definition": "checkVideoChange",
+    "unsourced_gap": [
+      "8C05D42E",
+      "8C05D432"
+    ],
+    "byte_union_preserved": true,
+    "source_function_denominator_change": -1,
+    "prior_private_credit_for_atom": 0,
+    "reason": "No independent DC call/literal/PC-relative entry proof; empty stub cannot be used for layout."
+  },
+  "stdlib": {
+    "rand_semantic_identity": "LCG update1103515245*seed+12345 modulo32, high16 mask7fff, target-fmath caller; full native bodies/pool/state exact",
+    "original_filename_identity": "low confidence; not recovered original symbol metadata"
+  },
+  "qualified_mode_globals": [
+    "gModeMenuBlit",
+    "gModeMenuCursorSpeed",
+    "gModeMenuInited"
+  ],
+  "common_header_changed": true,
+  "mdrive_field_source_header_sha256": "6ef062fe8d737aa8f2a00143dbb07929fd1be990715f7808673f7570d542cfa5",
+  "mdrive_added_fields": [
+    "tTune.skidk+20",
+    "tTire.sideforce+50/traction+54;existing slipflag58 preserved",
+    "tModelData.tire_type/frame/tireRims+d/e/f,wingSnd+3fc,PaintJob+7cd",
+    "battle.damageThisFrame+4",
+    "tCarData.modelIteration+0,dr_acc+20,tireR+b0,pitch+e0,roll+e4",
+    "tPadState.trans+46;existingnumCrashes+44 preserved"
+  ],
+  "mdrive_target_listing_root_recheck": {
+    "path": "C:\\Users\\cabi2\\Documents\\Codex\\2026-10-17\\task-20\\matching-wave-20261018\\mdrive\\evidence\\target-disassembly.txt",
+    "sha256": "c0e2029f4efd6bf21f7448569a78c2e5f1ad2abbfe4f3562f879ccb38d6e171d",
+    "words_checked": 4954,
+    "raw_word_mismatches": 0
+  },
+  "mdrive_key_field_evidence": {
+    "resurrect_velocity": [
+      "8C03DFB6 8B13  bf 0x8C03DFE0",
+      "8C03DFB8 6AAF  exts.w r10,r10",
+      "8C03DFBC 890D  bt 0x8C03DFDA",
+      "8C03DFBE 901C  mov.w @(0x8C03DFFA,pc),r0 ; value=0x6bc",
+      "8C03DFC0 03EE  mov.l @(r0,r14),r3",
+      "8C03DFC2 C714  mova @(0x8C03E014,pc),r0 ; value=0x8c03e014",
+      "8C03DFC4 F208  fmov @r0,fr2",
+      "8C03DFC6 435A  lds r3,fpul",
+      "8C03DFC8 F32D  float fpul,fr3",
+      "8C03DFCA F235  fcmp/gt fr3,fr2",
+      "8C03DFCC 8903  bt 0x8C03DFD6",
+      "8C03DFCE 9015  mov.w @(0x8C03DFFC,pc),r0 ; value=0x730",
+      "8C03DFD0 E202  mov #2,r2",
+      "8C03DFD2 A002  bra 0x8C03DFDA ; delay slot follows",
+      "8C03DFD4 0E24  mov.b r2,@(r0,r14)",
+      "8C03DFFA 06BC  mov.b @(r0,r11),r6"
+    ],
+    "autoAbort": [
+      "8C03E6B8 420B  jsr @r2 ; delay slot follows",
+      "8C03E6BA 64C3  mov r12,r4",
+      "8C03E6BC 901F  mov.w @(0x8C03E6FE,pc),r0 ; value=0x6cc",
+      "8C03E6BE E500  mov #0,r5",
+      "8C03E6C0 D31A  mov.l @(0x8C03E72C,pc),r3 ; value=0x8c04a4dc",
+      "8C03E6C2 0EA4  mov.b r10,@(r0,r14)",
+      "8C03E6C4 64D0  mov.b @r13,r4",
+      "8C03E6FE 06CC  mov.b @(r0,r12),r6",
+      "8C03E706 8C14  .word 0x8C14",
+      "8C03E708 CB64  or #100,r0"
+    ],
+    "skidk": [
+      "8C03F96E 5241  mov.l @(4,r4),r2",
+      "8C03F970 E020  mov #32,r0",
+      "8C03F972 F526  fmov @(r0,r2),fr5"
+    ],
+    "data_valid": [
+      "8C03DB3A 9008  mov.w @(0x8C03DB4E,pc),r0 ; value=0x7dd",
+      "8C03DB3C 0E24  mov.b r2,@(r0,r14)",
+      "8C03F692 904B  mov.w @(0x8C03F72C,pc),r0 ; value=0x7dd",
+      "8C03F694 03EC  mov.b @(r0,r14),r3",
+      "8C03F696 904A  mov.w @(0x8C03F72E,pc),r0 ; value=0xec"
+    ],
+    "strayAngle": [
+      "8C03DFD8 0EB4  mov.b r11,@(r0,r14)",
+      "8C03DFDA 9010  mov.w @(0x8C03DFFE,pc),r0 ; value=0x37c",
+      "8C03DFDC F38D  fldi0 fr3",
+      "8C03DFDE FD37  fmov fr3,@(r0,r13)",
+      "8C03DFFE 037C  mov.b @(r0,r7),r3",
+      "8C03E00C C294  mov.l r0,@(592,gbr)"
+    ]
+  }
+}
