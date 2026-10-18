@@ -1,0 +1,38 @@
+{
+  "unit": "game",
+  "text_nonpadding": 0,
+  "data_nonpadding": 163,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0AA988",
+      "8C0AA998"
+    ],
+    [
+      "8C0AA9BC",
+      "8C0AA9CB"
+    ],
+    [
+      "8C0AA9CC",
+      "8C0AA9D1"
+    ],
+    [
+      "8C0BDD54",
+      "8C0BDDA7"
+    ],
+    [
+      "8C0BDDA8",
+      "8C0BDDD4"
+    ]
+  ],
+  "source_sha256": "bff27f97e96d8b6582eaa24dcdf2d2444e4a1ca3194859b9780e791d4377af45",
+  "expanded_source_sha256": "65097c756e21ff4b5de06c05643cf0f3066e7a4aec509a1a03371f14ecefd19b",
+  "compiler_input_sha256": "de626d984313491388822ba049a8868f4a2ccd1f74184d740ac345eac3f55fb6",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "f2fa2efa1137bd6b7e8496976e883676901a0ccc7dace187bd2c925f020ea1f1",
+  "object_sha256": "e3bdbe782c553843744afd160e81105c64c26e711fd72a805288c416e060cfde",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
