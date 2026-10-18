@@ -1,0 +1,26 @@
+{
+  "unit": "collision",
+  "text_nonpadding": 280,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C01D41C",
+      "8C01D4F0"
+    ],
+    [
+      "8C01D762",
+      "8C01D7A6"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "de2cc11a9b7da7b8f21ddfe1bac76223e920ce97fa0f1c80e8ab6ed1daf8934a",
+  "expanded_source_sha256": "fc373a1123465eca5d2a2b4a333ece9b4a779c3fd8ca6820812b35278bd71792",
+  "compiler_input_sha256": "6f602da5a97aeb978b888b2f1eb9523236cbdbc0e6fd5ef33407a4ee4aca2617",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "42d0fb2e72533a6b1eaddee5f7123103b8a5110b5e7e60cbe4928a1c653e7d15",
+  "object_sha256": "854ba8b31eec3cf725203f1fc4a84eef1db519056014569c86d846aaafe21d1c",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
