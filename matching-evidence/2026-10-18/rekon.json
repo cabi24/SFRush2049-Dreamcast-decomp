@@ -1,0 +1,26 @@
+{
+  "unit": "rekon",
+  "text_nonpadding": 770,
+  "data_nonpadding": 0,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C047C08",
+      "8C047C5E"
+    ],
+    [
+      "8C047C60",
+      "8C047F0C"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "223f831005e5b25a0ba8ebd3c0075ec79ed02632f651d174e043539e62486993",
+  "expanded_source_sha256": "4d66f1e8ba5bd500e0be2654a4b4a486bdf657203f197195c8d7733c68aedc02",
+  "compiler_input_sha256": "529abc694e77c1d568de4553b5d5b9883c372b4b423af49a9a870c2a26312a4b",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "2f9bc4bcc77af7c0c76c82dbc4dfac2d4557b42b1748080b0d4c056c7397bb7d",
+  "object_sha256": "97935b0dc1e429cdf94c9a9e4e6695fc0716a579d6ee89ba3468cb967f2f2fef",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
