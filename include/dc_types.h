@@ -103,4 +103,151 @@ typedef char dc_check_tModelData_size[(sizeof(tModelData) == 0x718) ? 1 : -1];
 typedef char dc_check_tCar_size[(sizeof(tCar) == 0xb4) ? 1 : -1];
 typedef char dc_check_tTune_size[(sizeof(tTune) == 0x18) ? 1 : -1];
 
+
+/* Shared layouts integrated from frozen worker receipts, 2026-10-18. */
+typedef struct tDLLE {
+    void *next;
+    void *prev;
+} tDLLE;
+
+typedef struct tDLList {
+    char handle;
+    char dbl;
+    int numElements;
+    void *head;
+    void *tail;
+} tDLList;
+
+/* statll_types.h - proposed additions for include/dc_types.h.
+ * DC evidence comes from statll, 0x8C05138C..0x8C05145A.
+ * The private candidate uses this header until integration.
+ */
+
+
+
+typedef struct tStatLLE {
+    void *next;            /* 0x00: GetStatLLE 8C0513DE mov.l @r5,r2 */
+} tStatLLE;
+
+typedef struct tStatList {
+    char dbl;              /* 0x00: InitStatLL 8C051394 mov.b r0,@r4; GetStatLLE 8C0513E6 */
+    char pad0[0x04 - 0x01];
+    int numElements;       /* 0x04: InitStatLL 8C05138E mov.l r7,@(4,r4) */
+    int elementSize;       /* 0x08: InitStatLL 8C051390 mov.l r6,@(8,r4) */
+    void *list;            /* 0x0c: InitStatLL 8C05138C mov.l r5,@(12,r4) */
+    void *head;            /* 0x10: InitStatLL 8C0513A0; GetStatLLE 8C0513FA */
+    void *store;           /* 0x14: InitStatLL 8C05139C; GetStatLLE 8C0513D8 */
+} tStatList;
+
+typedef char dc_check_tDLLE_size[(sizeof(tDLLE) == 0x08) ? 1 : -1];
+typedef char dc_check_tStatLLE_size[(sizeof(tStatLLE) == 0x04) ? 1 : -1];
+typedef char dc_check_tStatList_size[(sizeof(tStatList) == 0x18) ? 1 : -1];
+
+
+/* Dreamcast texture overlay.  Only fields accessed by this unit are named. */
+typedef struct tTexture {
+    char pad0[0x10];
+    unsigned short width;  /* 0x10: 8C05B44E mov.w, 8C05B450 extu.w */
+    unsigned short height; /* 0x12: 8C05B4A0 mov.w, 8C05B4A2 extu.w */
+    char pad1[0x24 - 0x14];
+    float uls;             /* 0x24: 8C05B45E/8C05B4B0 */
+    float ult;             /* 0x28: 8C05B4A8/8C05B4B0 */
+    unsigned int strip;    /* 0x2c: 8C05B392 load, 8C05B55C store */
+} tTexture;
+
+/* Stride 0x0c: index*3 then <<2 at 8C05B368..374, 8C05B542..548. */
+typedef struct tTextureBase {
+    char *name;            /* +0: 8C05B384 */
+    tTexture *tex;          /* +4: 8C05B386, 8C05B390, 8C05B54C */
+    unsigned int texBase;  /* +8: 8C05B394 store, 8C05B55A load */
+} tTextureBase;
+
+/* Stride 0x14: 8C05B3A8 and 8C05B55E. */
+typedef struct tTextureSwap {
+    signed short num;      /* +0: 8C05B356, 8C05B4F4 */
+    signed short startnum; /* +2: 8C05B39C, 8C05B53E */
+    signed short fd;       /* +4: 8C05B4E8 */
+    signed short idx;      /* +6: 8C05B39E, 8C05B4EE..500 */
+    float time;            /* +8: 8C05B398..39A, 8C05B4D0..4DE */
+    float initTime;        /* +c: 8C05B388/396, 8C05B4E0/4E2 */
+    tTextureBase *swapTexs;/* +10: 8C05B370, 8C05B38A, 8C05B540 */
+} tTextureSwap;
+
+/* Stride 0x14: 8C05B338 and 8C05B4B2. */
+typedef struct tPaletteAnim {
+    char *name;            /* +0: 8C05B30A, 8C05B330 */
+    signed short start;    /* +4: 8C05B41A..420 */
+    signed short end;      /* +6: 8C05B426/436 */
+    signed char offset;    /* +8: 8C05B410 + signed word multiply */
+    signed char state;     /* +9: 8C05B31A..31C */
+    signed short speed;    /* +a: 8C05B3F0..3F8 */
+    float time;            /* +c: 8C05B316..318, 8C05B3E0..3EE */
+    void *ptr;             /* +10: 8C05B334, 8C05B404 */
+} tPaletteAnim;
+
+typedef char dc_check_tTexture_size[(sizeof(tTexture) == 0x30) ? 1 : -1];
+typedef char dc_check_tTextureBase_size[(sizeof(tTextureBase) == 0x0c) ? 1 : -1];
+typedef char dc_check_tTextureSwap_size[(sizeof(tTextureSwap) == 0x14) ? 1 : -1];
+typedef char dc_check_tPaletteAnim_size[(sizeof(tPaletteAnim) == 0x14) ? 1 : -1];
+
+/* Private proposal for include/dc_types.h, proven by countdown target instructions. */
+
+typedef struct tPoly tPoly;
+
+
+/* Target initialized bytes at 8C0BD8C0 are FF FF FF C0. */
+typedef union tRGBA {
+    unsigned char c[4];
+    unsigned int rgba;
+    unsigned int word; /* sky alias, same 4-byte storage */
+} tRGBA;
+
+typedef struct tMatrix3 {
+    float uvs[3][3];
+    float pos[3]; /* 0x24/28/2c: ShowCountdown 8C0226E2..8C02270A. */
+} tMatrix3;
+
+typedef union tUVMatrix {
+    tMatrix3 mat3;
+    float uvs[4][3];
+} tUVMatrix;
+
+typedef struct tCamera {
+    tUVMatrix mat;
+    tUVMatrix n64; /* 0x30: ShowCountdown 8C0226DA passes matrix to U64WorldVector. */
+    char pad0[0x98 - 0x60]; /* stride 0x98: literal 8C02279E, multiplication 8C0226C4. */
+} tCamera;
+
+typedef char dc_check_tRGBA_size[(sizeof(tRGBA) == 4) ? 1 : -1];
+typedef char dc_check_tUVMatrix_size[(sizeof(tUVMatrix) == 0x30) ? 1 : -1];
+typedef char dc_check_tCamera_size[(sizeof(tCamera) == 0x98) ? 1 : -1];
+
+
+typedef struct dcSkyWindowInfo {
+    char pad0[0x44];
+    unsigned char fogcolor[4]; /* +0x44..47 byte reads: 8C04F37C..392; size 0x48: ZOID_GetWindow 8C06972C..73E */
+} dcSkyWindowInfo;
+typedef tCamera dcSkyCamera;
+typedef tMatrix3 dcSkyMat3;
+/* Private carload layout proposal. C89; fields/strides follow DC accesses. */
+
+typedef struct tCarLoadLink {
+    char pad0[1];
+    unsigned char car;       /* +1: 8C01B780..B782 store; 8C01B7C0..B7C4 extu.b */
+    unsigned char PaintJob;  /* +2: 8C01B7C8 store; 8C01B988..B990 extu.b */
+    char pad1[0x0a - 0x03];  /* stride 0x0a: 8C01B760..B768 = (i*4+i)*2 */
+} tCarLoadLink;
+
+/* This array starts at the drone_type field of model[0]. Its effective base and
+   stride are proven here. The parent tModelData base and field offset still need
+   independent evidence before this can become a shared tModelData extension. */
+typedef struct tCarLoadDroneSlice {
+    signed char drone_type; /* 8C01B748..B758, 8C01B9BA..B9CA: byte at 8C14D380+i*0x808 */
+    char pad0[0x808 - 1];   /* stride: (i*0x100+i)*8 */
+} tCarLoadDroneSlice;
+
+typedef char dc_check_carload_link_size[(sizeof(tCarLoadLink) == 0x0a) ? 1 : -1];
+typedef char dc_check_carload_drone_size[(sizeof(tCarLoadDroneSlice) == 0x808) ? 1 : -1];
+
+
 #endif /* DC_TYPES_H */

@@ -1,17 +1,6 @@
 /* ll.c as one translation unit for the DC exact-link test: InitLL, ClearLL, InsertLLE, RemoveLLE.
    Target span 0x8C03A1B8..0x8C03A35E (422 bytes). InsertLLE is the shape-3 body (exact on its own). */
-typedef struct tDLLE {
-    void *next;
-    void *prev;
-} tDLLE;
-
-typedef struct tDLList {
-    char handle;
-    char dbl;
-    int numElements;
-    void *head;
-    void *tail;
-} tDLList;
+#include "dc_types.h"
 
 void InitLL(tDLList *list, char handle, char dbl);
 void ClearLL(tDLList *list);

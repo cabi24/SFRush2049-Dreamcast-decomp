@@ -30,6 +30,7 @@ import re
 import subprocess
 import sys
 import tempfile
+os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -153,6 +154,22 @@ def compare_range(image, start, end):
     return diff == 0, built, diff
 
 
+def produced_credit(produced, start, end, exact):
+    """Earn only explicitly emitted bytes in an entirely exact accepted range.
+    Linker zero fill remains part of image equality, but earns no source credit.
+    """
+    return sum(a in produced for a in range(start, end)) if exact else 0
+
+
+def interval_union_size(ranges):
+    end = None
+    size = 0
+    for a, b in sorted(ranges):
+        size += max(0, b - max(a, end if end is not None else a))
+        end = max(b, end if end is not None else b)
+    return size
+
+
 def text_segments(unit):
     """Partition the text range into function / pool / gap segments (functions own inner pools)."""
     t0, t1 = unit['text']
@@ -273,11 +290,14 @@ def build_unit(unit, symbols, externs):
         entry['notes'].append('link failed: ' + out[-600:])
         return entry
     sections, image = built_image(abs_path)
+    _raw_sections, raw_runs = read_abs(abs_path)
+    produced = {addr + k for _sec, addr, chunk in raw_runs for k in range(len(chunk))}
     entry['sections'] = [{'name': n, 'address': f'{a:08X}', 'length': l} for n, a, l, _h in sections]
     write_base_object(name, sections, image, elf_syms)
 
     # ---- text: functions, pools, gaps
     exact_text = 0
+    equal_text_including_fill = 0
     all_exact = True
     segs = text_segments(unit)
     for k, seg in enumerate(segs):
@@ -290,10 +310,14 @@ def build_unit(unit, symbols, externs):
             ex = None
         seg.update({'exact': ex, 'built': built, 'diff_bytes': diff})
         if ex:
-            exact_text += size
+            equal_text_including_fill += size
+            if seg['kind'] != 'gap':
+                exact_text += produced_credit(produced, seg['start'], seg['end'], ex)
         elif ex is False:
             all_exact = False
     entry['exact_text_bytes'] = exact_text
+    entry['equal_text_bytes_including_fill'] = equal_text_including_fill
+    entry['excluded_exact_text_fill_or_gaps'] = equal_text_including_fill - exact_text
 
     # ---- functions (map boundaries; "moved" = identical bytes linked at another address)
     p_sec = next(((a, l) for n, a, l, _h in sections if n == 'P'), None)
@@ -325,6 +349,7 @@ def build_unit(unit, symbols, externs):
 
     # ---- data ranges
     exact_data = 0
+    equal_data_including_fill = 0
     for d in unit['data']:
         if C.target_bytes(d['start'], d['end']) is None:
             entry['notes'].append(f'{d["section"]} range {d["start"]:08X}..{d["end"]:08X} outside the image; not compared')
@@ -333,10 +358,13 @@ def build_unit(unit, symbols, externs):
         entry['segments'].append({'kind': 'data', 'section': d['section'], 'start': f'{d["start"]:08X}',
                                   'end': f'{d["end"]:08X}', 'exact': ex, 'built': built, 'diff_bytes': diff})
         if ex:
-            exact_data += d['end'] - d['start']
+            equal_data_including_fill += d['end'] - d['start']
+            exact_data += produced_credit(produced, d['start'], d['end'], ex)
         else:
             all_exact = False
     entry['exact_data_bytes'] = exact_data
+    entry['equal_data_bytes_including_fill'] = equal_data_including_fill
+    entry['excluded_exact_data_fill'] = equal_data_including_fill - exact_data
 
     # ---- BSS placement (no bytes; checked by extent)
     for sec in sorted({b['section'] for b in unit['bss']}):
@@ -421,6 +449,9 @@ def summarize(m, entries):
     mapped_text = sum(u['text'][1] - u['text'][0] for u in units if u['text'])
     mapped_data = sum(d['end'] - d['start'] for u in units for d in u['data']
                       if C.target_bytes(d['start'], d['end']) is not None)
+    mapped_unique = interval_union_size([u['text'] for u in units if u['text']] +
+                                       [(d['start'], d['end']) for u in units for d in u['data']
+                                        if C.target_bytes(d['start'], d['end']) is not None])
     funcs_total = sum(len(u['functions']) for u in units)
     game_funcs_total = sum(len(u['functions']) for u in game)
     status_count = {}
@@ -430,8 +461,8 @@ def summarize(m, entries):
     return {
         'game_code': {'exact_bytes': game_exact, 'total_bytes': game_total, 'percent': pct(game_exact, game_total)},
         'image': {'exact_bytes': image_exact, 'total_bytes': m['image_size'], 'percent': pct(image_exact, m['image_size'])},
-        'map_coverage': {'text_bytes': mapped_text, 'data_bytes': mapped_data, 'image_bytes': m['image_size'],
-                         'percent': pct(mapped_text + mapped_data, m['image_size'])},
+        'map_coverage': {'text_bytes': mapped_text, 'data_bytes': mapped_data, 'unique_file_bytes': mapped_unique,
+                         'image_bytes': m['image_size'], 'percent': pct(mapped_unique, m['image_size'])},
         'functions': {'exact': sum(e['functions_exact'] for e in fresh.values()), 'total': funcs_total,
                       'game_exact': sum(fresh[u['name']]['functions_exact'] for u in game if u['name'] in fresh),
                       'game_total': game_funcs_total},

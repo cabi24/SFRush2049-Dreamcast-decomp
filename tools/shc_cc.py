@@ -10,15 +10,10 @@ Recipe (mirrors decomp.me cromper `DREAMCAST_CC`):
     (shc-v5.0r10 does not accept -fpu=single / -aggressive=2)
   - rof2elf.py <obj> <elf> --isa=sh4
 
-Launch modes:
-  native  run shc.exe directly on Windows (works for every package except any Smart App Control blocks)
-  wsl     run shc.exe through wibo inside WSL (`wsl -d <distro>`), the way decomp.me does on Linux
-  auto    native first, fall back to wsl when Windows refuses to launch the binary (WinError 4551)
+Launch mode: native only. A Windows policy denial is terminal; report it.
 
-Examples:
-  python tools/shc_cc.py -v shc-v5.1r11 src/interp.c -o build/interp.elf
-  python tools/shc_cc.py -v shc-v5.1r13 src/interp.c -o build/interp.elf --launch wsl
-  python tools/shc_cc.py -v shc-v5.1r11 src/interp.c -o build/interp.elf -- -optimize=1 -speed
+Example:
+  python tools/shc_cc.py -v shc-v5.1r11 src/interp.c -o build/interp.elf --no-default-flags -- -speed -noinline
 Extra SHC options go after `--`; `--no-default-flags` drops the decomp.me flag set entirely.
 """
 import argparse
@@ -31,12 +26,9 @@ import tempfile
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))
 ROF2ELF = os.path.join(TOOLS, 'rof2elf', 'rof2elf.py')
-WIBO = os.path.join(TOOLS, 'wibo', 'wibo')
 BASE_FLAGS = ['-comment=nonest', '-cpu=sh4', '-division=cpu', '-fpu=single', '-endian=little',
               '-macsave=0', '-sjis', '-string=const']
 DECOMPME_DEFAULT_EXTRA = ['-aggressive=2', '-extra=asm=1800', '-pic=0']
-NEEDS_WSL = {'shc-v5.1r03'}  # its shcmdl.exe sub-tool is blocked natively (reports 3021 Memory overflow)
-BLOCKED_WINERROR = 4551  # ERROR_APPLICATION_CONTROL? "An Application Control policy has blocked this file"
 
 
 def sha256(path):
@@ -47,19 +39,12 @@ def sha256(path):
     return h.hexdigest()
 
 
-def to_wsl_path(p):
-    p = os.path.abspath(p)
-    drive, rest = os.path.splitdrive(p)
-    return '/mnt/' + drive[0].lower() + rest.replace('\\', '/')
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('source')
     ap.add_argument('-o', '--output', required=True, help='output ELF object path')
     ap.add_argument('-v', '--version', default='shc-v5.1r11', help='package dir name under tools/shc (default shc-v5.1r11)')
-    ap.add_argument('--launch', choices=['native', 'wsl', 'auto'], default='auto')
-    ap.add_argument('--distro', default='rocky', help='WSL distribution for --launch wsl (default rocky)')
+    ap.add_argument('--launch', choices=['native'], default='native')
     ap.add_argument('--no-default-flags', action='store_true', help='omit -aggressive=2 -extra=asm=1800 -pic=0')
     ap.add_argument('--keep', action='store_true', help='keep the work directory (prints its path)')
     ap.add_argument('--keep-obj', help='also copy the raw SYSROF .obj to this path')
@@ -94,33 +79,12 @@ def main():
             return subprocess.run([os.path.join(work, 'shc.exe')] + argv_tail, cwd=work, env=env,
                                   capture_output=True, text=True, timeout=120)
 
-        def run_wsl():
-            cmd = ('cd ' + to_wsl_path(work) + ' && SHC_LIB=. SHC_TMP=. ' + to_wsl_path(WIBO) + ' ./shc.exe '
-                   + ' '.join(argv_tail))
-            r = subprocess.run(['wsl.exe', '-d', args.distro, '--', 'bash', '-c', cmd],
-                               capture_output=True, text=True, timeout=300)
-            r.stdout = r.stdout.replace('\0', '')
-            r.stderr = r.stderr.replace('\0', '')
-            return r
-
-        mode = args.launch
-        if mode == 'auto' and args.version in NEEDS_WSL:
-            mode = 'wsl'
-        if mode in ('native', 'auto'):
-            try:
-                r = run_native()
-                mode_used = 'native'
-            except OSError as e:
-                if mode == 'auto' and getattr(e, 'winerror', None) == BLOCKED_WINERROR:
-                    print(f'[shc_cc] Windows blocked {args.version}/shc.exe (Application Control); retrying via WSL+wibo',
-                          file=sys.stderr)
-                    r = run_wsl()
-                    mode_used = 'wsl'
-                else:
-                    raise
-        else:
-            r = run_wsl()
-            mode_used = 'wsl'
+        # Native-only safety gate: a denial is terminal. No WSL/wibo fallback.
+        try:
+            r = run_native()
+            mode_used = 'native'
+        except OSError as exc:
+            sys.exit('[NATIVE_EXECUTION_BLOCKED] package=' + shc + ' source=' + args.source + ' action=compile winerror=' + str(getattr(exc, 'winerror', None)) + ' reason=' + str(exc))
 
         obj = os.path.join(work, 'dos_src.obj')
         banner = ' '.join((r.stdout + r.stderr).split())

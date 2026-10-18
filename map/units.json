@@ -3156,8 +3156,35 @@
      "end": "0x8C022958"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA8D8",
+     "end": "0x8C0AA8E9",
+     "notes": "17-byte string payload. Possible aligned end 8C0AA8EC unverified; no padding credit."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BD8C0",
+     "end": "0x8C0BD8F4",
+     "notes": "polyColor 4 bytes then polyXYZ 48 bytes, literal addresses and target initializer verified."
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12C510",
+     "end": "0x8C12C528",
+     "symbols": [
+      {
+       "name": "gCountDown",
+       "start": "0x8C12C510",
+       "size": 2
+      }
+     ],
+     "notes": "gCountDown then aligned poly[4], polyTidx, lastCountDown; section sizes await compiler confirmation."
+    }
+   ],
    "notes": "CNTDWN strings. DC functions 2, MAT3 functions 2, named 2."
   },
   {
@@ -3234,7 +3261,52 @@
      "end": "0x8C022CA4"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AA8EC",
+     "end": "0x8C0AA910",
+     "symbols": [
+      {
+       "name": "demo_multiblit",
+       "start": "0x8C0AA8EC",
+       "size": 36
+      }
+     ]
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BD8F4",
+     "end": "0x8C0BD901",
+     "symbols": [
+      {
+       "name": "demo_inited",
+       "start": "0x8C0BD8F4",
+       "size": 1
+      },
+      {
+       "name": "demo_blit",
+       "start": "0x8C0BD8F8",
+       "size": 4
+      },
+      {
+       "name": "demo_preplayDone",
+       "start": "0x8C0BD8FC",
+       "size": 1
+      },
+      {
+       "name": "demo_gCurrentDemoTrack",
+       "start": "0x8C0BD8FE",
+       "size": 2
+      },
+      {
+       "name": "demo_gDemoInited",
+       "start": "0x8C0BD900",
+       "size": 1
+      }
+     ]
+    }
+   ],
    "bss": [],
    "notes": "DC functions 7, MAT3 functions 7, named 7."
   },
@@ -9815,8 +9887,28 @@
      "end": "0x8C04F51C"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC9C4",
+     "end": "0x8C0AC9CB",
+     "symbols": []
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C153D5C",
+     "end": "0x8C153D6C",
+     "symbols": [
+      {
+       "name": "skyMatrices",
+       "start": "0x8C153D5C",
+       "size": 16
+      }
+     ]
+    }
+   ],
    "notes": "\"SKYSKY\" string. DC functions 3, MAT3 functions 3, named 3."
   },
   {
@@ -11701,8 +11793,39 @@
      "end": "0x8C05C338"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0ADDB8",
+     "end": "0x8C0ADEDE"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0C395C",
+     "end": "0x8C0C39F4",
+     "symbols": [
+      {
+       "name": "gTrackTitles",
+       "start": "0x8C0C395C",
+       "size": 76
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C15C9C0",
+     "end": "0x8C15C9F0",
+     "symbols": [
+      {
+       "name": "gTrackNum",
+       "start": "0x8C15C9C0",
+       "size": 1
+      }
+     ]
+    }
+   ],
    "notes": "DC functions 3, MAT3 functions 3, named 3."
   },
   {
