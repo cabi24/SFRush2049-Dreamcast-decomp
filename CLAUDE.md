@@ -85,13 +85,13 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **48,910 /569,664 (8.5858%)**, plus **54,923 initialized data bytes**.
-Whole-image credit: **103,833 /1,123,492 (9.2420%)**, **319 exact source functions**, 102 source units.
-The fourteenth batch adds 436 text/literal bytes, 24
-initialized data bytes and 4 exact functions. The audited batch is locally committed
-through `ef8974831007bc3b2913d010dde116ba5d7fe8c3`. No remote push was performed.
+Game text/literal credit: **49,302 /569,664 (8.6546%)**, plus **68,934 initialized data bytes**.
+Whole-image credit: **118,236 /1,123,492 (10.5240%)**, **324 exact source functions**, 107 source units.
+The fifteenth batch adds 392 text/literal bytes, 14,011
+initialized data bytes and 5 exact functions. The audited batch is locally committed
+through `0f2616068b91afb3af4fee408bc3dfaaea901ede`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-fourteenth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-fifteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -117,7 +117,12 @@ functions); playerscr owns its proved two-function button prefix from recordscr,
 ZIP uses the normal allocator at0x8C040256; the distinct high-end allocator is0x8C040380.
 Queue SDK status tests have no failure action and are omitted; their earlier private88 pool bytes
 are uncredited. Three uncertain primitive-color RGB bytes also remain uncredited.
-Six private matching lanes continue on disjoint units; later private packets are excluded until
+HUDextra owns the callback-proven trailing animation entry0x8C0951C0; all thirteen original
+function identities and the complete byte union are retained. Startup uses three pool-closed
+C compilation groups, preserving all six original identities; the unproved empty218 entry
+remains source-null and uncredited. Grouping names and semantic roles are reconstructions,
+not recovered debug symbols. HUD's private blit pointer is qualified without changing shared headers.
+Private work uses disjoint unit ownership; later private packets remain excluded until audited
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
 no full game image build or game execution was performed.
 
