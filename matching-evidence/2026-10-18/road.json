@@ -1,0 +1,22 @@
+{
+  "unit": "road",
+  "text_nonpadding": 18,
+  "data_nonpadding": 0,
+  "exact_functions": 0,
+  "text_spans": [
+    [
+      "8C04B616",
+      "8C04B628"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "175ef520a11f62e8f6a6ce5b4f5e5114fc2a4f5b8cf602d8c09ab214abb122a0",
+  "expanded_source_sha256": "5d6367061a81feb67694948f3016b7d6d8db4bdc4bc72d977b32ec744927bae5",
+  "compiler_input_sha256": "17e28e11132ce7cfd55ca1c819974eb23856d0b5614d3f0be449f10da458a78d",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "afe1d63df246fe04a2baa6deafa3dcbfa6a0b2dd3cd3bd90ec0a1d70d7059279",
+  "object_sha256": "560f2bbb8c37cb761c714e5c99515e52e51b765c1d13530d0901ade6ca1cb888",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
