@@ -1,0 +1,43 @@
+{
+  "unit": "TB_text",
+  "text_nonpadding": 492,
+  "data_nonpadding": 329,
+  "exact_functions": 10,
+  "text_spans": [
+    [
+      "8C05A6AC",
+      "8C05A88C"
+    ],
+    [
+      "8C05A97A",
+      "8C05A97E"
+    ],
+    [
+      "8C05A980",
+      "8C05A988"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AD628",
+      "8C0AD6AC"
+    ],
+    [
+      "8C0C1770",
+      "8C0C1771"
+    ],
+    [
+      "8C0C1774",
+      "8C0C1838"
+    ]
+  ],
+  "source_sha256": "a364d24fd1b927a839b3aa3fb15881b806db935ac0cca327e1951604ce824224",
+  "expanded_source_sha256": "8851fca0328f8bcf2386bed74df10ca42f611be834c258ed28d1e93b29f317f4",
+  "compiler_input_sha256": "cca15cf71d0b8169824559c3884f53770ab616b9994941594fa0194758fc093b",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "855769bec6d99ff9c676081f978c0e40b8472cb16c703e6ce21283789f440664",
+  "object_sha256": "e5364fde5bde266bb7b25256f6491cffc77ad975eb5b92ae4d5ce124e2dbf5b2",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
