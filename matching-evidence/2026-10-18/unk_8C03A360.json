@@ -1,0 +1,31 @@
+{
+  "unit": "unk_8C03A360",
+  "text_nonpadding": 46,
+  "data_nonpadding": 5,
+  "exact_functions": 0,
+  "text_spans": [
+    [
+      "8C03A3EE",
+      "8C03A41C"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BEBBC",
+      "8C0BEBBD"
+    ],
+    [
+      "8C0BEBC0",
+      "8C0BEBC4"
+    ]
+  ],
+  "source_sha256": "deeb7230ff237bc5779d239d8bd411eb250dad47376b711accbeb1e9fa82ffb7",
+  "expanded_source_sha256": "046f29cc61b7d399af2cc5994d73e1148a4a03da138f5a6764f38e2f7eeb836e",
+  "compiler_input_sha256": "b863a9c241c791c91c2832bccc615b9b3a86dfe7a172838b33b3438ea9fd376c",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "fa0df823d5183f8a9394d46e7ddf2b79884176d4c067a74f60deabbeb415b742",
+  "object_sha256": "4308e2e4a20b7dc92d37ba4589ea43a705bdb19009c064d3856c5b32d3c97c28",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
