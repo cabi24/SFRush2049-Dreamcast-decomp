@@ -10213,11 +10213,11 @@
      "confidence": "high"
     },
     {
-     "name": "func_8C0436C0",
+     "name": "_DrawPakHeading",
      "start": "0x8C0436C0",
      "end": "0x8C04373E",
      "mat3": null,
-     "confidence": "low"
+     "confidence": "high"
     },
     {
      "name": "_DrawChoice",
@@ -10234,10 +10234,10 @@
      "confidence": "high"
     },
     {
-     "name": "_animNewPakText",
+     "name": "_DrawPakErrNoPak",
      "start": "0x8C0439AE",
      "end": "0x8C043BC4",
-     "mat3": "_animNewPakText",
+     "mat3": "_DrawPakErrNoPak",
      "confidence": "high"
     },
     {
@@ -10248,32 +10248,32 @@
      "confidence": "high"
     },
     {
-     "name": "_DrawPakErrInconsistent",
+     "name": "_DrawPakErrNewPak",
      "start": "0x8C043C4A",
      "end": "0x8C043D1E",
+     "mat3": "_DrawPakErrNewPak",
+     "confidence": "high"
+    },
+    {
+     "name": "_DrawPakErrInconsistent",
+     "start": "0x8C043D1E",
+     "end": "0x8C043D64",
      "mat3": "_DrawPakErrInconsistent",
      "confidence": "high"
     },
     {
      "name": "_DrawPakErrFull",
-     "start": "0x8C043D1E",
-     "end": "0x8C043D64",
-     "mat3": "_DrawPakErrFull",
-     "confidence": "medium"
-    },
-    {
-     "name": "_DrawPakErrBadData",
      "start": "0x8C043D64",
      "end": "0x8C043DCA",
-     "mat3": "_DrawPakErrBadData",
+     "mat3": "_DrawPakErrFull",
      "confidence": "high"
     },
     {
-     "name": "func_8C043E00",
+     "name": "_DrawPakErrBadData",
      "start": "0x8C043E00",
      "end": "0x8C043E46",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "_DrawPakErrBadData",
+     "confidence": "high"
     },
     {
      "name": "_DrawPakErrUnknown",
@@ -10391,9 +10391,79 @@
      "end": "0x8C044700"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "name": "headingFormat",
+     "section": "C",
+     "start": "0x8c0ac2dc",
+     "end": "0x8c0ac2e4"
+    },
+    {
+     "name": "newline",
+     "section": "C",
+     "start": "0x8c0ac2e4",
+     "end": "0x8c0ac2e8"
+    },
+    {
+     "name": "recognizeFormat",
+     "section": "C",
+     "start": "0x8c0ac2e8",
+     "end": "0x8c0ac2f0"
+    },
+    {
+     "name": "removedFormat",
+     "section": "C",
+     "start": "0x8c0ac2f0",
+     "end": "0x8c0ac300"
+    },
+    {
+     "name": "corruptFormat",
+     "section": "C",
+     "start": "0x8c0ac300",
+     "end": "0x8c0ac314"
+    },
+    {
+     "name": "dimMultiBlit",
+     "section": "C",
+     "start": "0x8c0ac314",
+     "end": "0x8c0ac338"
+    },
+    {
+     "name": "pakerr_initialized",
+     "section": "D",
+     "start": "0x8C0BF760",
+     "end": "0x8C0BF766"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 19, MAT3 functions 24, named 17."
+   "notes": "Private target-backed semantic name corrections; same 19 function ranges and union. Dreamcast dialogs differ from GC callbacks.",
+   "data_padding": [
+    {
+     "start": "0x8c0ac2e2",
+     "end": "0x8c0ac2e4",
+     "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+     "start": "0x8c0ac2e7",
+     "end": "0x8c0ac2e8",
+     "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+     "start": "0x8c0ac2ef",
+     "end": "0x8c0ac2f0",
+     "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+     "start": "0x8c0ac2fd",
+     "end": "0x8c0ac300",
+     "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+     "start": "0x8c0ac311",
+     "end": "0x8c0ac314",
+     "reason": "String trailing alignment; independent target pool addresses prove next object."
+    }
+   ]
   },
   {
    "name": "pane",
@@ -10891,10 +10961,10 @@
      "confidence": "low"
     },
     {
-     "name": "updateSelectPauseScreen",
+     "name": "updatePauseScreen",
      "start": "0x8C04692E",
      "end": "0x8C046F0C",
-     "mat3": "updateSelectPauseScreen",
+     "mat3": "updatePauseScreen",
      "confidence": "high"
     },
     {
@@ -10933,17 +11003,17 @@
      "confidence": "medium"
     },
     {
-     "name": "animSelTitleText",
+     "name": "animTitleText",
      "start": "0x8C047590",
      "end": "0x8C047690",
-     "mat3": "animSelTitleText",
+     "mat3": "animTitleText",
      "confidence": "high"
     },
     {
-     "name": "animSelPauseText",
+     "name": "animPauseText",
      "start": "0x8C0476D4",
      "end": "0x8C0477C6",
-     "mat3": "animSelPauseText",
+     "mat3": "animPauseText",
      "confidence": "high"
     },
     {
@@ -10954,10 +11024,10 @@
      "confidence": "high"
     },
     {
-     "name": "animSelSureText",
+     "name": "animRumbleText",
      "start": "0x8C047950",
      "end": "0x8C047B44",
-     "mat3": "animSelSureText",
+     "mat3": "animRumbleText",
      "confidence": "high"
     },
     {
@@ -11022,9 +11092,42 @@
      "end": "0x8C047BC8"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 12, MAT3 functions 27, named 11."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC35C",
+     "end": "0x8C0AC410",
+     "note": "Five 36-byte descriptor objects, callback and target create references prove each boundary."
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BFA78",
+     "end": "0x8C0BFC1E",
+     "note": "state4, rects384, title4, five blit pointers20, pane4, two state bytes, byte-aligned RGBA4; all target-backed."
+    },
+    {
+     "section": "C",
+     "start": "0x8C0AC410",
+     "end": "0x8C0AC42A",
+     "note": "Two target-proven string objects17+6 separated by3 link-alignment bytes; comparison includes unmasked padding, produced-byte credit excludes it."
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C1503D8",
+     "end": "0x8C1503E4",
+     "note": "three source objects: pause owner4,menu4,inserted4; source end is not a proved next-object boundary; zero image credit."
+    }
+   ],
+   "notes": "DC functions 12, MAT3 functions 27, named 11.",
+   "data_padding": [
+    {
+     "start": "0x8C0AC421",
+     "end": "0x8C0AC424",
+     "reason": "Alignment between 17-byte controller format and6-byte profile format; no source object owns these3 bytes. Native SYSROF has no data record here."
+    }
+   ]
   },
   {
    "name": "stdlib",
@@ -16458,11 +16561,11 @@
    },
    "functions": [
     {
-     "name": "func_8C068EFC",
+     "name": "ZOID_SetObjLights",
      "start": "0x8C068EFC",
      "end": "0x8C068F0E",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "ZOID_SetObjLights",
+     "confidence": "high"
     },
     {
      "name": "func_8C068F0E",
@@ -16479,8 +16582,26 @@
     }
    ],
    "data": [],
-   "bss": [],
-   "notes": "two tiny functions in the zoidlight.c alphabetical slot. DC functions 2, MAT3 functions 2, named 0."
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C17283C",
+     "end": "0x8C172844",
+     "symbols": [
+      {
+       "name": "gNumLights",
+       "start": "0x8C17283C",
+       "size": 2
+      },
+      {
+       "name": "gLights",
+       "start": "0x8C172840",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "notes": "Target068EFC stores short object+2E and pointer+30 with stride88; matches MAT3 ZOID_SetObjLights. Anonymous068F0E called by Reset clears gLights and sets gNumLights=-1. B8 contains2 alignment bytes; zero image credit. Original text boundaries unchanged; preceding068EE2 belongs to TextBlit."
   },
   {
    "name": "zoidpoly",
