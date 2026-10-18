@@ -1,0 +1,47 @@
+{
+  "unit": "smoke",
+  "text_nonpadding": 92,
+  "data_nonpadding": 154,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C04F5B4",
+      "8C04F610"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AC9CC",
+      "8C0ACA0A"
+    ],
+    [
+      "8C0ACA0C",
+      "8C0ACA16"
+    ],
+    [
+      "8C0ACA18",
+      "8C0ACA22"
+    ],
+    [
+      "8C0ACA24",
+      "8C0ACA2E"
+    ],
+    [
+      "8C0ACA30",
+      "8C0ACA3A"
+    ],
+    [
+      "8C0BFD08",
+      "8C0BFD3C"
+    ]
+  ],
+  "source_sha256": "b98aeb22a0dd9f1194dd9012c70a6e92d20b4528af4a7a2ef562bde713160b1f",
+  "expanded_source_sha256": "fb70059e263d0b33383cb843b1b9acf83aec005858aa9eab512dbcc2c3dc2c86",
+  "compiler_input_sha256": "d8ce6e62ca8e45df676794e9493d6ff2578dddca9705b43e48311f2084f22cae",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "0cdc87658e7da6db1e3ec9f50484d8b6b6ca42a31aa584838b36ad08dd9619d9",
+  "object_sha256": "da6c5f84d0324481fae91986338f5bb7e5d6df08dd0cfe7bbc7d1840f924c134",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
