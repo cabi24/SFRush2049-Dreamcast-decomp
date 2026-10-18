@@ -1,0 +1,71 @@
+{
+  "unit": "pakscr",
+  "text_nonpadding": 236,
+  "data_nonpadding": 43,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C07E9AC",
+      "8C07E9DE"
+    ],
+    [
+      "8C07EB48",
+      "8C07EB86"
+    ],
+    [
+      "8C07EB88",
+      "8C07EBE8"
+    ],
+    [
+      "8C07EEF4",
+      "8C07EF10"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B2594",
+      "8C0B2599"
+    ],
+    [
+      "8C0B259C",
+      "8C0B25A2"
+    ],
+    [
+      "8C0B25A4",
+      "8C0B25A6"
+    ],
+    [
+      "8C0B25A8",
+      "8C0B25AB"
+    ],
+    [
+      "8C0B25AC",
+      "8C0B25BA"
+    ],
+    [
+      "8C0B25BC",
+      "8C0B25BF"
+    ],
+    [
+      "8C0CDF44",
+      "8C0CDF45"
+    ],
+    [
+      "8C0CDF48",
+      "8C0CDF4D"
+    ],
+    [
+      "8C0CDF50",
+      "8C0CDF54"
+    ]
+  ],
+  "source_sha256": "dc51a9bb218a8b943aa3f9e16d5bbad72536401e5159095213697ade1a119785",
+  "expanded_source_sha256": "cfaa2b9e9fc18fea59c5f1c68e8bbd95bb7b7524a52f60c020701b765d453f0c",
+  "compiler_input_sha256": "55c432e9f33f72dd3fc48ea1b2e7e3a7976df27f944b482aa405097716797687",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "91c3a3eff1dbf0086f82a84e77567ad8dfd3b8215440afd41b989a94ae5f7875",
+  "object_sha256": "cd2a4ab1f83f0b88777f6139f56658da8238f1dc5859e08b407e584f324d164a",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
