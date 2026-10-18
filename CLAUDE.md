@@ -85,31 +85,31 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **38,462 /569,664 (6.7517%)**, plus **16,740 initialized data bytes**.
-Whole-image credit: **55,202 /1,123,492 (4.9134%)**, **237 exact source functions**,60 source units.
-The sixth batch adds1,702 text/literal bytes,8,049 initialized data bytes and30 exact functions.
-Four inherited front-screen zdepth high-halfword bytes are conservatively excluded because their
-field meaning remains uncertain; full equality is still checked. Net image increment is9,747.
+Game text/literal credit: **40,376 /569,664 (7.0877%)**, plus **16,804 initialized data bytes**.
+Whole-image credit: **57,180 /1,123,492 (5.0895%)**, **245 exact source functions**, 64 source units.
+The seventh batch adds 1,914 text/literal bytes, 64
+initialized data bytes and 8 exact functions. The audited batch is locally committed
+through `7f641b2`. No remote push was performed.
 
-The sixth batch is locally committed through `9da44aa` (55,202 bytes/237 functions). Its first
-commit request was denied before execution; the identical reviewed retry passed after explicit
-human approval. No remote push was performed.
-`matching-evidence/2026-10-18/integration-sixth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-seventh.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
-the saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or
-BSS earns image credit. Compiler, linker and flags remain frozen.
+saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
+earns image credit. Full fixed-address equality remains required; no comparison masks are used.
+Compiler, linker and flags remain frozen. Only units whose compiler input changes need a fresh
+native link; byte-identical inputs may retain the already-verified native artifacts.
 
-The audio/stree generated epilogues are part of their source functions, reducing total/game
-function denominators to4,725/1,563. The two original gameover tail atoms and their external pool
-now belong to gamerecords; identities stay conservative. Asincos selected03 retains16 C bytes
-and64 independently bounded external literal bytes, without recompilation or a fourth variant.
-The original `_func_8C05145C` alias of InitSTree is retained for world's existing caller.
+The audio/stree generated epilogues are part of their source functions. Current total/game
+function denominators are 4,725/1,563. The two original gameover tail atoms and their
+external pool belong to gamerecords; identities stay conservative pending mapping review.
+Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
+no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
+Four uncertain front zdepth high-halfword bytes remain conservatively excluded from credit.
 
 Target-backed camera, full surface and audio fields preserve model0x808/car0x3CC strides.
-Camera profile+0x48 remains a distinct qualified field from circuit+0x3C. CarParts uses the proved
-0x60 stride. Required native header regressions preserve all inherited code/function matches.
-Six private lanes remain assigned; the approved Resurrect repair retry is resuming. Later private packets
-are excluded here until integration. MAT3 stays read-only. No full game image build was run.
+Camera profile+0x48 remains distinct from circuit+0x3C. CarParts uses the proved0x60 stride.
+Six private matching lanes continue on disjoint units; later private packets are excluded until
+integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
+no full game image build or game execution was performed.
 
 The current per-unit table is in `HANDOFF.md`.
 
