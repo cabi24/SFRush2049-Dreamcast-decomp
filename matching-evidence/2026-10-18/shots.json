@@ -1,0 +1,26 @@
+{
+  "unit": "shots",
+  "text_nonpadding": 0,
+  "data_nonpadding": 280,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B3494",
+      "8C0B3584"
+    ],
+    [
+      "8C0D1D7C",
+      "8C0D1DA4"
+    ]
+  ],
+  "source_sha256": "2d36a6ec9ea5be291ccaa79372897d6a41074d19f0117029539d606989acea30",
+  "expanded_source_sha256": "94b872fd7201706b15f6fb7e19ff0e6dea0af888bd7aaeee22388cd802ebd3f9",
+  "compiler_input_sha256": "dd6f78aabbf71de17ceb5ace79eab34549a4ed6b6ff3e1d6b2347bc82b64fe78",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "984e854e699116a9884d4ac8876544d781a88bfa51ce87b9b58cc254c5e48b3b",
+  "object_sha256": "ed933d9be4426a311bce41fd9fcf2c398c3e535df01baf37bcb48bf0da2b7ed9",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
