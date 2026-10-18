@@ -1,0 +1,31 @@
+{
+  "unit": "weapons",
+  "text_nonpadding": 600,
+  "data_nonpadding": 1252,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C09939C",
+      "8C0995F4"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B3720",
+      "8C0B3724"
+    ],
+    [
+      "8C0D1DF0",
+      "8C0D22D0"
+    ]
+  ],
+  "source_sha256": "ba68475bb324e7e261b30aef84d728ce6d498f9539e36858226e515d0b51a9bd",
+  "expanded_source_sha256": "bdc48c6856624d108ca93c5795031b4eba7d80087f0c8d805abfc30f937549a0",
+  "compiler_input_sha256": "1a84a543faa9d944b0e1bc57d2dec87a930f68c40be26a6e095b9b4ef26cea4c",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "dbc2ea5f3e0defb2a8faf6c607581647492921dcc5220b0484b813bbd4988597",
+  "object_sha256": "edd94e1db2e8bde121f78271a3fbf75d004431d96a2249005c3b8fca49ef9bde",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
