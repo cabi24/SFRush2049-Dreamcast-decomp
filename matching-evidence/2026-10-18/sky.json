@@ -1,0 +1,30 @@
+{
+  "unit": "sky",
+  "text_nonpadding": 458,
+  "data_nonpadding": 7,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C04F350",
+      "8C04F41A"
+    ],
+    [
+      "8C04F41C",
+      "8C04F51C"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AC9C4",
+      "8C0AC9CB"
+    ]
+  ],
+  "source_sha256": "8e3b765da7a4b39619a7320075782eb080e5109295dff63d3bb44e0a71fd3b27",
+  "expanded_source_sha256": "4cdc9a9f73c65933999b7b64e78ac30d986dc5513ad48d27c626f30b249a0085",
+  "linked_abs_sha256": "5bcbf7a4508a098cbf09280825136b1b49fdffc927b3562ef44c738d4b3446e7",
+  "object_sha256": "781f7e298e34e831270d5c19f98b6843013530c9eab42582153279eb8481ded6",
+  "policy": "Separate native translation-unit links, not a full integration image build.",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
