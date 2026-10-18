@@ -8400,9 +8400,15 @@
      "end": "0x8C03979C"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC074",
+     "end": "0x8C0AC080"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 7, MAT3 functions 3, named 1."
+   "notes": "DC functions 7, MAT3 functions 3, named 1. Private proposal: natural12-byte audio64.drv string at0AC074..0AC080, referenced039656; source constant emitted by candidate, not target blob."
   },
   {
    "name": "initiali",
@@ -19495,9 +19501,25 @@
      "end": "0x8C07ABE0"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B22B4",
+     "end": "0x8C0B22D8"
+    },
+    {
+     "section": "C",
+     "start": "0x8C0B22D8",
+     "end": "0x8C0B22DB"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0CC884",
+     "end": "0x8C0CC894"
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 5, MAT3 functions 5, named 5."
+   "notes": "DC functions 5, MAT3 functions 5, named 5. Private initialized proposals: descriptor+format bounded by source and A7A4/A924; local globals A7AC/B0/B4/BC, tail894 excludes next pointer object. Alignment earns zero."
   },
   {
    "name": "circuitscr",
