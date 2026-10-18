@@ -1,0 +1,22 @@
+{
+  "unit": "HAL_Support",
+  "text_nonpadding": 32,
+  "data_nonpadding": 0,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C02ECD4",
+      "8C02ECF4"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "2b9d7c7054b40b95b9f0c4c3fab87b1f03c69d6edcbd833b760e085bbc5c36be",
+  "expanded_source_sha256": "84a57242251004305619aea8b97f5e28d9a2f5033f72d5aa8c285d0a10d7bfbb",
+  "compiler_input_sha256": "0027ec8f7b03f342bff0f1795d0dbe8ee9e814030feb67402704138ccf944f3a",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "dadc26b80af80d34d1bac4690026995aa8d35346f7c38d6c29a9deb4c5d06f87",
+  "object_sha256": "f04fc661af8c9749f123c2c2490b08c028c986b198f418c5b7d18b3973bb39e5",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
