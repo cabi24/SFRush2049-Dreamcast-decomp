@@ -107,3 +107,20 @@ Facts learned while bringing it up:
 - No GNU SH binutils/GCC (not needed for the SHC family; an independent decoder cross-check only).
 - Literal pools are placed by the compiler across functions (drivetra.c's pool sits inside `engine`),
   so exact links must be done per translation unit.
+
+## Build-and-compare system (dc_* tools, added 2026-10-18)
+
+Repeatable per-unit build over the unit map; full description, outputs and rules in
+[../BUILDING.md](../BUILDING.md).
+
+- `dc_split.py` cuts the target into `build\target\<unit>.o` (ELF32 LE SH relocatables, sized FUNC
+  symbols per mapped function, optional .data/.bss) and writes `build\target\symbols.txt`.
+- `dc_build.py` compiles every unit with `src\<unit>.c` at the frozen configuration, links it with
+  `shc_link.py` at the map's addresses (externals `DEFINE`d from `src\externs.txt` and
+  `symbols.txt`), compares function by function with nothing masked, and writes
+  `build\report.json` (`--unit`, `-v` side-by-side listing via `..\calib\sh4dis.py`, `--check`).
+- `dc_objdiff.py` writes `..\objdiff.json` for `objdiff\objdiff.exe` (`objdiff-cli diff -p .. -u <unit>`).
+- `dc_common.py` holds the shared map loader (`map\units.json`, falling back to
+  `map\units.seed.json`), the ELF writer/reader, and the symbol-file formats.
+- Found while building it: SHC's `-include=` rejects any path containing `-`, so `dc_build.py`
+  expands quoted `#include`s itself (into `build\pp\`) instead of passing include paths.

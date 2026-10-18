@@ -1,0 +1,6 @@
+# Addresses of externals that no mapped unit defines yet (one "symbol address" per line).
+# dc_build.py passes these to LNK DEFINE for any unit that leaves them undefined; they take
+# precedence over build/target/symbols.txt. Names without a leading underscore get one.
+# Names are placeholders until the functions are identified.
+_SetInterruptMask 0x8C018000
+_RegisterRetraceCallback 0x8C0D9484

@@ -1,0 +1,94 @@
+{
+ "base": "0x8C010000",
+ "image_size": 1123492,
+ "notes": "Seed map for the dc_* build tools (tools/dc_split.py, dc_build.py, dc_objdiff.py): only the three calibrated units. The real map is map/units.json (produced separately); the tools use it whenever it exists. Boundaries below were read from calib/_ghidra_units.txt and the calibration links (calib/link/*.map).",
+ "units": [
+  {
+   "name": "timer",
+   "source": "GameSource/src/timer.c",
+   "kind": "game",
+   "confidence": "high",
+   "text": {"start": "0x8C0100A4", "end": "0x8C010218"},
+   "functions": [
+    {"name": "RetraceCallback", "start": "0x8C0100A4", "end": "0x8C0100AE", "mat3": null, "confidence": "medium"},
+    {"name": "InitializeTimer", "start": "0x8C0100AE", "end": "0x8C0100FA", "mat3": "InitializeTimer", "confidence": "high"},
+    {"name": "PauseTimer", "start": "0x8C0100FA", "end": "0x8C010102", "mat3": "PauseTimer", "confidence": "high"},
+    {"name": "ResumeTimer", "start": "0x8C010102", "end": "0x8C01010A", "mat3": "ResumeTimer", "confidence": "high"},
+    {"name": "UpdateFrameTimer", "start": "0x8C01010A", "end": "0x8C010176", "mat3": "UpdateFrameTimer", "confidence": "high"},
+    {"name": "SetCountdownTimer", "start": "0x8C010176", "end": "0x8C010194", "mat3": "SetCountdownTimer", "confidence": "high"},
+    {"name": "AddCountdownTime", "start": "0x8C010194", "end": "0x8C0101A8", "mat3": "AddCountdownTime", "confidence": "high"},
+    {"name": "GetCountdownTimeRemaining", "start": "0x8C0101A8", "end": "0x8C0101C0", "mat3": "GetCountdownTimeRemaining", "confidence": "high"},
+    {"name": "CountdownTimeOut", "start": "0x8C0101FC", "end": "0x8C01020E", "mat3": "CountdownTimeOut", "confidence": "high"}
+   ],
+   "pools": [
+    {"start": "0x8C0101C0", "end": "0x8C0101FC"},
+    {"start": "0x8C010210", "end": "0x8C010218"}
+   ],
+   "data": [
+    {"section": "D", "start": "0x8C0B8C24", "end": "0x8C0B8C34", "symbols": [
+     {"name": "gTimerPaused", "start": "0x8C0B8C24", "size": 4},
+     {"name": "gRetraceRate", "start": "0x8C0B8C28", "size": 4},
+     {"name": "gRetraceTime", "start": "0x8C0B8C2C", "size": 4},
+     {"name": "sInited", "start": "0x8C0B8C30", "size": 4}
+    ]}
+   ],
+   "bss": [
+    {"section": "B", "start": "0x8C12253C", "end": "0x8C122560", "symbols": [
+     {"name": "gFrameCounter", "start": "0x8C12253C", "size": 4},
+     {"name": "gTimerUnknownA", "start": "0x8C122540", "size": 4},
+     {"name": "gTimerUnknownB", "start": "0x8C122544", "size": 4},
+     {"name": "gSeconds", "start": "0x8C122548", "size": 4},
+     {"name": "gFrameSeconds", "start": "0x8C12254C", "size": 4},
+     {"name": "gLastFrameCount", "start": "0x8C122550", "size": 4},
+     {"name": "gCountdownEnd", "start": "0x8C122554", "size": 4},
+     {"name": "gCountdownStart", "start": "0x8C122558", "size": 4},
+     {"name": "gLastFrameCounter", "start": "0x8C12255C", "size": 4}
+    ]}
+   ],
+   "notes": "D section links exactly (calib/link/timer_tu.json). BSS layout from the pool references; gTimerUnknownA/B are placeholder names. 0x8C01020E..0x8C010210 is pool alignment inside the unit."
+  },
+  {
+   "name": "drivetra",
+   "source": "GameSource/src/drivetra.c",
+   "kind": "game",
+   "confidence": "medium",
+   "text": {"start": "0x8C022CA4", "end": "0x8C0232F8"},
+   "functions": [
+    {"name": "drivetrain", "start": "0x8C022CA4", "end": "0x8C022D94", "mat3": "drivetrain", "confidence": "medium"},
+    {"name": "whatslips", "start": "0x8C022D94", "end": "0x8C022EE2", "mat3": "whatslips", "confidence": "medium"},
+    {"name": "autoshift", "start": "0x8C022EFC", "end": "0x8C022F96", "mat3": "autoshift", "confidence": "medium"},
+    {"name": "transmission", "start": "0x8C022F96", "end": "0x8C022FD2", "mat3": "transmission", "confidence": "medium"},
+    {"name": "find_best_gear", "start": "0x8C022FEC", "end": "0x8C023048", "mat3": "find_best_gear", "confidence": "medium"},
+    {"name": "upshift", "start": "0x8C023048", "end": "0x8C023074", "mat3": "upshift", "confidence": "medium"},
+    {"name": "downshift", "start": "0x8C023074", "end": "0x8C0230A0", "mat3": "downshift", "confidence": "medium"},
+    {"name": "enginetorque", "start": "0x8C0230B0", "end": "0x8C0231D2", "mat3": "enginetorque", "confidence": "high"},
+    {"name": "interp", "start": "0x8C0231D2", "end": "0x8C0231E6", "mat3": "interp", "confidence": "high"},
+    {"name": "engine", "start": "0x8C0231E6", "end": "0x8C0232E4", "mat3": "engine", "confidence": "high"}
+   ],
+   "pools": [
+    {"start": "0x8C022DBC", "end": "0x8C022DE8"},
+    {"start": "0x8C022EE2", "end": "0x8C022EFC"},
+    {"start": "0x8C022FD2", "end": "0x8C022FEC"},
+    {"start": "0x8C0230A0", "end": "0x8C0230B0"},
+    {"start": "0x8C02321C", "end": "0x8C023240"},
+    {"start": "0x8C0232E4", "end": "0x8C0232F8"}
+   ],
+   "notes": "Pools are Ghidra data runs (alignment padding included); two of them sit inside whatslips and engine. No source yet."
+  },
+  {
+   "name": "ll",
+   "source": "GameSource/src/ll.c",
+   "kind": "game",
+   "confidence": "high",
+   "text": {"start": "0x8C03A1B8", "end": "0x8C03A360"},
+   "functions": [
+    {"name": "InitLL", "start": "0x8C03A1B8", "end": "0x8C03A1BE", "mat3": "InitLL", "confidence": "high"},
+    {"name": "ClearLL", "start": "0x8C03A1BE", "end": "0x8C03A1C8", "mat3": "ClearLL", "confidence": "high"},
+    {"name": "InsertLLE", "start": "0x8C03A1C8", "end": "0x8C03A28E", "mat3": "InsertLLE", "confidence": "high"},
+    {"name": "RemoveLLE", "start": "0x8C03A28E", "end": "0x8C03A35E", "mat3": "RemoveLLE", "confidence": "high"}
+   ],
+   "pools": [],
+   "notes": "Exact unit link (calib/link/ll_tu.json); 0x8C03A35E..0x8C03A360 is alignment before the next unit."
+  }
+ ]
+}

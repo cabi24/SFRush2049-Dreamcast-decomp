@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/encounter/objdiff/main/config.schema.json",
+  "min_version": "2.0.0",
+  "custom_make": "python",
+  "custom_args": [
+    "tools/dc_build.py",
+    "--no-objdiff"
+  ],
+  "build_target": false,
+  "build_base": true,
+  "target_dir": "build/target",
+  "base_dir": "build/obj",
+  "watch_patterns": [
+    "src/**/*.c",
+    "src/**/*.h",
+    "src/*.txt",
+    "map/*.json"
+  ],
+  "ignore_patterns": [
+    "build/**/*"
+  ],
+  "progress_categories": [
+    {
+      "id": "game",
+      "name": "Game code"
+    }
+  ],
+  "units": [
+    {
+      "name": "timer",
+      "target_path": "build/target/timer.o",
+      "base_path": "build/obj/timer.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false,
+        "source_path": "src/timer.c"
+      }
+    },
+    {
+      "name": "drivetra",
+      "target_path": "build/target/drivetra.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "ll",
+      "target_path": "build/target/ll.o",
+      "base_path": "build/obj/ll.o",
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false,
+        "source_path": "src/ll.c"
+      }
+    }
+  ]
+}
