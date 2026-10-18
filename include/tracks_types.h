@@ -1,9 +1,10 @@
+#include "dc_types.h"
 /* Private DC layout proposals for tracks.c; no canonical header edits. */
 #ifndef DC_TRACKS_TYPES_H
 #define DC_TRACKS_TYPES_H
 
 /* The wad occupies stack+8..20 in LoadTrack: BEE8, BF66..6E. */
-typedef struct anon_base_TOCentries_c { char bytes[12]; } anon_base_TOCentries_c;
+
 
 typedef struct anon_loading_loaded_8 {
     signed char loading; /* track+0 BF12, world+0 BF44, collision BFF2, path C08C */
@@ -23,10 +24,7 @@ typedef struct anon_trackInited_track_2c {
     anon_loading_loaded_8 other; /* +24: C0BA, C1EC..F6; memset size2C at C2D4. */
 } anon_trackInited_track_2c;
 
-typedef struct anon_woff_wname_14 {
-    unsigned int woff; /* +0 32-bit load/store BF9A/BFA2, add20 stride at BFAC. */
-    char pad0[0x14 - 0x4];
-} anon_woff_wname_14;
+
 
 typedef struct tTarget tTarget;
 typedef struct tTargetGroup tTargetGroup;

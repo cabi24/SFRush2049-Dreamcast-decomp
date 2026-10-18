@@ -2342,11 +2342,12 @@
    },
    "functions": [
     {
-     "name": "func_8C01BAF4",
+     "name": "InitCheckpointData",
      "start": "0x8C01BAF4",
      "end": "0x8C01BB02",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "InitCheckpointData",
+     "confidence": "high",
+     "evidence": "8C01BAFC/BB00 clear finish_cam[0/1]; tail call ReadCheckpointData at 8C04500C, MAT3 first function"
     },
     {
      "name": "InitCPS",
@@ -2440,8 +2441,64 @@
      "end": "0x8C01C554"
     }
    ],
-   "data": [],
-   "bss": [],
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BC248",
+     "end": "0x8C0BC260",
+     "symbols": [
+      {
+       "name": "ghostRaceTimes",
+       "start": "0x8C0BC248",
+       "end": "0x8C0BC260"
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C12BAB4",
+     "end": "0x8C12BE4C",
+     "symbols": [
+      {
+       "name": "gCheckpoints",
+       "start": "0x8C12BAB4",
+       "end": "0x8C12BDE0"
+      },
+      {
+       "name": "gNumLapsLeft",
+       "start": "0x8C12BDE0",
+       "end": "0x8C12BDE1"
+      },
+      {
+       "name": "gOneMoreCP",
+       "start": "0x8C12BDE1",
+       "end": "0x8C12BDE2"
+      },
+      {
+       "name": "gFirstPlaceTime",
+       "start": "0x8C12BDE4",
+       "end": "0x8C12BDE8"
+      },
+      {
+       "name": "gInFirstPlace",
+       "start": "0x8C12BDE8",
+       "end": "0x8C12BDE9"
+      },
+      {
+       "name": "gPrevPos",
+       "start": "0x8C12BDEC",
+       "end": "0x8C12BE34"
+      },
+      {
+       "name": "lastDotProd",
+       "start": "0x8C12BE34",
+       "end": "0x8C12BE4C"
+      }
+     ]
+    }
+   ],
    "notes": "DC functions 8, MAT3 functions 8, named 7."
   },
   {
@@ -5541,7 +5598,18 @@
      "end": "0x8C030ACC"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AAA7C",
+     "end": "0x8C0AAA8C"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BDF9C",
+     "end": "0x8C0BE038"
+    }
+   ],
    "bss": [],
    "notes": "DC functions 4, MAT3 functions 4, named 4."
   },
@@ -6967,38 +7035,38 @@
    },
    "functions": [
     {
-     "name": "func_8C03CF94",
+     "name": "MBSetupWad",
      "start": "0x8C03CF94",
      "end": "0x8C03CFDA",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "MBSetupWad",
+     "confidence": "medium"
+    },
+    {
+     "name": "MBOffsetWad",
+     "start": "0x8C03CFDA",
+     "end": "0x8C03D01C",
+     "mat3": "MBOffsetWad",
+     "confidence": "medium"
     },
     {
      "name": "MBFindInWad",
-     "start": "0x8C03CFDA",
-     "end": "0x8C03D01C",
-     "mat3": "MBFindInWad",
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C03D01C",
      "start": "0x8C03D01C",
      "end": "0x8C03D05A",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "MBFindInWad",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C03D05A",
+     "name": "MBGetFromWad",
      "start": "0x8C03D05A",
      "end": "0x8C03D090",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "MBGetFromWad",
+     "confidence": "medium"
     }
    ],
    "pools": [],
    "data": [],
    "bss": [],
-   "notes": "alphabetical slot (mb_wad < mbox); weak DP (MBFindInWad, MBGetFromWad). DC functions 4, MAT3 functions 4, named 1."
+   "notes": "Private target-backed names:setup70/offset66/find62/get54. DC native-endian helpers omit all GC swap APIs; layouts and stride match MAT3."
   },
   {
    "name": "mbox",
@@ -7743,11 +7811,11 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C040C6A",
+     "name": "no_catchup",
      "start": "0x8C040C6A",
      "end": "0x8C040C9A",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "no_catchup",
+     "confidence": "high"
     },
     {
      "name": "SetCatchup",
@@ -7787,9 +7855,17 @@
      "end": "0x8C041220"
     }
    ],
-   "data": [],
+   "data": [
+    {
+     "start": "0x8C0BEE80",
+     "end": "0x8C0BEE81",
+     "section": "D",
+     "name": "sInited",
+     "notes": "ModelThread pool8C040CDC and byte8C040C30/3C; local initialized zero."
+    }
+   ],
    "bss": [],
-   "notes": "DC functions 3, MAT3 functions 3, named 2."
+   "notes": "Private target-proven no_catchup identification; DC ModelThread backend calls differ from MAT3."
   },
   {
    "name": "options",
@@ -8328,29 +8404,29 @@
    "confidence": "medium",
    "text": {
     "start": "0x8C044C2C",
-    "end": "0x8C045300"
+    "end": "0x8C04500C"
    },
    "functions": [
     {
-     "name": "func_8C044C2C",
+     "name": "NewPassword",
      "start": "0x8C044C2C",
      "end": "0x8C044CA4",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "NewPassword",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C044CA4",
+     "name": "StorePasswordElement",
      "start": "0x8C044CA4",
      "end": "0x8C044D0C",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "StorePasswordElement",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C044D0C",
+     "name": "GetPasswordElement",
      "start": "0x8C044D0C",
      "end": "0x8C044D80",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "GetPasswordElement",
+     "confidence": "medium"
     },
     {
      "name": "GetPasswordString",
@@ -8360,25 +8436,18 @@
      "confidence": "medium"
     },
     {
-     "name": "func_8C044E94",
+     "name": "SetPasswordString",
      "start": "0x8C044E94",
      "end": "0x8C044F78",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "SetPasswordString",
+     "confidence": "medium"
     },
     {
-     "name": "func_8C044F78",
+     "name": "CalcChecksum",
      "start": "0x8C044F78",
      "end": "0x8C045002",
-     "mat3": null,
-     "confidence": "low"
-    },
-    {
-     "name": "func_8C04500C",
-     "start": "0x8C04500C",
-     "end": "0x8C0452FE",
-     "mat3": null,
-     "confidence": "low"
+     "mat3": "CalcChecksum",
+     "confidence": "medium"
     }
    ],
    "pools": [
@@ -8393,19 +8462,72 @@
     {
      "start": "0x8C045002",
      "end": "0x8C04500C"
-    },
-    {
-     "start": "0x8C0451BA",
-     "end": "0x8C0451D8"
-    },
-    {
-     "start": "0x8C0452FE",
-     "end": "0x8C045300"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "alphabetical slot + Store/GetPasswordElement, Get/SetPasswordString, CalcChecksum. DC functions 7, MAT3 functions 6, named 1."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0AC338",
+     "end": "0x8C0AC359"
+    },
+    {
+     "section": "D",
+     "start": "0x8C0BF968",
+     "end": "0x8C0BFA78",
+     "symbols": [
+      {
+       "name": "gPasswordAlphabet",
+       "start": "0x8C0BF968",
+       "size": 4
+      },
+      {
+       "name": "gInversePasswordAlphabet",
+       "start": "0x8C0BF96C",
+       "size": 256
+      },
+      {
+       "name": "gNumBytes",
+       "start": "0x8C0BFA6C",
+       "size": 2
+      },
+      {
+       "name": "gDataBits",
+       "start": "0x8C0BFA6E",
+       "size": 2
+      },
+      {
+       "name": "gChecksumBits",
+       "start": "0x8C0BFA70",
+       "size": 2
+      },
+      {
+       "name": "gNumBits",
+       "start": "0x8C0BFA72",
+       "size": 2
+      },
+      {
+       "name": "first",
+       "start": "0x8C0BFA74",
+       "size": 4
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C15037C",
+     "end": "0x8C15039C",
+     "symbols": [
+      {
+       "name": "gData",
+       "start": "0x8C15037C",
+       "size": 32
+      }
+     ]
+    }
+   ],
+   "notes": "Private corrected boundary: six password funcs to500C; old final anonymous is ReadCheckpointData/pathcommon. D/C/B addresses from target pool pointers and data; root owns canonical acceptance."
   },
   {
    "name": "pathcommon",
@@ -8413,10 +8535,17 @@
    "kind": "game",
    "confidence": "medium",
    "text": {
-    "start": "0x8C045300",
+    "start": "0x8C04500C",
     "end": "0x8C046928"
    },
    "functions": [
+    {
+     "name": "ReadCheckpointData",
+     "start": "0x8C04500C",
+     "end": "0x8C0452FE",
+     "mat3": "ReadCheckpointData",
+     "confidence": "high"
+    },
     {
      "name": "FindAltPathIntersect",
      "start": "0x8C045300",
@@ -8585,7 +8714,7 @@
    ],
    "data": [],
    "bss": [],
-   "notes": "DC functions 17, MAT3 functions 18, named 17."
+   "notes": "DC functions 17, MAT3 functions 18, named 17. Root source/target review: ReadCheckpointData belongs to pathcommon, not password. Neighbor source remains unbuilt."
   },
   {
    "name": "pausescr",
@@ -9908,9 +10037,45 @@
      "end": "0x8C04F350"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "includes AnimateSkids at 0x8C04F234. DC functions 8, MAT3 functions 10, named 7."
+   "data": [
+    {
+     "section": "D",
+     "start": "0x8C0BFCF4",
+     "end": "0x8C0BFD08",
+     "symbols": [
+      {
+       "name": "gDirtColor",
+       "start": "0x8C0BFCF4",
+       "size": 4
+      },
+      {
+       "name": "skids_appFlags",
+       "start": "0x8C0BFCF8",
+       "size": 16
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C152654",
+     "end": "0x8C152F0C",
+     "symbols": [
+      {
+       "name": "gSkidList",
+       "start": "0x8C152654",
+       "size": 24
+      },
+      {
+       "name": "gNewSkid",
+       "start": "0x8C15266C",
+       "size": 2208
+      }
+     ]
+    }
+   ],
+   "notes": "includes AnimateSkids at 0x8C04F234. DC functions 8, MAT3 functions 10, named 7. Final BSS end is source-derived, not independently proven; last allocation extent unclaimed."
   },
   {
    "name": "sky",
@@ -19829,9 +19994,35 @@
      "end": "0x8C0962C4"
     }
    ],
-   "data": [],
-   "bss": [],
-   "notes": "DC functions 8, MAT3 functions 9, named 8."
+   "data": [
+    {
+     "section": "C",
+     "start": "0x8C0B348C",
+     "end": "0x8C0B3494",
+     "symbols": [
+      {
+       "name": "invsColor_init",
+       "start": "0x8C0B348C",
+       "end": "0x8C0B3494"
+      }
+     ]
+    }
+   ],
+   "bss": [
+    {
+     "section": "B",
+     "start": "0x8C1A1980",
+     "end": "0x8C1A1994",
+     "symbols": [
+      {
+       "name": "gBattlePowerUps",
+       "start": "0x8C1A1980",
+       "end": "0x8C1A1994"
+      }
+     ]
+    }
+   ],
+   "notes": "DC functions 8, MAT3 functions 9, named 8. Target omits MAT3 exitBattlePowerUps. C invsColor initialization8 bytes, B gBattlePowerUps20 bytes proposed from target literals and accessed fields; verify emitted extents."
   },
   {
    "name": "shots",
