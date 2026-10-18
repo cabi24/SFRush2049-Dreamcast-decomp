@@ -1,0 +1,17 @@
+{
+  "unit": "dc_unk_8C069E34",
+  "text_nonpadding": 0,
+  "data_nonpadding": 0,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [],
+  "source_sha256": "e075dfc56931d698d763b74b23ff35f00cc26a09022ab17ef3db964f1ad5b598",
+  "expanded_source_sha256": "dc7779ca3121c50136d670e51ba7f1cfe480b6f41b35f6f510e24327430c5fde",
+  "compiler_input_sha256": "b7c2b3d7c19119369e5fd2c0189fd448b0754bde6447bcdaaeaf799e5e8e2fb0",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "4b0ea8c05c7b93b4d2f38f693afe4e1b5f674d4889afc5feca2f8312bcb60b3f",
+  "object_sha256": "84776a64497d5d32040115bad5cf623e20b56bf58ee486ebc30650d2738d5ca7",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
