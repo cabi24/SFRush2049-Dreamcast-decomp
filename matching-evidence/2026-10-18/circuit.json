@@ -1,0 +1,27 @@
+{
+  "unit": "circuit",
+  "text_nonpadding": 144,
+  "data_nonpadding": 376,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C01C554",
+      "8C01C5E4"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BC260",
+      "8C0BC3D8"
+    ]
+  ],
+  "source_sha256": "19ad8562a240a242b28897994913f88d24f51e5f86f81bdc40804a365196b499",
+  "expanded_source_sha256": "bc7d1a4eff3c4927883c252e9a62e006fdaf6ddf219c2fb48bd32b385b521df9",
+  "compiler_input_sha256": "390e163d8403c52e854124f2997ac1dbf5701b16faa8766fdd98a3ab0588a018",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "e2bfb752b75d05a3f932dee85b910ed0f5f920bbb95d501f329627a9cd068ae6",
+  "object_sha256": "db7561ab620dbce53835911b36eead27735aac105bccf89155a06bcb56399762",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
