@@ -1,0 +1,35 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "text_nonpadding": 436,
+  "data_nonpadding": 24,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C06C08C",
+      "8C06C1E6"
+    ],
+    [
+      "8C06C374",
+      "8C06C3C2"
+    ],
+    [
+      "8C06C3C4",
+      "8C06C3D0"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0C96DC",
+      "8C0C96F4"
+    ]
+  ],
+  "source_sha256": "6e084e8d7d08202aa907f31ec015ecad5f6ed6f515d926ca043b94ad1742555c",
+  "expanded_source_sha256": "1d6428bb7ae6ec673a954f9730fc2d91a9f5eab0ddfa94e514c4cee87695b062",
+  "compiler_input_sha256": "6173a278e48d407d1f448833cd8af9415d486c529a5851f758e7cc8b3972381a",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "853c6bf954b51de5df92b9806edb2f268a41a26e1a7200a9296161688520de38",
+  "object_sha256": "64e42543aa48a2bc30079fa61c2a703d3dc4df4a60f6d03135c3ccebe5eeb416",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
