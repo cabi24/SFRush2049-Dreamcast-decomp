@@ -1,0 +1,31 @@
+{
+  "unit": "HAL_text",
+  "text_nonpadding": 40,
+  "data_nonpadding": 15,
+  "exact_functions": 0,
+  "text_spans": [
+    [
+      "8C02F068",
+      "8C02F090"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BDF84",
+      "8C0BDF85"
+    ],
+    [
+      "8C0BDF88",
+      "8C0BDF96"
+    ]
+  ],
+  "source_sha256": "a3e8d25e15708e1abc9659c5d9a239f95bff22d016c243b5ad40106b85b4933f",
+  "expanded_source_sha256": "99dda9e878ec3a980b393290fb88e32ddef96a6c8283ce47a4bc2e06b37a4cde",
+  "compiler_input_sha256": "a4df119ccb7bab02c93e050f04e04ca4f58e4386fc00138bd1863b6c323dc34f",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "658757940b2aa7d31b94703ce07a48194f7c272b725ff99ab630056bbf392879",
+  "object_sha256": "97eb451dcb27bf5fda1d9572180d53ad2512d49ad6fef57ceeaae557db9ce6d7",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
