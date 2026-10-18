@@ -1,0 +1,51 @@
+{
+  "unit": "gfx",
+  "text_nonpadding": 576,
+  "data_nonpadding": 88,
+  "exact_functions": 8,
+  "text_spans": [
+    [
+      "8C02E118",
+      "8C02E124"
+    ],
+    [
+      "8C02E168",
+      "8C02E18C"
+    ],
+    [
+      "8C02E2A0",
+      "8C02E4B0"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AAA18",
+      "8C0AAA29"
+    ],
+    [
+      "8C0AAA2C",
+      "8C0AAA45"
+    ],
+    [
+      "8C0AAA48",
+      "8C0AAA55"
+    ],
+    [
+      "8C0AAA58",
+      "8C0AAA6E"
+    ],
+    [
+      "8C0AAA70",
+      "8C0AAA7B"
+    ]
+  ],
+  "source_sha256": "ffd762e9940c5f9e82e8009f64252fde96a5182ecff34b347dd7352e47448cec",
+  "expanded_source_sha256": "f0017f89a59e004c7a9913f17780e9181a20f7d7dad39e40ac2fabecf19b5988",
+  "compiler_input_sha256": "7bbaa756f23182a57a1e576c30786afb6308c81445c0ee2c7a720760a1550869",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "27db9e7e769d776ef6623101b3dd68e883f45aa4dc3be1967695ab43b6c92ec2",
+  "object_sha256": "277846fcd4fc0208ad0507f134e47ca04e4cd4cf87a922c9ce0952b477850532",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
