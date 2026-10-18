@@ -1,0 +1,22 @@
+{
+  "unit": "zoidlight",
+  "text_nonpadding": 44,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C068EFC",
+      "8C068F28"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "b6d089df02386e9dc3e1c21b688de6dec2c532def81f79d7d84a22b75d6bc192",
+  "expanded_source_sha256": "3b6dcc61af86493149692a7e2f7c859b5e931e52b0e0dd9a18c7e6294c409e70",
+  "compiler_input_sha256": "521db4b058b13d1e5bd796f11a3e7d787853536459a39ea277d1cebc357b0dbc",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "90aabc9274aa3b899eb2681d1afe068b3d5eb4f102e320b45cd1d45f4853e469",
+  "object_sha256": "af2229868bc2f550b6bf4c28fe3dc9aa0d9511803274c130f65c50ffb5cb0921",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
