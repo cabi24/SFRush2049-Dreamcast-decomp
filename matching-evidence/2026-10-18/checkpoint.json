@@ -1,0 +1,31 @@
+{
+  "unit": "checkpoint",
+  "text_nonpadding": 118,
+  "data_nonpadding": 24,
+  "exact_functions": 3,
+  "text_spans": [
+    [
+      "8C01BAF4",
+      "8C01BB60"
+    ],
+    [
+      "8C01BCE8",
+      "8C01BCF2"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BC248",
+      "8C0BC260"
+    ]
+  ],
+  "source_sha256": "5ca26415c17d29d394f60f2144b771039c449a9d37f039034c5321c58ca1c425",
+  "expanded_source_sha256": "e45a62c3a9808ce3e77c3d339023e08f10740795c5a4ec54f65ca999af21f3cc",
+  "compiler_input_sha256": "3b5ad9750616a8c46d086900b834756a5ccff6a22f1928f8ec356fd52cd349ed",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "0394421777b0e64d2ffe3b1cefed696ca0c8809c5f488bc7db592489b5d5b9e6",
+  "object_sha256": "80d3c621a46cd3400fd1bc2dc3fe259d8ed78044661cc988938459a5454902df",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
