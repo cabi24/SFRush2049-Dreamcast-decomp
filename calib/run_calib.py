@@ -27,6 +27,7 @@ SLOTS = {  # name: (file offset, size, symbol)
     'timer_tu': (0xa4, 0x16a, '_RetraceCallback'),  # timer.c unit incl. pools: 0x8C0100A4..0x8C01020E
     'drivetra_part': (0x130b0, 0x248, '_enginetorque'),  # enginetorque, interp, engine incl. pools: ..0x8C0232F8  # whole ll.c TU: InitLL, ClearLL, InsertLLE, RemoveLLE
     'RemoveLLE': (0x2a28e, 208, '_RemoveLLE'),
+    'drivetra_tu': (0x12ca4, 0x654, '_drivetrain'),  # whole drivetra.c unit 0x8C022CA4..0x8C0232F8 incl. pools
 }
 ALL_VERS = ['shc-v5.0r10', 'shc-v5.0r26', 'shc-v5.0r28', 'shc-v5.0r31', 'shc-v5.0r32',
             'shc-v5.1r01', 'shc-v5.1r03', 'shc-v5.1r04', 'shc-v5.1r08', 'shc-v5.1r11', 'shc-v5.1r13']
