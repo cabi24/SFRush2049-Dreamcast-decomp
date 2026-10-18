@@ -54,8 +54,10 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | model | 118 | 1 | 2/3 |
 | options | 756 | 0 | 1/4 |
 | optionscr | 166 | 2,092 | 1/11 |
+| pakerr | 760 | 52 | 6/19 |
 | pane | 1,082 | 480 | 3/5 |
 | password | 884 | 305 | 5/6 |
+| pausescr | 6 | 445 | 1/12 |
 | powerups | 1,580 | 8 | 8/8 |
 | rekon | 770 | 0 | 4/4 |
 | road | 18 | 0 | 0/3 |
@@ -84,17 +86,18 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zip | 6,838 | 475 | 19/25 |
 | zoid | 440 | 0 | 7/21 |
 | zoidblit | 464 | 0 | 7/7 |
+| zoidlight | 44 | 0 | 2/2 |
 | zoidpoly | 848 | 0 | 7/8 |
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **42,930 /569,664 (7.5360%)**, plus **17,610 initialized data bytes**.
-Whole-image credit: **60,540 /1,123,492 (5.3886%)**, **273 exact source functions**, 67 source units.
-The eighth batch adds 2,554 text/literal bytes, 806
-initialized data bytes and 28 exact functions. The audited batch is locally committed
-through `58a20b0`. No remote push was performed.
+Game text/literal credit: **43,740 /569,664 (7.6782%)**, plus **18,107 initialized data bytes**.
+Whole-image credit: **61,847 /1,123,492 (5.5049%)**, **282 exact source functions**, 70 source units.
+The ninth batch adds 810 text/literal bytes, 497
+initialized data bytes and 9 exact functions. The audited batch is locally committed
+through `2f4490a`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-eighth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-ninth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
