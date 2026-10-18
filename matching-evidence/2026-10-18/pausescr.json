@@ -1,0 +1,35 @@
+{
+  "unit": "pausescr",
+  "text_nonpadding": 6,
+  "data_nonpadding": 445,
+  "exact_functions": 1,
+  "text_spans": [
+    [
+      "8C046928",
+      "8C04692E"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AC410",
+      "8C0AC421"
+    ],
+    [
+      "8C0AC424",
+      "8C0AC42A"
+    ],
+    [
+      "8C0BFA78",
+      "8C0BFC1E"
+    ]
+  ],
+  "source_sha256": "783c7df00f0750a060379a146d556da942520556793c35d2ca24ad389f9b734d",
+  "expanded_source_sha256": "3ba944c07a826883d86adedd3aed34830de5ee85ee1df449da202b4831ddca75",
+  "compiler_input_sha256": "d764e2a5a285a53a1225c4ee9037cd31a6f3ec166261001b5f705b9e7448ae10",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "f69c047552c775a535776f285f10ab4bf125d4a246b781aca2cd64195535acb9",
+  "object_sha256": "00124b18ccaf3f7f814ed07471845e4686a48e1125723bbddb97c940a386ea24",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
