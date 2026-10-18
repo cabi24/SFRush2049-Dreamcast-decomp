@@ -1,0 +1,118 @@
+{
+  "unit": "audioscr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 935,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0A8960",
+      "8C0A8971"
+    ],
+    [
+      "8C0A8974",
+      "8C0A8977"
+    ],
+    [
+      "8C0A8978",
+      "8C0A897F"
+    ],
+    [
+      "8C0A8980",
+      "8C0A8987"
+    ],
+    [
+      "8C0A8988",
+      "8C0A898B"
+    ],
+    [
+      "8C0A898C",
+      "8C0A8993"
+    ],
+    [
+      "8C0A8994",
+      "8C0A89A2"
+    ],
+    [
+      "8C0A89A4",
+      "8C0A89D1"
+    ],
+    [
+      "8C0A89D4",
+      "8C0A89EB"
+    ],
+    [
+      "8C0A89EC",
+      "8C0A89F7"
+    ],
+    [
+      "8C0A89F8",
+      "8C0A8A01"
+    ],
+    [
+      "8C0A8A04",
+      "8C0A8A0D"
+    ],
+    [
+      "8C0BAEA8",
+      "8C0BAF09"
+    ],
+    [
+      "8C0BAF0C",
+      "8C0BAF49"
+    ],
+    [
+      "8C0BAF4C",
+      "8C0BAF89"
+    ],
+    [
+      "8C0BAF8C",
+      "8C0BAFC9"
+    ],
+    [
+      "8C0BAFCC",
+      "8C0BB009"
+    ],
+    [
+      "8C0BB00C",
+      "8C0BB049"
+    ],
+    [
+      "8C0BB04C",
+      "8C0BB089"
+    ],
+    [
+      "8C0BB08C",
+      "8C0BB0C9"
+    ],
+    [
+      "8C0BB0CC",
+      "8C0BB109"
+    ],
+    [
+      "8C0BB10C",
+      "8C0BB149"
+    ],
+    [
+      "8C0BB14C",
+      "8C0BB189"
+    ],
+    [
+      "8C0BB18C",
+      "8C0BB1C9"
+    ],
+    [
+      "8C0BB1CC",
+      "8C0BB1D8"
+    ]
+  ],
+  "source_sha256": "f27e13088d78df478a2c80d72d81811e79949de8f64f39d6865ad0ab5c4544d1",
+  "expanded_source_sha256": "2a8255ed2f279a041d710d5f0f7dcf436a9d4f67056f0360d05ef378e200384c",
+  "compiler_input_sha256": "f22facd434671398d59f92523f358b97cc9de50cb26a8c7b2e0424456969f01e",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "2e3497ddf36118c8243556651186e789a4f82e58e1f143a4ba27cb8f10a0143e",
+  "object_sha256": "eed02a93a2eaa3b09feba973a8947f50086da73ea70f0b60a508d410bc4918b3",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
