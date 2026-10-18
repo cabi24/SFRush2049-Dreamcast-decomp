@@ -1,0 +1,30 @@
+{
+  "unit": "warningscr",
+  "text_nonpadding": 0,
+  "data_nonpadding": 24,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0B2F34",
+      "8C0B2F46"
+    ],
+    [
+      "8C0D19E0",
+      "8C0D19E2"
+    ],
+    [
+      "8C0D19E4",
+      "8C0D19E8"
+    ]
+  ],
+  "source_sha256": "091d216e2c80b1a768762098fcff846d467229dc6f065e709e3b6d2fc3b6ac8b",
+  "expanded_source_sha256": "984bb6ff541d8c03434e84c44e6b866e99d4f013a46f8c8f408bde86e1e0b24e",
+  "compiler_input_sha256": "76aae00c2a934a8a085cd653a6382fca572118352df6f1f0f54c55ab904042eb",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "ef58ddd7416f19d08ec6a0be07948353f9a065abea1e7439e388561f5b1d26d6",
+  "object_sha256": "d20177718e0eadc029aeaa0e6256bfb238327b24f0ebe2c252d4f8fb409a026c",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
