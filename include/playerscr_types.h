@@ -1,0 +1,116 @@
+#ifndef DC_PLAYERSCR_TYPES_H
+#define DC_PLAYERSCR_TYPES_H
+#include "dc_types.h"
+#define uninitButtons func_8C084104
+#define updateButtons func_8C0841B2
+typedef struct tMenuButton {int buttonType,objIdx;float angle;tUVMatrix mat;unsigned char alpha;char pad0[3];} tMenuButton;
+typedef struct anon_x_y_18 {int x,y,w,h,cx,cy;} anon_x_y_18;
+typedef struct tBlitSet tBlitSet;
+typedef struct tPScreenProfile tPScreenProfile;
+typedef struct tPScreenLinks {tPScreenProfile **next,**prev;} tPScreenLinks;
+struct tPScreenProfile {tPScreenLinks ll;tPS_File **fileh;char pad_name[0x14-0x0c];unsigned char name[13];signed char controls[11];};
+/* Linked-list next0/prev4,fileh8,name14,controls21; pointers only, no profile allocation stride claimed. */
+struct tPS_File {char pad0[0x10];unsigned char pak;};
+typedef struct tPScreenPad {unsigned char slot,controller;char pad0[2];unsigned int edges,levels,autoEdges;char pad1[0x4c-0x10];tPScreenProfile **save;} tPScreenPad;
+typedef struct tPScreenList {char pad0[8];tPScreenProfile **head,**tail;} tPScreenList;
+typedef struct tPScreenText {char pad0[4];unsigned char **single;char pad1[4];unsigned short *tab;unsigned char **taba;} tPScreenText;
+typedef int enum_kNumMenuDir_8;
+typedef int enum_kSelectMenuCount;
+typedef int enum_kPlayerStateCount;
+enum {kMenuStay=0,kMenuForward=1,kMenuBackward=2,kSelectMenuCount=14,kSelectMenuJustPlay=0,kSelectMenuSelectPak=1,kSelectMenuPakStatus=2,kSelectMenuSelectPlayer=3,kSelectMenuCreatePlayer=11,kSelectMenuDeletePlayer=12,kSelectMenuResetPak=13};
+enum {kPlayerStateSelect=0,kPlayerStateWait=1,kPlayerStateControls=2,kPlayerStateCreatePlayer=3,kPlayerStateDeletePlayer=4,kPlayerStatePakFull=5,kPlayerStatePakDamaged=6,kPlayerStatePaks=7};
+typedef char checkPSButton[(sizeof(tMenuButton)==64)?1:-1];
+typedef char checkPSPad[(sizeof(tPScreenPad)==0x50)?1:-1];
+#define gPlayers ((tPScreenPad *)0x8C006000)
+extern tPScreenProfile *gJustPlayers[4];
+extern tPScreenList gPlayerFiles;
+extern tPScreenText gText;
+extern signed short gNumPlayers,gNumWindows;
+extern unsigned int gSkipToGameState,gGameState;
+extern signed char gSoftReset,gOptions[41],gCarTeam[4],controlScrActive[4];
+extern unsigned char gNumModels;
+extern int drawWindowBorders;
+extern float HFOV,unitmatrix[3][3];
+extern tCamera gCamera[4];
+extern tRGBA flashColors[2];
+extern int playerTextColor[4]; /* target literals8C081648/1F84/2752=B DDA8. */
+extern char *gPS_PakName[8];
+extern const char *gPlayerNameChars;
+extern signed short gNameSelect[4],gNameLen[4];
+extern signed char gSelectMenuMaxSize,gSelectMenuCount[4],gSelectMenuControls[4],gSelectPakIdx[4],gSelectPlayerNum[4];
+extern signed char gDeleteMenuSelect[4],gDeleteMenuConfirm[4],gDeleteMenuYes[4],gDeleteMenuNotify[4];
+extern unsigned char gDeleteMenuName[4][13],gCreatePlayerNames[4][13];
+extern int gPakFull[8],gNumPakPlayers[8],gPlayerMenuButtonsInited[4],gPlayerMenuButtonsJustInited[4];
+extern signed char gSelectMenuVisible[4][14],gSelectMenuValid[4][14];
+extern tBlitSet *gPlayerMenuPane[4];
+extern int gSelectMenuSelect[4],gPlayerState[4];
+extern tPScreenProfile **gSelectedPlayer[4];
+void *memcpy(void *,const void *,unsigned int);
+void *memset(void *,int,unsigned int);
+void AudPlaySong(int song, int loop);
+void AudSetMusicVol(float volume, float time);
+void CalcUnlockedStuff();
+void ChangePaneSize(tBlitSet *gPlayerMenuPane, int x1, int y1, int x2, int y2);
+void ClearRushControls();
+tPScreenProfile **CreatePlayer(int pak, unsigned char *name);
+void DeletePlayer(tPScreenProfile **player);
+void FindPlayerNum(int num, int force);
+unsigned int HAL_GetTextWidth(void * text, signed short numChars);
+int HAL_SetFont(int fontID);
+void HAL_SetFontSpacing(signed short spacing);
+void HAL_SetTextDepth(float depth);
+void HAL_SetTextTranslucency(float xlu);
+tBlitSet *InitPane(int x1, int y1, int x2, int y2, int alpha, int (*animFunc)(_tBlit *), unsigned int animID, int permanent);
+int MBOX_FindObject_WORK(const char *name, signed char firstModel, signed char lastModel, int flag);
+tTexture *MBOX_FindTexture_WORK(const char *name, unsigned short *index, signed char firstModel, signed char lastModel, int flag);
+void MBOX_HideObject(int dlidx, int mode, int camlink);
+signed short MBOX_NewObject(int obj, tUVMatrix *mat, int parent, unsigned int flags);
+void MBOX_ShowObject(int dlidx, int mode, int camlink);
+_tBlit *NewMultiBlit(signed short ulx, signed short uly, const tBlitDef *mblit, signed short nblits);
+void PS_DiscardFileChanges(tPS_File **psfileh);
+void PS_LockFile(tPS_File **psfileh, int lock);
+void PlayLRSound(unsigned int edges);
+void PlayStartABSound(unsigned int edges);
+void PlayUDSound(unsigned int edges);
+void PurgePlayerData(tPScreenProfile **);
+int ReadPlayerData(tPScreenProfile **player);
+void RemoveBlit(_tBlit *dbp);
+void RemovePane(tBlitSet *gPlayerMenuPane);
+void SaveFlush(int ignoreErrors);
+void SaveSelectPlayer(tPScreenProfile **player);
+void ScaleUV(float (*a)[3], float (*b)[3], float sfactor);
+void SetControllerStickEdges(int which, int active);
+void SetPlayerControls(int player, signed char *controls);
+signed short TB_CenterText(void * text, signed short centerX);
+void TB_DrawEllipseText(signed short x, signed short y, signed short w, void * text);
+void TB_DrawText(signed short x, signed short y, void * text);
+void TB_DrawTextScrollBox(signed short x, signed short y, signed short width, signed short height, signed short page, signed short line, void * text);
+void TB_FlashTextColors(tRGBA,tRGBA);
+signed short TB_GetFontLineHeight();
+signed short TB_GetTextNumLines(signed short width, void * text);
+signed short TB_RightText(void * text, signed short rightX);
+void TB_SetJust(int hJust, int vJust);
+void TB_SetTextColor(int color);
+void TB_Sprintf(void *buf, void *fmt, ...);
+void * TB_Strcpy(void * str1, void * str2);
+void WPitchUV(float angle, float (*uv)[3]);
+void WRollUV(float angle, float (*uv)[3]);
+void ZOID_ProjectWindow(int widx, float *point, tUVMatrix *mat, float *body, signed short *screen);
+void ZOID_Reset();
+void ZOID_ResetWindows();
+void ZOID_SetColor(signed short objnum, tRGBA *col);
+void ZOID_SetTexture(signed short objnum, tTexture *tex, int lod);
+int ZOID_SplitMenuScreen(int num);
+void ZeroCameras();
+void cleanupControlScreen();
+void createBG();
+void removeBG();
+void setGameState(unsigned int state);
+void updateControlScreen();
+extern tPadInfo gControllerData[4];
+int PS_PakInserted(int),PS_PakDamaged(int),PS_PakRumble(int);
+unsigned int PS_GetFreeBlocks(int),PS_GetFreeFiles(int),func_8C06D518(unsigned int);
+extern float gPlayerMenuCursorSpeed[4],gPlayerMenuScrollSpeed[4];
+extern volatile float gFrameSeconds;
+#define fabs _builtin_fabsf
+#endif
