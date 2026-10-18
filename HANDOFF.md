@@ -48,6 +48,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | gameoverscr | 122 | 7 | 1/16 |
 | gfx | 576 | 88 | 8/10 |
 | headlights | 308 | 172 | 1/4 |
+| licensescr | 526 | 143 | 2/2 |
 | ll | 422 | 0 | 4/4 |
 | mb_wad | 182 | 0 | 3/4 |
 | mbox | 530 | 523 | 6/13 |
@@ -61,6 +62,8 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | powerups | 1,580 | 8 | 8/8 |
 | rekon | 770 | 0 | 4/4 |
 | road | 18 | 0 | 0/3 |
+| save | 0 | 35 | 0/62 |
+| selectcarload | 244 | 4 | 2/7 |
 | skids | 2,186 | 20 | 6/8 |
 | sky | 458 | 7 | 3/3 |
 | smoke | 92 | 154 | 2/6 |
@@ -91,13 +94,13 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **43,740 /569,664 (7.6782%)**, plus **18,107 initialized data bytes**.
-Whole-image credit: **61,847 /1,123,492 (5.5049%)**, **282 exact source functions**, 70 source units.
-The ninth batch adds 810 text/literal bytes, 497
-initialized data bytes and 9 exact functions. The audited batch is locally committed
-through `2f4490a`. No remote push was performed.
+Game text/literal credit: **44,510 /569,664 (7.8134%)**, plus **18,289 initialized data bytes**.
+Whole-image credit: **62,799 /1,123,492 (5.5896%)**, **286 exact source functions**, 73 source units.
+The tenth batch adds 770 text/literal bytes, 182
+initialized data bytes and 4 exact functions. The audited batch is locally committed
+through `9893aa7`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-ninth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-tenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
