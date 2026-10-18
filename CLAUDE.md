@@ -85,13 +85,13 @@ Linker: H SERIES LINKAGE EDITOR 6.0E from the r13 package.
 ## Status (2026-10-18)
 
 
-Game text/literal credit: **49,302 /569,664 (8.6546%)**, plus **68,934 initialized data bytes**.
-Whole-image credit: **118,236 /1,123,492 (10.5240%)**, **324 exact source functions**, 107 source units.
-The fifteenth batch adds 392 text/literal bytes, 14,011
-initialized data bytes and 5 exact functions. The audited batch is locally committed
-through `0f2616068b91afb3af4fee408bc3dfaaea901ede`. No remote push was performed.
+Game text/literal credit: **49,730 /569,664 (8.7297%)**, plus **69,331 initialized data bytes**.
+Whole-image credit: **119,061 /1,123,492 (10.5974%)**, **328 exact source functions**, 112 source units.
+The sixteenth batch adds 428 text/literal bytes, 397
+initialized data bytes and 4 exact functions. The audited batch is locally committed
+through `b16ca0045d04b385e0fae4a2c8d5c930e791e01c`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-fifteenth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-sixteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -99,7 +99,7 @@ Compiler, linker and flags remain frozen. Only units whose compiler input change
 native link; byte-identical inputs may retain the already-verified native artifacts.
 
 The audio/stree generated epilogues are part of their source functions. Current total/game
-function denominators are 4,718/1,556. The two original gameover tail atoms and their
+function denominators are 4,717/1,555. The two original gameover tail atoms and their
 external pool belong to gamerecords; identities stay conservative pending mapping review.
 Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
 no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
@@ -122,6 +122,13 @@ function identities and the complete byte union are retained. Startup uses three
 C compilation groups, preserving all six original identities; the unproved empty218 entry
 remains source-null and uncredited. Grouping names and semantic roles are reconstructions,
 not recovered debug symbols. HUD's private blit pointer is qualified without changing shared headers.
+HAL text uses target-backed externs for23 real globals and allocates no fabricated BSS prefix.
+Twenty-seven empty diagnostic conditions were removed from HAL text and audio manager;
+the two actual audio validation helpers remain external, without empty replacement bodies.
+The unproved update_reverb atom is an unsourced four-byte gap and is removed from the heuristic
+function denominator, earning no bytes. Original anonymous identities retain explicit linker aliases
+for reconstructed semantic names. Zoid supplies seven baseline C bodies and leaves24 targets
+unsourced; its admitted native output was reused without a new Zoid compiler launch.
 Private work uses disjoint unit ownership; later private packets remain excluded until audited
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
 no full game image build or game execution was performed.

@@ -21,6 +21,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | Unit | Exact text/literals | Initialized data | Exact functions |
 |---|---:|---:|---:|
 | HAL_Support | 32 | 0 | 1/1 |
+| HAL_text | 40 | 15 | 0/26 |
 | HAL_time | 234 | 1 | 4/4 |
 | Init | 342 | 12 | 3/7 |
 | TB_Vector | 132 | 0 | 2/2 |
@@ -28,6 +29,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | asincos | 64 | 16 | 0/3 |
 | atan | 286 | 0 | 3/4 |
 | audio | 580 | 4,857 | 13/30 |
+| audiomgr | 0 | 381 | 0/57 |
 | audioscr | 0 | 935 | 0/12 |
 | audiosfx | 58 | 0 | 0/30 |
 | blit | 1,038 | 4 | 8/10 |
@@ -39,6 +41,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | checkpoint | 118 | 24 | 3/8 |
 | circuit | 144 | 376 | 1/5 |
 | circuitscr | 0 | 949 | 0/19 |
+| collision | 280 | 0 | 2/7 |
 | controls | 1,190 | 104 | 5/11 |
 | controlscr | 0 | 4,999 | 0/11 |
 | controlsys | 438 | 122 | 5/11 |
@@ -50,6 +53,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | dc_misc_8C06C08C | 436 | 24 | 4/31 |
 | dc_sound_8C069F78 | 0 | 28 | 0/23 |
 | dc_unk_8C069E34 | 0 | 0 | 0/1 |
+| dc_zoid_8C06ED90 | 108 | 0 | 2/31 |
 | demo | 842 | 45 | 7/7 |
 | drivetra | 794 | 0 | 6/10 |
 | drivsym | 244 | 44 | 1/17 |
@@ -70,6 +74,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | mb_wad | 182 | 0 | 3/4 |
 | mbox | 530 | 523 | 6/13 |
 | mdrive | 0 | 378 | 0/20 |
+| memsys | 0 | 1 | 0/30 |
 | model | 118 | 1 | 2/3 |
 | modescr | 250 | 986 | 2/8 |
 | options | 756 | 0 | 1/4 |
@@ -128,13 +133,13 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **49,302 /569,664 (8.6546%)**, plus **68,934 initialized data bytes**.
-Whole-image credit: **118,236 /1,123,492 (10.5240%)**, **324 exact source functions**, 107 source units.
-The fifteenth batch adds 392 text/literal bytes, 14,011
-initialized data bytes and 5 exact functions. The audited batch is locally committed
-through `0f2616068b91afb3af4fee408bc3dfaaea901ede`. No remote push was performed.
+Game text/literal credit: **49,730 /569,664 (8.7297%)**, plus **69,331 initialized data bytes**.
+Whole-image credit: **119,061 /1,123,492 (10.5974%)**, **328 exact source functions**, 112 source units.
+The sixteenth batch adds 428 text/literal bytes, 397
+initialized data bytes and 4 exact functions. The audited batch is locally committed
+through `b16ca0045d04b385e0fae4a2c8d5c930e791e01c`. No remote push was performed.
 
-`matching-evidence/2026-10-18/integration-fifteenth.json` records current source/header/compiler-input,
+`matching-evidence/2026-10-18/integration-sixteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
@@ -142,7 +147,7 @@ Compiler, linker and flags remain frozen. Only units whose compiler input change
 native link; byte-identical inputs may retain the already-verified native artifacts.
 
 The audio/stree generated epilogues are part of their source functions. Current total/game
-function denominators are 4,718/1,556. The two original gameover tail atoms and their
+function denominators are 4,717/1,555. The two original gameover tail atoms and their
 external pool belong to gamerecords; identities stay conservative pending mapping review.
 Asincos selected03 retains16 C bytes and64 independently bounded external literal bytes;
 no fourth variant was run. The original `_func_8C05145C` alias of InitSTree remains for world.
@@ -165,6 +170,13 @@ function identities and the complete byte union are retained. Startup uses three
 C compilation groups, preserving all six original identities; the unproved empty218 entry
 remains source-null and uncredited. Grouping names and semantic roles are reconstructions,
 not recovered debug symbols. HUD's private blit pointer is qualified without changing shared headers.
+HAL text uses target-backed externs for23 real globals and allocates no fabricated BSS prefix.
+Twenty-seven empty diagnostic conditions were removed from HAL text and audio manager;
+the two actual audio validation helpers remain external, without empty replacement bodies.
+The unproved update_reverb atom is an unsourced four-byte gap and is removed from the heuristic
+function denominator, earning no bytes. Original anonymous identities retain explicit linker aliases
+for reconstructed semantic names. Zoid supplies seven baseline C bodies and leaves24 targets
+unsourced; its admitted native output was reused without a new Zoid compiler launch.
 Private work uses disjoint unit ownership; later private packets remain excluded until audited
 integration. MAT3 stays read-only. Validation uses separate fixed-address translation-unit links;
 no full game image build or game execution was performed.
