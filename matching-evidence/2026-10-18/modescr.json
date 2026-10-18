@@ -1,0 +1,131 @@
+{
+  "unit": "modescr",
+  "text_nonpadding": 250,
+  "data_nonpadding": 986,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C07DE22",
+      "8C07DEAC"
+    ],
+    [
+      "8C07DED8",
+      "8C07DF0C"
+    ],
+    [
+      "8C07E1C2",
+      "8C07E1FE"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0B24C4",
+      "8C0B24F2"
+    ],
+    [
+      "8C0B24F4",
+      "8C0B24FB"
+    ],
+    [
+      "8C0B24FC",
+      "8C0B24FF"
+    ],
+    [
+      "8C0B2500",
+      "8C0B2503"
+    ],
+    [
+      "8C0B2504",
+      "8C0B250B"
+    ],
+    [
+      "8C0B250C",
+      "8C0B251A"
+    ],
+    [
+      "8C0B251C",
+      "8C0B2531"
+    ],
+    [
+      "8C0B2534",
+      "8C0B254B"
+    ],
+    [
+      "8C0B254C",
+      "8C0B2557"
+    ],
+    [
+      "8C0B2558",
+      "8C0B2561"
+    ],
+    [
+      "8C0B2564",
+      "8C0B256D"
+    ],
+    [
+      "8C0CDB90",
+      "8C0CDBED"
+    ],
+    [
+      "8C0CDBF0",
+      "8C0CDC2D"
+    ],
+    [
+      "8C0CDC30",
+      "8C0CDC6D"
+    ],
+    [
+      "8C0CDC70",
+      "8C0CDCAD"
+    ],
+    [
+      "8C0CDCB0",
+      "8C0CDCED"
+    ],
+    [
+      "8C0CDCF0",
+      "8C0CDD2D"
+    ],
+    [
+      "8C0CDD30",
+      "8C0CDD6D"
+    ],
+    [
+      "8C0CDD70",
+      "8C0CDDAD"
+    ],
+    [
+      "8C0CDDB0",
+      "8C0CDDED"
+    ],
+    [
+      "8C0CDDF0",
+      "8C0CDE2D"
+    ],
+    [
+      "8C0CDE30",
+      "8C0CDE6D"
+    ],
+    [
+      "8C0CDE70",
+      "8C0CDEAD"
+    ],
+    [
+      "8C0CDEB0",
+      "8C0CDEED"
+    ],
+    [
+      "8C0CDEF0",
+      "8C0CDEF8"
+    ]
+  ],
+  "source_sha256": "771d983f26dc58c15f57f77c8bbc040a5ed1e483d80deb09366c57525f621dc6",
+  "expanded_source_sha256": "fa053e4f7cf299c1db251f12e2f65f3c2c1ead9526e2c9c2557bde7f7809f025",
+  "compiler_input_sha256": "3530b03840c4b93c38113350ae3bccfe45744746ea9f9cb06242d757b1d38ca1",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "23250eb729f24623b11be7670cb069ed05a607eb59595c7754487254bff24480",
+  "object_sha256": "64f3e1b7282480883bafa800c0f11c2b63432f01360ae0f7f94d32bfee2127d8",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
