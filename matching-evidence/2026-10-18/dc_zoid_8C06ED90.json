@@ -1,0 +1,22 @@
+{
+  "unit": "dc_zoid_8C06ED90",
+  "text_nonpadding": 108,
+  "data_nonpadding": 0,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C06ED90",
+      "8C06EDFC"
+    ]
+  ],
+  "data_spans": [],
+  "source_sha256": "ba12660f90d3e6460b50f3db22d68e36fecb8d3e5b782fae8535c7cb8d4b0f9c",
+  "expanded_source_sha256": "78f0cb02a0047b95728d1a0edfee70ec0caef061d43881927f4cfa0fc27aba0a",
+  "compiler_input_sha256": "4cdf28dcc54ed2f6f5a2e3a44785820dd4553375d2880a77ba14107e408bca12",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "74940d456a2321ab091cba1abe40e8623f483820c4338064c76f04816506ed4f",
+  "object_sha256": "d7f0fa5965377a1de4de26010148476a2725441c3e41fd20a5148511672ddd3b",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
