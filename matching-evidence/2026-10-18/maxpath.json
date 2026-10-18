@@ -1,0 +1,35 @@
+{
+  "unit": "maxpath",
+  "text_nonpadding": 496,
+  "data_nonpadding": 57,
+  "exact_functions": 4,
+  "text_spans": [
+    [
+      "8C03A41C",
+      "8C03A608"
+    ],
+    [
+      "8C03A6B4",
+      "8C03A6B8"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0AC0A0",
+      "8C0AC0B5"
+    ],
+    [
+      "8C0BEBC4",
+      "8C0BEBE8"
+    ]
+  ],
+  "source_sha256": "9fb812373260cc455a552506c21799536e09597415e2987e8ab0bbf69510e209",
+  "expanded_source_sha256": "7d020b9436d783a7edcb74e985f9d628a87beff8d48b4b8a981220e2baf73afa",
+  "compiler_input_sha256": "bff82aae9a4f24816b3ba01e1a370ea94e598df12dbf7f28b5eca5a12b19e7f1",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "251e40e4f0d47b3980a75eb8f28139f6f8e1a5cf459e80de11aeca50430dd685",
+  "object_sha256": "3f1580b0ac41738adf79ca23835c4c9eb49f5d860b31e87fc917d8af7057034a",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
