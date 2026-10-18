@@ -1,0 +1,27 @@
+{
+  "unit": "stdlib",
+  "text_nonpadding": 64,
+  "data_nonpadding": 4,
+  "exact_functions": 2,
+  "text_spans": [
+    [
+      "8C047BC8",
+      "8C047C08"
+    ]
+  ],
+  "data_spans": [
+    [
+      "8C0BFC20",
+      "8C0BFC24"
+    ]
+  ],
+  "source_sha256": "9309ef4d8d9b17c674878b3d66f08939aa91fda283bba6f8124c6110b7ff4cf7",
+  "expanded_source_sha256": "5e61bd52d0c62979847bb429f3d544ab4c7a5efd969c7aa99e91cbf2d465e3bc",
+  "compiler_input_sha256": "18e6cfe0f908ce25d337f76f13bfdf6ef30104a988b1739d6d7c0a18594b8421",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "28111244f8a41e04180cf4203c754ac0c7253c34a3f16086b5355910e4039234",
+  "object_sha256": "e9d2b9d99a64f3abd4ef554f879ac43807eef67ba98008b32c45bf89d9c3879c",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
