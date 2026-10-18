@@ -1,0 +1,22 @@
+{
+  "unit": "dc_sound_8C069F78",
+  "text_nonpadding": 0,
+  "data_nonpadding": 28,
+  "exact_functions": 0,
+  "text_spans": [],
+  "data_spans": [
+    [
+      "8C0C7C2C",
+      "8C0C7C48"
+    ]
+  ],
+  "source_sha256": "762ae45c9b8eec78f8562bb5809d1a5254c2fe746748274836555d7d9395e8c9",
+  "expanded_source_sha256": "d4bb3a0d8ff9718e83900a28ad1ff7a7ca3eea6097386ddc24ab32bce2b5c2d4",
+  "compiler_input_sha256": "49ec5088beab0d805e672484b8f2336e4881ae084fb3ceda1da06cfde46a6a02",
+  "compiler_input_matches_current_headers": true,
+  "linked_abs_sha256": "47949428914ef68b1592a003e4010224909eb2c6c86d0bc4267fcdebde231637",
+  "object_sha256": "9da2b095ae68bd9b4f0c5599f025fda8bdbc2f5f73d2ccb5b07e0007a6f9672a",
+  "comparison_masks": false,
+  "linker_fill_credit": 0,
+  "bss_image_credit": 0
+}
