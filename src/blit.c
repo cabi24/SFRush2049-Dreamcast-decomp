@@ -54,7 +54,7 @@ void DrawBlits(void)
                 continue;
             }
         }
-        if (blit->hide) {
+        if (blit->hide != 0) {
         }
     }
 }
@@ -106,8 +106,8 @@ void UpdateBlit(_tBlit *blit)
 
 _tBlit *NewBlit(const char *name, int x, int y, unsigned int cont)
 {
-    _tBlit *blit; 
-    register int drawX = x;
+    register _tBlit *blit;
+    int drawX = x;
     int drawY = y;
 
     if (NumBlits >= 200) {

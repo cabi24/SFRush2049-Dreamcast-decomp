@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/round2-mbox');s=(p/'baseline.c').read_text();a=s.index('tTexture *MBOX_FindTexture_WORK');b=s.index('/* Anonymous mapped entry',a);t=s[a:b];t=t.replace('    for (i = firstModel; i <= lastModel; i++) {','    i = firstModel;\n    goto texture_test;\ntexture_loop:\n    {').replace('                break;','                goto texture_done;').replace('    if (!ptr) {','    i++;\ntexture_test:\n    if (i <= lastModel) goto texture_loop;\ntexture_done:\n    if (!ptr) {');s=s[:a]+t+s[b:];Path('src/mbox.c').write_text(s)

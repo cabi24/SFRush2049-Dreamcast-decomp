@@ -1,0 +1,41 @@
+{
+  "unit": "dc_unk_8C069E34",
+  "verdict": "neutral",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 0,
+    "functions_total": 1,
+    "functions_moved": 0,
+    "exact_text_bytes": 88,
+    "equal_text_bytes_including_fill": 88,
+    "text_bytes": 324,
+    "exact_data_bytes": 0,
+    "source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 0,
+    "functions_total": 1,
+    "functions_moved": 0,
+    "exact_text_bytes": 0,
+    "equal_text_bytes_including_fill": 0,
+    "text_bytes": 324,
+    "exact_data_bytes": 0,
+    "source_sha256": "ad5f84d711a3da3130ccce1ad698249ed052bdbab9b0233a602c4e4b42d39885"
+  },
+  "gains_dirty_over_head": [],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 88,
+  "text_bytes_head": 0,
+  "report_consistency": {
+    "report_functions_exact": 0,
+    "dirty_rebuild_functions_exact": 0,
+    "report_exact_text_bytes": 88,
+    "dirty_rebuild_exact_text_bytes": 88,
+    "report_source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+    "dirty_source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+    "match": true
+  },
+  "head_source_sha256": "ad5f84d711a3da3130ccce1ad698249ed052bdbab9b0233a602c4e4b42d39885",
+  "seconds": 5.4
+}

@@ -1,0 +1,25 @@
+{
+  "name": "gameoverscr",
+  "kind": "game",
+  "status": "failed",
+  "source": "src/gameoverscr.c",
+  "source_sha256": "621f6a088679d44bd89313271e5f7f6519e987392251a66a8b1795294abda372",
+  "text": [
+    "8C0291CC",
+    "8C02B114"
+  ],
+  "text_bytes": 8008,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 74,
+  "exact_data_bytes": 0,
+  "functions_total": 16,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [],
+  "segments": [],
+  "notes": [
+    "compile failed: [shc_cc] shc-v5.1r11 (native) failed rc=1: gameoverscr.c(80) : 2118 (E) Prototype mismatch \"setGameOverState\""
+  ],
+  "built_at": "2026-10-18T15:43:37"
+}

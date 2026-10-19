@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/collision.c');s=Path('matching-evidence/2026-10-18/campaign100-lane2/collision.original.c').read_text();a=s.index('void ForceApart(');b=s.index('/* 0x8000bd54',a);part=s[a:b].replace('    float *cf, *of;\n','').replace('    cf = m->centerForce;\n','').replace('    of = other->centerForce;\n','').replace('cf[','m->centerForce[').replace('of[','other->centerForce[');p.write_text(s[:a]+part+s[b:])

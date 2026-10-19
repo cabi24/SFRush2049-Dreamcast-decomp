@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "unit": "stree",
+    "target": "DecodeSlist",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "mask-before-subtract fixes scheduling;1 remaining pool displacement; discard no strict gain"
+  },
+  {
+    "id": 2,
+    "unit": "stree",
+    "target": "DecodeVlist",
+    "status": "bounded blocker; restored",
+    "attempts": 2,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "complement maskFF1F and assigned return yield2 pool displacement bytes; downstream VectorToSurfEdge pool2 bytes early, no strict gain"
+  },
+  {
+    "id": 3,
+    "unit": "stunt",
+    "target": "_AddStunt",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "equivalent positive comparison unchanged25 register-allocation bytes"
+  },
+  {
+    "id": 4,
+    "unit": "stunt",
+    "target": "_CheckMulti",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "equivalent sum grouping unchanged219 bytes; entry shifted8 by earlier CheckFlip and inner pool shifts differ"
+  },
+  {
+    "id": 5,
+    "unit": "unk_8C055F38",
+    "target": "range reduction",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "f=x range alias reduces155 to132 differing bytes; still no strict gain"
+  },
+  {
+    "id": 6,
+    "unit": "unk_8C055F38",
+    "target": "second distinct target unavailable",
+    "status": "inventory blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Only one function and already-exact56-byte pool exist; parent notified. Polynomial g/tt1 reuse trial worsened to205 bytes; not a second distinct function/data target."
+  },
+  {
+    "id": 7,
+    "unit": "targetpaths",
+    "target": "_PlacePathTargetQuat",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Moving delta array lifetime unchanged290 fixed-address bytes; entry18 bytes late from upstream position helper."
+  },
+  {
+    "id": 8,
+    "unit": "targetpaths",
+    "target": "_StartPathTarget",
+    "status": "evidence blocker",
+    "attempts": 0,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "StartPathTarget target stack40 vs current8, early initializer/load schedule differs; safe type/source explanation absent, no fabricated stack padding."
+  },
+  {
+    "id": 9,
+    "unit": "targets",
+    "target": "SetupTarget",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "SetupTarget name declaration reorder unchanged; first block stack/register/pool allocation remains."
+  },
+  {
+    "id": 10,
+    "unit": "targets",
+    "target": "_LocalPointInBody",
+    "status": "evidence blocker",
+    "attempts": 0,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "LocalPointInBody all68 bytes identical at target+240; prior functions accumulate240 byte drift, local body changes would harm proven code."
+  },
+  {
+    "id": 11,
+    "unit": "TB_text",
+    "target": "TB_Strcpy",
+    "status": "bounded blocker; restored",
+    "attempts": 2,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Explicit copy byte at block and function scopes unchanged6 register-selection bytes."
+  },
+  {
+    "id": 12,
+    "unit": "TB_text",
+    "target": "TB_Printf",
+    "status": "strict win retained",
+    "attempts": 2,
+    "delta_functions": 4,
+    "delta_text": 410,
+    "residual": "Target inlines center/right/font-height helpers inside DrawText; source pragma before declarations fixes Printf, DrawText, DrawEllipseText, DrawTextC and pool. First pragma position failed compile2805 then corrected."
+  },
+  {
+    "id": 13,
+    "unit": "videoscr",
+    "target": "initScreen",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Separate menu increment changes downstream placement4 bytes, no exact gain; init begins16 bytes early from updateVideoScreen."
+  },
+  {
+    "id": 14,
+    "unit": "videoscr",
+    "target": "uninitScreen",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Zero-local variant lowers73 to69 differing bytes but remains26 bytes early. Initial guessed tPane cast failed2225; uncast pointer failed2222; void-pointer cast compiled."
+  },
+  {
+    "id": 15,
+    "unit": "visuals",
+    "target": "InitCarDynamicObjs",
+    "status": "bounded blocker; restored",
+    "attempts": 1,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Object-index declaration order unchanged12 byte register selection/scheduling residual."
+  },
+  {
+    "id": 16,
+    "unit": "visuals",
+    "target": "InitCarVisuals",
+    "status": "bounded blocker; restored",
+    "attempts": 2,
+    "delta_functions": 0,
+    "delta_text": 0,
+    "residual": "Index-first initializer and register pointer unchanged16 byte register-selection residual; target reuses incoming r4 as visuals pointer."
+  }
+]

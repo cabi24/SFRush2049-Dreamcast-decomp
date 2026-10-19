@@ -1,0 +1,688 @@
+{
+  "name": "targets",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/targets.c",
+  "source_sha256": "63bd582d0422fb2af5ea718a926b171e22bf6b41e944a48d0af7f24762b08b9c",
+  "text": [
+    "8C057634",
+    "8C05A6AC"
+  ],
+  "text_bytes": 12408,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 6697,
+  "exact_data_bytes": 525,
+  "functions_total": 32,
+  "functions_exact": 0,
+  "functions_moved": 3,
+  "functions": [
+    {
+      "name": "initTargetStructs",
+      "start": "8C057634",
+      "end": "8C0576F2",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 26,
+      "linked_at": "8C057634",
+      "linked_size": 190
+    },
+    {
+      "name": "SetupTarget",
+      "start": "8C0576F2",
+      "end": "8C057D2C",
+      "size": 1594,
+      "status": "differs",
+      "diff_bytes": 1279,
+      "linked_at": "8C0576F2",
+      "linked_size": 1560
+    },
+    {
+      "name": "_InitBBoxModelStruct",
+      "start": "8C057D2C",
+      "end": "8C057DB6",
+      "size": 138,
+      "status": "differs",
+      "diff_bytes": 131,
+      "linked_at": "8C057D0A",
+      "linked_size": 138
+    },
+    {
+      "name": "UpdateMiniModelStruct",
+      "start": "8C057DB6",
+      "end": "8C057E16",
+      "size": 96,
+      "status": "differs",
+      "diff_bytes": 93,
+      "linked_at": "8C057D94",
+      "linked_size": 96
+    },
+    {
+      "name": "TargetPathAvoid",
+      "start": "8C057E16",
+      "end": "8C057F5E",
+      "size": 328,
+      "status": "differs",
+      "diff_bytes": 317,
+      "linked_at": "8C057DF4",
+      "linked_size": 360
+    },
+    {
+      "name": "SetTargetDef",
+      "start": "8C057F7C",
+      "end": "8C05818C",
+      "size": 528,
+      "status": "differs",
+      "diff_bytes": 521,
+      "linked_at": "8C057F5C",
+      "linked_size": 548
+    },
+    {
+      "name": "SetTargetDefs",
+      "start": "8C0581A8",
+      "end": "8C0584D6",
+      "size": 814,
+      "status": "differs",
+      "diff_bytes": 795,
+      "linked_at": "8C058180",
+      "linked_size": 1132
+    },
+    {
+      "name": "CheckTargetCollision",
+      "start": "8C0584E8",
+      "end": "8C0586E6",
+      "size": 510,
+      "status": "differs",
+      "diff_bytes": 501,
+      "linked_at": "8C0585EC",
+      "linked_size": 490
+    },
+    {
+      "name": "PauseTargets",
+      "start": "8C0586E6",
+      "end": "8C058708",
+      "size": 34,
+      "status": "moved",
+      "diff_bytes": 34,
+      "linked_at": "8C0587D6",
+      "linked_size": 34
+    },
+    {
+      "name": "_LocalPointInBody",
+      "start": "8C058708",
+      "end": "8C05874C",
+      "size": 68,
+      "status": "moved",
+      "diff_bytes": 67,
+      "linked_at": "8C0587F8",
+      "linked_size": 80
+    },
+    {
+      "name": "_TargetCollBBox",
+      "start": "8C058758",
+      "end": "8C0588E6",
+      "size": 398,
+      "status": "differs",
+      "diff_bytes": 394,
+      "linked_at": "8C058848",
+      "linked_size": 428
+    },
+    {
+      "name": "_TargetCollTrigger",
+      "start": "8C0588E8",
+      "end": "8C058A02",
+      "size": 282,
+      "status": "differs",
+      "diff_bytes": 282,
+      "linked_at": "8C0589F4",
+      "linked_size": 312
+    },
+    {
+      "name": "_TargetCollCylinder",
+      "start": "8C058A1C",
+      "end": "8C058AE6",
+      "size": 202,
+      "status": "differs",
+      "diff_bytes": 202,
+      "linked_at": "8C058B2C",
+      "linked_size": 136
+    },
+    {
+      "name": "_TargetCollMineCylinder",
+      "start": "8C058B00",
+      "end": "8C058BCA",
+      "size": 202,
+      "status": "differs",
+      "diff_bytes": 196,
+      "linked_at": "8C058BB4",
+      "linked_size": 164
+    },
+    {
+      "name": "_TargetCollRadius",
+      "start": "8C058BCA",
+      "end": "8C058CA4",
+      "size": 218,
+      "status": "differs",
+      "diff_bytes": 216,
+      "linked_at": "8C058C58",
+      "linked_size": 124
+    },
+    {
+      "name": "_TargetColl3Piece",
+      "start": "8C058CA4",
+      "end": "8C058CA8",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C058CD4",
+      "linked_size": 4
+    },
+    {
+      "name": "_StartMine",
+      "start": "8C058CA8",
+      "end": "8C058DA4",
+      "size": 252,
+      "status": "differs",
+      "diff_bytes": 249,
+      "linked_at": "8C058CD8",
+      "linked_size": 260
+    },
+    {
+      "name": "_AnimateMine",
+      "start": "8C058DB0",
+      "end": "8C059612",
+      "size": 2146,
+      "status": "differs",
+      "diff_bytes": 2075,
+      "linked_at": "8C058DDC",
+      "linked_size": 2010
+    },
+    {
+      "name": "_StartWeaponIcon",
+      "start": "8C059612",
+      "end": "8C059894",
+      "size": 642,
+      "status": "differs",
+      "diff_bytes": 627,
+      "linked_at": "8C0595B6",
+      "linked_size": 634
+    },
+    {
+      "name": "_AnimateWeaponIcon",
+      "start": "8C059894",
+      "end": "8C059A54",
+      "size": 448,
+      "status": "differs",
+      "diff_bytes": 446,
+      "linked_at": "8C059830",
+      "linked_size": 448
+    },
+    {
+      "name": "_AnimateFlag",
+      "start": "8C059A54",
+      "end": "8C059B52",
+      "size": 254,
+      "status": "differs",
+      "diff_bytes": 252,
+      "linked_at": "8C0599F0",
+      "linked_size": 254
+    },
+    {
+      "name": "_StartCactus",
+      "start": "8C059B52",
+      "end": "8C059BFE",
+      "size": 172,
+      "status": "differs",
+      "diff_bytes": 167,
+      "linked_at": "8C059AEE",
+      "linked_size": 172
+    },
+    {
+      "name": "_StartFence",
+      "start": "8C059BFE",
+      "end": "8C059C6A",
+      "size": 108,
+      "status": "differs",
+      "diff_bytes": 106,
+      "linked_at": "8C059B9A",
+      "linked_size": 150
+    },
+    {
+      "name": "_StartWindow",
+      "start": "8C059C94",
+      "end": "8C059D48",
+      "size": 180,
+      "status": "differs",
+      "diff_bytes": 178,
+      "linked_at": "8C059C30",
+      "linked_size": 178
+    },
+    {
+      "name": "_StartCone",
+      "start": "8C059D48",
+      "end": "8C059EF4",
+      "size": 428,
+      "status": "differs",
+      "diff_bytes": 417,
+      "linked_at": "8C059CE2",
+      "linked_size": 494
+    },
+    {
+      "name": "_StartCoin",
+      "start": "8C059F38",
+      "end": "8C05A020",
+      "size": 232,
+      "status": "differs",
+      "diff_bytes": 227,
+      "linked_at": "8C059ED0",
+      "linked_size": 232
+    },
+    {
+      "name": "_AnimateCoin",
+      "start": "8C05A020",
+      "end": "8C05A2CA",
+      "size": 682,
+      "status": "differs",
+      "diff_bytes": 677,
+      "linked_at": "8C059FB8",
+      "linked_size": 686
+    },
+    {
+      "name": "_AnimateVelRotGeneric",
+      "start": "8C05A2CA",
+      "end": "8C05A422",
+      "size": 344,
+      "status": "differs",
+      "diff_bytes": 336,
+      "linked_at": "8C05A266",
+      "linked_size": 298
+    },
+    {
+      "name": "_AnimateRotGeneric",
+      "start": "8C05A422",
+      "end": "8C05A4A2",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 127,
+      "linked_at": "8C05A390",
+      "linked_size": 132
+    },
+    {
+      "name": "_AnimateObjSwapGeneric",
+      "start": "8C05A4A2",
+      "end": "8C05A560",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 189,
+      "linked_at": "8C05A414",
+      "linked_size": 228
+    },
+    {
+      "name": "_StartKnockdown",
+      "start": "8C05A58C",
+      "end": "8C05A61A",
+      "size": 142,
+      "status": "differs",
+      "diff_bytes": 140,
+      "linked_at": "8C05A4F8",
+      "linked_size": 132
+    },
+    {
+      "name": "_AnimateKnockdown",
+      "start": "8C05A61A",
+      "end": "8C05A678",
+      "size": 94,
+      "status": "missing",
+      "diff_bytes": 94,
+      "linked_at": "8C05A57C",
+      "linked_size": 140
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C057F5E",
+      "end": "8C057F7C",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C05818C",
+      "end": "8C0581A8",
+      "exact": false,
+      "built": 28,
+      "diff_bytes": 27
+    },
+    {
+      "kind": "pool",
+      "start": "8C0584D6",
+      "end": "8C0584E8",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C05874C",
+      "end": "8C058758",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "pool",
+      "start": "8C0588E6",
+      "end": "8C0588E8",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C058A02",
+      "end": "8C058A1C",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C058AE6",
+      "end": "8C058B00",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C058DA4",
+      "end": "8C058DB0",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 11
+    },
+    {
+      "kind": "pool",
+      "start": "8C059C6A",
+      "end": "8C059C94",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "pool",
+      "start": "8C059EF4",
+      "end": "8C059F38",
+      "exact": false,
+      "built": 68,
+      "diff_bytes": 68
+    },
+    {
+      "kind": "pool",
+      "start": "8C05A560",
+      "end": "8C05A58C",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C05A678",
+      "end": "8C05A6AC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 52
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA70",
+      "end": "8C0ACA74",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFD60",
+      "end": "8C0BFD68",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFD68",
+      "end": "8C0BFD80",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFD80",
+      "end": "8C0C1578",
+      "exact": false,
+      "built": 6136,
+      "diff_bytes": 339
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C1578",
+      "end": "8C0C16D8",
+      "exact": true,
+      "built": 352,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C16D8",
+      "end": "8C0C1720",
+      "exact": true,
+      "built": 72,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C1720",
+      "end": "8C0C172C",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C172C",
+      "end": "8C0C1744",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C1744",
+      "end": "8C0C1764",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C1764",
+      "end": "8C0C1770",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 3
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA74",
+      "end": "8C0ACA78",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA78",
+      "end": "8C0ACA7D",
+      "exact": true,
+      "built": 5,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA80",
+      "end": "8C0ACA8C",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [
+    "2971 built bytes fall outside the mapped ranges (first 8C0ACA7D, last 8C0AD623)"
+  ],
+  "built_at": "2026-10-18T15:59:05",
+  "defines": {
+    "_AddToEnvList": "8C05FDA6",
+    "_AllocateMemoryHeap": "8C040256",
+    "_BattleDamage": "8C096384",
+    "_BodyVector": "8C026B00",
+    "_CopyUV": "8C02631E",
+    "_DeallocateMemory": "8C040832",
+    "_FindWorldGroup": "8C065E2A",
+    "_FoundCoin": "8C02C5DC",
+    "_FreeStatLLE": "8C051400",
+    "_GetStatLLE": "8C0513D8",
+    "_GrabEnvEntry": "8C05FD60",
+    "_IncBattlePowerUps": "8C095C98",
+    "_InitBattlePowerUps": "8C095CA2",
+    "_InitStatLL": "8C05138C",
+    "_IsCoinFound": "8C02C774",
+    "_LookInDir": "8C01B58E",
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_MBOX_GetObjectRadius": "8C03D350",
+    "_MBOX_GetPosition": "8C03D2AE",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_ObjInstanceList": "8C160870",
+    "_PauseTargetPaths": "8C05760C",
+    "_PlayTargetSound": "8C0138EC",
+    "_PreInitBattlePowerUps": "8C095C90",
+    "_ProximityDamage": "8C096550",
+    "_Random": "8C027134",
+    "_ReleaseEnviron": "8C05FDEE",
+    "_RemoveCollisionObject": "8C053C50",
+    "_ResetCollisionObject": "8C053BD0",
+    "_Restarting": "8C15C8AC",
+    "_RoadPosition": "8C052CA4",
+    "_RotateUV": "8C026674",
+    "_StartBlast": "8C062C44",
+    "_WorldVector": "8C026B8C",
+    "_YawUV": "8C02669A",
+    "_ZOID_GetColor": "8C0692BE",
+    "_ZOID_ObjectFlags": "8C068D0E",
+    "_ZOID_RemoveObject": "8C068B9E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_ZOID_SetObjectDef": "8C068BAC",
+    "_ZOID_SetObjectFlags": "8C068D1A",
+    "_ZOID_SetTexture": "8C0692F0",
+    "__AnimatePathTarget": "8C056AC0",
+    "__StartPathTarget": "8C0568CC",
+    "_collsize": "8C0A8F84",
+    "_func_8C056058": "8C056058",
+    "_gAlwaysCol": "8C15C968",
+    "_gAlwaysColList": "8C15C96C",
+    "_gBBoxModelCount": "8C15C8FC",
+    "_gBBoxModelStructs": "8C15C8F8",
+    "_gBBoxModelUsed": "8C15C900",
+    "_gBackwards": "8C12C657",
+    "_gBattleMineCnt": "8C15C904",
+    "_gCarMines": "8C158699",
+    "_gCarTeam": "8C15D020",
+    "_gDemolitionBattle": "8C15869B",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameCar": "8C004000",
+    "_gGameState": "8C0BFD3C",
+    "_gGoldCoinCnt": "8C15C958",
+    "_gMaskedRandomWeapons": "8C15C8A4",
+    "_gMineCones": "8C158698",
+    "_gMineTextures": "8C1A1994",
+    "_gNumModels": "8C14CB1C",
+    "_gNumPlayers": "8C14CBB0",
+    "_gObjList": "8C15CA5E",
+    "_gPathCount": "8C15C8A8",
+    "_gPauseState": "8C0BFA78",
+    "_gPlayerMines": "8C15C908",
+    "_gRace": "8C12C628",
+    "_gRandomWeapons": "8C15869A",
+    "_gRestartGame": "8C0BDD54",
+    "_gRomObjDefPtrs": "8C0BEBE8",
+    "_gSilverCoinCnt": "8C15C960",
+    "_gTargetArray": "8C1586EC",
+    "_gTargetGroupList": "8C1586A4",
+    "_gTargetGroups": "8C15869C",
+    "_gTargetList": "8C15C88C",
+    "_gTargetOwnStructPtrs": "8C15C8D8",
+    "_gTargetPaths": "8C1585D4",
+    "_gTargetStructCount": "8C15C8AD",
+    "_gTargetStructPtrs": "8C15C8B8",
+    "_gTexDefPtrs": "8C14C71C",
+    "_gWhichGoldCoin": "8C15C95C",
+    "_gWhichSilverCoin": "8C15C964",
+    "_gWprObjList": "8C1A19A8",
+    "_model": "8C14CBB4",
+    "_numgTargetGroupList": "8C1586A8",
+    "_setMiniFBCollisionForce": "8C01E0B8",
+    "_strlen": "8C09BF48",
+    "_strncmp": "8C09BF58",
+    "_strstr": "8C09BFC8",
+    "_surf": "8C158390",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C057634",
+    "C": "8C0ACA70",
+    "D": "8C0BFD60"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C057634",
+      "length": 12244
+    },
+    {
+      "name": "C",
+      "address": "8C0ACA70",
+      "length": 2996
+    },
+    {
+      "name": "D",
+      "address": "8C0BFD60",
+      "length": 6672
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 525,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -164,
+  "seconds": 2.2
+}

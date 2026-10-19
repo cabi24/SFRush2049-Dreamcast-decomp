@@ -376,13 +376,14 @@ switch (gTrackNum) {
     for (i = 0; i < parts; i++) {
         if (i && !(i & 31)) {
             mask = 1;
-            w++;
+            ptr++;
+            if (ptr_no_clip) ptr_no_clip++;
         }
-        if (!gPauseState && ptr_no_clip && (mask & ptr_no_clip[w])) {
+        if (!gPauseState && ptr_no_clip && (mask & *ptr_no_clip)) {
             WYawUV(0.0174532925f, ObjInstanceList[Worlddlidx + i].mat);
         }
         /* gInvisibleTrack is reread every pass (volatile here only; cheatscr.c needs it plain) */
-        if (((mask & ptr[w]) || (ptr_no_clip ? mask & ptr_no_clip[w] : 0) || show) && !*(volatile signed char *)&gInvisibleTrack) {
+        if (((mask & *ptr) || show) && !*(volatile signed char *)&gInvisibleTrack) {
             ObjInstanceList[Worlddlidx + i].flags &= ~0x80000000;
         } else {
             ObjInstanceList[Worlddlidx + i].flags |= 0x80000000;

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/drivsym.c');s=Path('matching-evidence/2026-10-18/campaign100-lane2/drivsym.original.c').read_text();a=s.index('void MovingSurfaceForce(');b=s.index('void forces(',a);t=s[a:b].replace('    int i; /* r7 */','    volatile int i;').replace('    volatile int forceIndex; /* target3CFA/3DBC/3DC2 reload the loop index from stack */','').replace('                    i = forceIndex;\n','').replace('forceIndex','i');p.write_text(s[:a]+t+s[b:])

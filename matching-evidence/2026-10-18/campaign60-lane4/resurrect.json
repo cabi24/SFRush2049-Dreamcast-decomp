@@ -1,0 +1,18 @@
+{
+  "unit": "resurrect",
+  "selected": "baseline",
+  "baseline_functions": 0,
+  "final_functions": 0,
+  "new_functions": [],
+  "baseline_text": 0,
+  "final_text": 0,
+  "baseline_data": 328,
+  "final_data": 328,
+  "note": "Blocked semantic gap47FFA appearance-bit test; first body70 bytes long/frame48 vs36; later quaternion helpers moved-exact",
+  "hashes": {
+    "src\\resurrect.c": "c8c39607f53487c4dd37b4f2b67eca1d3c3f0c7ce6fe874e3c816cf4f598d1aa",
+    "build\\campaign60-lane4\\resurrect\\baseline\\obj\\resurrect.obj": "4882852209bb00dff8ec643401d43b7c6c96f5818bae88304e6eaeceb18861cb",
+    "build\\campaign60-lane4\\resurrect\\baseline\\link\\resurrect.abs": "11b0b5f0f1962a8362f96e36ebb1b33a52c346d24aa9c1e134123acab2e90702",
+    "build\\campaign60-lane4\\resurrect\\baseline\\pp\\resurrect.c": "80a538af8136457dbf107d776749119196f249ff6d30a0e5d843b1d6512b7584"
+  }
+}

@@ -1,0 +1,72 @@
+{
+ "name": "textureanim",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT textureanim.abs",
+  "FORM A",
+  "START P(8C05B2E4)",
+  "DEFINE _MBOX_FindTexture_WORK(8C03D4AA)",
+  "DEFINE _PaletteLists(8C0C38C4)",
+  "DEFINE _TextureSwapLists(8C0C3170)",
+  "DEFINE _gFrameSeconds(8C12254C)",
+  "DEFINE _gLastFrameCount(8C122550)",
+  "DEFINE _gNumModels(8C14CB1C)",
+  "DEFINE _gRestartGame(8C0BDD54)",
+  "DEFINE _gTrackNum(8C15C9C0)",
+  "PRINT textureanim.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-textureanim\\direct-assignment\\obj\\textureanim.obj",
+   "sha256": "c95db1563f459cf42366a5efb8f3f4fa257f91531436358ae8f2e0e5e60da5b5"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C05B2E4",
+   "length": 644
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C05B2E4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 170,
+   "first_diff_offset": 20,
+   "sha256": "15c0b8fd749d7c177d7deedbec9a0a8c9db5e7e6c02e66f4441ed2de42fcc1d8"
+  },
+  {
+   "section": "P",
+   "address": "8C05B3DA",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 238,
+   "first_diff_offset": 0,
+   "sha256": "dec6dd2a0b307245a5f60421a684bcf7ad08fb814d10bc06aee5d4f199526523"
+  },
+  {
+   "section": "P",
+   "address": "8C05B4D0",
+   "size": 110,
+   "exact": false,
+   "diff_bytes": 108,
+   "first_diff_offset": 0,
+   "sha256": "6be3bdba587aaadca21ff719b74b6e44fb59188f0dce9af58463a9b78a1b058a"
+  },
+  {
+   "section": "P",
+   "address": "8C05B540",
+   "size": 40,
+   "exact": false,
+   "diff_bytes": 40,
+   "first_diff_offset": 0,
+   "sha256": "f24586a1e2c203cdeb40e212623a2d717b4d5a930f0d02bade18997e68f00f4e"
+  }
+ ],
+ "all_exact": false
+}

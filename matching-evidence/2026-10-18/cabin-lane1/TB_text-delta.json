@@ -1,0 +1,84 @@
+{
+  "unit": "TB_text",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 17,
+    "functions_total": 21,
+    "functions_moved": 0,
+    "exact_text_bytes": 1238,
+    "equal_text_bytes_including_fill": 1242,
+    "text_bytes": 2544,
+    "exact_data_bytes": 329,
+    "source_sha256": "2d1ebb2038d8834accc125b99e7d0656a39e3c97f9a2cd4256e3dd686f07bced"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 10,
+    "functions_total": 21,
+    "functions_moved": 0,
+    "exact_text_bytes": 492,
+    "equal_text_bytes_including_fill": 494,
+    "text_bytes": 2544,
+    "exact_data_bytes": 329,
+    "source_sha256": "0a0226be039b72b9cc1765759c192b07be5e3eb63fd7639d69caa1bcabe25483"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "TB_DrawEllipseText",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 70
+    },
+    {
+      "name": "TB_DrawText",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 166
+    },
+    {
+      "name": "TB_DrawTextC",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 32
+    },
+    {
+      "name": "TB_Printf",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 86
+    },
+    {
+      "name": "TB_Sprintf",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 50
+    },
+    {
+      "name": "TB_Strcat",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 228
+    },
+    {
+      "name": "TB_Strlen",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 58
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1238,
+  "text_bytes_head": 492,
+  "report_consistency": {
+    "report_functions_exact": 17,
+    "dirty_rebuild_functions_exact": 17,
+    "report_exact_text_bytes": 1238,
+    "dirty_rebuild_exact_text_bytes": 1238,
+    "report_source_sha256": "2d1ebb2038d8834accc125b99e7d0656a39e3c97f9a2cd4256e3dd686f07bced",
+    "dirty_source_sha256": "2d1ebb2038d8834accc125b99e7d0656a39e3c97f9a2cd4256e3dd686f07bced",
+    "match": true
+  },
+  "head_source_sha256": "0a0226be039b72b9cc1765759c192b07be5e3eb63fd7639d69caa1bcabe25483",
+  "seconds": 5.1
+}

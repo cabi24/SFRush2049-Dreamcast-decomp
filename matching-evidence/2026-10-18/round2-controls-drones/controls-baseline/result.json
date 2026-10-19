@@ -1,0 +1,244 @@
+{
+  "name": "controls",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/controls.c",
+  "source_sha256": "94bb81a182a35c5d807d60e3c19d4080d7c44fe03fae725c3fd6c865643eb666",
+  "text": [
+    "8C01E44C",
+    "8C01EDEC"
+  ],
+  "text_bytes": 2464,
+  "exact_text_bytes": 1190,
+  "align_bytes": 0,
+  "data_bytes": 104,
+  "exact_data_bytes": 104,
+  "functions_total": 11,
+  "functions_exact": 5,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "_ReadShifter",
+      "start": "8C01E44C",
+      "end": "8C01E530",
+      "size": 228,
+      "status": "differs",
+      "diff_bytes": 5,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_ReadGasAndBrake",
+      "start": "8C01E54C",
+      "end": "8C01E724",
+      "size": 472,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_ReadSteeringWheel",
+      "start": "8C01E724",
+      "end": "8C01E81C",
+      "size": 248,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "InitRushControls",
+      "start": "8C01E84C",
+      "end": "8C01E894",
+      "size": 72,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01E84C",
+      "linked_size": 72
+    },
+    {
+      "name": "SetDefaultControls",
+      "start": "8C01E894",
+      "end": "8C01E8C2",
+      "size": 46,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01E894",
+      "linked_size": 46
+    },
+    {
+      "name": "ClearRushControls",
+      "start": "8C01E8C2",
+      "end": "8C01E8F8",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 8,
+      "linked_at": "8C01E8C2",
+      "linked_size": 54
+    },
+    {
+      "name": "UpdateRushControls",
+      "start": "8C01E8F8",
+      "end": "8C01EAEA",
+      "size": 498,
+      "status": "differs",
+      "diff_bytes": 129,
+      "linked_at": "8C01E8F8",
+      "linked_size": 548
+    },
+    {
+      "name": "UpdateModelControls",
+      "start": "8C01EB1C",
+      "end": "8C01EBDE",
+      "size": 194,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01EB1C",
+      "linked_size": 236
+    },
+    {
+      "name": "FindPlayerNum",
+      "start": "8C01EC08",
+      "end": "8C01EC7A",
+      "size": 114,
+      "status": "differs",
+      "diff_bytes": 96,
+      "linked_at": "8C01EC08",
+      "linked_size": 108
+    },
+    {
+      "name": "SetControls",
+      "start": "8C01EC7A",
+      "end": "8C01ED86",
+      "size": 268,
+      "status": "differs",
+      "diff_bytes": 248,
+      "linked_at": "8C01EC74",
+      "linked_size": 268
+    },
+    {
+      "name": "SetPlayerControls",
+      "start": "8C01ED86",
+      "end": "8C01EDB2",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C01ED80",
+      "linked_size": 100
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01E530",
+      "end": "8C01E54C",
+      "exact": true,
+      "built": 28,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01E81C",
+      "end": "8C01E84C",
+      "exact": true,
+      "built": 48,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01EAEA",
+      "end": "8C01EB1C",
+      "exact": true,
+      "built": 50,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01EBDE",
+      "end": "8C01EC08",
+      "exact": true,
+      "built": 42,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01EDB2",
+      "end": "8C01EDEC",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 41
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BC3E0",
+      "end": "8C0BC448",
+      "exact": true,
+      "built": 104,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C0D4",
+      "end": "8C12C111",
+      "exact": true,
+      "linked": [
+        "8C12C0D4",
+        "8C12C111"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:01:08",
+  "defines": {
+    "_ClearControls": "8C01EEB4",
+    "_InitControlSys": "8C01EDEC",
+    "_SavePlayerControls": "8C04C706",
+    "_SetControllerActive": "8C01F180",
+    "_UpdateControls": "8C01EF2C",
+    "_gAutoEdges": "8C12C1A4",
+    "_gCoastFlag": "8C12C64C",
+    "_gContEdges": "8C12C194",
+    "_gContLevels": "8C12C184",
+    "_gContStick": "8C12C164",
+    "_gControllerData": "8C12C114",
+    "_gGameState": "8C0BFD3C",
+    "_gJustPlayers": "8C15044C",
+    "_gMirrorWaves": "8C15FA14",
+    "_gNumPlayers": "8C14CBB0",
+    "_gPauseState": "8C0BFA78",
+    "_gRace": "8C12C628",
+    "_gRealEdges": "8C12C1F0",
+    "_gRealLevels": "8C12C1E0",
+    "_gRealStick": "8C12C1C0",
+    "_gUpsideDownTrack": "8C12B8A8",
+    "_memcpy": "8C09BD00",
+    "_model": "8C14CBB4"
+  },
+  "starts": {
+    "P": "8C01E44C",
+    "D": "8C0BC3E0",
+    "B": "8C12C0D4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01E44C",
+      "length": 2456
+    },
+    {
+      "name": "D",
+      "address": "8C0BC3E0",
+      "length": 104
+    },
+    {
+      "name": "B",
+      "address": "8C12C0D4",
+      "length": 61
+    }
+  ],
+  "equal_text_bytes_including_fill": 1200,
+  "excluded_exact_text_fill_or_gaps": 10,
+  "equal_data_bytes_including_fill": 104,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -8,
+  "seconds": 2.1
+}

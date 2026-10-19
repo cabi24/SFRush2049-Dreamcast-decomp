@@ -1,0 +1,54 @@
+{
+  "unit": "pane",
+  "verdict": "keep",
+  "dirty": {
+    "status": "exact",
+    "functions_exact": 5,
+    "functions_total": 5,
+    "functions_moved": 0,
+    "exact_text_bytes": 1320,
+    "equal_text_bytes_including_fill": 1324,
+    "text_bytes": 1324,
+    "exact_data_bytes": 480,
+    "source_sha256": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 3,
+    "functions_total": 5,
+    "functions_moved": 0,
+    "exact_text_bytes": 1082,
+    "equal_text_bytes_including_fill": 1084,
+    "text_bytes": 1324,
+    "exact_data_bytes": 480,
+    "source_sha256": "19887f4e6a3d538c5b6c3fb5c0cc08aa928490c1bbbb154807c553b4be977d42"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "RemovePane",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 94
+    },
+    {
+      "name": "RemovePanes",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 134
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1320,
+  "text_bytes_head": 1082,
+  "report_consistency": {
+    "report_functions_exact": 5,
+    "dirty_rebuild_functions_exact": 5,
+    "report_exact_text_bytes": 1320,
+    "dirty_rebuild_exact_text_bytes": 1320,
+    "report_source_sha256": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8",
+    "dirty_source_sha256": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8",
+    "match": true
+  },
+  "head_source_sha256": "19887f4e6a3d538c5b6c3fb5c0cc08aa928490c1bbbb154807c553b4be977d42",
+  "seconds": 4.8
+}

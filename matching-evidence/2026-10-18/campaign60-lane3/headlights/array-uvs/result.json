@@ -1,0 +1,163 @@
+{
+  "name": "headlights",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/headlights.c",
+  "source_sha256": "86f750db2c8913dab10f7677136b0187a63cd3c188bdead9eb7218a84555b6d2",
+  "text": [
+    "8C02FDC4",
+    "8C030ACC"
+  ],
+  "text_bytes": 3336,
+  "exact_text_bytes": 308,
+  "align_bytes": 0,
+  "data_bytes": 172,
+  "exact_data_bytes": 172,
+  "functions_total": 4,
+  "functions_exact": 1,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "StartHeadLights",
+      "start": "8C02FDC4",
+      "end": "8C02FEF8",
+      "size": 308,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02FDC4",
+      "linked_size": 368
+    },
+    {
+      "name": "AnimateForwardLights",
+      "start": "8C02FF34",
+      "end": "8C03022C",
+      "size": 760,
+      "status": "differs",
+      "diff_bytes": 656,
+      "linked_at": "8C02FF34",
+      "linked_size": 812
+    },
+    {
+      "name": "AnimateDownwardLights",
+      "start": "8C030254",
+      "end": "8C030532",
+      "size": 734,
+      "status": "differs",
+      "diff_bytes": 689,
+      "linked_at": "8C030260",
+      "linked_size": 792
+    },
+    {
+      "name": "AnimateHeadLights",
+      "start": "8C030560",
+      "end": "8C030ABE",
+      "size": 1374,
+      "status": "differs",
+      "diff_bytes": 1285,
+      "linked_at": "8C030578",
+      "linked_size": 1344
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C02FEF8",
+      "end": "8C02FF34",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "pool",
+      "start": "8C03022C",
+      "end": "8C030254",
+      "exact": false,
+      "built": 40,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "pool",
+      "start": "8C030532",
+      "end": "8C030560",
+      "exact": false,
+      "built": 46,
+      "diff_bytes": 45
+    },
+    {
+      "kind": "pool",
+      "start": "8C030ABE",
+      "end": "8C030ACC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AAA7C",
+      "end": "8C0AAA8C",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BDF9C",
+      "end": "8C0BE038",
+      "exact": true,
+      "built": 156,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:33:05",
+  "defines": {
+    "_CopyUV": "8C02631E",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_NormalVector": "8C026C44",
+    "_ObjInstanceList": "8C160870",
+    "_ShotToWorldCollision": "8C05307E",
+    "_WorldVector": "8C026B8C",
+    "_ZOID_FindMatrix": "8C068722",
+    "_ZOID_NewMatrix": "8C06872E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_gCarParts": "8C15D994",
+    "_gGameCar": "8C004000",
+    "_gInvisibleCar": "8C15CFDC",
+    "_gObjList": "8C15CA5E",
+    "_gTrackNum": "8C15C9C0",
+    "_model": "8C14CBB4"
+  },
+  "starts": {
+    "P": "8C02FDC4",
+    "C": "8C0AAA7C",
+    "D": "8C0BDF9C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C02FDC4",
+      "length": 3316
+    },
+    {
+      "name": "C",
+      "address": "8C0AAA7C",
+      "length": 16
+    },
+    {
+      "name": "D",
+      "address": "8C0BDF9C",
+      "length": 156
+    }
+  ],
+  "equal_text_bytes_including_fill": 308,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 172,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -20,
+  "seconds": 2.0
+}

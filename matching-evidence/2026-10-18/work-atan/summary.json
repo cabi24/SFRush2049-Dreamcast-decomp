@@ -1,0 +1,37 @@
+{
+  "unit": "atan",
+  "source_changed": false,
+  "delta_exact_functions": 0,
+  "delta_exact_text_bytes": 0,
+  "trials": {
+    "baseline": {
+      "exact_functions": 3,
+      "exact_text_bytes": 286,
+      "fsatan_diff_bytes": 9,
+      "text_size_delta": 0,
+      "abs_sha256": "ea8c5047c4735b74b4ed107c27504d1126c099293a24c56638753180e4b4f494"
+    },
+    "locals": {
+      "exact_functions": 0,
+      "exact_text_bytes": 0,
+      "fsatan_diff_bytes": 70,
+      "text_size_delta": 4,
+      "abs_sha256": "69d6cf546430b1871e674118dadee81884713a36706e859240f432a51483be6a"
+    },
+    "addnegative": {
+      "exact_functions": 3,
+      "exact_text_bytes": 286,
+      "fsatan_diff_bytes": 9,
+      "text_size_delta": 0,
+      "abs_sha256": "f0aa8af26122cae97381f79acedfb058f6402144ed2489db9222887c3bc72c23"
+    },
+    "denomreverse": {
+      "exact_functions": 3,
+      "exact_text_bytes": 286,
+      "fsatan_diff_bytes": 9,
+      "text_size_delta": 0,
+      "abs_sha256": "af393093e968d65d2069f26cb0a666f906555570b743e12c475a506b5c048f64"
+    }
+  },
+  "canonical_source_sha256": "ab94f03f2c7674a4067cc63f2e416a00f835039901187c466986e472a28085aa"
+}

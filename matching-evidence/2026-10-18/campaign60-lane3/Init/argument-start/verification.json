@@ -1,0 +1,13 @@
+{
+  "unit": "Init",
+  "label": "argument-start",
+  "preserved_old_exact_spans": true,
+  "delta_text": 370,
+  "delta_data": 0,
+  "delta_functions": 2,
+  "hashes": {
+    "src\\Init.c": "8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279",
+    "build\\campaign60-lane3\\Init\\argument-start\\obj\\Init.obj": "07528dd3dc85a52b2253f35863445b6d595381c6b0ed3e52c9fc061b76407557",
+    "build\\campaign60-lane3\\Init\\argument-start\\link\\Init.abs": "e8dddf17ad6a16bc66cb42106761450435f1458c4428763dc5ae914f51b49294"
+  }
+}

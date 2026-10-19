@@ -8,11 +8,11 @@ void func_8C069E34(void)
     InitLL(&midiPending8C177B5C,0,1);
     InitLL(&midiActive8C177B4C,0,1);
     node=midiInitNodes8C177B6C;
-    if((unsigned int)node<(unsigned int)midiInitNodes8C177B6C+sizeof(tDCInitNode)) {
+    if(node<midiInitNodes8C177B6C+1) {
         do {
             InsertLLE(&midiFree8C177B3C,node,midiFree8C177B3C.head);
-            node=(tDCInitNode *)((unsigned int)node+sizeof(tDCInitNode));
-        } while((unsigned int)node<(unsigned int)midiInitNodes8C177B6C+sizeof(tDCInitNode));
+            node++;
+        } while(node<midiInitNodes8C177B6C+1);
     }
     midiWorkBytes8C0C7C2C=0x10000;
     midiReadBytes8C0C7C30=0x20000;
@@ -26,10 +26,10 @@ void func_8C069E34(void)
     InitLL(&streamPending8C177FE0,0,1);
     InitLL(&streamActive8C177FD0,0,1);
     node=streamInitNodes8C177FF0;
-    if((unsigned int)node<(unsigned int)streamInitNodes8C177FF0+sizeof(tDCInitNode)) {
+    if(node<streamInitNodes8C177FF0+1) {
         do {
             InsertLLE(&streamFree8C177FC0,node,streamFree8C177FC0.head);
-            node=(tDCInitNode *)((unsigned int)node+sizeof(tDCInitNode));
-        } while((unsigned int)node<(unsigned int)streamInitNodes8C177FF0+sizeof(tDCInitNode));
+            node++;
+        } while(node<streamInitNodes8C177FF0+1);
     }
 }

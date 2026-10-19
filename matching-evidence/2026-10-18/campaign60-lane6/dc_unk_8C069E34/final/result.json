@@ -1,0 +1,81 @@
+{
+  "name": "dc_unk_8C069E34",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_unk_8C069E34.c",
+  "source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+  "text": [
+    "8C069E34",
+    "8C069F78"
+  ],
+  "text_bytes": 324,
+  "exact_text_bytes": 88,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 1,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C069E34",
+      "start": "8C069E34",
+      "end": "8C069F20",
+      "size": 236,
+      "status": "differs",
+      "diff_bytes": 168,
+      "linked_at": "8C069E34",
+      "linked_size": 324
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C069F20",
+      "end": "8C069F78",
+      "exact": true,
+      "built": 88,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:40:24",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "_InitLL": "8C03A1B8",
+    "_InsertLLE": "8C03A1C8",
+    "_PurgeableMemory": "8C040924",
+    "_dcQueueWorkWord8C0C7C34": "8C0C7C34",
+    "_func_8C0A18E6": "8C0A18E6",
+    "_func_8C0A191C": "8C0A191C",
+    "_midiActive8C177B4C": "8C177B4C",
+    "_midiFree8C177B3C": "8C177B3C",
+    "_midiInitNodes8C177B6C": "8C177B6C",
+    "_midiPending8C177B5C": "8C177B5C",
+    "_midiRead1_8C0C7C38": "8C0C7C38",
+    "_midiRead2_8C0C7C3C": "8C0C7C3C",
+    "_midiReadBytes8C0C7C30": "8C0C7C30",
+    "_midiWorkBytes8C0C7C2C": "8C0C7C2C",
+    "_streamActive8C177FD0": "8C177FD0",
+    "_streamFree8C177FC0": "8C177FC0",
+    "_streamInitNodes8C177FF0": "8C177FF0",
+    "_streamPending8C177FE0": "8C177FE0"
+  },
+  "starts": {
+    "P": "8C069E34"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C069E34",
+      "length": 324
+    }
+  ],
+  "equal_text_bytes_including_fill": 88,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

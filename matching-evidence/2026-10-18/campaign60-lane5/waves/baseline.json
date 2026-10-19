@@ -1,0 +1,349 @@
+{
+  "name": "waves",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/waves.c",
+  "source_sha256": "46c9fe33d3af01c79876ad74ac7bfee7311598b94c0b39e9abb5e54386a059a9",
+  "text": [
+    "8C064FDC",
+    "8C065C78"
+  ],
+  "text_bytes": 3228,
+  "exact_text_bytes": 1850,
+  "align_bytes": 0,
+  "data_bytes": 630,
+  "exact_data_bytes": 630,
+  "functions_total": 22,
+  "functions_exact": 20,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitWaves",
+      "start": "8C064FDC",
+      "end": "8C0651AA",
+      "size": 462,
+      "status": "differs",
+      "diff_bytes": 9,
+      "linked_at": "8C064FDC",
+      "linked_size": 476
+    },
+    {
+      "name": "LoadWave",
+      "start": "8C0651B8",
+      "end": "8C065210",
+      "size": 88,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0651B8",
+      "linked_size": 88
+    },
+    {
+      "name": "ReplaceWave",
+      "start": "8C065210",
+      "end": "8C06525E",
+      "size": 78,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065210",
+      "linked_size": 78
+    },
+    {
+      "name": "WaveInstanceReady",
+      "start": "8C06525E",
+      "end": "8C065280",
+      "size": 34,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06525E",
+      "linked_size": 34
+    },
+    {
+      "name": "GetWaveInstanceAddr",
+      "start": "8C065280",
+      "end": "8C0652A2",
+      "size": 34,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065280",
+      "linked_size": 52
+    },
+    {
+      "name": "UnloadWaveAll",
+      "start": "8C0652B4",
+      "end": "8C06539C",
+      "size": 232,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0652B4",
+      "linked_size": 240
+    },
+    {
+      "name": "UnloadWaveInstance",
+      "start": "8C0653A4",
+      "end": "8C06545C",
+      "size": 184,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0653A4",
+      "linked_size": 184
+    },
+    {
+      "name": "_NewWaveInstance",
+      "start": "8C06545C",
+      "end": "8C06554A",
+      "size": 238,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06545C",
+      "linked_size": 238
+    },
+    {
+      "name": "_ReplaceWaveInstance",
+      "start": "8C06554A",
+      "end": "8C06560C",
+      "size": 194,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06554A",
+      "linked_size": 194
+    },
+    {
+      "name": "_SetWaveInstanceModel",
+      "start": "8C06560C",
+      "end": "8C06563C",
+      "size": 48,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06560C",
+      "linked_size": 84
+    },
+    {
+      "name": "LockWaveInstance",
+      "start": "8C065660",
+      "end": "8C06568A",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065660",
+      "linked_size": 42
+    },
+    {
+      "name": "UnlockWaveInstance",
+      "start": "8C06568A",
+      "end": "8C0656B4",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06568A",
+      "linked_size": 42
+    },
+    {
+      "name": "ModelActive",
+      "start": "8C0656B4",
+      "end": "8C0656DE",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0656B4",
+      "linked_size": 42
+    },
+    {
+      "name": "FindWaveInstance",
+      "start": "8C0656DE",
+      "end": "8C0656E2",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0656DE",
+      "linked_size": 4
+    },
+    {
+      "name": "_FindWaveInstance",
+      "start": "8C0656E2",
+      "end": "8C065730",
+      "size": 78,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0656E2",
+      "linked_size": 78
+    },
+    {
+      "name": "_ValidateWaveInstance",
+      "start": "8C065730",
+      "end": "8C06575C",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065730",
+      "linked_size": 44
+    },
+    {
+      "name": "_ReadWave",
+      "start": "8C06575C",
+      "end": "8C06585E",
+      "size": 258,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06575C",
+      "linked_size": 258
+    },
+    {
+      "name": "func_8C06585E",
+      "start": "8C06585E",
+      "end": "8C065862",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06585E",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C065862",
+      "start": "8C065862",
+      "end": "8C06588C",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065862",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06588C",
+      "start": "8C06588C",
+      "end": "8C065C1A",
+      "size": 910,
+      "status": "differs",
+      "diff_bytes": 143,
+      "linked_at": "8C06588C",
+      "linked_size": 910
+    },
+    {
+      "name": "func_8C065C1A",
+      "start": "8C065C1A",
+      "end": "8C065C1E",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065C1A",
+      "linked_size": 4
+    },
+    {
+      "name": "MirrorWaveInstance",
+      "start": "8C065C1E",
+      "end": "8C065C68",
+      "size": 74,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065C1E",
+      "linked_size": 90
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0651AA",
+      "end": "8C0651B8",
+      "exact": true,
+      "built": 14,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0652A2",
+      "end": "8C0652B4",
+      "exact": true,
+      "built": 18,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06539C",
+      "end": "8C0653A4",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06563C",
+      "end": "8C065660",
+      "exact": true,
+      "built": 36,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C065C68",
+      "end": "8C065C78",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B0250",
+      "end": "8C0B04C6",
+      "exact": true,
+      "built": 630,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:38:30",
+  "defines": {
+    "_AllocateHandleHeap": "8C04072C",
+    "_AllocateMemoryHeap": "8C040256",
+    "_DeallocateMemory": "8C040832",
+    "_GetPtrSize": "8C040B44",
+    "_InitBlits": "8C018790",
+    "_InitTextWave": "8C05B120",
+    "_MBGetFromWad": "8C03D05A",
+    "_MBOffsetWad": "8C03CFDA",
+    "_MBSetupWad": "8C03CF94",
+    "_PurgeableMemory": "8C040924",
+    "_ReallocateMemory": "8C0405B2",
+    "_ZOID_Reset": "8C0686F4",
+    "_func_8C0102A4": "8C0102A4",
+    "_func_8C026104": "8C026104",
+    "_func_8C03FFBC": "8C03FFBC",
+    "_func_8C06BA3A": "8C06BA3A",
+    "_func_8C06E95C": "8C06E95C",
+    "_func_8C06EAD0": "8C06EAD0",
+    "_gMirrorWaves": "8C15FA14",
+    "_gNumModels": "8C14CB1C",
+    "_gPalDefPtrs": "8C14C91C",
+    "_gRenderInProgress": "8C12D340",
+    "_gRomObjDefPtrs": "8C0BEBE8",
+    "_gTargetPaths": "8C1585D4",
+    "_gTexDefPtrs": "8C14C71C",
+    "_gWaveCompressed": "8C0B04C8",
+    "_gWaveFilenames": "8C0C44C0",
+    "_gWaveInstance": "8C15FA20",
+    "_gWaveSizes": "8C0B8DB4",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C064FDC",
+    "C": "8C0B0250"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C064FDC",
+      "length": 3228
+    },
+    {
+      "name": "C",
+      "address": "8C0B0250",
+      "length": 630
+    }
+  ],
+  "equal_text_bytes_including_fill": 1856,
+  "excluded_exact_text_fill_or_gaps": 6,
+  "equal_data_bytes_including_fill": 630,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.0
+}

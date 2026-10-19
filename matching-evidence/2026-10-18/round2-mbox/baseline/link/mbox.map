@@ -1,0 +1,119 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT mbox.abs
+FORM A
+START P(8C03D090)
+START C(8C0AC0B8)
+START D(8C0BEBE8)
+START B(8C14C71C)
+DEFINE _ModelActive(8C0656B4)
+DEFINE _ObjInstanceList(8C160870)
+DEFINE _ZOID_AddObject(8C0689A0)
+DEFINE _ZOID_ObjectFlags(8C068D0E)
+DEFINE _ZOID_SetObjectFlags(8C068D1A)
+DEFINE _ZOID_TrueObjParent(8C068896)
+DEFINE __divls(8C09B680)
+DEFINE __slow_strcmp1(8C09BB5C)
+DEFINE __slow_strcpy(8C09BB0C)
+DEFINE _bsearch(8C09BC04)
+DEFINE _strncmp(8C09BF58)
+DEFINE _strncpy(8C09BF98)
+PRINT mbox.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C03D090  -  H'8C03D653  H'000005C4
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C03D090  -  H'8C03D653  H'000005C4
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AC0B8  -  H'8C0AC0C2  H'0000000B
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AC0B8  -  H'8C0AC0C2  H'0000000B
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BEBE8  -  H'8C0BEDE7  H'00000200
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BEBE8  -  H'8C0BEDE7  H'00000200
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C14C71C  -  H'8C14CB1C  H'00000401
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C14C71C  -  H'8C14CB1C  H'00000401
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_MBOX_FindObject_WORK             H'8C03D390               ENT
+_MBOX_FindTexture_WORK            H'8C03D4AA               ENT
+_MBOX_GetChild                    H'8C03D0C6               ENT
+_MBOX_GetNext                     H'8C03D0D2               ENT
+_MBOX_GetObjectRadius             H'8C03D350               ENT
+_MBOX_GetPosition                 H'8C03D2AE               ENT
+_MBOX_HideObject                  H'8C03D0DE               ENT
+_MBOX_NewObject                   H'8C03D090               ENT
+_MBOX_NewObjectCam                H'8C03D0A2               ENT
+_MBOX_ShowObject                  H'8C03D1C4               ENT
+_func_8C03D56E                    H'8C03D56E               ENT
+_gNumModels                       H'8C14CB1C               DAT
+_gPalDefPtrs                      H'8C14C91C               DAT
+_gRomObjDefPtrs                   H'8C0BEBE8               DAT
+_gTexDefPtrs                      H'8C14C71C               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_ModelActive                                                        H'8C0656B4
+_ObjInstanceList                                                    H'8C160870
+_ZOID_AddObject                                                     H'8C0689A0
+_ZOID_ObjectFlags                                                   H'8C068D0E
+_ZOID_SetObjectFlags                                                H'8C068D1A
+_ZOID_TrueObjParent                                                 H'8C068896
+__divls                                                             H'8C09B680
+__slow_strcmp1                                                      H'8C09BB5C
+__slow_strcpy                                                       H'8C09BB0C
+_bsearch                                                            H'8C09BC04
+_strncmp                                                            H'8C09BF58
+_strncpy                                                            H'8C09BF98

@@ -1,0 +1,198 @@
+{
+ "name": "controls",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT controls.abs",
+  "FORM A",
+  "START P(8C01E44C)",
+  "START D(8C0BC3E0)",
+  "START B(8C12C0D4)",
+  "DEFINE _ClearControls(8C01EEB4)",
+  "DEFINE _InitControlSys(8C01EDEC)",
+  "DEFINE _SavePlayerControls(8C04C706)",
+  "DEFINE _SetControllerActive(8C01F180)",
+  "DEFINE _UpdateControls(8C01EF2C)",
+  "DEFINE _gAutoEdges(8C12C1A4)",
+  "DEFINE _gCoastFlag(8C12C64C)",
+  "DEFINE _gContEdges(8C12C194)",
+  "DEFINE _gContLevels(8C12C184)",
+  "DEFINE _gContStick(8C12C164)",
+  "DEFINE _gControllerData(8C12C114)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gJustPlayers(8C15044C)",
+  "DEFINE _gMirrorWaves(8C15FA14)",
+  "DEFINE _gNumPlayers(8C14CBB0)",
+  "DEFINE _gPauseState(8C0BFA78)",
+  "DEFINE _gRace(8C12C628)",
+  "DEFINE _gRealEdges(8C12C1F0)",
+  "DEFINE _gRealLevels(8C12C1E0)",
+  "DEFINE _gRealStick(8C12C1C0)",
+  "DEFINE _gUpsideDownTrack(8C12B8A8)",
+  "DEFINE _memcpy(8C09BD00)",
+  "DEFINE _model(8C14CBB4)",
+  "PRINT controls.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-controls-drones\\controls-find3\\obj\\controls.obj",
+   "sha256": "6460a647b53edefee8327f5edc199c78a189dd95062e8ffcc1d87d73d583f879"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C01E44C",
+   "length": 2460
+  },
+  {
+   "name": "D",
+   "address": "8C0BC3E0",
+   "length": 104
+  },
+  {
+   "name": "B",
+   "address": "8C12C0D4",
+   "length": 61
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C01E44C",
+   "size": 244,
+   "exact": false,
+   "diff_bytes": 5,
+   "first_diff_offset": 134,
+   "sha256": "f3b6ace55aa0246672e8a35aaeadd4e3ba8da5a29c38d865530df08635f1a38f"
+  },
+  {
+   "section": "P",
+   "address": "8C01E540",
+   "size": 222,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "0b57712b2ee42ae4067a2ff1c48c5c28f9600e8dc43613801a36d5017f31082d"
+  },
+  {
+   "section": "P",
+   "address": "8C01E620",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "a919cf5b8317f82c8392622801c87f91731232e8c4e93b4388c15fed9f48f8eb"
+  },
+  {
+   "section": "P",
+   "address": "8C01E716",
+   "size": 36,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "4e018b7e08bc3feeee644c0d021446df291bdd59205ef2acf880044e1cc0c951"
+  },
+  {
+   "section": "P",
+   "address": "8C01E73C",
+   "size": 226,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "45de9c1ee143be1e1bdeaaf117b5d1ce4ef92a99c1639d8d842230e5fa879780"
+  },
+  {
+   "section": "P",
+   "address": "8C01E820",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 8,
+   "first_diff_offset": 173,
+   "sha256": "c3010f4812035c85bae50e31116fe02abf437cd7e4ba7fd517b36576df477782"
+  },
+  {
+   "section": "P",
+   "address": "8C01E916",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "a4a5d2901eeabb352d226b60f4414383a22f2ace97fa259fac9efb64866e5220"
+  },
+  {
+   "section": "P",
+   "address": "8C01EA0C",
+   "size": 222,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "c4f497e7c989d4c11278a6df7fc5c126683c424e95fc299380ee141a4acd15a4"
+  },
+  {
+   "section": "P",
+   "address": "8C01EAEC",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "822308bbad74d48aa79a069699d3e44d46a875451645bc3cbf8c7676aa9049b5"
+  },
+  {
+   "section": "P",
+   "address": "8C01EBE4",
+   "size": 16,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2d763414a3e14843235d085814e1006e31ef843b28432115e093a185cdda3516"
+  },
+  {
+   "section": "P",
+   "address": "8C01EBF4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 182,
+   "first_diff_offset": 30,
+   "sha256": "f8be28ac20c921bdf9088fa4880d8ce068f96d978bcab9db3d7017dc0959bc74"
+  },
+  {
+   "section": "P",
+   "address": "8C01ECEA",
+   "size": 196,
+   "exact": false,
+   "diff_bytes": 188,
+   "first_diff_offset": 0,
+   "sha256": "420c841bbe44c5ebfe63762c22dd8dbd5fc7f954b633ed05a804b30fd0a26056"
+  },
+  {
+   "section": "P",
+   "address": "8C01EDB0",
+   "size": 40,
+   "exact": false,
+   "diff_bytes": 24,
+   "first_diff_offset": 0,
+   "sha256": "0d63e79933d7aa1bfdb1a6d497cf7fa8c0bb07d00392276b9f66747ba6e24497"
+  },
+  {
+   "section": "P",
+   "address": "8C01EDD8",
+   "size": 16,
+   "exact": false,
+   "diff_bytes": 9,
+   "first_diff_offset": 0,
+   "sha256": "124fe7e0d7ab5318e636c0b79fe353dde33f3b20492491073a65f7506fea0d97"
+  },
+  {
+   "section": "D",
+   "address": "8C0BC3E0",
+   "size": 104,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "9d621513d23ff4a79a800a1ecd6caf26ef6dc1676d7d9a2961f4f538d43252df"
+  }
+ ],
+ "all_exact": false
+}

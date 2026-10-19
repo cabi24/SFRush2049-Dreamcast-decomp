@@ -1,0 +1,37 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "label": "volatile-unit-bound-base",
+  "source_sha256": "a0187b9a2edfa4a906a0c3f7175244d3f81e02335cf8bac447c40636df6e6e3d",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 2,
+  "delta_text": 24,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "func_8C06C2A6",
+      "start": "8C06C2A6",
+      "end": "8C06C2B2",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C2A6",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C06C2B2",
+      "start": "8C06C2B2",
+      "end": "8C06C2BE",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C2B2",
+      "linked_size": 12
+    }
+  ],
+  "hashes": {
+    "object": "8f065e39f19d07c319998c6cbde5281386a527889ac3ad19a8a65b91768fb520",
+    "abs": "2231d349f9cb85ee8bd013a3ed06adf8fedfd3e198ae6eb1d713404bc2fd1916",
+    "compiler_input": "7c29c555ee515cea89b4fb9c9fdeeb73ced2c676061bcaa5e553583bae1c2c15"
+  }
+}

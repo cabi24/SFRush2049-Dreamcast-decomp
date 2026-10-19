@@ -1,0 +1,114 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT skids.abs
+FORM A
+START P(8C04E880)
+START D(8C0BFCF4)
+START B(8C152654)
+DEFINE _FreeStatLLE(8C051400)
+DEFINE _GetStatLLE(8C0513D8)
+DEFINE _InitStatLL(8C05138C)
+DEFINE _ZOID_NewPoly(8C068F28)
+DEFINE _ZOID_RemovePoly(8C06926C)
+DEFINE _ZOID_UpdatePoly(8C068FBE)
+DEFINE _direction(8C0262F2)
+DEFINE _gCamera(8C12B648)
+DEFINE _gDummyVtx(8C0C3D94)
+DEFINE _gGameCar(8C004000)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gSeconds(8C122548)
+DEFINE _gShadowColor(8C0C3D90)
+DEFINE _gTexList(8C15CA38)
+DEFINE _memset(8C09BE04)
+DEFINE _model(8C14CBB4)
+DEFINE _surf(8C158390)
+PRINT skids.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C04E880  -  H'8C04F347  H'00000AC8
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C04E880  -  H'8C04F347  H'00000AC8
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BFCF4  -  H'8C0BFD07  H'00000014
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BFCF4  -  H'8C0BFD07  H'00000014
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C152654  -  H'8C153D1B  H'000016C8
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C152654  -  H'8C153D1B  H'000016C8
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_AnimateSkids                     H'8C04F234               ENT
+_UpdateSkids                      H'8C04EEAE               ENT
+__ContinueSkid                    H'8C04ED10               ENT
+__GetSkid                         H'8C04EAA8               ENT
+__StartSkid                       H'8C04EBCE               ENT
+__StopSkid                        H'8C04EC7E               ENT
+__UpdateSkid                      H'8C04E880               ENT
+_func_8C04EE60                    H'8C04EE60               ENT
+_gDirtColor                       H'8C0BFCF4               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_FreeStatLLE                                                        H'8C051400
+_GetStatLLE                                                         H'8C0513D8
+_InitStatLL                                                         H'8C05138C
+_ZOID_NewPoly                                                       H'8C068F28
+_ZOID_RemovePoly                                                    H'8C06926C
+_ZOID_UpdatePoly                                                    H'8C068FBE
+_direction                                                          H'8C0262F2
+_gCamera                                                            H'8C12B648
+_gDummyVtx                                                          H'8C0C3D94
+_gGameCar                                                           H'8C004000
+_gGameState                                                         H'8C0BFD3C
+_gSeconds                                                           H'8C122548
+_gShadowColor                                                       H'8C0C3D90
+_gTexList                                                           H'8C15CA38
+_memset                                                             H'8C09BE04
+_model                                                              H'8C14CBB4
+_surf                                                               H'8C158390

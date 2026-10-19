@@ -1,0 +1,106 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT fmath.abs
+FORM A
+START P(8C026278)
+START D(8C0BD924)
+DEFINE _cosf(8C09BC7C)
+DEFINE _facos(8C01137A)
+DEFINE _fatan2(8C01145C)
+DEFINE _rand(8C047BC8)
+DEFINE _sinf(8C09BEBC)
+PRINT fmath.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C026278  -  H'8C027153  H'00000EDC
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C026278  -  H'8C027153  H'00000EDC
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BD924  -  H'8C0BD96B  H'00000048
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BD924  -  H'8C0BD96B  H'00000048
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_BodyVector                       H'8C026B00               ENT
+_BodyY                            H'8C026B5E               ENT
+_CopyUV                           H'8C02631E               ENT
+_CreateQuatMat                    H'8C026D48               ENT
+_CreateYPRMatrix                  H'8C026C8A               ENT
+_ExtractYaw                       H'8C0270B6               ENT
+_InterpQuats                      H'8C026E10               ENT
+_MulUVS                           H'8C0269D2               ENT
+_NormalVector                     H'8C026C44               ENT
+_PitchUV                          H'8C02673C               ENT
+_Random                           H'8C027124               ENT
+_RollUV                           H'8C026808               ENT
+_RotateUV                         H'8C026674               ENT
+_ScaleUV                          H'8C026412               ENT
+_ScaleUVXYZ                       H'8C0263A4               ENT
+_TransposeUV                      H'8C026364               ENT
+_U64WorldVector                   H'8C026BE4               ENT
+_WPitchUV                         H'8C026524               ENT
+_WRollUV                          H'8C0265D2               ENT
+_WYawUV                           H'8C026474               ENT
+_WorldVector                      H'8C026B8C               ENT
+_YawUV                            H'8C02669A               ENT
+_direction                        H'8C0262F2               ENT
+_fpitch                           H'8C0268B0               ENT
+_froll                            H'8C026970               ENT
+_func_8C026278                    H'8C026278               ENT
+_func_8C0262D2                    H'8C0262D2               ENT
+_func_8C0262E4                    H'8C0262E4               ENT
+_fyaw                             H'8C026914               ENT
+_invmagnitude                     H'8C0262A6               ENT
+_magnitude                        H'8C02628A               ENT
+_rvector                          H'8C0BD960               DAT
+_unitmatrix                       H'8C0BD924               DAT
+_uvector                          H'8C0BD954               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_cosf                                                               H'8C09BC7C
+_facos                                                              H'8C01137A
+_fatan2                                                             H'8C01145C
+_rand                                                               H'8C047BC8
+_sinf                                                               H'8C09BEBC

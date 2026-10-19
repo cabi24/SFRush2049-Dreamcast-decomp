@@ -1,0 +1,15 @@
+{
+  "unit": "dc_unk_8C069E34",
+  "label": "final",
+  "source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 0,
+  "delta_text": 88,
+  "delta_data": 0,
+  "new_exact_functions": [],
+  "hashes": {
+    "object": "103b46ecd77aa9e9f4006eff7cdb7508bf5a2ec4098feb63437b9e26f256d96c",
+    "abs": "0530907028ff092af0dbe1d56cfc3e18429f153b6318d3ca291db2c244b0ab0d"
+  }
+}

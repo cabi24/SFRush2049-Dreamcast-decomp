@@ -1,0 +1,1835 @@
+{
+  "name": "audio",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/audio.c",
+  "source_sha256": "ded5d4cf2dd65e784509ea12d4a4059e59ca29a21909b4e9c96996c11f38f621",
+  "text": [
+    "8C011530",
+    "8C013A40"
+  ],
+  "text_bytes": 9488,
+  "exact_text_bytes": 580,
+  "align_bytes": 0,
+  "data_bytes": 5496,
+  "exact_data_bytes": 4857,
+  "functions_total": 30,
+  "functions_exact": 13,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "_InitSoundState",
+      "start": "8C011530",
+      "end": "8C01154A",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011530",
+      "linked_size": 26
+    },
+    {
+      "name": "_StopSound",
+      "start": "8C01154A",
+      "end": "8C01156C",
+      "size": 34,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01154A",
+      "linked_size": 34
+    },
+    {
+      "name": "PlayExitSound",
+      "start": "8C01156C",
+      "end": "8C011586",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01156C",
+      "linked_size": 26
+    },
+    {
+      "name": "PlayStartABSound",
+      "start": "8C011586",
+      "end": "8C0115A4",
+      "size": 30,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011586",
+      "linked_size": 30
+    },
+    {
+      "name": "PlayLRSound",
+      "start": "8C0115A4",
+      "end": "8C0115BE",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0115A4",
+      "linked_size": 26
+    },
+    {
+      "name": "PlayUDSound",
+      "start": "8C0115BE",
+      "end": "8C0115D8",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0115BE",
+      "linked_size": 26
+    },
+    {
+      "name": "EnableGameSounds",
+      "start": "8C0115D8",
+      "end": "8C011606",
+      "size": 46,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0115D8",
+      "linked_size": 46
+    },
+    {
+      "name": "PlayGameSound",
+      "start": "8C011606",
+      "end": "8C011622",
+      "size": 28,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011606",
+      "linked_size": 70
+    },
+    {
+      "name": "EmitGameSound",
+      "start": "8C01164C",
+      "end": "8C01167A",
+      "size": 46,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01164C",
+      "linked_size": 200
+    },
+    {
+      "name": "_StartGameMusic",
+      "start": "8C01167A",
+      "end": "8C011714",
+      "size": 154,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "StartGameMusic",
+      "start": "8C011714",
+      "end": "8C011718",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011714",
+      "linked_size": 4
+    },
+    {
+      "name": "PauseGameMusic",
+      "start": "8C011718",
+      "end": "8C011722",
+      "size": 10,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011718",
+      "linked_size": 10
+    },
+    {
+      "name": "ResumeGameMusic",
+      "start": "8C011722",
+      "end": "8C011726",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C011722",
+      "linked_size": 4
+    },
+    {
+      "name": "StartListeners",
+      "start": "8C011726",
+      "end": "8C0117D4",
+      "size": 174,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C011726",
+      "linked_size": 254
+    },
+    {
+      "name": "UpdateListeners",
+      "start": "8C011824",
+      "end": "8C01189A",
+      "size": 118,
+      "status": "differs",
+      "diff_bytes": 109,
+      "linked_at": "8C011824",
+      "linked_size": 140
+    },
+    {
+      "name": "StopListeners",
+      "start": "8C01189A",
+      "end": "8C0118DC",
+      "size": 66,
+      "status": "differs",
+      "diff_bytes": 65,
+      "linked_at": "8C0118B0",
+      "linked_size": 96
+    },
+    {
+      "name": "UpdateStationaryEmitters",
+      "start": "8C0118FC",
+      "end": "8C011A7E",
+      "size": 386,
+      "status": "differs",
+      "diff_bytes": 379,
+      "linked_at": "8C011910",
+      "linked_size": 1088
+    },
+    {
+      "name": "_StopStationaryEmitters",
+      "start": "8C011A7E",
+      "end": "8C011AE0",
+      "size": 98,
+      "status": "differs",
+      "diff_bytes": 96,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_SetSoundVP",
+      "start": "8C011AE0",
+      "end": "8C011B1A",
+      "size": 58,
+      "status": "differs",
+      "diff_bytes": 57,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "StartCarSounds",
+      "start": "8C011B40",
+      "end": "8C011D0C",
+      "size": 460,
+      "status": "differs",
+      "diff_bytes": 455,
+      "linked_at": "8C011D50",
+      "linked_size": 488
+    },
+    {
+      "name": "UpdateCarSounds",
+      "start": "8C011D0C",
+      "end": "8C011E6A",
+      "size": 350,
+      "status": "differs",
+      "diff_bytes": 346,
+      "linked_at": "8C011F38",
+      "linked_size": 6900
+    },
+    {
+      "name": "_UpdateEngineSound",
+      "start": "8C011E98",
+      "end": "8C01234A",
+      "size": 1202,
+      "status": "differs",
+      "diff_bytes": 1190,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_UpdateSkids",
+      "start": "8C01234A",
+      "end": "8C0125B6",
+      "size": 620,
+      "status": "differs",
+      "diff_bytes": 613,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_UpdateRoadSounds",
+      "start": "8C0125B6",
+      "end": "8C012D6C",
+      "size": 1974,
+      "status": "differs",
+      "diff_bytes": 1914,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_UpdateBumps",
+      "start": "8C012D80",
+      "end": "8C013524",
+      "size": 1956,
+      "status": "differs",
+      "diff_bytes": 1927,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_CheckForces",
+      "start": "8C013524",
+      "end": "8C01358C",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 103,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_GetForceAndPeak",
+      "start": "8C01358C",
+      "end": "8C0136CE",
+      "size": 322,
+      "status": "differs",
+      "diff_bytes": 318,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_InitBumps",
+      "start": "8C0136CE",
+      "end": "8C013736",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 103,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "StopCarSounds",
+      "start": "8C01375C",
+      "end": "8C0138B6",
+      "size": 346,
+      "status": "differs",
+      "diff_bytes": 342,
+      "linked_at": "8C013A2C",
+      "linked_size": 396
+    },
+    {
+      "name": "PlayTargetSound",
+      "start": "8C0138EC",
+      "end": "8C013A32",
+      "size": 326,
+      "status": "differs",
+      "diff_bytes": 321,
+      "linked_at": "8C013BB8",
+      "linked_size": 340
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C011622",
+      "end": "8C01164C",
+      "exact": true,
+      "built": 42,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0117D4",
+      "end": "8C011824",
+      "exact": true,
+      "built": 80,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0118DC",
+      "end": "8C0118FC",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C011B1A",
+      "end": "8C011B40",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "pool",
+      "start": "8C011E6A",
+      "end": "8C011E98",
+      "exact": false,
+      "built": 46,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "pool",
+      "start": "8C012D6C",
+      "end": "8C012D80",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "pool",
+      "start": "8C013736",
+      "end": "8C01375C",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "pool",
+      "start": "8C0138B6",
+      "end": "8C0138EC",
+      "exact": false,
+      "built": 54,
+      "diff_bytes": 54
+    },
+    {
+      "kind": "pool",
+      "start": "8C013A32",
+      "end": "8C013A40",
+      "exact": false,
+      "built": 14,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A78B4",
+      "end": "8C0A78D4",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A78D4",
+      "end": "8C0A78F4",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A78F4",
+      "end": "8C0A7904",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0B92A0",
+      "end": "8C0B9498",
+      "exact": true,
+      "built": 504,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0B9498",
+      "end": "8C0B94AC",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0B94AC",
+      "end": "8C0BA76C",
+      "exact": true,
+      "built": 4800,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BA76C",
+      "end": "8C0BA7B8",
+      "exact": true,
+      "built": 76,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BA7B8",
+      "end": "8C0BA7C8",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C122618",
+      "end": "8C122BC0",
+      "exact": true,
+      "linked": [
+        "8C122618",
+        "8C122BC0"
+      ]
+    }
+  ],
+  "notes": [
+    "716 built bytes fall outside the mapped ranges (first 8C013A40, last 8C013D0B)"
+  ],
+  "built_at": "2026-10-18T16:00:14",
+  "defines": {
+    "_AudAddListener": "8C015266",
+    "_AudChangeEffectPitch": "8C014A02",
+    "_AudChangeEffectVol": "8C0148B8",
+    "_AudEmitEffect": "8C01548E",
+    "_AudEmitterPlaying": "8C0156CC",
+    "_AudPlayEffect": "8C014552",
+    "_AudPlayEffectVP": "8C014644",
+    "_AudPlaySong": "8C0144BA",
+    "_AudRemoveListener": "8C015332",
+    "_AudSetFxVol": "8C014F86",
+    "_AudSetMusicVol": "8C014F8C",
+    "_AudStopEffect": "8C014A68",
+    "_AudStopEmitter": "8C015618",
+    "_AudUpdateEmitter": "8C01574C",
+    "_AudUpdateListener": "8C0153D8",
+    "_BodyVector": "8C026B00",
+    "_Random": "8C027134",
+    "_gCamera": "8C12B648",
+    "_gCarHorn": "8C0BC142",
+    "_gCountDown": "8C12C510",
+    "_gFrameCount": "8C12253C",
+    "_gGameState": "8C0BFD3C",
+    "_gLink": "8C12C5A4",
+    "_gNumPlayers": "8C14CBB0",
+    "_gOptions": "8C14FDC8",
+    "_gRace": "8C12C628",
+    "_gRetraceRate": "8C0B8C28",
+    "_gSeconds": "8C122548",
+    "_gTrackNum": "8C15C9C0",
+    "_model": "8C14CBB4",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C011530",
+    "C": "8C0A78B4",
+    "D": "8C0B92A0",
+    "B": "8C122618"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C011530",
+      "length": 10204
+    },
+    {
+      "name": "C",
+      "address": "8C0A78B4",
+      "length": 80
+    },
+    {
+      "name": "D",
+      "address": "8C0B92A0",
+      "length": 5416
+    },
+    {
+      "name": "B",
+      "address": "8C122618",
+      "length": 1448
+    }
+  ],
+  "equal_text_bytes_including_fill": 582,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 5496,
+  "excluded_exact_data_fill": 639,
+  "excluded_data_padding": [
+    {
+      "start": "8C0B92AE",
+      "end": "8C0B92B0",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B92CA",
+      "end": "8C0B92CC",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B92E6",
+      "end": "8C0B92E8",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B9302",
+      "end": "8C0B9304",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B931E",
+      "end": "8C0B9320",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B933A",
+      "end": "8C0B933C",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B9356",
+      "end": "8C0B9358",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B9372",
+      "end": "8C0B9374",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B938E",
+      "end": "8C0B9390",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B93AA",
+      "end": "8C0B93AC",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B93C6",
+      "end": "8C0B93C8",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B93E2",
+      "end": "8C0B93E4",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B93FE",
+      "end": "8C0B9400",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B941A",
+      "end": "8C0B941C",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B9436",
+      "end": "8C0B9438",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B9452",
+      "end": "8C0B9454",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B946E",
+      "end": "8C0B9470",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B948A",
+      "end": "8C0B948C",
+      "reason": "Engine specification 1C stride: id long+5ushort ends+E, float lowVol+10; natural two-byte padding."
+    },
+    {
+      "start": "8C0B94A5",
+      "end": "8C0B94A8",
+      "reason": "Six-byte update array ends94A5; natural alignment before int waterfall94A8."
+    },
+    {
+      "start": "8C0B94AD",
+      "end": "8C0B94B0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B94C6",
+      "end": "8C0B94C8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B94D5",
+      "end": "8C0B94D8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B94EE",
+      "end": "8C0B94F0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B94FD",
+      "end": "8C0B9500",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9516",
+      "end": "8C0B9518",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9525",
+      "end": "8C0B9528",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B953E",
+      "end": "8C0B9540",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B954D",
+      "end": "8C0B9550",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9566",
+      "end": "8C0B9568",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9575",
+      "end": "8C0B9578",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B958E",
+      "end": "8C0B9590",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B959D",
+      "end": "8C0B95A0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B95B6",
+      "end": "8C0B95B8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B95C5",
+      "end": "8C0B95C8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B95DE",
+      "end": "8C0B95E0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B95ED",
+      "end": "8C0B95F0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9606",
+      "end": "8C0B9608",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9615",
+      "end": "8C0B9618",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B962E",
+      "end": "8C0B9630",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B963D",
+      "end": "8C0B9640",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9656",
+      "end": "8C0B9658",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9665",
+      "end": "8C0B9668",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B967E",
+      "end": "8C0B9680",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B968D",
+      "end": "8C0B9690",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B96A6",
+      "end": "8C0B96A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B96B5",
+      "end": "8C0B96B8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B96CE",
+      "end": "8C0B96D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B96DD",
+      "end": "8C0B96E0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B96F6",
+      "end": "8C0B96F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9705",
+      "end": "8C0B9708",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B971E",
+      "end": "8C0B9720",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B972D",
+      "end": "8C0B9730",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9746",
+      "end": "8C0B9748",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9755",
+      "end": "8C0B9758",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B976E",
+      "end": "8C0B9770",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B977D",
+      "end": "8C0B9780",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9796",
+      "end": "8C0B9798",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B97A5",
+      "end": "8C0B97A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B97BE",
+      "end": "8C0B97C0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B97CD",
+      "end": "8C0B97D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B97E6",
+      "end": "8C0B97E8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B97F5",
+      "end": "8C0B97F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B980E",
+      "end": "8C0B9810",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B981D",
+      "end": "8C0B9820",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9836",
+      "end": "8C0B9838",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9845",
+      "end": "8C0B9848",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B985E",
+      "end": "8C0B9860",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B986D",
+      "end": "8C0B9870",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9886",
+      "end": "8C0B9888",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9895",
+      "end": "8C0B9898",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B98AE",
+      "end": "8C0B98B0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B98BD",
+      "end": "8C0B98C0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B98D6",
+      "end": "8C0B98D8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B98E5",
+      "end": "8C0B98E8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B98FE",
+      "end": "8C0B9900",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B990D",
+      "end": "8C0B9910",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9926",
+      "end": "8C0B9928",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9935",
+      "end": "8C0B9938",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B994E",
+      "end": "8C0B9950",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B995D",
+      "end": "8C0B9960",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9976",
+      "end": "8C0B9978",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9985",
+      "end": "8C0B9988",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B999E",
+      "end": "8C0B99A0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B99AD",
+      "end": "8C0B99B0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B99C6",
+      "end": "8C0B99C8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B99D5",
+      "end": "8C0B99D8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B99EE",
+      "end": "8C0B99F0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B99FD",
+      "end": "8C0B9A00",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A16",
+      "end": "8C0B9A18",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A25",
+      "end": "8C0B9A28",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A3E",
+      "end": "8C0B9A40",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A4D",
+      "end": "8C0B9A50",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A66",
+      "end": "8C0B9A68",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A75",
+      "end": "8C0B9A78",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A8E",
+      "end": "8C0B9A90",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9A9D",
+      "end": "8C0B9AA0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9AB6",
+      "end": "8C0B9AB8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9AC5",
+      "end": "8C0B9AC8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9ADE",
+      "end": "8C0B9AE0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9AED",
+      "end": "8C0B9AF0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B06",
+      "end": "8C0B9B08",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B15",
+      "end": "8C0B9B18",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B2E",
+      "end": "8C0B9B30",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B3D",
+      "end": "8C0B9B40",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B56",
+      "end": "8C0B9B58",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B65",
+      "end": "8C0B9B68",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B7E",
+      "end": "8C0B9B80",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9B8D",
+      "end": "8C0B9B90",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9BA6",
+      "end": "8C0B9BA8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9BB5",
+      "end": "8C0B9BB8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9BCE",
+      "end": "8C0B9BD0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9BDD",
+      "end": "8C0B9BE0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9BF6",
+      "end": "8C0B9BF8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C05",
+      "end": "8C0B9C08",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C1E",
+      "end": "8C0B9C20",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C2D",
+      "end": "8C0B9C30",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C46",
+      "end": "8C0B9C48",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C55",
+      "end": "8C0B9C58",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C6E",
+      "end": "8C0B9C70",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C7D",
+      "end": "8C0B9C80",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9C96",
+      "end": "8C0B9C98",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9CA5",
+      "end": "8C0B9CA8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9CBE",
+      "end": "8C0B9CC0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9CCD",
+      "end": "8C0B9CD0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9CE6",
+      "end": "8C0B9CE8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9CF5",
+      "end": "8C0B9CF8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D0E",
+      "end": "8C0B9D10",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D1D",
+      "end": "8C0B9D20",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D36",
+      "end": "8C0B9D38",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D45",
+      "end": "8C0B9D48",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D5E",
+      "end": "8C0B9D60",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D6D",
+      "end": "8C0B9D70",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D86",
+      "end": "8C0B9D88",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9D95",
+      "end": "8C0B9D98",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9DAE",
+      "end": "8C0B9DB0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9DBD",
+      "end": "8C0B9DC0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9DD6",
+      "end": "8C0B9DD8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9DE5",
+      "end": "8C0B9DE8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9DFE",
+      "end": "8C0B9E00",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E0D",
+      "end": "8C0B9E10",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E26",
+      "end": "8C0B9E28",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E35",
+      "end": "8C0B9E38",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E4E",
+      "end": "8C0B9E50",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E5D",
+      "end": "8C0B9E60",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E76",
+      "end": "8C0B9E78",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E85",
+      "end": "8C0B9E88",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9E9E",
+      "end": "8C0B9EA0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9EAD",
+      "end": "8C0B9EB0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9EC6",
+      "end": "8C0B9EC8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9ED5",
+      "end": "8C0B9ED8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9EEE",
+      "end": "8C0B9EF0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9EFD",
+      "end": "8C0B9F00",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F16",
+      "end": "8C0B9F18",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F25",
+      "end": "8C0B9F28",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F3E",
+      "end": "8C0B9F40",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F4D",
+      "end": "8C0B9F50",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F66",
+      "end": "8C0B9F68",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F75",
+      "end": "8C0B9F78",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F8E",
+      "end": "8C0B9F90",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9F9D",
+      "end": "8C0B9FA0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9FB6",
+      "end": "8C0B9FB8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9FC5",
+      "end": "8C0B9FC8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9FDE",
+      "end": "8C0B9FE0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0B9FED",
+      "end": "8C0B9FF0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA006",
+      "end": "8C0BA008",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA015",
+      "end": "8C0BA018",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA02E",
+      "end": "8C0BA030",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA03D",
+      "end": "8C0BA040",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA056",
+      "end": "8C0BA058",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA065",
+      "end": "8C0BA068",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA07E",
+      "end": "8C0BA080",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA08D",
+      "end": "8C0BA090",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA0A6",
+      "end": "8C0BA0A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA0B5",
+      "end": "8C0BA0B8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA0CE",
+      "end": "8C0BA0D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA0DD",
+      "end": "8C0BA0E0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA0F6",
+      "end": "8C0BA0F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA105",
+      "end": "8C0BA108",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA11E",
+      "end": "8C0BA120",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA12D",
+      "end": "8C0BA130",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA146",
+      "end": "8C0BA148",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA155",
+      "end": "8C0BA158",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA16E",
+      "end": "8C0BA170",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA17D",
+      "end": "8C0BA180",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA196",
+      "end": "8C0BA198",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA1A5",
+      "end": "8C0BA1A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA1BE",
+      "end": "8C0BA1C0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA1CD",
+      "end": "8C0BA1D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA1E6",
+      "end": "8C0BA1E8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA1F5",
+      "end": "8C0BA1F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA20E",
+      "end": "8C0BA210",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA21D",
+      "end": "8C0BA220",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA236",
+      "end": "8C0BA238",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA245",
+      "end": "8C0BA248",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA25E",
+      "end": "8C0BA260",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA26D",
+      "end": "8C0BA270",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA286",
+      "end": "8C0BA288",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA295",
+      "end": "8C0BA298",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA2AE",
+      "end": "8C0BA2B0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA2BD",
+      "end": "8C0BA2C0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA2D6",
+      "end": "8C0BA2D8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA2E5",
+      "end": "8C0BA2E8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA2FE",
+      "end": "8C0BA300",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA30D",
+      "end": "8C0BA310",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA326",
+      "end": "8C0BA328",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA335",
+      "end": "8C0BA338",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA34E",
+      "end": "8C0BA350",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA35D",
+      "end": "8C0BA360",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA376",
+      "end": "8C0BA378",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA385",
+      "end": "8C0BA388",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA39E",
+      "end": "8C0BA3A0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA3AD",
+      "end": "8C0BA3B0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA3C6",
+      "end": "8C0BA3C8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA3D5",
+      "end": "8C0BA3D8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA3EE",
+      "end": "8C0BA3F0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA3FD",
+      "end": "8C0BA400",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA416",
+      "end": "8C0BA418",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA425",
+      "end": "8C0BA428",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA43E",
+      "end": "8C0BA440",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA44D",
+      "end": "8C0BA450",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA466",
+      "end": "8C0BA468",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA475",
+      "end": "8C0BA478",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA48E",
+      "end": "8C0BA490",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA49D",
+      "end": "8C0BA4A0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA4B6",
+      "end": "8C0BA4B8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA4C5",
+      "end": "8C0BA4C8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA4DE",
+      "end": "8C0BA4E0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA4ED",
+      "end": "8C0BA4F0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA506",
+      "end": "8C0BA508",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA515",
+      "end": "8C0BA518",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA52E",
+      "end": "8C0BA530",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA53D",
+      "end": "8C0BA540",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA556",
+      "end": "8C0BA558",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA565",
+      "end": "8C0BA568",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA57E",
+      "end": "8C0BA580",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA58D",
+      "end": "8C0BA590",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA5A6",
+      "end": "8C0BA5A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA5B5",
+      "end": "8C0BA5B8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA5CE",
+      "end": "8C0BA5D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA5DD",
+      "end": "8C0BA5E0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA5F6",
+      "end": "8C0BA5F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA605",
+      "end": "8C0BA608",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA61E",
+      "end": "8C0BA620",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA62D",
+      "end": "8C0BA630",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA646",
+      "end": "8C0BA648",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA655",
+      "end": "8C0BA658",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA66E",
+      "end": "8C0BA670",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA67D",
+      "end": "8C0BA680",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA696",
+      "end": "8C0BA698",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA6A5",
+      "end": "8C0BA6A8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA6BE",
+      "end": "8C0BA6C0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA6CD",
+      "end": "8C0BA6D0",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA6E6",
+      "end": "8C0BA6E8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA6F5",
+      "end": "8C0BA6F8",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA70E",
+      "end": "8C0BA710",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA71D",
+      "end": "8C0BA720",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA736",
+      "end": "8C0BA738",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA745",
+      "end": "8C0BA748",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    },
+    {
+      "start": "8C0BA75E",
+      "end": "8C0BA760",
+      "reason": "AudioEmitter 28 stride: numFx byte0/fxid long4 and radius ushort18/nextTime long1C; natural padding."
+    }
+  ],
+  "text_size_delta": 716,
+  "seconds": 2.4
+}

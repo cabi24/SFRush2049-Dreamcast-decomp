@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign60-lane5/TB_text');s=(p/'baseline.c').read_text();a=s.index('void * TB_Strcat(void * str1, void * str2)\n{');b=s.index('/* 0x8004fa30',a);t=s[a:b].replace('void * str1','unsigned char * str1').replace('unsigned char *s1=str1; ','').replace('s1','str1');s=s[:a]+t+s[b:];s=s.replace('void * TB_Strcat(void * str1, void * str2);','void * TB_Strcat(unsigned char * str1, void * str2);');Path('src/TB_text.c').write_text(s)

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign100-lane5/stunt');s=(p/'baseline.c').read_text().replace('        if (c >= 2 && (plyrInfo->stuntW[3][2] +\n                      (plyrInfo->stuntW[3][0] + plyrInfo->stuntW[3][1])) >= 3.1415927410125732421875f) {','        if (c >= 2 && ((plyrInfo->stuntW[3][0] + plyrInfo->stuntW[3][1]) +\n                       plyrInfo->stuntW[3][2]) >= 3.1415927410125732421875f) {');Path('src/stunt.c').write_text(s)

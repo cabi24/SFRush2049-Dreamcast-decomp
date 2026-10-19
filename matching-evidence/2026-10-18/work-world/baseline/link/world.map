@@ -1,0 +1,90 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT world.abs
+FORM A
+START P(8C065C78)
+DEFINE _MBOX_FindObject_WORK(8C03D390)
+DEFINE _MBOX_NewObject(8C03D090)
+DEFINE _MBOX_NewObjectCam(8C03D0A2)
+DEFINE _SetupTarget(8C0576F2)
+DEFINE _WorldBase(8C15FF70)
+DEFINE _WorldTable(8C15FF28)
+DEFINE _Worlddlidx(8C15FF74)
+DEFINE __slow_strcmp1(8C09BB5C)
+DEFINE __slow_strcpy(8C09BB0C)
+DEFINE _bsearch(8C09BC04)
+DEFINE _cur_world_obj(8C15FF78)
+DEFINE _func_8C05145C(8C05145C)
+DEFINE _func_8C0686F0(8C0686F0)
+DEFINE _func_8C0687B6(8C0687B6)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gNumModels(8C14CB1C)
+DEFINE _gWorldData(8C15FF24)
+PRINT world.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C065C78  -  H'8C065F2B  H'000002B4
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C065C78  -  H'8C065F2B  H'000002B4
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_FindWorldGroup                   H'8C065E2A               ENT
+_NewWorld                         H'8C065DFA               ENT
+_WorldClear                       H'8C065ED6               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_MBOX_FindObject_WORK                                               H'8C03D390
+_MBOX_NewObject                                                     H'8C03D090
+_MBOX_NewObjectCam                                                  H'8C03D0A2
+_SetupTarget                                                        H'8C0576F2
+_WorldBase                                                          H'8C15FF70
+_WorldTable                                                         H'8C15FF28
+_Worlddlidx                                                         H'8C15FF74
+__slow_strcmp1                                                      H'8C09BB5C
+__slow_strcpy                                                       H'8C09BB0C
+_bsearch                                                            H'8C09BC04
+_cur_world_obj                                                      H'8C15FF78
+_func_8C05145C                                                      H'8C05145C
+_func_8C0686F0                                                      H'8C0686F0
+_func_8C0687B6                                                      H'8C0687B6
+_gGameState                                                         H'8C0BFD3C
+_gNumModels                                                         H'8C14CB1C
+_gWorldData                                                         H'8C15FF24

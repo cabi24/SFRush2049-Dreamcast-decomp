@@ -1,0 +1,124 @@
+{
+ "name": "blit",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT blit.abs",
+  "FORM A",
+  "START P(8C018790)",
+  "START D(8C0BB224)",
+  "START B(8C128120)",
+  "DEFINE _MBOX_FindTexture_WORK(8C03D4AA)",
+  "DEFINE _ZOID_AddBlit(8C068DC8)",
+  "DEFINE _ZOID_CropBlit(8C068D50)",
+  "DEFINE _ZOID_FlipBlit(8C068E94)",
+  "DEFINE _ZOID_RemoveBlit(8C068E86)",
+  "DEFINE _ZOID_SetBlitData(8C068D92)",
+  "DEFINE _ZOID_TextBlit(8C068EBE)",
+  "DEFINE _ZOID_UpdateBlit(8C068D2C)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __modls(8C09B82C)",
+  "DEFINE _gNumModels(8C14CB1C)",
+  "DEFINE _inactiveBlit(8C0BDDC0)",
+  "PRINT blit.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\blit\\head\\obj\\blit.obj",
+   "sha256": "3c2cb10ac1d40aef98dea2550d5d0c2d1f3c887cd9344d339d9787962adbd210"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C018790",
+   "length": 1324
+  },
+  {
+   "name": "D",
+   "address": "8C0BB224",
+   "length": 4
+  },
+  {
+   "name": "B",
+   "address": "8C128120",
+   "length": 13604
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C018790",
+   "size": 244,
+   "exact": false,
+   "diff_bytes": 2,
+   "first_diff_offset": 217,
+   "sha256": "470a63eb4600a7dfcf5e9a519efb0bf05897a6358704f3cf07e6f35ec8dec3c5"
+  },
+  {
+   "section": "P",
+   "address": "8C018884",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "798a4610522a5e69010fa6254c364702bab73b7cee54a874eef1bf20711e0649"
+  },
+  {
+   "section": "P",
+   "address": "8C01897A",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 44,
+   "first_diff_offset": 26,
+   "sha256": "ee2177369b47847b9bb585fbedb5abee4061559fe4ce8bf28ed13a329ad7a708"
+  },
+  {
+   "section": "P",
+   "address": "8C018A70",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "3226fc64c9d71ca5fca777e22026380deb7900a40a780536c921b78b498866d4"
+  },
+  {
+   "section": "P",
+   "address": "8C018B66",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "1f0e0e584fe9aae87ac6cc8f90e952cf00df2651a3a8e020c728f853ec4956d2"
+  },
+  {
+   "section": "P",
+   "address": "8C018C5C",
+   "size": 10,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "82416158f1de0edafd819a0820231b6f742984fc456f519eedc5071a59fe24fc"
+  },
+  {
+   "section": "P",
+   "address": "8C018C68",
+   "size": 84,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "d97852a33bb8b343bbafc3f4e617c061ecfecd89de2f8aa18ce37d79f02d10f8"
+  },
+  {
+   "section": "D",
+   "address": "8C0BB224",
+   "size": 4,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e3820096cb82366b860b8a4e668453a7aaaf423af03bdf289fa308ea03a79332"
+  }
+ ],
+ "all_exact": false
+}

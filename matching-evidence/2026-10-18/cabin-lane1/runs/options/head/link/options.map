@@ -1,0 +1,203 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT options.abs
+FORM A
+START P(8C041220)
+DEFINE _AudSetFxVol(8C014F86)
+DEFINE _AudSetMusicVol(8C014F8C)
+DEFINE _SavePlayerOption(8C04C310)
+DEFINE _SetControls(8C01EC7A)
+DEFINE _gBackwards(8C12C657)
+DEFINE _gBattleMode(8C12C640)
+DEFINE _gBattleModeMins(8C12C644)
+DEFINE _gBattleModePoints(8C12C648)
+DEFINE _gCarMines(8C158699)
+DEFINE _gCatchup(8C14CBAE)
+DEFINE _gCheatState(8C0BEE9C)
+DEFINE _gCircuitPlayer(8C12BE4C)
+DEFINE _gCircuitTrack(8C12C08E)
+DEFINE _gCircuitTracks(8C12BE4D)
+DEFINE _gDeathMode(8C12C656)
+DEFINE _gDemolitionBattle(8C15869B)
+DEFINE _gDifficulty(8C12C650)
+DEFINE _gDriveHulk(8C15CFD8)
+DEFINE _gEnableTireScaling(8C15CFDE)
+DEFINE _gFogColor(8C12C658)
+DEFINE _gFogIntensity(8C15FF20)
+DEFINE _gFrameScale(8C15CFDD)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gGhostSelect(8C12C651)
+DEFINE _gGravityScale(8C14C5F8)
+DEFINE _gInvincible(8C12C571)
+DEFINE _gInvisibleCar(8C15CFDC)
+DEFINE _gInvisibleTrack(8C15FF2C)
+DEFINE _gLang(8C15C988)
+DEFINE _gMassiveMass(8C12BAB0)
+DEFINE _gMineCones(8C158698)
+DEFINE _gMirrorControls(8C12C10F)
+DEFINE _gMirrorWaves(8C15FA14)
+DEFINE _gNoAutoAbort(8C1503E6)
+DEFINE _gNoBrakes(8C12C110)
+DEFINE _gNoCarCollisions(8C12C0D0)
+DEFINE _gNumDrones(8C12C652)
+DEFINE _gNumLaps(8C12C654)
+DEFINE _gNumPlayers(8C14CBB0)
+DEFINE _gNumWindows(8C12B644)
+DEFINE _gOptions(8C14FDC8)
+DEFINE _gPlayers(8C006000)
+DEFINE _gRace(8C12C628)
+DEFINE _gRandomWeapons(8C15869A)
+DEFINE _gResurrectInPlace(8C1503E7)
+DEFINE _gShowCoins(8C13423B)
+DEFINE _gShowElapsed(8C134232)
+DEFINE _gShowMetric(8C13423C)
+DEFINE _gShowOdometer(8C134236)
+DEFINE _gShowPlace(8C134237)
+DEFINE _gShowPlayerArrows(8C13423A)
+DEFINE _gShowRadar(8C134231)
+DEFINE _gShowRemaining(8C134233)
+DEFINE _gShowShifter(8C134238)
+DEFINE _gShowSpeed(8C134235)
+DEFINE _gShowTach(8C134234)
+DEFINE _gShowTrackMap(8C134230)
+DEFINE _gShowWrongWay(8C134239)
+DEFINE _gSpecialTires(8C12C572)
+DEFINE _gStuntFlow(8C12C630)
+DEFINE _gStuntMode(8C12C62C)
+DEFINE _gStuntModeDeaths(8C12C63C)
+DEFINE _gStuntModeMins(8C12C634)
+DEFINE _gStuntModePoints(8C12C638)
+DEFINE _gSuicideMode(8C12C0D1)
+DEFINE _gSuperSpeed(8C12C570)
+DEFINE _gUpsideDownTrack(8C12B8A8)
+DEFINE _gWind(8C12C568)
+DEFINE _optionsFlag_8C1224C4(8C1224C4)
+PRINT options.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C041220  -  H'8C041C13  H'000009F4
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C041220  -  H'8C041C13  H'000009F4
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_GetDefaultOption                 H'8C041578               ENT
+_InitOptions                      H'8C041220               ENT
+_SetOptions                       H'8C041690               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AudSetFxVol                                                        H'8C014F86
+_AudSetMusicVol                                                     H'8C014F8C
+_SavePlayerOption                                                   H'8C04C310
+_SetControls                                                        H'8C01EC7A
+_gBackwards                                                         H'8C12C657
+_gBattleMode                                                        H'8C12C640
+_gBattleModeMins                                                    H'8C12C644
+_gBattleModePoints                                                  H'8C12C648
+_gCarMines                                                          H'8C158699
+_gCatchup                                                           H'8C14CBAE
+_gCheatState                                                        H'8C0BEE9C
+_gCircuitPlayer                                                     H'8C12BE4C
+_gCircuitTrack                                                      H'8C12C08E
+_gCircuitTracks                                                     H'8C12BE4D
+_gDeathMode                                                         H'8C12C656
+_gDemolitionBattle                                                  H'8C15869B
+_gDifficulty                                                        H'8C12C650
+_gDriveHulk                                                         H'8C15CFD8
+_gEnableTireScaling                                                 H'8C15CFDE
+_gFogColor                                                          H'8C12C658
+_gFogIntensity                                                      H'8C15FF20
+_gFrameScale                                                        H'8C15CFDD
+_gGameState                                                         H'8C0BFD3C
+_gGhostSelect                                                       H'8C12C651
+_gGravityScale                                                      H'8C14C5F8
+_gInvincible                                                        H'8C12C571
+_gInvisibleCar                                                      H'8C15CFDC
+_gInvisibleTrack                                                    H'8C15FF2C
+_gLang                                                              H'8C15C988
+_gMassiveMass                                                       H'8C12BAB0
+_gMineCones                                                         H'8C158698
+_gMirrorControls                                                    H'8C12C10F
+_gMirrorWaves                                                       H'8C15FA14
+_gNoAutoAbort                                                       H'8C1503E6
+_gNoBrakes                                                          H'8C12C110
+_gNoCarCollisions                                                   H'8C12C0D0
+_gNumDrones                                                         H'8C12C652
+_gNumLaps                                                           H'8C12C654
+_gNumPlayers                                                        H'8C14CBB0
+_gNumWindows                                                        H'8C12B644
+_gOptions                                                           H'8C14FDC8
+_gPlayers                                                           H'8C006000
+_gRace                                                              H'8C12C628
+_gRandomWeapons                                                     H'8C15869A
+_gResurrectInPlace                                                  H'8C1503E7
+_gShowCoins                                                         H'8C13423B
+_gShowElapsed                                                       H'8C134232
+_gShowMetric                                                        H'8C13423C
+_gShowOdometer                                                      H'8C134236
+_gShowPlace                                                         H'8C134237
+_gShowPlayerArrows                                                  H'8C13423A
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_gShowRadar                                                         H'8C134231
+_gShowRemaining                                                     H'8C134233
+_gShowShifter                                                       H'8C134238
+_gShowSpeed                                                         H'8C134235
+_gShowTach                                                          H'8C134234
+_gShowTrackMap                                                      H'8C134230
+_gShowWrongWay                                                      H'8C134239
+_gSpecialTires                                                      H'8C12C572
+_gStuntFlow                                                         H'8C12C630
+_gStuntMode                                                         H'8C12C62C
+_gStuntModeDeaths                                                   H'8C12C63C
+_gStuntModeMins                                                     H'8C12C634
+_gStuntModePoints                                                   H'8C12C638
+_gSuicideMode                                                       H'8C12C0D1
+_gSuperSpeed                                                        H'8C12C570
+_gUpsideDownTrack                                                   H'8C12B8A8
+_gWind                                                              H'8C12C568
+_optionsFlag_8C1224C4                                               H'8C1224C4

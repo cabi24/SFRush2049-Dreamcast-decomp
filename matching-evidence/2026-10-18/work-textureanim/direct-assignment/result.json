@@ -1,0 +1,80 @@
+{
+  "name": "textureanim",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/textureanim.c",
+  "source_sha256": "7899d1c9bd1269457a4482554e57f75a2e20e80fba9194664b9c0d58483cf1d7",
+  "text": [
+    "8C05B2E4",
+    "8C05B56C"
+  ],
+  "text_bytes": 648,
+  "exact_text_bytes": 0,
+  "align_bytes": 2,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 2,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitTextureAnimation",
+      "start": "8C05B2E4",
+      "end": "8C05B3C6",
+      "size": 226,
+      "status": "differs",
+      "diff_bytes": 150,
+      "linked_at": "8C05B2E4",
+      "linked_size": 224
+    },
+    {
+      "name": "TextureAnimation",
+      "start": "8C05B3C6",
+      "end": "8C05B56A",
+      "size": 420,
+      "status": "differs",
+      "diff_bytes": 410,
+      "linked_at": "8C05B3C4",
+      "linked_size": 420
+    }
+  ],
+  "segments": [
+    {
+      "kind": "align",
+      "start": "8C05B56A",
+      "end": "8C05B56C",
+      "exact": null,
+      "built": 0,
+      "diff_bytes": 2
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T14:30:15",
+  "defines": {
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_PaletteLists": "8C0C38C4",
+    "_TextureSwapLists": "8C0C3170",
+    "_gFrameSeconds": "8C12254C",
+    "_gLastFrameCount": "8C122550",
+    "_gNumModels": "8C14CB1C",
+    "_gRestartGame": "8C0BDD54",
+    "_gTrackNum": "8C15C9C0"
+  },
+  "starts": {
+    "P": "8C05B2E4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C05B2E4",
+      "length": 644
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -2,
+  "seconds": 1.9
+}

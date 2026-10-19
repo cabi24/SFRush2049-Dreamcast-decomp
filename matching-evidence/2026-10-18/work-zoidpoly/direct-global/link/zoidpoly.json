@@ -1,0 +1,81 @@
+{
+ "name": "zoidpoly",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT zoidpoly.abs",
+  "FORM A",
+  "START P(8C068F28)",
+  "START B(8C172844)",
+  "DEFINE _gMirrorWaves(8C15FA14)",
+  "DEFINE _gTexDefPtrs(8C14C71C)",
+  "PRINT zoidpoly.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-zoidpoly\\direct-global\\obj\\zoidpoly.obj",
+   "sha256": "d9105621e09e92d49710c86c2871adff56ec19d23dc6df0cb85d94a2764edac3"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C068F28",
+   "length": 900
+  },
+  {
+   "name": "B",
+   "address": "8C172844",
+   "length": 20808
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C068F28",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "22870c38cdb6c257799ebf7fa2b3d13dcbf1767fe9ca8ff101122bdaa91eb730"
+  },
+  {
+   "section": "P",
+   "address": "8C06901E",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "31ac85da0d16bc6aa8ea960adef635459a3c2bf65ce668d2b02d5cef4935499b"
+  },
+  {
+   "section": "P",
+   "address": "8C069114",
+   "size": 50,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "08c4d586f141af260e9d6cc8db96a623afe644e3a22d8ba344213b1af7e7cfec"
+  },
+  {
+   "section": "P",
+   "address": "8C069148",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ae39aa342fe69c97f4bb9531074d19a2f686e577878a1149eeda8e90ef2a4b07"
+  },
+  {
+   "section": "P",
+   "address": "8C06923E",
+   "size": 110,
+   "exact": false,
+   "diff_bytes": 16,
+   "first_diff_offset": 20,
+   "sha256": "5f043ce9a0d478c775f24af2629ecdbb54847533c1fece54e83c81a4f3f5e40c"
+  }
+ ],
+ "all_exact": false
+}

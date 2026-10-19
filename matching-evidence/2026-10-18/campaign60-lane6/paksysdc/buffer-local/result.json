@@ -1,0 +1,539 @@
+{
+  "name": "paksysdc",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/paksysdc.c",
+  "source_sha256": "2fa42eccddf003df1d6f09f0c980ea951e3dd79a944231b16bccfcc593acf045",
+  "text": [
+    "8C06CADC",
+    "8C06E5B4"
+  ],
+  "text_bytes": 6872,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 118,
+  "exact_data_bytes": 102,
+  "functions_total": 38,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "PS_InitPakSys",
+      "start": "8C06CADC",
+      "end": "8C06CBA8",
+      "size": 204,
+      "status": "differs",
+      "diff_bytes": 112,
+      "linked_at": "8C06CADC",
+      "linked_size": 202
+    },
+    {
+      "name": "func_8C06CBA8",
+      "start": "8C06CBA8",
+      "end": "8C06CBC2",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 26,
+      "linked_at": "8C06CBA6",
+      "linked_size": 26
+    },
+    {
+      "name": "func_8C06CBC2",
+      "start": "8C06CBC2",
+      "end": "8C06CBFA",
+      "size": 56,
+      "status": "differs",
+      "diff_bytes": 45,
+      "linked_at": "8C06CBC0",
+      "linked_size": 120
+    },
+    {
+      "name": "func_8C06CC40",
+      "start": "8C06CC40",
+      "end": "8C06CCE8",
+      "size": 168,
+      "status": "missing",
+      "diff_bytes": 168
+    },
+    {
+      "name": "func_8C06CCE8",
+      "start": "8C06CCE8",
+      "end": "8C06CCFC",
+      "size": 20,
+      "status": "missing",
+      "diff_bytes": 20
+    },
+    {
+      "name": "func_8C06CCFC",
+      "start": "8C06CCFC",
+      "end": "8C06CD0E",
+      "size": 18,
+      "status": "missing",
+      "diff_bytes": 18
+    },
+    {
+      "name": "_CompleteCallback",
+      "start": "8C06CD0E",
+      "end": "8C06CD14",
+      "size": 6,
+      "status": "missing",
+      "diff_bytes": 6
+    },
+    {
+      "name": "PS_PakServer",
+      "start": "8C06CD14",
+      "end": "8C06D0E4",
+      "size": 976,
+      "status": "missing",
+      "diff_bytes": 976
+    },
+    {
+      "name": "_SamePak",
+      "start": "8C06D0EC",
+      "end": "8C06D1D0",
+      "size": 228,
+      "status": "missing",
+      "diff_bytes": 228
+    },
+    {
+      "name": "_RemovePak",
+      "start": "8C06D1D8",
+      "end": "8C06D26C",
+      "size": 148,
+      "status": "missing",
+      "diff_bytes": 148
+    },
+    {
+      "name": "_ReadDirectory",
+      "start": "8C06D26C",
+      "end": "8C06D3C2",
+      "size": 342,
+      "status": "missing",
+      "diff_bytes": 342
+    },
+    {
+      "name": "_GetFileExt",
+      "start": "8C06D3C2",
+      "end": "8C06D41A",
+      "size": 88,
+      "status": "missing",
+      "diff_bytes": 88
+    },
+    {
+      "name": "PS_PakChanged",
+      "start": "8C06D41A",
+      "end": "8C06D426",
+      "size": 12,
+      "status": "missing",
+      "diff_bytes": 12
+    },
+    {
+      "name": "PS_PakInserted",
+      "start": "8C06D426",
+      "end": "8C06D472",
+      "size": 76,
+      "status": "missing",
+      "diff_bytes": 76
+    },
+    {
+      "name": "PS_PakDamaged",
+      "start": "8C06D472",
+      "end": "8C06D47E",
+      "size": 12,
+      "status": "missing",
+      "diff_bytes": 12
+    },
+    {
+      "name": "PS_PakFormatted",
+      "start": "8C06D47E",
+      "end": "8C06D48A",
+      "size": 12,
+      "status": "missing",
+      "diff_bytes": 12
+    },
+    {
+      "name": "PS_PakRumble",
+      "start": "8C06D48A",
+      "end": "8C06D496",
+      "size": 12,
+      "status": "missing",
+      "diff_bytes": 12
+    },
+    {
+      "name": "PS_GetFreeBytes",
+      "start": "8C06D496",
+      "end": "8C06D4DC",
+      "size": 70,
+      "status": "missing",
+      "diff_bytes": 70
+    },
+    {
+      "name": "PS_GetFreeBlocks",
+      "start": "8C06D4DC",
+      "end": "8C06D4EA",
+      "size": 14,
+      "status": "missing",
+      "diff_bytes": 14
+    },
+    {
+      "name": "PS_GetFreeFiles",
+      "start": "8C06D4EA",
+      "end": "8C06D518",
+      "size": 46,
+      "status": "missing",
+      "diff_bytes": 46
+    },
+    {
+      "name": "func_8C06D518",
+      "start": "8C06D518",
+      "end": "8C06D530",
+      "size": 24,
+      "status": "missing",
+      "diff_bytes": 24
+    },
+    {
+      "name": "PS_LockFile",
+      "start": "8C06D530",
+      "end": "8C06D5BC",
+      "size": 140,
+      "status": "missing",
+      "diff_bytes": 140
+    },
+    {
+      "name": "PS_CreateFile",
+      "start": "8C06D5C0",
+      "end": "8C06D960",
+      "size": 928,
+      "status": "missing",
+      "diff_bytes": 928
+    },
+    {
+      "name": "PS_DeleteFile",
+      "start": "8C06D960",
+      "end": "8C06DA10",
+      "size": 176,
+      "status": "missing",
+      "diff_bytes": 176
+    },
+    {
+      "name": "_DeleteFile",
+      "start": "8C06DA30",
+      "end": "8C06DB16",
+      "size": 230,
+      "status": "missing",
+      "diff_bytes": 230
+    },
+    {
+      "name": "PS_ReadFile",
+      "start": "8C06DB16",
+      "end": "8C06DB3E",
+      "size": 40,
+      "status": "missing",
+      "diff_bytes": 40
+    },
+    {
+      "name": "PS_ReadPartialFile",
+      "start": "8C06DB64",
+      "end": "8C06DDBE",
+      "size": 602,
+      "status": "missing",
+      "diff_bytes": 602
+    },
+    {
+      "name": "PS_PurgeFile",
+      "start": "8C06DDBE",
+      "end": "8C06DDEA",
+      "size": 44,
+      "status": "missing",
+      "diff_bytes": 44
+    },
+    {
+      "name": "PS_WriteFile",
+      "start": "8C06DDEA",
+      "end": "8C06DE04",
+      "size": 26,
+      "status": "missing",
+      "diff_bytes": 26
+    },
+    {
+      "name": "PS_FlushFile",
+      "start": "8C06DE2C",
+      "end": "8C06DED0",
+      "size": 164,
+      "status": "missing",
+      "diff_bytes": 164
+    },
+    {
+      "name": "PS_DiscardFileChanges",
+      "start": "8C06DED0",
+      "end": "8C06DEF8",
+      "size": 40,
+      "status": "missing",
+      "diff_bytes": 40
+    },
+    {
+      "name": "_ClearFlush",
+      "start": "8C06DEF8",
+      "end": "8C06DF56",
+      "size": 94,
+      "status": "missing",
+      "diff_bytes": 94
+    },
+    {
+      "name": "func_8C06DF64",
+      "start": "8C06DF64",
+      "end": "8C06E34E",
+      "size": 1002,
+      "status": "missing",
+      "diff_bytes": 1002
+    },
+    {
+      "name": "PS_FlushPak",
+      "start": "8C06E34E",
+      "end": "8C06E3DE",
+      "size": 144,
+      "status": "missing",
+      "diff_bytes": 144
+    },
+    {
+      "name": "func_8C06E3F8",
+      "start": "8C06E3F8",
+      "end": "8C06E450",
+      "size": 88,
+      "status": "missing",
+      "diff_bytes": 88
+    },
+    {
+      "name": "_ClearPak",
+      "start": "8C06E450",
+      "end": "8C06E486",
+      "size": 54,
+      "status": "missing",
+      "diff_bytes": 54
+    },
+    {
+      "name": "func_8C06E4A0",
+      "start": "8C06E4A0",
+      "end": "8C06E51A",
+      "size": 122,
+      "status": "missing",
+      "diff_bytes": 122
+    },
+    {
+      "name": "func_8C06E51A",
+      "start": "8C06E51A",
+      "end": "8C06E5B4",
+      "size": 154,
+      "status": "missing",
+      "diff_bytes": 154
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06CBFA",
+      "end": "8C06CC40",
+      "exact": false,
+      "built": 62,
+      "diff_bytes": 50
+    },
+    {
+      "kind": "pool",
+      "start": "8C06D0E4",
+      "end": "8C06D0EC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C06D1D0",
+      "end": "8C06D1D8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C06D5BC",
+      "end": "8C06D5C0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "pool",
+      "start": "8C06DA10",
+      "end": "8C06DA30",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C06DB3E",
+      "end": "8C06DB64",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "pool",
+      "start": "8C06DE04",
+      "end": "8C06DE2C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 40
+    },
+    {
+      "kind": "pool",
+      "start": "8C06DF56",
+      "end": "8C06DF64",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "pool",
+      "start": "8C06E3DE",
+      "end": "8C06E3F8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C06E486",
+      "end": "8C06E4A0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B1CEC",
+      "end": "8C0B1D22",
+      "exact": true,
+      "built": 54,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C96F4",
+      "end": "8C0C9734",
+      "exact": true,
+      "built": 64,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:38:39",
+  "defines": {
+    "_DeallocateMemory": "8C040832",
+    "_InitLL": "8C03A1B8",
+    "_PurgeableMemory": "8C040924",
+    "__ClearPak": "8C06E450",
+    "_func_8C06CCFC": "8C06CCFC",
+    "_func_8C0D9A14": "8C0D9A14",
+    "_func_8C0D9AFA": "8C0D9AFA",
+    "_gDCPakBuffer": "8C1858C8",
+    "_gDCPakErrorFunc": "8C185140",
+    "_gDCPakInited": "8C0C973C",
+    "_gPS_Files": "8C1850C0",
+    "_gPaks": "8C185144",
+    "_mem_func_8C040380": "8C040380",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C06CADC",
+    "C": "8C0B1CEC",
+    "D": "8C0C96F4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06CADC",
+      "length": 348
+    },
+    {
+      "name": "C",
+      "address": "8C0B1CEC",
+      "length": 54
+    },
+    {
+      "name": "D",
+      "address": "8C0C96F4",
+      "length": 64
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 118,
+  "excluded_exact_data_fill": 16,
+  "excluded_data_padding": [
+    {
+      "start": "8C0B1CF2",
+      "end": "8C0B1CF4",
+      "reason": "Two-byte alignment after six-byte format string; not semantic data."
+    },
+    {
+      "start": "8C0B1CF7",
+      "end": "8C0B1CF8",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1CFB",
+      "end": "8C0B1CFC",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1CFF",
+      "end": "8C0B1D00",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D03",
+      "end": "8C0B1D04",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D07",
+      "end": "8C0B1D08",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D0B",
+      "end": "8C0B1D0C",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D0F",
+      "end": "8C0B1D10",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D13",
+      "end": "8C0B1D14",
+      "reason": "One-byte alignment after two-character slot name and null."
+    },
+    {
+      "start": "8C0B1D16",
+      "end": "8C0B1D18",
+      "reason": "Two-byte alignment after one-character controller name and null."
+    },
+    {
+      "start": "8C0B1D1A",
+      "end": "8C0B1D1C",
+      "reason": "Two-byte alignment after one-character controller name and null."
+    },
+    {
+      "start": "8C0B1D1E",
+      "end": "8C0B1D20",
+      "reason": "Two-byte alignment after one-character controller name and null."
+    }
+  ],
+  "text_size_delta": -6524,
+  "seconds": 1.8
+}

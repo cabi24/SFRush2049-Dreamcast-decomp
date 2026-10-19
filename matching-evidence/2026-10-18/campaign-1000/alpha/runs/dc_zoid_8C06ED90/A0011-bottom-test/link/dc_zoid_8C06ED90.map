@@ -1,0 +1,128 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT dc_zoid_8C06ED90.abs
+FORM A
+START P(8C06ED90)
+DEFINE __divls(8C09B680)
+DEFINE _dcClipFunctions8C0C9778(8C0C9778)
+DEFINE _dcClippedTriangles8C19E950(8C19E950)
+DEFINE _dcCornerOrderA8C0C9758(8C0C9758)
+DEFINE _dcCornerOrderB8C0C9768(8C0C9768)
+DEFINE _dcCurrentList8C19E9DC(8C19E9DC)
+DEFINE _dcListStrips8C19E900(8C19E900)
+DEFINE _dcMaxOpaque8C19F4EC(8C19F4EC)
+DEFINE _dcMaxPunch8C19F4F4(8C19F4F4)
+DEFINE _dcMaxTrans8C19F4F0(8C19F4F0)
+DEFINE _dcPackets8C19E940(8C19E940)
+DEFINE _dcPass8C19E970(8C19E970)
+DEFINE _dcPerfA8C19E95C(8C19E95C)
+DEFINE _dcPerfB8C19E964(8C19E964)
+DEFINE _dcPerfC8C19E96C(8C19E96C)
+DEFINE _dcPlainTriangles8C19E930(8C19E930)
+DEFINE _dcReverseQuad8C15FA14(8C15FA14)
+DEFINE _dcSampleEnabled8C0C9754(8C0C9754)
+DEFINE _dcSavedOpaque8C19F4F8(8C19F4F8)
+DEFINE _dcSavedPunch8C19F500(8C19F500)
+DEFINE _dcSavedTrans8C19F4FC(8C19F4FC)
+DEFINE _dcSelectedSlot8C19E9D8(8C19E9D8)
+DEFINE _dcStatsMaximum8C19E9D4(8C19E9D4)
+DEFINE _dcStatsValue8C19E9D0(8C19E9D0)
+DEFINE _dcStrips8C19E920(8C19E920)
+DEFINE _dcTriangles8C19E928(8C19E928)
+DEFINE _dcUsedOpaque8C19F4E0(8C19F4E0)
+DEFINE _dcUsedPunch8C19F4E8(8C19F4E8)
+DEFINE _dcUsedTrans8C19F4E4(8C19F4E4)
+DEFINE _dcVertices8C19E938(8C19E938)
+DEFINE _func_8C0D8BC0(8C0D8BC0)
+DEFINE _func_8C0D9076(8C0D9076)
+DEFINE _func_8C0DAC20(8C0DAC20)
+DEFINE _func_8C0DC2A0(8C0DC2A0)
+PRINT dc_zoid_8C06ED90.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C06ED90  -  H'8C06F303  H'00000574
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C06ED90  -  H'8C06F303  H'00000574
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_func_8C06ED90                    H'8C06ED90               ENT
+_func_8C06EDC2                    H'8C06EDC2               ENT
+_func_8C06EDFC                    H'8C06EDFC               ENT
+_func_8C06EECC                    H'8C06EECC               ENT
+_func_8C06EF10                    H'8C06EF10               ENT
+_func_8C06EF40                    H'8C06EF3E               ENT
+_func_8C06F062                    H'8C06F05A               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+__divls                                                             H'8C09B680
+_dcClipFunctions8C0C9778                                            H'8C0C9778
+_dcClippedTriangles8C19E950                                         H'8C19E950
+_dcCornerOrderA8C0C9758                                             H'8C0C9758
+_dcCornerOrderB8C0C9768                                             H'8C0C9768
+_dcCurrentList8C19E9DC                                              H'8C19E9DC
+_dcListStrips8C19E900                                               H'8C19E900
+_dcMaxOpaque8C19F4EC                                                H'8C19F4EC
+_dcMaxPunch8C19F4F4                                                 H'8C19F4F4
+_dcMaxTrans8C19F4F0                                                 H'8C19F4F0
+_dcPackets8C19E940                                                  H'8C19E940
+_dcPass8C19E970                                                     H'8C19E970
+_dcPerfA8C19E95C                                                    H'8C19E95C
+_dcPerfB8C19E964                                                    H'8C19E964
+_dcPerfC8C19E96C                                                    H'8C19E96C
+_dcPlainTriangles8C19E930                                           H'8C19E930
+_dcReverseQuad8C15FA14                                              H'8C15FA14
+_dcSampleEnabled8C0C9754                                            H'8C0C9754
+_dcSavedOpaque8C19F4F8                                              H'8C19F4F8
+_dcSavedPunch8C19F500                                               H'8C19F500
+_dcSavedTrans8C19F4FC                                               H'8C19F4FC
+_dcSelectedSlot8C19E9D8                                             H'8C19E9D8
+_dcStatsMaximum8C19E9D4                                             H'8C19E9D4
+_dcStatsValue8C19E9D0                                               H'8C19E9D0
+_dcStrips8C19E920                                                   H'8C19E920
+_dcTriangles8C19E928                                                H'8C19E928
+_dcUsedOpaque8C19F4E0                                               H'8C19F4E0
+_dcUsedPunch8C19F4E8                                                H'8C19F4E8
+_dcUsedTrans8C19F4E4                                                H'8C19F4E4
+_dcVertices8C19E938                                                 H'8C19E938
+_func_8C0D8BC0                                                      H'8C0D8BC0
+_func_8C0D9076                                                      H'8C0D9076
+_func_8C0DAC20                                                      H'8C0DAC20
+_func_8C0DC2A0                                                      H'8C0DC2A0

@@ -1,0 +1,277 @@
+{
+ "name": "options",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT options.abs",
+  "FORM A",
+  "START P(8C041220)",
+  "DEFINE _AudSetFxVol(8C014F86)",
+  "DEFINE _AudSetMusicVol(8C014F8C)",
+  "DEFINE _SavePlayerOption(8C04C310)",
+  "DEFINE _SetControls(8C01EC7A)",
+  "DEFINE _gBackwards(8C12C657)",
+  "DEFINE _gBattleMode(8C12C640)",
+  "DEFINE _gBattleModeMins(8C12C644)",
+  "DEFINE _gBattleModePoints(8C12C648)",
+  "DEFINE _gCarMines(8C158699)",
+  "DEFINE _gCatchup(8C14CBAE)",
+  "DEFINE _gCheatState(8C0BEE9C)",
+  "DEFINE _gCircuitPlayer(8C12BE4C)",
+  "DEFINE _gCircuitTrack(8C12C08E)",
+  "DEFINE _gCircuitTracks(8C12BE4D)",
+  "DEFINE _gDeathMode(8C12C656)",
+  "DEFINE _gDemolitionBattle(8C15869B)",
+  "DEFINE _gDifficulty(8C12C650)",
+  "DEFINE _gDriveHulk(8C15CFD8)",
+  "DEFINE _gEnableTireScaling(8C15CFDE)",
+  "DEFINE _gFogColor(8C12C658)",
+  "DEFINE _gFogIntensity(8C15FF20)",
+  "DEFINE _gFrameScale(8C15CFDD)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gGhostSelect(8C12C651)",
+  "DEFINE _gGravityScale(8C14C5F8)",
+  "DEFINE _gInvincible(8C12C571)",
+  "DEFINE _gInvisibleCar(8C15CFDC)",
+  "DEFINE _gInvisibleTrack(8C15FF2C)",
+  "DEFINE _gLang(8C15C988)",
+  "DEFINE _gMassiveMass(8C12BAB0)",
+  "DEFINE _gMineCones(8C158698)",
+  "DEFINE _gMirrorControls(8C12C10F)",
+  "DEFINE _gMirrorWaves(8C15FA14)",
+  "DEFINE _gNoAutoAbort(8C1503E6)",
+  "DEFINE _gNoBrakes(8C12C110)",
+  "DEFINE _gNoCarCollisions(8C12C0D0)",
+  "DEFINE _gNumDrones(8C12C652)",
+  "DEFINE _gNumLaps(8C12C654)",
+  "DEFINE _gNumPlayers(8C14CBB0)",
+  "DEFINE _gNumWindows(8C12B644)",
+  "DEFINE _gOptions(8C14FDC8)",
+  "DEFINE _gPlayers(8C006000)",
+  "DEFINE _gRace(8C12C628)",
+  "DEFINE _gRandomWeapons(8C15869A)",
+  "DEFINE _gResurrectInPlace(8C1503E7)",
+  "DEFINE _gShowCoins(8C13423B)",
+  "DEFINE _gShowElapsed(8C134232)",
+  "DEFINE _gShowMetric(8C13423C)",
+  "DEFINE _gShowOdometer(8C134236)",
+  "DEFINE _gShowPlace(8C134237)",
+  "DEFINE _gShowPlayerArrows(8C13423A)",
+  "DEFINE _gShowRadar(8C134231)",
+  "DEFINE _gShowRemaining(8C134233)",
+  "DEFINE _gShowShifter(8C134238)",
+  "DEFINE _gShowSpeed(8C134235)",
+  "DEFINE _gShowTach(8C134234)",
+  "DEFINE _gShowTrackMap(8C134230)",
+  "DEFINE _gShowWrongWay(8C134239)",
+  "DEFINE _gSpecialTires(8C12C572)",
+  "DEFINE _gStuntFlow(8C12C630)",
+  "DEFINE _gStuntMode(8C12C62C)",
+  "DEFINE _gStuntModeDeaths(8C12C63C)",
+  "DEFINE _gStuntModeMins(8C12C634)",
+  "DEFINE _gStuntModePoints(8C12C638)",
+  "DEFINE _gSuicideMode(8C12C0D1)",
+  "DEFINE _gSuperSpeed(8C12C570)",
+  "DEFINE _gUpsideDownTrack(8C12B8A8)",
+  "DEFINE _gWind(8C12C568)",
+  "DEFINE _optionsFlag_8C1224C4(8C1224C4)",
+  "PRINT options.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\options\\head\\obj\\options.obj",
+   "sha256": "1606152804a61d84cbb9d655fa21e2adf6f12af409e09fb0a3751dbb4c52acb8"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C041220",
+   "length": 2548
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C041220",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 13,
+   "first_diff_offset": 7,
+   "sha256": "68bb93c2011034f35cf6f750264ed36d3022f2cc052ee915354fbc0619bc3583"
+  },
+  {
+   "section": "P",
+   "address": "8C041316",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e000165284105f8fb68c6fc0a29a66ab8d853dd0116d1c81c435e99fdb33e8e5"
+  },
+  {
+   "section": "P",
+   "address": "8C04140C",
+   "size": 172,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "f74db6179d8115008cd2094af09d0594aeb8f56046394aa9e025d27b965a80d5"
+  },
+  {
+   "section": "P",
+   "address": "8C0414B8",
+   "size": 56,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "b69fc1f0568e57f3baaa3eeeb055359c3c74cfb88d36fe9a7884c321e3036439"
+  },
+  {
+   "section": "P",
+   "address": "8C0414F0",
+   "size": 56,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2b5cce14b892c142c17313dc6cc979c5b4554a697d140c387dfed4204d1bdacf"
+  },
+  {
+   "section": "P",
+   "address": "8C041528",
+   "size": 56,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e59196c6d89ababde652548f77518353f46ae89fa768a4ae4162386b19a661c3"
+  },
+  {
+   "section": "P",
+   "address": "8C041560",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 10,
+   "first_diff_offset": 205,
+   "sha256": "445b77059453b7d04abd0b748b7ce9fe0a79388e986d80646a6e68d027e223f9"
+  },
+  {
+   "section": "P",
+   "address": "8C041656",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 119,
+   "first_diff_offset": 76,
+   "sha256": "8e24c7408cadd85c920f6da86209ee285cac3cbaf883753a1957e3be1fb1ffb3"
+  },
+  {
+   "section": "P",
+   "address": "8C04174C",
+   "size": 138,
+   "exact": false,
+   "diff_bytes": 124,
+   "first_diff_offset": 0,
+   "sha256": "5ac08a7b977b80011ab1b535bd7612714ebf1f2ae3fcda2ceaf1988d6f03bff5"
+  },
+  {
+   "section": "P",
+   "address": "8C0417D8",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 17,
+   "first_diff_offset": 8,
+   "sha256": "f3ada6e5fef1cc5969c4816f0fcd83367d80f9d5e73ec703d3165d94ac3782f3"
+  },
+  {
+   "section": "P",
+   "address": "8C0417F8",
+   "size": 56,
+   "exact": false,
+   "diff_bytes": 21,
+   "first_diff_offset": 0,
+   "sha256": "689e1ea09b2b677a3226335643e6f3e247688f5465d9233f5738ee608b3fe51b"
+  },
+  {
+   "section": "P",
+   "address": "8C041830",
+   "size": 56,
+   "exact": false,
+   "diff_bytes": 36,
+   "first_diff_offset": 0,
+   "sha256": "6712199d9ce89ba367130e80da8c1759d620aa82c76b0e87674698ab7e7e95fb"
+  },
+  {
+   "section": "P",
+   "address": "8C041868",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 171,
+   "first_diff_offset": 0,
+   "sha256": "ae51dc919f7879487952ff1e93e54ba05e3a05f011257c52be596a542605a94b"
+  },
+  {
+   "section": "P",
+   "address": "8C04195E",
+   "size": 134,
+   "exact": false,
+   "diff_bytes": 109,
+   "first_diff_offset": 0,
+   "sha256": "ca17de332b53bb2091512656a70fdc61abd9174201cf1e2d0af15b810b9eee34"
+  },
+  {
+   "section": "P",
+   "address": "8C0419E4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 224,
+   "first_diff_offset": 0,
+   "sha256": "26c2509669eec46cf244e20ec843767a6e146356172c1305881fd0e2765d72bb"
+  },
+  {
+   "section": "P",
+   "address": "8C041ADA",
+   "size": 68,
+   "exact": false,
+   "diff_bytes": 64,
+   "first_diff_offset": 0,
+   "sha256": "97b6a2602e2228596da406273e74f7a3252cb5f20eff962496f0f64d53923733"
+  },
+  {
+   "section": "P",
+   "address": "8C041B20",
+   "size": 36,
+   "exact": false,
+   "diff_bytes": 32,
+   "first_diff_offset": 0,
+   "sha256": "0fe125c36fe4d3af20c9c8a799d455c508aab6411a5e994ef6722a0afab3b48f"
+  },
+  {
+   "section": "P",
+   "address": "8C041B44",
+   "size": 158,
+   "exact": false,
+   "diff_bytes": 145,
+   "first_diff_offset": 0,
+   "sha256": "080d8e2f29a22c5a0062b67c8ae7f3013cde251f65fd2b18a9f9375f8f36d429"
+  },
+  {
+   "section": "P",
+   "address": "8C041BE4",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 31,
+   "first_diff_offset": 0,
+   "sha256": "d142535b6136078d44a9bde416762989900b69247dfc632e72923b9bd421db73"
+  },
+  {
+   "section": "P",
+   "address": "8C041C04",
+   "size": 16,
+   "exact": false,
+   "diff_bytes": 13,
+   "first_diff_offset": 0,
+   "sha256": "39376b9def6fdaa0d0bb55ab9236162dabb36d934868f4a22f50e58adff34e29"
+  }
+ ],
+ "all_exact": false
+}

@@ -1,0 +1,18 @@
+{
+  "unit": "resurrect",
+  "selected": "final-independent",
+  "baseline_functions": 0,
+  "final_functions": 0,
+  "new_functions": [],
+  "baseline_text": 0,
+  "final_text": 0,
+  "baseline_data": 328,
+  "final_data": 328,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\resurrect.c": "c8c39607f53487c4dd37b4f2b67eca1d3c3f0c7ce6fe874e3c816cf4f598d1aa",
+    "build\\campaign100-lane4\\resurrect\\final-independent\\obj\\resurrect.obj": "dbea065f6b3a6bbe34d8bf43015addaa120e51cf8c73adeea28c937e026deac2",
+    "build\\campaign100-lane4\\resurrect\\final-independent\\link\\resurrect.abs": "120bfa3021088b6668d72a3b1372115327651980e652b8856923d0a683770435",
+    "build\\campaign100-lane4\\resurrect\\final-independent\\pp\\resurrect.c": "80a538af8136457dbf107d776749119196f249ff6d30a0e5d843b1d6512b7584"
+  }
+}

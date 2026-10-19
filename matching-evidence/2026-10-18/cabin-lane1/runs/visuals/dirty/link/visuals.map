@@ -1,0 +1,170 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT visuals.abs
+FORM A
+START P(8C05E7A4)
+START D(8C0C3D94)
+DEFINE _CarNames(8C0BB8C8)
+DEFINE _CarPartFormat(8C0AE49C)
+DEFINE _InitVisualsCarScr(8C08AF1C)
+DEFINE _MBOX_FindObject_WORK(8C03D390)
+DEFINE _MBOX_FindTexture_WORK(8C03D4AA)
+DEFINE _MBOX_HideObject(8C03D0E0)
+DEFINE _MBOX_NewObjectCam(8C03D0A2)
+DEFINE _MBOX_ShowObject(8C03D1C4)
+DEFINE _MineName(8C0AE408)
+DEFINE _ObjNames(8C0AE088)
+DEFINE _SetTargetDefs(8C0581A8)
+DEFINE _TexNames(8C0AE42C)
+DEFINE _TrkNames(8C0AE17C)
+DEFINE _WeaponNames(8C0AE038)
+DEFINE _WheelObjNames(8C0AE428)
+DEFINE _WingNames(8C0AE058)
+DEFINE _ZOID_NewMatrix(8C06872E)
+DEFINE _ZOID_SetColor(8C0692AC)
+DEFINE _ZOID_SetEnvColor(8C0692CE)
+DEFINE _ZOID_SetTexture(8C0692F0)
+DEFINE __divls(8C09B680)
+DEFINE _carObjNames(8C0AE478)
+DEFINE _gCarMatrices(8C19F544)
+DEFINE _gCarMines(8C158699)
+DEFINE _gCarModelNums(8C15ED14)
+DEFINE _gCarPaintJobInited(8C15EE48)
+DEFINE _gCarParts(8C15D994)
+DEFINE _gCarTeamColor(8C15D024)
+DEFINE _gEnvCount(8C15CA34)
+DEFINE _gEnvList(8C15D98C)
+DEFINE _gEnvirons(8C15D02C)
+DEFINE _gFreeVis(8C15D990)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gLink(8C12C5A4)
+DEFINE _gMineCones(8C158698)
+DEFINE _gNumModels(8C14CB1C)
+DEFINE _gObjList(8C15CA5E)
+DEFINE _gRomObjDefPtrs(8C0BEBE8)
+DEFINE _gTexDefPtrs(8C14C71C)
+DEFINE _gTexList(8C15CA38)
+DEFINE _gWheelNames(8C0C3FEC)
+DEFINE _gWheelTextures(8C15EE7C)
+DEFINE _memset(8C09BE04)
+DEFINE _sheenName(8C0C40AC)
+DEFINE _sprintf(8C09BF0C)
+DEFINE _unitmatrix(8C0BD924)
+PRINT visuals.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C05E7A4  -  H'8C05EFAB  H'00000808
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C05E7A4  -  H'8C05EFAB  H'00000808
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0C3D94  -  H'8C0C3FEB  H'00000258
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0C3D94  -  H'8C0C3FEB  H'00000258
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_InitCarDynamicObjs               H'8C05EAE8               ENT
+_InitCarObj                       H'8C05EF0E               ENT
+_InitCarVisuals                   H'8C05ED66               ENT
+_InitEnvs                         H'8C05EBCE               ENT
+_InitTrackDynamicObjs             H'8C05E7A4               ENT
+_InitVisuals                      H'8C05ECB0               ENT
+_SetFrameColor                    H'8C05EE66               ENT
+_SetSheen                         H'8C05EDB8               ENT
+_SetSheenColor                    H'8C05EEB6               ENT
+_SetTSheenColor                   H'8C05EEE2               ENT
+_SheenColors                      H'8C0C3DC4               DAT
+_Track1Colors                     H'8C0C3E5C               DAT
+_Track4Colors                     H'8C0C3EC4               DAT
+_Track5Colors                     H'8C0C3F2C               DAT
+_gDummyVtx                        H'8C0C3D94               DAT
+_gTrackColors                     H'8C0C3F94               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_CarNames                                                           H'8C0BB8C8
+_CarPartFormat                                                      H'8C0AE49C
+_InitVisualsCarScr                                                  H'8C08AF1C
+_MBOX_FindObject_WORK                                               H'8C03D390
+_MBOX_FindTexture_WORK                                              H'8C03D4AA
+_MBOX_HideObject                                                    H'8C03D0E0
+_MBOX_NewObjectCam                                                  H'8C03D0A2
+_MBOX_ShowObject                                                    H'8C03D1C4
+_MineName                                                           H'8C0AE408
+_ObjNames                                                           H'8C0AE088
+_SetTargetDefs                                                      H'8C0581A8
+_TexNames                                                           H'8C0AE42C
+_TrkNames                                                           H'8C0AE17C
+_WeaponNames                                                        H'8C0AE038
+_WheelObjNames                                                      H'8C0AE428
+_WingNames                                                          H'8C0AE058
+_ZOID_NewMatrix                                                     H'8C06872E
+_ZOID_SetColor                                                      H'8C0692AC
+_ZOID_SetEnvColor                                                   H'8C0692CE
+_ZOID_SetTexture                                                    H'8C0692F0
+__divls                                                             H'8C09B680
+_carObjNames                                                        H'8C0AE478
+_gCarMatrices                                                       H'8C19F544
+_gCarMines                                                          H'8C158699
+_gCarModelNums                                                      H'8C15ED14
+_gCarPaintJobInited                                                 H'8C15EE48
+_gCarParts                                                          H'8C15D994
+_gCarTeamColor                                                      H'8C15D024
+_gEnvCount                                                          H'8C15CA34
+_gEnvList                                                           H'8C15D98C
+_gEnvirons                                                          H'8C15D02C
+_gFreeVis                                                           H'8C15D990
+_gGameState                                                         H'8C0BFD3C
+_gLink                                                              H'8C12C5A4
+_gMineCones                                                         H'8C158698
+_gNumModels                                                         H'8C14CB1C
+_gObjList                                                           H'8C15CA5E
+_gRomObjDefPtrs                                                     H'8C0BEBE8
+_gTexDefPtrs                                                        H'8C14C71C
+_gTexList                                                           H'8C15CA38
+_gWheelNames                                                        H'8C0C3FEC
+_gWheelTextures                                                     H'8C15EE7C
+_memset                                                             H'8C09BE04
+_sheenName                                                          H'8C0C40AC
+_sprintf                                                            H'8C09BF0C
+_unitmatrix                                                         H'8C0BD924

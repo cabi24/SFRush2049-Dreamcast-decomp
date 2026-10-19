@@ -1,0 +1,134 @@
+{
+ "name": "dc_zoid_8C06ED90",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT dc_zoid_8C06ED90.abs",
+  "FORM A",
+  "START P(8C06ED90)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE _dcClipFunctions8C0C9778(8C0C9778)",
+  "DEFINE _dcClippedTriangles8C19E950(8C19E950)",
+  "DEFINE _dcCornerOrderA8C0C9758(8C0C9758)",
+  "DEFINE _dcCornerOrderB8C0C9768(8C0C9768)",
+  "DEFINE _dcCurrentList8C19E9DC(8C19E9DC)",
+  "DEFINE _dcListStrips8C19E900(8C19E900)",
+  "DEFINE _dcMaxOpaque8C19F4EC(8C19F4EC)",
+  "DEFINE _dcMaxPunch8C19F4F4(8C19F4F4)",
+  "DEFINE _dcMaxTrans8C19F4F0(8C19F4F0)",
+  "DEFINE _dcPackets8C19E940(8C19E940)",
+  "DEFINE _dcPass8C19E970(8C19E970)",
+  "DEFINE _dcPerfA8C19E95C(8C19E95C)",
+  "DEFINE _dcPerfB8C19E964(8C19E964)",
+  "DEFINE _dcPerfC8C19E96C(8C19E96C)",
+  "DEFINE _dcPlainTriangles8C19E930(8C19E930)",
+  "DEFINE _dcReverseQuad8C15FA14(8C15FA14)",
+  "DEFINE _dcSampleEnabled8C0C9754(8C0C9754)",
+  "DEFINE _dcSavedOpaque8C19F4F8(8C19F4F8)",
+  "DEFINE _dcSavedPunch8C19F500(8C19F500)",
+  "DEFINE _dcSavedTrans8C19F4FC(8C19F4FC)",
+  "DEFINE _dcSelectedSlot8C19E9D8(8C19E9D8)",
+  "DEFINE _dcStatsMaximum8C19E9D4(8C19E9D4)",
+  "DEFINE _dcStatsValue8C19E9D0(8C19E9D0)",
+  "DEFINE _dcStrips8C19E920(8C19E920)",
+  "DEFINE _dcTriangles8C19E928(8C19E928)",
+  "DEFINE _dcUsedOpaque8C19F4E0(8C19F4E0)",
+  "DEFINE _dcUsedPunch8C19F4E8(8C19F4E8)",
+  "DEFINE _dcUsedTrans8C19F4E4(8C19F4E4)",
+  "DEFINE _dcVertices8C19E938(8C19E938)",
+  "DEFINE _func_8C0D8BC0(8C0D8BC0)",
+  "DEFINE _func_8C0D9076(8C0D9076)",
+  "DEFINE _func_8C0DAC20(8C0DAC20)",
+  "DEFINE _func_8C0DC2A0(8C0DC2A0)",
+  "PRINT dc_zoid_8C06ED90.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\campaign-1000\\alpha\\runs\\dc_zoid_8C06ED90\\A0011-bottom-test\\obj\\dc_zoid_8C06ED90.obj",
+   "sha256": "1f03d15d4cb1fcc5ff28aba5dfb18fd404c00c736948a7ac4f531ae782936a38"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C06ED90",
+   "length": 1396
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C06ED90",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 26,
+   "first_diff_offset": 129,
+   "sha256": "61855090458bbbaedc3479a4d8a6599246f6d897d48c8b5f82febdd8a5306c7c"
+  },
+  {
+   "section": "P",
+   "address": "8C06EE86",
+   "size": 224,
+   "exact": false,
+   "diff_bytes": 93,
+   "first_diff_offset": 2,
+   "sha256": "89bb4a8d3f56d1c76c333f1565e1133a6e2c436fe3a85ea18d327a753c220b7e"
+  },
+  {
+   "section": "P",
+   "address": "8C06EF68",
+   "size": 28,
+   "exact": false,
+   "diff_bytes": 14,
+   "first_diff_offset": 0,
+   "sha256": "15a1c53591e38184d84698e3f721f7cec6de9aea91f526dbe29e0d323ceefd57"
+  },
+  {
+   "section": "P",
+   "address": "8C06EF84",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 212,
+   "first_diff_offset": 0,
+   "sha256": "af32af0e283bac789483a4efc91afecdd9b2bd4296e25a37e551cf7e5ac14896"
+  },
+  {
+   "section": "P",
+   "address": "8C06F07A",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 231,
+   "first_diff_offset": 0,
+   "sha256": "9fbbe7993dbeaa5fc55cba56601ad0a8ac0f0d73106f4d4bb59182a484a216e3"
+  },
+  {
+   "section": "P",
+   "address": "8C06F170",
+   "size": 156,
+   "exact": false,
+   "diff_bytes": 155,
+   "first_diff_offset": 0,
+   "sha256": "c91d07fc8a4eae7c65f0081eb9f3ef3b387797f8dfb7b25c23309069121db94d"
+  },
+  {
+   "section": "P",
+   "address": "8C06F20C",
+   "size": 238,
+   "exact": false,
+   "diff_bytes": 235,
+   "first_diff_offset": 0,
+   "sha256": "7716d3ccc6294b89e0573bb3202e6af04d754aa39d3f56200d7b7c45c9d18a04"
+  },
+  {
+   "section": "P",
+   "address": "8C06F2FC",
+   "size": 8,
+   "exact": false,
+   "diff_bytes": 6,
+   "first_diff_offset": 0,
+   "sha256": "dd167095c4e4dfba95fc8c4a49de94c2e2e5a99b608328d45c67b8ee5a9d5b44"
+  }
+ ],
+ "all_exact": false
+}

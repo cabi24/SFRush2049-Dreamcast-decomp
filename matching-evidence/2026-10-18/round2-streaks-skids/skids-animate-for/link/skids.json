@@ -1,0 +1,201 @@
+{
+ "name": "skids",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT skids.abs",
+  "FORM A",
+  "START P(8C04E880)",
+  "START D(8C0BFCF4)",
+  "START B(8C152654)",
+  "DEFINE _FreeStatLLE(8C051400)",
+  "DEFINE _GetStatLLE(8C0513D8)",
+  "DEFINE _InitStatLL(8C05138C)",
+  "DEFINE _ZOID_NewPoly(8C068F28)",
+  "DEFINE _ZOID_RemovePoly(8C06926C)",
+  "DEFINE _ZOID_UpdatePoly(8C068FBE)",
+  "DEFINE _direction(8C0262F2)",
+  "DEFINE _gCamera(8C12B648)",
+  "DEFINE _gDummyVtx(8C0C3D94)",
+  "DEFINE _gGameCar(8C004000)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gSeconds(8C122548)",
+  "DEFINE _gShadowColor(8C0C3D90)",
+  "DEFINE _gTexList(8C15CA38)",
+  "DEFINE _memset(8C09BE04)",
+  "DEFINE _model(8C14CBB4)",
+  "DEFINE _surf(8C158390)",
+  "PRINT skids.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-streaks-skids\\skids-animate-for\\obj\\skids.obj",
+   "sha256": "17b27f98280bd247e0af562d6ee2156b0250a5b903a2c1e6d04c8f9dd127df09"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C04E880",
+   "length": 2760
+  },
+  {
+   "name": "D",
+   "address": "8C0BFCF4",
+   "length": 20
+  },
+  {
+   "name": "B",
+   "address": "8C152654",
+   "length": 5832
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C04E880",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "292fd185c97d3260350268b2d107cdf65b22d4f8aa20aed482daa4dedd636e34"
+  },
+  {
+   "section": "P",
+   "address": "8C04E976",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "068264e7db4f3bfd3902a543a471433fbf2df8b69e96df519a1875ba431c2fe6"
+  },
+  {
+   "section": "P",
+   "address": "8C04EA6C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 86,
+   "first_diff_offset": 91,
+   "sha256": "38d3ebd534d12b8b6f17bfa5f32cd8e21aa655f124e9ac678eb94e21b9e6f4a3"
+  },
+  {
+   "section": "P",
+   "address": "8C04EB62",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "38777e563ef1649e2e86a5eac17736f6479000b185dc6c3c5cdf94deae637ab8"
+  },
+  {
+   "section": "P",
+   "address": "8C04EC58",
+   "size": 154,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "09055b0b42837478db292705435f8e08a8fa6a60aa85a5a033b7126939099673"
+  },
+  {
+   "section": "P",
+   "address": "8C04ECF4",
+   "size": 8,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "b76e38c5cf52029db8318a6b9bac08c94a4fa33f026ea2a1ff2f7a467f4338eb"
+  },
+  {
+   "section": "P",
+   "address": "8C04ECFC",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "f16cc8cef7a71960ef72ba9a84f3fb3130cf69678fb3bffa3bdb54197ea0a7c7"
+  },
+  {
+   "section": "P",
+   "address": "8C04EDF2",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "aab9730cf36900eb17db168a4607ff7e8538ba3281d38ad51f8932a45cccd847"
+  },
+  {
+   "section": "P",
+   "address": "8C04EEE8",
+   "size": 188,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "372a286de29da587c38781a63413290a59cf9821afece31e3c054e4f32010a27"
+  },
+  {
+   "section": "P",
+   "address": "8C04EFA4",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "67a3d0bd0e50fb86a95f055efaec37efb209e02a3203990a597c2d08a81045cd"
+  },
+  {
+   "section": "P",
+   "address": "8C04F09A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "907724da7ebfdbf3a7f08e2d5a4519f63b34f59bd682a40a8c4f481bc822522a"
+  },
+  {
+   "section": "P",
+   "address": "8C04F190",
+   "size": 150,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "65e283fb73c763cf6ab01541db6a796b16f306cbb538b0a8b17b6dae8f3920ea"
+  },
+  {
+   "section": "P",
+   "address": "8C04F228",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 200,
+   "first_diff_offset": 16,
+   "sha256": "dea8a01b87abf1d6c982bdb485773952831eaccc19f82a6d38333cc10d0e8d23"
+  },
+  {
+   "section": "P",
+   "address": "8C04F320",
+   "size": 8,
+   "exact": false,
+   "diff_bytes": 7,
+   "first_diff_offset": 0,
+   "sha256": "90e53c49862053942903a0f20da4a58062f14575e32e6d6d657f1376c15ab084"
+  },
+  {
+   "section": "P",
+   "address": "8C04F328",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 24,
+   "first_diff_offset": 0,
+   "sha256": "76947ab3840a3ed10f2d1054099d790c606cdad32fa5b0d25454beb9305efa9d"
+  },
+  {
+   "section": "D",
+   "address": "8C0BFCF4",
+   "size": 20,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "974cfe9a5dee4b89f22b55d6b7eb7ec677f3b63a90199c7db55ea1f6c21283d7"
+  }
+ ],
+ "all_exact": false
+}

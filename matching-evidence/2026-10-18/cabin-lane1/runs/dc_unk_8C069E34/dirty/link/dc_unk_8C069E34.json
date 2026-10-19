@@ -1,0 +1,74 @@
+{
+ "name": "dc_unk_8C069E34",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT dc_unk_8C069E34.abs",
+  "FORM A",
+  "START P(8C069E34)",
+  "DEFINE _AllocateMemoryHeap(8C040256)",
+  "DEFINE _InitLL(8C03A1B8)",
+  "DEFINE _InsertLLE(8C03A1C8)",
+  "DEFINE _PurgeableMemory(8C040924)",
+  "DEFINE _dcQueueWorkWord8C0C7C34(8C0C7C34)",
+  "DEFINE _func_8C0A18E6(8C0A18E6)",
+  "DEFINE _func_8C0A191C(8C0A191C)",
+  "DEFINE _midiActive8C177B4C(8C177B4C)",
+  "DEFINE _midiFree8C177B3C(8C177B3C)",
+  "DEFINE _midiInitNodes8C177B6C(8C177B6C)",
+  "DEFINE _midiPending8C177B5C(8C177B5C)",
+  "DEFINE _midiRead1_8C0C7C38(8C0C7C38)",
+  "DEFINE _midiRead2_8C0C7C3C(8C0C7C3C)",
+  "DEFINE _midiReadBytes8C0C7C30(8C0C7C30)",
+  "DEFINE _midiWorkBytes8C0C7C2C(8C0C7C2C)",
+  "DEFINE _streamActive8C177FD0(8C177FD0)",
+  "DEFINE _streamFree8C177FC0(8C177FC0)",
+  "DEFINE _streamInitNodes8C177FF0(8C177FF0)",
+  "DEFINE _streamPending8C177FE0(8C177FE0)",
+  "PRINT dc_unk_8C069E34.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\dc_unk_8C069E34\\dirty\\obj\\dc_unk_8C069E34.obj",
+   "sha256": "926dc05f69a8fd0924aedb4c41a4cfa1721d33db186296045c138f35f6eb5737"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C069E34",
+   "length": 324
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C069E34",
+   "size": 244,
+   "exact": false,
+   "diff_bytes": 168,
+   "first_diff_offset": 21,
+   "sha256": "e0577f9e7828f6167dd2edc335a642a75f96f916ef604d58ca62b8016bd37c8c"
+  },
+  {
+   "section": "P",
+   "address": "8C069F28",
+   "size": 60,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ad9a4445019c8acadb71bbb6dd7c24ffc9bea201546633fd0febc0362af00ec4"
+  },
+  {
+   "section": "P",
+   "address": "8C069F64",
+   "size": 20,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "eaf69c3299ca6d7cff6f1a8f3569aa5f308882256845a8d010db55c72493099e"
+  }
+ ],
+ "all_exact": false
+}

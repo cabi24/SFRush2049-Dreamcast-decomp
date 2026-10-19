@@ -1,0 +1,23 @@
+{
+  "attempts": 11,
+  "quota": 500,
+  "remaining": 489,
+  "new_exact_bytes": 0,
+  "new_exact_functions": 0,
+  "completed_ids": [
+    "A0001",
+    "A0002",
+    "A0003",
+    "A0004",
+    "A0005",
+    "A0006",
+    "A0007",
+    "A0008",
+    "A0009",
+    "A0010",
+    "A0011"
+  ],
+  "coordination_error": "AGENTS_BUSY: no agent family belongs to this conversation. Other primes and their workers are isolated.",
+  "shared_files_modified_by_this_lane": [],
+  "counting": "Baselines and diagnostics excluded; source changes plus native compile/link/strict compare only."
+}

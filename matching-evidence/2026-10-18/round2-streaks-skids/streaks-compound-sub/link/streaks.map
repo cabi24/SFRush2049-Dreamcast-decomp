@@ -1,0 +1,91 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT streaks.abs
+FORM A
+START P(8C098E4C)
+START D(8C0D1DE0)
+START B(8C1A33F0)
+DEFINE _FreeStatLLE(8C051400)
+DEFINE _GetStatLLE(8C0513D8)
+DEFINE _InitStatLL(8C05138C)
+DEFINE _ZOID_NewPoly(8C068F28)
+DEFINE _ZOID_RemovePoly(8C06926C)
+DEFINE _ZOID_UpdatePoly(8C068FBE)
+DEFINE _gFrameSeconds(8C12254C)
+PRINT streaks.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C098E4C  -  H'8C099397  H'0000054C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C098E4C  -  H'8C099397  H'0000054C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0D1DE0  -  H'8C0D1DEF  H'00000010
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0D1DE0  -  H'8C0D1DEF  H'00000010
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C1A33F0  -  H'8C1A5107  H'00001D18
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C1A33F0  -  H'8C1A5107  H'00001D18
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_InitStreaks                      H'8C098E4C               ENT
+_NewStreak                        H'8C09915C               ENT
+_UpdateStreaks                    H'8C09924C               ENT
+__AnimateStreakPolys              H'8C098E76               ENT
+__NewStreakPoly                   H'8C098F64               ENT
+_gStreakColors                    H'8C0D1DE0               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_FreeStatLLE                                                        H'8C051400
+_GetStatLLE                                                         H'8C0513D8
+_InitStatLL                                                         H'8C05138C
+_ZOID_NewPoly                                                       H'8C068F28
+_ZOID_RemovePoly                                                    H'8C06926C
+_ZOID_UpdatePoly                                                    H'8C068FBE
+_gFrameSeconds                                                      H'8C12254C

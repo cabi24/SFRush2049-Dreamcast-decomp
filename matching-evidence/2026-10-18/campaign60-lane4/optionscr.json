@@ -1,0 +1,21 @@
+{
+  "unit": "optionscr",
+  "selected": "height-init",
+  "baseline_functions": 1,
+  "final_functions": 3,
+  "new_functions": [
+    "calcOptionMenuMaxSize",
+    "initButtons"
+  ],
+  "baseline_text": 166,
+  "final_text": 1118,
+  "baseline_data": 2092,
+  "final_data": 2092,
+  "note": "calcOptionMenuMaxSize and initButtons exact; early screen bodies displaced",
+  "hashes": {
+    "src\\optionscr.c": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+    "build\\campaign60-lane4\\optionscr\\height-init\\obj\\optionscr.obj": "dac43fb6883bc153b7c9a6f2d5d9a498019f65d482fe9b42f53ca383531b9d10",
+    "build\\campaign60-lane4\\optionscr\\height-init\\link\\optionscr.abs": "a476847cc4d5a8ac83138b0c92c1cd03f0db281aaf8a11aabbe8a5ec9f694fa6",
+    "build\\campaign60-lane4\\optionscr\\height-init\\pp\\optionscr.c": "5e4b85da46e1d7e598701eca2a8fe890feaa0da144555af29d941c12feffe798"
+  }
+}

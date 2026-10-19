@@ -1,0 +1,172 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT HAL_text.abs
+FORM A
+START P(8C02ECF4)
+START D(8C0BDF84)
+DEFINE _BlitClearAttribute(8C06B3BE)
+DEFINE _BlitClearColors(8C06B48A)
+DEFINE _BlitColors(8C06B4A0)
+DEFINE _BlitDraw(8C06B4E0)
+DEFINE _BlitScissor(8C06B44C)
+DEFINE _BlitSetAttribute(8C06B3AA)
+DEFINE _BlitXLU(8C06B42E)
+DEFINE _BlitZDist(8C06B414)
+DEFINE _FindWaveInstance(8C0656DE)
+DEFINE _GetWaveInstanceAddr(8C065280)
+DEFINE _LoadWave(8C0651B8)
+DEFINE _LockWaveInstance(8C065660)
+DEFINE _SetInterruptMask(8C010080)
+DEFINE _UnlockWaveInstance(8C06568A)
+DEFINE _gTexDefPtrs(8C14C71C)
+DEFINE _halTextBufLen(8C133BA4)
+DEFINE _halTextBuffer(8C133BA8)
+DEFINE _halTextCharMap(8C133990)
+DEFINE _halTextFontAttribute(8C133B98)
+DEFINE _halTextFontColor(8C133B90)
+DEFINE _halTextFontDatWaveInst(8C13393C)
+DEFINE _halTextFontHeader(8C133948)
+DEFINE _halTextFontIndex(8C133BA0)
+DEFINE _halTextFontLetters(8C13394C)
+DEFINE _halTextFontTexWaveInst(8C133940)
+DEFINE _halTextFontTextures(8C133950)
+DEFINE _halTextFontXpos(8C133B9C)
+DEFINE _halTextFontYpos(8C133B9E)
+DEFINE _halTextLastFontColor(8C133EC8)
+DEFINE _halTextLastFontIndex(8C133ED4)
+DEFINE _halTextLastFontXpos(8C133ED0)
+DEFINE _halTextLastFontYpos(8C133ED2)
+DEFINE _halTextLastLeading(8C133ED5)
+DEFINE _halTextLastSpacing(8C133ED6)
+DEFINE _halTextLastTrans(8C133ECC)
+DEFINE _halTextLeading(8C133B94)
+DEFINE _halTextOldMask(8C133938)
+DEFINE _halTextSpacing(8C133B95)
+DEFINE _mem_func_8C03FD8A(8C03FD8A)
+DEFINE _memcpy(8C09BD00)
+DEFINE _strcpy(8C09BB0C)
+DEFINE _strncpy(8C09BF98)
+PRINT HAL_text.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C02ECF4  -  H'8C02FC9F  H'00000FAC
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C02ECF4  -  H'8C02FC9F  H'00000FAC
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BDF84  -  H'8C0BDF95  H'00000012
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BDF84  -  H'8C0BDF95  H'00000012
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_HAL_DrawText                     H'8C02F630               ENT
+_HAL_FinishText                   H'8C02ED64               ENT
+_HAL_GetCharWidth                 H'8C02F45A               ENT
+_HAL_GetFontAscent                H'8C02F38E               ENT
+_HAL_GetFontChars                 H'8C02F410               ENT
+_HAL_GetFontDescent               H'8C02F3B0               ENT
+_HAL_GetFontLeading               H'8C02F3D2               ENT
+_HAL_GetFontSpacing               H'8C02F3E6               ENT
+_HAL_GetTextWidth                 H'8C02F4D8               ENT
+_HAL_InitText                     H'8C02ECF4               ENT
+_HAL_PurgeFonts                   H'8C02EFBE               ENT
+_HAL_SetFont                      H'8C02EF96               ENT
+_HAL_SetFontFixedWidth            H'8C02F36E               ENT
+_HAL_SetFontLeading               H'8C02F318               ENT
+_HAL_SetFontSpacing               H'8C02F34A               ENT
+_HAL_SetMenuTextDepth             H'8C02F25C               ENT
+_HAL_SetTextColor                 H'8C02F1EA               ENT
+_HAL_SetTextDepth                 H'8C02F230               ENT
+_HAL_SetTextPos                   H'8C02F2E8               ENT
+_HAL_SetTextTranslucency          H'8C02F288               ENT
+_HAL_StartText                    H'8C02ED1C               ENT
+__DrawText                        H'8C02F9C0               ENT
+__HAL_SetFont                     H'8C02EF00               ENT
+__SetDefaults                     H'8C02FC06               ENT
+__SetupFontData                   H'8C02F090               ENT
+__TextLen                         H'8C02FC48               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_BlitClearAttribute                                                 H'8C06B3BE
+_BlitClearColors                                                    H'8C06B48A
+_BlitColors                                                         H'8C06B4A0
+_BlitDraw                                                           H'8C06B4E0
+_BlitScissor                                                        H'8C06B44C
+_BlitSetAttribute                                                   H'8C06B3AA
+_BlitXLU                                                            H'8C06B42E
+_BlitZDist                                                          H'8C06B414
+_FindWaveInstance                                                   H'8C0656DE
+_GetWaveInstanceAddr                                                H'8C065280
+_LoadWave                                                           H'8C0651B8
+_LockWaveInstance                                                   H'8C065660
+_SetInterruptMask                                                   H'8C010080
+_UnlockWaveInstance                                                 H'8C06568A
+_gTexDefPtrs                                                        H'8C14C71C
+_halTextBufLen                                                      H'8C133BA4
+_halTextBuffer                                                      H'8C133BA8
+_halTextCharMap                                                     H'8C133990
+_halTextFontAttribute                                               H'8C133B98
+_halTextFontColor                                                   H'8C133B90
+_halTextFontDatWaveInst                                             H'8C13393C
+_halTextFontHeader                                                  H'8C133948
+_halTextFontIndex                                                   H'8C133BA0
+_halTextFontLetters                                                 H'8C13394C
+_halTextFontTexWaveInst                                             H'8C133940
+_halTextFontTextures                                                H'8C133950
+_halTextFontXpos                                                    H'8C133B9C
+_halTextFontYpos                                                    H'8C133B9E
+_halTextLastFontColor                                               H'8C133EC8
+_halTextLastFontIndex                                               H'8C133ED4
+_halTextLastFontXpos                                                H'8C133ED0
+_halTextLastFontYpos                                                H'8C133ED2
+_halTextLastLeading                                                 H'8C133ED5
+_halTextLastSpacing                                                 H'8C133ED6
+_halTextLastTrans                                                   H'8C133ECC
+_halTextLeading                                                     H'8C133B94
+_halTextOldMask                                                     H'8C133938
+_halTextSpacing                                                     H'8C133B95
+_mem_func_8C03FD8A                                                  H'8C03FD8A
+_memcpy                                                             H'8C09BD00
+_strcpy                                                             H'8C09BB0C
+_strncpy                                                            H'8C09BF98

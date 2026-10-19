@@ -1,0 +1,127 @@
+{
+ "name": "pane",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT pane.abs",
+  "FORM A",
+  "START P(8C044700)",
+  "START D(8C0BF768)",
+  "DEFINE _NewBlit(8C018992)",
+  "DEFINE _RemoveBlit(8C0187BA)",
+  "DEFINE _UpdateBlit(8C018910)",
+  "PRINT pane.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\pane\\head\\obj\\pane.obj",
+   "sha256": "69686ec532ebcabd29e07b4594f2542f93b2f26cbe549a0d238e4e27b9e20ec7"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C044700",
+   "length": 1340
+  },
+  {
+   "name": "D",
+   "address": "8C0BF768",
+   "length": 512
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C044700",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "9fa6921e5e3711a31cace6f0c314f16ac1a4a04898cdc3def712b2f8d9eca4f6"
+  },
+  {
+   "section": "P",
+   "address": "8C0447F6",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "de992f538e5f61fb1e868a4208be07d7d4b4d9ddac44692bc25cdc29c30135b4"
+  },
+  {
+   "section": "P",
+   "address": "8C0448EC",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "96c1830ad7e2cc5c194ad8e057a79cf0effddd977759e7d70c65c70ea7a8363e"
+  },
+  {
+   "section": "P",
+   "address": "8C0449E2",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "f109d26a8a484c914b51de5f402496f5775084005c21e854308f458a86bd8e21"
+  },
+  {
+   "section": "P",
+   "address": "8C044AD8",
+   "size": 26,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "0273c6ecbd9c7d27c2ebd854aeeb47e92da85de88ff954716c32ed3e8af8985a"
+  },
+  {
+   "section": "P",
+   "address": "8C044AF4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 145,
+   "first_diff_offset": 92,
+   "sha256": "f08cf544b34b5bd26df5aa30d8b6b9511f2505d7b77fba62500ecacec32a5ed2"
+  },
+  {
+   "section": "P",
+   "address": "8C044BEA",
+   "size": 76,
+   "exact": false,
+   "diff_bytes": 75,
+   "first_diff_offset": 0,
+   "sha256": "0e2d13fcf979298d5f8f0c1834840139341712c932283bd8cdca8699d3a21cf6"
+  },
+  {
+   "section": "P",
+   "address": "8C044C38",
+   "size": 4,
+   "exact": false,
+   "diff_bytes": 4,
+   "first_diff_offset": 0,
+   "sha256": "5e6c2a57fb8204154ad538418157f1c499884ef8617057ef3fb8eb532c768ac8"
+  },
+  {
+   "section": "D",
+   "address": "8C0BF768",
+   "size": 1,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+  },
+  {
+   "section": "D",
+   "address": "8C0BF769",
+   "size": 511,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "117985087e92cba0e8fdd6b35599d4ef451dda3ed40c865cad00b01708721666"
+  }
+ ],
+ "all_exact": false
+}

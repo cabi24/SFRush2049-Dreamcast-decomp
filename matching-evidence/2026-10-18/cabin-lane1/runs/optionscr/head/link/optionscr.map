@@ -1,0 +1,218 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT optionscr.abs
+FORM A
+START P(8C041C34)
+START C(8C0AC1AC)
+START D(8C0BEECC)
+DEFINE _ChangePaneSize(8C04481C)
+DEFINE _ClearRushControls(8C01E8C2)
+DEFINE _HAL_GetTextWidth(8C02F502)
+DEFINE _HAL_SetFont(8C02EF96)
+DEFINE _HAL_SetTextDepth(8C02F226)
+DEFINE _HAL_SetTextTranslucency(8C02F27E)
+DEFINE _InitPane(8C044700)
+DEFINE _LoadTextWave(8C05B164)
+DEFINE _MBOX_FindObject_WORK(8C03D390)
+DEFINE _MBOX_FindTexture_WORK(8C03D4AA)
+DEFINE _MBOX_HideObject(8C03D0E0)
+DEFINE _MBOX_NewObject(8C03D090)
+DEFINE _MBOX_ShowObject(8C03D1C4)
+DEFINE _NewMultiBlit(8C018B56)
+DEFINE _PlayLRSound(8C0115A4)
+DEFINE _PlayStartABSound(8C011586)
+DEFINE _PlayUDSound(8C0115BE)
+DEFINE _RemoveBlit(8C0187BA)
+DEFINE _RemovePanes(8C044B3C)
+DEFINE _SaveGlobals(8C04BA38)
+DEFINE _ScaleUV(8C026412)
+DEFINE _SetOptions(8C041690)
+DEFINE _TB_CenterText(8C05A708)
+DEFINE _TB_DrawText(8C05ACA6)
+DEFINE _TB_FlashTextColors(8C05A7FA)
+DEFINE _TB_GetFontLineHeight(8C05A828)
+DEFINE _TB_SetJust(8C05A73A)
+DEFINE _TB_SetTextColor(8C05A742)
+DEFINE _TB_Sprintf(8C05AC1E)
+DEFINE _WPitchUV(8C026524)
+DEFINE _WRollUV(8C0265D2)
+DEFINE _ZOID_ProjectWindow(8C069C14)
+DEFINE _ZOID_RemoveObject(8C068B9E)
+DEFINE _ZOID_SetColor(8C0692AC)
+DEFINE _ZOID_SetTexture(8C0692F0)
+DEFINE _ZeroCameras(8C018D98)
+DEFINE __divls(8C09B680)
+DEFINE _createBG(8C027320)
+DEFINE _flashColors(8C0BDDB8)
+DEFINE _gActiveAutoEdges(8C12C1BC)
+DEFINE _gActiveEdges(8C12C1B4)
+DEFINE _gAutoEdges(8C12C1A4)
+DEFINE _gCamera(8C12B648)
+DEFINE _gContEdges(8C12C194)
+DEFINE _gControllerData(8C12C114)
+DEFINE _gFirstOption(8C14FE50)
+DEFINE _gFrameSeconds(8C12254C)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gLang(8C15C988)
+DEFINE _gMenuCount(8C14FE4E)
+DEFINE _gNumModels(8C14CB1C)
+DEFINE _gOptionMenuSize(8C14FE30)
+DEFINE _gOptions(8C14FDC8)
+DEFINE _gSoftReset(8C12C200)
+DEFINE _gText(8C15C98C)
+DEFINE _memcpy(8C09BD00)
+DEFINE _optionsCursorSpeed(8C14FE54)
+DEFINE _optionsScrollSpeed(8C14FE58)
+DEFINE _playerInPause(8C1503D8)
+DEFINE _removeBG(8C027824)
+DEFINE _setGameState(8C05137C)
+DEFINE _setPauseState(8C04751E)
+DEFINE _unitmatrix(8C0BD924)
+PRINT optionscr.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C041C34  -  H'8C0435BB  H'00001988
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C041C34  -  H'8C0435BB  H'00001988
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AC1AC  -  H'8C0AC2D8  H'0000012D
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AC1AC  -  H'8C0AC2D8  H'0000012D
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BEECC  -  H'8C0BF75C  H'00000891
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BEECC  -  H'8C0BF75C  H'00000891
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+__TitlePane                       H'8C04207E               ENT
+_animButtonText                   H'8C0426A0               ENT
+_animText                         H'8C0422A8               ENT
+_cStrLanguageNames                H'8C0BEECC               DAT
+_calcOptionMenuMaxSize            H'8C042A9C               ENT
+_initButtons                      H'8C042B24               ENT
+_initScreen                       H'8C041F38               ENT
+_printOption                      H'8C0421D0               ENT
+_uninitButtons                    H'8C042EBC               ENT
+_uninitScreen                     H'8C042190               ENT
+_updateButtons                    H'8C042F44               ENT
+_updateOptionScreen               H'8C041C34               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_ChangePaneSize                                                     H'8C04481C
+_ClearRushControls                                                  H'8C01E8C2
+_HAL_GetTextWidth                                                   H'8C02F502
+_HAL_SetFont                                                        H'8C02EF96
+_HAL_SetTextDepth                                                   H'8C02F226
+_HAL_SetTextTranslucency                                            H'8C02F27E
+_InitPane                                                           H'8C044700
+_LoadTextWave                                                       H'8C05B164
+_MBOX_FindObject_WORK                                               H'8C03D390
+_MBOX_FindTexture_WORK                                              H'8C03D4AA
+_MBOX_HideObject                                                    H'8C03D0E0
+_MBOX_NewObject                                                     H'8C03D090
+_MBOX_ShowObject                                                    H'8C03D1C4
+_NewMultiBlit                                                       H'8C018B56
+_PlayLRSound                                                        H'8C0115A4
+_PlayStartABSound                                                   H'8C011586
+_PlayUDSound                                                        H'8C0115BE
+_RemoveBlit                                                         H'8C0187BA
+_RemovePanes                                                        H'8C044B3C
+_SaveGlobals                                                        H'8C04BA38
+_ScaleUV                                                            H'8C026412
+_SetOptions                                                         H'8C041690
+_TB_CenterText                                                      H'8C05A708
+_TB_DrawText                                                        H'8C05ACA6
+_TB_FlashTextColors                                                 H'8C05A7FA
+_TB_GetFontLineHeight                                               H'8C05A828
+_TB_SetJust                                                         H'8C05A73A
+_TB_SetTextColor                                                    H'8C05A742
+_TB_Sprintf                                                         H'8C05AC1E
+_WPitchUV                                                           H'8C026524
+_WRollUV                                                            H'8C0265D2
+_ZOID_ProjectWindow                                                 H'8C069C14
+_ZOID_RemoveObject                                                  H'8C068B9E
+_ZOID_SetColor                                                      H'8C0692AC
+_ZOID_SetTexture                                                    H'8C0692F0
+_ZeroCameras                                                        H'8C018D98
+__divls                                                             H'8C09B680
+_createBG                                                           H'8C027320
+_flashColors                                                        H'8C0BDDB8
+_gActiveAutoEdges                                                   H'8C12C1BC
+_gActiveEdges                                                       H'8C12C1B4
+_gAutoEdges                                                         H'8C12C1A4
+_gCamera                                                            H'8C12B648
+_gContEdges                                                         H'8C12C194
+_gControllerData                                                    H'8C12C114
+_gFirstOption                                                       H'8C14FE50
+_gFrameSeconds                                                      H'8C12254C
+_gGameState                                                         H'8C0BFD3C
+_gLang                                                              H'8C15C988
+_gMenuCount                                                         H'8C14FE4E
+_gNumModels                                                         H'8C14CB1C
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_gOptionMenuSize                                                    H'8C14FE30
+_gOptions                                                           H'8C14FDC8
+_gSoftReset                                                         H'8C12C200
+_gText                                                              H'8C15C98C
+_memcpy                                                             H'8C09BD00
+_optionsCursorSpeed                                                 H'8C14FE54
+_optionsScrollSpeed                                                 H'8C14FE58
+_playerInPause                                                      H'8C1503D8
+_removeBG                                                           H'8C027824
+_setGameState                                                       H'8C05137C
+_setPauseState                                                      H'8C04751E
+_unitmatrix                                                         H'8C0BD924

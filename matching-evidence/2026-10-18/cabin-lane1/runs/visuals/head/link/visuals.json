@@ -1,0 +1,233 @@
+{
+ "name": "visuals",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT visuals.abs",
+  "FORM A",
+  "START P(8C05E7A4)",
+  "START D(8C0C3D94)",
+  "DEFINE _CarNames(8C0BB8C8)",
+  "DEFINE _CarPartFormat(8C0AE49C)",
+  "DEFINE _InitVisualsCarScr(8C08AF1C)",
+  "DEFINE _MBOX_FindObject_WORK(8C03D390)",
+  "DEFINE _MBOX_FindTexture_WORK(8C03D4AA)",
+  "DEFINE _MBOX_HideObject(8C03D0E0)",
+  "DEFINE _MBOX_NewObjectCam(8C03D0A2)",
+  "DEFINE _MBOX_ShowObject(8C03D1C4)",
+  "DEFINE _MineName(8C0AE408)",
+  "DEFINE _ObjNames(8C0AE088)",
+  "DEFINE _SetTargetDefs(8C0581A8)",
+  "DEFINE _TexNames(8C0AE42C)",
+  "DEFINE _TrkNames(8C0AE17C)",
+  "DEFINE _WeaponNames(8C0AE038)",
+  "DEFINE _WheelObjNames(8C0AE428)",
+  "DEFINE _WingNames(8C0AE058)",
+  "DEFINE _ZOID_NewMatrix(8C06872E)",
+  "DEFINE _ZOID_SetColor(8C0692AC)",
+  "DEFINE _ZOID_SetEnvColor(8C0692CE)",
+  "DEFINE _ZOID_SetTexture(8C0692F0)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE _carObjNames(8C0AE478)",
+  "DEFINE _gCarMatrices(8C19F544)",
+  "DEFINE _gCarMines(8C158699)",
+  "DEFINE _gCarModelNums(8C15ED14)",
+  "DEFINE _gCarPaintJobInited(8C15EE48)",
+  "DEFINE _gCarParts(8C15D994)",
+  "DEFINE _gCarTeamColor(8C15D024)",
+  "DEFINE _gEnvCount(8C15CA34)",
+  "DEFINE _gEnvList(8C15D98C)",
+  "DEFINE _gEnvirons(8C15D02C)",
+  "DEFINE _gFreeVis(8C15D990)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gLink(8C12C5A4)",
+  "DEFINE _gMineCones(8C158698)",
+  "DEFINE _gNumModels(8C14CB1C)",
+  "DEFINE _gObjList(8C15CA5E)",
+  "DEFINE _gRomObjDefPtrs(8C0BEBE8)",
+  "DEFINE _gTexDefPtrs(8C14C71C)",
+  "DEFINE _gTexList(8C15CA38)",
+  "DEFINE _gWheelNames(8C0C3FEC)",
+  "DEFINE _gWheelTextures(8C15EE7C)",
+  "DEFINE _memset(8C09BE04)",
+  "DEFINE _sheenName(8C0C40AC)",
+  "DEFINE _sprintf(8C09BF0C)",
+  "DEFINE _unitmatrix(8C0BD924)",
+  "PRINT visuals.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\visuals\\head\\obj\\visuals.obj",
+   "sha256": "73d633defeba4651660b5feaf984851cf525d4d5cc7fbee2c536e3649854b2a3"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C05E7A4",
+   "length": 2020
+  },
+  {
+   "name": "D",
+   "address": "8C0C3D94",
+   "length": 600
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C05E7A4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 60,
+   "first_diff_offset": 19,
+   "sha256": "c3db5aeca708bc89a9f857c643914ef3d816ceb28c8bfd4a0141ccd681746fcf"
+  },
+  {
+   "section": "P",
+   "address": "8C05E89A",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 42,
+   "first_diff_offset": 18,
+   "sha256": "d2e95d964a389129f6c7d24f3d84ef4c408b6141eb3c980f7c113d3d1b65aa2e"
+  },
+  {
+   "section": "P",
+   "address": "8C05E990",
+   "size": 244,
+   "exact": false,
+   "diff_bytes": 38,
+   "first_diff_offset": 24,
+   "sha256": "873d11f58f0151d9d7ac491a51b3c34f673b285c2e4a3a367ba5158efc97ebdc"
+  },
+  {
+   "section": "P",
+   "address": "8C05EA84",
+   "size": 8,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ef2627ce8b6add4d1516e9d5374328881240692a3bf3ee4ea3efaeba32403084"
+  },
+  {
+   "section": "P",
+   "address": "8C05EA8C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 29,
+   "first_diff_offset": 30,
+   "sha256": "4ded45a6f7d6c7ea6a4e6cb4e7ef153727801f55c1c06d239b1586557843286b"
+  },
+  {
+   "section": "P",
+   "address": "8C05EB82",
+   "size": 208,
+   "exact": false,
+   "diff_bytes": 115,
+   "first_diff_offset": 2,
+   "sha256": "fe3161bdbd6a0eda608a0489df0dd2021cad0384da61e863a52b0294426665f8"
+  },
+  {
+   "section": "P",
+   "address": "8C05EC54",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 32,
+   "first_diff_offset": 0,
+   "sha256": "55025b346538cd5fb69597b2576b85126d3dddb86be4f8a7ac6c32b7e6ba79f4"
+  },
+  {
+   "section": "P",
+   "address": "8C05EC74",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 240,
+   "first_diff_offset": 0,
+   "sha256": "f097d2555126b95f8211085924070887dfa38f14907070d885c35db45c3b6b15"
+  },
+  {
+   "section": "P",
+   "address": "8C05ED6A",
+   "size": 38,
+   "exact": false,
+   "diff_bytes": 38,
+   "first_diff_offset": 0,
+   "sha256": "c19bc9d0231a208396a62a97a387a6d7375921a021b54c10845c6844e06f2d20"
+  },
+  {
+   "section": "P",
+   "address": "8C05ED90",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 244,
+   "first_diff_offset": 0,
+   "sha256": "c9a5fde400a01bdb900a92396fa7ba202d51c5ba960e514817463c8b55a27b10"
+  },
+  {
+   "section": "P",
+   "address": "8C05EE86",
+   "size": 200,
+   "exact": false,
+   "diff_bytes": 196,
+   "first_diff_offset": 0,
+   "sha256": "daa12c817341db5cf2958bf9958a5403e2f7ad12a6bd7c6d7ca9322324ceec8a"
+  },
+  {
+   "section": "P",
+   "address": "8C05EF50",
+   "size": 52,
+   "exact": false,
+   "diff_bytes": 51,
+   "first_diff_offset": 0,
+   "sha256": "a9e26ba19ea8e27621d6f4e50b6ddcf748e0eec920d9ed23ed80fe636a715d1f"
+  },
+  {
+   "section": "P",
+   "address": "8C05EF84",
+   "size": 4,
+   "exact": false,
+   "diff_bytes": 4,
+   "first_diff_offset": 0,
+   "sha256": "a3ac32f7407352b498189d49c190e4794e68a64d30693a6d4137c6f6c88d24ae"
+  },
+  {
+   "section": "D",
+   "address": "8C0C3D94",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "dc3c172263fa6102ab6d27563336a213a8fe77414147260e7ad8b432e767084d"
+  },
+  {
+   "section": "D",
+   "address": "8C0C3E8A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "64ee66caef6c092a301bfb6b076aa2d708bf9284629ace71e010008a81fc2cf0"
+  },
+  {
+   "section": "D",
+   "address": "8C0C3F80",
+   "size": 76,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ace59ab256b9a6e0908197064c64810e4ddeeb1ca2033bada0164cdbf8e02188"
+  },
+  {
+   "section": "D",
+   "address": "8C0C3FCC",
+   "size": 32,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "c991d47e851aa57ab3e805fcc3abf79526eca26ee67d6167122a31f3923127c8"
+  }
+ ],
+ "all_exact": false
+}

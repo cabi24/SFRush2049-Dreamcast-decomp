@@ -1,0 +1,63 @@
+{
+  "name": "unk_8C055F38",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unk_8C055F38.c",
+  "source_sha256": "43b3556863f91f0dfe02ea4f2842f6446e720b3f6e770d8b05ac7796dcef9feb",
+  "text": [
+    "8C055F38",
+    "8C056058"
+  ],
+  "text_bytes": 288,
+  "exact_text_bytes": 56,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 1,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C055F38",
+      "start": "8C055F38",
+      "end": "8C05601E",
+      "size": 230,
+      "status": "differs",
+      "diff_bytes": 155,
+      "linked_at": "8C055F38",
+      "linked_size": 288
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05601E",
+      "end": "8C056058",
+      "exact": true,
+      "built": 58,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:56:40",
+  "defines": {
+    "_modff": "8C09BE1C"
+  },
+  "starts": {
+    "P": "8C055F38"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C055F38",
+      "length": 288
+    }
+  ],
+  "equal_text_bytes_including_fill": 58,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.0
+}

@@ -1,0 +1,48 @@
+{
+  "unit": "model",
+  "verdict": "keep",
+  "dirty": {
+    "status": "exact",
+    "functions_exact": 3,
+    "functions_total": 3,
+    "functions_moved": 0,
+    "exact_text_bytes": 1520,
+    "equal_text_bytes_including_fill": 1532,
+    "text_bytes": 1532,
+    "exact_data_bytes": 1,
+    "source_sha256": "ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 2,
+    "functions_total": 3,
+    "functions_moved": 0,
+    "exact_text_bytes": 118,
+    "equal_text_bytes_including_fill": 118,
+    "text_bytes": 1532,
+    "exact_data_bytes": 1,
+    "source_sha256": "24b2e862c4654e1be6ea56d7e5b05277f4adaa9a1087baf072c50f04f88476f2"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "SetCatchup",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 1398
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1520,
+  "text_bytes_head": 118,
+  "report_consistency": {
+    "report_functions_exact": 3,
+    "dirty_rebuild_functions_exact": 3,
+    "report_exact_text_bytes": 1520,
+    "dirty_rebuild_exact_text_bytes": 1520,
+    "report_source_sha256": "ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501",
+    "dirty_source_sha256": "ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501",
+    "match": true
+  },
+  "head_source_sha256": "24b2e862c4654e1be6ea56d7e5b05277f4adaa9a1087baf072c50f04f88476f2",
+  "seconds": 4.9
+}

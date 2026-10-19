@@ -1,0 +1,11 @@
+8C06AEB2 sts.l pr,@-r15                                 | 8C06AEB2 sts.l pr,@-r15                                 
+8C06AEB4 add #-4,r15                                    | 8C06AEB4 add #-4,r15                                    
+8C06AEB6 mov.l @(0x8C06AF2C,pc),r3                      | 8C06AEB6 mov.l @(0x8C06AF2C,pc),r3                      
+8C06AEB8 jsr @r3                                        | 8C06AEB8 jsr @r3                                        
+8C06AEBA mov r15,r4                                     | 8C06AEBA mov r15,r4                                     
+8C06AEBC tst r0,r0                                      | 8C06AEBC mov.l @r15,r0                                  *
+8C06AEBE mov.l @r15,r0                                  | 8C06AEBE add #4,r15                                     *
+8C06AEC0 add #4,r15                                     | 8C06AEC0 lds.l @r15+,pr                                 *
+8C06AEC2 lds.l @r15+,pr                                 | 8C06AEC2 rts                                            *
+8C06AEC4 rts                                            | 8C06AEC4 nop                                            *
+8C06AEC6 nop                                            | 8C06AEC6                                                *

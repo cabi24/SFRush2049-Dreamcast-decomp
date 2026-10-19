@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign60-lane5/stunt');s=(p/'baseline.c').read_text();a=s.index('static void _CheckRoll(int p)\n{');b=s.index('static void _CheckSpin(int p)\n{',a);t=s[a:b].replace('    float *absW = GCabsW;\n','').replace('absW[','GCabsW[');s=s[:a]+t+s[b:];Path('src/stunt.c').write_text(s)

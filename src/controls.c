@@ -129,7 +129,9 @@ void ClearRushControls(void)
     ClearControls();
     player = gPlayers;
     for (i = 0; i < gNumPlayers; i++, player++) {
-        player->autoEdges = player->edges = player->levels = 0;
+        player->levels = 0;
+        player->edges = 0;
+        player->autoEdges = 0;
         player->analog[0] = 0.0f;
         player->analog[1] = 0.0f;
     }
@@ -138,11 +140,14 @@ void ClearRushControls(void)
 void UpdateRushControls(void)
 {
     int i;
+    tPadState *player;
     UpdateControls();
     for (i = 0; i < 4; i++) {
-        tPadState *player = &gPlayers[i];
+        player = &gPlayers[i];
         if (player->controller == 5 || i >= gNumPlayers) {
-            player->autoEdges = player->edges = player->levels = 0;
+            player->levels = 0;
+            player->edges = 0;
+            player->autoEdges = 0;
             player->analog[0] = 0.0f;
         player->analog[1] = 0.0f;
         } else {

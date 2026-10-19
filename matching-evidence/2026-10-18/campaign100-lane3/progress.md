@@ -1,0 +1,31 @@
+# Campaign100 lane3 -17/17 addressed
+
+RESULT: +168 strict text/literal bytes, +1 exact function (HAL_PurgeFonts), +0 data. One success, remaining16 bounded or context-blocked. Addressed counts do not imply matches.
+
+| # | Unit | Target | Outcome / attempts / residual |
+|---|---|---|---|
+| 1 | gamerecords | InitBattlePoints | blocked: target24-byte memset16+memset4 prefix lies beyond absent RecordRace/RecordCircuit/RecordLap bodies; no legal ordinary TU placement without implementing predecessors. Target listing inspected; no artificial padding/sections used. |
+| 2 | gamerecords | CountBits | blocked: target40-byte unsigned mask/byte-count loop reconstructed; function missing and lies behind >6KB missing predecessors; ordinary TU layout cannot place it yet. |
+| 3 | HAL_text | _HAL_SetFont | bounded/restored: baseline94 differences; assignment-condition138, local117, parameter102. No strict gain;4-byte early entry plus global-result compare scheduling. |
+| 4 | HAL_text | HAL_PurgeFonts | SUCCESS: assignment in condition matches full168-byte function, +168 text/+1 function; old exact spans preserved pending check. |
+| 5 | headlights | AnimateDownwardLights | blocked/context: native baseline Downward entry8C030250 is4 bytes before required8C030254; predecessor Forward remains source-shape capped, no new predecessor evidence. Its own prologue and argument allocation additionally differ. No repeated capped hypothesis. |
+| 6 | headlights | AnimateHeadLights | blocked/context: native baseline Animate entry8C030564 is4 bytes after required8C030560 and local slot stack+0 differs target+24. Target prologue inspected. Earlier Forward/Downward context must be repaired before strict equality; no padding/assembly used. |
+| 7 | highscorescr | _InitScreen | blocked/context: _InitScreen native entry8C030CAC versus required8C030CC8 (28-byte early). updateHighScoreScreen missing internal _SetHighScoreState body compiles wrong call class and preceding length. Target first40 instructions inspected; body also has distinct ghost-profile pointer scheduling. |
+| 8 | highscorescr | _UninitScreen | blocked/context: _UninitScreen requires prior update/InitScreen size recovery; native baseline exact spans none, data1177 preserved. Missing internal _SetHighScoreState affects caller length; no independent placement or added filler. See baseline linked map and result. |
+| 9 | hud | CheckResults | blocked/context: CheckResults currently starts8C034E24,72 bytes before target8C034E6C because updateFrame/predecessor pools are short. Native baseline and target inspected; previous updateFrame3 shapes capped. No replay without new evidence. |
+| 10 | hud | animSpeed | blocked/missing: animSpeed328-byte target begins8C035788; source callback absent and CheckResults preceding length unresolved. Ordinary TU cannot place added callback at real address yet; target32-byte prefix inspected, no fabricated gap. |
+| 11 | Init | func_8C03954A | bounded/restored: startup baseline94; stack declaration reorder94, retrace assignment reorder104, driverSize pointer254 (also regresses preceding exact pool). No gain. Target flags stack+4 and driver size+0 versus baseline0/+4, call argument stack pop differs. |
+| 12 | Init | func_8C039718 | bounded/restored: exit baseline42; test-temp47, for42, counter-pointer71. Target rematerializes frame-counter address after guard; baseline reuses register, emits2 fewer instruction bytes and shifts pool. |
+| 13 | unk_8C03A360 | func_8C03A360 | bounded/prior-cap: fresh native baseline unchanged6-byte difference. campaign60 already exhausted direct-static,frame-temp,direct-store shapes. No new target/type evidence justifying replay; retained baseline. Residual call-register assignment r1/r2/r3 atA378..380. |
+| 14 | unk_8C03A360 | func_8C03A3AE | bounded/prior-cap: fresh native baseline unchanged2-byte difference, GameLoop pointer r3 versus targetr1. Prior loop-result shape regressed. No new evidence to retry; baseline retained. Exact pool46 bytes preserved. |
+| 15 | maxpath | IntervalPos | blocked/context: IntervalPos actual entry8C03B0A4 versus target8C03B120 (124 early); preceding capped IntervalPosChange112-byte short with pool/alignment context. Native target prologue inspected; no source-only placement adjustment justified. |
+| 16 | maxpath | TargetSpeed | blocked/context: TargetSpeed actual8C03B95C versus target8C03B9B4 (88 early); preceding IntervalPos/FindMaxpathIntervals unresolved. Native target first16 instructions inspected; existing exact first4 functions preserved. No masked or moved credit. |
+| 17 | mdrive | init_cars | bounded/restored: init_cars baseline1226diff. New target-backed pointer caching shapes car1219,both1090,model1134. Target computes car/model bases before clearing model, candidate delays car;24-byte versus20-byte frame and pools remain different. No strict gain. |
+
+CHANGES: Only src/HAL_text.c retained. HAL_PurgeFonts puts each FindWaveInstance assignment inside its >=0 condition. This compares returned r0 before moving to argument r4, reproducing all168 target bytes at8C02EFBE..8C02F066. Three _HAL_SetFont source-shape failures restored before selecting this independent change.
+
+VALIDATION: Fresh native baseline for all9 units; isolated build_unit with frozen SHC5.1r11 flags. Independent final native rebuild selected at build/campaign100-lane3/HAL_text/final-rebuild/. All baseline exact function/pool/data spans verified unchanged by check.py. No masks/moved/fill/gap/BSS credit. Objects and absolute files remain private build. Final source/object/abs hashes are in HAL_text/final-rebuild/verification.json. All8 unrelated owned sources exactly restored to current campaign baselines.
+
+BLOCKERS: Header/map ownership precludes global placement repairs, and artificial padding/section hacks were not used. Missing preceding source and existing capped context residuals are recorded per target. No successful patch replay; no shared report/receipt/objdiff/header/map/extern/tool/HANDOFF changes, downloads,installs,security bypass,MAT3 writes,game/full builds,commits or pushes.
+
+Reproduce selected result: python -B matching-evidence/2026-10-18/campaign100-lane3/run.py HAL_text LABEL; python -B matching-evidence/2026-10-18/campaign100-lane3/check.py HAL_text final-rebuild.

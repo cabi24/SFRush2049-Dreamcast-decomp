@@ -1,0 +1,24 @@
+{
+  "unit": "pakerr",
+  "selected": "shape1",
+  "baseline_functions": 6,
+  "final_functions": 11,
+  "new_functions": [
+    "_DrawChoice",
+    "_DrawPakErrFull",
+    "_DrawPakErrInconsistent",
+    "_DrawPakErrNewPak",
+    "_DrawPakHeading"
+  ],
+  "baseline_text": 760,
+  "final_text": 1646,
+  "baseline_data": 52,
+  "final_data": 52,
+  "note": "5 exact helpers; SetPakError is2 bytes short; NQA6-byte register residual",
+  "hashes": {
+    "src\\pakerr.c": "5ff8dd44b48360f4c21302aa9b578d8d95a422a20e7f16821a2cde0fbbbe6ac3",
+    "build\\campaign60-lane4\\pakerr\\shape1\\obj\\pakerr.obj": "8f6230f1fd9c0520c851aed0f104bcb99b36139eeb94371cc562a196987cb338",
+    "build\\campaign60-lane4\\pakerr\\shape1\\link\\pakerr.abs": "aa09d9909aa23a000e08b425be8eb0e62a790fdd045f790b66089c047137f876",
+    "build\\campaign60-lane4\\pakerr\\shape1\\pp\\pakerr.c": "0d1922474ef63abf2229adf3f2bc1438091b803ee94f866b03352f2d77d99b01"
+  }
+}

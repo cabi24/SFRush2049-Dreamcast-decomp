@@ -1,0 +1,166 @@
+{
+  "name": "collision",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/collision.c",
+  "source_sha256": "50e84e30df796e1acf8c6e7a36ae633ead2f5e866ba562c6c550b28f8eefdb01",
+  "text": [
+    "8C01D41C",
+    "8C01E44C"
+  ],
+  "text_bytes": 4144,
+  "exact_text_bytes": 280,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 7,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "init_collision",
+      "start": "8C01D41C",
+      "end": "8C01D4F0",
+      "size": 212,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01D41C",
+      "linked_size": 212
+    },
+    {
+      "name": "collision",
+      "start": "8C01D4F0",
+      "end": "8C01D762",
+      "size": 626,
+      "status": "differs",
+      "diff_bytes": 72,
+      "linked_at": "8C01D4F0",
+      "linked_size": 626
+    },
+    {
+      "name": "PointInBody",
+      "start": "8C01D762",
+      "end": "8C01D7A6",
+      "size": 68,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01D762",
+      "linked_size": 68
+    },
+    {
+      "name": "ForceApart",
+      "start": "8C01D7A6",
+      "end": "8C01D8BE",
+      "size": 280,
+      "status": "differs",
+      "diff_bytes": 136,
+      "linked_at": "8C01D7A6",
+      "linked_size": 264
+    },
+    {
+      "name": "MiniForceApart",
+      "start": "8C01D8BE",
+      "end": "8C01D99C",
+      "size": 222,
+      "status": "differs",
+      "diff_bytes": 215,
+      "linked_at": "8C01D8AE",
+      "linked_size": 218
+    },
+    {
+      "name": "setFBCollisionForce",
+      "start": "8C01D9A4",
+      "end": "8C01E09E",
+      "size": 1786,
+      "status": "differs",
+      "diff_bytes": 1696,
+      "linked_at": "8C01D988",
+      "linked_size": 1808
+    },
+    {
+      "name": "setMiniFBCollisionForce",
+      "start": "8C01E0B8",
+      "end": "8C01E414",
+      "size": 860,
+      "status": "differs",
+      "diff_bytes": 830,
+      "linked_at": "8C01E098",
+      "linked_size": 896
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01D99C",
+      "end": "8C01D9A4",
+      "exact": false,
+      "built": 8,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C01E09E",
+      "end": "8C01E0B8",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C01E414",
+      "end": "8C01E44C",
+      "exact": false,
+      "built": 4,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C0D0",
+      "end": "8C12C0D2",
+      "exact": true,
+      "linked": [
+        "8C12C0D0",
+        "8C12C0D2"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:35:43",
+  "defines": {
+    "_BattleDamage": "8C096384",
+    "_BattleDamage2": "8C096434",
+    "_BodyVector": "8C026B00",
+    "_WorldVector": "8C026B8C",
+    "_gCarTeam": "8C15D020",
+    "_gDemolitionBattle": "8C15869B",
+    "_gGameCar": "8C004000",
+    "_gRace": "8C12C628",
+    "_magnitude": "8C02628A",
+    "_model": "8C14CBB4",
+    "_stree": "8C15838C"
+  },
+  "starts": {
+    "P": "8C01D41C",
+    "B": "8C12C0D0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01D41C",
+      "length": 4092
+    },
+    {
+      "name": "B",
+      "address": "8C12C0D0",
+      "length": 2
+    }
+  ],
+  "equal_text_bytes_including_fill": 280,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -52,
+  "seconds": 2.1
+}

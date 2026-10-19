@@ -1,0 +1,157 @@
+{
+ "name": "mbox",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT mbox.abs",
+  "FORM A",
+  "START P(8C03D090)",
+  "START C(8C0AC0B8)",
+  "START D(8C0BEBE8)",
+  "START B(8C14C71C)",
+  "DEFINE _ModelActive(8C0656B4)",
+  "DEFINE _ObjInstanceList(8C160870)",
+  "DEFINE _ZOID_AddObject(8C0689A0)",
+  "DEFINE _ZOID_ObjectFlags(8C068D0E)",
+  "DEFINE _ZOID_SetObjectFlags(8C068D1A)",
+  "DEFINE _ZOID_TrueObjParent(8C068896)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __slow_strcmp1(8C09BB5C)",
+  "DEFINE __slow_strcpy(8C09BB0C)",
+  "DEFINE _bsearch(8C09BC04)",
+  "DEFINE _strncmp(8C09BF58)",
+  "DEFINE _strncpy(8C09BF98)",
+  "PRINT mbox.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-mbox\\texture-register-last\\obj\\mbox.obj",
+   "sha256": "77c878fb9041a6ad6e35064e5dcaf5200436286f2e3ab623b4dae47763baa976"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C03D090",
+   "length": 1476
+  },
+  {
+   "name": "C",
+   "address": "8C0AC0B8",
+   "length": 11
+  },
+  {
+   "name": "D",
+   "address": "8C0BEBE8",
+   "length": 512
+  },
+  {
+   "name": "B",
+   "address": "8C14C71C",
+   "length": 1025
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C03D090",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 122,
+   "first_diff_offset": 22,
+   "sha256": "3a2d8b6985b3d33726dcfacfc910f04975d1580d1ba5ea6265e92c6d791b8258"
+  },
+  {
+   "section": "P",
+   "address": "8C03D186",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 6,
+   "first_diff_offset": 1,
+   "sha256": "044b4450bbfeeed16421fe812169325e30fcdd5669e703bc77cfaa5a1a7702ba"
+  },
+  {
+   "section": "P",
+   "address": "8C03D27C",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "9b68e8de350994cb696bd46f631604c7481cd4c34f7f9f8874b5ad7535341c08"
+  },
+  {
+   "section": "P",
+   "address": "8C03D372",
+   "size": 212,
+   "exact": false,
+   "diff_bytes": 94,
+   "first_diff_offset": 53,
+   "sha256": "9dc2ff0da8ae36482d300069d5d29cee16fbe818563dc4538df56b543259d10c"
+  },
+  {
+   "section": "P",
+   "address": "8C03D448",
+   "size": 12,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "6b0903c58e7c30bb6ce3bfa3947976d2944d7877ddf702e79c117d66d1ed8b56"
+  },
+  {
+   "section": "P",
+   "address": "8C03D454",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 110,
+   "first_diff_offset": 22,
+   "sha256": "4449fad4a45466e33445227382d54088454330d3585a1376a667a09da1426201"
+  },
+  {
+   "section": "P",
+   "address": "8C03D54A",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 103,
+   "first_diff_offset": 4,
+   "sha256": "5e6ce091ed41cb4fb42154b387fd439110c045264aaa17431b43db09dd34bcbb"
+  },
+  {
+   "section": "P",
+   "address": "8C03D640",
+   "size": 20,
+   "exact": false,
+   "diff_bytes": 6,
+   "first_diff_offset": 4,
+   "sha256": "5b3d2f2b98ef32ceedd84ae122abb1641e2d2d270e88885d5c4c62433715633c"
+  },
+  {
+   "section": "D",
+   "address": "8C0BEBE8",
+   "size": 4,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+   "section": "D",
+   "address": "8C0BEBEC",
+   "size": 508,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "64d6c19683061d281bcee4c3cb3fa451f3724613dcc114467cebfd53ee182e31"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC0B8",
+   "size": 11,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "5b846ba2e1981ba298cf67527f7074e017ccd7da0e23e0f861fe37286e3b9a9d"
+  }
+ ],
+ "all_exact": false
+}

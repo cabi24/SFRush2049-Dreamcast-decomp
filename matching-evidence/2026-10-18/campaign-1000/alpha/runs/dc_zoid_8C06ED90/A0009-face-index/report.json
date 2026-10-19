@@ -1,0 +1,405 @@
+{
+  "name": "dc_zoid_8C06ED90",
+  "kind": "game",
+  "status": "partial",
+  "source": "matching-evidence/2026-10-18/campaign-1000/alpha/candidates/dc_zoid_8C06ED90/dc_zoid_8C06ED90.c",
+  "source_sha256": "6f62f8a11ec5c501652a5eb98585929b2402fa5e0bcfc78e34af6d5248926243",
+  "text": [
+    "8C06ED90",
+    "8C071C1C"
+  ],
+  "text_bytes": 11916,
+  "exact_text_bytes": 108,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 31,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C06ED90",
+      "start": "8C06ED90",
+      "end": "8C06EDC2",
+      "size": 50,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06ED90",
+      "linked_size": 50
+    },
+    {
+      "name": "func_8C06EDC2",
+      "start": "8C06EDC2",
+      "end": "8C06EDFC",
+      "size": 58,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06EDC2",
+      "linked_size": 58
+    },
+    {
+      "name": "func_8C06EDFC",
+      "start": "8C06EDFC",
+      "end": "8C06EECC",
+      "size": 208,
+      "status": "differs",
+      "diff_bytes": 34,
+      "linked_at": "8C06EDFC",
+      "linked_size": 208
+    },
+    {
+      "name": "func_8C06EECC",
+      "start": "8C06EECC",
+      "end": "8C06EF10",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 8,
+      "linked_at": "8C06EECC",
+      "linked_size": 68
+    },
+    {
+      "name": "func_8C06EF10",
+      "start": "8C06EF10",
+      "end": "8C06EF40",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 47,
+      "linked_at": "8C06EF10",
+      "linked_size": 120
+    },
+    {
+      "name": "func_8C06EF40",
+      "start": "8C06EF40",
+      "end": "8C06F062",
+      "size": 290,
+      "status": "differs",
+      "diff_bytes": 271,
+      "linked_at": "8C06EF88",
+      "linked_size": 210
+    },
+    {
+      "name": "func_8C06F062",
+      "start": "8C06F062",
+      "end": "8C06F198",
+      "size": 310,
+      "status": "differs",
+      "diff_bytes": 292,
+      "linked_at": "8C06F05A",
+      "linked_size": 682
+    },
+    {
+      "name": "func_8C06F1EC",
+      "start": "8C06F1EC",
+      "end": "8C06F47A",
+      "size": 654,
+      "status": "differs",
+      "diff_bytes": 647,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C06F47A",
+      "start": "8C06F47A",
+      "end": "8C06F4D0",
+      "size": 86,
+      "status": "missing",
+      "diff_bytes": 86
+    },
+    {
+      "name": "func_8C06F4D0",
+      "start": "8C06F4D0",
+      "end": "8C06F7AA",
+      "size": 730,
+      "status": "missing",
+      "diff_bytes": 730
+    },
+    {
+      "name": "func_8C06F7AA",
+      "start": "8C06F7AA",
+      "end": "8C06F844",
+      "size": 154,
+      "status": "missing",
+      "diff_bytes": 154
+    },
+    {
+      "name": "func_8C06F844",
+      "start": "8C06F844",
+      "end": "8C06F976",
+      "size": 306,
+      "status": "missing",
+      "diff_bytes": 306
+    },
+    {
+      "name": "func_8C06F994",
+      "start": "8C06F994",
+      "end": "8C06FA12",
+      "size": 126,
+      "status": "missing",
+      "diff_bytes": 126
+    },
+    {
+      "name": "func_8C06FA12",
+      "start": "8C06FA12",
+      "end": "8C06FA9C",
+      "size": 138,
+      "status": "missing",
+      "diff_bytes": 138
+    },
+    {
+      "name": "func_8C06FA9C",
+      "start": "8C06FA9C",
+      "end": "8C06FAF6",
+      "size": 90,
+      "status": "missing",
+      "diff_bytes": 90
+    },
+    {
+      "name": "func_8C06FAF6",
+      "start": "8C06FAF6",
+      "end": "8C06FB52",
+      "size": 92,
+      "status": "missing",
+      "diff_bytes": 92
+    },
+    {
+      "name": "func_8C06FB52",
+      "start": "8C06FB52",
+      "end": "8C06FBBA",
+      "size": 104,
+      "status": "missing",
+      "diff_bytes": 104
+    },
+    {
+      "name": "func_8C06FBBA",
+      "start": "8C06FBBA",
+      "end": "8C06FC18",
+      "size": 94,
+      "status": "missing",
+      "diff_bytes": 94
+    },
+    {
+      "name": "func_8C06FC2C",
+      "start": "8C06FC2C",
+      "end": "8C06FC74",
+      "size": 72,
+      "status": "missing",
+      "diff_bytes": 72
+    },
+    {
+      "name": "func_8C06FC74",
+      "start": "8C06FC74",
+      "end": "8C06FCD8",
+      "size": 100,
+      "status": "missing",
+      "diff_bytes": 100
+    },
+    {
+      "name": "func_8C06FCD8",
+      "start": "8C06FCD8",
+      "end": "8C06FD32",
+      "size": 90,
+      "status": "missing",
+      "diff_bytes": 90
+    },
+    {
+      "name": "func_8C06FD32",
+      "start": "8C06FD32",
+      "end": "8C06FD68",
+      "size": 54,
+      "status": "missing",
+      "diff_bytes": 54
+    },
+    {
+      "name": "func_8C06FD68",
+      "start": "8C06FD68",
+      "end": "8C06FD9E",
+      "size": 54,
+      "status": "missing",
+      "diff_bytes": 54
+    },
+    {
+      "name": "func_8C06FD9E",
+      "start": "8C06FD9E",
+      "end": "8C06FE0A",
+      "size": 108,
+      "status": "missing",
+      "diff_bytes": 108
+    },
+    {
+      "name": "func_8C06FE24",
+      "start": "8C06FE24",
+      "end": "8C0705EA",
+      "size": 1990,
+      "status": "missing",
+      "diff_bytes": 1990
+    },
+    {
+      "name": "func_8C0705EA",
+      "start": "8C0705EA",
+      "end": "8C070BA0",
+      "size": 1462,
+      "status": "missing",
+      "diff_bytes": 1462
+    },
+    {
+      "name": "func_8C070BCC",
+      "start": "8C070BCC",
+      "end": "8C070BF8",
+      "size": 44,
+      "status": "missing",
+      "diff_bytes": 44
+    },
+    {
+      "name": "func_8C070BF8",
+      "start": "8C070BF8",
+      "end": "8C070C20",
+      "size": 40,
+      "status": "missing",
+      "diff_bytes": 40
+    },
+    {
+      "name": "func_8C070C20",
+      "start": "8C070C20",
+      "end": "8C070C32",
+      "size": 18,
+      "status": "missing",
+      "diff_bytes": 18
+    },
+    {
+      "name": "func_8C070C32",
+      "start": "8C070C32",
+      "end": "8C071572",
+      "size": 2368,
+      "status": "missing",
+      "diff_bytes": 2368
+    },
+    {
+      "name": "func_8C071588",
+      "start": "8C071588",
+      "end": "8C071B10",
+      "size": 1416,
+      "status": "missing",
+      "diff_bytes": 1416
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06F198",
+      "end": "8C06F1EC",
+      "exact": false,
+      "built": 84,
+      "diff_bytes": 68
+    },
+    {
+      "kind": "pool",
+      "start": "8C06F976",
+      "end": "8C06F994",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C06FC18",
+      "end": "8C06FC2C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "pool",
+      "start": "8C06FE0A",
+      "end": "8C06FE24",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C070BA0",
+      "end": "8C070BCC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C071572",
+      "end": "8C071588",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 22
+    },
+    {
+      "kind": "pool",
+      "start": "8C071B10",
+      "end": "8C071B5C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 76
+    },
+    {
+      "kind": "gap",
+      "start": "8C071B5C",
+      "end": "8C071C1C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 192
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T17:39:31",
+  "defines": {
+    "__divls": "8C09B680",
+    "_dcClipFunctions8C0C9778": "8C0C9778",
+    "_dcClippedTriangles8C19E950": "8C19E950",
+    "_dcCornerOrderA8C0C9758": "8C0C9758",
+    "_dcCornerOrderB8C0C9768": "8C0C9768",
+    "_dcCurrentList8C19E9DC": "8C19E9DC",
+    "_dcListStrips8C19E900": "8C19E900",
+    "_dcMaxOpaque8C19F4EC": "8C19F4EC",
+    "_dcMaxPunch8C19F4F4": "8C19F4F4",
+    "_dcMaxTrans8C19F4F0": "8C19F4F0",
+    "_dcPackets8C19E940": "8C19E940",
+    "_dcPass8C19E970": "8C19E970",
+    "_dcPerfA8C19E95C": "8C19E95C",
+    "_dcPerfB8C19E964": "8C19E964",
+    "_dcPerfC8C19E96C": "8C19E96C",
+    "_dcPlainTriangles8C19E930": "8C19E930",
+    "_dcReverseQuad8C15FA14": "8C15FA14",
+    "_dcSampleEnabled8C0C9754": "8C0C9754",
+    "_dcSavedOpaque8C19F4F8": "8C19F4F8",
+    "_dcSavedPunch8C19F500": "8C19F500",
+    "_dcSavedTrans8C19F4FC": "8C19F4FC",
+    "_dcSelectedSlot8C19E9D8": "8C19E9D8",
+    "_dcStatsMaximum8C19E9D4": "8C19E9D4",
+    "_dcStatsValue8C19E9D0": "8C19E9D0",
+    "_dcStrips8C19E920": "8C19E920",
+    "_dcTriangles8C19E928": "8C19E928",
+    "_dcUsedOpaque8C19F4E0": "8C19F4E0",
+    "_dcUsedPunch8C19F4E8": "8C19F4E8",
+    "_dcUsedTrans8C19F4E4": "8C19F4E4",
+    "_dcVertices8C19E938": "8C19E938",
+    "_func_8C0D8BC0": "8C0D8BC0",
+    "_func_8C0D9076": "8C0D9076",
+    "_func_8C0DAC20": "8C0DAC20",
+    "_func_8C0DC2A0": "8C0DC2A0"
+  },
+  "starts": {
+    "P": "8C06ED90"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06ED90",
+      "length": 1396
+    }
+  ],
+  "equal_text_bytes_including_fill": 108,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -10328,
+  "seconds": 2.1
+}

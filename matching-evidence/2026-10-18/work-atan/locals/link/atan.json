@@ -1,0 +1,46 @@
+{
+ "name": "atan",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT atan.abs",
+  "FORM A",
+  "START P(8C0113C0)",
+  "PRINT atan.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-atan\\locals\\obj\\atan.obj",
+   "sha256": "a9fe2190c809a130edc5e749200fb29f34071215851fb546baa5579e3e318a24"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C0113C0",
+   "length": 372
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C0113C0",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 167,
+   "first_diff_offset": 0,
+   "sha256": "47234ebad7a2945715b02af7112ac13d785188d696f6952ac8f2ff36e4493a82"
+  },
+  {
+   "section": "P",
+   "address": "8C0114B6",
+   "size": 126,
+   "exact": false,
+   "diff_bytes": 108,
+   "first_diff_offset": 0,
+   "sha256": "8eb521cfb963ebaaf7473bd40dccc629d2562fb7c6a6f92eba79b3db0c577175"
+  }
+ ],
+ "all_exact": false
+}

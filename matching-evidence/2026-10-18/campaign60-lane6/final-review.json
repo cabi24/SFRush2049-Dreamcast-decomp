@@ -1,0 +1,271 @@
+{
+  "assignments_completed": 10,
+  "rows": [
+    {
+      "unit": "zip",
+      "source_sha256": "98bc2664e05d36c2bc98733d221937a9b2e3ad884a8e1f776b59a965adea042f",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    },
+    {
+      "unit": "zoid",
+      "label": "final",
+      "source_sha256": "18ec6676c0155a3cc8998e0b35d3a61ea5b5ece81f717313f465fc3d4b891a2a",
+      "old_exact_spans_preserved": true,
+      "failed_spans": [],
+      "delta_functions": 7,
+      "delta_text": 492,
+      "delta_data": 0,
+      "new_exact_functions": [
+        {
+          "name": "ZOID_TrueObjParent",
+          "start": "8C068896",
+          "end": "8C0688EC",
+          "size": 86,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C068896",
+          "linked_size": 86
+        },
+        {
+          "name": "ZOID_ObjPrevObj",
+          "start": "8C0688EC",
+          "end": "8C06891A",
+          "size": 46,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C0688EC",
+          "linked_size": 46
+        },
+        {
+          "name": "ZOID_LastSibling",
+          "start": "8C06891A",
+          "end": "8C06893C",
+          "size": 34,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06891A",
+          "linked_size": 34
+        },
+        {
+          "name": "ZOID_InsertObject",
+          "start": "8C06893C",
+          "end": "8C0689A0",
+          "size": 100,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06893C",
+          "linked_size": 100
+        },
+        {
+          "name": "ZOID_AddObject",
+          "start": "8C0689A0",
+          "end": "8C068A70",
+          "size": 208,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C0689A0",
+          "linked_size": 232
+        },
+        {
+          "name": "ZOID_RemoveObjectTree",
+          "start": "8C068B9A",
+          "end": "8C068B9E",
+          "size": 4,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C068B9A",
+          "linked_size": 4
+        },
+        {
+          "name": "ZOID_RemoveObject",
+          "start": "8C068B9E",
+          "end": "8C068BAC",
+          "size": 14,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C068B9E",
+          "linked_size": 14
+        }
+      ],
+      "hashes": {
+        "object": "d750579cf2fa1e62b43ebe5f760b465ae534b112bc3c78b4faf9448dd7568b54",
+        "abs": "a9b303a4ae2a6ffd645adced3e9756c0be628c636c6b91c4cf46633c98f7225f"
+      }
+    },
+    {
+      "unit": "dc_unk_8C069E34",
+      "label": "final",
+      "source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+      "old_exact_spans_preserved": true,
+      "failed_spans": [],
+      "delta_functions": 0,
+      "delta_text": 88,
+      "delta_data": 0,
+      "new_exact_functions": [],
+      "hashes": {
+        "object": "103b46ecd77aa9e9f4006eff7cdb7508bf5a2ec4098feb63437b9e26f256d96c",
+        "abs": "0530907028ff092af0dbe1d56cfc3e18429f153b6318d3ca291db2c244b0ab0d"
+      }
+    },
+    {
+      "unit": "dc_sound_8C069F78",
+      "source_sha256": "762ae45c9b8eec78f8562bb5809d1a5254c2fe746748274836555d7d9395e8c9",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    },
+    {
+      "unit": "dc_audio64_init_8C06ADD4",
+      "label": "final",
+      "source_sha256": "67d965675bd226df3ba29db646b0a78d3b3ef68ccbb4b6fb92cf4ad697113a6e",
+      "old_exact_spans_preserved": true,
+      "failed_spans": [],
+      "delta_functions": 7,
+      "delta_text": 716,
+      "delta_data": 0,
+      "new_exact_functions": [
+        {
+          "name": "func_8C06AF30",
+          "start": "8C06AF30",
+          "end": "8C06AF48",
+          "size": 24,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06AF30",
+          "linked_size": 24
+        },
+        {
+          "name": "func_8C06AF48",
+          "start": "8C06AF48",
+          "end": "8C06AF60",
+          "size": 24,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06AF48",
+          "linked_size": 24
+        },
+        {
+          "name": "func_8C06AFC4",
+          "start": "8C06AFC4",
+          "end": "8C06B052",
+          "size": 142,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06AFC4",
+          "linked_size": 142
+        },
+        {
+          "name": "func_8C06B052",
+          "start": "8C06B052",
+          "end": "8C06B182",
+          "size": 304,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06B052",
+          "linked_size": 304
+        },
+        {
+          "name": "func_8C06B182",
+          "start": "8C06B182",
+          "end": "8C06B1A8",
+          "size": 38,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06B182",
+          "linked_size": 38
+        },
+        {
+          "name": "func_8C06B1A8",
+          "start": "8C06B1A8",
+          "end": "8C06B1C8",
+          "size": 32,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06B1A8",
+          "linked_size": 32
+        },
+        {
+          "name": "func_8C06B254",
+          "start": "8C06B254",
+          "end": "8C06B298",
+          "size": 68,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06B254",
+          "linked_size": 68
+        }
+      ],
+      "hashes": {
+        "object": "9240e4aa2c4f20b36d29ddc7b54bbb7012402425bb1582d654e635f8dfdfcfe3",
+        "abs": "842fdf3e1b9325462a77c0cda43504cdccf8476781e6cbe9868fdf9fab1f0225"
+      }
+    },
+    {
+      "unit": "dc_blit_8C06B2EC",
+      "source_sha256": "e1de5d6a0c04091cd2fc571de0dd1da02bc32c8080b2f374321aa9e235fab503",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    },
+    {
+      "unit": "dc_misc_8C06B80C",
+      "source_sha256": "109f962fe561cf8b9093e26c767bb194a7a2254710c9e2ef67c9a92273535bce",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    },
+    {
+      "unit": "dc_misc_8C06C08C",
+      "label": "final",
+      "source_sha256": "87ef73dd100dc3b35196b33cc579f07929be4473385f3661d625bc745f5bc76e",
+      "old_exact_spans_preserved": true,
+      "failed_spans": [],
+      "delta_functions": 1,
+      "delta_text": 192,
+      "delta_data": 0,
+      "new_exact_functions": [
+        {
+          "name": "func_8C06C1E6",
+          "start": "8C06C1E6",
+          "end": "8C06C2A6",
+          "size": 192,
+          "status": "exact",
+          "diff_bytes": 0,
+          "linked_at": "8C06C1E6",
+          "linked_size": 192
+        }
+      ],
+      "hashes": {
+        "object": "a9e18d5c6a76db0950f6e2ce3e0fa1ed6343ac035221f0c8c69ea518e9477409",
+        "abs": "82c29d8a259ccf969313be97e8b6b4b21da0704fe7fca2f66242c4e537f5d977"
+      }
+    },
+    {
+      "unit": "paksysdc",
+      "source_sha256": "daf3e1452cf5c9c004765b2ca0678edcc862347692921159592221cc502feb85",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    },
+    {
+      "unit": "dc_kamui_tex_8C06E5B4",
+      "source_sha256": "553f9eedd22cccebb58a49098cb90e35ce1c29297784a425cb522261bafd7bf5",
+      "delta_functions": 0,
+      "delta_text": 0,
+      "delta_data": 0,
+      "restored_exactly": true
+    }
+  ],
+  "delta_functions": 15,
+  "delta_text": 1488,
+  "delta_data": 0,
+  "queue_literal_pool_review_only": 88,
+  "no_global_report_written": true
+}

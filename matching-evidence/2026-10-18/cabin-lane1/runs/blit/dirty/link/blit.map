@@ -1,0 +1,108 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT blit.abs
+FORM A
+START P(8C018790)
+START D(8C0BB224)
+START B(8C128120)
+DEFINE _MBOX_FindTexture_WORK(8C03D4AA)
+DEFINE _ZOID_AddBlit(8C068DC8)
+DEFINE _ZOID_CropBlit(8C068D50)
+DEFINE _ZOID_FlipBlit(8C068E94)
+DEFINE _ZOID_RemoveBlit(8C068E86)
+DEFINE _ZOID_SetBlitData(8C068D92)
+DEFINE _ZOID_TextBlit(8C068EBE)
+DEFINE _ZOID_UpdateBlit(8C068D2C)
+DEFINE __divls(8C09B680)
+DEFINE __modls(8C09B82C)
+DEFINE _gNumModels(8C14CB1C)
+DEFINE _inactiveBlit(8C0BDDC0)
+PRINT blit.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C018790  -  H'8C018CBB  H'0000052C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C018790  -  H'8C018CBB  H'0000052C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BB224  -  H'8C0BB227  H'00000004
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BB224  -  H'8C0BB227  H'00000004
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C128120  -  H'8C12B643  H'00003524
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C128120  -  H'8C12B643  H'00003524
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_BlitPtrs                         H'8C12B320               DAT
+_Blits                            H'8C128120               DAT
+_DrawBlits                        H'8C01882A               ENT
+_InitBlit                         H'8C018890               ENT
+_InitBlits                        H'8C018790               ENT
+_NewBlit                          H'8C018992               ENT
+_NewMultiBlit                     H'8C018B56               ENT
+_NumBlits                         H'8C12B640               DAT
+_RemoveBlit                       H'8C0187BA               ENT
+_RenameBlit                       H'8C018A5E               ENT
+_SelectBlit                       H'8C018A96               ENT
+_UpdateBlit                       H'8C018910               ENT
+_func_8C018C88                    H'8C018C88               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_MBOX_FindTexture_WORK                                              H'8C03D4AA
+_ZOID_AddBlit                                                       H'8C068DC8
+_ZOID_CropBlit                                                      H'8C068D50
+_ZOID_FlipBlit                                                      H'8C068E94
+_ZOID_RemoveBlit                                                    H'8C068E86
+_ZOID_SetBlitData                                                   H'8C068D92
+_ZOID_TextBlit                                                      H'8C068EBE
+_ZOID_UpdateBlit                                                    H'8C068D2C
+__divls                                                             H'8C09B680
+__modls                                                             H'8C09B82C
+_gNumModels                                                         H'8C14CB1C
+_inactiveBlit                                                       H'8C0BDDC0

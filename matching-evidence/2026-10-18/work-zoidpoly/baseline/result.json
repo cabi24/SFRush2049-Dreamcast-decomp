@@ -1,0 +1,151 @@
+{
+  "name": "zoidpoly",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/zoidpoly.c",
+  "source_sha256": "ed004bd45cb7fc51df616410194a54104000877fd742d00658ebc47b9ee6da0c",
+  "text": [
+    "8C068F28",
+    "8C0692AC"
+  ],
+  "text_bytes": 900,
+  "exact_text_bytes": 848,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 8,
+  "functions_exact": 7,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "ZOID_NewPoly",
+      "start": "8C068F28",
+      "end": "8C068FBE",
+      "size": 150,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068F28",
+      "linked_size": 150
+    },
+    {
+      "name": "ZOID_UpdatePoly",
+      "start": "8C068FBE",
+      "end": "8C069240",
+      "size": 642,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068FBE",
+      "linked_size": 642
+    },
+    {
+      "name": "ZOID_SetPolyZ",
+      "start": "8C069240",
+      "end": "8C069246",
+      "size": 6,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C069240",
+      "linked_size": 6
+    },
+    {
+      "name": "ZOID_HidePoly",
+      "start": "8C069246",
+      "end": "8C069250",
+      "size": 10,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C069246",
+      "linked_size": 10
+    },
+    {
+      "name": "ZOID_ShowPoly",
+      "start": "8C069250",
+      "end": "8C06925A",
+      "size": 10,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C069250",
+      "linked_size": 10
+    },
+    {
+      "name": "ZOID_ClearPolyFlags",
+      "start": "8C06925A",
+      "end": "8C069264",
+      "size": 10,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06925A",
+      "linked_size": 10
+    },
+    {
+      "name": "ZOID_SetPolyFlags",
+      "start": "8C069264",
+      "end": "8C06926C",
+      "size": 8,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C069264",
+      "linked_size": 8
+    },
+    {
+      "name": "ZOID_RemovePoly",
+      "start": "8C06926C",
+      "end": "8C06929C",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C06926C",
+      "linked_size": 64
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06929C",
+      "end": "8C0692AC",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C172844",
+      "end": "8C17798C",
+      "exact": true,
+      "linked": [
+        "8C172844",
+        "8C17798C"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T14:29:23",
+  "defines": {
+    "_gMirrorWaves": "8C15FA14",
+    "_gTexDefPtrs": "8C14C71C"
+  },
+  "starts": {
+    "P": "8C068F28",
+    "B": "8C172844"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C068F28",
+      "length": 900
+    },
+    {
+      "name": "B",
+      "address": "8C172844",
+      "length": 20808
+    }
+  ],
+  "equal_text_bytes_including_fill": 852,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.5
+}

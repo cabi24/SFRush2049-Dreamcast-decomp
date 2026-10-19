@@ -1,0 +1,309 @@
+{
+  "name": "zoid",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/zoid.c",
+  "source_sha256": "983162b218a2968bb439c086c9adb92377b2459afe03104698e2ff57e0b58cef",
+  "text": [
+    "8C0686F4",
+    "8C068D2C"
+  ],
+  "text_bytes": 1592,
+  "exact_text_bytes": 370,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 21,
+  "functions_exact": 6,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "ZOID_Reset",
+      "start": "8C0686F4",
+      "end": "8C06871E",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0686F4",
+      "linked_size": 42
+    },
+    {
+      "name": "ZOID_Init",
+      "start": "8C06871E",
+      "end": "8C068722",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06871E",
+      "linked_size": 4
+    },
+    {
+      "name": "ZOID_FindMatrix",
+      "start": "8C068722",
+      "end": "8C06872E",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068722",
+      "linked_size": 12
+    },
+    {
+      "name": "ZOID_NewMatrix",
+      "start": "8C06872E",
+      "end": "8C068774",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06872E",
+      "linked_size": 70
+    },
+    {
+      "name": "ZOID_UpdateObject",
+      "start": "8C068774",
+      "end": "8C0687B6",
+      "size": 66,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068774",
+      "linked_size": 66
+    },
+    {
+      "name": "ZOID_FindObjInstance",
+      "start": "8C0687B6",
+      "end": "8C068868",
+      "size": 178,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0687B6",
+      "linked_size": 178
+    },
+    {
+      "name": "ZOID_ObjParent",
+      "start": "8C068868",
+      "end": "8C068896",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C068868",
+      "linked_size": 46
+    },
+    {
+      "name": "ZOID_TrueObjParent",
+      "start": "8C068896",
+      "end": "8C0688EC",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 81,
+      "linked_at": "8C068896",
+      "linked_size": 88
+    },
+    {
+      "name": "ZOID_ObjPrevObj",
+      "start": "8C0688EC",
+      "end": "8C06891A",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 45,
+      "linked_at": "8C0688EE",
+      "linked_size": 46
+    },
+    {
+      "name": "ZOID_LastSibling",
+      "start": "8C06891A",
+      "end": "8C06893C",
+      "size": 34,
+      "status": "moved",
+      "diff_bytes": 34,
+      "linked_at": "8C06891C",
+      "linked_size": 34
+    },
+    {
+      "name": "ZOID_InsertObject",
+      "start": "8C06893C",
+      "end": "8C0689A0",
+      "size": 100,
+      "status": "differs",
+      "diff_bytes": 100,
+      "linked_at": "8C06893E",
+      "linked_size": 100
+    },
+    {
+      "name": "ZOID_AddObject",
+      "start": "8C0689A0",
+      "end": "8C068A70",
+      "size": 208,
+      "status": "differs",
+      "diff_bytes": 196,
+      "linked_at": "8C0689A2",
+      "linked_size": 234
+    },
+    {
+      "name": "_RemoveObjectTree",
+      "start": "8C068A88",
+      "end": "8C068B9A",
+      "size": 274,
+      "status": "differs",
+      "diff_bytes": 259,
+      "linked_at": "8C068A8C",
+      "linked_size": 286
+    },
+    {
+      "name": "ZOID_RemoveObjectTree",
+      "start": "8C068B9A",
+      "end": "8C068B9E",
+      "size": 4,
+      "status": "differs",
+      "diff_bytes": 4,
+      "linked_at": "8C068BAA",
+      "linked_size": 4
+    },
+    {
+      "name": "ZOID_RemoveObject",
+      "start": "8C068B9E",
+      "end": "8C068BAC",
+      "size": 14,
+      "status": "differs",
+      "diff_bytes": 13,
+      "linked_at": "8C068BAE",
+      "linked_size": 14
+    },
+    {
+      "name": "ZOID_SetObjectDef",
+      "start": "8C068BAC",
+      "end": "8C068BB8",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 12,
+      "linked_at": "8C068BBC",
+      "linked_size": 12
+    },
+    {
+      "name": "ZOID_SetObjectParent",
+      "start": "8C068BB8",
+      "end": "8C068C50",
+      "size": 152,
+      "status": "differs",
+      "diff_bytes": 150,
+      "linked_at": "8C068BC8",
+      "linked_size": 168
+    },
+    {
+      "name": "func_8C068C68",
+      "start": "8C068C68",
+      "end": "8C068CC6",
+      "size": 94,
+      "status": "differs",
+      "diff_bytes": 94,
+      "linked_at": "8C068C70",
+      "linked_size": 100
+    },
+    {
+      "name": "func_8C068CC6",
+      "start": "8C068CC6",
+      "end": "8C068D0E",
+      "size": 72,
+      "status": "differs",
+      "diff_bytes": 71,
+      "linked_at": "8C068CD4",
+      "linked_size": 72
+    },
+    {
+      "name": "ZOID_ObjectFlags",
+      "start": "8C068D0E",
+      "end": "8C068D1A",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 11,
+      "linked_at": "8C068D1C",
+      "linked_size": 12
+    },
+    {
+      "name": "ZOID_SetObjectFlags",
+      "start": "8C068D1A",
+      "end": "8C068D26",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 11,
+      "linked_at": "8C068D28",
+      "linked_size": 20
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C068A70",
+      "end": "8C068A88",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C068C50",
+      "end": "8C068C68",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 17
+    },
+    {
+      "kind": "pool",
+      "start": "8C068D26",
+      "end": "8C068D2C",
+      "exact": false,
+      "built": 6,
+      "diff_bytes": 6
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C160860",
+      "end": "8C160870",
+      "exact": true,
+      "linked": [
+        "8C160860",
+        "8C160870"
+      ]
+    }
+  ],
+  "notes": [
+    "16 built bytes fall outside the mapped ranges (first 8C068D2C, last 8C068D3B)"
+  ],
+  "built_at": "2026-10-18T15:32:27",
+  "defines": {
+    "_CopyUV": "8C02631E",
+    "_ObjHead": "8C16D6B0",
+    "_ObjInstanceList": "8C160870",
+    "_ZOID_ResetWindows": "8C0693C4",
+    "__slow_strcmp1": "8C09BB5C",
+    "_gGlobalCameraFacingScale": "8C177998",
+    "_gMatrices": "8C16D6F4",
+    "_gNumBlitInsts": "8C170F34",
+    "_gNumPolyInsts": "8C172844",
+    "_gRomObjDefPtrs": "8C0BEBE8",
+    "_unitmatrix": "8C0BD924",
+    "_zoidlight_func_8C068F0E": "8C068F0E"
+  },
+  "starts": {
+    "P": "8C0686F4",
+    "B": "8C160860"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0686F4",
+      "length": 1608
+    },
+    {
+      "name": "B",
+      "address": "8C160860",
+      "length": 16
+    }
+  ],
+  "equal_text_bytes_including_fill": 372,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 16,
+  "seconds": 1.9
+}

@@ -1,0 +1,106 @@
+{
+ "name": "drivetra",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT drivetra.abs",
+  "FORM A",
+  "START P(8C022CA4)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __divws(8C09B7DC)",
+  "DEFINE __modls(8C09B82C)",
+  "DEFINE __modws(8C09B9AC)",
+  "DEFINE _carEngineTorque(8C0BBC4C)",
+  "DEFINE _carTransGearRatio(8C0BBA48)",
+  "PRINT drivetra.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-drivetra\\single-pointer-helper\\obj\\drivetra.obj",
+   "sha256": "adc89309b9d67084d793e10984b107db9a93ac2fd594a43aafec74cd289c6b5a"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C022CA4",
+   "length": 1600
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C022CA4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 18,
+   "sha256": "83a114e624247d3ed7a4e2ff1f4a8ac2479d26993bda871d0e29acce166638bc"
+  },
+  {
+   "section": "P",
+   "address": "8C022D9A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "021fd441ee510746088242d21bc554b43a05bbf0270991f88cc74bd53e4d5033"
+  },
+  {
+   "section": "P",
+   "address": "8C022E90",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e810491721ffda8bac52d2f41b5eade6d2b9849a4434ca4e982abbe7a87e3b47"
+  },
+  {
+   "section": "P",
+   "address": "8C022F86",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "6b8ae8235a0ee74de71c90999ff464fa2fb799a0577b49616c43ee3fd582f09f"
+  },
+  {
+   "section": "P",
+   "address": "8C02307C",
+   "size": 46,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "96f0a3e0dc3d60698a3291eb97a6344d2c1246055b01202e418ee90ca9415084"
+  },
+  {
+   "section": "P",
+   "address": "8C0230AC",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 225,
+   "first_diff_offset": 12,
+   "sha256": "dd83b8f84a1e12f04aef0f0825a02fab54cc5d8a9e62df1095ffef8a93e01406"
+  },
+  {
+   "section": "P",
+   "address": "8C0231A2",
+   "size": 112,
+   "exact": false,
+   "diff_bytes": 109,
+   "first_diff_offset": 0,
+   "sha256": "c232d0b747600fbfa828bd1cdc40a8178bffe6205b5367caaa6dbfcfd295853e"
+  },
+  {
+   "section": "P",
+   "address": "8C023214",
+   "size": 208,
+   "exact": false,
+   "diff_bytes": 205,
+   "first_diff_offset": 0,
+   "sha256": "d9c3afe09a59acf84e75e01044eae783696167e1ec521838e7000a9fc48b4efc"
+  }
+ ],
+ "all_exact": false
+}

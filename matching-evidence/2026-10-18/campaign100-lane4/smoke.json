@@ -1,0 +1,18 @@
+{
+  "unit": "smoke",
+  "selected": "final-independent",
+  "baseline_functions": 2,
+  "final_functions": 2,
+  "new_functions": [],
+  "baseline_text": 92,
+  "final_text": 92,
+  "baseline_data": 154,
+  "final_data": 154,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\smoke.c": "b98aeb22a0dd9f1194dd9012c70a6e92d20b4528af4a7a2ef562bde713160b1f",
+    "build\\campaign100-lane4\\smoke\\final-independent\\obj\\smoke.obj": "a5a1641bea964cf649112119a3cda5d59497781000f8019b4e728c4c42dcb123",
+    "build\\campaign100-lane4\\smoke\\final-independent\\link\\smoke.abs": "dc2fa774749a463e6a5cd28f42bde18e0828ad72dfc423773eed4923fd6cb82d",
+    "build\\campaign100-lane4\\smoke\\final-independent\\pp\\smoke.c": "88a9b3c2cc1ba8ce8900074a1be1cb67ddd40da2de42264ee0f1fd249b3fc56d"
+  }
+}

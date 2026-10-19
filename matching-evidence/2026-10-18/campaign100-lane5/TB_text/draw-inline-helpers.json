@@ -1,0 +1,25 @@
+{
+  "name": "TB_text",
+  "kind": "game",
+  "status": "failed",
+  "source": "src/TB_text.c",
+  "source_sha256": "2b6b69b9250c5e3d7520d0d2007f9b5a06d63325c46d04f8ef078ed2f4759352",
+  "text": [
+    "8C05A6AC",
+    "8C05B09C"
+  ],
+  "text_bytes": 2544,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 332,
+  "exact_data_bytes": 0,
+  "functions_total": 21,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [],
+  "segments": [],
+  "notes": [
+    "compile failed: [shc_cc] shc-v5.1r11 (native) failed rc=1: TB_text.c(245) : 2805 (E) Function \"TB_CenterText\" in #pragma inline/inline_asm already declared"
+  ],
+  "built_at": "2026-10-18T16:01:48"
+}

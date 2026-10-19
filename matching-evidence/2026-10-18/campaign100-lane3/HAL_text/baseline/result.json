@@ -1,0 +1,423 @@
+{
+  "name": "HAL_text",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/HAL_text.c",
+  "source_sha256": "a3e8d25e15708e1abc9659c5d9a239f95bff22d016c243b5ad40106b85b4933f",
+  "text": [
+    "8C02ECF4",
+    "8C02FCD8"
+  ],
+  "text_bytes": 4068,
+  "exact_text_bytes": 40,
+  "align_bytes": 0,
+  "data_bytes": 18,
+  "exact_data_bytes": 15,
+  "functions_total": 26,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "HAL_InitText",
+      "start": "8C02ECF4",
+      "end": "8C02ED1C",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 21,
+      "linked_at": "8C02ECF4",
+      "linked_size": 40
+    },
+    {
+      "name": "HAL_StartText",
+      "start": "8C02ED1C",
+      "end": "8C02ED68",
+      "size": 76,
+      "status": "differs",
+      "diff_bytes": 44,
+      "linked_at": "8C02ED1C",
+      "linked_size": 72
+    },
+    {
+      "name": "HAL_FinishText",
+      "start": "8C02ED68",
+      "end": "8C02EEB6",
+      "size": 334,
+      "status": "differs",
+      "diff_bytes": 310,
+      "linked_at": "8C02ED64",
+      "linked_size": 412
+    },
+    {
+      "name": "_HAL_SetFont",
+      "start": "8C02EF04",
+      "end": "8C02EF96",
+      "size": 146,
+      "status": "differs",
+      "diff_bytes": 94,
+      "linked_at": "8C02EF00",
+      "linked_size": 150
+    },
+    {
+      "name": "HAL_SetFont",
+      "start": "8C02EF96",
+      "end": "8C02EFBE",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C02EF96",
+      "linked_size": 40
+    },
+    {
+      "name": "HAL_PurgeFonts",
+      "start": "8C02EFBE",
+      "end": "8C02F066",
+      "size": 168,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C02EFBE",
+      "linked_size": 210
+    },
+    {
+      "name": "_SetupFontData",
+      "start": "8C02F090",
+      "end": "8C02F1B6",
+      "size": 294,
+      "status": "differs",
+      "diff_bytes": 251,
+      "linked_at": "8C02F090",
+      "linked_size": 346
+    },
+    {
+      "name": "HAL_SetTextColor",
+      "start": "8C02F1E0",
+      "end": "8C02F226",
+      "size": 70,
+      "status": "differs",
+      "diff_bytes": 55,
+      "linked_at": "8C02F1EA",
+      "linked_size": 70
+    },
+    {
+      "name": "HAL_SetTextDepth",
+      "start": "8C02F226",
+      "end": "8C02F252",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C02F230",
+      "linked_size": 44
+    },
+    {
+      "name": "HAL_SetMenuTextDepth",
+      "start": "8C02F252",
+      "end": "8C02F27E",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C02F25C",
+      "linked_size": 44
+    },
+    {
+      "name": "HAL_SetTextTranslucency",
+      "start": "8C02F27E",
+      "end": "8C02F2B4",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 52,
+      "linked_at": "8C02F288",
+      "linked_size": 96
+    },
+    {
+      "name": "HAL_SetTextPos",
+      "start": "8C02F2B4",
+      "end": "8C02F2E4",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C02F2E8",
+      "linked_size": 48
+    },
+    {
+      "name": "HAL_SetFontLeading",
+      "start": "8C02F314",
+      "end": "8C02F34C",
+      "size": 56,
+      "status": "differs",
+      "diff_bytes": 53,
+      "linked_at": "8C02F318",
+      "linked_size": 50
+    },
+    {
+      "name": "HAL_SetFontSpacing",
+      "start": "8C02F34C",
+      "end": "8C02F376",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C02F34A",
+      "linked_size": 36
+    },
+    {
+      "name": "HAL_SetFontFixedWidth",
+      "start": "8C02F376",
+      "end": "8C02F39C",
+      "size": 38,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C02F36E",
+      "linked_size": 32
+    },
+    {
+      "name": "HAL_GetFontAscent",
+      "start": "8C02F39C",
+      "end": "8C02F3C4",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 39,
+      "linked_at": "8C02F38E",
+      "linked_size": 34
+    },
+    {
+      "name": "HAL_GetFontDescent",
+      "start": "8C02F3C4",
+      "end": "8C02F3EC",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 36,
+      "linked_at": "8C02F3B0",
+      "linked_size": 34
+    },
+    {
+      "name": "HAL_GetFontLeading",
+      "start": "8C02F3EC",
+      "end": "8C02F406",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 26,
+      "linked_at": "8C02F3D2",
+      "linked_size": 20
+    },
+    {
+      "name": "HAL_GetFontSpacing",
+      "start": "8C02F406",
+      "end": "8C02F41A",
+      "size": 20,
+      "status": "differs",
+      "diff_bytes": 20,
+      "linked_at": "8C02F3E6",
+      "linked_size": 42
+    },
+    {
+      "name": "HAL_GetFontChars",
+      "start": "8C02F41A",
+      "end": "8C02F46A",
+      "size": 80,
+      "status": "differs",
+      "diff_bytes": 77,
+      "linked_at": "8C02F410",
+      "linked_size": 74
+    },
+    {
+      "name": "HAL_GetCharWidth",
+      "start": "8C02F46A",
+      "end": "8C02F502",
+      "size": 152,
+      "status": "differs",
+      "diff_bytes": 152,
+      "linked_at": "8C02F45A",
+      "linked_size": 126
+    },
+    {
+      "name": "HAL_GetTextWidth",
+      "start": "8C02F502",
+      "end": "8C02F658",
+      "size": 342,
+      "status": "differs",
+      "diff_bytes": 337,
+      "linked_at": "8C02F4D8",
+      "linked_size": 344
+    },
+    {
+      "name": "HAL_DrawText",
+      "start": "8C02F658",
+      "end": "8C02F9C4",
+      "size": 876,
+      "status": "differs",
+      "diff_bytes": 839,
+      "linked_at": "8C02F630",
+      "linked_size": 912
+    },
+    {
+      "name": "_DrawText",
+      "start": "8C02FA04",
+      "end": "8C02FC3E",
+      "size": 570,
+      "status": "differs",
+      "diff_bytes": 558,
+      "linked_at": "8C02F9C0",
+      "linked_size": 582
+    },
+    {
+      "name": "_SetDefaults",
+      "start": "8C02FC3E",
+      "end": "8C02FC6A",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C02FC06",
+      "linked_size": 66
+    },
+    {
+      "name": "_TextLen",
+      "start": "8C02FC80",
+      "end": "8C02FCD6",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C02FC48",
+      "linked_size": 88
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C02EEB6",
+      "end": "8C02EF04",
+      "exact": false,
+      "built": 78,
+      "diff_bytes": 49
+    },
+    {
+      "kind": "pool",
+      "start": "8C02F066",
+      "end": "8C02F090",
+      "exact": true,
+      "built": 42,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C02F1B6",
+      "end": "8C02F1E0",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C02F2E4",
+      "end": "8C02F314",
+      "exact": false,
+      "built": 48,
+      "diff_bytes": 48
+    },
+    {
+      "kind": "pool",
+      "start": "8C02F9C4",
+      "end": "8C02FA04",
+      "exact": false,
+      "built": 64,
+      "diff_bytes": 64
+    },
+    {
+      "kind": "pool",
+      "start": "8C02FC6A",
+      "end": "8C02FC80",
+      "exact": false,
+      "built": 22,
+      "diff_bytes": 22
+    },
+    {
+      "kind": "pool",
+      "start": "8C02FCD6",
+      "end": "8C02FCD8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BDF84",
+      "end": "8C0BDF96",
+      "exact": true,
+      "built": 18,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:56:18",
+  "defines": {
+    "_BlitClearAttribute": "8C06B3BE",
+    "_BlitClearColors": "8C06B48A",
+    "_BlitColors": "8C06B4A0",
+    "_BlitDraw": "8C06B4E0",
+    "_BlitScissor": "8C06B44C",
+    "_BlitSetAttribute": "8C06B3AA",
+    "_BlitXLU": "8C06B42E",
+    "_BlitZDist": "8C06B414",
+    "_FindWaveInstance": "8C0656DE",
+    "_GetWaveInstanceAddr": "8C065280",
+    "_LoadWave": "8C0651B8",
+    "_LockWaveInstance": "8C065660",
+    "_SetInterruptMask": "8C010080",
+    "_UnlockWaveInstance": "8C06568A",
+    "_gTexDefPtrs": "8C14C71C",
+    "_halTextBufLen": "8C133BA4",
+    "_halTextBuffer": "8C133BA8",
+    "_halTextCharMap": "8C133990",
+    "_halTextFontAttribute": "8C133B98",
+    "_halTextFontColor": "8C133B90",
+    "_halTextFontDatWaveInst": "8C13393C",
+    "_halTextFontHeader": "8C133948",
+    "_halTextFontIndex": "8C133BA0",
+    "_halTextFontLetters": "8C13394C",
+    "_halTextFontTexWaveInst": "8C133940",
+    "_halTextFontTextures": "8C133950",
+    "_halTextFontXpos": "8C133B9C",
+    "_halTextFontYpos": "8C133B9E",
+    "_halTextLastFontColor": "8C133EC8",
+    "_halTextLastFontIndex": "8C133ED4",
+    "_halTextLastFontXpos": "8C133ED0",
+    "_halTextLastFontYpos": "8C133ED2",
+    "_halTextLastLeading": "8C133ED5",
+    "_halTextLastSpacing": "8C133ED6",
+    "_halTextLastTrans": "8C133ECC",
+    "_halTextLeading": "8C133B94",
+    "_halTextOldMask": "8C133938",
+    "_halTextSpacing": "8C133B95",
+    "_mem_func_8C03FD8A": "8C03FD8A",
+    "_memcpy": "8C09BD00",
+    "_strcpy": "8C09BB0C",
+    "_strncpy": "8C09BF98"
+  },
+  "starts": {
+    "P": "8C02ECF4",
+    "D": "8C0BDF84"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C02ECF4",
+      "length": 4012
+    },
+    {
+      "name": "D",
+      "address": "8C0BDF84",
+      "length": 18
+    }
+  ],
+  "equal_text_bytes_including_fill": 42,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 18,
+  "excluded_exact_data_fill": 3,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BDF85",
+      "end": "8C0BDF88",
+      "reason": "Alignment after gFinished byte before fontHeap pointer; targetEEF8/EEC8 identify independent objects. No semantic field or credit."
+    }
+  ],
+  "text_size_delta": -56,
+  "seconds": 2.1
+}

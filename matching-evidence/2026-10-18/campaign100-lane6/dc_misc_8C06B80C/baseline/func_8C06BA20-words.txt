@@ -1,0 +1,13 @@
+8C06BA20 mov.l r14,@-r15                                        | 8C06BA1E mov.l r14,@-r15                                        
+8C06BA22 sts.l pr,@-r15                                         | 8C06BA20 sts.l pr,@-r15                                         
+8C06BA24 mov.l @(0x8C06BBAC,pc),r3                              | 8C06BA22 mov.l @(0x8C06BB94,pc),r3                              *
+8C06BA26 jsr @r3                                                | 8C06BA24 jsr @r3                                                
+8C06BA28 mov #0,r14                                             | 8C06BA26 mov #0,r14                                             
+8C06BA2A cmp/eq #6,r0                                           | 8C06BA28 cmp/eq #6,r0                                           
+8C06BA2C bf/s 0x8C06BA32                                        | 8C06BA2A bf/s 0x8C06BA30                                        
+8C06BA2E mov r0,r4                                              | 8C06BA2C mov r0,r4                                              
+8C06BA30 mov #1,r14                                             | 8C06BA2E mov #1,r14                                             
+8C06BA32 lds.l @r15+,pr                                         | 8C06BA30 lds.l @r15+,pr                                         
+8C06BA34 mov r14,r0                                             | 8C06BA32 mov r14,r0                                             
+8C06BA36 rts                                                    | 8C06BA34 rts                                                    
+8C06BA38 mov.l @r15+,r14                                        | 8C06BA36 mov.l @r15+,r14                                        

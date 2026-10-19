@@ -1,5 +1,6 @@
 /* Private Dreamcast options candidate. See notes/NOTES.md for target evidence. */
 #include "options_types.h"
+#define gPlayers ((tOptionsPlayer *)0x8C006000)
 
 static void _SetDefaultOptions(void);
 
@@ -17,7 +18,8 @@ void InitOptions(void)
         gPlayers[i].slot = i;
     }
     _SetDefaultOptions();
-    gNumPlayers = gNumWindows = 1;
+    gNumWindows = 1;
+    gNumPlayers = 1;
 }
 
 

@@ -1,0 +1,475 @@
+{
+  "name": "dc_misc_8C06C08C",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_misc_8C06C08C.c",
+  "source_sha256": "b4168d56989afaab8deb18a382d7fecc7a8cae232223072ed99405d7d67e1d16",
+  "text": [
+    "8C06C08C",
+    "8C06CADC"
+  ],
+  "text_bytes": 2640,
+  "exact_text_bytes": 628,
+  "align_bytes": 0,
+  "data_bytes": 24,
+  "exact_data_bytes": 24,
+  "functions_total": 31,
+  "functions_exact": 5,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "func_8C06C08C",
+      "start": "8C06C08C",
+      "end": "8C06C0DC",
+      "size": 80,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C08C",
+      "linked_size": 80
+    },
+    {
+      "name": "func_8C06C0DC",
+      "start": "8C06C0DC",
+      "end": "8C06C18C",
+      "size": 176,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C0DC",
+      "linked_size": 176
+    },
+    {
+      "name": "func_8C06C18C",
+      "start": "8C06C18C",
+      "end": "8C06C1E6",
+      "size": 90,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C18C",
+      "linked_size": 90
+    },
+    {
+      "name": "func_8C06C1E6",
+      "start": "8C06C1E6",
+      "end": "8C06C2A6",
+      "size": 192,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C1E6",
+      "linked_size": 192
+    },
+    {
+      "name": "func_8C06C2A6",
+      "start": "8C06C2A6",
+      "end": "8C06C2B2",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C06C2A6",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C06C2B2",
+      "start": "8C06C2B2",
+      "end": "8C06C2BE",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C06C2B2",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C06C2BE",
+      "start": "8C06C2BE",
+      "end": "8C06C374",
+      "size": 182,
+      "status": "differs",
+      "diff_bytes": 12,
+      "linked_at": "8C06C2BE",
+      "linked_size": 182
+    },
+    {
+      "name": "func_8C06C374",
+      "start": "8C06C374",
+      "end": "8C06C3BA",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C374",
+      "linked_size": 92
+    },
+    {
+      "name": "func_8C06C3D0",
+      "start": "8C06C3D0",
+      "end": "8C06C4A6",
+      "size": 214,
+      "status": "differs",
+      "diff_bytes": 182,
+      "linked_at": "8C06C3D0",
+      "linked_size": 204
+    },
+    {
+      "name": "func_8C06C4A6",
+      "start": "8C06C4A6",
+      "end": "8C06C50C",
+      "size": 102,
+      "status": "differs",
+      "diff_bytes": 98,
+      "linked_at": "8C06C49C",
+      "linked_size": 128
+    },
+    {
+      "name": "func_8C06C524",
+      "start": "8C06C524",
+      "end": "8C06C58C",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 96,
+      "linked_at": "8C06C51C",
+      "linked_size": 102
+    },
+    {
+      "name": "func_8C06C58C",
+      "start": "8C06C58C",
+      "end": "8C06C5E2",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 83,
+      "linked_at": "8C06C582",
+      "linked_size": 82
+    },
+    {
+      "name": "func_8C06C5E2",
+      "start": "8C06C5E2",
+      "end": "8C06C5E6",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C06C5D4",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C06C5E6",
+      "start": "8C06C5E6",
+      "end": "8C06C642",
+      "size": 92,
+      "status": "differs",
+      "diff_bytes": 92,
+      "linked_at": "8C06C5D8",
+      "linked_size": 92
+    },
+    {
+      "name": "func_8C06C664",
+      "start": "8C06C664",
+      "end": "8C06C692",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C06C634",
+      "linked_size": 88
+    },
+    {
+      "name": "func_8C06C692",
+      "start": "8C06C692",
+      "end": "8C06C712",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 121,
+      "linked_at": "8C06C68C",
+      "linked_size": 120
+    },
+    {
+      "name": "func_8C06C712",
+      "start": "8C06C712",
+      "end": "8C06C792",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 118,
+      "linked_at": "8C06C704",
+      "linked_size": 128
+    },
+    {
+      "name": "func_8C06C792",
+      "start": "8C06C792",
+      "end": "8C06C7A4",
+      "size": 18,
+      "status": "differs",
+      "diff_bytes": 18,
+      "linked_at": "8C06C784",
+      "linked_size": 18
+    },
+    {
+      "name": "func_8C06C7A4",
+      "start": "8C06C7A4",
+      "end": "8C06C7C0",
+      "size": 28,
+      "status": "differs",
+      "diff_bytes": 27,
+      "linked_at": "8C06C796",
+      "linked_size": 98
+    },
+    {
+      "name": "func_8C06C808",
+      "start": "8C06C808",
+      "end": "8C06C902",
+      "size": 250,
+      "status": "differs",
+      "diff_bytes": 246,
+      "linked_at": "8C06C7F8",
+      "linked_size": 250
+    },
+    {
+      "name": "func_8C06C902",
+      "start": "8C06C902",
+      "end": "8C06C932",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C06C8F2",
+      "linked_size": 90
+    },
+    {
+      "name": "func_8C06C95C",
+      "start": "8C06C95C",
+      "end": "8C06C986",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C06C94C",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06C986",
+      "start": "8C06C986",
+      "end": "8C06CA0A",
+      "size": 132,
+      "status": "differs",
+      "diff_bytes": 131,
+      "linked_at": "8C06C976",
+      "linked_size": 128
+    },
+    {
+      "name": "func_8C06CA0A",
+      "start": "8C06CA0A",
+      "end": "8C06CA44",
+      "size": 58,
+      "status": "differs",
+      "diff_bytes": 58,
+      "linked_at": "8C06C9F6",
+      "linked_size": 58
+    },
+    {
+      "name": "func_8C06CA44",
+      "start": "8C06CA44",
+      "end": "8C06CA6A",
+      "size": 38,
+      "status": "differs",
+      "diff_bytes": 37,
+      "linked_at": "8C06CA30",
+      "linked_size": 34
+    },
+    {
+      "name": "func_8C06CA6A",
+      "start": "8C06CA6A",
+      "end": "8C06CA76",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 12,
+      "linked_at": "8C06CA52",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C06CA76",
+      "start": "8C06CA76",
+      "end": "8C06CA7C",
+      "size": 6,
+      "status": "differs",
+      "diff_bytes": 6,
+      "linked_at": "8C06CA56",
+      "linked_size": 6
+    },
+    {
+      "name": "func_8C06CA7C",
+      "start": "8C06CA7C",
+      "end": "8C06CA80",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C06CA5C",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C06CA98",
+      "start": "8C06CA98",
+      "end": "8C06CAA8",
+      "size": 16,
+      "status": "differs",
+      "diff_bytes": 16,
+      "linked_at": "8C06CA60",
+      "linked_size": 16
+    },
+    {
+      "name": "func_8C06CAA8",
+      "start": "8C06CAA8",
+      "end": "8C06CAB4",
+      "size": 12,
+      "status": "differs",
+      "diff_bytes": 12,
+      "linked_at": "8C06CA70",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C06CAB4",
+      "start": "8C06CAB4",
+      "end": "8C06CAD0",
+      "size": 28,
+      "status": "differs",
+      "diff_bytes": 28,
+      "linked_at": "8C06CA7C",
+      "linked_size": 68
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06C3BA",
+      "end": "8C06C3D0",
+      "exact": true,
+      "built": 22,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06C50C",
+      "end": "8C06C524",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 22
+    },
+    {
+      "kind": "pool",
+      "start": "8C06C642",
+      "end": "8C06C664",
+      "exact": false,
+      "built": 34,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "pool",
+      "start": "8C06C7C0",
+      "end": "8C06C808",
+      "exact": false,
+      "built": 72,
+      "diff_bytes": 55
+    },
+    {
+      "kind": "pool",
+      "start": "8C06C932",
+      "end": "8C06C95C",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 37
+    },
+    {
+      "kind": "pool",
+      "start": "8C06CA80",
+      "end": "8C06CA98",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C06CAD0",
+      "end": "8C06CADC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C96DC",
+      "end": "8C0C96F4",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C18507C",
+      "end": "8C1850C0",
+      "exact": true,
+      "linked": [
+        "8C18507C",
+        "8C1850C0"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T16:03:45",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "_DeallocateMemory": "8C040832",
+    "__divls": "8C09B680",
+    "_dcLcdDigits": "8C0C8288",
+    "_dcLcdIcons": "8C0C831E",
+    "_dcLcdLabelA": "8C0C8382",
+    "_dcLcdLabelB": "8C0C840E",
+    "_dcLcdLargeDigits": "8C0C8486",
+    "_dcLcdSmallIcon": "8C0C8372",
+    "_dcLcdSplash": "8C0C7C88",
+    "_func_8C06ED2A": "8C06ED2A",
+    "_func_8C06ED90": "8C06ED90",
+    "_func_8C0A3BF2": "8C0A3BF2",
+    "_func_8C0D2628": "8C0D2628",
+    "_func_8C0D262E": "8C0D262E",
+    "_func_8C0D265C": "8C0D265C",
+    "_func_8C0D26EA": "8C0D26EA",
+    "_func_8C0D2A40": "8C0D2A40",
+    "_func_8C0D3E70": "8C0D3E70",
+    "_func_8C0D3ECC": "8C0D3ECC",
+    "_func_8C0D437C": "8C0D437C",
+    "_func_8C0D448A": "8C0D448A",
+    "_func_8C0D461A": "8C0D461A",
+    "_func_8C0D4764": "8C0D4764",
+    "_func_8C0D4952": "8C0D4952",
+    "_func_8C0D6368": "8C0D6368",
+    "_func_8C0D6BDE": "8C0D6BDE",
+    "_func_8C0D6D7C": "8C0D6D7C",
+    "_func_8C0D6DDA": "8C0D6DDA",
+    "_func_8C0D6DEC": "8C0D6DEC",
+    "_func_8C0DAA98": "8C0DAA98",
+    "_memcpy": "8C09BD00",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C06C08C",
+    "D": "8C0C96DC",
+    "B": "8C18507C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06C08C",
+      "length": 2612
+    },
+    {
+      "name": "D",
+      "address": "8C0C96DC",
+      "length": 24
+    },
+    {
+      "name": "B",
+      "address": "8C18507C",
+      "length": 68
+    }
+  ],
+  "equal_text_bytes_including_fill": 630,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 24,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -28,
+  "seconds": 2.0
+}

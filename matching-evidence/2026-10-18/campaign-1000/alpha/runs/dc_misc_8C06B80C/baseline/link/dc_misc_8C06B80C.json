@@ -1,0 +1,268 @@
+{
+ "name": "dc_misc_8C06B80C",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT dc_misc_8C06B80C.abs",
+  "FORM A",
+  "START P(8C06B80C)",
+  "START C(8C0B1CD8)",
+  "START D(8C0C7C80)",
+  "START B(8C18483C)",
+  "DEFINE _AllocateHandleHeap(8C04072C)",
+  "DEFINE _AllocateMemoryHeap(8C040256)",
+  "DEFINE _DeallocateMemory(8C040832)",
+  "DEFINE _InitLL(8C03A1B8)",
+  "DEFINE _InsertLLE(8C03A1C8)",
+  "DEFINE _LargestAvailableMemoryHeapChunk(8C0401FE)",
+  "DEFINE _ReallocateMemory(8C0405B2)",
+  "DEFINE _RemoveLLE(8C03A28E)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __divlu(8C09B734)",
+  "DEFINE _dcFrameCounter(8C12253C)",
+  "DEFINE _dcGdfsDirectory(8C17980C)",
+  "DEFINE _dcGdfsWork(8C178478)",
+  "DEFINE _dcInputBits(8C0BFD3C)",
+  "DEFINE _dcMode_BFA78(8C0BFA78)",
+  "DEFINE _dcMode_FDD4(8C14FDD4)",
+  "DEFINE _dcMode_FDD6(8C14FDD6)",
+  "DEFINE _dcProbeBuffer(8C18487C)",
+  "DEFINE _dcSharedDiscFlag(8C0BEBBC)",
+  "DEFINE _func_8C039718(8C039718)",
+  "DEFINE _func_8C03FD54(8C03FD54)",
+  "DEFINE _func_8C03FD8A(8C03FD8A)",
+  "DEFINE _func_8C03FE8E(8C03FE8E)",
+  "DEFINE _func_8C03FF46(8C03FF46)",
+  "DEFINE _func_8C03FFBC(8C03FFBC)",
+  "DEFINE _func_8C0401AA(8C0401AA)",
+  "DEFINE _func_8C06A1CA(8C06A1CA)",
+  "DEFINE _func_8C06CA44(8C06CA44)",
+  "DEFINE _func_8C0D5536(8C0D5536)",
+  "DEFINE _func_8C0D62D8(8C0D62D8)",
+  "DEFINE _func_8C0D62FC(8C0D62FC)",
+  "DEFINE _func_8C0D6334(8C0D6334)",
+  "DEFINE _func_8C0D6368(8C0D6368)",
+  "DEFINE _func_8C0D6426(8C0D6426)",
+  "DEFINE _func_8C0D6B3C(8C0D6B3C)",
+  "DEFINE _func_8C0D6B52(8C0D6B52)",
+  "DEFINE _func_8C0D6BDE(8C0D6BDE)",
+  "DEFINE _func_8C0D6C66(8C0D6C66)",
+  "DEFINE _func_8C0D6C94(8C0D6C94)",
+  "DEFINE _memcpy(8C09BD00)",
+  "DEFINE _strcmp(8C09BB5C)",
+  "DEFINE _strcpy(8C09BB0C)",
+  "PRINT dc_misc_8C06B80C.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\campaign-1000\\alpha\\runs\\dc_misc_8C06B80C\\baseline\\obj\\dc_misc_8C06B80C.obj",
+   "sha256": "e7366c290cedbc046c8b21e993cbd044478f8d878e6f011ece07cd14e9001dc3"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C06B80C",
+   "length": 2132
+  },
+  {
+   "name": "C",
+   "address": "8C0B1CD8",
+   "length": 19
+  },
+  {
+   "name": "D",
+   "address": "8C0C7C80",
+   "length": 5
+  },
+  {
+   "name": "B",
+   "address": "8C18483C",
+   "length": 64
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C06B80C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 167,
+   "first_diff_offset": 18,
+   "sha256": "f9287ace2f82f2064cf051a49854224a72a241ce80041e2ed1036cee01170b2a"
+  },
+  {
+   "section": "P",
+   "address": "8C06B902",
+   "size": 66,
+   "exact": false,
+   "diff_bytes": 47,
+   "first_diff_offset": 0,
+   "sha256": "838b5c69b95789b284bc0b30bb46ab2165e334f1dd1866ceea11c8a92bc70ea0"
+  },
+  {
+   "section": "P",
+   "address": "8C06B944",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 150,
+   "first_diff_offset": 0,
+   "sha256": "57bafce2061f615463573cfeb55baf4722f29ba71f80ee920c3e85a4a8c90967"
+  },
+  {
+   "section": "P",
+   "address": "8C06BA3A",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 238,
+   "first_diff_offset": 0,
+   "sha256": "607db6215831e92910ad5b7320636e2bc6b9f251975349644a13b5eab566a476"
+  },
+  {
+   "section": "P",
+   "address": "8C06BB30",
+   "size": 34,
+   "exact": false,
+   "diff_bytes": 34,
+   "first_diff_offset": 0,
+   "sha256": "4af33ba0251b308729251a4ad2f5ece1b910014ed1fe9273a8a519b8e2ba922a"
+  },
+  {
+   "section": "P",
+   "address": "8C06BB54",
+   "size": 12,
+   "exact": false,
+   "diff_bytes": 12,
+   "first_diff_offset": 0,
+   "sha256": "b3785f15a9f281bcf925d30f19c50c3a82718b36b2869ac5b5a0fdeafc5b1c74"
+  },
+  {
+   "section": "P",
+   "address": "8C06BB60",
+   "size": 60,
+   "exact": false,
+   "diff_bytes": 44,
+   "first_diff_offset": 0,
+   "sha256": "bf6eb63c37b619ad05b1a4284b483f7ff27888a488b89fa1dd762b7854db6a58"
+  },
+  {
+   "section": "P",
+   "address": "8C06BB9C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 220,
+   "first_diff_offset": 0,
+   "sha256": "b91d657527d987eccc86d01d54ef08abdad0e5ec2bbc0cbfddccff92427ad6da"
+  },
+  {
+   "section": "P",
+   "address": "8C06BC92",
+   "size": 42,
+   "exact": false,
+   "diff_bytes": 40,
+   "first_diff_offset": 0,
+   "sha256": "106796f556862550f5f47e32f094553220af989a41e5667833acafa4bba70501"
+  },
+  {
+   "section": "P",
+   "address": "8C06BCBC",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 229,
+   "first_diff_offset": 0,
+   "sha256": "2345a597601a5b21e4df4a4880a2931c5530cc33eef75d26d872414868080572"
+  },
+  {
+   "section": "P",
+   "address": "8C06BDB2",
+   "size": 76,
+   "exact": false,
+   "diff_bytes": 70,
+   "first_diff_offset": 0,
+   "sha256": "3bc936b029d33653385dbf051f68233ad2f651eb92c2059555291c615b332c3d"
+  },
+  {
+   "section": "P",
+   "address": "8C06BE00",
+   "size": 20,
+   "exact": false,
+   "diff_bytes": 20,
+   "first_diff_offset": 0,
+   "sha256": "d4c2eb86811a9a0a3c1fe77259978d781a4284eec7d59d994b13f47000fbce38"
+  },
+  {
+   "section": "P",
+   "address": "8C06BE14",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 227,
+   "first_diff_offset": 0,
+   "sha256": "b84488268655f7c71111f60adf977aa07cc0b65ee98198580da91a18b8822c76"
+  },
+  {
+   "section": "P",
+   "address": "8C06BF0A",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 31,
+   "first_diff_offset": 0,
+   "sha256": "4a5daec0af9e837d86fece3bd9ce6e5eebf395dd582b6cc3e1b25b6b0b6b836f"
+  },
+  {
+   "section": "P",
+   "address": "8C06BF2C",
+   "size": 24,
+   "exact": false,
+   "diff_bytes": 24,
+   "first_diff_offset": 0,
+   "sha256": "41cc7e6ed1a6beb22bceea6fef3bd42cdaa13de79ac7b61a41bd3ae1bfe740c4"
+  },
+  {
+   "section": "P",
+   "address": "8C06BF44",
+   "size": 230,
+   "exact": false,
+   "diff_bytes": 219,
+   "first_diff_offset": 0,
+   "sha256": "2057daef9b33e3835c4ebdddfbfc36f2dc718fede784d03561e138f140f0b9f6"
+  },
+  {
+   "section": "P",
+   "address": "8C06C02C",
+   "size": 24,
+   "exact": false,
+   "diff_bytes": 24,
+   "first_diff_offset": 0,
+   "sha256": "91d8ec54fba5e7c332a1eab0176fe294da777cce5438c9f1454c151db9609e1c"
+  },
+  {
+   "section": "P",
+   "address": "8C06C044",
+   "size": 28,
+   "exact": false,
+   "diff_bytes": 26,
+   "first_diff_offset": 0,
+   "sha256": "22eba7dd782cb4c28eff15ac99c055e5b95de2737fcb682a8b4e76f559ecd4d8"
+  },
+  {
+   "section": "D",
+   "address": "8C0C7C80",
+   "size": 5,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4"
+  },
+  {
+   "section": "C",
+   "address": "8C0B1CD8",
+   "size": 19,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "a1fe654921e8563a8f6bef602880705c875ac8b038686a424db7b03414cf60f6"
+  }
+ ],
+ "all_exact": false
+}

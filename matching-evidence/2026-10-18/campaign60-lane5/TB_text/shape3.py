@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign60-lane5/TB_text');s=(p/'baseline.c').read_text().replace('    unsigned char *s1=str1; unsigned char temp[256]; const unsigned char *s2=str2; unsigned char *s=str1; unsigned char *t;','    unsigned char *s=str1; unsigned char *s1=str1; unsigned char temp[256]; const unsigned char *s2=str2; unsigned char *t;');Path('src/TB_text.c').write_text(s)

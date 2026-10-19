@@ -1,0 +1,18 @@
+{
+  "unit": "pausescr",
+  "selected": "baseline",
+  "baseline_functions": 1,
+  "final_functions": 1,
+  "new_functions": [],
+  "baseline_text": 6,
+  "final_text": 6,
+  "baseline_data": 445,
+  "final_data": 445,
+  "note": "No gain; 3 lifetime/boolean/snapshot shapes failed; updatePauseScreen12 bytes short",
+  "hashes": {
+    "src\\pausescr.c": "783c7df00f0750a060379a146d556da942520556793c35d2ca24ad389f9b734d",
+    "build\\campaign60-lane4\\pausescr\\baseline\\obj\\pausescr.obj": "b8e8369cc7d06762cd63c0346c5e7c43ade4932ac718fa3e5df8cabde65fe97e",
+    "build\\campaign60-lane4\\pausescr\\baseline\\link\\pausescr.abs": "d754a44b75454288e7881398570fe1d1e718d16d84e90e0cc89bca85408d3cdf",
+    "build\\campaign60-lane4\\pausescr\\baseline\\pp\\pausescr.c": "7a4daf9944bb2c300a60a7accaea2ca4bf27c719f511128fd0a031cc8d6415f4"
+  }
+}

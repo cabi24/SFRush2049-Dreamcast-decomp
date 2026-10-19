@@ -1,0 +1,17 @@
+[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "BE80517383732BC116AB3EC0D6A0B162ED305D5200ACDC5D91DCBB859E0F64F8",
+        "Path":  "C:\\rush2049-dreamcast\\src\\blit.c"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "99D25200CE7D3531CD7C7E28051B28B603C87C9B5828ACD3B1EBE18851E37CE2",
+        "Path":  "C:\\rush2049-dreamcast\\build\\campaign60-lane1\\blit\\selected-final\\link\\blit.abs"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "69D104B0CBC244F035E9E3ACCFA6D10C4A948E7145BBDCF017654787C340AE7F",
+        "Path":  "C:\\rush2049-dreamcast\\build\\campaign60-lane1\\blit\\selected-final\\obj\\blit.obj"
+    }
+]

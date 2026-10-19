@@ -1,0 +1,54 @@
+{
+  "unit": "Init",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 5,
+    "functions_total": 7,
+    "functions_moved": 0,
+    "exact_text_bytes": 712,
+    "equal_text_bytes_including_fill": 714,
+    "text_bytes": 1308,
+    "exact_data_bytes": 12,
+    "source_sha256": "8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 3,
+    "functions_total": 7,
+    "functions_moved": 0,
+    "exact_text_bytes": 342,
+    "equal_text_bytes_including_fill": 344,
+    "text_bytes": 1308,
+    "exact_data_bytes": 12,
+    "source_sha256": "bbf359b74a6bc00607f7fbcfb5d7848a87a942165401812a0f52d26ac6f1a853"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "Pal60",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 234
+    },
+    {
+      "name": "func_8C039280",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 136
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 712,
+  "text_bytes_head": 342,
+  "report_consistency": {
+    "report_functions_exact": 5,
+    "dirty_rebuild_functions_exact": 5,
+    "report_exact_text_bytes": 712,
+    "dirty_rebuild_exact_text_bytes": 712,
+    "report_source_sha256": "8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279",
+    "dirty_source_sha256": "8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279",
+    "match": true
+  },
+  "head_source_sha256": "bbf359b74a6bc00607f7fbcfb5d7848a87a942165401812a0f52d26ac6f1a853",
+  "seconds": 4.9
+}

@@ -1,0 +1,445 @@
+{
+  "name": "mdrive",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/mdrive.c",
+  "source_sha256": "378bdef97dbbbaea4472ca95a5dd2cbf87b6e47d97a527a12cea34e018f92256",
+  "text": [
+    "8C03D654",
+    "8C03FD08"
+  ],
+  "text_bytes": 9908,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 380,
+  "exact_data_bytes": 378,
+  "functions_total": 20,
+  "functions_exact": 0,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "munge_gLink_data",
+      "start": "8C03D654",
+      "end": "8C03D82E",
+      "size": 474,
+      "status": "differs",
+      "diff_bytes": 115,
+      "linked_at": "8C03D654",
+      "linked_size": 516
+    },
+    {
+      "name": "init_cars",
+      "start": "8C03D858",
+      "end": "8C03DD58",
+      "size": 1280,
+      "status": "differs",
+      "diff_bytes": 1226,
+      "linked_at": "8C03D858",
+      "linked_size": 1444
+    },
+    {
+      "name": "func_8C03DD58",
+      "start": "8C03DD58",
+      "end": "8C03DF22",
+      "size": 458,
+      "status": "differs",
+      "diff_bytes": 452,
+      "linked_at": "8C03DDFC",
+      "linked_size": 492
+    },
+    {
+      "name": "Init_MDrive",
+      "start": "8C03DF34",
+      "end": "8C03DFF2",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 189,
+      "linked_at": "8C03DFE8",
+      "linked_size": 232
+    },
+    {
+      "name": "Update_MDrive",
+      "start": "8C03E01C",
+      "end": "8C03E06C",
+      "size": 80,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C03E0D0",
+      "linked_size": 80
+    },
+    {
+      "name": "multiinit",
+      "start": "8C03E06C",
+      "end": "8C03E18C",
+      "size": 288,
+      "status": "moved",
+      "diff_bytes": 283,
+      "linked_at": "8C03E120",
+      "linked_size": 288
+    },
+    {
+      "name": "SetClutch",
+      "start": "8C03E18C",
+      "end": "8C03E1E4",
+      "size": 88,
+      "status": "differs",
+      "diff_bytes": 87,
+      "linked_at": "8C03E240",
+      "linked_size": 144
+    },
+    {
+      "name": "init_model_task",
+      "start": "8C03E21C",
+      "end": "8C03E4E8",
+      "size": 716,
+      "status": "differs",
+      "diff_bytes": 679,
+      "linked_at": "8C03E2D0",
+      "linked_size": 716
+    },
+    {
+      "name": "model_iteration",
+      "start": "8C03E4E8",
+      "end": "8C03E538",
+      "size": 80,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C03E59C",
+      "linked_size": 132
+    },
+    {
+      "name": "_UpdatePlayerModel",
+      "start": "8C03E56C",
+      "end": "8C03E76A",
+      "size": 510,
+      "status": "differs",
+      "diff_bytes": 504,
+      "linked_at": "8C03E620",
+      "linked_size": 504
+    },
+    {
+      "name": "_UpdateDroneModels",
+      "start": "8C03E76A",
+      "end": "8C03E834",
+      "size": 202,
+      "status": "differs",
+      "diff_bytes": 202,
+      "linked_at": "8C03E818",
+      "linked_size": 264
+    },
+    {
+      "name": "_UpdateModel",
+      "start": "8C03E86C",
+      "end": "8C03EDE4",
+      "size": 1400,
+      "status": "differs",
+      "diff_bytes": 1369,
+      "linked_at": "8C03E920",
+      "linked_size": 1246
+    },
+    {
+      "name": "_UpdateLinkCars",
+      "start": "8C03EE08",
+      "end": "8C03EE5E",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C03EDFE",
+      "linked_size": 134
+    },
+    {
+      "name": "modelstop",
+      "start": "8C03EE5E",
+      "end": "8C03EEF4",
+      "size": 150,
+      "status": "differs",
+      "diff_bytes": 144,
+      "linked_at": "8C03EE84",
+      "linked_size": 188
+    },
+    {
+      "name": "modelgo",
+      "start": "8C03EF28",
+      "end": "8C03EFBC",
+      "size": 148,
+      "status": "differs",
+      "diff_bytes": 142,
+      "linked_at": "8C03EF40",
+      "linked_size": 148
+    },
+    {
+      "name": "multigo",
+      "start": "8C03EFBC",
+      "end": "8C03EFD0",
+      "size": 20,
+      "status": "differs",
+      "diff_bytes": 20,
+      "linked_at": "8C03EFD4",
+      "linked_size": 20
+    },
+    {
+      "name": "update_game_data",
+      "start": "8C03EFF4",
+      "end": "8C03F6C8",
+      "size": 1748,
+      "status": "differs",
+      "diff_bytes": 1690,
+      "linked_at": "8C03EFE8",
+      "linked_size": 1798
+    },
+    {
+      "name": "_UpdateTireAppearance",
+      "start": "8C03F6C8",
+      "end": "8C03FAD4",
+      "size": 1036,
+      "status": "differs",
+      "diff_bytes": 1011,
+      "linked_at": "8C03F6EE",
+      "linked_size": 1038
+    },
+    {
+      "name": "End_MDrive",
+      "start": "8C03FAD8",
+      "end": "8C03FB9C",
+      "size": 196,
+      "status": "differs",
+      "diff_bytes": 195,
+      "linked_at": "8C03FAFC",
+      "linked_size": 186
+    },
+    {
+      "name": "are_all_cars_stopped",
+      "start": "8C03FB9C",
+      "end": "8C03FCE4",
+      "size": 328,
+      "status": "differs",
+      "diff_bytes": 320,
+      "linked_at": "8C03FBB6",
+      "linked_size": 326
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C03D82E",
+      "end": "8C03D858",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C03DF22",
+      "end": "8C03DF34",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C03DFF2",
+      "end": "8C03E01C",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "pool",
+      "start": "8C03E1E4",
+      "end": "8C03E21C",
+      "exact": false,
+      "built": 56,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C03E538",
+      "end": "8C03E56C",
+      "exact": false,
+      "built": 52,
+      "diff_bytes": 50
+    },
+    {
+      "kind": "pool",
+      "start": "8C03E834",
+      "end": "8C03E86C",
+      "exact": false,
+      "built": 56,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C03EDE4",
+      "end": "8C03EE08",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "pool",
+      "start": "8C03EEF4",
+      "end": "8C03EF28",
+      "exact": false,
+      "built": 52,
+      "diff_bytes": 51
+    },
+    {
+      "kind": "pool",
+      "start": "8C03EFD0",
+      "end": "8C03EFF4",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "pool",
+      "start": "8C03FAD4",
+      "end": "8C03FAD8",
+      "exact": false,
+      "built": 4,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "pool",
+      "start": "8C03FCE4",
+      "end": "8C03FD08",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC0C4",
+      "end": "8C0AC1AC",
+      "exact": true,
+      "built": 232,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEDE8",
+      "end": "8C0BEE7C",
+      "exact": true,
+      "built": 148,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C14CB60",
+      "end": "8C14CBA4",
+      "exact": true,
+      "linked": [
+        "8C14CB60",
+        "8C14CBA4"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:37:48",
+  "defines": {
+    "_AbortCar": "8C04A4DC",
+    "_CarReportsGameOver": "8C01C294",
+    "_CheckCameraView": "8C01908C",
+    "_CheckCrash": "8C049FA4",
+    "_CopyUV": "8C02631E",
+    "_FinishResurrecting": "8C04A06C",
+    "_GetNextCheckpoint": "8C045BDA",
+    "_GhostUpdate": "8C02E8F0",
+    "_InitCarPath": "8C03A46A",
+    "_InitCarVisuals": "8C05ED66",
+    "_MaxPathControls": "8C03A54C",
+    "_PS_RumbleGo": "8C06E7B4",
+    "_PS_RumbleStop": "8C06E7BC",
+    "_PS_SetRumblePercent": "8C06E834",
+    "_PitchUV": "8C02673C",
+    "_Resurrect": "8C047F0C",
+    "_RollUV": "8C026808",
+    "_SetResurrectionData": "8C049AB8",
+    "_StartCarSounds": "8C011B40",
+    "_StopCarSounds": "8C01375C",
+    "_UpdateCarSounds": "8C011D0C",
+    "_UpdateListeners": "8C011824",
+    "_UpdateModelControls": "8C01EB1C",
+    "_UpdateResurrectingCar": "8C04A17C",
+    "_WorldVector": "8C026B8C",
+    "_ZOID_UpdateObject": "8C068774",
+    "__divls": "8C09B680",
+    "_carSuspensions": "8C0BC0E8",
+    "_collision": "8C01D4F0",
+    "_collsize": "8C0A8F84",
+    "_dead_reckon_all": "8C047C08",
+    "_gAPlayerReallyFinished": "8C12C6A8",
+    "_gCamera": "8C12B648",
+    "_gCarEngines": "8C0BBC09",
+    "_gCarFrame": "8C0BBDB8",
+    "_gCarHandling": "8C0BBBC8",
+    "_gCarModels": "8C0BB894",
+    "_gCarSuspensions": "8C0BC0F4",
+    "_gCarTires": "8C0BBD24",
+    "_gCoastFlag": "8C12C64C",
+    "_gDeathMode": "8C12C656",
+    "_gDriveHulk": "8C15CFD8",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameState": "8C0BFD3C",
+    "_gGhosts": "8C15046C",
+    "_gLink": "8C12C5A4",
+    "_gNumLaps": "8C12C654",
+    "_gNumPlayers": "8C14CBB0",
+    "_gOneMoreCP": "8C12BDE1",
+    "_gRace": "8C12C628",
+    "_gRetraceTime": "8C0B8C2C",
+    "_gStuntsDone": "8C14FDC4",
+    "_gTireRims": "8C0BC101",
+    "_gTrackNum": "8C15C9C0",
+    "_gUseCatchup": "8C14CBAF",
+    "_game_reckon_all": "8C047C68",
+    "_model": "8C14CBB4",
+    "_modelrun": "8C14CBAC",
+    "_sym": "8C0235FE",
+    "_update_reckon_base": "8C047E5C"
+  },
+  "starts": {
+    "P": "8C03D654",
+    "C": "8C0AC0C4",
+    "D": "8C0BEDE8",
+    "B": "8C14CB60"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03D654",
+      "length": 9896
+    },
+    {
+      "name": "C",
+      "address": "8C0AC0C4",
+      "length": 232
+    },
+    {
+      "name": "D",
+      "address": "8C0BEDE8",
+      "length": 148
+    },
+    {
+      "name": "B",
+      "address": "8C14CB60",
+      "length": 68
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 380,
+  "excluded_exact_data_fill": 2,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BEDEA",
+      "end": "8C0BEDEC",
+      "reason": "Two-byte section alignment between source static signed-short attractSlot and four-byte-aligned int percentTable; actual native D extent148 versus semantic146. Always0credit."
+    }
+  ],
+  "text_size_delta": -12,
+  "seconds": 2.2
+}

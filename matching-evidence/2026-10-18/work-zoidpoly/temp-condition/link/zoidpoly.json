@@ -1,0 +1,90 @@
+{
+ "name": "zoidpoly",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT zoidpoly.abs",
+  "FORM A",
+  "START P(8C068F28)",
+  "START B(8C172844)",
+  "DEFINE _gMirrorWaves(8C15FA14)",
+  "DEFINE _gTexDefPtrs(8C14C71C)",
+  "PRINT zoidpoly.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-zoidpoly\\temp-condition\\obj\\zoidpoly.obj",
+   "sha256": "810910b06a447e4104b82799302b5624bda371e20e23211c1ddccfca49784e9d"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C068F28",
+   "length": 904
+  },
+  {
+   "name": "B",
+   "address": "8C172844",
+   "length": 20808
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C068F28",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "22870c38cdb6c257799ebf7fa2b3d13dcbf1767fe9ca8ff101122bdaa91eb730"
+  },
+  {
+   "section": "P",
+   "address": "8C06901E",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "31ac85da0d16bc6aa8ea960adef635459a3c2bf65ce668d2b02d5cef4935499b"
+  },
+  {
+   "section": "P",
+   "address": "8C069114",
+   "size": 50,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "08c4d586f141af260e9d6cc8db96a623afe644e3a22d8ba344213b1af7e7cfec"
+  },
+  {
+   "section": "P",
+   "address": "8C069148",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ae39aa342fe69c97f4bb9531074d19a2f686e577878a1149eeda8e90ef2a4b07"
+  },
+  {
+   "section": "P",
+   "address": "8C06923E",
+   "size": 100,
+   "exact": false,
+   "diff_bytes": 55,
+   "first_diff_offset": 10,
+   "sha256": "aeff1729f6fada44d50d1f93ecdc1febb2a20e9da0cb4420c6dd5a0269de4fbd"
+  },
+  {
+   "section": "P",
+   "address": "8C0692A4",
+   "size": 12,
+   "exact": false,
+   "diff_bytes": 9,
+   "first_diff_offset": 0,
+   "sha256": "d73471035121dfa59da94a514b1b84d6f674922285cf181bd122eadcb256700f"
+  }
+ ],
+ "all_exact": false
+}

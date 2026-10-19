@@ -1,0 +1,25 @@
+{
+  "name": "blit",
+  "kind": "game",
+  "status": "failed",
+  "source": "src/blit.c",
+  "source_sha256": "e18578172edab29b3cd4905cbdef25a23afeabff303918f319bc8a40fd0820b2",
+  "text": [
+    "8C018790",
+    "8C018CBC"
+  ],
+  "text_bytes": 1324,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 4,
+  "exact_data_bytes": 0,
+  "functions_total": 10,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [],
+  "segments": [],
+  "notes": [
+    "compile failed: [shc_cc] shc-v5.1r11 (native) failed rc=1: blit.c(110) : 2114 (E) Multiple variable declarations blit.c(111) : 2114 (E) Multiple variable declarations"
+  ],
+  "built_at": "2026-10-18T15:01:55"
+}

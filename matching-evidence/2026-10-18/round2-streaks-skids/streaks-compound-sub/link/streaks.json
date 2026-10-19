@@ -1,0 +1,119 @@
+{
+ "name": "streaks",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT streaks.abs",
+  "FORM A",
+  "START P(8C098E4C)",
+  "START D(8C0D1DE0)",
+  "START B(8C1A33F0)",
+  "DEFINE _FreeStatLLE(8C051400)",
+  "DEFINE _GetStatLLE(8C0513D8)",
+  "DEFINE _InitStatLL(8C05138C)",
+  "DEFINE _ZOID_NewPoly(8C068F28)",
+  "DEFINE _ZOID_RemovePoly(8C06926C)",
+  "DEFINE _ZOID_UpdatePoly(8C068FBE)",
+  "DEFINE _gFrameSeconds(8C12254C)",
+  "PRINT streaks.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-streaks-skids\\streaks-compound-sub\\obj\\streaks.obj",
+   "sha256": "77aceaabb19e5fa4b4099d52db1a8438ca821a77e1c2ed63efc58d7f98048f94"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C098E4C",
+   "length": 1356
+  },
+  {
+   "name": "D",
+   "address": "8C0D1DE0",
+   "length": 16
+  },
+  {
+   "name": "B",
+   "address": "8C1A33F0",
+   "length": 7448
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C098E4C",
+   "size": 230,
+   "exact": false,
+   "diff_bytes": 68,
+   "first_diff_offset": 2,
+   "sha256": "16e9a03d0675099592598347d0f0a08abd4e66d7f1457c0ebb48d2d31676bf60"
+  },
+  {
+   "section": "P",
+   "address": "8C098F34",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 232,
+   "first_diff_offset": 0,
+   "sha256": "62500f722ea88c97c18243757f593e5aeb8c894f89b4c2f923f16d08870fb285"
+  },
+  {
+   "section": "P",
+   "address": "8C09902A",
+   "size": 8,
+   "exact": false,
+   "diff_bytes": 8,
+   "first_diff_offset": 0,
+   "sha256": "19de31375c676f1b2559298ceea26d0aa8b23c53653976374a3e97b0c82bea8b"
+  },
+  {
+   "section": "P",
+   "address": "8C099034",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 225,
+   "first_diff_offset": 0,
+   "sha256": "2a4b0577c8e5830f6ee392dd23cb3df7f6d8d07830b6b4031f597d2987b5a1e8"
+  },
+  {
+   "section": "P",
+   "address": "8C09912A",
+   "size": 130,
+   "exact": false,
+   "diff_bytes": 115,
+   "first_diff_offset": 0,
+   "sha256": "ab0599ff8210d748f839ac5a6480a18dbd89300f605a6abb3a090a90edb52f12"
+  },
+  {
+   "section": "P",
+   "address": "8C0991AC",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 226,
+   "first_diff_offset": 0,
+   "sha256": "bd4c45c5b5386c037181d2ebcd49f413513721a5f5fd53a33f332da96dabeaba"
+  },
+  {
+   "section": "P",
+   "address": "8C0992A2",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 224,
+   "first_diff_offset": 0,
+   "sha256": "efdd40cfed09ad649b3d865948529a80397e9b7d8bc7e7af1853761c53685aa7"
+  },
+  {
+   "section": "D",
+   "address": "8C0D1DE0",
+   "size": 16,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "bea70405082cdd7691588543242111412b853ffd447b74ab383b6eed4447bb4f"
+  }
+ ],
+ "all_exact": false
+}

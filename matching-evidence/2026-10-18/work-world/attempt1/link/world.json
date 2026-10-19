@@ -1,0 +1,90 @@
+{
+ "name": "world",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT world.abs",
+  "FORM A",
+  "START P(8C065C78)",
+  "DEFINE _MBOX_FindObject_WORK(8C03D390)",
+  "DEFINE _MBOX_NewObject(8C03D090)",
+  "DEFINE _MBOX_NewObjectCam(8C03D0A2)",
+  "DEFINE _SetupTarget(8C0576F2)",
+  "DEFINE _WorldBase(8C15FF70)",
+  "DEFINE _WorldTable(8C15FF28)",
+  "DEFINE _Worlddlidx(8C15FF74)",
+  "DEFINE __slow_strcmp1(8C09BB5C)",
+  "DEFINE __slow_strcpy(8C09BB0C)",
+  "DEFINE _bsearch(8C09BC04)",
+  "DEFINE _cur_world_obj(8C15FF78)",
+  "DEFINE _func_8C05145C(8C05145C)",
+  "DEFINE _func_8C0686F0(8C0686F0)",
+  "DEFINE _func_8C0687B6(8C0687B6)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gNumModels(8C14CB1C)",
+  "DEFINE _gWorldData(8C15FF24)",
+  "PRINT world.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-world\\attempt1\\obj\\world.obj",
+   "sha256": "ff95c209d1a86e20fd82e9b68377ef691ca9b044e04157b96eb94a55fd181cd6"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C065C78",
+   "length": 684
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C065C78",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 237,
+   "first_diff_offset": 2,
+   "sha256": "bb39bea79a8a8bd12fa532a5c5f07067968d595d26180ce45e249bcbca908dd5"
+  },
+  {
+   "section": "P",
+   "address": "8C065D6E",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 239,
+   "first_diff_offset": 0,
+   "sha256": "01f1eacf83223129a29a501d7bb159788220abc3127398fbf5052fcec55f4b03"
+  },
+  {
+   "section": "P",
+   "address": "8C065E64",
+   "size": 118,
+   "exact": false,
+   "diff_bytes": 107,
+   "first_diff_offset": 0,
+   "sha256": "d2115ddb97bda8a6059506dd9bd81ed3eae0d508fa0e6f0f6825bb44bfd1fd1b"
+  },
+  {
+   "section": "P",
+   "address": "8C065EDC",
+   "size": 56,
+   "exact": false,
+   "diff_bytes": 43,
+   "first_diff_offset": 0,
+   "sha256": "ccc498a4d03c27ac5916f1ac74448ee7c0287a11864329360e181046964f9cad"
+  },
+  {
+   "section": "P",
+   "address": "8C065F14",
+   "size": 16,
+   "exact": false,
+   "diff_bytes": 12,
+   "first_diff_offset": 0,
+   "sha256": "b28c04f29e18ada54a2a5c38c34a5429e200306a5d6dae5a6c1a4c6fdfbd11ba"
+  }
+ ],
+ "all_exact": false
+}

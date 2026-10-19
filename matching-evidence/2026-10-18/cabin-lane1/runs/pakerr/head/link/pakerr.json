@@ -1,0 +1,400 @@
+{
+ "name": "pakerr",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT pakerr.abs",
+  "FORM A",
+  "START P(8C0435F4)",
+  "START C(8C0AC2DC)",
+  "START D(8C0BF760)",
+  "DEFINE _AudPlayEffect(8C014552)",
+  "DEFINE _GetControllerActive(8C01F154)",
+  "DEFINE _GetControllerStickEdges(8C01F1B0)",
+  "DEFINE _HAL_SetFont(8C02EF96)",
+  "DEFINE _NewMultiBlit(8C018B56)",
+  "DEFINE _PS_PakRumble(8C06D48A)",
+  "DEFINE _PlayLRSound(8C0115A4)",
+  "DEFINE _PlayStartABSound(8C011586)",
+  "DEFINE _RemoveBlit(8C0187BA)",
+  "DEFINE _SaveServer(8C04B746)",
+  "DEFINE _SetControllerActive(8C01F180)",
+  "DEFINE _SetControllerStickEdges(8C01F1DC)",
+  "DEFINE _TB_CenterText(8C05A708)",
+  "DEFINE _TB_DrawText(8C05ACA6)",
+  "DEFINE _TB_DrawTextScrollBox(8C05ADE4)",
+  "DEFINE _TB_GetFontLineHeight(8C05A828)",
+  "DEFINE _TB_SetJust(8C05A73A)",
+  "DEFINE _TB_SetTextColor(8C05A742)",
+  "DEFINE _TB_Strcat(8C05AB3A)",
+  "DEFINE _TB_Strcpy(8C05AAE6)",
+  "DEFINE _UpdateBlit(8C018910)",
+  "DEFINE _UpdateFrame(8C027AFC)",
+  "DEFINE _UpdateRushControls(8C01E8F8)",
+  "DEFINE _ZOID_GetFog(8C0696E8)",
+  "DEFINE _ZOID_SetFog(8C06967C)",
+  "DEFINE _gActiveEdges(8C12C1B4)",
+  "DEFINE _gActiveLevels(8C12C1B8)",
+  "DEFINE _gFrameCounter(8C12253C)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gNumWindows(8C12B644)",
+  "DEFINE _gPS_ContName(8C0C9714)",
+  "DEFINE _gPS_PakName(8C0C96F4)",
+  "DEFINE _gPakError(8C14FE9C)",
+  "DEFINE _gRetraceRate(8C0B8C28)",
+  "DEFINE _gText(8C15C98C)",
+  "DEFINE _sprintf(8C09BF0C)",
+  "PRINT pakerr.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\pakerr\\head\\obj\\pakerr.obj",
+   "sha256": "75d5981a11799b993b23e1370fa0f06d909ccfbdd5e4a3be8aaa90993bedb12a"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C0435F4",
+   "length": 4352
+  },
+  {
+   "name": "C",
+   "address": "8C0AC2DC",
+   "length": 92
+  },
+  {
+   "name": "D",
+   "address": "8C0BF760",
+   "length": 6
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C0435F4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 7,
+   "first_diff_offset": 139,
+   "sha256": "dec24abc7c808d94e729fcc64abed4a4ef4dc4873ded4721209e99ddcfd59d57"
+  },
+  {
+   "section": "P",
+   "address": "8C0436EA",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 74,
+   "sha256": "81a11c8b2d6185fd1c4598a63282945525d23b6aa844d225c97ddc265327215e"
+  },
+  {
+   "section": "P",
+   "address": "8C0437E0",
+   "size": 226,
+   "exact": false,
+   "diff_bytes": 9,
+   "first_diff_offset": 120,
+   "sha256": "f2465c1aaf39ad5da39f8a2b8853ff966ec0edec6368b5bf6aa9379a68d705a4"
+  },
+  {
+   "section": "P",
+   "address": "8C0438C4",
+   "size": 4,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "03326e75920a7e5aee22703f64a76fdaadc758a253d284adb38a3e8f4917c07e"
+  },
+  {
+   "section": "P",
+   "address": "8C0438C8",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "6bae4bcb17f163612285cb0993cf149e6a6ec294220e8b0dc3f0b2d9045f69da"
+  },
+  {
+   "section": "P",
+   "address": "8C0439BE",
+   "size": 110,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "398a604a7c7c7cc5ad8c82df0a0a7f1de305338d3bab7999c8b1d100485ab477"
+  },
+  {
+   "section": "P",
+   "address": "8C043A2C",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "de62bdddbe379c7a512b3238d0585fad61821a8a93abcdf8c4b203684c0bf238"
+  },
+  {
+   "section": "P",
+   "address": "8C043B22",
+   "size": 64,
+   "exact": false,
+   "diff_bytes": 12,
+   "first_diff_offset": 12,
+   "sha256": "534bc202ad75676843df854766c1e4d11cc669e67b68123d50fb8f9661f32e80"
+  },
+  {
+   "section": "P",
+   "address": "8C043B64",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2b6f58f1a7649f1a816bac914e1cd23c1e4d2b63df4c65516cf9bac47a0e0819"
+  },
+  {
+   "section": "P",
+   "address": "8C043C5A",
+   "size": 60,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "dacd260b8d396415c9faa50aef8db54e56e7d7153898c9c653311d75f5799e20"
+  },
+  {
+   "section": "P",
+   "address": "8C043C98",
+   "size": 24,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "bf1d2952d5e1f4dd3a7fa4afa3c9b2e22f3d7f5b183be81497d6467ee9ce4aa6"
+  },
+  {
+   "section": "P",
+   "address": "8C043CB0",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 69,
+   "first_diff_offset": 6,
+   "sha256": "0e9928aa9a5fbc70fc0fe4530dc00646678993b4321e20451423417eb2a84061"
+  },
+  {
+   "section": "P",
+   "address": "8C043DA6",
+   "size": 64,
+   "exact": false,
+   "diff_bytes": 54,
+   "first_diff_offset": 0,
+   "sha256": "c06089c398eea487c21bd5738a1d89b12c4bd5b59569d1bd441d465e5d9341b8"
+  },
+  {
+   "section": "P",
+   "address": "8C043DE8",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 233,
+   "sha256": "cedcf8335623f10063f6e668dbb3d629c155b36c1c0d35b55adb79ce7955a66f"
+  },
+  {
+   "section": "P",
+   "address": "8C043EDE",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 158,
+   "first_diff_offset": 7,
+   "sha256": "1b65fae91eb688aa5ee690c2a8c547b80c1a35a965654a5bc2b022d081a06f32"
+  },
+  {
+   "section": "P",
+   "address": "8C043FD4",
+   "size": 56,
+   "exact": false,
+   "diff_bytes": 36,
+   "first_diff_offset": 0,
+   "sha256": "afa84c64ebaee4e2632460cc4a645f64da663137f4d552206c9f6b1dc5c71149"
+  },
+  {
+   "section": "P",
+   "address": "8C04400C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 215,
+   "first_diff_offset": 20,
+   "sha256": "69b42d8b69a9a60bd94553ec35399ad7dee0db852cd85b5daa3322d6bf10bc20"
+  },
+  {
+   "section": "P",
+   "address": "8C044102",
+   "size": 60,
+   "exact": false,
+   "diff_bytes": 56,
+   "first_diff_offset": 0,
+   "sha256": "ce95a5d87cf247cf3adc973cb56e6e29af94987143e7b92a5f43bb5a91ff69cc"
+  },
+  {
+   "section": "P",
+   "address": "8C044140",
+   "size": 154,
+   "exact": false,
+   "diff_bytes": 23,
+   "first_diff_offset": 42,
+   "sha256": "e4e9d8cd7d9f796dc6669628d8111e4841905835cd2e10d47d0cdd5659975101"
+  },
+  {
+   "section": "P",
+   "address": "8C0441DC",
+   "size": 62,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 14,
+   "sha256": "62567c249f9ba4b9016006016495c26985c951c7fad18d8648a4399f81f94b15"
+  },
+  {
+   "section": "P",
+   "address": "8C04421C",
+   "size": 222,
+   "exact": false,
+   "diff_bytes": 4,
+   "first_diff_offset": 208,
+   "sha256": "3ad49c1e5e1eb59ff6e28023fea20978f3faa11728708086a5e9451b80168cf3"
+  },
+  {
+   "section": "P",
+   "address": "8C0442FC",
+   "size": 94,
+   "exact": false,
+   "diff_bytes": 7,
+   "first_diff_offset": 44,
+   "sha256": "0568f40285c179efaf1d83fb5374518ded40fcf471b29b52ad00571547656432"
+  },
+  {
+   "section": "P",
+   "address": "8C04435C",
+   "size": 4,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "d7ce3444729ed09f45d3e3fd932b3832d628d016b37b8822b6c810e8161a3638"
+  },
+  {
+   "section": "P",
+   "address": "8C044360",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 165,
+   "first_diff_offset": 18,
+   "sha256": "c19cfc670eb5b7887f60ca040e7390de374eff925798e211270676e40dadca85"
+  },
+  {
+   "section": "P",
+   "address": "8C044456",
+   "size": 52,
+   "exact": false,
+   "diff_bytes": 52,
+   "first_diff_offset": 0,
+   "sha256": "b9e930a675fa70e686a64446657e1b7629d7ae7ecf3163a7016aed12238cbefa"
+  },
+  {
+   "section": "P",
+   "address": "8C04448C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 210,
+   "first_diff_offset": 0,
+   "sha256": "c792ebe3e2f920e51f7ddbf2276c496f4c83c53e2e104b5ae0e754cd4bb1d89b"
+  },
+  {
+   "section": "P",
+   "address": "8C044582",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 237,
+   "first_diff_offset": 0,
+   "sha256": "ea2d0112292cff58d9906212f51413f8a2887527d4401fe23987128fe415248e"
+  },
+  {
+   "section": "P",
+   "address": "8C044678",
+   "size": 88,
+   "exact": false,
+   "diff_bytes": 85,
+   "first_diff_offset": 1,
+   "sha256": "957f0ec1e5bcfac3f629d5d9b1a3daae4ec495c53d1c947c9429d21d0c06008b"
+  },
+  {
+   "section": "P",
+   "address": "8C0446D0",
+   "size": 36,
+   "exact": false,
+   "diff_bytes": 29,
+   "first_diff_offset": 0,
+   "sha256": "0d3fb7a310254c0b96d6ff04b7fcf67415ed9affd82ad7d0681ce176afc179c4"
+  },
+  {
+   "section": "D",
+   "address": "8C0BF760",
+   "size": 6,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "83b1d934cfcbdc0f659f90053acb9548c5348273db637088c76568d0f0701991"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC2DC",
+   "size": 6,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "8ec87a7169d8e1cc47f4e79a20ff4add737a78bf43b530180b6736b3364cb557"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC2E4",
+   "size": 3,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "c1c91a7d882700051cb22bf907cfedf13b133deac2aa913eb68f5690146a9317"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC2E8",
+   "size": 7,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "3c6150311763e7162e56773dd3a25a716f251c11cd14f9a4ebc57531ecb50430"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC2F0",
+   "size": 13,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "739f41f243dd979d10876edbd38a18e22beed1046a1f7a07ed04c5d4912617bb"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC300",
+   "size": 17,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "df6f109bdb795d087dbd5952483e75b0d078345d68306f6ce42e01a4703981ae"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC314",
+   "size": 36,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 28,
+   "sha256": "edd16735b5f58d5f9af2a94540802a8f0887f1a9e8eecdb601caebce0d92323d"
+  }
+ ],
+ "all_exact": false
+}

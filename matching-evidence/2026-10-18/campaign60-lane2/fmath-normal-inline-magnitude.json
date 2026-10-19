@@ -1,0 +1,414 @@
+{
+  "name": "fmath",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/fmath.c",
+  "source_sha256": "c415ed318d157bc7bc5ea606c116795023abe0c04eaca5bf24226924dd1e61b6",
+  "text": [
+    "8C026278",
+    "8C027164"
+  ],
+  "text_bytes": 3820,
+  "exact_text_bytes": 2508,
+  "align_bytes": 0,
+  "data_bytes": 72,
+  "exact_data_bytes": 72,
+  "functions_total": 31,
+  "functions_exact": 25,
+  "functions_moved": 3,
+  "functions": [
+    {
+      "name": "func_8C026278",
+      "start": "8C026278",
+      "end": "8C02628A",
+      "size": 18,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026278",
+      "linked_size": 18
+    },
+    {
+      "name": "magnitude",
+      "start": "8C02628A",
+      "end": "8C0262A6",
+      "size": 28,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02628A",
+      "linked_size": 28
+    },
+    {
+      "name": "invmagnitude",
+      "start": "8C0262A6",
+      "end": "8C0262D2",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0262A6",
+      "linked_size": 44
+    },
+    {
+      "name": "func_8C0262D2",
+      "start": "8C0262D2",
+      "end": "8C0262E4",
+      "size": 18,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0262D2",
+      "linked_size": 18
+    },
+    {
+      "name": "func_8C0262E4",
+      "start": "8C0262E4",
+      "end": "8C0262F2",
+      "size": 14,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0262E4",
+      "linked_size": 14
+    },
+    {
+      "name": "direction",
+      "start": "8C0262F2",
+      "end": "8C02631E",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0262F2",
+      "linked_size": 44
+    },
+    {
+      "name": "CopyUV",
+      "start": "8C02631E",
+      "end": "8C026364",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02631E",
+      "linked_size": 70
+    },
+    {
+      "name": "TransposeUV",
+      "start": "8C026364",
+      "end": "8C0263A4",
+      "size": 64,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026364",
+      "linked_size": 64
+    },
+    {
+      "name": "ScaleUVXYZ",
+      "start": "8C0263A4",
+      "end": "8C026412",
+      "size": 110,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0263A4",
+      "linked_size": 110
+    },
+    {
+      "name": "ScaleUV",
+      "start": "8C026412",
+      "end": "8C026474",
+      "size": 98,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026412",
+      "linked_size": 98
+    },
+    {
+      "name": "WYawUV",
+      "start": "8C026474",
+      "end": "8C026510",
+      "size": 156,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026474",
+      "linked_size": 176
+    },
+    {
+      "name": "WPitchUV",
+      "start": "8C026524",
+      "end": "8C0265D2",
+      "size": 174,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026524",
+      "linked_size": 174
+    },
+    {
+      "name": "WRollUV",
+      "start": "8C0265D2",
+      "end": "8C026674",
+      "size": 162,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0265D2",
+      "linked_size": 162
+    },
+    {
+      "name": "RotateUV",
+      "start": "8C026674",
+      "end": "8C02669A",
+      "size": 38,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026674",
+      "linked_size": 38
+    },
+    {
+      "name": "YawUV",
+      "start": "8C02669A",
+      "end": "8C02673C",
+      "size": 162,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02669A",
+      "linked_size": 162
+    },
+    {
+      "name": "PitchUV",
+      "start": "8C02673C",
+      "end": "8C0267F0",
+      "size": 180,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02673C",
+      "linked_size": 204
+    },
+    {
+      "name": "RollUV",
+      "start": "8C026808",
+      "end": "8C0268B0",
+      "size": 168,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026808",
+      "linked_size": 168
+    },
+    {
+      "name": "fpitch",
+      "start": "8C0268B0",
+      "end": "8C026914",
+      "size": 100,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0268B0",
+      "linked_size": 100
+    },
+    {
+      "name": "fyaw",
+      "start": "8C026914",
+      "end": "8C026970",
+      "size": 92,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026914",
+      "linked_size": 92
+    },
+    {
+      "name": "froll",
+      "start": "8C026970",
+      "end": "8C0269D2",
+      "size": 98,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026970",
+      "linked_size": 98
+    },
+    {
+      "name": "MulUVS",
+      "start": "8C0269D2",
+      "end": "8C026B00",
+      "size": 302,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0269D2",
+      "linked_size": 302
+    },
+    {
+      "name": "BodyVector",
+      "start": "8C026B00",
+      "end": "8C026B5E",
+      "size": 94,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026B00",
+      "linked_size": 94
+    },
+    {
+      "name": "BodyY",
+      "start": "8C026B5E",
+      "end": "8C026B7C",
+      "size": 30,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026B5E",
+      "linked_size": 46
+    },
+    {
+      "name": "WorldVector",
+      "start": "8C026B8C",
+      "end": "8C026BE4",
+      "size": 88,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026B8C",
+      "linked_size": 88
+    },
+    {
+      "name": "U64WorldVector",
+      "start": "8C026BE4",
+      "end": "8C026C44",
+      "size": 96,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C026BE4",
+      "linked_size": 96
+    },
+    {
+      "name": "NormalVector",
+      "start": "8C026C44",
+      "end": "8C026C9A",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 83,
+      "linked_at": "8C026C44",
+      "linked_size": 72
+    },
+    {
+      "name": "CreateYPRMatrix",
+      "start": "8C026C9A",
+      "end": "8C026D58",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 185,
+      "linked_at": "8C026C8C",
+      "linked_size": 190
+    },
+    {
+      "name": "CreateQuatMat",
+      "start": "8C026D58",
+      "end": "8C026E20",
+      "size": 200,
+      "status": "moved",
+      "diff_bytes": 192,
+      "linked_at": "8C026D4A",
+      "linked_size": 200
+    },
+    {
+      "name": "InterpQuats",
+      "start": "8C026E20",
+      "end": "8C0270C6",
+      "size": 678,
+      "status": "differs",
+      "diff_bytes": 642,
+      "linked_at": "8C026E12",
+      "linked_size": 680
+    },
+    {
+      "name": "ExtractYaw",
+      "start": "8C0270C6",
+      "end": "8C027120",
+      "size": 90,
+      "status": "moved",
+      "diff_bytes": 82,
+      "linked_at": "8C0270BA",
+      "linked_size": 110
+    },
+    {
+      "name": "Random",
+      "start": "8C027134",
+      "end": "8C027158",
+      "size": 36,
+      "status": "moved",
+      "diff_bytes": 35,
+      "linked_at": "8C027128",
+      "linked_size": 48
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C026510",
+      "end": "8C026524",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0267F0",
+      "end": "8C026808",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C026B7C",
+      "end": "8C026B8C",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C027120",
+      "end": "8C027134",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C027158",
+      "end": "8C027164",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BD924",
+      "end": "8C0BD96C",
+      "exact": true,
+      "built": 72,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:41:28",
+  "defines": {
+    "_cosf": "8C09BC7C",
+    "_facos": "8C01137A",
+    "_fatan2": "8C01145C",
+    "_rand": "8C047BC8",
+    "_sinf": "8C09BEBC"
+  },
+  "starts": {
+    "P": "8C026278",
+    "D": "8C0BD924"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C026278",
+      "length": 3808
+    },
+    {
+      "name": "D",
+      "address": "8C0BD924",
+      "length": 72
+    }
+  ],
+  "equal_text_bytes_including_fill": 2508,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 72,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -12,
+  "seconds": 2.0
+}

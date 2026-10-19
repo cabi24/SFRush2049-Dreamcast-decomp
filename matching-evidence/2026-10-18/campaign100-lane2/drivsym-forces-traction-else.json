@@ -1,0 +1,353 @@
+{
+  "name": "drivsym",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/drivsym.c",
+  "source_sha256": "ea948999f16f932bd612bb1e59da9fd90a852218fb2aacf98e866c20cb5b75aa",
+  "text": [
+    "8C0232F8",
+    "8C02555C"
+  ],
+  "text_bytes": 8804,
+  "exact_text_bytes": 244,
+  "align_bytes": 0,
+  "data_bytes": 44,
+  "exact_data_bytes": 44,
+  "functions_total": 17,
+  "functions_exact": 1,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "_InitModelControls",
+      "start": "8C0232F8",
+      "end": "8C023314",
+      "size": 28,
+      "status": "differs",
+      "diff_bytes": 1,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_ModelControls",
+      "start": "8C023314",
+      "end": "8C0235C4",
+      "size": 688,
+      "status": "differs",
+      "diff_bytes": 625,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "syminit",
+      "start": "8C0235CA",
+      "end": "8C0235FE",
+      "size": 52,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C0235C6",
+      "linked_size": 52
+    },
+    {
+      "name": "sym",
+      "start": "8C0235FE",
+      "end": "8C0238EE",
+      "size": 752,
+      "status": "differs",
+      "diff_bytes": 679,
+      "linked_at": "8C0235FA",
+      "linked_size": 756
+    },
+    {
+      "name": "regular",
+      "start": "8C0238EE",
+      "end": "8C023924",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C0238EE",
+      "linked_size": 78
+    },
+    {
+      "name": "antispin",
+      "start": "8C02393C",
+      "end": "8C023A10",
+      "size": 212,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02393C",
+      "linked_size": 244
+    },
+    {
+      "name": "MovingSurfaceForce",
+      "start": "8C023A30",
+      "end": "8C023DE2",
+      "size": 946,
+      "status": "differs",
+      "diff_bytes": 624,
+      "linked_at": "8C023A30",
+      "linked_size": 940
+    },
+    {
+      "name": "forces",
+      "start": "8C023DE2",
+      "end": "8C023DF0",
+      "size": 14,
+      "status": "differs",
+      "diff_bytes": 10,
+      "linked_at": "8C023DDC",
+      "linked_size": 48
+    },
+    {
+      "name": "forces1",
+      "start": "8C023E0C",
+      "end": "8C02429E",
+      "size": 1170,
+      "status": "differs",
+      "diff_bytes": 464,
+      "linked_at": "8C023E0C",
+      "linked_size": 1174
+    },
+    {
+      "name": "forces2",
+      "start": "8C02429E",
+      "end": "8C024578",
+      "size": 730,
+      "status": "differs",
+      "diff_bytes": 650,
+      "linked_at": "8C0242A2",
+      "linked_size": 746
+    },
+    {
+      "name": "torques",
+      "start": "8C024598",
+      "end": "8C024950",
+      "size": 952,
+      "status": "differs",
+      "diff_bytes": 906,
+      "linked_at": "8C02458C",
+      "linked_size": 1360
+    },
+    {
+      "name": "accelerations",
+      "start": "8C024950",
+      "end": "8C02498E",
+      "size": 62,
+      "status": "differs",
+      "diff_bytes": 62,
+      "linked_at": "8C024ADC",
+      "linked_size": 88
+    },
+    {
+      "name": "velocities",
+      "start": "8C0249AC",
+      "end": "8C024C42",
+      "size": 662,
+      "status": "differs",
+      "diff_bytes": 643,
+      "linked_at": "8C024B34",
+      "linked_size": 668
+    },
+    {
+      "name": "positions",
+      "start": "8C024C5C",
+      "end": "8C0250AC",
+      "size": 1104,
+      "status": "differs",
+      "diff_bytes": 1076,
+      "linked_at": "8C024DD0",
+      "linked_size": 1210
+    },
+    {
+      "name": "calcaa",
+      "start": "8C0250AC",
+      "end": "8C0250D6",
+      "size": 42,
+      "status": "moved",
+      "diff_bytes": 39,
+      "linked_at": "8C02528A",
+      "linked_size": 42
+    },
+    {
+      "name": "checkok",
+      "start": "8C0250E6",
+      "end": "8C02551E",
+      "size": 1080,
+      "status": "differs",
+      "diff_bytes": 1065,
+      "linked_at": "8C0252B4",
+      "linked_size": 1078
+    },
+    {
+      "name": "mcommunication",
+      "start": "8C02551E",
+      "end": "8C025532",
+      "size": 20,
+      "status": "moved",
+      "diff_bytes": 19,
+      "linked_at": "8C0256EA",
+      "linked_size": 62
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0235C4",
+      "end": "8C0235CA",
+      "exact": false,
+      "built": 6,
+      "diff_bytes": 5
+    },
+    {
+      "kind": "pool",
+      "start": "8C023924",
+      "end": "8C02393C",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C023A10",
+      "end": "8C023A30",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C023DF0",
+      "end": "8C023E0C",
+      "exact": false,
+      "built": 28,
+      "diff_bytes": 11
+    },
+    {
+      "kind": "pool",
+      "start": "8C024578",
+      "end": "8C024598",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 31
+    },
+    {
+      "kind": "pool",
+      "start": "8C02498E",
+      "end": "8C0249AC",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C024C42",
+      "end": "8C024C5C",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C0250D6",
+      "end": "8C0250E6",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "pool",
+      "start": "8C025532",
+      "end": "8C02555C",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AA910",
+      "end": "8C0AA91C",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BD904",
+      "end": "8C0BD924",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C568",
+      "end": "8C12C573",
+      "exact": true,
+      "linked": [
+        "8C12C568",
+        "8C12C573"
+      ]
+    }
+  ],
+  "notes": [
+    "460 built bytes fall outside the mapped ranges (first 8C02555C, last 8C025727)"
+  ],
+  "built_at": "2026-10-18T16:04:20",
+  "defines": {
+    "_AddBattlePoint": "8C034C10",
+    "_BodyVector": "8C026B00",
+    "_GetTargetVelocity": "8C05607C",
+    "_NormalVector": "8C026C44",
+    "_RotateUV": "8C026674",
+    "_WorldVector": "8C026B8C",
+    "_calctireuv": "8C05B56C",
+    "_dotireforce": "8C05B6C2",
+    "_drivetrain": "8C022CA4",
+    "_gCoastFlag": "8C12C64C",
+    "_gEndGame": "8C12C64E",
+    "_gMirrorWaves": "8C15FA14",
+    "_gPhysicsWingRows": "8C0BBE14",
+    "_gRace": "8C12C628",
+    "_initialize": "8C039EB8",
+    "_invmagnitude": "8C0262A6",
+    "_magnitude": "8C02628A",
+    "_make_super_speed": "8C04AA94",
+    "_road": "8C04B0C2",
+    "_surf": "8C158390"
+  },
+  "starts": {
+    "P": "8C0232F8",
+    "C": "8C0AA910",
+    "D": "8C0BD904",
+    "B": "8C12C568"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0232F8",
+      "length": 9264
+    },
+    {
+      "name": "C",
+      "address": "8C0AA910",
+      "length": 12
+    },
+    {
+      "name": "D",
+      "address": "8C0BD904",
+      "length": 32
+    },
+    {
+      "name": "B",
+      "address": "8C12C568",
+      "length": 11
+    }
+  ],
+  "equal_text_bytes_including_fill": 244,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 44,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 460,
+  "seconds": 2.3
+}

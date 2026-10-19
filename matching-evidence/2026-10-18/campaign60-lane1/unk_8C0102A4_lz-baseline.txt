@@ -1,0 +1,61 @@
+{'name': 'func_8C0102A4', 'start': '8C0102A4', 'end': '8C01031C', 'size': 120, 'status': 'differs', 'diff_bytes': 101, 'linked_at': '8C0102A4', 'linked_size': 126}
+8C0102A4 e62f mov.l r14,@-r15                          | e62f mov.l r14,@-r15
+8C0102A6 00e6 mov #0,r6                                | 00e6 mov #0,r6
+8C0102A8 d62f mov.l r13,@-r15                          | b62f mov.l r11,@-r15 *
+8C0102AA 0fe0 mov #15,r0                               | 536b mov r5,r11 *
+8C0102AC a62f mov.l r10,@-r15                          | a62f mov.l r10,@-r15
+8C0102AE 01ea mov #1,r10                               | 636e mov r6,r14 *
+8C0102B0 962f mov.l r9,@-r15                           | 962f mov.l r9,@-r15
+8C0102B2 08e9 mov #8,r9                                | 01e9 mov #1,r9 *
+8C0102B4 3491 mov.w @(0x8C010320,pc),r1                | 329a mov.w @(0x8C01031C,pc),r10 *
+8C0102B6 636e mov r6,r14                               | 6367 mov r6,r7 *
+8C0102B8 862f mov.l r8,@-r15                           | 862f mov.l r8,@-r15
+8C0102BA 636d mov r6,r13                               | 08e8 mov #8,r8 *
+8C0102BC 5368 mov r5,r8                                | e82e tst r14,r14 *
+8C0102BE d82d tst r13,r13                              | 028b bf 0x8C0102C6 *
+8C0102C0 028b bf 0x8C0102C8                            | 4467 mov.b @r4+,r7 *
+8C0102C2 446e mov.b @r4+,r14                           | 836e mov r8,r14 *
+8C0102C4 936d mov r9,r13                               | 7c67 extu.b r7,r7 *
+8C0102C6 ec6e extu.b r14,r14                           | 7363 mov r7,r3 *
+8C0102C8 e363 mov r14,r3                               | 9823 tst r9,r3 *
+8C0102CA a823 tst r10,r3                               | 058d bt/s 0x8C0102D8 *
+8C0102CC 058d bt/s 0x8C0102DA                          | ff7e add #-1,r14 *
+8C0102CE ff7d add #-1,r13                              | 4466 mov.b @r4+,r6 *
+8C0102D0 4466 mov.b @r4+,r6                            | 6c66 extu.b r6,r6 *
+8C0102D2 6c66 extu.b r6,r6                             | 6025 mov.b r6,@r5 *
+8C0102D4 6025 mov.b r6,@r5                             | 1aa0 bra 0x8C01030C *
+8C0102D6 1ba0 bra 0x8C010310                           | 0175 add #1,r5 *
+8C0102D8 0175 add #1,r5                                | 4461 mov.b @r4+,r1 *
+8C0102DA 4467 mov.b @r4+,r7                            | 0fe6 mov #15,r6 *
+8C0102DC 0366 mov r0,r6                                | 1c61 extu.b r1,r1 *
+8C0102DE 7c67 extu.b r7,r7                             | 4460 mov.b @r4+,r0 *
+8C0102E0 4463 mov.b @r4+,r3                            | 1926 and r1,r6 *
+8C0102E2 7926 and r7,r6                                | a921 and r10,r1 *
+8C0102E4 1927 and r1,r7                                | 0841 shll2 r1 *
+8C0102E6 6362 mov r6,r2                                | 0c60 extu.b r0,r0 *
+8C0102E8 0847 shll2 r7                                 | 0841 shll2 r1 *
+8C0102EA 3c63 extu.b r3,r3                             | 0b21 or r0,r1 *
+8C0102EC 0847 shll2 r7                                 | 1363 mov r1,r3 *
+8C0102EE 3b27 or r3,r7                                 | 6b23 or r6,r3 *
+8C0102F0 7b22 or r7,r2                                 | 3823 tst r3,r3 *
+8C0102F2 2822 tst r2,r2                                | 028b bf 0x8C0102FA *
+8C0102F4 028b bf 0x8C0102FC                            | 5360 mov r5,r0 *
+8C0102F6 5360 mov r5,r0                                | 0ba0 bra 0x8C010310 *
+8C0102F8 0ca0 bra 0x8C010314                           | b830 sub r11,r0 *
+8C0102FA 8830 sub r8,r0                                | 5360 mov r5,r0 *
+8C0102FC 5362 mov r5,r2                                | 1830 sub r1,r0 *
+8C0102FE 7832 sub r7,r2                                | 0176 add #1,r6 *
+8C010300 0176 add #1,r6                                | 0462 mov.b @r0+,r2 *
+8C010302 2367 mov r2,r7                                | ff76 add #-1,r6 *
+8C010304 7462 mov.b @r7+,r2                            | 1146 cmp/pz r6 *
+8C010306 ff76 add #-1,r6                               | 2025 mov.b r2,@r5 *
+8C010308 1146 cmp/pz r6                                | fa8d bt/s 0x8C010300 *
+8C01030A 2025 mov.b r2,@r5                             | 0175 add #1,r5 *
+8C01030C fa8d bt/s 0x8C010304                          | d6af bra 0x8C0102BC *
+8C01030E 0175 add #1,r5                                | 2147 shar r7 *
+8C010310 d5af bra 0x8C0102BE                           | f668 mov.l @r15+,r8 *
+8C010312 214e shar r14                                 | f669 mov.l @r15+,r9 *
+8C010314 f668 mov.l @r15+,r8                           | f66a mov.l @r15+,r10 *
+8C010316 f669 mov.l @r15+,r9                           | f66b mov.l @r15+,r11 *
+8C010318 f66a mov.l @r15+,r10                          | 0b00 rts *
+8C01031A f66d mov.l @r15+,r13                          | f66e mov.l @r15+,r14 *

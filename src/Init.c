@@ -11,8 +11,8 @@ void func_8C039280(int mode,int color,int options)
     gInitHeapAlias|=0xA0000000;
     _builtin_set_imask(15);
     func_8C0D98F8();
-    start=(char *)((gInitMemoryEnd|0x80000000)&~31);
-    func_8C09B1E4(start+32,((gInitMemoryEnd&0xE0000000)|0x0D000000)-(unsigned int)start-32);
+    func_8C09B1E4((start=(char *)((gInitMemoryEnd|0x80000000)&~31))+32,
+        ((gInitMemoryEnd&0xE0000000)|0x0D000000)-(unsigned int)((gInitMemoryEnd|0x80000000)&~31)-32);
     func_8C0DAE8E(0);
     func_8C0DAFE0(mode,color,1,0);
     func_8C0DC260(options);

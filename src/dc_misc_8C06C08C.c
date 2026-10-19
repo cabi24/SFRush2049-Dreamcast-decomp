@@ -94,7 +94,8 @@ void func_8C06C18C(unsigned char *dest,int width,int rows,float value)
     }
 }
 
-void func_8C06C1E6(unsigned char *dest,int valueA,int valueB,float barA,float barB)
+/* C1F0..C1FC spills FP arguments before integer arguments; register banks are independent. */
+void func_8C06C1E6(unsigned char *dest,float barA,float barB,int valueA,int valueB)
 {
     int pos;
     func_8C06C08C(dest+2,dcLcdIcons,7,6,2,0);
@@ -120,7 +121,7 @@ void func_8C06C2BE(int player,int a,int b,float left,float right)
     if (!(left>0.0f)) left=0.0f;else if (!(left<1.0f))left=1.0f;
     if (!(right>0.0f)) right=0.0f;else if (!(right<1.0f))right=1.0f;
     memset(frame,0,sizeof(frame));
-    func_8C06C1E6(frame,a,b,left,right);
+    func_8C06C1E6(frame,left,right,a,b);
     func_8C0D6DEC(unit,frame,3);
 }
 
@@ -136,11 +137,15 @@ void func_8C06C3D0(void)
 {
     unsigned char frame[1536];
     int port,slot;
-    for(port=0;port<4;port++)for(slot=0;slot<2;slot++) {
+    volatile int unit;
+    for(port=0;port<4;port++) {
+      unit=port*6+1;
+      for(slot=0;slot<2;slot++) {
         memset(frame,0,sizeof(frame));
         func_8C06C08C(frame+150,dcLcdLargeDigits,18,26,10,port);
         func_8C06C08C(frame+170,dcLcdLargeDigits,18,26,10,slot+4);
-        func_8C0D6DEC(port*6+slot+1,frame,3);
+        func_8C0D6DEC(unit++,frame,3);
+      }
     }
 }
 

@@ -1,0 +1,12 @@
+# Campaign 60 lane 2
+
+- camera: blocked; 3 init_views shapes: direct, volatile, byte state. No strict gains; restored. ZeroCameras residual is branch to shifted UpdateCameras; init_views baseline138 differing bytes, shape best128; requires TU register/pool correction.
+- checkpoint: blocked; PlaceUnlockedCars first-loop register allocation: baseline128 differing bytes; swapped zero init127, chained119; no exact gain, restored all3 exact functions.
+- circuit: blocked; func_8C01C5E4 stack64 target versus56 baseline,1442 diff bytes. Explicit random result local1748, precomputed divisor1755; no strict gain. Correct runtime helpers confirmed in target pools; restored.
+- collision: blocked; collision baseline65 diff bytes, exact size but temporary/register allocation differs. Index corners493 diff and old matches regress; reverse arrays72 diff; explicit dot589 and old matches regress. All rejected/restored;2 old exact functions retained.
+- controlsys: blocked; InitControlSys7 differing bytes are R2/R3 choices around sRegistered and SetInterruptMask. Explicit zero test, branch-local mask and volatile registered flag all unchanged; restored5 old exact functions.
+- controlscr: blocked; updateControlScreen pane setup target has direct field loads; baseline target2412 vs compiled2402. Direct arguments and reversed sums improve to2410 bytes/2114 differing bytes but no exact spans; local rect pointer also fails. Restored.
+- drivsym: blocked; _ModelControls target stack12 vs baseline0; outer and inner torque operand changes no strict gain, indexed tire form regresses old antispin. Restored. _InitModelControls1-byte residual is shared pool displacement, regular2 bytes are branch targets shifted in later bodies.
+- fmath: improved; 25/31 exact versus1,2508 text bytes versus28 (+2480), data72 unchanged. Direct invmagnitude vector expression corrects shared pool and all functions through U64WorldVector. NormalVector3 shapes fail, restored best. selected private build.
+- game: improved; 4 new exact functions,528 credited text bytes; GameLoop gFrames volatile accesses remove unnecessary persistent address register and restore downstream pool/call addresses. All163 data bytes retained.
+- gameoverscr: blocked; setGameOverState target stack8 versus baseline12. Direct state498 bytes/427diff, volatile parameter502/438diff (prototype fixed after rc1), state-pointer-only also no gain. Initial6-byte near miss includes shifted branch targets; restored original1 exact function.

@@ -1,0 +1,71 @@
+{
+  "name": "unk_8C0102A4_lz",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unk_8C0102A4_lz.c",
+  "source_sha256": "dba1022d2994c6a07c0ca023b1769adffe8ee7e28df2a714c082fef25cacf5f6",
+  "text": [
+    "8C0102A4",
+    "8C010320"
+  ],
+  "text_bytes": 124,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 1,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C0102A4",
+      "start": "8C0102A4",
+      "end": "8C01031C",
+      "size": 120,
+      "status": "differs",
+      "diff_bytes": 101,
+      "linked_at": "8C0102A4",
+      "linked_size": 126
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01031C",
+      "end": "8C01031E",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "gap",
+      "start": "8C01031E",
+      "end": "8C010320",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 2
+    }
+  ],
+  "notes": [
+    "2 built bytes fall outside the mapped ranges (first 8C010320, last 8C010321)"
+  ],
+  "built_at": "2026-10-18T15:31:31",
+  "defines": {},
+  "starts": {
+    "P": "8C0102A4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0102A4",
+      "length": 126
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 4,
+  "seconds": 2.1
+}

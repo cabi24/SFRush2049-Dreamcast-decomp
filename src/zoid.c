@@ -77,19 +77,18 @@ signed short ZOID_ObjParent(signed short objnum)
 signed short ZOID_TrueObjParent(signed short objnum)
 {
     int i; /* r7 */
-    short target = (signed short)objnum;
     int l; /* r0 */
 
     for (i = 0; i < gNumObjects; i++) {
-        if ((int)target == ObjInstanceList[i].child) {
+        if (ObjInstanceList[i].child == objnum) {
             return i;
         }
         l = ObjInstanceList[i].child;
         while (l != -1) {
-            l = ObjInstanceList[l].next;
-            if ((int)target == l) {
+            if (ObjInstanceList[l].next == objnum) {
                 return i;
             }
+            l = ObjInstanceList[l].next;
         }
     }
     return -1;
@@ -190,10 +189,11 @@ signed short ZOID_AddObject(int objidx, tUVMatrix *mat, signed short parent, uns
 void _RemoveObjectTree(signed short objnum, int removeChildren, int removeNext)
 {
     signed short idx; /* r0 */
+    tZoidUnitObject *object = &ObjInstanceList[objnum];
 
-    if (removeNext && ObjInstanceList[objnum].next >= 0) {
-        _RemoveObjectTree(ObjInstanceList[objnum].next, 1, 1);
-        ObjInstanceList[objnum].next = -1;
+    if (removeNext && object->next >= 0) {
+        _RemoveObjectTree(object->next, 1, 1);
+        object->next = -1;
     }
     if (removeChildren && ObjInstanceList[objnum].child >= 0) {
         _RemoveObjectTree(ObjInstanceList[objnum].child, 1, 1);
@@ -237,9 +237,9 @@ void ZOID_SetObjectDef(signed short objnum, unsigned short def)
 
 void ZOID_SetObjectParent(signed short objnum, signed short newparent)
 {
+    tZoidUnitObject *object;
     signed short parent; /* r0 */
     signed short idx; /* r0 */
-    tZoidUnitObject *object;
 
     parent = ZOID_ObjParent(objnum);
     if (parent != -1 && parent == newparent) {
@@ -253,22 +253,24 @@ void ZOID_SetObjectParent(signed short objnum, signed short newparent)
     } else {
         idx = ZOID_ObjPrevObj(objnum);
         if (idx >= 0) {
-            ObjInstanceList[idx].next = object->next;
+            ObjInstanceList[idx].next = ObjInstanceList[objnum].next;
         }
     }
-    object->next = -1;
+    ObjInstanceList[objnum].next = -1;
     ZOID_InsertObject(objnum, newparent);
 }
 
 int func_8C068C68(tZoidUnitObject *obj,int window)
 {
  unsigned int mask=0x100<<window;
-again:
+ for(;;) {
  if(!(obj->flags&mask))return 1;
  if(obj->child>=0) {
   if(func_8C068C68(&ObjInstanceList[obj->child],window))return 1;
  }
- if(obj->next>=0) {obj=&ObjInstanceList[obj->next];goto again;}
+ if(obj->next<0) break;
+ obj=&ObjInstanceList[obj->next];
+ }
  return 0;
 }
 int func_8C068CC6(tZoidUnitObject *instance,int window)

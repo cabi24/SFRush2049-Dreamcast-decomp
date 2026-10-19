@@ -1,0 +1,89 @@
+{
+  "name": "atan",
+  "kind": "game",
+  "status": "partial",
+  "source": "matching-evidence/2026-10-18/work-atan/addnegative/atan.c",
+  "source_sha256": "a2b1e254e3b3d4c56d5779870717fc80e0b6d06bff125f68e4b44e0860297955",
+  "text": [
+    "8C0113C0",
+    "8C011530"
+  ],
+  "text_bytes": 368,
+  "exact_text_bytes": 286,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 4,
+  "functions_exact": 3,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "fxatan",
+      "start": "8C0113C0",
+      "end": "8C01140A",
+      "size": 74,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "fsatan",
+      "start": "8C01140A",
+      "end": "8C01145C",
+      "size": 82,
+      "status": "differs",
+      "diff_bytes": 9,
+      "linked_at": "8C01140A",
+      "linked_size": 82
+    },
+    {
+      "name": "fatan2",
+      "start": "8C01145C",
+      "end": "8C0114CE",
+      "size": 114,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01145C",
+      "linked_size": 114
+    },
+    {
+      "name": "fatan",
+      "start": "8C0114CE",
+      "end": "8C0114F0",
+      "size": 34,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0114CE",
+      "linked_size": 98
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0114F0",
+      "end": "8C011530",
+      "exact": true,
+      "built": 64,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T14:30:46",
+  "defines": {},
+  "starts": {
+    "P": "8C0113C0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0113C0",
+      "length": 368
+    }
+  ],
+  "equal_text_bytes_including_fill": 286,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.7
+}

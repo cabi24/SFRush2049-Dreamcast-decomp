@@ -1,0 +1,143 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT stree.abs
+FORM A
+START P(8C05145C)
+START C(8C0ACA3C)
+START D(8C0BFD48)
+START B(8C158388)
+DEFINE _AbortCar(8C04A4DC)
+DEFINE _AddBattlePoint(8C034C10)
+DEFINE _BodyVector(8C026B00)
+DEFINE _CopyUV(8C02631E)
+DEFINE _MulUVS(8C0269D2)
+DEFINE _NormalVector(8C026C44)
+DEFINE _PlayGameSound(8C011606)
+DEFINE _WorldVector(8C026B8C)
+DEFINE _fpitch(8C0268B0)
+DEFINE _froll(8C026970)
+DEFINE _gGameCar(8C004000)
+DEFINE _gLink(8C12C5A4)
+DEFINE _memcpy(8C09BD00)
+DEFINE _unitmatrix(8C0BD924)
+PRINT stree.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C05145C  -  H'8C054C29  H'000037CE
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C05145C  -  H'8C054C29  H'000037CE
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0ACA3C  -  H'8C0ACA6B  H'00000030
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0ACA3C  -  H'8C0ACA6B  H'00000030
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BFD48  -  H'8C0BFD5F  H'00000018
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BFD48  -  H'8C0BFD5F  H'00000018
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C158388  -  H'8C1583AF  H'00000028
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C158388  -  H'8C1583AF  H'00000028
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_CameraCollision                  H'8C052F14               ENT
+_CarApplyCollision                H'8C053C14               ENT
+_CollideCarBody                   H'8C054784               ENT
+_CollideCarBodyAgainstSurface     H'8C054010               ENT
+_CylinderInSurf                   H'8C051D70               ENT
+_DecodeSlist                      H'8C05173C               ENT
+_DecodeVlist                      H'8C051790               ENT
+_FVecInterp                       H'8C0515F0               ENT
+_InitSTree                        H'8C05145C               ENT
+_MoveCollisionObject              H'8C05378C               ENT
+_PointInSurf                      H'8C0518C4               ENT
+_RemoveCollisionObject            H'8C053BB6               ENT
+_ResetCollisionObject             H'8C053B36               ENT
+_RoadPosition                     H'8C052BD4               ENT
+_RotateCollisionObject            H'8C053904               ENT
+_ShotToWorldCollision             H'8C052FB6               ENT
+_TireSurf                         H'8C0527A0               ENT
+_VectorToSurfEdge                 H'8C05182C               ENT
+_downleaf                         H'8C05162A               ENT
+_fHalfPipeInterp                  H'8C052562               ENT
+_fPathInterp                      H'8C052220               ENT
+_gRoadDat                         H'8C158388               DAT
+_gRoadHead                        H'8C1583AC               DAT
+_matf2scopy                       H'8C051570               ENT
+_mats2fcopy                       H'8C0514E4               ENT
+_path                             H'8C158398               DAT
+_save                             H'8C1583A4               DAT
+_savenum                          H'8C1583A8               DAT
+_slist                            H'8C15839C               DAT
+_stree                            H'8C15838C               DAT
+_surf                             H'8C158390               DAT
+_surfpos                          H'8C0517F2               ENT
+_svert                            H'8C158394               DAT
+_updownleaf                       H'8C0516A4               ENT
+_vlist                            H'8C1583A0               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AbortCar                                                           H'8C04A4DC
+_AddBattlePoint                                                     H'8C034C10
+_BodyVector                                                         H'8C026B00
+_CopyUV                                                             H'8C02631E
+_MulUVS                                                             H'8C0269D2
+_NormalVector                                                       H'8C026C44
+_PlayGameSound                                                      H'8C011606
+_WorldVector                                                        H'8C026B8C
+_fpitch                                                             H'8C0268B0
+_froll                                                              H'8C026970
+_gGameCar                                                           H'8C004000
+_gLink                                                              H'8C12C5A4
+_memcpy                                                             H'8C09BD00
+_unitmatrix                                                         H'8C0BD924

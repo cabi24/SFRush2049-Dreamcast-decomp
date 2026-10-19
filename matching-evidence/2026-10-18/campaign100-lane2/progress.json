@@ -1,0 +1,155 @@
+[
+  {
+    "task": 1,
+    "unit": "camera",
+    "target": "init_view3",
+    "status": "blocked",
+    "attempts": 2,
+    "delta": 0,
+    "residual": "init_view3 direct state reduces TU prefix drift8 to4 bytes but remains shifted2; signed state unchanged. No strict new spans; restored."
+  },
+  {
+    "task": 2,
+    "unit": "camera",
+    "target": "SetCameraView",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "SetCameraView28-byte body moved-exact in direct-state trial, linked+4; baseline+8. Unresolved earlier prefix sizes. No new evidence permits replaying capped init_views or synthetic padding."
+  },
+  {
+    "task": 3,
+    "unit": "checkpoint",
+    "target": "CheckCPs",
+    "status": "blocked",
+    "attempts": 1,
+    "delta": 0,
+    "residual": "CheckCPs frame76/2 saved floats versus68/1. Removed cached model/car/prev/link aliases worsens638 to657 differing bytes; restored all3 exact prefix functions."
+  },
+  {
+    "task": 4,
+    "unit": "checkpoint",
+    "target": "PassedCP",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "PassedCP actual link8C01C018 versus target8C01C008. CheckCPs shared-pool size drift16 persists; fresh target inspected, no independent relocation/padding allowed."
+  },
+  {
+    "task": 5,
+    "unit": "circuit",
+    "target": "UpdateCircuit",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "UpdateCircuit links8C01CDCC versus target8C01CDB8 (+20). Preceding capped circuit generator owns drift and shared pools; no new prefix evidence, no artificial repositioning."
+  },
+  {
+    "task": 6,
+    "unit": "circuit",
+    "target": "GetCircuitCode",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "GetCircuitCode links8C01D0D8 versus target8C01D0C8 (+16). Inspected entry: existing code is displaced behind UpdateCircuit shared pool. Prefix correction prerequisite; no isolated-address credit."
+  },
+  {
+    "task": 7,
+    "unit": "collision",
+    "target": "ForceApart",
+    "status": "blocked",
+    "attempts": 3,
+    "delta": 0,
+    "residual": "ForceApart target280 bytes, baseline264/136diff. Force initialization order243diff, direct centers254bytes/176diff, inline scalar add/sub266bytes/180diff. No strict gains; all reverted."
+  },
+  {
+    "task": 8,
+    "unit": "collision",
+    "target": "MiniForceApart",
+    "status": "blocked",
+    "attempts": 1,
+    "delta": 0,
+    "residual": "MiniForceApart baseline links-16 from ForceApart. Fresh direct center-field shape fails; prefix and FP load scheduling remain unresolved. Restored baseline2 exact functions."
+  },
+  {
+    "task": 9,
+    "unit": "controlsys",
+    "target": "UpdateControls",
+    "status": "blocked",
+    "attempts": 1,
+    "delta": 0,
+    "residual": "Direct PotRange assignment worsened UpdateControls344 to380 differing bytes and regressed previous exact spans; restored."
+  },
+  {
+    "task": 10,
+    "unit": "controlsys",
+    "target": "ControllerUpdate",
+    "status": "blocked",
+    "attempts": 1,
+    "delta": 0,
+    "residual": "Field-base indexing motivated by target base+8 addressing worsened ControllerUpdate56 to664 differing bytes; restored."
+  },
+  {
+    "task": 11,
+    "unit": "controlscr",
+    "target": "cleanupControlScreen",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "cleanupControlScreen body90 bytes but starts10 bytes early behind previously capped updateControlScreen. No fresh prefix evidence."
+  },
+  {
+    "task": 12,
+    "unit": "controlscr",
+    "target": "validControl",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "validControl starts72 bytes late behind earlier controlscr functions; target starts with stack allocation while fixed address contains prior epilogue/literals. Prefix unresolved, no padding trial."
+  },
+  {
+    "task": 13,
+    "unit": "drivsym",
+    "target": "MovingSurfaceForce",
+    "status": "blocked",
+    "attempts": 2,
+    "delta": 0,
+    "residual": "Target stack52 versus generated56 prompted reversed array order and single volatile index.624 unchanged then772 differing bytes; restored."
+  },
+  {
+    "task": 14,
+    "unit": "drivsym",
+    "target": "forces1",
+    "status": "blocked",
+    "attempts": 3,
+    "delta": 0,
+    "residual": "Local traction1 hoisted target fr13 and reduced1063 to391 differences; explicit poortract else gave464; wind operand order reduced to62. No whole function/segment gain; restored at3-shape cap. Residual zero-store addressing and drag-expression scheduling."
+  },
+  {
+    "task": 15,
+    "unit": "fmath",
+    "target": "CreateYPRMatrix",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "CreateYPRMatrix starts16 bytes early behind capped NormalVector; matching prologue appears16 bytes earlier. No fresh prefix evidence, no relocation credit."
+  },
+  {
+    "task": 16,
+    "unit": "fmath",
+    "target": "ExtractYaw",
+    "status": "blocked",
+    "attempts": 0,
+    "delta": 0,
+    "residual": "ExtractYaw starts16 bytes early behind capped NormalVector, own body moved; no fresh prefix evidence and no padding attempted."
+  },
+  {
+    "task": 17,
+    "unit": "game",
+    "target": "_UpdateGame",
+    "status": "blocked",
+    "attempts": 1,
+    "delta": 0,
+    "residual": "Target allSolid loop uses branch-to-bottom test; explicit labels reduced1265 to758 differing bytes but no strict credit gain. Restored; remaining literal/register scheduling and later loops unresolved."
+  }
+]

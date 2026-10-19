@@ -1,0 +1,48 @@
+{
+  "unit": "HAL_text",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 26,
+    "functions_moved": 0,
+    "exact_text_bytes": 208,
+    "equal_text_bytes_including_fill": 210,
+    "text_bytes": 4068,
+    "exact_data_bytes": 15,
+    "source_sha256": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 0,
+    "functions_total": 26,
+    "functions_moved": 0,
+    "exact_text_bytes": 40,
+    "equal_text_bytes_including_fill": 42,
+    "text_bytes": 4068,
+    "exact_data_bytes": 15,
+    "source_sha256": "532bab6811fca133257ecfb3b6f0987d5d84a029a4019caa0a86b97eadfca5a0"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "HAL_PurgeFonts",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 168
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 208,
+  "text_bytes_head": 40,
+  "report_consistency": {
+    "report_functions_exact": 1,
+    "dirty_rebuild_functions_exact": 1,
+    "report_exact_text_bytes": 208,
+    "dirty_rebuild_exact_text_bytes": 208,
+    "report_source_sha256": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226",
+    "dirty_source_sha256": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226",
+    "match": true
+  },
+  "head_source_sha256": "532bab6811fca133257ecfb3b6f0987d5d84a029a4019caa0a86b97eadfca5a0",
+  "seconds": 4.4
+}

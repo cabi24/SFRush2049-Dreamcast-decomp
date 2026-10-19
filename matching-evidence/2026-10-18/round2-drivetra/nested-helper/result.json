@@ -1,0 +1,182 @@
+{
+  "name": "drivetra",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/drivetra.c",
+  "source_sha256": "5a839c67b50a182c98ef3b7a428d020477d1496ede35f8da9bce3ff833b8f7ae",
+  "text": [
+    "8C022CA4",
+    "8C0232F8"
+  ],
+  "text_bytes": 1620,
+  "exact_text_bytes": 794,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 10,
+  "functions_exact": 6,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "drivetrain",
+      "start": "8C022CA4",
+      "end": "8C022D94",
+      "size": 240,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C022CA4",
+      "linked_size": 240
+    },
+    {
+      "name": "whatslips",
+      "start": "8C022D94",
+      "end": "8C022EE2",
+      "size": 334,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022D94",
+      "linked_size": 360
+    },
+    {
+      "name": "autoshift",
+      "start": "8C022EFC",
+      "end": "8C022F96",
+      "size": 154,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022EFC",
+      "linked_size": 154
+    },
+    {
+      "name": "transmission",
+      "start": "8C022F96",
+      "end": "8C022FD2",
+      "size": 60,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022F96",
+      "linked_size": 86
+    },
+    {
+      "name": "find_best_gear",
+      "start": "8C022FEC",
+      "end": "8C023048",
+      "size": 92,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022FEC",
+      "linked_size": 92
+    },
+    {
+      "name": "upshift",
+      "start": "8C023048",
+      "end": "8C023074",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C023048",
+      "linked_size": 44
+    },
+    {
+      "name": "downshift",
+      "start": "8C023074",
+      "end": "8C0230A0",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C023074",
+      "linked_size": 60
+    },
+    {
+      "name": "enginetorque",
+      "start": "8C0230B0",
+      "end": "8C0231D2",
+      "size": 290,
+      "status": "differs",
+      "diff_bytes": 273,
+      "linked_at": "8C0230B0",
+      "linked_size": 280
+    },
+    {
+      "name": "interp",
+      "start": "8C0231D2",
+      "end": "8C0231E6",
+      "size": 20,
+      "status": "moved",
+      "diff_bytes": 20,
+      "linked_at": "8C0231C8",
+      "linked_size": 20
+    },
+    {
+      "name": "engine",
+      "start": "8C0231E6",
+      "end": "8C0232E4",
+      "size": 254,
+      "status": "differs",
+      "diff_bytes": 246,
+      "linked_at": "8C0231DC",
+      "linked_size": 272
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C022EE2",
+      "end": "8C022EFC",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C022FD2",
+      "end": "8C022FEC",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0230A0",
+      "end": "8C0230B0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0232E4",
+      "end": "8C0232F8",
+      "exact": false,
+      "built": 8,
+      "diff_bytes": 20
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:02:57",
+  "defines": {
+    "__divls": "8C09B680",
+    "__divws": "8C09B7DC",
+    "__modls": "8C09B82C",
+    "__modws": "8C09B9AC",
+    "_carEngineTorque": "8C0BBC4C",
+    "_carTransGearRatio": "8C0BBA48"
+  },
+  "starts": {
+    "P": "8C022CA4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C022CA4",
+      "length": 1608
+    }
+  ],
+  "equal_text_bytes_including_fill": 796,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -12,
+  "seconds": 1.9
+}

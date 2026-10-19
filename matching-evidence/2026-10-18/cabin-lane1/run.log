@@ -1,0 +1,85 @@
+[19:43:04] === HAL_text: building dirty + head
+[19:43:06]   dirty : {'status': 'partial', 'functions_exact': 1, 'functions_total': 26, 'functions_moved': 0, 'exact_text_bytes': 208, 'equal_text_bytes_including_fill': 210, 'text_bytes': 4068, 'exact_data_bytes': 15, 'source_sha256': '17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226'}
+[19:43:08]   head  : {'status': 'partial', 'functions_exact': 0, 'functions_total': 26, 'functions_moved': 0, 'exact_text_bytes': 40, 'equal_text_bytes_including_fill': 42, 'text_bytes': 4068, 'exact_data_bytes': 15, 'source_sha256': '532bab6811fca133257ecfb3b6f0987d5d84a029a4019caa0a86b97eadfca5a0'}
+[19:43:08]   delta : gains=1 losses=0 -> keep  GAIN HAL_PurgeFonts  [report check True]
+[19:43:08] === Init: building dirty + head
+[19:43:10]   dirty : {'status': 'partial', 'functions_exact': 5, 'functions_total': 7, 'functions_moved': 0, 'exact_text_bytes': 712, 'equal_text_bytes_including_fill': 714, 'text_bytes': 1308, 'exact_data_bytes': 12, 'source_sha256': '8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279'}
+[19:43:13]   head  : {'status': 'partial', 'functions_exact': 3, 'functions_total': 7, 'functions_moved': 0, 'exact_text_bytes': 342, 'equal_text_bytes_including_fill': 344, 'text_bytes': 1308, 'exact_data_bytes': 12, 'source_sha256': 'bbf359b74a6bc00607f7fbcfb5d7848a87a942165401812a0f52d26ac6f1a853'}
+[19:43:13]   delta : gains=2 losses=0 -> keep  GAIN Pal60,func_8C039280  [report check True]
+[19:43:13] === TB_text: building dirty + head
+[19:43:15]   dirty : {'status': 'partial', 'functions_exact': 17, 'functions_total': 21, 'functions_moved': 0, 'exact_text_bytes': 1238, 'equal_text_bytes_including_fill': 1242, 'text_bytes': 2544, 'exact_data_bytes': 329, 'source_sha256': '2d1ebb2038d8834accc125b99e7d0656a39e3c97f9a2cd4256e3dd686f07bced'}
+[19:43:18]   head  : {'status': 'partial', 'functions_exact': 10, 'functions_total': 21, 'functions_moved': 0, 'exact_text_bytes': 492, 'equal_text_bytes_including_fill': 494, 'text_bytes': 2544, 'exact_data_bytes': 329, 'source_sha256': '0a0226be039b72b9cc1765759c192b07be5e3eb63fd7639d69caa1bcabe25483'}
+[19:43:18]   delta : gains=7 losses=0 -> keep  GAIN TB_DrawEllipseText,TB_DrawText,TB_DrawTextC,TB_Printf,TB_Sprintf,TB_Strcat,TB_Strlen  [report check True]
+[19:43:18] === blit: building dirty + head
+[19:43:21]   dirty : {'status': 'exact', 'functions_exact': 10, 'functions_total': 10, 'functions_moved': 0, 'exact_text_bytes': 1322, 'equal_text_bytes_including_fill': 1324, 'text_bytes': 1324, 'exact_data_bytes': 4, 'source_sha256': 'be80517383732bc116ab3ec0d6a0b162ed305d5200acdc5d91dcbb859e0f64f8'}
+[19:43:24]   head  : {'status': 'partial', 'functions_exact': 8, 'functions_total': 10, 'functions_moved': 0, 'exact_text_bytes': 1038, 'equal_text_bytes_including_fill': 1040, 'text_bytes': 1324, 'exact_data_bytes': 4, 'source_sha256': '33c98a2b94526cd5b95b9b7a0ee333b7202f8034ee2e76303ddd635cf159a640'}
+[19:43:24]   delta : gains=2 losses=0 -> keep  GAIN DrawBlits,NewBlit  [report check True]
+[19:43:24] === controls: building dirty + head
+[19:43:26]   dirty : {'status': 'partial', 'functions_exact': 7, 'functions_total': 11, 'functions_moved': 0, 'exact_text_bytes': 1742, 'equal_text_bytes_including_fill': 1752, 'text_bytes': 2464, 'exact_data_bytes': 104, 'source_sha256': 'e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08'}
+[19:43:29]   head  : {'status': 'partial', 'functions_exact': 5, 'functions_total': 11, 'functions_moved': 0, 'exact_text_bytes': 1190, 'equal_text_bytes_including_fill': 1200, 'text_bytes': 2464, 'exact_data_bytes': 104, 'source_sha256': '40cf561e0b7d274cfb42d26452a41d60b06315debe8552942765618557bdf02c'}
+[19:43:29]   delta : gains=2 losses=0 -> keep  GAIN ClearRushControls,UpdateRushControls  [report check True]
+[19:43:29] === dc_misc_8C06C08C: building dirty + head
+[19:43:32]   dirty : {'status': 'partial', 'functions_exact': 7, 'functions_total': 31, 'functions_moved': 2, 'exact_text_bytes': 652, 'equal_text_bytes_including_fill': 654, 'text_bytes': 2640, 'exact_data_bytes': 24, 'source_sha256': '3bd6bef73d2830cc1e54bf25b3bdffdfa9e717ff22c7cb405fcd8aaad9f3118e'}
+[19:43:34]   head  : {'status': 'partial', 'functions_exact': 4, 'functions_total': 31, 'functions_moved': 2, 'exact_text_bytes': 436, 'equal_text_bytes_including_fill': 438, 'text_bytes': 2640, 'exact_data_bytes': 24, 'source_sha256': '5c166a8370bd8567333db85f138bc8e60ac20ad87dc4233d261fa658282389bf'}
+[19:43:34]   delta : gains=3 losses=0 -> keep  GAIN func_8C06C1E6,func_8C06C2A6,func_8C06C2B2  [report check True]
+[19:43:34] === dc_unk_8C069E34: building dirty + head
+[19:43:37]   dirty : {'status': 'partial', 'functions_exact': 0, 'functions_total': 1, 'functions_moved': 0, 'exact_text_bytes': 88, 'equal_text_bytes_including_fill': 88, 'text_bytes': 324, 'exact_data_bytes': 0, 'source_sha256': '82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728'}
+[19:43:40]   head  : {'status': 'partial', 'functions_exact': 0, 'functions_total': 1, 'functions_moved': 0, 'exact_text_bytes': 0, 'equal_text_bytes_including_fill': 0, 'text_bytes': 324, 'exact_data_bytes': 0, 'source_sha256': 'ad5f84d711a3da3130ccce1ad698249ed052bdbab9b0233a602c4e4b42d39885'}
+[19:43:40]   delta : gains=0 losses=0 -> neutral  [report check True]
+[19:43:40] === fmath: building dirty + head
+[19:43:42]   dirty : {'status': 'partial', 'functions_exact': 25, 'functions_total': 31, 'functions_moved': 3, 'exact_text_bytes': 2508, 'equal_text_bytes_including_fill': 2508, 'text_bytes': 3820, 'exact_data_bytes': 72, 'source_sha256': 'fefb5ca6613845c39b0f3454484d811d1a7e612e96284e49802c1aab2cac595a'}
+[19:43:45]   head  : {'status': 'partial', 'functions_exact': 1, 'functions_total': 31, 'functions_moved': 23, 'exact_text_bytes': 28, 'equal_text_bytes_including_fill': 28, 'text_bytes': 3820, 'exact_data_bytes': 72, 'source_sha256': '1ba1d9734a99231748b1ea2ef282a6ead7bd8e21db95bf2c10095a81a267c723'}
+[19:43:45]   delta : gains=24 losses=0 -> keep  GAIN BodyVector,BodyY,CopyUV,MulUVS,PitchUV,RollUV,RotateUV,ScaleUV,ScaleUVXYZ,TransposeUV,U64WorldVector,WPitchUV,WRollUV,WYawUV,WorldVector,YawUV,direction,fpitch,froll,func_8C026278,func_8C0262D2,func_8C0262E4,fyaw,invmagnitude  [report check True]
+[19:43:45] === game: building dirty + head
+[19:43:48]   dirty : {'status': 'partial', 'functions_exact': 4, 'functions_total': 14, 'functions_moved': 1, 'exact_text_bytes': 528, 'equal_text_bytes_including_fill': 528, 'text_bytes': 6412, 'exact_data_bytes': 163, 'source_sha256': '63aaa9b064c7bdd3a29060b0f3129a594f2296b7be06ac789d156c3154dcaa9c'}
+[19:43:51]   head  : {'status': 'partial', 'functions_exact': 0, 'functions_total': 14, 'functions_moved': 1, 'exact_text_bytes': 0, 'equal_text_bytes_including_fill': 0, 'text_bytes': 6412, 'exact_data_bytes': 163, 'source_sha256': 'd73e7bde579784fbc246d0b649c2a27ead5879ca437697b06127c45edf6570f9'}
+[19:43:51]   delta : gains=4 losses=0 -> keep  GAIN GameLoop,OncePerFrame,UpdateFrame,func_8C0279EA  [report check True]
+[19:43:51] === model: building dirty + head
+[19:43:53]   dirty : {'status': 'exact', 'functions_exact': 3, 'functions_total': 3, 'functions_moved': 0, 'exact_text_bytes': 1520, 'equal_text_bytes_including_fill': 1532, 'text_bytes': 1532, 'exact_data_bytes': 1, 'source_sha256': 'ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501'}
+[19:43:56]   head  : {'status': 'partial', 'functions_exact': 2, 'functions_total': 3, 'functions_moved': 0, 'exact_text_bytes': 118, 'equal_text_bytes_including_fill': 118, 'text_bytes': 1532, 'exact_data_bytes': 1, 'source_sha256': '24b2e862c4654e1be6ea56d7e5b05277f4adaa9a1087baf072c50f04f88476f2'}
+[19:43:56]   delta : gains=1 losses=0 -> keep  GAIN SetCatchup  [report check True]
+[19:43:56] === options: building dirty + head
+[19:43:58]   dirty : {'status': 'partial', 'functions_exact': 2, 'functions_total': 4, 'functions_moved': 0, 'exact_text_bytes': 856, 'equal_text_bytes_including_fill': 856, 'text_bytes': 2580, 'exact_data_bytes': 0, 'source_sha256': 'b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063'}
+[19:44:01]   head  : {'status': 'partial', 'functions_exact': 1, 'functions_total': 4, 'functions_moved': 0, 'exact_text_bytes': 756, 'equal_text_bytes_including_fill': 756, 'text_bytes': 2580, 'exact_data_bytes': 0, 'source_sha256': '66fda950dc9f3f72c2e6c08d067e04c6a99875c8995029a6ad35e8c5a066dfb5'}
+[19:44:01]   delta : gains=1 losses=0 -> keep  GAIN InitOptions  [report check True]
+[19:44:01] === optionscr: building dirty + head
+[19:44:03]   dirty : {'status': 'partial', 'functions_exact': 3, 'functions_total': 11, 'functions_moved': 1, 'exact_text_bytes': 1118, 'equal_text_bytes_including_fill': 1124, 'text_bytes': 6592, 'exact_data_bytes': 2092, 'source_sha256': 'c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f'}
+[19:44:06]   head  : {'status': 'partial', 'functions_exact': 1, 'functions_total': 11, 'functions_moved': 1, 'exact_text_bytes': 166, 'equal_text_bytes_including_fill': 170, 'text_bytes': 6592, 'exact_data_bytes': 2092, 'source_sha256': '6f972f6b7b1b6550935a9437bd0cc60593693e6eae6737e93d71601c934e77c5'}
+[19:44:06]   delta : gains=2 losses=0 -> keep  GAIN calcOptionMenuMaxSize,initButtons  [report check True]
+[19:44:06] === pakerr: building dirty + head
+[19:44:08]   dirty : {'status': 'partial', 'functions_exact': 12, 'functions_total': 19, 'functions_moved': 3, 'exact_text_bytes': 2178, 'equal_text_bytes_including_fill': 2186, 'text_bytes': 4364, 'exact_data_bytes': 52, 'source_sha256': '4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c'}
+[19:44:11]   head  : {'status': 'partial', 'functions_exact': 6, 'functions_total': 19, 'functions_moved': 3, 'exact_text_bytes': 760, 'equal_text_bytes_including_fill': 762, 'text_bytes': 4364, 'exact_data_bytes': 52, 'source_sha256': '56796f4b60be2224d498cf3c38ace2f99d0d050b2dfbc52df2fbaf2539772ed8'}
+[19:44:11]   delta : gains=6 losses=0 -> keep  GAIN _DrawChoice,_DrawPakErrFull,_DrawPakErrInconsistent,_DrawPakErrNewPak,_DrawPakErrNoPak,_DrawPakHeading  [report check True]
+[19:44:11] === pane: building dirty + head
+[19:44:13]   dirty : {'status': 'exact', 'functions_exact': 5, 'functions_total': 5, 'functions_moved': 0, 'exact_text_bytes': 1320, 'equal_text_bytes_including_fill': 1324, 'text_bytes': 1324, 'exact_data_bytes': 480, 'source_sha256': '60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8'}
+[19:44:16]   head  : {'status': 'partial', 'functions_exact': 3, 'functions_total': 5, 'functions_moved': 0, 'exact_text_bytes': 1082, 'equal_text_bytes_including_fill': 1084, 'text_bytes': 1324, 'exact_data_bytes': 480, 'source_sha256': '19887f4e6a3d538c5b6c3fb5c0cc08aa928490c1bbbb154807c553b4be977d42'}
+[19:44:16]   delta : gains=2 losses=0 -> keep  GAIN RemovePane,RemovePanes  [report check True]
+[19:44:16] === streaks: building dirty + head
+[19:44:18]   dirty : {'status': 'partial', 'functions_exact': 4, 'functions_total': 5, 'functions_moved': 0, 'exact_text_bytes': 1168, 'equal_text_bytes_including_fill': 1172, 'text_bytes': 1360, 'exact_data_bytes': 16, 'source_sha256': 'cc546811886b274cdc6b067aa337b4d1dc9f17255eae492a63190042f91d39b3'}
+[19:44:21]   head  : {'status': 'partial', 'functions_exact': 4, 'functions_total': 5, 'functions_moved': 0, 'exact_text_bytes': 1116, 'equal_text_bytes_including_fill': 1118, 'text_bytes': 1360, 'exact_data_bytes': 16, 'source_sha256': '9ab1f1be6f999dccf84524da6b206452c26fceb1d98fe83433d31cec037daa06'}
+[19:44:21]   delta : gains=0 losses=0 -> neutral  [report check True]
+[19:44:21] === stree: building dirty + head
+[19:44:24]   dirty : {'status': 'partial', 'functions_exact': 5, 'functions_total': 25, 'functions_moved': 0, 'exact_text_bytes': 616, 'equal_text_bytes_including_fill': 618, 'text_bytes': 14444, 'exact_data_bytes': 72, 'source_sha256': '16d8260fc3f6e564965fc1af3a193f3c4d1085924b9a1a6bd434ec1566b1fd59'}
+[19:44:27]   head  : {'status': 'partial', 'functions_exact': 1, 'functions_total': 25, 'functions_moved': 0, 'exact_text_bytes': 58, 'equal_text_bytes_including_fill': 58, 'text_bytes': 14444, 'exact_data_bytes': 72, 'source_sha256': '7b4f30538cfc4d2518498f017800db6e504b3b03549c3d5aff599bea3deaa531'}
+[19:44:27]   delta : gains=4 losses=0 -> keep  GAIN InitSTree,matf2scopy,mats2fcopy,updownleaf  [report check True]
+[19:44:27] === stunt: building dirty + head
+[19:44:29]   dirty : {'status': 'partial', 'functions_exact': 7, 'functions_total': 13, 'functions_moved': 0, 'exact_text_bytes': 1168, 'equal_text_bytes_including_fill': 1172, 'text_bytes': 4720, 'exact_data_bytes': 0, 'source_sha256': '5c215a20aaa39b082ee16d0525f24668a5eea1859d2891d96364d01da88e2cfa'}
+[19:44:32]   head  : {'status': 'partial', 'functions_exact': 6, 'functions_total': 13, 'functions_moved': 0, 'exact_text_bytes': 1016, 'equal_text_bytes_including_fill': 1020, 'text_bytes': 4720, 'exact_data_bytes': 0, 'source_sha256': '0f7da50b666521df6c69dc93c9cb1440d708b667facb85a5b2033389c47598a4'}
+[19:44:32]   delta : gains=1 losses=0 -> keep  GAIN _CheckAirTime  [report check True]
+[19:44:32] === unk_8C065F2C: building dirty + head
+[19:44:34]   dirty : {'status': 'partial', 'functions_exact': 2, 'functions_total': 3, 'functions_moved': 0, 'exact_text_bytes': 604, 'equal_text_bytes_including_fill': 606, 'text_bytes': 1192, 'exact_data_bytes': 12223, 'source_sha256': 'a29ff252f734ccb9a19cba0f26d80feab182323a8bec271c2c66f02bc7b0c599'}
+[19:44:37]   head  : {'status': 'partial', 'functions_exact': 1, 'functions_total': 3, 'functions_moved': 1, 'exact_text_bytes': 258, 'equal_text_bytes_including_fill': 258, 'text_bytes': 1192, 'exact_data_bytes': 12223, 'source_sha256': '68021c47a696b4ce965fdadb9a3081c9822ef7e4b1dc986a38a0cc5f7272203c'}
+[19:44:37]   delta : gains=1 losses=0 -> keep  GAIN func_8C066278  [report check True]
+[19:44:37] === visuals: building dirty + head
+[19:44:39]   dirty : {'status': 'partial', 'functions_exact': 1, 'functions_total': 60, 'functions_moved': 0, 'exact_text_bytes': 326, 'equal_text_bytes_including_fill': 326, 'text_bytes': 26680, 'exact_data_bytes': 600, 'source_sha256': '013b5f5d0a007f0c03ee02a1ea3ed083e819aa95360a603a5322940bd71500f9'}
+[19:44:42]   head  : {'status': 'partial', 'functions_exact': 0, 'functions_total': 60, 'functions_moved': 0, 'exact_text_bytes': 44, 'equal_text_bytes_including_fill': 44, 'text_bytes': 26680, 'exact_data_bytes': 600, 'source_sha256': 'e21c8ee790e0a0ca20032d09b3621b91e8bbd5ddac9b7df3bbefee3d0cafd779'}
+[19:44:42]   delta : gains=1 losses=0 -> keep  GAIN InitVisuals  [report check True]
+[19:44:42] === zoid: building dirty + head
+[19:44:44]   dirty : {'status': 'partial', 'functions_exact': 18, 'functions_total': 21, 'functions_moved': 0, 'exact_text_bytes': 1092, 'equal_text_bytes_including_fill': 1094, 'text_bytes': 1592, 'exact_data_bytes': 0, 'source_sha256': '0d60367ca4006eaff52f810aae3d7c75fddc5aae24fba0852666e228f52025a1'}
+[19:44:47]   head  : {'status': 'partial', 'functions_exact': 7, 'functions_total': 21, 'functions_moved': 1, 'exact_text_bytes': 440, 'equal_text_bytes_including_fill': 442, 'text_bytes': 1592, 'exact_data_bytes': 0, 'source_sha256': '353f9f8ac2ddfd9d5e5c40bf96a6b305923058637c2402184385a8c64b50aabe'}
+[19:44:47]   delta : gains=11 losses=0 -> keep  GAIN ZOID_AddObject,ZOID_InsertObject,ZOID_LastSibling,ZOID_ObjPrevObj,ZOID_ObjectFlags,ZOID_RemoveObject,ZOID_RemoveObjectTree,ZOID_SetObjectDef,ZOID_SetObjectFlags,ZOID_TrueObjParent,func_8C068C68  [report check True]
+[19:44:47] === zoidpoly: building dirty + head
+[19:44:50]   dirty : {'status': 'exact', 'functions_exact': 8, 'functions_total': 8, 'functions_moved': 0, 'exact_text_bytes': 896, 'equal_text_bytes_including_fill': 900, 'text_bytes': 900, 'exact_data_bytes': 0, 'source_sha256': 'e677e9dc00067f90d21a8d95a9f380aea0b1d6d62ccbe2d6011da2180fca8ecf'}
+[19:44:53]   head  : {'status': 'partial', 'functions_exact': 7, 'functions_total': 8, 'functions_moved': 0, 'exact_text_bytes': 848, 'equal_text_bytes_including_fill': 852, 'text_bytes': 900, 'exact_data_bytes': 0, 'source_sha256': 'e2e2d6c38aaad34c8d59a8ea9ed40bbda508e3922b5451b3629599af8436150c'}
+[19:44:53]   delta : gains=1 losses=0 -> keep  GAIN ZOID_RemovePoly  [report check True]
+[19:44:53] DONE: 21 units: keep=19 revert=0 neutral=2; functions gained by dirty=76, lost by dirty=0

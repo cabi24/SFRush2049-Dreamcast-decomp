@@ -123,13 +123,12 @@ void RemovePanes(int permanent)
     int j; /* r27 */
     tBlitSet *cursor;
     tBlitSet *pane;
-    _tBlit_2 **blit;
 
     for (cursor = gPaneBlits; cursor < &gPaneBlits[16]; cursor++) {
         pane = cursor;
         if (pane->used && (permanent || !pane->perm)) {
-            for (j = 0, blit = pane->blits; blit < &pane->blits[5]; j++, blit++) {
-                if (*blit) {
+            for (j = 0; j < 5; j++) {
+                if (pane->blits[j]) {
                     RemoveBlit((_tBlit *)pane->blits[j]);
                     pane->blits[j] = 0;
                 }
@@ -143,11 +142,10 @@ void RemovePanes(int permanent)
 void RemovePane(tBlitSet *pane)
 {
     int j; /* r29 */
-    _tBlit_2 **blit;
 
     if (pane && pane->used) {
-        for (j = 0, blit = pane->blits; blit < &pane->blits[5]; j++, blit++) {
-            if (*blit) {
+        for (j = 0; j < 5; j++) {
+            if (pane->blits[j]) {
                 RemoveBlit((_tBlit *)pane->blits[j]);
                 pane->blits[j] = 0;
             }

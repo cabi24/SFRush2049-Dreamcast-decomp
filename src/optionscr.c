@@ -329,8 +329,9 @@ void calcOptionMenuMaxSize(void)
 {
     int height;
     int i;
+    height = 210;
     HAL_SetFont(13);
-    height = 210 - TB_GetFontLineHeight() * 2;
+    height -= TB_GetFontLineHeight() * 2;
     HAL_SetFont(11);
     height -= TB_GetFontLineHeight();
     gMenuCount = 0;

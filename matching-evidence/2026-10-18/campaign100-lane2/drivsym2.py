@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/drivsym.c');s=Path('matching-evidence/2026-10-18/campaign100-lane2/drivsym.original.c').read_text();a=s.index('void forces1(');b=s.index('void forces2(',a);t=s[a:b].replace('    int poortract;','    int poortract;\n    float traction = 1.0f;').replace(', 0, 1.0f);',', 0, traction);').replace(', poortract, 1.0f);',', poortract, traction);');p.write_text(s[:a]+t+s[b:])

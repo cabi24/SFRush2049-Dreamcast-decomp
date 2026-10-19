@@ -1,0 +1,48 @@
+{
+  "unit": "stunt",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 7,
+    "functions_total": 13,
+    "functions_moved": 0,
+    "exact_text_bytes": 1168,
+    "equal_text_bytes_including_fill": 1172,
+    "text_bytes": 4720,
+    "exact_data_bytes": 0,
+    "source_sha256": "5c215a20aaa39b082ee16d0525f24668a5eea1859d2891d96364d01da88e2cfa"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 6,
+    "functions_total": 13,
+    "functions_moved": 0,
+    "exact_text_bytes": 1016,
+    "equal_text_bytes_including_fill": 1020,
+    "text_bytes": 4720,
+    "exact_data_bytes": 0,
+    "source_sha256": "0f7da50b666521df6c69dc93c9cb1440d708b667facb85a5b2033389c47598a4"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "_CheckAirTime",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 152
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1168,
+  "text_bytes_head": 1016,
+  "report_consistency": {
+    "report_functions_exact": 7,
+    "dirty_rebuild_functions_exact": 7,
+    "report_exact_text_bytes": 1168,
+    "dirty_rebuild_exact_text_bytes": 1168,
+    "report_source_sha256": "5c215a20aaa39b082ee16d0525f24668a5eea1859d2891d96364d01da88e2cfa",
+    "dirty_source_sha256": "5c215a20aaa39b082ee16d0525f24668a5eea1859d2891d96364d01da88e2cfa",
+    "match": true
+  },
+  "head_source_sha256": "0f7da50b666521df6c69dc93c9cb1440d708b667facb85a5b2033389c47598a4",
+  "seconds": 5.1
+}

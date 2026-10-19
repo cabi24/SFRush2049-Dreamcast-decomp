@@ -166,7 +166,6 @@ static void _CheckRoll(int p)
 {
     tCarData *gc = &gGameCar[p];
     tStuntInfo *plyrInfo = &gStuntInfo[p];
-    float *absW = GCabsW;
     if (plyrInfo->active & 0x20) {
         if (chW2 || j >= 3)
             plyrInfo->active &= ~0x20;
@@ -195,12 +194,15 @@ static void _CheckRoll(int p)
                 plyrInfo->stuntW[0][0] = plyrInfo->stuntW[0][1] = 0.0f;
             }
         }
-    } else if (okToStart && absW[2] > absW[1] &&
-               absW[2] > absW[0]) {
-        plyrInfo->active |= 0x20;
-        plyrInfo->stuntW[0][0] = gc->stuntW[0];
-        plyrInfo->stuntW[0][1] = gc->stuntW[1];
-        plyrInfo->stuntW[0][2] = gc->stuntW[2];
+    } else {
+        float *absW = GCabsW;
+        if (okToStart && absW[2] > absW[1] &&
+            absW[2] > absW[0]) {
+            plyrInfo->active |= 0x20;
+            plyrInfo->stuntW[0][0] = gc->stuntW[0];
+            plyrInfo->stuntW[0][1] = gc->stuntW[1];
+            plyrInfo->stuntW[0][2] = gc->stuntW[2];
+        }
     }
 }
 

@@ -1,0 +1,81 @@
+{
+ "name": "world",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT world.abs",
+  "FORM A",
+  "START P(8C065C78)",
+  "DEFINE _MBOX_FindObject_WORK(8C03D390)",
+  "DEFINE _MBOX_NewObject(8C03D090)",
+  "DEFINE _MBOX_NewObjectCam(8C03D0A2)",
+  "DEFINE _SetupTarget(8C0576F2)",
+  "DEFINE _WorldBase(8C15FF70)",
+  "DEFINE _WorldTable(8C15FF28)",
+  "DEFINE _Worlddlidx(8C15FF74)",
+  "DEFINE __slow_strcmp1(8C09BB5C)",
+  "DEFINE __slow_strcpy(8C09BB0C)",
+  "DEFINE _bsearch(8C09BC04)",
+  "DEFINE _cur_world_obj(8C15FF78)",
+  "DEFINE _func_8C05145C(8C05145C)",
+  "DEFINE _func_8C0686F0(8C0686F0)",
+  "DEFINE _func_8C0687B6(8C0687B6)",
+  "DEFINE _gGameState(8C0BFD3C)",
+  "DEFINE _gNumModels(8C14CB1C)",
+  "DEFINE _gWorldData(8C15FF24)",
+  "PRINT world.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-world\\attempt3\\obj\\world.obj",
+   "sha256": "7b1dc944c626531f248632547328444d453e94d885456f1d6934484c5b114f86"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C065C78",
+   "length": 704
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C065C78",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 198,
+   "first_diff_offset": 16,
+   "sha256": "2afce3142b34dcc9889f1bad721eeb814506b768267403dbfbd73550a9c4e010"
+  },
+  {
+   "section": "P",
+   "address": "8C065D6E",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 234,
+   "first_diff_offset": 0,
+   "sha256": "3babc1af76e45d6c19b710e21cc6e84718b92e6ac0874d9b0ad8c19661b4732b"
+  },
+  {
+   "section": "P",
+   "address": "8C065E64",
+   "size": 176,
+   "exact": false,
+   "diff_bytes": 157,
+   "first_diff_offset": 0,
+   "sha256": "dcab39eb7c9fc839c22666505b298505e5b6eb14759ab03a904d73acccd7347d"
+  },
+  {
+   "section": "P",
+   "address": "8C065F14",
+   "size": 36,
+   "exact": false,
+   "diff_bytes": 32,
+   "first_diff_offset": 0,
+   "sha256": "dcecf96931f970fe6f4d3c099e7d730079e6c9b75c3113f36b8b5a75f2135f3f"
+  }
+ ],
+ "all_exact": false
+}

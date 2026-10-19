@@ -1,0 +1,151 @@
+8C0230B0 mov.l r14,@-r15                                | 8C0230B0 mov.l r14,@-r15                                
+8C0230B2 mov.l r13,@-r15                                | 8C0230B2 mov.l r13,@-r15                                
+8C0230B4 mov.l r12,@-r15                                | 8C0230B4 mov.l r12,@-r15                                
+8C0230B6 mov.l r11,@-r15                                | 8C0230B6 mov.l r11,@-r15                                
+8C0230B8 sts.l pr,@-r15                                 | 8C0230B8 mov.l r10,@-r15                                *
+8C0230BA add #-20,r15                                   | 8C0230BA sts.l pr,@-r15                                 *
+8C0230BC mov.w @(0x8C02321C,pc),r0                      | 8C0230BC add #-20,r15                                   *
+8C0230BE exts.w r5,r1                                   | 8C0230BE mov.w @(0x8C0231F2,pc),r0                      *
+8C0230C0 mov.l @(0x8C023228,pc),r3                      | 8C0230C0 exts.w r5,r1                                   *
+8C0230C2 mov.l r1,@r15                                  | 8C0230C2 mov.l @(0x8C0231F8,pc),r3                      *
+8C0230C4 jsr @r3                                        | 8C0230C4 mov.l r1,@r15                                  *
+8C0230C6 nop                                            | 8C0230C6 jsr @r3                                        *
+8C0230C8 mov r0,r5                                      | 8C0230C8 nop                                            *
+8C0230CA mov.l @(0x8C02322C,pc),r2                      | 8C0230CA mov r0,r5                                      *
+8C0230CC mov.w @(0x8C02321C,pc),r0                      | 8C0230CC mov.l @(0x8C0231FC,pc),r2                      *
+8C0230CE mov.l @r15,r1                                  | 8C0230CE mov.w @(0x8C0231F2,pc),r0                      *
+8C0230D0 jsr @r2                                        | 8C0230D0 mov.l @r15,r1                                  *
+8C0230D2 nop                                            | 8C0230D2 jsr @r2                                        *
+8C0230D4 exts.w r5,r3                                   | 8C0230D4 nop                                            *
+8C0230D6 cmp/pz r3                                      | 8C0230D6 exts.w r5,r3                                   *
+8C0230D8 bt/s 0x8C0230E0                                | 8C0230D8 cmp/pz r3                                      *
+8C0230DA mov r0,r13                                     | 8C0230DA bt/s 0x8C0230E2                                *
+8C0230DC mov #0,r13                                     | 8C0230DC mov r0,r13                                     *
+8C0230DE mov #0,r5                                      | 8C0230DE mov #0,r13                                     *
+8C0230E0 mov #11,r2                                     | 8C0230E0 mov #0,r5                                      *
+8C0230E2 mov.w @(0x8C02321E,pc),r11                     | 8C0230E2 mov #11,r2                                     *
+8C0230E4 exts.w r5,r3                                   | 8C0230E4 mov.w @(0x8C0231F4,pc),r11                     *
+8C0230E6 cmp/ge r2,r3                                   | 8C0230E6 exts.w r5,r3                                   *
+8C0230E8 bf/s 0x8C0230F0                                | 8C0230E8 cmp/ge r2,r3                                   *
+8C0230EA mov #14,r12                                    | 8C0230EA bf/s 0x8C0230F2                                *
+8C0230EC mov r11,r13                                    | 8C0230EC mov #14,r12                                    *
+8C0230EE mov #10,r5                                     | 8C0230EE mov r11,r13                                    *
+8C0230F0 mov.l @(0x8C023230,pc),r2                      | 8C0230F0 mov #10,r5                                     *
+8C0230F2 mov r6,r1                                      | 8C0230F2 mov.l @(0x8C023200,pc),r2                      *
+8C0230F4 jsr @r2                                        | 8C0230F4 mov r6,r1                                      *
+8C0230F6 mov r12,r0                                     | 8C0230F6 jsr @r2                                        *
+8C0230F8 mov.l @(0x8C023234,pc),r3                      | 8C0230F8 mov r12,r0                                     *
+8C0230FA mov r6,r1                                      | 8C0230FA mov.l @(0x8C023204,pc),r3                      *
+8C0230FC mov r0,r14                                     | 8C0230FC mov r6,r1                                      *
+8C0230FE jsr @r3                                        | 8C0230FE mov r0,r14                                     *
+8C023100 mov r12,r0                                     | 8C023100 jsr @r3                                        *
+8C023102 mov #9,r3                                      | 8C023102 mov r12,r0                                     *
+8C023104 exts.w r14,r2                                  | 8C023104 mov #9,r3                                      *
+8C023106 cmp/ge r3,r2                                   | 8C023106 exts.w r14,r2                                  *
+8C023108 bf/s 0x8C023110                                | 8C023108 cmp/ge r3,r2                                   *
+8C02310A mov r0,r6                                      | 8C02310A bf/s 0x8C023112                                *
+8C02310C mov #13,r6                                     | 8C02310C mov r0,r6                                      *
+8C02310E mov #8,r14                                     | 8C02310E mov #13,r6                                     *
+8C023110 exts.w r14,r3                                  | 8C023110 mov #8,r14                                     *
+8C023112 mov r3,r2                                      | 8C023112 exts.w r14,r10                                 *
+8C023114 shll r3                                        | 8C023114 mov.l @(0x8C0231F8,pc),r2                      *
+8C023116 add r2,r3                                      | 8C023116 mov r10,r3                                     *
+8C023118 exts.w r5,r5                                   | 8C023118 shll r10                                       *
+8C02311A shll2 r3                                       | 8C02311A add r3,r10                                     *
+8C02311C shll r3                                        | 8C02311C exts.w r5,r5                                   *
+8C02311E shll r5                                        | 8C02311E shll2 r10                                      *
+8C023120 add r5,r3                                      | 8C023120 shll r10                                       *
+8C023122 mov.l r5,@(12,r15)                             | 8C023122 shll r5                                        *
+8C023124 add r7,r3                                      | 8C023124 add r5,r10                                     *
+8C023126 mov r3,r5                                      | 8C023126 mov.l r5,@(16,r15)                             *
+8C023128 add #2,r5                                      | 8C023128 add r7,r10                                     *
+8C02312A exts.w r13,r13                                 | 8C02312A mov.l r11,@(4,r15)                             *
+8C02312C mov.l r3,@(4,r15)                              | 8C02312C mov r10,r5                                     *
+8C02312E mov.l r11,@(16,r15)                            | 8C02312E add #2,r5                                      *
+8C023130 mov.l r13,@(8,r15)                             | 8C023130 exts.w r13,r13                                 *
+8C023132 mov.w @r5,r2                                   | 8C023132 mov.l r13,@r15                                 *
+8C023134 mov.l r2,@r15                                  | 8C023134 mov.w @r5,r1                                   *
+8C023136 mov.w @r3,r5                                   | 8C023136 mov.w @r10,r0                                  *
+8C023138 mov.l @(8,r15),r1                              | 8C023138 sub r0,r1                                      *
+8C02313A sub r5,r2                                      | 8C02313A mov.w r0,@(8,r15)                              *
+8C02313C mul.l r1,r2                                    | 8C02313C mov.l @r15,r3                                  *
+8C02313E mov.l @(0x8C023228,pc),r2                      | 8C02313E mul.l r3,r1                                    *
+8C023140 sts macl,r1                                    | 8C023140 sts macl,r1                                    
+8C023142 jsr @r2                                        | 8C023142 jsr @r2                                        
+8C023144 mov.l @(16,r15),r0                             | 8C023144 mov.l @(4,r15),r0                              *
+8C023146 exts.w r14,r14                                 | 8C023146 exts.w r14,r14                                 
+8C023148 add #1,r14                                     | 8C023148 mov r0,r1                                      *
+8C02314A mov r14,r3                                     | 8C02314A add #1,r14                                     *
+8C02314C shll r14                                       | 8C02314C mov.w @(8,r15),r0                              *
+8C02314E add r3,r14                                     | 8C02314E mov r14,r3                                     *
+8C023150 mov.l @(0x8C023228,pc),r3                      | 8C023150 shll r14                                       *
+8C023152 shll2 r14                                      | 8C023152 add r3,r14                                     *
+8C023154 shll r14                                       | 8C023154 mov.l @(0x8C0231F8,pc),r3                      *
+8C023156 add r5,r0                                      | 8C023156 shll2 r14                                      *
+8C023158 mov.w r0,@(4,r15)                              | 8C023158 shll r14                                       *
+8C02315A mov.l @(12,r15),r2                             | 8C02315A add r1,r0                                      *
+8C02315C add r2,r14                                     | 8C02315C mov.w r0,@(12,r15)                             *
+8C02315E add r7,r14                                     | 8C02315E mov.l @(16,r15),r2                             *
+8C023160 mov r14,r5                                     | 8C023160 add r2,r14                                     *
+8C023162 add #2,r5                                      | 8C023162 add r7,r14                                     *
+8C023164 mov.l r14,@r15                                 | 8C023164 mov r11,r7                                     *
+8C023166 mov.l r11,@(12,r15)                            | 8C023166 mov r14,r5                                     *
+8C023168 mov.w @r5,r7                                   | 8C023168 add #2,r5                                      *
+8C02316A mov.l @r15,r5                                  | 8C02316A mov.w @r14,r0                                  *
+8C02316C mov.l @(8,r15),r1                              | 8C02316C mov.w @r5,r1                                   *
+8C02316E mov.w @r5,r5                                   | 8C02316E mov.w r0,@(8,r15)                              *
+8C023170 sub r5,r7                                      | 8C023170 sub r0,r1                                      *
+8C023172 mul.l r1,r7                                    | 8C023172 mov.l @r15,r0                                  *
+8C023174 sts macl,r1                                    | 8C023174 mul.l r0,r1                                    *
+8C023176 jsr @r3                                        | 8C023176 sts macl,r1                                    *
+8C023178 mov r11,r0                                     | 8C023178 jsr @r3                                        *
+8C02317A add r5,r0                                      | 8C02317A mov r7,r0                                      *
+8C02317C mov.l @(0x8C023228,pc),r3                      | 8C02317C mov r0,r1                                      *
+8C02317E mov.w r0,@r15                                  | 8C02317E mov.w @(8,r15),r0                              *
+8C023180 exts.w r6,r7                                   | 8C023180 exts.w r6,r7                                   
+8C023182 mov.l r12,@(8,r15)                             | 8C023182 mov.l @(0x8C0231F8,pc),r3                      *
+8C023184 mov.w @(4,r15),r0                              | 8C023184 add r1,r0                                      *
+8C023186 mov.w @r15,r6                                  | 8C023186 mov.w r0,@(4,r15)                              *
+8C023188 mov r0,r5                                      | 8C023188 mov.l r12,@r15                                 *
+8C02318A sub r5,r6                                      | 8C02318A mov.w @(4,r15),r0                              *
+8C02318C mul.l r7,r6                                    | 8C02318C mov r0,r6                                      *
+8C02318E sts macl,r1                                    | 8C02318E mov.w @(12,r15),r0                             *
+8C023190 jsr @r3                                        | 8C023190 mov r0,r5                                      *
+8C023192 mov r12,r0                                     | 8C023192 sub r5,r6                                      *
+8C023194 add r5,r0                                      | 8C023194 mul.l r7,r6                                    *
+8C023196 mov.w r0,@r15                                  | 8C023196 sts macl,r1                                    *
+8C023198 mov.b @(12,r4),r0                              | 8C023198 jsr @r3                                        *
+8C02319A mov.w @r15,r5                                  | 8C02319A mov r12,r0                                     *
+8C02319C mov r0,r2                                      | 8C02319C add r5,r0                                      *
+8C02319E shll r0                                        | 8C02319E mov.w r0,@(8,r15)                              *
+8C0231A0 add r2,r0                                      | 8C0231A0 mov.w @(8,r15),r0                              *
+8C0231A2 mov.l @(0x8C023238,pc),r2                      | 8C0231A2 mov.l @(4,r4),r3                               *
+8C0231A4 shll2 r0                                       | 8C0231A4 mov r0,r5                                      *
+8C0231A6 mov.l @(4,r4),r3                               | 8C0231A6 mov.b @(12,r4),r0                              *
+8C0231A8 add r0,r2                                      | 8C0231A8 exts.w r5,r5                                   *
+8C0231AA mov.b @(11,r4),r0                              | 8C0231AA mov r0,r2                                      *
+8C0231AC exts.w r5,r5                                   | 8C0231AC shll r0                                        *
+8C0231AE shll2 r0                                       | 8C0231AE add r2,r0                                      *
+8C0231B0 lds r5,fpul                                    | 8C0231B0 mov.l @(0x8C023208,pc),r2                      *
+8C0231B2 fmov @(r0,r2),fr3                              | 8C0231B2 shll2 r0                                       *
+8C0231B4 mov #8,r0                                      | 8C0231B4 lds r5,fpul                                    *
+8C0231B6 fmov @(r0,r3),fr2                              | 8C0231B6 add r0,r2                                      *
+8C0231B8 fmul fr3,fr2                                   | 8C0231B8 mov.b @(11,r4),r0                              *
+8C0231BA float fpul,fr3                                 | 8C0231BA shll2 r0                                       *
+8C0231BC fmul fr2,fr3                                   | 8C0231BC fmov @(r0,r2),fr3                              *
+8C0231BE ftrc fr3,fpul                                  | 8C0231BE mov #8,r0                                      *
+8C0231C0 sts fpul,r5                                    | 8C0231C0 fmov @(r0,r3),fr2                              *
+8C0231C2 mov r5,r0                                      | 8C0231C2 fmul fr3,fr2                                   *
+8C0231C4 add #20,r15                                    | 8C0231C4 float fpul,fr3                                 *
+8C0231C6 lds.l @r15+,pr                                 | 8C0231C6 fmul fr2,fr3                                   *
+8C0231C8 mov.l @r15+,r11                                | 8C0231C8 ftrc fr3,fpul                                  *
+8C0231CA mov.l @r15+,r12                                | 8C0231CA sts fpul,r5                                    *
+8C0231CC mov.l @r15+,r13                                | 8C0231CC mov r5,r0                                      *
+8C0231CE rts                                            | 8C0231CE add #20,r15                                    *
+8C0231D0 mov.l @r15+,r14                                | 8C0231D0 lds.l @r15+,pr                                 *
+8C0231D2                                                | 8C0231D2 mov.l @r15+,r10                                *
+8C0231D4                                                | 8C0231D4 mov.l @r15+,r11                                *
+8C0231D6                                                | 8C0231D6 mov.l @r15+,r12                                *
+8C0231D8                                                | 8C0231D8 mov.l @r15+,r13                                *
+8C0231DA                                                | 8C0231DA rts                                            *
+8C0231DC                                                | 8C0231DC mov.l @r15+,r14                                *

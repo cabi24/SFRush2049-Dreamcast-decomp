@@ -32,7 +32,7 @@ void _ControlPakErrTimeout(int pak, int id)
 
 void _DrawPakHeading(int pak,int id)
 {
- unsigned char str[32];
+ unsigned char str[40];
  HAL_SetFont(11); TB_SetTextColor(1);
  sprintf((char *)str,"%s %s",gText.single[167],gPS_PakName[pak]);
  TB_DrawText(TB_CenterText(str,gPakError[pak][id].left+gPakError[pak][id].width/2),gPakError[pak][id].top,str);
@@ -53,7 +53,7 @@ void _DrawChoice(int pak, int id, const unsigned char *str, const unsigned char 
     y = gPakError[pak][id].top + gPakError[pak][id].height - h * 3;
     HAL_SetFont(choice1 ? 11 : 10);
     TB_SetTextColor(choice1 ? 1 : 22);
-    TB_DrawText(x, y - (choice1 == 0) + h, gText.single[245]);
+    TB_DrawText(x, y - (choice1 ? 0 : 1) + h, gText.single[245]);
     HAL_SetFont(choice1 ? 10 : 11);
     TB_SetTextColor(choice1 ? 22 : 1);
     TB_DrawText(x, y - (choice1 ? 1 : 0), gText.taba[gText.tab[26]]);
@@ -98,7 +98,7 @@ void _DrawPakErrNoPak(int pak,int id)
   y=gPakError[pak][id].top+gPakError[pak][id].height-h*3;
   HAL_SetFont(gPakError[pak][id].choice1?11:10);
   TB_SetTextColor(gPakError[pak][id].choice1?1:22);
-  TB_DrawText(x,y-(gPakError[pak][id].choice1==0)+h,gText.single[245]);
+  TB_DrawText(x,y-(gPakError[pak][id].choice1?0:1)+h,gText.single[245]);
   HAL_SetFont(gPakError[pak][id].choice1?10:11);
   TB_SetTextColor(gPakError[pak][id].choice1?22:1);
   TB_DrawText(x,y-(gPakError[pak][id].choice1?1:0),gText.taba[gText.tab[26]]);
@@ -140,12 +140,10 @@ void _DrawPakErrInconsistent(int pak, int id)
 void _DrawPakErrFull(int pak, int id)
 {
     unsigned char str[256];
-    unsigned char *nl;
     TB_Strcpy(str, gText.single[123]);
-    nl=(unsigned char *)"\n\n";
-    TB_Strcat(str,nl);
+    TB_Strcat(str,(unsigned char *)"\n\n");
     TB_Strcat(str, gText.single[124]);
-    TB_Strcat(str,nl);
+    TB_Strcat(str,(unsigned char *)"\n\n");
     TB_Strcat(str, gText.single[110]);
     TB_Strcat(str, gText.single[112]);
     _DrawPakErrNQA(pak, id, str);

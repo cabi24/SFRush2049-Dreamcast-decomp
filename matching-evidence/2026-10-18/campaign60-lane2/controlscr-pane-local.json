@@ -1,0 +1,649 @@
+{
+  "name": "controlscr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/controlscr.c",
+  "source_sha256": "5d53ad79a99185b059277be91e95bce18e47fc15452aa4c5d538ca94c0e41f95",
+  "text": [
+    "8C01FDE8",
+    "8C022654"
+  ],
+  "text_bytes": 10348,
+  "exact_text_bytes": 22,
+  "align_bytes": 0,
+  "data_bytes": 10936,
+  "exact_data_bytes": 4999,
+  "functions_total": 11,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "updateControlScreen",
+      "start": "8C01FDE8",
+      "end": "8C020754",
+      "size": 2412,
+      "status": "differs",
+      "diff_bytes": 2129,
+      "linked_at": "8C01FDE8",
+      "linked_size": 2410
+    },
+    {
+      "name": "cleanupControlScreen",
+      "start": "8C020754",
+      "end": "8C0207AE",
+      "size": 90,
+      "status": "differs",
+      "diff_bytes": 83,
+      "linked_at": "8C020752",
+      "linked_size": 90
+    },
+    {
+      "name": "animControls",
+      "start": "8C0207AE",
+      "end": "8C020C1C",
+      "size": 1134,
+      "status": "differs",
+      "diff_bytes": 882,
+      "linked_at": "8C0207AC",
+      "linked_size": 1148
+    },
+    {
+      "name": "animText",
+      "start": "8C020C1C",
+      "end": "8C020FA6",
+      "size": 906,
+      "status": "differs",
+      "diff_bytes": 878,
+      "linked_at": "8C020C28",
+      "linked_size": 960
+    },
+    {
+      "name": "animButtonText",
+      "start": "8C020FC4",
+      "end": "8C021484",
+      "size": 1216,
+      "status": "differs",
+      "diff_bytes": 1187,
+      "linked_at": "8C020FE8",
+      "linked_size": 1258
+    },
+    {
+      "name": "calcControlMenuMaxSize",
+      "start": "8C021484",
+      "end": "8C0214E4",
+      "size": 96,
+      "status": "differs",
+      "diff_bytes": 95,
+      "linked_at": "8C0214D2",
+      "linked_size": 96
+    },
+    {
+      "name": "validOption",
+      "start": "8C0214E4",
+      "end": "8C0214E8",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C021532",
+      "linked_size": 66
+    },
+    {
+      "name": "validControl",
+      "start": "8C021524",
+      "end": "8C0215AC",
+      "size": 136,
+      "status": "differs",
+      "diff_bytes": 134,
+      "linked_at": "8C021574",
+      "linked_size": 128
+    },
+    {
+      "name": "initButtons",
+      "start": "8C0215AC",
+      "end": "8C021B14",
+      "size": 1384,
+      "status": "differs",
+      "diff_bytes": 1365,
+      "linked_at": "8C0215F4",
+      "linked_size": 1404
+    },
+    {
+      "name": "uninitButtons",
+      "start": "8C021B40",
+      "end": "8C021BF8",
+      "size": 184,
+      "status": "moved",
+      "diff_bytes": 178,
+      "linked_at": "8C021B70",
+      "linked_size": 184
+    },
+    {
+      "name": "updateButtons",
+      "start": "8C021BF8",
+      "end": "8C02263C",
+      "size": 2628,
+      "status": "differs",
+      "diff_bytes": 2254,
+      "linked_at": "8C021C28",
+      "linked_size": 2604
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C020FA6",
+      "end": "8C020FC4",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "pool",
+      "start": "8C0214E8",
+      "end": "8C021524",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C021B14",
+      "end": "8C021B40",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C02263C",
+      "end": "8C022654",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A9284",
+      "end": "8C0AA8D8",
+      "exact": false,
+      "built": 5716,
+      "diff_bytes": 153
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BC45C",
+      "end": "8C0BD8C0",
+      "exact": true,
+      "built": 5220,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:38:46",
+  "defines": {
+    "_AudPlayEffect": "8C014552",
+    "_CopyUV": "8C02631E",
+    "_HAL_SetFont": "8C02EF96",
+    "_HAL_SetMenuTextDepth": "8C02F252",
+    "_HAL_SetTextDepth": "8C02F226",
+    "_HAL_SetTextTranslucency": "8C02F27E",
+    "_Hidden": "8C038FAC",
+    "_InitPane": "8C044700",
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_NewMultiBlit": "8C018B56",
+    "_PS_PakInserted": "8C06D426",
+    "_PS_PakRumblePort": "8C06D48A",
+    "_PlayStartABSound": "8C011586",
+    "_RemoveBlit": "8C0187BA",
+    "_RemovePanes": "8C044B3C",
+    "_RenameBlit": "8C018A5E",
+    "_ScaleUV": "8C026412",
+    "_SelectBlit": "8C018A96",
+    "_SetControls": "8C01EC7A",
+    "_SetDefaultControls": "8C01E894",
+    "_TB_CenterText": "8C05A708",
+    "_TB_DrawEllipseText": "8C05AD4C",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_DrawTextScrollBox": "8C05ADE4",
+    "_TB_EllipseText": "8C05A988",
+    "_TB_FlashTextColors": "8C05A7FA",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_RightText": "8C05A722",
+    "_TB_SetJust": "8C05A73A",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Sprintf": "8C05AC1E",
+    "_UpdateBlit": "8C018910",
+    "_WPitchUV": "8C026524",
+    "_WRollUV": "8C0265D2",
+    "_ZOID_ProjectWindow": "8C069C14",
+    "_ZOID_RemoveObject": "8C068B9E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_ZOID_SetTexture": "8C0692F0",
+    "_ZeroCameras": "8C018D98",
+    "_buttonsInited": "8C12C488",
+    "_buttonsJustInited": "8C12C498",
+    "_controlScrActive": "8C12C444",
+    "_cursorSpeed": "8C12C4A8",
+    "_flashColors": "8C0BDDB8",
+    "_gCamera": "8C12B648",
+    "_gConflict": "8C12C4C8",
+    "_gConflictExists": "8C12C4F4",
+    "_gControlFirst": "8C12C500",
+    "_gControlMenuSize": "8C12C508",
+    "_gControlSelect": "8C12C4F8",
+    "_gControllerData": "8C12C114",
+    "_gControlsSet": "8C12C0D4",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameState": "8C0BFD3C",
+    "_gJustPlayers": "8C15044C",
+    "_gNewControls": "8C12C0D8",
+    "_gNumModels": "8C14CB1C",
+    "_gNumWindows": "8C12B644",
+    "_gSoftReset": "8C12C200",
+    "_gText": "8C15C98C",
+    "_memcmp": "8C09BCCC",
+    "_memcpy": "8C09BD00",
+    "_playerTextColor": "8C0BDDA8",
+    "_prevControlScrActive": "8C12C50A",
+    "_scrollSpeed": "8C12C4B8",
+    "_setPauseState": "8C04751E",
+    "_unitmatrix": "8C0BD924",
+    "_validOptionCall": "8C0214E4"
+  },
+  "starts": {
+    "P": "8C01FDE8",
+    "C": "8C0A9284",
+    "D": "8C0BC45C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01FDE8",
+      "length": 10348
+    },
+    {
+      "name": "C",
+      "address": "8C0A9284",
+      "length": 5716
+    },
+    {
+      "name": "D",
+      "address": "8C0BC45C",
+      "length": 5220
+    }
+  ],
+  "equal_text_bytes_including_fill": 24,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 5220,
+  "excluded_exact_data_fill": 221,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BC4C5",
+      "end": "8C0BC4C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC505",
+      "end": "8C0BC508",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC545",
+      "end": "8C0BC548",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC585",
+      "end": "8C0BC588",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC5C5",
+      "end": "8C0BC5C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC605",
+      "end": "8C0BC608",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC645",
+      "end": "8C0BC648",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC685",
+      "end": "8C0BC688",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC6C5",
+      "end": "8C0BC6C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC705",
+      "end": "8C0BC708",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC745",
+      "end": "8C0BC748",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC785",
+      "end": "8C0BC788",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC7C5",
+      "end": "8C0BC7C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC805",
+      "end": "8C0BC808",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC845",
+      "end": "8C0BC848",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC885",
+      "end": "8C0BC888",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC8C5",
+      "end": "8C0BC8C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC905",
+      "end": "8C0BC908",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC945",
+      "end": "8C0BC948",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC985",
+      "end": "8C0BC988",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BC9C5",
+      "end": "8C0BC9C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCA05",
+      "end": "8C0BCA08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCA45",
+      "end": "8C0BCA48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCA85",
+      "end": "8C0BCA88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCAC5",
+      "end": "8C0BCAC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCB05",
+      "end": "8C0BCB08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCB45",
+      "end": "8C0BCB48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCB85",
+      "end": "8C0BCB88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCBC5",
+      "end": "8C0BCBC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCC05",
+      "end": "8C0BCC08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCC45",
+      "end": "8C0BCC48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCC85",
+      "end": "8C0BCC88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCCC5",
+      "end": "8C0BCCC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCD05",
+      "end": "8C0BCD08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCD45",
+      "end": "8C0BCD48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCD85",
+      "end": "8C0BCD88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCDC5",
+      "end": "8C0BCDC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCE05",
+      "end": "8C0BCE08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCE45",
+      "end": "8C0BCE48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCE85",
+      "end": "8C0BCE88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCEC5",
+      "end": "8C0BCEC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCF05",
+      "end": "8C0BCF08",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCF45",
+      "end": "8C0BCF48",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCF85",
+      "end": "8C0BCF88",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BCFC5",
+      "end": "8C0BCFC8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD005",
+      "end": "8C0BD008",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD045",
+      "end": "8C0BD048",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD085",
+      "end": "8C0BD088",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD0C5",
+      "end": "8C0BD0C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD105",
+      "end": "8C0BD108",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD145",
+      "end": "8C0BD148",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD185",
+      "end": "8C0BD188",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD1C5",
+      "end": "8C0BD1C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD205",
+      "end": "8C0BD208",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD245",
+      "end": "8C0BD248",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD285",
+      "end": "8C0BD288",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD2C5",
+      "end": "8C0BD2C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD305",
+      "end": "8C0BD308",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD345",
+      "end": "8C0BD348",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD385",
+      "end": "8C0BD388",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD3C5",
+      "end": "8C0BD3C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD405",
+      "end": "8C0BD408",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD445",
+      "end": "8C0BD448",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD485",
+      "end": "8C0BD488",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD4C5",
+      "end": "8C0BD4C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD505",
+      "end": "8C0BD508",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD545",
+      "end": "8C0BD548",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD585",
+      "end": "8C0BD588",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD5C5",
+      "end": "8C0BD5C8",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD605",
+      "end": "8C0BD608",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD645",
+      "end": "8C0BD648",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    },
+    {
+      "start": "8C0BD685",
+      "end": "8C0BD688",
+      "reason": "tMenuButton initialized explicit tail padding, 3 bytes at +3d..40"
+    }
+  ],
+  "text_size_delta": 0,
+  "seconds": 2.2
+}

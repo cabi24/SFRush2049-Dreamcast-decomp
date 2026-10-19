@@ -1,0 +1,151 @@
+{
+  "name": "streaks",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/streaks.c",
+  "source_sha256": "8cfae8d7b71864e2a60ccdc4cef998a9809ebad22ff6ed5adea5221f6d6952ff",
+  "text": [
+    "8C098E4C",
+    "8C09939C"
+  ],
+  "text_bytes": 1360,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 16,
+  "exact_data_bytes": 16,
+  "functions_total": 5,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "InitStreaks",
+      "start": "8C098E4C",
+      "end": "8C098E76",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 7,
+      "linked_at": "8C098E4C",
+      "linked_size": 42
+    },
+    {
+      "name": "_AnimateStreakPolys",
+      "start": "8C098E76",
+      "end": "8C098F32",
+      "size": 188,
+      "status": "differs",
+      "diff_bytes": 61,
+      "linked_at": "8C098E76",
+      "linked_size": 238
+    },
+    {
+      "name": "_NewStreakPoly",
+      "start": "8C098F68",
+      "end": "8C099160",
+      "size": 504,
+      "status": "moved",
+      "diff_bytes": 474,
+      "linked_at": "8C098F64",
+      "linked_size": 504
+    },
+    {
+      "name": "NewStreak",
+      "start": "8C099160",
+      "end": "8C099250",
+      "size": 240,
+      "status": "moved",
+      "diff_bytes": 225,
+      "linked_at": "8C09915C",
+      "linked_size": 240
+    },
+    {
+      "name": "UpdateStreaks",
+      "start": "8C099250",
+      "end": "8C099398",
+      "size": 328,
+      "status": "differs",
+      "diff_bytes": 294,
+      "linked_at": "8C09924C",
+      "linked_size": 332
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C098F32",
+      "end": "8C098F68",
+      "exact": false,
+      "built": 54,
+      "diff_bytes": 40
+    },
+    {
+      "kind": "pool",
+      "start": "8C099398",
+      "end": "8C09939C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0D1DE0",
+      "end": "8C0D1DF0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C1A33F0",
+      "end": "8C1A40A0",
+      "exact": false,
+      "linked": [
+        "8C1A33F0",
+        "8C1A5108"
+      ]
+    }
+  ],
+  "notes": [
+    "B extent differs from the map"
+  ],
+  "built_at": "2026-10-18T15:02:02",
+  "defines": {
+    "_FreeStatLLE": "8C051400",
+    "_GetStatLLE": "8C0513D8",
+    "_InitStatLL": "8C05138C",
+    "_ZOID_NewPoly": "8C068F28",
+    "_ZOID_RemovePoly": "8C06926C",
+    "_ZOID_UpdatePoly": "8C068FBE",
+    "_gFrameSeconds": "8C12254C"
+  },
+  "starts": {
+    "P": "8C098E4C",
+    "D": "8C0D1DE0",
+    "B": "8C1A33F0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C098E4C",
+      "length": 1356
+    },
+    {
+      "name": "D",
+      "address": "8C0D1DE0",
+      "length": 16
+    },
+    {
+      "name": "B",
+      "address": "8C1A33F0",
+      "length": 7448
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 16,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -4,
+  "seconds": 1.9
+}

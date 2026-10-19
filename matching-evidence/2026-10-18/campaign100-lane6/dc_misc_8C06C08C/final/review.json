@@ -1,0 +1,37 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "label": "final",
+  "source_sha256": "3bd6bef73d2830cc1e54bf25b3bdffdfa9e717ff22c7cb405fcd8aaad9f3118e",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 2,
+  "delta_text": 24,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "func_8C06C2A6",
+      "start": "8C06C2A6",
+      "end": "8C06C2B2",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C2A6",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C06C2B2",
+      "start": "8C06C2B2",
+      "end": "8C06C2BE",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C2B2",
+      "linked_size": 12
+    }
+  ],
+  "hashes": {
+    "object": "4d9281723b73be2cdb9c922bbcac70ad4d4255d8de240c8c52616b4682aab127",
+    "abs": "041eadecd0e8c036290b12aaed4410484c4c8f37ca591659a34e4c977b313b30",
+    "compiler_input": "2498cb50a91ea4e501b711f121ddc70fad3d6546c5a16b83c8c9adedd30058bb"
+  }
+}

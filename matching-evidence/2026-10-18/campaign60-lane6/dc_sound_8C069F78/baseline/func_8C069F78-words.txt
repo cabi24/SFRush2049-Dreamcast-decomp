@@ -1,0 +1,44 @@
+8C069F78 mov.l r14,@-r15                                | 8C069F78 mov.l r14,@-r15                                
+8C069F7A mov #0,r14                                     | 8C069F7A mov #0,r14                                     
+8C069F7C mov.l r13,@-r15                                | 8C069F7C mov.l r13,@-r15                                
+8C069F7E mov #20,r13                                    | 8C069F7E mov #20,r13                                    
+8C069F80 sts.l pr,@-r15                                 | 8C069F80 sts.l pr,@-r15                                 
+8C069F82 bsr 0x8C06A0DA                                 | 8C069F82 bsr 0x8C06A0E2                                 *
+8C069F84 mov r14,r4                                     | 8C069F84 mov r14,r4                                     
+8C069F86 add #1,r14                                     | 8C069F86 add #1,r14                                     
+8C069F88 bsr 0x8C06A0DA                                 | 8C069F88 bsr 0x8C06A0E2                                 *
+8C069F8A mov r14,r4                                     | 8C069F8A mov r14,r4                                     
+8C069F8C add #1,r14                                     | 8C069F8C add #1,r14                                     
+8C069F8E cmp/ge r13,r14                                 | 8C069F8E cmp/ge r13,r14                                 
+8C069F90 bf 0x8C069F82                                  | 8C069F90 bf 0x8C069F82                                  
+8C069F92 mov.l @(0x8C06A038,pc),r4                      | 8C069F92 mov.l @(0x8C06A034,pc),r4                      *
+8C069F94 mov.l @(8,r4),r3                               | 8C069F94 mov.l @(8,r4),r3                               
+8C069F96 tst r3,r3                                      | 8C069F96 tst r3,r3                                      
+8C069F98 bf 0x8C069F94                                  | 8C069F98 bf 0x8C069F94                                  
+8C069F9A mov.l @(0x8C06A03C,pc),r2                      | 8C069F9A mov.l @(0x8C06A038,pc),r2                      *
+8C069F9C mov.l @r2,r3                                   | 8C069F9C mov.l @r2,r3                                   
+8C069F9E tst r3,r3                                      | 8C069F9E tst r3,r3                                      
+8C069FA0 bf 0x8C069F94                                  | 8C069FA0 bf 0x8C069F94                                  
+8C069FA2 mov.l @(0x8C06A040,pc),r4                      | 8C069FA2 mov.l @(0x8C06A03C,pc),r4                      *
+8C069FA4 mov.l @(8,r4),r2                               | 8C069FA4 mov.l @(8,r4),r2                               
+8C069FA6 tst r2,r2                                      | 8C069FA6 tst r2,r2                                      
+8C069FA8 bf 0x8C069FA4                                  | 8C069FA8 bf 0x8C069FA4                                  
+8C069FAA mov.l @(0x8C06A044,pc),r2                      | 8C069FAA mov.l @(0x8C06A040,pc),r2                      *
+8C069FAC mov.l @r2,r3                                   | 8C069FAC mov.l @r2,r3                                   
+8C069FAE tst r3,r3                                      | 8C069FAE tst r3,r3                                      
+8C069FB0 bf 0x8C069FA4                                  | 8C069FB0 bf 0x8C069FA4                                  
+8C069FB2 mov.l @(0x8C06A04C,pc),r2                      | 8C069FB2 mov.l @(0x8C06A048,pc),r2                      *
+8C069FB4 mov.l @(0x8C06A048,pc),r3                      | 8C069FB4 mov.l @(0x8C06A044,pc),r3                      *
+8C069FB6 jsr @r2                                        | 8C069FB6 jsr @r2                                        
+8C069FB8 mov.l @r3,r4                                   | 8C069FB8 mov.l @r3,r4                                   
+8C069FBA mov.l @(0x8C06A04C,pc),r3                      | 8C069FBA mov.l @(0x8C06A048,pc),r3                      *
+8C069FBC mov.l @(0x8C06A050,pc),r1                      | 8C069FBC mov.l @(0x8C06A04C,pc),r1                      *
+8C069FBE jsr @r3                                        | 8C069FBE jsr @r3                                        
+8C069FC0 mov.l @r1,r4                                   | 8C069FC0 mov.l @r1,r4                                   
+8C069FC2 lds.l @r15+,pr                                 | 8C069FC2 lds.l @r15+,pr                                 
+8C069FC4 mov.l @(0x8C06A054,pc),r2                      | 8C069FC4 mov.l @(0x8C06A050,pc),r2                      *
+8C069FC6 mov.l @(0x8C06A058,pc),r3                      | 8C069FC6 mov.l @(0x8C06A054,pc),r3                      *
+8C069FC8 mov.l @r15+,r13                                | 8C069FC8 mov.l @r15+,r13                                
+8C069FCA mov.l @r2,r4                                   | 8C069FCA mov.l @r2,r4                                   
+8C069FCC jmp @r3                                        | 8C069FCC jmp @r3                                        
+8C069FCE mov.l @r15+,r14                                | 8C069FCE mov.l @r15+,r14                                

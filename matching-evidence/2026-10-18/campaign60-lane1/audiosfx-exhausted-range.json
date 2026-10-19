@@ -1,0 +1,451 @@
+{
+  "name": "audiosfx",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/audiosfx.c",
+  "source_sha256": "b0b390fdfc9c1702be0fee86844332855f0141e0db668aca45beaa338a1729ed",
+  "text": [
+    "8C015EF0",
+    "8C016F00"
+  ],
+  "text_bytes": 4112,
+  "exact_text_bytes": 58,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 30,
+  "functions_exact": 0,
+  "functions_moved": 9,
+  "functions": [
+    {
+      "name": "func_8C015EF0",
+      "start": "8C015EF0",
+      "end": "8C01600A",
+      "size": 282,
+      "status": "differs",
+      "diff_bytes": 23,
+      "linked_at": "8C015EF0",
+      "linked_size": 340
+    },
+    {
+      "name": "func_8C016044",
+      "start": "8C016044",
+      "end": "8C016128",
+      "size": 228,
+      "status": "differs",
+      "diff_bytes": 52,
+      "linked_at": "8C016044",
+      "linked_size": 244
+    },
+    {
+      "name": "func_8C016128",
+      "start": "8C016128",
+      "end": "8C016150",
+      "size": 40,
+      "status": "moved",
+      "diff_bytes": 39,
+      "linked_at": "8C016138",
+      "linked_size": 76
+    },
+    {
+      "name": "func_8C016174",
+      "start": "8C016174",
+      "end": "8C0161B2",
+      "size": 62,
+      "status": "differs",
+      "diff_bytes": 61,
+      "linked_at": "8C016184",
+      "linked_size": 62
+    },
+    {
+      "name": "func_8C0161B2",
+      "start": "8C0161B2",
+      "end": "8C016210",
+      "size": 94,
+      "status": "moved",
+      "diff_bytes": 92,
+      "linked_at": "8C0161C2",
+      "linked_size": 94
+    },
+    {
+      "name": "func_8C016210",
+      "start": "8C016210",
+      "end": "8C01631E",
+      "size": 270,
+      "status": "differs",
+      "diff_bytes": 248,
+      "linked_at": "8C016220",
+      "linked_size": 270
+    },
+    {
+      "name": "func_8C01631E",
+      "start": "8C01631E",
+      "end": "8C01632A",
+      "size": 12,
+      "status": "moved",
+      "diff_bytes": 12,
+      "linked_at": "8C01632E",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C01632A",
+      "start": "8C01632A",
+      "end": "8C01638A",
+      "size": 96,
+      "status": "moved",
+      "diff_bytes": 93,
+      "linked_at": "8C01633A",
+      "linked_size": 146
+    },
+    {
+      "name": "func_8C0163BC",
+      "start": "8C0163BC",
+      "end": "8C016406",
+      "size": 74,
+      "status": "differs",
+      "diff_bytes": 74,
+      "linked_at": "8C0163CC",
+      "linked_size": 74
+    },
+    {
+      "name": "func_8C016406",
+      "start": "8C016406",
+      "end": "8C016454",
+      "size": 78,
+      "status": "moved",
+      "diff_bytes": 74,
+      "linked_at": "8C016416",
+      "linked_size": 78
+    },
+    {
+      "name": "func_8C016454",
+      "start": "8C016454",
+      "end": "8C0164AA",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 83,
+      "linked_at": "8C016464",
+      "linked_size": 86
+    },
+    {
+      "name": "func_8C0164AA",
+      "start": "8C0164AA",
+      "end": "8C016508",
+      "size": 94,
+      "status": "differs",
+      "diff_bytes": 89,
+      "linked_at": "8C0164BA",
+      "linked_size": 94
+    },
+    {
+      "name": "func_8C016508",
+      "start": "8C016508",
+      "end": "8C016538",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C016518",
+      "linked_size": 48
+    },
+    {
+      "name": "func_8C016538",
+      "start": "8C016538",
+      "end": "8C0165F4",
+      "size": 188,
+      "status": "differs",
+      "diff_bytes": 174,
+      "linked_at": "8C016548",
+      "linked_size": 188
+    },
+    {
+      "name": "func_8C0165F4",
+      "start": "8C0165F4",
+      "end": "8C016612",
+      "size": 30,
+      "status": "moved",
+      "diff_bytes": 29,
+      "linked_at": "8C016604",
+      "linked_size": 30
+    },
+    {
+      "name": "func_8C016612",
+      "start": "8C016612",
+      "end": "8C016636",
+      "size": 36,
+      "status": "moved",
+      "diff_bytes": 35,
+      "linked_at": "8C016622",
+      "linked_size": 36
+    },
+    {
+      "name": "_FreeCmd",
+      "start": "8C016636",
+      "end": "8C0166C4",
+      "size": 142,
+      "status": "differs",
+      "diff_bytes": 139,
+      "linked_at": "8C016646",
+      "linked_size": 206
+    },
+    {
+      "name": "AudioSfxInit",
+      "start": "8C016704",
+      "end": "8C0167E8",
+      "size": 228,
+      "status": "differs",
+      "diff_bytes": 218,
+      "linked_at": "8C016714",
+      "linked_size": 206
+    },
+    {
+      "name": "func_8C0167E8",
+      "start": "8C0167E8",
+      "end": "8C016816",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 44,
+      "linked_at": "8C0167E2",
+      "linked_size": 110
+    },
+    {
+      "name": "AudioSfxServer",
+      "start": "8C016858",
+      "end": "8C016B32",
+      "size": 730,
+      "status": "differs",
+      "diff_bytes": 668,
+      "linked_at": "8C016850",
+      "linked_size": 748
+    },
+    {
+      "name": "AudioPlayEffect",
+      "start": "8C016B32",
+      "end": "8C016B92",
+      "size": 96,
+      "status": "differs",
+      "diff_bytes": 93,
+      "linked_at": "8C016B3C",
+      "linked_size": 96
+    },
+    {
+      "name": "AudioEffectPlaying",
+      "start": "8C016B92",
+      "end": "8C016BE6",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 81,
+      "linked_at": "8C016B9C",
+      "linked_size": 84
+    },
+    {
+      "name": "AudioStopEffect",
+      "start": "8C016BE6",
+      "end": "8C016C3C",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 86,
+      "linked_at": "8C016BF0",
+      "linked_size": 86
+    },
+    {
+      "name": "func_8C016C3C",
+      "start": "8C016C3C",
+      "end": "8C016C82",
+      "size": 70,
+      "status": "moved",
+      "diff_bytes": 69,
+      "linked_at": "8C016C46",
+      "linked_size": 106
+    },
+    {
+      "name": "func_8C016CA8",
+      "start": "8C016CA8",
+      "end": "8C016CDA",
+      "size": 50,
+      "status": "moved",
+      "diff_bytes": 49,
+      "linked_at": "8C016CB0",
+      "linked_size": 50
+    },
+    {
+      "name": "AudioSetEffectVolume",
+      "start": "8C016CDA",
+      "end": "8C016D5C",
+      "size": 130,
+      "status": "differs",
+      "diff_bytes": 123,
+      "linked_at": "8C016CE2",
+      "linked_size": 130
+    },
+    {
+      "name": "AudioSetEffectLRPan",
+      "start": "8C016D5C",
+      "end": "8C016DD8",
+      "size": 124,
+      "status": "differs",
+      "diff_bytes": 115,
+      "linked_at": "8C016D64",
+      "linked_size": 124
+    },
+    {
+      "name": "AudioSetEffectFBPan",
+      "start": "8C016DD8",
+      "end": "8C016E54",
+      "size": 124,
+      "status": "differs",
+      "diff_bytes": 116,
+      "linked_at": "8C016DE0",
+      "linked_size": 124
+    },
+    {
+      "name": "AudioSetEffectPitch",
+      "start": "8C016E54",
+      "end": "8C016ED0",
+      "size": 124,
+      "status": "differs",
+      "diff_bytes": 116,
+      "linked_at": "8C016E5C",
+      "linked_size": 124
+    },
+    {
+      "name": "func_8C016ED0",
+      "start": "8C016ED0",
+      "end": "8C016EF0",
+      "size": 32,
+      "status": "differs",
+      "diff_bytes": 31,
+      "linked_at": "8C016ED8",
+      "linked_size": 48
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01600A",
+      "end": "8C016044",
+      "exact": true,
+      "built": 58,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C016150",
+      "end": "8C016174",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C01638A",
+      "end": "8C0163BC",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "pool",
+      "start": "8C0166C4",
+      "end": "8C016704",
+      "exact": false,
+      "built": 64,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "pool",
+      "start": "8C016816",
+      "end": "8C016858",
+      "exact": false,
+      "built": 66,
+      "diff_bytes": 41
+    },
+    {
+      "kind": "pool",
+      "start": "8C016C82",
+      "end": "8C016CA8",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 25
+    },
+    {
+      "kind": "pool",
+      "start": "8C016EF0",
+      "end": "8C016F00",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 15
+    }
+  ],
+  "notes": [
+    "8 built bytes fall outside the mapped ranges (first 8C016F00, last 8C016F07)"
+  ],
+  "built_at": "2026-10-18T15:35:04",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "_DeallocateMemory": "8C040832",
+    "_InitLL": "8C03A1B8",
+    "_InsertLLE": "8C03A1C8",
+    "_PurgeableMemory": "8C040924",
+    "_RemoveLLE": "8C03A28E",
+    "_func_8C039718": "8C039718",
+    "_func_8C06AEC8": "8C06AEC8",
+    "_func_8C06AF30": "8C06AF30",
+    "_func_8C09CB80": "8C09CB80",
+    "_func_8C0A0E48": "8C0A0E48",
+    "_func_8C0A0EE0": "8C0A0EE0",
+    "_func_8C0A0F2A": "8C0A0F2A",
+    "_func_8C0A18E6": "8C0A18E6",
+    "_func_8C0A191C": "8C0A191C",
+    "_func_8C0A1BB4": "8C0A1BB4",
+    "_func_8C0A29BE": "8C0A29BE",
+    "_func_8C0A2A60": "8C0A2A60",
+    "_func_8C0A2BF0": "8C0A2BF0",
+    "_func_8C0A2C26": "8C0A2C26",
+    "_func_8C0A2D2C": "8C0A2D2C",
+    "_func_8C0A2DB2": "8C0A2DB2",
+    "_func_8C0A2E1C": "8C0A2E1C",
+    "_func_8C0A2EEA": "8C0A2EEA",
+    "_func_8C0A2F10": "8C0A2F10",
+    "_func_8C0A3118": "8C0A3118",
+    "_func_8C0D84D4": "8C0D84D4",
+    "_gAudActiveResources": "8C123CD4",
+    "_gAudBankEvictionEnabled": "8C0BADA0",
+    "_gAudBankTable": "8C0A7904",
+    "_gAudLoadedBanks": "8C123CB0",
+    "_gAudNumActiveResources": "8C0BADA4",
+    "_gAudNumLoadedBanks": "8C0BAD9C",
+    "_gAudVolumeCurve": "8C0BADA8",
+    "_gCmdQ": "8C123CA0",
+    "_gCmds": "8C123C8C",
+    "_gExitGame": "8C0BEBBC",
+    "_gFreeQ": "8C123C90",
+    "_gInited": "8C0BAD90",
+    "_gMono": "8C0C7C50",
+    "_gNextIndex": "8C0BAD94",
+    "_gNumChannels": "8C123C80",
+    "_gNumInstances": "8C123C88",
+    "_gSfxInstances": "8C123C7C",
+    "_gSfxMasterVol": "8C178440",
+    "_gStopAllEffects": "8C0BAD98",
+    "_gStoppedChannels": "8C123C84",
+    "_memcpy": "8C09BD00",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C015EF0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C015EF0",
+      "length": 4120
+    }
+  ],
+  "equal_text_bytes_including_fill": 58,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 8,
+  "seconds": 1.9
+}

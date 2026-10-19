@@ -1,0 +1,78 @@
+{
+  "unit": "pakerr",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 12,
+    "functions_total": 19,
+    "functions_moved": 3,
+    "exact_text_bytes": 2178,
+    "equal_text_bytes_including_fill": 2186,
+    "text_bytes": 4364,
+    "exact_data_bytes": 52,
+    "source_sha256": "4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 6,
+    "functions_total": 19,
+    "functions_moved": 3,
+    "exact_text_bytes": 760,
+    "equal_text_bytes_including_fill": 762,
+    "text_bytes": 4364,
+    "exact_data_bytes": 52,
+    "source_sha256": "56796f4b60be2224d498cf3c38ace2f99d0d050b2dfbc52df2fbaf2539772ed8"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "_DrawChoice",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 326
+    },
+    {
+      "name": "_DrawPakErrFull",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 102
+    },
+    {
+      "name": "_DrawPakErrInconsistent",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 70
+    },
+    {
+      "name": "_DrawPakErrNewPak",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 212
+    },
+    {
+      "name": "_DrawPakErrNoPak",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 534
+    },
+    {
+      "name": "_DrawPakHeading",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 126
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 2178,
+  "text_bytes_head": 760,
+  "report_consistency": {
+    "report_functions_exact": 12,
+    "dirty_rebuild_functions_exact": 12,
+    "report_exact_text_bytes": 2178,
+    "dirty_rebuild_exact_text_bytes": 2178,
+    "report_source_sha256": "4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c",
+    "dirty_source_sha256": "4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c",
+    "match": true
+  },
+  "head_source_sha256": "56796f4b60be2224d498cf3c38ace2f99d0d050b2dfbc52df2fbaf2539772ed8",
+  "seconds": 5.0
+}

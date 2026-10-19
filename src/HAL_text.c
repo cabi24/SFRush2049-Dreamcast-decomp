@@ -145,11 +145,9 @@ void HAL_PurgeFonts(void)
     int wave; /* r0 */
     int i; /* r31 */
     for (i = 0; i < 16; i++) {
-        wave = FindWaveInstance(i + 24);
-        if (wave >= 0)
+        if ((wave = FindWaveInstance(i + 24)) >= 0)
             UnlockWaveInstance(wave);
-        wave = FindWaveInstance(i + 8);
-        if (wave >= 0)
+        if ((wave = FindWaveInstance(i + 8)) >= 0)
             UnlockWaveInstance(wave);
     }
 }

@@ -1,0 +1,22 @@
+[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "5127D62D2CEDCAB79039E04EB09FFA61C64BA502E6FE6E115908CEADEC29D851",
+        "Path":  "C:\\rush2049-dreamcast\\src\\blit.c"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "FFD762E9940C5F9E82E8009F64252FDE96A5182ECFF34B347DD7352E47448CEC",
+        "Path":  "C:\\rush2049-dreamcast\\src\\gfx.c"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "C1037F25066641335B9B368A3089BA39642C58EA0EE92F971C7E54564AC3D8FA",
+        "Path":  "C:\\rush2049-dreamcast\\build\\round2-blit-gfx\\blit\\selected\\link\\blit.abs"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "F3F2740BEF111CCA1600B57514C8EEFA5978120AC54BE11BB3856DD19B136A36",
+        "Path":  "C:\\rush2049-dreamcast\\build\\round2-blit-gfx\\blit\\selected\\obj\\blit.obj"
+    }
+]

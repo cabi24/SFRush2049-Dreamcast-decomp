@@ -1,0 +1,54 @@
+{
+  "unit": "optionscr",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 3,
+    "functions_total": 11,
+    "functions_moved": 1,
+    "exact_text_bytes": 1118,
+    "equal_text_bytes_including_fill": 1124,
+    "text_bytes": 6592,
+    "exact_data_bytes": 2092,
+    "source_sha256": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 11,
+    "functions_moved": 1,
+    "exact_text_bytes": 166,
+    "equal_text_bytes_including_fill": 170,
+    "text_bytes": 6592,
+    "exact_data_bytes": 2092,
+    "source_sha256": "6f972f6b7b1b6550935a9437bd0cc60593693e6eae6737e93d71601c934e77c5"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "calcOptionMenuMaxSize",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 134
+    },
+    {
+      "name": "initButtons",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 820
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1118,
+  "text_bytes_head": 166,
+  "report_consistency": {
+    "report_functions_exact": 3,
+    "dirty_rebuild_functions_exact": 3,
+    "report_exact_text_bytes": 1118,
+    "dirty_rebuild_exact_text_bytes": 1118,
+    "report_source_sha256": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+    "dirty_source_sha256": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+    "match": true
+  },
+  "head_source_sha256": "6f972f6b7b1b6550935a9437bd0cc60593693e6eae6737e93d71601c934e77c5",
+  "seconds": 5.3
+}

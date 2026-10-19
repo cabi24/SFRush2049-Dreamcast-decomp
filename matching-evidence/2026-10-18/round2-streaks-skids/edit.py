@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/skids.c');s=Path('matching-evidence/2026-10-18/round2-streaks-skids/skids-animate-direct/source.c').read_text();s=s.replace('    while (s) {\n        if (s->active)', '    goto skid_test;\n    skid_loop:\n    {\n        if (s->active)');s=s.rstrip();assert s.endswith('    }\n}');s=s[:-len('    }\n}')]+'    }\n    skid_test:\n    if (s) goto skid_loop;\n}\n';p.write_text(s)

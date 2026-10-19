@@ -1,0 +1,88 @@
+8C068BB8 mov.l r14,@-r15                                        | 8C068BB8 mov.l r14,@-r15                                        
+8C068BBA mov.l r13,@-r15                                        | 8C068BBA mov.l r13,@-r15                                        
+8C068BBC sts.l pr,@-r15                                         | 8C068BBC sts.l pr,@-r15                                         
+8C068BBE add #-4,r15                                            | 8C068BBE add #-4,r15                                            
+8C068BC0 mov.w r5,@r15                                          | 8C068BC0 mov.w r5,@r15                                          
+8C068BC2 mov r4,r14                                             | 8C068BC2 mov r4,r14                                             
+8C068BC4 bsr 0x8C068868                                         | 8C068BC4 bsr 0x8C068868                                         
+8C068BC6 mov r14,r4                                             | 8C068BC6 mov r14,r4                                             
+8C068BC8 mov r0,r4                                              | 8C068BC8 mov r0,r5                                              *
+8C068BCA exts.w r4,r1                                           | 8C068BCA exts.w r5,r1                                           *
+8C068BCC mov r1,r0                                              | 8C068BCC mov r1,r0                                              
+8C068BCE cmp/eq #-1,r0                                          | 8C068BCE cmp/eq #-1,r0                                          
+8C068BD0 bt 0x8C068BD8                                          | 8C068BD0 bt 0x8C068BD8                                          
+8C068BD2 mov.w @r15,r3                                          | 8C068BD2 mov.w @r15,r3                                          
+8C068BD4 cmp/eq r3,r1                                           | 8C068BD4 cmp/eq r3,r1                                           
+8C068BD6 bt 0x8C068C46                                          | 8C068BD6 bt 0x8C068C46                                          
+8C068BD8 mov #88,r5                                             | 8C068BD8 mov #88,r4                                             *
+8C068BDA mov.l @(0x8C068C50,pc),r13                             | 8C068BDA mov.l @(0x8C068C50,pc),r13 =8C160870                   
+8C068BDC muls.w r5,r14                                          | 8C068BDC muls.w r4,r14                                          *
+8C068BDE cmp/pz r1                                              | 8C068BDE cmp/pz r1                                              
+8C068BE0 sts macl,r5                                            | 8C068BE0 sts macl,r4                                            *
+8C068BE2 bf/s 0x8C068BF8                                        | 8C068BE2 bf/s 0x8C068BF8                                        
+8C068BE4 add r13,r5                                             | 8C068BE4 add r13,r4                                             *
+8C068BE6 mov #88,r3                                             | 8C068BE6 mov #88,r2                                             *
+8C068BE8 muls.w r3,r4                                           | 8C068BE8 muls.w r2,r5                                           *
+8C068BEA mov #44,r0                                             | 8C068BEA mov #44,r0                                             
+8C068BEC mov.w @(r0,r5),r5                                      | 8C068BEC mov.w @(r0,r4),r3                                      *
+8C068BEE mov #42,r0                                             | 8C068BEE mov #42,r0                                             
+8C068BF0 sts macl,r4                                            | 8C068BF0 sts macl,r5                                            *
+8C068BF2 add r13,r4                                             | 8C068BF2 add r13,r5                                             *
+8C068BF4 bra 0x8C068C2A                                         | 8C068BF4 bra 0x8C068C2A                                         
+8C068BF6 mov.w r5,@(r0,r4)                                      | 8C068BF6 mov.w r3,@(r0,r5)                                      *
+8C068BF8 mov.l @(0x8C068C58,pc),r4                              | 8C068BF8 mov.l @(0x8C068C58,pc),r5 =8C16D6B0                    *
+8C068BFA exts.w r14,r2                                          | 8C068BFA exts.w r14,r2                                          
+8C068BFC mov.w @r4,r3                                           | 8C068BFC mov.w @r5,r3                                           *
+8C068BFE cmp/eq r2,r3                                           | 8C068BFE cmp/eq r2,r3                                           
+8C068C00 bf 0x8C068C0A                                          | 8C068C00 bf 0x8C068C0A                                          
+8C068C02 mov #44,r0                                             | 8C068C02 mov #44,r0                                             
+8C068C04 mov.w @(r0,r5),r2                                      | 8C068C04 mov.w @(r0,r4),r2                                      *
+8C068C06 bra 0x8C068C2A                                         | 8C068C06 bra 0x8C068C2A                                         
+8C068C08 mov.w r2,@r4                                           | 8C068C08 mov.w r2,@r5                                           *
+8C068C0A bsr 0x8C0688EC                                         | 8C068C0A bsr 0x8C0688EC                                         
+8C068C0C mov r14,r4                                             | 8C068C0C mov r14,r4                                             
+8C068C0E mov r0,r4                                              | 8C068C0E mov r0,r4                                              
+8C068C10 exts.w r4,r3                                           | 8C068C10 exts.w r4,r3                                           
+8C068C12 cmp/pz r3                                              | 8C068C12 cmp/pz r3                                              
+8C068C14 bf 0x8C068C2A                                          | 8C068C14 bf 0x8C068C2A                                          
+8C068C16 mov #88,r3                                             | 8C068C16 mov #88,r3                                             
+8C068C18 muls.w r3,r4                                           | 8C068C18 muls.w r3,r4                                           
+8C068C1A mov #44,r0                                             | 8C068C1A mov #44,r0                                             
+8C068C1C sts macl,r4                                            | 8C068C1C sts macl,r4                                            
+8C068C1E muls.w r3,r14                                          | 8C068C1E muls.w r3,r14                                          
+8C068C20 add r13,r4                                             | 8C068C20 add r13,r4                                             
+8C068C22 sts macl,r3                                            | 8C068C22 sts macl,r3                                            
+8C068C24 add r13,r3                                             | 8C068C24 add r13,r3                                             
+8C068C26 mov.w @(r0,r3),r2                                      | 8C068C26 mov.w @(r0,r3),r2                                      
+8C068C28 mov.w r2,@(r0,r4)                                      | 8C068C28 mov.w r2,@(r0,r4)                                      
+8C068C2A mov #88,r3                                             | 8C068C2A mov #88,r3                                             
+8C068C2C mov r14,r4                                             | 8C068C2C mov r14,r4                                             
+8C068C2E muls.w r3,r14                                          | 8C068C2E muls.w r3,r14                                          
+8C068C30 mov #44,r0                                             | 8C068C30 mov #44,r0                                             
+8C068C32 mov #-1,r2                                             | 8C068C32 mov #-1,r2                                             
+8C068C34 sts macl,r3                                            | 8C068C34 sts macl,r3                                            
+8C068C36 add r13,r3                                             | 8C068C36 add r13,r3                                             
+8C068C38 mov.w r2,@(r0,r3)                                      | 8C068C38 mov.w r2,@(r0,r3)                                      
+8C068C3A mov.w @r15,r5                                          | 8C068C3A mov.w @r15,r5                                          
+8C068C3C add #4,r15                                             | 8C068C3C add #4,r15                                             
+8C068C3E lds.l @r15+,pr                                         | 8C068C3E lds.l @r15+,pr                                         
+8C068C40 mov.l @r15+,r13                                        | 8C068C40 mov.l @r15+,r13                                        
+8C068C42 bra 0x8C06893C                                         | 8C068C42 bra 0x8C06893C                                         
+8C068C44 mov.l @r15+,r14                                        | 8C068C44 mov.l @r15+,r14                                        
+8C068C46 add #4,r15                                             | 8C068C46 add #4,r15                                             
+8C068C48 lds.l @r15+,pr                                         | 8C068C48 lds.l @r15+,pr                                         
+8C068C4A mov.l @r15+,r13                                        | 8C068C4A mov.l @r15+,r13                                        
+8C068C4C rts                                                    | 8C068C4C rts                                                    
+8C068C4E mov.l @r15+,r14                                        | 8C068C4E mov.l @r15+,r14                                        
+8C068C50                                                        | 8C068C50 .word 0x0870                                           *
+8C068C52                                                        | 8C068C52 .word 0x8C16                                           *
+8C068C54                                                        | 8C068C54 .word 0x089A                                           *
+8C068C56                                                        | 8C068C56 .word 0x8C16                                           *
+8C068C58                                                        | 8C068C58 mov.l @(0x8C068F1C,pc),r6                              *
+8C068C5A                                                        | 8C068C5A .word 0x8C16                                           *
+8C068C5C                                                        | 8C068C5C .word 0xFFFF                                           *
+8C068C5E                                                        | 8C068C5E .word 0x0000                                           *
+8C068C60                                                        | 8C068C60 .word 0x0860                                           *
+8C068C62                                                        | 8C068C62 .word 0x8C16                                           *
+8C068C64                                                        | 8C068C64 .word 0x0898                                           *
+8C068C66                                                        | 8C068C66 .word 0x8C16                                           *

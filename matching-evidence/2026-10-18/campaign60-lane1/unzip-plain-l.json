@@ -1,0 +1,229 @@
+{
+  "name": "unzip",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unzip.c",
+  "source_sha256": "d189bf2a9da8cc7524f9a1842cd232f1d85f1f3be545431ebf5df09134528ca6",
+  "text": [
+    "8C010320",
+    "8C011290"
+  ],
+  "text_bytes": 3952,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 364,
+  "exact_data_bytes": 362,
+  "functions_total": 11,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "alloc_zip_mem",
+      "start": "8C010320",
+      "end": "8C01033A",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 3,
+      "linked_at": "8C010320",
+      "linked_size": 26
+    },
+    {
+      "name": "huft_build",
+      "start": "8C01033A",
+      "end": "8C0106D6",
+      "size": 924,
+      "status": "differs",
+      "diff_bytes": 801,
+      "linked_at": "8C01033A",
+      "linked_size": 930
+    },
+    {
+      "name": "inflate_codes",
+      "start": "8C0106DE",
+      "end": "8C0109E6",
+      "size": 776,
+      "status": "differs",
+      "diff_bytes": 711,
+      "linked_at": "8C0106DC",
+      "linked_size": 762
+    },
+    {
+      "name": "inflate_stored",
+      "start": "8C0109E6",
+      "end": "8C010AFC",
+      "size": 278,
+      "status": "differs",
+      "diff_bytes": 274,
+      "linked_at": "8C0109D6",
+      "linked_size": 298
+    },
+    {
+      "name": "inflate_fixed",
+      "start": "8C010B10",
+      "end": "8C010C38",
+      "size": 296,
+      "status": "differs",
+      "diff_bytes": 289,
+      "linked_at": "8C010B00",
+      "linked_size": 296
+    },
+    {
+      "name": "inflate_dynamic",
+      "start": "8C010C38",
+      "end": "8C0110C0",
+      "size": 1160,
+      "status": "differs",
+      "diff_bytes": 1138,
+      "linked_at": "8C010C28",
+      "linked_size": 1130
+    },
+    {
+      "name": "inflate_block",
+      "start": "8C0110E8",
+      "end": "8C0111D8",
+      "size": 240,
+      "status": "differs",
+      "diff_bytes": 235,
+      "linked_at": "8C011092",
+      "linked_size": 292
+    },
+    {
+      "name": "inflate",
+      "start": "8C0111D8",
+      "end": "8C011206",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C0111B6",
+      "linked_size": 46
+    },
+    {
+      "name": "get_buffer",
+      "start": "8C011206",
+      "end": "8C01120A",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C0111E4",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C01120A",
+      "start": "8C01120A",
+      "end": "8C01120E",
+      "size": 4,
+      "status": "moved",
+      "diff_bytes": 4,
+      "linked_at": "8C0111E8",
+      "linked_size": 16
+    },
+    {
+      "name": "unzipdata",
+      "start": "8C011220",
+      "end": "8C01126E",
+      "size": 78,
+      "status": "differs",
+      "diff_bytes": 77,
+      "linked_at": "8C0111F8",
+      "linked_size": 112
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0106D6",
+      "end": "8C0106DE",
+      "exact": false,
+      "built": 8,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C010AFC",
+      "end": "8C010B10",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 17
+    },
+    {
+      "kind": "pool",
+      "start": "8C0110C0",
+      "end": "8C0110E8",
+      "exact": false,
+      "built": 40,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "pool",
+      "start": "8C01120E",
+      "end": "8C011220",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C01126E",
+      "end": "8C011290",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0B8C34",
+      "end": "8C0B8DA0",
+      "exact": true,
+      "built": 364,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C1225F0",
+      "end": "8C122610",
+      "exact": true,
+      "linked": [
+        "8C1225F0",
+        "8C122610"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:32:41",
+  "defines": {
+    "_DeallocateMemory": "8C040832",
+    "_mem_func_8C040380": "8C040380",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C010320",
+    "D": "8C0B8C34",
+    "B": "8C1225F0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C010320",
+      "length": 3912
+    },
+    {
+      "name": "D",
+      "address": "8C0B8C34",
+      "length": 364
+    },
+    {
+      "name": "B",
+      "address": "8C1225F0",
+      "length": 32
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 364,
+  "excluded_exact_data_fill": 2,
+  "excluded_data_padding": [],
+  "text_size_delta": -40,
+  "seconds": 1.8
+}

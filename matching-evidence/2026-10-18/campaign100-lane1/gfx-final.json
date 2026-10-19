@@ -1,0 +1,251 @@
+{
+  "name": "gfx",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/gfx.c",
+  "source_sha256": "ffd762e9940c5f9e82e8009f64252fde96a5182ecff34b347dd7352e47448cec",
+  "text": [
+    "8C02E118",
+    "8C02E4B0"
+  ],
+  "text_bytes": 920,
+  "exact_text_bytes": 576,
+  "align_bytes": 0,
+  "data_bytes": 99,
+  "exact_data_bytes": 88,
+  "functions_total": 10,
+  "functions_exact": 8,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C02E118",
+      "start": "8C02E118",
+      "end": "8C02E11C",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E118",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C02E11C",
+      "start": "8C02E11C",
+      "end": "8C02E120",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E11C",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C02E120",
+      "start": "8C02E120",
+      "end": "8C02E124",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E120",
+      "linked_size": 4
+    },
+    {
+      "name": "func_8C02E124",
+      "start": "8C02E124",
+      "end": "8C02E166",
+      "size": 66,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C02E124",
+      "linked_size": 104
+    },
+    {
+      "name": "func_8C02E18C",
+      "start": "8C02E18C",
+      "end": "8C02E2A0",
+      "size": 276,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C02E18C",
+      "linked_size": 276
+    },
+    {
+      "name": "func_8C02E2A0",
+      "start": "8C02E2A0",
+      "end": "8C02E2A4",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E2A0",
+      "linked_size": 176
+    },
+    {
+      "name": "func_8C02E350",
+      "start": "8C02E350",
+      "end": "8C02E390",
+      "size": 64,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E350",
+      "linked_size": 64
+    },
+    {
+      "name": "func_8C02E390",
+      "start": "8C02E390",
+      "end": "8C02E3EE",
+      "size": 94,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E390",
+      "linked_size": 94
+    },
+    {
+      "name": "InitGraphics",
+      "start": "8C02E3EE",
+      "end": "8C02E406",
+      "size": 24,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E3EE",
+      "linked_size": 24
+    },
+    {
+      "name": "UpdateGraphics",
+      "start": "8C02E406",
+      "end": "8C02E430",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02E406",
+      "linked_size": 170
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C02E166",
+      "end": "8C02E18C",
+      "exact": true,
+      "built": 38,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C02E2A4",
+      "end": "8C02E350",
+      "exact": true,
+      "built": 172,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C02E430",
+      "end": "8C02E4B0",
+      "exact": true,
+      "built": 128,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AAA18",
+      "end": "8C0AAA7B",
+      "exact": true,
+      "built": 99,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12D340",
+      "end": "8C12D341",
+      "exact": true,
+      "linked": [
+        "8C12D340",
+        "8C12D341"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T16:03:45",
+  "defines": {
+    "_DrawBlits": "8C01882A",
+    "_HAL_StartText": "8C02ED1C",
+    "_HFOV": "8C17798C",
+    "_InitBlits": "8C018790",
+    "_InitCameras": "8C018D98",
+    "_UpdateCameras": "8C018FA0",
+    "_UpdateEnvirons": "8C05FDB0",
+    "_ZOID_EndFrame": "8C071588",
+    "_ZOID_Init": "8C06871E",
+    "_ZOID_InitializeWindow": "8C06940A",
+    "_dcAlloc": "8C09B2B4",
+    "_dcBeginSceneDone": "8C06C7A4",
+    "_dcBeginSceneHook": "8C06C792",
+    "_dcBufferInfo": "8C12D3A0",
+    "_dcCheckKm": "8C06EDC2",
+    "_dcContextA": "8C19F460",
+    "_dcContextB": "8C19F4A0",
+    "_dcContextSetup": "8C06ED2A",
+    "_dcConvertTick": "8C0D8736",
+    "_dcCreateContext": "8C06EB30",
+    "_dcDevice": "8C12D384",
+    "_dcDuration": "8C15C9BC",
+    "_dcEndSceneMode": "8C0DB140",
+    "_dcFrameTick": "8C1335EC",
+    "_dcFrameTime": "8C19E96C",
+    "_dcGfxConfig": "8C1333A0",
+    "_dcInitDevice": "8C0DAAE0",
+    "_dcKmBeginPass": "8C0DB1E0",
+    "_dcKmBeginScene": "8C0DB380",
+    "_dcKmEndPass": "8C0DB5A0",
+    "_dcKmEndScene": "8C0DB740",
+    "_dcMaxRenderTime": "8C19E968",
+    "_dcPassInfo": "8C19E970",
+    "_dcPrevFrameTick": "8C1335F0",
+    "_dcReadTick": "8C0D8726",
+    "_dcRegisterA": "8C0DAD20",
+    "_dcRegisterB": "8C0DADE0",
+    "_dcRegisterC": "8C0DADA0",
+    "_dcRegisterD": "8C0DACE0",
+    "_dcRenderTime": "8C19E964",
+    "_dcSelectContext": "8C06EDFC",
+    "_dcSetBorderColor": "8C0DC400",
+    "_dcSetSystemConfiguration": "8C0DB7A0",
+    "_dcTableA": "8C1335A0",
+    "_dcTableB": "8C1335C0",
+    "_dcTables": "8C1335E4",
+    "_dcTextBegin": "8C06B35A",
+    "_dcTextEnd": "8C06B3A6",
+    "_dcTickDiff": "8C0D8730",
+    "_dcVertexBuffer": "8C1335E0",
+    "_dcVideoInit": "8C010232"
+  },
+  "starts": {
+    "P": "8C02E118",
+    "C": "8C0AAA18",
+    "B": "8C12D340"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C02E118",
+      "length": 920
+    },
+    {
+      "name": "C",
+      "address": "8C0AAA18",
+      "length": 99
+    },
+    {
+      "name": "B",
+      "address": "8C12D340",
+      "length": 1
+    }
+  ],
+  "equal_text_bytes_including_fill": 578,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 99,
+  "excluded_exact_data_fill": 11,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

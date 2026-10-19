@@ -1,0 +1,18 @@
+{
+  "unit": "optionscr",
+  "selected": "final-independent",
+  "baseline_functions": 3,
+  "final_functions": 3,
+  "new_functions": [],
+  "baseline_text": 1118,
+  "final_text": 1118,
+  "baseline_data": 2092,
+  "final_data": 2092,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\optionscr.c": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+    "build\\campaign100-lane4\\optionscr\\final-independent\\obj\\optionscr.obj": "64e5d3d927daaa07e8c130d4b060bcd00cfb54c30bc69006f4b708905a882854",
+    "build\\campaign100-lane4\\optionscr\\final-independent\\link\\optionscr.abs": "d4791f7068f90cc5b05747f60385bf4abe98d0f8fd6827eb7a86c06380e9725d",
+    "build\\campaign100-lane4\\optionscr\\final-independent\\pp\\optionscr.c": "5e4b85da46e1d7e598701eca2a8fe890feaa0da144555af29d941c12feffe798"
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "name": "dc_sound_8C069F78",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_sound_8C069F78.c",
+  "source_sha256": "762ae45c9b8eec78f8562bb5809d1a5254c2fe746748274836555d7d9395e8c9",
+  "text": [
+    "8C069F78",
+    "8C06ADD4"
+  ],
+  "text_bytes": 3676,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 28,
+  "exact_data_bytes": 28,
+  "functions_total": 23,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "func_8C069F78",
+      "start": "8C069F78",
+      "end": "8C069FD0",
+      "size": 88,
+      "status": "differs",
+      "diff_bytes": 12,
+      "linked_at": "8C069F78",
+      "linked_size": 88
+    },
+    {
+      "name": "func_8C069FD0",
+      "start": "8C069FD0",
+      "end": "8C06A0DA",
+      "size": 266,
+      "status": "differs",
+      "diff_bytes": 189,
+      "linked_at": "8C069FD0",
+      "linked_size": 274
+    },
+    {
+      "name": "func_8C06A0DA",
+      "start": "8C06A0DA",
+      "end": "8C06A1A0",
+      "size": 198,
+      "status": "differs",
+      "diff_bytes": 169,
+      "linked_at": "8C06A0E2",
+      "linked_size": 198
+    },
+    {
+      "name": "func_8C06A1A0",
+      "start": "8C06A1A0",
+      "end": "8C06A1CA",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 36,
+      "linked_at": "8C06A1A8",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06A1CA",
+      "start": "8C06A1CA",
+      "end": "8C06A1E4",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 22,
+      "linked_at": "8C06A1D2",
+      "linked_size": 26
+    },
+    {
+      "name": "func_8C06A1E4",
+      "start": "8C06A1E4",
+      "end": "8C06A320",
+      "size": 316,
+      "status": "differs",
+      "diff_bytes": 288,
+      "linked_at": "8C06A1EC",
+      "linked_size": 326
+    },
+    {
+      "name": "func_8C06A320",
+      "start": "8C06A320",
+      "end": "8C06A348",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C06A332",
+      "linked_size": 38
+    },
+    {
+      "name": "func_8C06A348",
+      "start": "8C06A348",
+      "end": "8C06A372",
+      "size": 42,
+      "status": "moved",
+      "diff_bytes": 39,
+      "linked_at": "8C06A358",
+      "linked_size": 84
+    },
+    {
+      "name": "func_8C06A39C",
+      "start": "8C06A39C",
+      "end": "8C06A3E0",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 66,
+      "linked_at": "8C06A3AC",
+      "linked_size": 60
+    },
+    {
+      "name": "func_8C06A3E0",
+      "start": "8C06A3E0",
+      "end": "8C06A40E",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C06A3E8",
+      "linked_size": 46
+    },
+    {
+      "name": "func_8C06A40E",
+      "start": "8C06A40E",
+      "end": "8C06A438",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 40,
+      "linked_at": "8C06A416",
+      "linked_size": 44
+    },
+    {
+      "name": "func_8C06A438",
+      "start": "8C06A438",
+      "end": "8C06A462",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 36,
+      "linked_at": "8C06A442",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06A462",
+      "start": "8C06A462",
+      "end": "8C06A48C",
+      "size": 42,
+      "status": "moved",
+      "diff_bytes": 35,
+      "linked_at": "8C06A46C",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06A48C",
+      "start": "8C06A48C",
+      "end": "8C06A4C6",
+      "size": 58,
+      "status": "differs",
+      "diff_bytes": 57,
+      "linked_at": "8C06A496",
+      "linked_size": 118
+    },
+    {
+      "name": "func_8C06A504",
+      "start": "8C06A504",
+      "end": "8C06A52C",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 30,
+      "linked_at": "8C06A50C",
+      "linked_size": 40
+    },
+    {
+      "name": "func_8C06A52C",
+      "start": "8C06A52C",
+      "end": "8C06A554",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 39,
+      "linked_at": "8C06A534",
+      "linked_size": 40
+    },
+    {
+      "name": "func_8C06A554",
+      "start": "8C06A554",
+      "end": "8C06A574",
+      "size": 32,
+      "status": "differs",
+      "diff_bytes": 32,
+      "linked_at": "8C06A55C",
+      "linked_size": 30
+    },
+    {
+      "name": "func_8C06A574",
+      "start": "8C06A574",
+      "end": "8C06A59E",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 41,
+      "linked_at": "8C06A57A",
+      "linked_size": 94
+    },
+    {
+      "name": "func_8C06A5D0",
+      "start": "8C06A5D0",
+      "end": "8C06A700",
+      "size": 304,
+      "status": "differs",
+      "diff_bytes": 304,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C06A738",
+      "start": "8C06A738",
+      "end": "8C06A836",
+      "size": 254,
+      "status": "missing",
+      "diff_bytes": 254
+    },
+    {
+      "name": "func_8C06A836",
+      "start": "8C06A836",
+      "end": "8C06AC96",
+      "size": 1120,
+      "status": "missing",
+      "diff_bytes": 1120
+    },
+    {
+      "name": "func_8C06AC96",
+      "start": "8C06AC96",
+      "end": "8C06AD18",
+      "size": 130,
+      "status": "missing",
+      "diff_bytes": 130
+    },
+    {
+      "name": "func_8C06AD18",
+      "start": "8C06AD18",
+      "end": "8C06ADBE",
+      "size": 166,
+      "status": "missing",
+      "diff_bytes": 166
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06A372",
+      "end": "8C06A39C",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "pool",
+      "start": "8C06A4C6",
+      "end": "8C06A504",
+      "exact": false,
+      "built": 62,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C06A59E",
+      "end": "8C06A5D0",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 33
+    },
+    {
+      "kind": "pool",
+      "start": "8C06A700",
+      "end": "8C06A738",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C06ADBE",
+      "end": "8C06ADD4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 22
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7C2C",
+      "end": "8C0C7C48",
+      "exact": true,
+      "built": 28,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:57:28",
+  "defines": {
+    "_DeallocateMemory": "8C040832",
+    "_InsertLLE": "8C03A1C8",
+    "_RemoveLLE": "8C03A28E",
+    "__slow_strcpy": "8C09BB0C",
+    "_audioFlush8C06B1A8": "8C06B1A8",
+    "_convertVolume8C016508": "8C016508",
+    "_func_8C06A5D0": "8C06A5D0",
+    "_func_8C06A738": "8C06A738",
+    "_func_8C06A836": "8C06A836",
+    "_midiActive8C177B4C": "8C177B4C",
+    "_midiFree8C177B3C": "8C177B3C",
+    "_midiPending8C177B5C": "8C177B5C",
+    "_sdkBuffers8C09FBB6": "8C09FBB6",
+    "_sdkBusy8C09FAC4": "8C09FAC4",
+    "_sdkClose8C09F9F2": "8C09F9F2",
+    "_sdkDone8C09FA24": "8C09FA24",
+    "_sdkFree8C0A1BB4": "8C0A1BB4",
+    "_sdkPath8C09FCC6": "8C09FCC6",
+    "_sdkReadBuffer8C09FAF4": "8C09FAF4",
+    "_sdkReset8C09F734": "8C09F734",
+    "_sdkStart8C09FB2C": "8C09FB2C",
+    "_sdkStop8C09FD6A": "8C09FD6A",
+    "_sdkTick8C0A0064": "8C0A0064",
+    "_sdkVolume8C09F7FC": "8C09F7FC",
+    "_songMasterVolume8C17843C": "8C17843C",
+    "_songPaths8C0BA818": "8C0BA818",
+    "_streamActive8C177FD0": "8C177FD0",
+    "_streamFree8C177FC0": "8C177FC0",
+    "_streamPending8C177FE0": "8C177FE0"
+  },
+  "starts": {
+    "P": "8C069F78",
+    "D": "8C0C7C2C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C069F78",
+      "length": 1632
+    },
+    {
+      "name": "D",
+      "address": "8C0C7C2C",
+      "length": 28
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 28,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -2044,
+  "seconds": 1.9
+}

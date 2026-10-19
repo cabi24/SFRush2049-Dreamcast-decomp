@@ -1,0 +1,82 @@
+{
+  "name": "mb_wad",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/mb_wad.c",
+  "source_sha256": "6c5207260b87a2196e159d6e89377aa2dc4b410412a0a652edf7e56d07cdef6c",
+  "text": [
+    "8C03CF94",
+    "8C03D090"
+  ],
+  "text_bytes": 252,
+  "exact_text_bytes": 182,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 4,
+  "functions_exact": 3,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "MBSetupWad",
+      "start": "8C03CF94",
+      "end": "8C03CFDA",
+      "size": 70,
+      "status": "differs",
+      "diff_bytes": 11,
+      "linked_at": "8C03CF94",
+      "linked_size": 70
+    },
+    {
+      "name": "MBOffsetWad",
+      "start": "8C03CFDA",
+      "end": "8C03D01C",
+      "size": 66,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03CFDA",
+      "linked_size": 66
+    },
+    {
+      "name": "MBFindInWad",
+      "start": "8C03D01C",
+      "end": "8C03D05A",
+      "size": 62,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D01C",
+      "linked_size": 62
+    },
+    {
+      "name": "MBGetFromWad",
+      "start": "8C03D05A",
+      "end": "8C03D090",
+      "size": 54,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D05A",
+      "linked_size": 54
+    }
+  ],
+  "segments": [],
+  "notes": [],
+  "built_at": "2026-10-18T14:29:20",
+  "defines": {},
+  "starts": {
+    "P": "8C03CF94"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03CF94",
+      "length": 252
+    }
+  ],
+  "equal_text_bytes_including_fill": 182,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.0
+}

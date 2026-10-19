@@ -1,0 +1,144 @@
+{'name': 'DrawBlits', 'start': '8C01882A', 'end': '8C01887A', 'size': 80, 'status': 'differs', 'diff_bytes': 2, 'linked_at': '8C01882A', 'linked_size': 102}
+8C01882A e62f mov.l r14,@-r15                          | e62f mov.l r14,@-r15
+8C01882C d62f mov.l r13,@-r15                          | d62f mov.l r13,@-r15
+8C01882E c62f mov.l r12,@-r15                          | c62f mov.l r12,@-r15
+8C018830 b62f mov.l r11,@-r15                          | b62f mov.l r11,@-r15
+8C018832 224f sts.l pr,@-r15                           | 224f sts.l pr,@-r15
+8C018834 12dc mov.l @(0x8C018880,pc),r12               | 12dc mov.l @(0x8C018880,pc),r12
+8C018836 13db mov.l @(0x8C018884,pc),r11               | 13db mov.l @(0x8C018884,pc),r11
+8C018838 16a0 bra 0x8C018868                           | 16a0 bra 0x8C018868
+8C01883A 00ed mov #0,r13                               | 00ed mov #0,r13
+8C01883C d360 mov r13,r0                               | d360 mov r13,r0
+8C01883E 0840 shll2 r0                                 | 0840 shll2 r0
+8C018840 ce0e mov.l @(r0,r12),r14                      | ce0e mov.l @(r0,r12),r14
+8C018842 ea53 mov.l @(40,r14),r3                       | ea53 mov.l @(40,r14),r3
+8C018844 3823 tst r3,r3                                | 3823 tst r3,r3
+8C018846 0b89 bt 0x8C018860                            | 0b89 bt 0x8C018860
+8C018848 e260 mov.l @r14,r0                            | e260 mov.l @r14,r0
+8C01884A ff88 cmp/eq #-1,r0                            | ff88 cmp/eq #-1,r0
+8C01884C 0889 bt 0x8C018860                            | 0889 bt 0x8C018860
+8C01884E ea52 mov.l @(40,r14),r2                       | ea52 mov.l @(40,r14),r2
+8C018850 0b42 jsr @r2                                  | 0b42 jsr @r2
+8C018852 e364 mov r14,r4                               | e364 mov r14,r4
+8C018854 0820 tst r0,r0                                | 0820 tst r0,r0
+8C018856 038b bf 0x8C018860                            | 038b bf 0x8C018860
+8C018858 afbf bsr 0x8C0187BA                           | afbf bsr 0x8C0187BA
+8C01885A e364 mov r14,r4                               | e364 mov r14,r4
+8C01885C 03a0 bra 0x8C018866                           | 03a0 bra 0x8C018866
+8C01885E ff7d add #-1,r13                              | ff7d add #-1,r13
+8C018860 1ae0 mov #26,r0                               | 1ae0 mov #26,r0
+8C018862 ec02 mov.b @(r0,r14),r2                       | ec02 mov.b @(r0,r14),r2
+8C018864 2822 tst r2,r2                                | 2822 tst r2,r2
+8C018866 017d add #1,r13                               | 017d add #1,r13
+8C018868 b263 mov.l @r11,r3                            | b262 mov.l @r11,r2 *
+8C01886A 333d cmp/ge r3,r13                            | 233d cmp/ge r2,r13 *
+8C01886C e68b bf 0x8C01883C                            | e68b bf 0x8C01883C
+8C01886E 264f lds.l @r15+,pr                           | 264f lds.l @r15+,pr
+8C018870 f66b mov.l @r15+,r11                          | f66b mov.l @r15+,r11
+8C018872 f66c mov.l @r15+,r12                          | f66c mov.l @r15+,r12
+8C018874 f66d mov.l @r15+,r13                          | f66d mov.l @r15+,r13
+8C018876 0b00 rts                                      | 0b00 rts
+8C018878 f66e mov.l @r15+,r14                          | f66e mov.l @r15+,r14
+{'name': 'NewBlit', 'start': '8C018992', 'end': '8C018A5E', 'size': 204, 'status': 'differs', 'diff_bytes': 11, 'linked_at': '8C018992', 'linked_size': 204}
+8C018992 e62f mov.l r14,@-r15                          | e62f mov.l r14,@-r15
+8C018994 d62f mov.l r13,@-r15                          | d62f mov.l r13,@-r15
+8C018996 636d mov r6,r13                               | 536d mov r5,r13 *
+8C018998 c62f mov.l r12,@-r15                          | c62f mov.l r12,@-r15
+8C01899A 536c mov r5,r12                               | 636c mov r6,r12 *
+8C01899C 0dd6 mov.l @(0x8C0189D4,pc),r6                | 0dd6 mov.l @(0x8C0189D4,pc),r6
+8C01899E b62f mov.l r11,@-r15                          | b62f mov.l r11,@-r15
+8C0189A0 a62f mov.l r10,@-r15                          | a62f mov.l r10,@-r15
+8C0189A2 0693 mov.w @(0x8C0189B2,pc),r3                | 0693 mov.w @(0x8C0189B2,pc),r3
+8C0189A4 224f sts.l pr,@-r15                           | 224f sts.l pr,@-r15
+8C0189A6 6265 mov.l @r6,r5                             | 6265 mov.l @r6,r5
+8C0189A8 3335 cmp/ge r3,r5                             | 3335 cmp/ge r3,r5
+8C0189AA 158b bf 0x8C0189D8                            | 158b bf 0x8C0189D8
+8C0189AC 50a0 bra 0x8C018A50                           | 50a0 bra 0x8C018A50
+8C0189AE 00e0 mov #0,r0                                | 00e0 mov #0,r0
+8C0189B0 ff00 mac.l @r15+,@r0+                         | ff00 mac.l @r15+,@r0+
+8C0189B2 c800 .word 0x00C8                             | c800 .word 0x00C8
+8C0189B4 24b2 bsr 0x8C018E00                           | 24b2 bsr 0x8C018E00
+8C0189B6 0b8c .word 0x8C0B                             | 0b8c .word 0x8C0B
+8C0189B8 1ccb or #28,r0                                | 1ccb or #28,r0
+8C0189BA 148c .word 0x8C14                             | 148c .word 0x8C14
+8C0189BC aad4 mov.l @(0x8C018C68,pc),r4                | aad4 mov.l @(0x8C018C68,pc),r4
+8C0189BE 038c .word 0x8C03                             | 038c .word 0x8C03
+8C0189C0 2c8d bt/s 0x8C018A1C                          | 2c8d bt/s 0x8C018A1C
+8C0189C2 068c .word 0x8C06                             | 068c .word 0x8C06
+8C0189C4 508d bt/s 0x8C018A68                          | 508d bt/s 0x8C018A68
+8C0189C6 068c .word 0x8C06                             | 068c .word 0x8C06
+8C0189C8 928d bt/s 0x8C0188F0                          | 928d bt/s 0x8C0188F0
+8C0189CA 068c .word 0x8C06                             | 068c .word 0x8C06
+8C0189CC 948e .word 0x8E94                             | 948e .word 0x8E94
+8C0189CE 068c .word 0x8C06                             | 068c .word 0x8C06
+8C0189D0 be8e .word 0x8EBE                             | be8e .word 0x8EBE
+8C0189D2 068c .word 0x8C06                             | 068c .word 0x8C06
+8C0189D4 40b6 bsr 0x8C019658                           | 40b6 bsr 0x8C019658
+8C0189D6 128c .word 0x8C12                             | 128c .word 0x8C12
+8C0189D8 a3d0 mov.l @(0x8C018C68,pc),r0                | a3d0 mov.l @(0x8C018C68,pc),r0
+8C0189DA 536e mov r5,r14                               | 536e mov r5,r14
+8C0189DC 6263 mov.l @r6,r3                             | 6263 mov.l @r6,r3
+8C0189DE 084e shll2 r14                                | 084e shll2 r14
+8C0189E0 ee0e mov.l @(r0,r14),r14                      | ee0e mov.l @(r0,r14),r14
+8C0189E2 7827 tst r7,r7                                | 7827 tst r7,r7
+8C0189E4 0173 add #1,r3                                | 0173 add #1,r3
+8C0189E6 0d8d bt/s 0x8C018A04                          | 0d8d bt/s 0x8C018A04
+8C0189E8 3226 mov.l r3,@r6                             | 3226 mov.l r3,@r6
+8C0189EA d362 mov r13,r2                               | c362 mov r12,r2 *
+8C0189EC fc72 add #-4,r2                               | fc72 add #-4,r2
+8C0189EE 5a42 lds r2,fpul                              | 5a42 lds r2,fpul
+8C0189F0 00e3 mov #0,r3                                | 00e3 mov #0,r3
+8C0189F2 9df2 fldi1 fr2                                | 9df2 fldi1 fr2
+8C0189F4 20f2 fadd fr2,fr2                             | 20f2 fadd fr2,fr2
+8C0189F6 c733 cmp/gt r12,r3                            | d733 cmp/gt r13,r3 *
+8C0189F8 2df3 float fpul,fr3                           | 2df3 float fpul,fr3
+8C0189FA 3e3c addc r3,r12                              | 3e3d addc r3,r13 *
+8C0189FC 214c shar r12                                 | 214d shar r13 *
+8C0189FE 23f3 fdiv fr2,fr3                             | 23f3 fdiv fr2,fr3
+8C018A00 3df3 ftrc fr3,fpul                            | 3df3 ftrc fr3,fpul
+8C018A02 5a0d sts fpul,r13                             | 5a0c sts fpul,r12 *
+8C018A04 c360 mov r12,r0                               | d360 mov r13,r0 *
+8C018A06 00eb mov #0,r11                               | 00eb mov #0,r11
+8C018A08 ffea mov #-1,r10                              | ffea mov #-1,r10
+8C018A0A 422e mov.l r4,@r14                            | 422e mov.l r4,@r14
+8C018A0C e781 mov.w r0,@(14,r14)                       | e781 mov.w r0,@(14,r14)
+8C018A0E d360 mov r13,r0                               | c360 mov r12,r0 *
+8C018A10 e881 mov.w r0,@(16,r14)                       | e881 mov.w r0,@(16,r14)
+8C018A12 1ae0 mov #26,r0                               | 1ae0 mov #26,r0
+8C018A14 b40e mov.b r11,@(r0,r14)                      | b40e mov.b r11,@(r0,r14)
+8C018A16 19e0 mov #25,r0                               | 19e0 mov #25,r0
+8C018A18 b40e mov.b r11,@(r0,r14)                      | b40e mov.b r11,@(r0,r14)
+8C018A1A 1be0 mov #27,r0                               | 1be0 mov #27,r0
+8C018A1C 01e3 mov #1,r3                                | 01e3 mov #1,r3
+8C018A1E 340e mov.b r3,@(r0,r14)                       | 340e mov.b r3,@(r0,r14)
+8C018A20 bf1e mov.l r11,@(60,r14)                      | bf1e mov.l r11,@(60,r14)
+8C018A22 ba1e mov.l r11,@(40,r14)                      | ba1e mov.l r11,@(40,r14)
+8C018A24 ab1e mov.l r10,@(44,r14)                      | ab1e mov.l r10,@(44,r14)
+8C018A26 ac1e mov.l r10,@(48,r14)                      | ac1e mov.l r10,@(48,r14)
+8C018A28 be1e mov.l r11,@(56,r14)                      | be1e mov.l r11,@(56,r14)
+8C018A2A 31bf bsr 0x8C018890                           | 31bf bsr 0x8C018890
+8C018A2C e364 mov r14,r4                               | e364 mov r14,r4
+8C018A2E a62f mov.l r10,@-r15                          | a62f mov.l r10,@-r15
+8C018A30 b365 mov r11,r5                               | b365 mov r11,r5
+8C018A32 8ed3 mov.l @(0x8C018C6C,pc),r3                | 8ed3 mov.l @(0x8C018C6C,pc),r3
+8C018A34 c367 mov r12,r7                               | d367 mov r13,r7 *
+8C018A36 a62f mov.l r10,@-r15                          | a62f mov.l r10,@-r15
+8C018A38 b366 mov r11,r6                               | b366 mov r11,r6
+8C018A3A d62f mov.l r13,@-r15                          | c62f mov.l r12,@-r15 *
+8C018A3C e685 mov.w @(12,r14),r0                       | e685 mov.w @(12,r14),r0
+8C018A3E 0b43 jsr @r3                                  | 0b43 jsr @r3
+8C018A40 0d64 extu.w r0,r4                             | 0d64 extu.w r0,r4
+8C018A42 0c7f add #12,r15                              | 0c7f add #12,r15
+8C018A44 34e1 mov #52,r1                               | 34e1 mov #52,r1
+8C018A46 ec31 add r14,r1                               | ec31 add r14,r1
+8C018A48 0121 mov.w r0,@r1                             | 0121 mov.w r0,@r1
+8C018A4A 61bf bsr 0x8C018910                           | 61bf bsr 0x8C018910
+8C018A4C e364 mov r14,r4                               | e364 mov r14,r4
+8C018A4E e360 mov r14,r0                               | e360 mov r14,r0
+8C018A50 264f lds.l @r15+,pr                           | 264f lds.l @r15+,pr
+8C018A52 f66a mov.l @r15+,r10                          | f66a mov.l @r15+,r10
+8C018A54 f66b mov.l @r15+,r11                          | f66b mov.l @r15+,r11
+8C018A56 f66c mov.l @r15+,r12                          | f66c mov.l @r15+,r12
+8C018A58 f66d mov.l @r15+,r13                          | f66d mov.l @r15+,r13
+8C018A5A 0b00 rts                                      | 0b00 rts
+8C018A5C f66e mov.l @r15+,r14                          | f66e mov.l @r15+,r14

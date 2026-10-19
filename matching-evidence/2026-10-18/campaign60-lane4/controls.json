@@ -1,0 +1,20 @@
+{
+  "unit": "controls",
+  "selected": "split-clear",
+  "baseline_functions": 6,
+  "final_functions": 7,
+  "new_functions": [
+    "ClearRushControls"
+  ],
+  "baseline_text": 1688,
+  "final_text": 1742,
+  "baseline_data": 104,
+  "final_data": 104,
+  "note": "ClearRushControls exact; other capped hypotheses parked",
+  "hashes": {
+    "src\\controls.c": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08",
+    "build\\campaign60-lane4\\controls\\split-clear\\obj\\controls.obj": "6ab681a9dab769f706a47457decc10f126c248fdd2be1815bc1454dee780342f",
+    "build\\campaign60-lane4\\controls\\split-clear\\link\\controls.abs": "db07defdb99d3b4ebb11a8bed679a4763dd2d77c397f873548b36f4d1d766506",
+    "build\\campaign60-lane4\\controls\\split-clear\\pp\\controls.c": "b34073b789a382440b7a8d77e298047ba2b86ee3c50789ded7bab5584afd620e"
+  }
+}

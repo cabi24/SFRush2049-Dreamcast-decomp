@@ -1,0 +1,122 @@
+{'name': 'farcsine', 'start': '8C011290', 'end': '8C011376', 'size': 230, 'status': 'differs', 'diff_bytes': 180, 'linked_at': '8C011290', 'linked_size': 232}
+8C011290 3bc7 mova @(0x8C011380,pc),r0                 | 3bc7 mova @(0x8C011380,pc),r0
+8C011292 4cf5 fmov fr4,fr5                             | 4cf5 fmov fr4,fr5
+8C011294 08f3 fmov @r0,fr3                             | 08f3 fmov @r0,fr3
+8C011296 5df5 fabs fr5                                 | 5df5 fabs fr5
+8C011298 55f3 fcmp/gt fr5,fr3                          | 55f3 fcmp/gt fr5,fr3
+8C01129A 028f bf/s 0x8C0112A2                          | 028f bf/s 0x8C0112A2
+8C01129C 4367 mov r4,r7                                | 4366 mov r4,r6 *
+8C01129E 47a0 bra 0x8C011330                           | 46a0 bra 0x8C01132E *
+8C0112A0 5cf6 fmov fr5,fr6                             | 5cf7 fmov fr5,fr7 *
+8C0112A2 9df6 fldi1 fr6                                | 9df6 fldi1 fr6
+8C0112A4 55f6 fcmp/gt fr5,fr6                          | 55f6 fcmp/gt fr5,fr6
+8C0112A6 0589 bt 0x8C0112B4                            | 0589 bt 0x8C0112B4
+8C0112A8 36c7 mova @(0x8C011384,pc),r0                 | 36c7 mova @(0x8C011384,pc),r0
+8C0112AA 08f2 fmov @r0,fr2                             | 08f2 fmov @r0,fr2
+8C0112AC 36c7 mova @(0x8C011388,pc),r0                 | 36c7 mova @(0x8C011388,pc),r0
+8C0112AE 55f2 fcmp/gt fr5,fr2                          | 55f2 fcmp/gt fr5,fr2
+8C0112B0 3ea0 bra 0x8C011330                           | 3da0 bra 0x8C01132E *
+8C0112B2 08f6 fmov @r0,fr6                             | 08f7 fmov @r0,fr7 *
+8C0112B4 35c7 mova @(0x8C01138C,pc),r0                 | 35c7 mova @(0x8C01138C,pc),r0
+8C0112B6 08f2 fmov @r0,fr2                             | 08f2 fmov @r0,fr2
+8C0112B8 25f5 fcmp/gt fr2,fr5                          | 25f5 fcmp/gt fr2,fr5
+8C0112BA 0f8b bf 0x8C0112DC                            | 0e8b bf 0x8C0112DA *
+8C0112BC 6cf7 fmov fr6,fr7                             | 9df1 fldi1 fr1 *
+8C0112BE 51f7 fsub fr5,fr7                             | 51f6 fsub fr5,fr6 *
+8C0112C0 9df1 fldi1 fr1                                | 10f1 fadd fr1,fr1 *
+8C0112C2 10f1 fadd fr1,fr1                             | 01e2 mov #1,r2 *
+8C0112C4 01e2 mov #1,r2                                | 6832 sub r6,r2 *
+8C0112C6 7832 sub r7,r2                                | 2366 mov r2,r6 *
+8C0112C8 2367 mov r2,r7                                | 13f6 fdiv fr1,fr6 *
+8C0112CA 13f7 fdiv fr1,fr7                             | 6cf5 fmov fr6,fr5 *
+8C0112CC 7cf5 fmov fr7,fr5                             | 6df5 fsqrt fr5 *
+8C0112CE 6df5 fsqrt fr5                                | 5cf3 fmov fr5,fr3 *
+8C0112D0 5cf3 fmov fr5,fr3                             | 4df3 fneg fr3 *
+8C0112D2 4df3 fneg fr3                                 | 5cf0 fmov fr5,fr0 *
+8C0112D4 5cf0 fmov fr5,fr0                             | 3cf5 fmov fr3,fr5 *
+8C0112D6 3cf5 fmov fr3,fr5                             | 02a0 bra 0x8C0112DE *
+8C0112D8 02a0 bra 0x8C0112E0                           | 01f5 fsub fr0,fr5 *
+8C0112DA 01f5 fsub fr0,fr5                             | 5cf6 fmov fr5,fr6 *
+8C0112DC 5cf7 fmov fr5,fr7                             | 52f6 fmul fr5,fr6 *
+8C0112DE 52f7 fmul fr5,fr7                             | 2cc7 mova @(0x8C011390,pc),r0 *
+8C0112E0 2bc7 mova @(0x8C011390,pc),r0                 | 6cf2 fmov fr6,fr2 *
+8C0112E2 7cf2 fmov fr7,fr2                             | 08f3 fmov @r0,fr3 *
+8C0112E4 08f3 fmov @r0,fr3                             | 2bc7 mova @(0x8C011394,pc),r0 *
+8C0112E6 2bc7 mova @(0x8C011394,pc),r0                 | 08f1 fmov @r0,fr1 *
+8C0112E8 08f1 fmov @r0,fr1                             | 2bc7 mova @(0x8C011398,pc),r0 *
+8C0112EA 2bc7 mova @(0x8C011398,pc),r0                 | 32f2 fmul fr3,fr2 *
+8C0112EC 32f2 fmul fr3,fr2                             | 6cf0 fmov fr6,fr0 *
+8C0112EE 7cf0 fmov fr7,fr0                             | 21f1 fsub fr2,fr1 *
+8C0112F0 21f1 fsub fr2,fr1                             | 08f2 fmov @r0,fr2 *
+8C0112F2 08f2 fmov @r0,fr2                             | 2ac7 mova @(0x8C01139C,pc),r0 *
+8C0112F4 29c7 mova @(0x8C01139C,pc),r0                 | 1ef2 fmac fr0,fr1,fr2 *
+8C0112F6 1ef2 fmac fr0,fr1,fr2                         | 08f1 fmov @r0,fr1 *
+8C0112F8 08f1 fmov @r0,fr1                             | 29c7 mova @(0x8C0113A0,pc),r0 *
+8C0112FA 29c7 mova @(0x8C0113A0,pc),r0                 | 2ef1 fmac fr0,fr2,fr1 *
+8C0112FC 2ef1 fmac fr0,fr2,fr1                         | 08f2 fmov @r0,fr2 *
+8C0112FE 08f2 fmov @r0,fr2                             | 29c7 mova @(0x8C0113A4,pc),r0 *
+8C011300 28c7 mova @(0x8C0113A4,pc),r0                 | 1ef2 fmac fr0,fr1,fr2 *
+8C011302 1ef2 fmac fr0,fr1,fr2                         | 08f0 fmov @r0,fr0 *
+8C011304 08f0 fmov @r0,fr0                             | 6cf1 fmov fr6,fr1 *
+8C011306 7cf1 fmov fr7,fr1                             | 28c7 mova @(0x8C0113A8,pc),r0 *
+8C011308 27c7 mova @(0x8C0113A8,pc),r0                 | 00f1 fadd fr0,fr1 *
+8C01130A 00f1 fadd fr0,fr1                             | 6cf0 fmov fr6,fr0 *
+8C01130C 7cf0 fmov fr7,fr0                             | 62f2 fmul fr6,fr2 *
+8C01130E 72f2 fmul fr7,fr2                             | 2cf8 fmov fr2,fr8 *
+8C011310 2cf8 fmov fr2,fr8                             | 08f2 fmov @r0,fr2 *
+8C011312 08f2 fmov @r0,fr2                             | 26c7 mova @(0x8C0113AC,pc),r0 *
+8C011314 25c7 mova @(0x8C0113AC,pc),r0                 | 08f3 fmov @r0,fr3 *
+8C011316 08f3 fmov @r0,fr3                             | 26c7 mova @(0x8C0113B0,pc),r0 *
+8C011318 25c7 mova @(0x8C0113B0,pc),r0                 | 1ef2 fmac fr0,fr1,fr2 *
+8C01131A 1ef2 fmac fr0,fr1,fr2                         | 2ef3 fmac fr0,fr2,fr3 *
+8C01131C 2ef3 fmac fr0,fr2,fr3                         | 08f2 fmov @r0,fr2 *
+8C01131E 08f2 fmov @r0,fr2                             | 3ef2 fmac fr0,fr3,fr2 *
+8C011320 3ef2 fmac fr0,fr3,fr2                         | 24c7 mova @(0x8C0113B4,pc),r0 *
+8C011322 24c7 mova @(0x8C0113B4,pc),r0                 | 08f3 fmov @r0,fr3 *
+8C011324 08f3 fmov @r0,fr3                             | 5cf7 fmov fr5,fr7 *
+8C011326 5cf6 fmov fr5,fr6                             | 2ef3 fmac fr0,fr2,fr3 *
+8C011328 2ef3 fmac fr0,fr2,fr3                         | 5cf0 fmov fr5,fr0 *
+8C01132A 5cf0 fmov fr5,fr0                             | 33f8 fdiv fr3,fr8 *
+8C01132C 33f8 fdiv fr3,fr8                             | 8ef7 fmac fr0,fr8,fr7 *
+8C01132E 8ef6 fmac fr0,fr8,fr6                         | 22d7 mov.l @(0x8C0113B8,pc),r7 *
+8C011330 21d6 mov.l @(0x8C0113B8,pc),r6                | 4824 tst r4,r4 *
+8C011332 4824 tst r4,r4                                | 6365 mov r6,r5 *
+8C011334 7365 mov r7,r5                                | 128d bt/s 0x8C01135C *
+8C011336 128d bt/s 0x8C01135E                          | 0845 shll2 r5 *
+8C011338 0845 shll2 r5                                 | 8df3 fldi0 fr3 *
+8C01133A 8df3 fldi0 fr3                                | 45f3 fcmp/gt fr4,fr3 *
+8C01133C 45f3 fcmp/gt fr4,fr3                          | 068b bf 0x8C01134C *
+8C01133E 068b bf 0x8C01134E                            | 1fd0 mov.l @(0x8C0113BC,pc),r0 *
+8C011340 1ed0 mov.l @(0x8C0113BC,pc),r0                | 7cf1 fmov fr7,fr1 *
+8C011342 6cf1 fmov fr6,fr1                             | 56f4 fmov @(r0,r5),fr4 *
+8C011344 56f4 fmov @(r0,r5),fr4                        | 4cf2 fmov fr4,fr2 *
+8C011346 4cf2 fmov fr4,fr2                             | 40f2 fadd fr4,fr2 *
+8C011348 40f2 fadd fr4,fr2                             | 06a0 bra 0x8C011358 *
+8C01134A 06a0 bra 0x8C01135A                           | 10f2 fadd fr1,fr2 *
+8C01134C 10f2 fadd fr1,fr2                             | 5360 mov r5,r0 *
+8C01134E 5360 mov r5,r0                                | 76f4 fmov @(r0,r7),fr4 *
+8C011350 66f4 fmov @(r0,r6),fr4                        | 7cf1 fmov fr7,fr1 *
+8C011352 6cf1 fmov fr6,fr1                             | 4cf2 fmov fr4,fr2 *
+8C011354 4cf2 fmov fr4,fr2                             | 40f2 fadd fr4,fr2 *
+8C011356 40f2 fadd fr4,fr2                             | 11f2 fsub fr1,fr2 *
+8C011358 11f2 fsub fr1,fr2                             | 0ba0 bra 0x8C011372 *
+8C01135A 0ba0 bra 0x8C011374                           | 2cf7 fmov fr2,fr7 *
+8C01135C 2cf6 fmov fr2,fr6                             | 5360 mov r5,r0 *
+8C01135E 5360 mov r5,r0                                | 76f5 fmov @(r0,r7),fr5 *
+8C011360 66f5 fmov @(r0,r6),fr5                        | 7cf2 fmov fr7,fr2 *
+8C011362 6cf2 fmov fr6,fr2                             | 5cf3 fmov fr5,fr3 *
+8C011364 5cf3 fmov fr5,fr3                             | 50f3 fadd fr5,fr3 *
+8C011366 50f3 fadd fr5,fr3                             | 20f3 fadd fr2,fr3 *
+8C011368 20f3 fadd fr2,fr3                             | 3cf7 fmov fr3,fr7 *
+8C01136A 3cf6 fmov fr3,fr6                             | 8df3 fldi0 fr3 *
+8C01136C 8df3 fldi0 fr3                                | 45f3 fcmp/gt fr4,fr3 *
+8C01136E 45f3 fcmp/gt fr4,fr3                          | 008b bf 0x8C011372 *
+8C011370 008b bf 0x8C011374                            | 4df7 fneg fr7 *
+8C011372 4df6 fneg fr6                                 | 0b00 rts *
+8C011374 0b00 rts                                      | 7cf0 fmov fr7,fr0 *
+{'name': 'fasin', 'start': '8C011376', 'end': '8C01137A', 'size': 4, 'status': 'differs', 'diff_bytes': 4, 'linked_at': '8C011378', 'linked_size': 4}
+8C011376 6cf0 fmov fr6,fr0                             | 8baf bra 0x8C011290 *
+8C011378 8aaf bra 0x8C011290                           | 00e4 mov #0,r4 *
+{'name': 'facos', 'start': '8C01137A', 'end': '8C01137E', 'size': 4, 'status': 'differs', 'diff_bytes': 4, 'linked_at': '8C01137C', 'linked_size': 68}
+8C01137A 00e4 mov #0,r4                                | 89af bra 0x8C011290 *
+8C01137C 88af bra 0x8C011290                           | 01e4 mov #1,r4 *

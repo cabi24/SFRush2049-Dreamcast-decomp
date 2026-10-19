@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/state.c');s=Path('matching-evidence/2026-10-18/round2-state-model/state.original.c').read_text();s=s.replace('    if (gGameState & 0x7c03fffe) {','    if (gGameState & 0x7c03fffe) {\n        unsigned char *blue = &gFogColors[19][2];\n        unsigned char *green = &gFogColors[19][1];');s=s.replace('gFogColors[19][1], gFogColors[19][2]','*green, *blue');p.write_text(s)

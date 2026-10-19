@@ -1,0 +1,54 @@
+{
+  "unit": "blit",
+  "verdict": "keep",
+  "dirty": {
+    "status": "exact",
+    "functions_exact": 10,
+    "functions_total": 10,
+    "functions_moved": 0,
+    "exact_text_bytes": 1322,
+    "equal_text_bytes_including_fill": 1324,
+    "text_bytes": 1324,
+    "exact_data_bytes": 4,
+    "source_sha256": "be80517383732bc116ab3ec0d6a0b162ed305d5200acdc5d91dcbb859e0f64f8"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 8,
+    "functions_total": 10,
+    "functions_moved": 0,
+    "exact_text_bytes": 1038,
+    "equal_text_bytes_including_fill": 1040,
+    "text_bytes": 1324,
+    "exact_data_bytes": 4,
+    "source_sha256": "33c98a2b94526cd5b95b9b7a0ee333b7202f8034ee2e76303ddd635cf159a640"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "DrawBlits",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 80
+    },
+    {
+      "name": "NewBlit",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 204
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1322,
+  "text_bytes_head": 1038,
+  "report_consistency": {
+    "report_functions_exact": 10,
+    "dirty_rebuild_functions_exact": 10,
+    "report_exact_text_bytes": 1322,
+    "dirty_rebuild_exact_text_bytes": 1322,
+    "report_source_sha256": "be80517383732bc116ab3ec0d6a0b162ed305d5200acdc5d91dcbb859e0f64f8",
+    "dirty_source_sha256": "be80517383732bc116ab3ec0d6a0b162ed305d5200acdc5d91dcbb859e0f64f8",
+    "match": true
+  },
+  "head_source_sha256": "33c98a2b94526cd5b95b9b7a0ee333b7202f8034ee2e76303ddd635cf159a640",
+  "seconds": 5.5
+}

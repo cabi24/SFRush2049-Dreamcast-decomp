@@ -1,0 +1,48 @@
+{
+  "unit": "options",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 2,
+    "functions_total": 4,
+    "functions_moved": 0,
+    "exact_text_bytes": 856,
+    "equal_text_bytes_including_fill": 856,
+    "text_bytes": 2580,
+    "exact_data_bytes": 0,
+    "source_sha256": "b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 4,
+    "functions_moved": 0,
+    "exact_text_bytes": 756,
+    "equal_text_bytes_including_fill": 756,
+    "text_bytes": 2580,
+    "exact_data_bytes": 0,
+    "source_sha256": "66fda950dc9f3f72c2e6c08d067e04c6a99875c8995029a6ad35e8c5a066dfb5"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "InitOptions",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 100
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 856,
+  "text_bytes_head": 756,
+  "report_consistency": {
+    "report_functions_exact": 2,
+    "dirty_rebuild_functions_exact": 2,
+    "report_exact_text_bytes": 856,
+    "dirty_rebuild_exact_text_bytes": 856,
+    "report_source_sha256": "b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063",
+    "dirty_source_sha256": "b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063",
+    "match": true
+  },
+  "head_source_sha256": "66fda950dc9f3f72c2e6c08d067e04c6a99875c8995029a6ad35e8c5a066dfb5",
+  "seconds": 5.2
+}

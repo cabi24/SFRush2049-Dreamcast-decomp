@@ -1,0 +1,176 @@
+{
+  "name": "circuit",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/circuit.c",
+  "source_sha256": "19ad8562a240a242b28897994913f88d24f51e5f86f81bdc40804a365196b499",
+  "text": [
+    "8C01C554",
+    "8C01D41C"
+  ],
+  "text_bytes": 3784,
+  "exact_text_bytes": 144,
+  "align_bytes": 0,
+  "data_bytes": 376,
+  "exact_data_bytes": 376,
+  "functions_total": 5,
+  "functions_exact": 1,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C01C554",
+      "start": "8C01C554",
+      "end": "8C01C5E4",
+      "size": 144,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01C554",
+      "linked_size": 144
+    },
+    {
+      "name": "func_8C01C5E4",
+      "start": "8C01C5E4",
+      "end": "8C01CDAE",
+      "size": 1994,
+      "status": "differs",
+      "diff_bytes": 1442,
+      "linked_at": "8C01C5E4",
+      "linked_size": 2024
+    },
+    {
+      "name": "UpdateCircuit",
+      "start": "8C01CDB8",
+      "end": "8C01D0BC",
+      "size": 772,
+      "status": "differs",
+      "diff_bytes": 738,
+      "linked_at": "8C01CDCC",
+      "linked_size": 780
+    },
+    {
+      "name": "GetCircuitCode",
+      "start": "8C01D0C8",
+      "end": "8C01D16C",
+      "size": 164,
+      "status": "differs",
+      "diff_bytes": 156,
+      "linked_at": "8C01D0D8",
+      "linked_size": 196
+    },
+    {
+      "name": "SetCircuitCode",
+      "start": "8C01D18C",
+      "end": "8C01D412",
+      "size": 646,
+      "status": "differs",
+      "diff_bytes": 592,
+      "linked_at": "8C01D19C",
+      "linked_size": 656
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01CDAE",
+      "end": "8C01CDB8",
+      "exact": false,
+      "built": 10,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "pool",
+      "start": "8C01D0BC",
+      "end": "8C01D0C8",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "pool",
+      "start": "8C01D16C",
+      "end": "8C01D18C",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "pool",
+      "start": "8C01D412",
+      "end": "8C01D41C",
+      "exact": false,
+      "built": 10,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BC260",
+      "end": "8C0BC3D8",
+      "exact": true,
+      "built": 376,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12BE4C",
+      "end": "8C12C09E",
+      "exact": false,
+      "linked": [
+        "8C12BE4C",
+        "8C12C0CE"
+      ]
+    }
+  ],
+  "notes": [
+    "B extent differs from the map",
+    "16 built bytes fall outside the mapped ranges (first 8C01D41C, last 8C01D42B)"
+  ],
+  "built_at": "2026-10-18T15:56:11",
+  "defines": {
+    "_GetPasswordString": "8C044D80",
+    "_PS_WriteFile": "8C06DDEA",
+    "_RecordCircuit": "8C02C2CE",
+    "_SavePlayerCircuit": "8C04C978",
+    "__modls": "8C09B82C",
+    "__modlu": "8C09B8F4",
+    "_func_8C044C2C": "8C044C2C",
+    "_func_8C044CA4": "8C044CA4",
+    "_func_8C044D0C": "8C044D0C",
+    "_func_8C044E94": "8C044E94",
+    "_gNumPlayers": "8C14CBB0",
+    "_gOptions": "8C14FDC8",
+    "_gSeconds": "8C122548",
+    "_memset": "8C09BE04",
+    "_rand_r": "8C047BE4"
+  },
+  "starts": {
+    "P": "8C01C554",
+    "D": "8C0BC260",
+    "B": "8C12BE4C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01C554",
+      "length": 3800
+    },
+    {
+      "name": "D",
+      "address": "8C0BC260",
+      "length": 376
+    },
+    {
+      "name": "B",
+      "address": "8C12BE4C",
+      "length": 642
+    }
+  ],
+  "equal_text_bytes_including_fill": 144,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 376,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 16,
+  "seconds": 2.1
+}

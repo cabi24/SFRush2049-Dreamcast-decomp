@@ -1,0 +1,48 @@
+{
+  "unit": "unk_8C065F2C",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 2,
+    "functions_total": 3,
+    "functions_moved": 0,
+    "exact_text_bytes": 604,
+    "equal_text_bytes_including_fill": 606,
+    "text_bytes": 1192,
+    "exact_data_bytes": 12223,
+    "source_sha256": "a29ff252f734ccb9a19cba0f26d80feab182323a8bec271c2c66f02bc7b0c599"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 3,
+    "functions_moved": 1,
+    "exact_text_bytes": 258,
+    "equal_text_bytes_including_fill": 258,
+    "text_bytes": 1192,
+    "exact_data_bytes": 12223,
+    "source_sha256": "68021c47a696b4ce965fdadb9a3081c9822ef7e4b1dc986a38a0cc5f7272203c"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "func_8C066278",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 306
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 604,
+  "text_bytes_head": 258,
+  "report_consistency": {
+    "report_functions_exact": 2,
+    "dirty_rebuild_functions_exact": 2,
+    "report_exact_text_bytes": 604,
+    "dirty_rebuild_exact_text_bytes": 604,
+    "report_source_sha256": "a29ff252f734ccb9a19cba0f26d80feab182323a8bec271c2c66f02bc7b0c599",
+    "dirty_source_sha256": "a29ff252f734ccb9a19cba0f26d80feab182323a8bec271c2c66f02bc7b0c599",
+    "match": true
+  },
+  "head_source_sha256": "68021c47a696b4ce965fdadb9a3081c9822ef7e4b1dc986a38a0cc5f7272203c",
+  "seconds": 5.4
+}

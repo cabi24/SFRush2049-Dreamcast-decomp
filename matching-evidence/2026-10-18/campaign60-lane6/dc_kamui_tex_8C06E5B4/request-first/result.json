@@ -1,0 +1,224 @@
+{
+  "name": "dc_kamui_tex_8C06E5B4",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_kamui_tex_8C06E5B4.c",
+  "source_sha256": "9e1bbbb3234ecc7bb91df91dac0505c43303ed1d8157dddd91f7adbd0d6a9265",
+  "text": [
+    "8C06E5B4",
+    "8C06ED90"
+  ],
+  "text_bytes": 2012,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 11,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C06E5B4",
+      "start": "8C06E5B4",
+      "end": "8C06E7B4",
+      "size": 512,
+      "status": "differs",
+      "diff_bytes": 439,
+      "linked_at": "8C06E5B4",
+      "linked_size": 490
+    },
+    {
+      "name": "func_8C06E7B4",
+      "start": "8C06E7B4",
+      "end": "8C06E7BC",
+      "size": 8,
+      "status": "differs",
+      "diff_bytes": 8,
+      "linked_at": "8C06E79E",
+      "linked_size": 8
+    },
+    {
+      "name": "func_8C06E7BC",
+      "start": "8C06E7BC",
+      "end": "8C06E810",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C06E7A6",
+      "linked_size": 70
+    },
+    {
+      "name": "func_8C06E834",
+      "start": "8C06E834",
+      "end": "8C06E8AE",
+      "size": 122,
+      "status": "differs",
+      "diff_bytes": 121,
+      "linked_at": "8C06E7EC",
+      "linked_size": 114
+    },
+    {
+      "name": "func_8C06E8BC",
+      "start": "8C06E8BC",
+      "end": "8C06E908",
+      "size": 76,
+      "status": "differs",
+      "diff_bytes": 75,
+      "linked_at": "8C06E85E",
+      "linked_size": 74
+    },
+    {
+      "name": "func_8C06E908",
+      "start": "8C06E908",
+      "end": "8C06E95C",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 78,
+      "linked_at": "8C06E8A8",
+      "linked_size": 174
+    },
+    {
+      "name": "func_8C06E95C",
+      "start": "8C06E95C",
+      "end": "8C06EA94",
+      "size": 312,
+      "status": "differs",
+      "diff_bytes": 308,
+      "linked_at": "8C06E956",
+      "linked_size": 304
+    },
+    {
+      "name": "func_8C06EAD0",
+      "start": "8C06EAD0",
+      "end": "8C06EB12",
+      "size": 66,
+      "status": "differs",
+      "diff_bytes": 66,
+      "linked_at": "8C06EA86",
+      "linked_size": 62
+    },
+    {
+      "name": "func_8C06EB30",
+      "start": "8C06EB30",
+      "end": "8C06EBB2",
+      "size": 130,
+      "status": "differs",
+      "diff_bytes": 126,
+      "linked_at": "8C06EAC4",
+      "linked_size": 198
+    },
+    {
+      "name": "func_8C06EBB2",
+      "start": "8C06EBB2",
+      "end": "8C06ED2A",
+      "size": 376,
+      "status": "differs",
+      "diff_bytes": 369,
+      "linked_at": "8C06EB8A",
+      "linked_size": 402
+    },
+    {
+      "name": "func_8C06ED2A",
+      "start": "8C06ED2A",
+      "end": "8C06ED5A",
+      "size": 48,
+      "status": "missing",
+      "diff_bytes": 48
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06E810",
+      "end": "8C06E834",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "pool",
+      "start": "8C06E8AE",
+      "end": "8C06E8BC",
+      "exact": false,
+      "built": 14,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "pool",
+      "start": "8C06EA94",
+      "end": "8C06EAD0",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 59
+    },
+    {
+      "kind": "pool",
+      "start": "8C06EB12",
+      "end": "8C06EB30",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 11
+    },
+    {
+      "kind": "pool",
+      "start": "8C06ED5A",
+      "end": "8C06ED90",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 54
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:38:41",
+  "defines": {
+    "__divlu": "8C09B734",
+    "_dcCheckKm": "8C06EDC2",
+    "_dcControllerPresent": "8C12C114",
+    "_dcCreateTextureName": "8C0B1D24",
+    "_dcFreeTextureName": "8C0B1D4C",
+    "_dcKmContexts": "8C18D900",
+    "_dcKmDefaultContext": "8C19F460",
+    "_dcKmOtherContext": "8C19F4A0",
+    "_dcKmSurfaces": "8C185900",
+    "_dcLoadTextureName": "8C0B1D3C",
+    "_dcTextureCount": "8C0C9744",
+    "_dcTextureRamHigh": "8C1858E4",
+    "_dcTextureScanIndex": "8C0C9740",
+    "_dcTextureTable": "8C19D900",
+    "_dcVibrationEnabled": "8C0C973D",
+    "_dcVibrationPorts": "8C0C9734",
+    "_dcVibrationRecords": "8C185144",
+    "_func_8C06E51A": "8C06E51A",
+    "_func_8C0D7954": "8C0D7954",
+    "_func_8C0D7A2E": "8C0D7A2E",
+    "_func_8C0D7B2A": "8C0D7B2A",
+    "_func_8C0D7CFC": "8C0D7CFC",
+    "_func_8C0D9076": "8C0D9076",
+    "_func_8C0DB9C0": "8C0DB9C0",
+    "_func_8C0DBBE0": "8C0DBBE0",
+    "_func_8C0DBD60": "8C0DBD60",
+    "_func_8C0DBFE0": "8C0DBFE0",
+    "_func_8C0DC0A0": "8C0DC0A0",
+    "_func_8C0DC100": "8C0DC100",
+    "_gFogIntensity": "8C15FF20",
+    "_gMirrorWaves": "8C15FA14",
+    "_gTextureRamUsed": "8C1858E0"
+  },
+  "starts": {
+    "P": "8C06E5B4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06E5B4",
+      "length": 1896
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -116,
+  "seconds": 1.9
+}

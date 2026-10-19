@@ -1,0 +1,794 @@
+{
+  "name": "audiomgr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/audiomgr.c",
+  "source_sha256": "cf7a93ff2669ee3733b423686a41885aa73422d7afd24d9aa8ff2b9aa8f47ee3",
+  "text": [
+    "8C013A40",
+    "8C015EF0"
+  ],
+  "text_bytes": 9392,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 387,
+  "exact_data_bytes": 381,
+  "functions_total": 57,
+  "functions_exact": 0,
+  "functions_moved": 5,
+  "functions": [
+    {
+      "name": "AudioInit",
+      "start": "8C013A40",
+      "end": "8C013D1C",
+      "size": 732,
+      "status": "differs",
+      "diff_bytes": 5,
+      "linked_at": "8C013A40",
+      "linked_size": 732
+    },
+    {
+      "name": "AudioShutdown",
+      "start": "8C013D1C",
+      "end": "8C013D4A",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 6,
+      "linked_at": "8C013D1C",
+      "linked_size": 46
+    },
+    {
+      "name": "_PeriodicMaintenance",
+      "start": "8C013D4E",
+      "end": "8C013DA2",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C013D4A",
+      "linked_size": 138
+    },
+    {
+      "name": "_ProcessCommand",
+      "start": "8C013DE0",
+      "end": "8C0142FE",
+      "size": 1310,
+      "status": "differs",
+      "diff_bytes": 1250,
+      "linked_at": "8C013DD4",
+      "linked_size": 1280
+    },
+    {
+      "name": "func_8C0142FE",
+      "start": "8C0142FE",
+      "end": "8C014334",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 53,
+      "linked_at": "8C0142D4",
+      "linked_size": 48
+    },
+    {
+      "name": "_GetFxTag",
+      "start": "8C014334",
+      "end": "8C0143B2",
+      "size": 126,
+      "status": "differs",
+      "diff_bytes": 126,
+      "linked_at": "8C014304",
+      "linked_size": 176
+    },
+    {
+      "name": "_FreeFxTag",
+      "start": "8C0143E8",
+      "end": "8C01443A",
+      "size": 82,
+      "status": "differs",
+      "diff_bytes": 79,
+      "linked_at": "8C0143B4",
+      "linked_size": 82
+    },
+    {
+      "name": "_PlayFxTag",
+      "start": "8C01443A",
+      "end": "8C014466",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C014406",
+      "linked_size": 36
+    },
+    {
+      "name": "_InterruptFxTag",
+      "start": "8C014466",
+      "end": "8C01448E",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 39,
+      "linked_at": "8C01442A",
+      "linked_size": 40
+    },
+    {
+      "name": "_ConvertTag",
+      "start": "8C01448E",
+      "end": "8C0144BA",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C014452",
+      "linked_size": 44
+    },
+    {
+      "name": "AudPlaySong",
+      "start": "8C0144BA",
+      "end": "8C01450E",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C01447E",
+      "linked_size": 84
+    },
+    {
+      "name": "AudKillSong",
+      "start": "8C01450E",
+      "end": "8C014552",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 68,
+      "linked_at": "8C0144D2",
+      "linked_size": 68
+    },
+    {
+      "name": "AudPlayEffect",
+      "start": "8C014552",
+      "end": "8C014604",
+      "size": 178,
+      "status": "differs",
+      "diff_bytes": 174,
+      "linked_at": "8C014516",
+      "linked_size": 238
+    },
+    {
+      "name": "AudPlayEffectVP",
+      "start": "8C014644",
+      "end": "8C01473A",
+      "size": 246,
+      "status": "differs",
+      "diff_bytes": 243,
+      "linked_at": "8C014604",
+      "linked_size": 246
+    },
+    {
+      "name": "AudEffectPlaying",
+      "start": "8C01473A",
+      "end": "8C0147AE",
+      "size": 116,
+      "status": "differs",
+      "diff_bytes": 115,
+      "linked_at": "8C0146FA",
+      "linked_size": 118
+    },
+    {
+      "name": "_AudChangeEffect",
+      "start": "8C0147AE",
+      "end": "8C0148B8",
+      "size": 266,
+      "status": "differs",
+      "diff_bytes": 262,
+      "linked_at": "8C014770",
+      "linked_size": 272
+    },
+    {
+      "name": "AudChangeEffectVol",
+      "start": "8C0148B8",
+      "end": "8C014922",
+      "size": 106,
+      "status": "differs",
+      "diff_bytes": 103,
+      "linked_at": "8C014880",
+      "linked_size": 104
+    },
+    {
+      "name": "func_8C014922",
+      "start": "8C014922",
+      "end": "8C014992",
+      "size": 112,
+      "status": "differs",
+      "diff_bytes": 111,
+      "linked_at": "8C0148E8",
+      "linked_size": 106
+    },
+    {
+      "name": "func_8C014992",
+      "start": "8C014992",
+      "end": "8C014A02",
+      "size": 112,
+      "status": "differs",
+      "diff_bytes": 108,
+      "linked_at": "8C014952",
+      "linked_size": 106
+    },
+    {
+      "name": "AudChangeEffectPitch",
+      "start": "8C014A02",
+      "end": "8C014A58",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C0149BC",
+      "linked_size": 104
+    },
+    {
+      "name": "AudStopEffect",
+      "start": "8C014A68",
+      "end": "8C014ADC",
+      "size": 116,
+      "status": "differs",
+      "diff_bytes": 113,
+      "linked_at": "8C014A24",
+      "linked_size": 120
+    },
+    {
+      "name": "AudStopAllEffects",
+      "start": "8C014ADC",
+      "end": "8C014B20",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 65,
+      "linked_at": "8C014A9C",
+      "linked_size": 68
+    },
+    {
+      "name": "AudPauseAllEffects",
+      "start": "8C014B20",
+      "end": "8C014B64",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 65,
+      "linked_at": "8C014AE0",
+      "linked_size": 68
+    },
+    {
+      "name": "AudResumeAllEffects",
+      "start": "8C014B64",
+      "end": "8C014BA8",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 66,
+      "linked_at": "8C014B24",
+      "linked_size": 68
+    },
+    {
+      "name": "_WeightedPriority",
+      "start": "8C014BA8",
+      "end": "8C014C14",
+      "size": 108,
+      "status": "moved",
+      "diff_bytes": 104,
+      "linked_at": "8C014B68",
+      "linked_size": 108
+    },
+    {
+      "name": "_InsertSorted",
+      "start": "8C014C14",
+      "end": "8C014C34",
+      "size": 32,
+      "status": "moved",
+      "diff_bytes": 32,
+      "linked_at": "8C014BD4",
+      "linked_size": 32
+    },
+    {
+      "name": "_OrderFx",
+      "start": "8C014C34",
+      "end": "8C014C40",
+      "size": 12,
+      "status": "moved",
+      "diff_bytes": 11,
+      "linked_at": "8C014BF4",
+      "linked_size": 52
+    },
+    {
+      "name": "_UpdateFx",
+      "start": "8C014C68",
+      "end": "8C014D62",
+      "size": 250,
+      "status": "differs",
+      "diff_bytes": 246,
+      "linked_at": "8C014C28",
+      "linked_size": 220
+    },
+    {
+      "name": "_ProcessPriorities",
+      "start": "8C014D62",
+      "end": "8C014EFA",
+      "size": 408,
+      "status": "differs",
+      "diff_bytes": 405,
+      "linked_at": "8C014D04",
+      "linked_size": 416
+    },
+    {
+      "name": "_AudSetMasterVol",
+      "start": "8C014EFA",
+      "end": "8C014F86",
+      "size": 140,
+      "status": "differs",
+      "diff_bytes": 137,
+      "linked_at": "8C014EA4",
+      "linked_size": 140
+    },
+    {
+      "name": "AudSetFxVol",
+      "start": "8C014F86",
+      "end": "8C014F8C",
+      "size": 6,
+      "status": "moved",
+      "diff_bytes": 6,
+      "linked_at": "8C014F30",
+      "linked_size": 6
+    },
+    {
+      "name": "AudSetMusicVol",
+      "start": "8C014F8C",
+      "end": "8C014F92",
+      "size": 6,
+      "status": "moved",
+      "diff_bytes": 6,
+      "linked_at": "8C014F36",
+      "linked_size": 6
+    },
+    {
+      "name": "AudMono",
+      "start": "8C014F92",
+      "end": "8C014FE0",
+      "size": 78,
+      "status": "differs",
+      "diff_bytes": 76,
+      "linked_at": "8C014F3C",
+      "linked_size": 78
+    },
+    {
+      "name": "_NewListener",
+      "start": "8C014FE0",
+      "end": "8C014FFE",
+      "size": 30,
+      "status": "differs",
+      "diff_bytes": 29,
+      "linked_at": "8C014F8A",
+      "linked_size": 28
+    },
+    {
+      "name": "_FreeListener",
+      "start": "8C014FFE",
+      "end": "8C01502C",
+      "size": 46,
+      "status": "differs",
+      "diff_bytes": 46,
+      "linked_at": "8C014FA6",
+      "linked_size": 46
+    },
+    {
+      "name": "_ValidateListener",
+      "start": "8C01502C",
+      "end": "8C01504E",
+      "size": 34,
+      "status": "differs",
+      "diff_bytes": 34,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_NewEmitter",
+      "start": "8C01504E",
+      "end": "8C015076",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 40,
+      "linked_at": "8C014FD4",
+      "linked_size": 40
+    },
+    {
+      "name": "_FreeEmitter",
+      "start": "8C015076",
+      "end": "8C0150A8",
+      "size": 50,
+      "status": "differs",
+      "diff_bytes": 49,
+      "linked_at": "8C014FFC",
+      "linked_size": 116
+    },
+    {
+      "name": "_ValidateEmitter",
+      "start": "8C0150F4",
+      "end": "8C015116",
+      "size": 34,
+      "status": "differs",
+      "diff_bytes": 34,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "AudInit3D",
+      "start": "8C015116",
+      "end": "8C015236",
+      "size": 288,
+      "status": "differs",
+      "diff_bytes": 284,
+      "linked_at": "8C015070",
+      "linked_size": 288
+    },
+    {
+      "name": "func_8C015236",
+      "start": "8C015236",
+      "end": "8C015266",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C015190",
+      "linked_size": 48
+    },
+    {
+      "name": "AudAddListener",
+      "start": "8C015266",
+      "end": "8C015332",
+      "size": 204,
+      "status": "differs",
+      "diff_bytes": 203,
+      "linked_at": "8C0151C0",
+      "linked_size": 204
+    },
+    {
+      "name": "AudRemoveListener",
+      "start": "8C015332",
+      "end": "8C01537C",
+      "size": 74,
+      "status": "differs",
+      "diff_bytes": 71,
+      "linked_at": "8C01528C",
+      "linked_size": 172
+    },
+    {
+      "name": "AudUpdateListener",
+      "start": "8C0153D8",
+      "end": "8C01548E",
+      "size": 182,
+      "status": "differs",
+      "diff_bytes": 171,
+      "linked_at": "8C015338",
+      "linked_size": 186
+    },
+    {
+      "name": "AudEmitEffect",
+      "start": "8C01548E",
+      "end": "8C015618",
+      "size": 394,
+      "status": "differs",
+      "diff_bytes": 390,
+      "linked_at": "8C0153F2",
+      "linked_size": 446
+    },
+    {
+      "name": "AudStopEmitter",
+      "start": "8C015618",
+      "end": "8C0156CC",
+      "size": 180,
+      "status": "differs",
+      "diff_bytes": 179,
+      "linked_at": "8C0155B0",
+      "linked_size": 120
+    },
+    {
+      "name": "AudEmitterPlaying",
+      "start": "8C0156CC",
+      "end": "8C01574C",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 118,
+      "linked_at": "8C015628",
+      "linked_size": 124
+    },
+    {
+      "name": "AudUpdateEmitter",
+      "start": "8C01574C",
+      "end": "8C0157E8",
+      "size": 156,
+      "status": "differs",
+      "diff_bytes": 155,
+      "linked_at": "8C0156A4",
+      "linked_size": 154
+    },
+    {
+      "name": "_ProcessEmitters",
+      "start": "8C0157E8",
+      "end": "8C0158AE",
+      "size": 198,
+      "status": "differs",
+      "diff_bytes": 194,
+      "linked_at": "8C01573E",
+      "linked_size": 226
+    },
+    {
+      "name": "_UpdateEmitter",
+      "start": "8C0158D4",
+      "end": "8C015B80",
+      "size": 684,
+      "status": "differs",
+      "diff_bytes": 668,
+      "linked_at": "8C015820",
+      "linked_size": 494
+    },
+    {
+      "name": "_NewSequence",
+      "start": "8C015B8C",
+      "end": "8C015BDC",
+      "size": 80,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C015A0E",
+      "linked_size": 80
+    },
+    {
+      "name": "_FreeSequence",
+      "start": "8C015BDC",
+      "end": "8C015C18",
+      "size": 60,
+      "status": "differs",
+      "diff_bytes": 59,
+      "linked_at": "8C015A5E",
+      "linked_size": 56
+    },
+    {
+      "name": "func_8C015C18",
+      "start": "8C015C18",
+      "end": "8C015C40",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 40,
+      "linked_at": "8C015A96",
+      "linked_size": 40
+    },
+    {
+      "name": "AudPlaySequence",
+      "start": "8C015C40",
+      "end": "8C015D58",
+      "size": 280,
+      "status": "differs",
+      "diff_bytes": 280,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C015D58",
+      "start": "8C015D58",
+      "end": "8C015DA2",
+      "size": 74,
+      "status": "missing",
+      "diff_bytes": 74,
+      "linked_at": "8C015ABE",
+      "linked_size": 74
+    },
+    {
+      "name": "func_8C015DA2",
+      "start": "8C015DA2",
+      "end": "8C015DBA",
+      "size": 24,
+      "status": "missing",
+      "diff_bytes": 24,
+      "linked_at": "8C015B08",
+      "linked_size": 24
+    },
+    {
+      "name": "_ProcessSequences",
+      "start": "8C015DBA",
+      "end": "8C015ED8",
+      "size": 286,
+      "status": "missing",
+      "diff_bytes": 286,
+      "linked_at": "8C015B20",
+      "linked_size": 320
+    }
+  ],
+  "segments": [
+    {
+      "kind": "gap",
+      "start": "8C013D4A",
+      "end": "8C013D4E",
+      "exact": false,
+      "built": 4,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "pool",
+      "start": "8C013DA2",
+      "end": "8C013DE0",
+      "exact": false,
+      "built": 62,
+      "diff_bytes": 47
+    },
+    {
+      "kind": "pool",
+      "start": "8C0143B2",
+      "end": "8C0143E8",
+      "exact": false,
+      "built": 54,
+      "diff_bytes": 54
+    },
+    {
+      "kind": "pool",
+      "start": "8C014604",
+      "end": "8C014644",
+      "exact": false,
+      "built": 64,
+      "diff_bytes": 63
+    },
+    {
+      "kind": "pool",
+      "start": "8C014A58",
+      "end": "8C014A68",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "pool",
+      "start": "8C014C40",
+      "end": "8C014C68",
+      "exact": false,
+      "built": 40,
+      "diff_bytes": 40
+    },
+    {
+      "kind": "pool",
+      "start": "8C0150A8",
+      "end": "8C0150F4",
+      "exact": false,
+      "built": 76,
+      "diff_bytes": 76
+    },
+    {
+      "kind": "pool",
+      "start": "8C01537C",
+      "end": "8C0153D8",
+      "exact": false,
+      "built": 92,
+      "diff_bytes": 91
+    },
+    {
+      "kind": "pool",
+      "start": "8C0158AE",
+      "end": "8C0158D4",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "pool",
+      "start": "8C015B80",
+      "end": "8C015B8C",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "pool",
+      "start": "8C015ED8",
+      "end": "8C015EF0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A7A50",
+      "end": "8C0A7B87",
+      "exact": true,
+      "built": 311,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BAD44",
+      "end": "8C0BAD90",
+      "exact": true,
+      "built": 76,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:34:27",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "_AudioEffectPlaying": "8C016B92",
+    "_AudioInitSys": "8C06ADD4",
+    "_AudioPeriodicMaintenance": "8C06AFC4",
+    "_AudioPlayEffect": "8C016B32",
+    "_AudioSetEffectFBPan": "8C016DD8",
+    "_AudioSetEffectLRPan": "8C016D5C",
+    "_AudioSetEffectPitch": "8C016E54",
+    "_AudioSetEffectVolume": "8C016CDA",
+    "_AudioSetMasterVolume": "8C06AF60",
+    "_AudioSetMono": "8C016ED0",
+    "_AudioShutdownSys": "8C06AE46",
+    "_AudioSongPlay": "8C069FD0",
+    "_AudioSongStop": "8C06A0DA",
+    "_AudioStopAllEffects": "8C016C3C",
+    "_AudioStopEffect": "8C016BE6",
+    "_AudioTimeout": "8C06AF30",
+    "_AudioTimeoutPerc": "8C06AF48",
+    "_ClearBST": "8C018CC8",
+    "_DeallocateMemory": "8C040832",
+    "_GetAudioTime": "8C06AEC8",
+    "_HAL_IntLog2": "8C02ECD4",
+    "_InitBST": "8C018CBC",
+    "_InitLL": "8C03A1B8",
+    "_InsertBSTE": "8C018CD0",
+    "_InsertLLE": "8C03A1C8",
+    "_PurgeableMemory": "8C040924",
+    "_RemoveLLE": "8C03A28E",
+    "_SetInterruptMask": "8C010080",
+    "_TB_Vector3Normalize": "8C05B0D4",
+    "_WalkBST": "8C018D36",
+    "__ValidateEmitter": "8C0150F4",
+    "__ValidateListener": "8C01502C",
+    "_gActiveEmitters": "8C123C38",
+    "_gActiveListeners": "8C123C18",
+    "_gActiveSequences": "8C123C64",
+    "_gAudioCommandQueue": "8C122BC4",
+    "_gCalcDoppler": "8C123C50",
+    "_gFreeEmitters": "8C123C28",
+    "_gFreeFxTags": "8C123BD0",
+    "_gFreeListeners": "8C123C08",
+    "_gFreeSequences": "8C123C54",
+    "_gFrontDistance": "8C123C74",
+    "_gInterruptedFxTags": "8C123BF0",
+    "_gMaxMusic": "8C123C4C",
+    "_gMaxSfx": "8C123C48",
+    "_gPlayingFxTags": "8C123BE0",
+    "_gSavedAudioMask": "8C122BC0",
+    "_gSortedFxTagTree": "8C123BC4",
+    "_gSoundSpeed": "8C123C78",
+    "_gStartCmds": "8C1237C4",
+    "_gStopCmds": "8C1239C4",
+    "_gTagMask": "8C123C04",
+    "_gTagShift": "8C123C00"
+  },
+  "starts": {
+    "P": "8C013A40",
+    "C": "8C0A7A50",
+    "D": "8C0BAD44"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C013A40",
+      "length": 8736
+    },
+    {
+      "name": "C",
+      "address": "8C0A7A50",
+      "length": 311
+    },
+    {
+      "name": "D",
+      "address": "8C0BAD44",
+      "length": 76
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 387,
+  "excluded_exact_data_fill": 6,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BAD49",
+      "end": "8C0BAD4C",
+      "reason": "gInited byte atBAD48; next int gSong atBAD4C, targetpool3DAC/3E60"
+    },
+    {
+      "start": "8C0BAD81",
+      "end": "8C0BAD84",
+      "reason": "gStarted byte BAD80 from3AAE..3AB8; next gNumFxPlaying int BAD84 from4DDE"
+    }
+  ],
+  "text_size_delta": -656,
+  "seconds": 2.1
+}

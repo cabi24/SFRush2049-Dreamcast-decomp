@@ -1,0 +1,157 @@
+{
+  "assignments": 17,
+  "completed": 17,
+  "records": [
+    {
+      "unit": "camera",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 1,
+      "source_sha256": "599d911809365f4255608181687a6fb511b5438d0ae8cc7c1c43d0ad7872187a",
+      "compiler_inputs": {
+        "pp\\camera.c": "52ad49ae3cdca3d7d704adceaec74fbfe7f4a7998dc0dd32b2395f28eff47561"
+      },
+      "object_sha256": "add79a7a41000778f483a46929b658c2d573235d4eb3cd01169ba8c4f1bcfa2b",
+      "abs_sha256": "2cc55acb2b0f747a07f79af419166275b374367131bc430377bcb18176d5cd26",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "checkpoint",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 3,
+      "source_sha256": "5ca26415c17d29d394f60f2144b771039c449a9d37f039034c5321c58ca1c425",
+      "compiler_inputs": {
+        "pp\\checkpoint.c": "2c8d2b61656a5d733db59d4eed672dae8b219ef629b7e0b531baa2908881b04d"
+      },
+      "object_sha256": "c746f930b375f115bdadc817ab0c9452dbb5e1510f131ddd5bb1ba90ae509368",
+      "abs_sha256": "9d50a64d91c1fb842dfb00359728f93b91eefcdefdf7852cc596c91b1056c9b6",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "circuit",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 1,
+      "source_sha256": "19ad8562a240a242b28897994913f88d24f51e5f86f81bdc40804a365196b499",
+      "compiler_inputs": {
+        "pp\\circuit.c": "08913b59fe6183053b31c82c2df5e1111db33d32996cafbd0040e0e9d97a5c1c"
+      },
+      "object_sha256": "65042c74e77faf2971f4ab71ec01412477432100a9e1878eef32d741aa0f1a66",
+      "abs_sha256": "0786b986a0fbd57c475219a388b950a96961d7eae3a908c69ed5f196528c5be0",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "collision",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 2,
+      "source_sha256": "de2cc11a9b7da7b8f21ddfe1bac76223e920ce97fa0f1c80e8ab6ed1daf8934a",
+      "compiler_inputs": {
+        "pp\\collision.c": "6f602da5a97aeb978b888b2f1eb9523236cbdbc0e6fd5ef33407a4ee4aca2617"
+      },
+      "object_sha256": "8373c83a7e76968ace53fe5917c43447bcd42a039b253962fc1ac876a979d3b8",
+      "abs_sha256": "edfcaf3e4e90056fa32f2854ac9457590f053a023f213604895010f326f8e7f4",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "controlsys",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 5,
+      "source_sha256": "4c33ed8895d520d8b0fc01f46d426e772a31e58f8140f5a71e93dedfd7880286",
+      "compiler_inputs": {
+        "pp\\controlsys.c": "573cf44da3ed1f4a0308285d256b2763a6d94653b7aca95d59d28e09ec2b7261"
+      },
+      "object_sha256": "c5f7e6f4a2b076f2a81c9449b85b8506eb5a3b8ddeeb68238fdb89e9e2a717bd",
+      "abs_sha256": "dc03990a0d4c4efe65c787d1b28aff6007cda57e780980beb091aaeab885f83e",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "controlscr",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 0,
+      "source_sha256": "8a74a29fe5160b1c4b4c696b72c4f072a16133e9aec224293687b4127018d708",
+      "compiler_inputs": {
+        "pp\\controlscr.c": "6f9bcd25e737248f40a9a36d6696e4af4efd6482745f875af6d08bf8503ee64b"
+      },
+      "object_sha256": "8128074e4e24c872338f7e9f122b23becef207cb65723466f4c1009c25d8dc8e",
+      "abs_sha256": "75a03ff46d2f819035c480ca193008874d36d90e55ced7270b7cb3ff4a9005c3",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "drivsym",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 1,
+      "source_sha256": "d9315eec53f9a94c03f37793b8b3f54c00ade314f8670dac81cd6e3a320337fe",
+      "compiler_inputs": {
+        "pp\\drivsym.c": "df15ee0fcc96ef15fdd44a2e9deee7be34b6979603dd535e2fa9c78782745815"
+      },
+      "object_sha256": "0edb7b4a513692c6ba7ea2c19356033ea8a9d9f443443ba6fe16a7774d1c2127",
+      "abs_sha256": "a32cd3aad5799ed3f7e5e1880835b02c01597180a55b89db10efb7e172f3c7cf",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "fmath",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 25,
+      "source_sha256": "fefb5ca6613845c39b0f3454484d811d1a7e612e96284e49802c1aab2cac595a",
+      "compiler_inputs": {
+        "pp\\fmath.c": "5368e36334657f0bbf66576a5a5204160701ea22cf2a489f1052dc52671489ef"
+      },
+      "object_sha256": "5edb35242c9220e3acdd197e637f5970286aae1f213a2e724076de8781140d2c",
+      "abs_sha256": "4a830416752d828b0ea0f0bc99cb97b2f0dd9a10a3b649447ed9b909f787341e",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    },
+    {
+      "unit": "game",
+      "label": "final",
+      "function_delta": 0,
+      "text_delta": 0,
+      "data_delta": 0,
+      "functions_exact": 4,
+      "source_sha256": "63aaa9b064c7bdd3a29060b0f3129a594f2296b7be06ac789d156c3154dcaa9c",
+      "compiler_inputs": {
+        "pp\\game.c": "cbcd6bd4678e2c50ebbe5af085c4146c1e4a62dc00915eca5a77c35531114167"
+      },
+      "object_sha256": "051cbcedf019666c62ac3c422644689d0d411fdcec43b8415857638187cebb59",
+      "abs_sha256": "fd081f04c6e1d3576bec29ae438aa8ae9dc281fb1d29eb413d96c810e001c18f",
+      "all_old_exact_spans_preserved": true,
+      "all_claimed_exact_functions_raw_rechecked": true
+    }
+  ],
+  "function_delta": 0,
+  "text_delta": 0,
+  "data_delta": 0,
+  "comparison_masks": false,
+  "canonical_outputs_modified": false,
+  "frozen_flags": true,
+  "native_only": true
+}

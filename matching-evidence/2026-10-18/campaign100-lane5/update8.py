@@ -1,0 +1,4 @@
+import json,pathlib
+p=pathlib.Path('matching-evidence/2026-10-18/campaign100-lane5');r=json.loads((p/'tasks.json').read_text());updates={4:('bounded blocker; restored',1,'f=x range alias reduces155 to132 differing bytes; still no strict gain'),5:('inventory blocker; restored',1,'Only one function and already-exact56-byte pool exist; parent notified. Polynomial g/tt1 reuse trial worsened to205 bytes; not a second distinct function/data target.'),6:('bounded blocker; restored',1,'Moving delta array lifetime unchanged290 fixed-address bytes; entry18 bytes late from upstream position helper.'),7:('evidence blocker',0,'StartPathTarget target stack40 vs current8, early initializer/load schedule differs; safe type/source explanation absent, no fabricated stack padding.')}
+for i,(s,n,b) in updates.items():r[i].update(status=s,attempts=n,residual=b)
+(p/'tasks.json').write_text(json.dumps(r,indent=2))

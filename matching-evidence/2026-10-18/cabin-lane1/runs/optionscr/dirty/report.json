@@ -1,0 +1,456 @@
+{
+  "name": "optionscr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/optionscr.c",
+  "source_sha256": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+  "text": [
+    "8C041C34",
+    "8C0435F4"
+  ],
+  "text_bytes": 6592,
+  "exact_text_bytes": 1118,
+  "align_bytes": 0,
+  "data_bytes": 2497,
+  "exact_data_bytes": 2092,
+  "functions_total": 11,
+  "functions_exact": 3,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "updateOptionScreen",
+      "start": "8C041C34",
+      "end": "8C041F4A",
+      "size": 790,
+      "status": "differs",
+      "diff_bytes": 513,
+      "linked_at": "8C041C34",
+      "linked_size": 772
+    },
+    {
+      "name": "initScreen",
+      "start": "8C041F4A",
+      "end": "8C042090",
+      "size": 326,
+      "status": "differs",
+      "diff_bytes": 304,
+      "linked_at": "8C041F38",
+      "linked_size": 326
+    },
+    {
+      "name": "_TitlePane",
+      "start": "8C042090",
+      "end": "8C0421A0",
+      "size": 272,
+      "status": "differs",
+      "diff_bytes": 258,
+      "linked_at": "8C04207E",
+      "linked_size": 274
+    },
+    {
+      "name": "uninitScreen",
+      "start": "8C0421A0",
+      "end": "8C0421E0",
+      "size": 64,
+      "status": "differs",
+      "diff_bytes": 60,
+      "linked_at": "8C042190",
+      "linked_size": 64
+    },
+    {
+      "name": "printOption",
+      "start": "8C0421E0",
+      "end": "8C04226E",
+      "size": 142,
+      "status": "moved",
+      "diff_bytes": 136,
+      "linked_at": "8C0421D0",
+      "linked_size": 216
+    },
+    {
+      "name": "animText",
+      "start": "8C0422B8",
+      "end": "8C04268C",
+      "size": 980,
+      "status": "differs",
+      "diff_bytes": 959,
+      "linked_at": "8C0422A8",
+      "linked_size": 1016
+    },
+    {
+      "name": "animButtonText",
+      "start": "8C0426AC",
+      "end": "8C042A7A",
+      "size": 974,
+      "status": "differs",
+      "diff_bytes": 781,
+      "linked_at": "8C0426A0",
+      "linked_size": 1020
+    },
+    {
+      "name": "calcOptionMenuMaxSize",
+      "start": "8C042A9C",
+      "end": "8C042B22",
+      "size": 134,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C042A9C",
+      "linked_size": 134
+    },
+    {
+      "name": "initButtons",
+      "start": "8C042B22",
+      "end": "8C042E56",
+      "size": 820,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C042B22",
+      "linked_size": 922
+    },
+    {
+      "name": "uninitButtons",
+      "start": "8C042EBC",
+      "end": "8C042F34",
+      "size": 120,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C042EBC",
+      "linked_size": 136
+    },
+    {
+      "name": "updateButtons",
+      "start": "8C042F44",
+      "end": "8C0435E0",
+      "size": 1692,
+      "status": "differs",
+      "diff_bytes": 1549,
+      "linked_at": "8C042F44",
+      "linked_size": 1656
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C04226E",
+      "end": "8C0422B8",
+      "exact": false,
+      "built": 74,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C04268C",
+      "end": "8C0426AC",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C042A7A",
+      "end": "8C042A9C",
+      "exact": true,
+      "built": 34,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C042E56",
+      "end": "8C042EBC",
+      "exact": false,
+      "built": 102,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "pool",
+      "start": "8C042F34",
+      "end": "8C042F44",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0435E0",
+      "end": "8C0435F4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC1AC",
+      "end": "8C0AC2DC",
+      "exact": false,
+      "built": 301,
+      "diff_bytes": 5
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEECC",
+      "end": "8C0BF75D",
+      "exact": true,
+      "built": 2193,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T19:44:01",
+  "defines": {
+    "_ChangePaneSize": "8C04481C",
+    "_ClearRushControls": "8C01E8C2",
+    "_HAL_GetTextWidth": "8C02F502",
+    "_HAL_SetFont": "8C02EF96",
+    "_HAL_SetTextDepth": "8C02F226",
+    "_HAL_SetTextTranslucency": "8C02F27E",
+    "_InitPane": "8C044700",
+    "_LoadTextWave": "8C05B164",
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_NewMultiBlit": "8C018B56",
+    "_PlayLRSound": "8C0115A4",
+    "_PlayStartABSound": "8C011586",
+    "_PlayUDSound": "8C0115BE",
+    "_RemoveBlit": "8C0187BA",
+    "_RemovePanes": "8C044B3C",
+    "_SaveGlobals": "8C04BA38",
+    "_ScaleUV": "8C026412",
+    "_SetOptions": "8C041690",
+    "_TB_CenterText": "8C05A708",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_FlashTextColors": "8C05A7FA",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_SetJust": "8C05A73A",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Sprintf": "8C05AC1E",
+    "_WPitchUV": "8C026524",
+    "_WRollUV": "8C0265D2",
+    "_ZOID_ProjectWindow": "8C069C14",
+    "_ZOID_RemoveObject": "8C068B9E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_ZOID_SetTexture": "8C0692F0",
+    "_ZeroCameras": "8C018D98",
+    "__divls": "8C09B680",
+    "_createBG": "8C027320",
+    "_flashColors": "8C0BDDB8",
+    "_gActiveAutoEdges": "8C12C1BC",
+    "_gActiveEdges": "8C12C1B4",
+    "_gAutoEdges": "8C12C1A4",
+    "_gCamera": "8C12B648",
+    "_gContEdges": "8C12C194",
+    "_gControllerData": "8C12C114",
+    "_gFirstOption": "8C14FE50",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameState": "8C0BFD3C",
+    "_gLang": "8C15C988",
+    "_gMenuCount": "8C14FE4E",
+    "_gNumModels": "8C14CB1C",
+    "_gOptionMenuSize": "8C14FE30",
+    "_gOptions": "8C14FDC8",
+    "_gSoftReset": "8C12C200",
+    "_gText": "8C15C98C",
+    "_memcpy": "8C09BD00",
+    "_optionsCursorSpeed": "8C14FE54",
+    "_optionsScrollSpeed": "8C14FE58",
+    "_playerInPause": "8C1503D8",
+    "_removeBG": "8C027824",
+    "_setGameState": "8C05137C",
+    "_setPauseState": "8C04751E",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C041C34",
+    "C": "8C0AC1AC",
+    "D": "8C0BEECC"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C041C34",
+      "length": 6536
+    },
+    {
+      "name": "C",
+      "address": "8C0AC1AC",
+      "length": 301
+    },
+    {
+      "name": "D",
+      "address": "8C0BEECC",
+      "length": 2193
+    }
+  ],
+  "equal_text_bytes_including_fill": 1124,
+  "excluded_exact_text_fill_or_gaps": 6,
+  "equal_data_bytes_including_fill": 2193,
+  "excluded_exact_data_fill": 101,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BEF45",
+      "end": "8C0BEF48",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BEF85",
+      "end": "8C0BEF88",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BEFC5",
+      "end": "8C0BEFC8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF005",
+      "end": "8C0BF008",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF045",
+      "end": "8C0BF048",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF085",
+      "end": "8C0BF088",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF0C5",
+      "end": "8C0BF0C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF105",
+      "end": "8C0BF108",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF145",
+      "end": "8C0BF148",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF185",
+      "end": "8C0BF188",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF1C5",
+      "end": "8C0BF1C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF205",
+      "end": "8C0BF208",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF245",
+      "end": "8C0BF248",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF285",
+      "end": "8C0BF288",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF2C5",
+      "end": "8C0BF2C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF305",
+      "end": "8C0BF308",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF345",
+      "end": "8C0BF348",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF385",
+      "end": "8C0BF388",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF3C5",
+      "end": "8C0BF3C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF405",
+      "end": "8C0BF408",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF445",
+      "end": "8C0BF448",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF485",
+      "end": "8C0BF488",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF4C5",
+      "end": "8C0BF4C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF505",
+      "end": "8C0BF508",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF545",
+      "end": "8C0BF548",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF585",
+      "end": "8C0BF588",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF5C5",
+      "end": "8C0BF5C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF605",
+      "end": "8C0BF608",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF645",
+      "end": "8C0BF648",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF685",
+      "end": "8C0BF688",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF6C5",
+      "end": "8C0BF6C8",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    },
+    {
+      "start": "8C0BF705",
+      "end": "8C0BF708",
+      "reason": "tMenuButton explicit tail pad[3] at+3D in32 stride40 initialized records; target-bound object layout."
+    }
+  ],
+  "text_size_delta": -56,
+  "seconds": 2.3
+}

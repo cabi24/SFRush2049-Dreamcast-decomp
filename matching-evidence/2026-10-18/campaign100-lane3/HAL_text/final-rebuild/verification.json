@@ -1,0 +1,13 @@
+{
+  "unit": "HAL_text",
+  "label": "final-rebuild",
+  "preserved_old_exact_spans": true,
+  "delta_text": 168,
+  "delta_data": 0,
+  "delta_functions": 1,
+  "hashes": {
+    "src\\HAL_text.c": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226",
+    "build\\campaign100-lane3\\HAL_text\\final-rebuild\\obj\\HAL_text.obj": "0dbcaefd636ef5fbe91d692a30f36e5695fab09fdc671860ca996f0cb239060c",
+    "build\\campaign100-lane3\\HAL_text\\final-rebuild\\link\\HAL_text.abs": "78ade79e0c3345ad2db9936bc03c304d2f514d77a1b684008f1caf579ff78d51"
+  }
+}

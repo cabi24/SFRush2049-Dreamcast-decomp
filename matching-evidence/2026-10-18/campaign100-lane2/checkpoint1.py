@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/checkpoint.c');s=p.read_text();a=s.index('void CheckCPs(void)');b=s.index('/* 0x80009dc4',a);part=s[a:b];part=part.replace('        tModelData *m = &model[index];\n        tCarData *gc = &gGameCar[index];\n        float *prev = gPrevPos[index];\n        anon_track_car_a *link = &gLink[index];\n','').replace('m->','model[index].').replace('gc->','gGameCar[index].').replace('prev[','gPrevPos[index][').replace('link->','gLink[index].');p.write_text(s[:a]+part+s[b:])

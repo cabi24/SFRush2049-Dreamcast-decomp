@@ -1,0 +1,66 @@
+{
+  "unit": "game",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 4,
+    "functions_total": 14,
+    "functions_moved": 1,
+    "exact_text_bytes": 528,
+    "equal_text_bytes_including_fill": 528,
+    "text_bytes": 6412,
+    "exact_data_bytes": 163,
+    "source_sha256": "63aaa9b064c7bdd3a29060b0f3129a594f2296b7be06ac789d156c3154dcaa9c"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 0,
+    "functions_total": 14,
+    "functions_moved": 1,
+    "exact_text_bytes": 0,
+    "equal_text_bytes_including_fill": 0,
+    "text_bytes": 6412,
+    "exact_data_bytes": 163,
+    "source_sha256": "d73e7bde579784fbc246d0b649c2a27ead5879ca437697b06127c45edf6570f9"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "GameLoop",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 278
+    },
+    {
+      "name": "OncePerFrame",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 20
+    },
+    {
+      "name": "UpdateFrame",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 76
+    },
+    {
+      "name": "func_8C0279EA",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 154
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 528,
+  "text_bytes_head": 0,
+  "report_consistency": {
+    "report_functions_exact": 4,
+    "dirty_rebuild_functions_exact": 4,
+    "report_exact_text_bytes": 528,
+    "dirty_rebuild_exact_text_bytes": 528,
+    "report_source_sha256": "63aaa9b064c7bdd3a29060b0f3129a594f2296b7be06ac789d156c3154dcaa9c",
+    "dirty_source_sha256": "63aaa9b064c7bdd3a29060b0f3129a594f2296b7be06ac789d156c3154dcaa9c",
+    "match": true
+  },
+  "head_source_sha256": "d73e7bde579784fbc246d0b649c2a27ead5879ca437697b06127c45edf6570f9",
+  "seconds": 5.5
+}

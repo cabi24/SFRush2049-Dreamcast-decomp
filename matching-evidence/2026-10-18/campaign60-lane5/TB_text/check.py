@@ -1,0 +1,2 @@
+import json,pathlib
+p=pathlib.Path('matching-evidence/2026-10-18/campaign60-lane5/TB_text');a=json.loads((p/'baseline.json').read_text());b=json.loads((p/'declaration-order.json').read_text());old={(f['start'],f['end']) for f in a['functions'] if f['status']=='exact'};new={(f['start'],f['end']) for f in b['functions'] if f['status']=='exact'};print('lost',old-new,'added',[(f['name'],f['size']) for f in b['functions'] if f['status']=='exact' and (f['start'],f['end']) not in old])

@@ -1,0 +1,207 @@
+{
+  "name": "skids",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/skids.c",
+  "source_sha256": "cc4ffa3eb432589b195543ec7517df0d4e50fa5ac7ec8465012c471fdb487ed5",
+  "text": [
+    "8C04E880",
+    "8C04F350"
+  ],
+  "text_bytes": 2768,
+  "exact_text_bytes": 2186,
+  "align_bytes": 0,
+  "data_bytes": 20,
+  "exact_data_bytes": 20,
+  "functions_total": 8,
+  "functions_exact": 6,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "_UpdateSkid",
+      "start": "8C04E880",
+      "end": "8C04EAA8",
+      "size": 552,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04E880",
+      "linked_size": 552
+    },
+    {
+      "name": "_GetSkid",
+      "start": "8C04EAA8",
+      "end": "8C04EBCE",
+      "size": 294,
+      "status": "differs",
+      "diff_bytes": 86,
+      "linked_at": "8C04EAA8",
+      "linked_size": 294
+    },
+    {
+      "name": "_StartSkid",
+      "start": "8C04EBCE",
+      "end": "8C04EC7E",
+      "size": 176,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04EBCE",
+      "linked_size": 176
+    },
+    {
+      "name": "_StopSkid",
+      "start": "8C04EC7E",
+      "end": "8C04ECF0",
+      "size": 114,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04EC7E",
+      "linked_size": 146
+    },
+    {
+      "name": "_ContinueSkid",
+      "start": "8C04ED10",
+      "end": "8C04EE56",
+      "size": 326,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04ED10",
+      "linked_size": 336
+    },
+    {
+      "name": "func_8C04EE60",
+      "start": "8C04EE60",
+      "end": "8C04EEAE",
+      "size": 78,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04EE60",
+      "linked_size": 78
+    },
+    {
+      "name": "UpdateSkids",
+      "start": "8C04EEAE",
+      "end": "8C04F21E",
+      "size": 880,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04EEAE",
+      "linked_size": 902
+    },
+    {
+      "name": "AnimateSkids",
+      "start": "8C04F234",
+      "end": "8C04F324",
+      "size": 240,
+      "status": "differs",
+      "diff_bytes": 208,
+      "linked_at": "8C04F234",
+      "linked_size": 280
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C04ECF0",
+      "end": "8C04ED10",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C04EE56",
+      "end": "8C04EE60",
+      "exact": true,
+      "built": 10,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C04F21E",
+      "end": "8C04F234",
+      "exact": true,
+      "built": 22,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C04F324",
+      "end": "8C04F350",
+      "exact": false,
+      "built": 40,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFCF4",
+      "end": "8C0BFD08",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C152654",
+      "end": "8C152F0C",
+      "exact": false,
+      "linked": [
+        "8C152654",
+        "8C153D1C"
+      ]
+    }
+  ],
+  "notes": [
+    "B extent differs from the map"
+  ],
+  "built_at": "2026-10-18T15:02:55",
+  "defines": {
+    "_FreeStatLLE": "8C051400",
+    "_GetStatLLE": "8C0513D8",
+    "_InitStatLL": "8C05138C",
+    "_ZOID_NewPoly": "8C068F28",
+    "_ZOID_RemovePoly": "8C06926C",
+    "_ZOID_UpdatePoly": "8C068FBE",
+    "_direction": "8C0262F2",
+    "_gCamera": "8C12B648",
+    "_gDummyVtx": "8C0C3D94",
+    "_gGameCar": "8C004000",
+    "_gGameState": "8C0BFD3C",
+    "_gSeconds": "8C122548",
+    "_gShadowColor": "8C0C3D90",
+    "_gTexList": "8C15CA38",
+    "_memset": "8C09BE04",
+    "_model": "8C14CBB4",
+    "_surf": "8C158390"
+  },
+  "starts": {
+    "P": "8C04E880",
+    "D": "8C0BFCF4",
+    "B": "8C152654"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C04E880",
+      "length": 2764
+    },
+    {
+      "name": "D",
+      "address": "8C0BFCF4",
+      "length": 20
+    },
+    {
+      "name": "B",
+      "address": "8C152654",
+      "length": 5832
+    }
+  ],
+  "equal_text_bytes_including_fill": 2190,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 20,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -4,
+  "seconds": 1.8
+}

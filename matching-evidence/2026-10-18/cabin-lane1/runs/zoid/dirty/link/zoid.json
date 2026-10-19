@@ -1,0 +1,127 @@
+{
+ "name": "zoid",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT zoid.abs",
+  "FORM A",
+  "START P(8C0686F4)",
+  "START B(8C160860)",
+  "DEFINE _CopyUV(8C02631E)",
+  "DEFINE _ObjHead(8C16D6B0)",
+  "DEFINE _ObjInstanceList(8C160870)",
+  "DEFINE _ZOID_ResetWindows(8C0693C4)",
+  "DEFINE __slow_strcmp1(8C09BB5C)",
+  "DEFINE _gGlobalCameraFacingScale(8C177998)",
+  "DEFINE _gMatrices(8C16D6F4)",
+  "DEFINE _gNumBlitInsts(8C170F34)",
+  "DEFINE _gNumPolyInsts(8C172844)",
+  "DEFINE _gRomObjDefPtrs(8C0BEBE8)",
+  "DEFINE _unitmatrix(8C0BD924)",
+  "DEFINE _zoidlight_func_8C068F0E(8C068F0E)",
+  "PRINT zoid.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\zoid\\dirty\\obj\\zoid.obj",
+   "sha256": "11069d1183fe441d8690c85af376b547d515bd284bb781ae1cedcd865628e858"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C0686F4",
+   "length": 1592
+  },
+  {
+   "name": "B",
+   "address": "8C160860",
+   "length": 16
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C0686F4",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "813fa8a2da11bea57e62c6f692b936a5adc14b085abfd96e5878421c9b0d814a"
+  },
+  {
+   "section": "P",
+   "address": "8C0687EA",
+   "size": 32,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "737046775b5a31ed6760d9c8265d3a1d6f868791e9f6135901c544f5ada9378c"
+  },
+  {
+   "section": "P",
+   "address": "8C06880C",
+   "size": 56,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "701fd9b9423fbfaaf2c94f5713968a462f1de377625090deb783943d1e07a70d"
+  },
+  {
+   "section": "P",
+   "address": "8C068844",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "269a1a5b69482e3e04ac0970d389eecd1758f73c6d3e4ebeec2350b724f048e0"
+  },
+  {
+   "section": "P",
+   "address": "8C06893A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "9fa69b68119096aafd142dd066cda7d18e9d1859b37f3779bdf549eecbdc5a30"
+  },
+  {
+   "section": "P",
+   "address": "8C068A30",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 6,
+   "first_diff_offset": 112,
+   "sha256": "a42545f86ef4f464da3ee5bbfce2365e4f8ee11328ec003bbcdf237ff0436448"
+  },
+  {
+   "section": "P",
+   "address": "8C068B26",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 40,
+   "first_diff_offset": 39,
+   "sha256": "5aa5969c90e4ae87dda4256935bd3ed069cb6d3ee1ecf775490490ee9ce5fd25"
+  },
+  {
+   "section": "P",
+   "address": "8C068C1C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 10,
+   "first_diff_offset": 176,
+   "sha256": "0f36379a01392f62f17325a2e2d0ed8afaae1c80fb7e89186e5233531dac8a6b"
+  },
+  {
+   "section": "P",
+   "address": "8C068D12",
+   "size": 26,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "395ec7c5d1e2458b070e819133271186b719fe00f08677e93502085d1613a9cc"
+  }
+ ],
+ "all_exact": false
+}

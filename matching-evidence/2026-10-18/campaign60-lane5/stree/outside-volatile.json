@@ -1,0 +1,427 @@
+{
+  "name": "stree",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/stree.c",
+  "source_sha256": "597441ac2530084eb2b131230e5cdd6f943e1d4fd1fd1fdf4b5fbfca691ffc0d",
+  "text": [
+    "8C05145C",
+    "8C054CC8"
+  ],
+  "text_bytes": 14444,
+  "exact_text_bytes": 58,
+  "align_bytes": 0,
+  "data_bytes": 72,
+  "exact_data_bytes": 72,
+  "functions_total": 25,
+  "functions_exact": 1,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitSTree",
+      "start": "8C05145C",
+      "end": "8C0514E4",
+      "size": 136,
+      "status": "differs",
+      "diff_bytes": 10,
+      "linked_at": "8C05145C",
+      "linked_size": 136
+    },
+    {
+      "name": "mats2fcopy",
+      "start": "8C0514E4",
+      "end": "8C051570",
+      "size": 140,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C0514E4",
+      "linked_size": 140
+    },
+    {
+      "name": "matf2scopy",
+      "start": "8C051570",
+      "end": "8C0515F0",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C051570",
+      "linked_size": 128
+    },
+    {
+      "name": "FVecInterp",
+      "start": "8C0515F0",
+      "end": "8C05162A",
+      "size": 58,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0515F0",
+      "linked_size": 58
+    },
+    {
+      "name": "downleaf",
+      "start": "8C05162A",
+      "end": "8C0516A4",
+      "size": 122,
+      "status": "differs",
+      "diff_bytes": 5,
+      "linked_at": "8C05162A",
+      "linked_size": 122
+    },
+    {
+      "name": "updownleaf",
+      "start": "8C0516A4",
+      "end": "8C05170E",
+      "size": 106,
+      "status": "differs",
+      "diff_bytes": 100,
+      "linked_at": "8C0516A4",
+      "linked_size": 160
+    },
+    {
+      "name": "DecodeSlist",
+      "start": "8C051740",
+      "end": "8C051794",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C051744",
+      "linked_size": 84
+    },
+    {
+      "name": "DecodeVlist",
+      "start": "8C051794",
+      "end": "8C0517F8",
+      "size": 100,
+      "status": "differs",
+      "diff_bytes": 93,
+      "linked_at": "8C051798",
+      "linked_size": 98
+    },
+    {
+      "name": "surfpos",
+      "start": "8C0517F8",
+      "end": "8C051832",
+      "size": 58,
+      "status": "differs",
+      "diff_bytes": 56,
+      "linked_at": "8C0517FA",
+      "linked_size": 58
+    },
+    {
+      "name": "VectorToSurfEdge",
+      "start": "8C051832",
+      "end": "8C0518D2",
+      "size": 160,
+      "status": "differs",
+      "diff_bytes": 121,
+      "linked_at": "8C051834",
+      "linked_size": 152
+    },
+    {
+      "name": "PointInSurf",
+      "start": "8C0518D2",
+      "end": "8C051D9C",
+      "size": 1226,
+      "status": "differs",
+      "diff_bytes": 1179,
+      "linked_at": "8C0518CC",
+      "linked_size": 1196
+    },
+    {
+      "name": "CylinderInSurf",
+      "start": "8C051DB0",
+      "end": "8C0522D4",
+      "size": 1316,
+      "status": "differs",
+      "diff_bytes": 1292,
+      "linked_at": "8C051D78",
+      "linked_size": 1200
+    },
+    {
+      "name": "fPathInterp",
+      "start": "8C0522D4",
+      "end": "8C052652",
+      "size": 894,
+      "status": "differs",
+      "diff_bytes": 872,
+      "linked_at": "8C052228",
+      "linked_size": 834
+    },
+    {
+      "name": "fHalfPipeInterp",
+      "start": "8C052652",
+      "end": "8C05286C",
+      "size": 538,
+      "status": "differs",
+      "diff_bytes": 523,
+      "linked_at": "8C05256A",
+      "linked_size": 574
+    },
+    {
+      "name": "TireSurf",
+      "start": "8C052884",
+      "end": "8C052CA4",
+      "size": 1056,
+      "status": "differs",
+      "diff_bytes": 1042,
+      "linked_at": "8C0527A8",
+      "linked_size": 1076
+    },
+    {
+      "name": "RoadPosition",
+      "start": "8C052CA4",
+      "end": "8C052FD4",
+      "size": 816,
+      "status": "differs",
+      "diff_bytes": 795,
+      "linked_at": "8C052BDC",
+      "linked_size": 832
+    },
+    {
+      "name": "CameraCollision",
+      "start": "8C052FDC",
+      "end": "8C05307E",
+      "size": 162,
+      "status": "differs",
+      "diff_bytes": 162,
+      "linked_at": "8C052F1C",
+      "linked_size": 162
+    },
+    {
+      "name": "ShotToWorldCollision",
+      "start": "8C05307E",
+      "end": "8C05378E",
+      "size": 1808,
+      "status": "differs",
+      "diff_bytes": 1769,
+      "linked_at": "8C052FBE",
+      "linked_size": 2006
+    },
+    {
+      "name": "MoveCollisionObject",
+      "start": "8C05378E",
+      "end": "8C05394A",
+      "size": 444,
+      "status": "differs",
+      "diff_bytes": 428,
+      "linked_at": "8C053794",
+      "linked_size": 376
+    },
+    {
+      "name": "RotateCollisionObject",
+      "start": "8C05395C",
+      "end": "8C053BD0",
+      "size": 628,
+      "status": "differs",
+      "diff_bytes": 625,
+      "linked_at": "8C05390C",
+      "linked_size": 562
+    },
+    {
+      "name": "ResetCollisionObject",
+      "start": "8C053BD0",
+      "end": "8C053C50",
+      "size": 128,
+      "status": "differs",
+      "diff_bytes": 128,
+      "linked_at": "8C053B3E",
+      "linked_size": 128
+    },
+    {
+      "name": "RemoveCollisionObject",
+      "start": "8C053C50",
+      "end": "8C053C96",
+      "size": 70,
+      "status": "differs",
+      "diff_bytes": 70,
+      "linked_at": "8C053BBE",
+      "linked_size": 94
+    },
+    {
+      "name": "CarApplyCollision",
+      "start": "8C053CAC",
+      "end": "8C054096",
+      "size": 1002,
+      "status": "differs",
+      "diff_bytes": 966,
+      "linked_at": "8C053C1C",
+      "linked_size": 1020
+    },
+    {
+      "name": "CollideCarBodyAgainstSurface",
+      "start": "8C0540B0",
+      "end": "8C05480C",
+      "size": 1884,
+      "status": "differs",
+      "diff_bytes": 1841,
+      "linked_at": "8C054018",
+      "linked_size": 1908
+    },
+    {
+      "name": "CollideCarBody",
+      "start": "8C054820",
+      "end": "8C054CC2",
+      "size": 1186,
+      "status": "differs",
+      "diff_bytes": 1173,
+      "linked_at": "8C05478C",
+      "linked_size": 1190
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05170E",
+      "end": "8C051740",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 19
+    },
+    {
+      "kind": "pool",
+      "start": "8C051D9C",
+      "end": "8C051DB0",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "pool",
+      "start": "8C05286C",
+      "end": "8C052884",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C052FD4",
+      "end": "8C052FDC",
+      "exact": false,
+      "built": 8,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "pool",
+      "start": "8C05394A",
+      "end": "8C05395C",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C053C96",
+      "end": "8C053CAC",
+      "exact": false,
+      "built": 22,
+      "diff_bytes": 22
+    },
+    {
+      "kind": "pool",
+      "start": "8C054096",
+      "end": "8C0540B0",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C05480C",
+      "end": "8C054820",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 19
+    },
+    {
+      "kind": "pool",
+      "start": "8C054CC2",
+      "end": "8C054CC8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 6
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA3C",
+      "end": "8C0ACA6C",
+      "exact": true,
+      "built": 48,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFD48",
+      "end": "8C0BFD60",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C158388",
+      "end": "8C1583B0",
+      "exact": true,
+      "linked": [
+        "8C158388",
+        "8C1583B0"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:31:46",
+  "defines": {
+    "_AbortCar": "8C04A4DC",
+    "_AddBattlePoint": "8C034C10",
+    "_BodyVector": "8C026B00",
+    "_CopyUV": "8C02631E",
+    "_MulUVS": "8C0269D2",
+    "_NormalVector": "8C026C44",
+    "_PlayGameSound": "8C011606",
+    "_WorldVector": "8C026B8C",
+    "_fpitch": "8C0268B0",
+    "_froll": "8C026970",
+    "_gGameCar": "8C004000",
+    "_gLink": "8C12C5A4",
+    "_memcpy": "8C09BD00",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C05145C",
+    "C": "8C0ACA3C",
+    "D": "8C0BFD48",
+    "B": "8C158388"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C05145C",
+      "length": 14294
+    },
+    {
+      "name": "C",
+      "address": "8C0ACA3C",
+      "length": 48
+    },
+    {
+      "name": "D",
+      "address": "8C0BFD48",
+      "length": 24
+    },
+    {
+      "name": "B",
+      "address": "8C158388",
+      "length": 40
+    }
+  ],
+  "equal_text_bytes_including_fill": 58,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 72,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -150,
+  "seconds": 2.2
+}

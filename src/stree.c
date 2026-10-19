@@ -123,7 +123,8 @@ streetyp *updownleaf(streetyp *tp, signed short posh, signed short posv, signed 
     signed short outside;
     if (!tp) tp = stree;
 again:
-    if ((outside = (posh >= tp->maxh || posh < tp->minh || posv >= tp->maxv || posv < tp->minv)) != 0) {
+    outside = (posh >= tp->maxh || posh < tp->minh || posv >= tp->maxv || posv < tp->minv);
+    if (outside) {
         if (tp->parent == -1) return 0;
         tp = &stree[tp->parent];
         goto again;

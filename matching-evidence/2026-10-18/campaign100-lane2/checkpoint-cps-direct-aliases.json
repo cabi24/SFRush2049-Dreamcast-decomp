@@ -1,0 +1,225 @@
+{
+  "name": "checkpoint",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/checkpoint.c",
+  "source_sha256": "42dcd4850aaa05221403b8c0978b429313d61c91011745a0c3971066e417c745",
+  "text": [
+    "8C01BAF4",
+    "8C01C554"
+  ],
+  "text_bytes": 2656,
+  "exact_text_bytes": 118,
+  "align_bytes": 0,
+  "data_bytes": 24,
+  "exact_data_bytes": 24,
+  "functions_total": 8,
+  "functions_exact": 3,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "InitCheckpointData",
+      "start": "8C01BAF4",
+      "end": "8C01BB02",
+      "size": 14,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01BAF4",
+      "linked_size": 14
+    },
+    {
+      "name": "InitCPS",
+      "start": "8C01BB02",
+      "end": "8C01BB12",
+      "size": 16,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01BB02",
+      "linked_size": 16
+    },
+    {
+      "name": "InitCPTime",
+      "start": "8C01BB12",
+      "end": "8C01BB60",
+      "size": 78,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01BB12",
+      "linked_size": 480
+    },
+    {
+      "name": "PlaceUnlockedCars",
+      "start": "8C01BB60",
+      "end": "8C01BCE8",
+      "size": 392,
+      "status": "differs",
+      "diff_bytes": 128,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "CheckCPs",
+      "start": "8C01BCF2",
+      "end": "8C01BFCA",
+      "size": 728,
+      "status": "differs",
+      "diff_bytes": 657,
+      "linked_at": "8C01BCF2",
+      "linked_size": 844
+    },
+    {
+      "name": "PassedCP",
+      "start": "8C01C008",
+      "end": "8C01C286",
+      "size": 638,
+      "status": "differs",
+      "diff_bytes": 622,
+      "linked_at": "8C01C03E",
+      "linked_size": 650
+    },
+    {
+      "name": "CarReportsGameOver",
+      "start": "8C01C294",
+      "end": "8C01C4F8",
+      "size": 612,
+      "status": "differs",
+      "diff_bytes": 598,
+      "linked_at": "8C01C2C8",
+      "linked_size": 652
+    },
+    {
+      "name": "CalcRaceTime",
+      "start": "8C01C518",
+      "end": "8C01C544",
+      "size": 44,
+      "status": "moved",
+      "diff_bytes": 43,
+      "linked_at": "8C01C554",
+      "linked_size": 60
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01BCE8",
+      "end": "8C01BCF2",
+      "exact": true,
+      "built": 10,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01BFCA",
+      "end": "8C01C008",
+      "exact": false,
+      "built": 62,
+      "diff_bytes": 52
+    },
+    {
+      "kind": "pool",
+      "start": "8C01C286",
+      "end": "8C01C294",
+      "exact": false,
+      "built": 14,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "pool",
+      "start": "8C01C4F8",
+      "end": "8C01C518",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C01C544",
+      "end": "8C01C554",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 13
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BC248",
+      "end": "8C0BC260",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12BAB4",
+      "end": "8C12BE4C",
+      "exact": true,
+      "linked": [
+        "8C12BAB4",
+        "8C12BE4C"
+      ]
+    }
+  ],
+  "notes": [
+    "60 built bytes fall outside the mapped ranges (first 8C01C554, last 8C01C58F)"
+  ],
+  "built_at": "2026-10-18T15:57:56",
+  "defines": {
+    "_AddCountdownTime": "8C010194",
+    "_AudPlaySequence": "8C015C40",
+    "_FindMaxpathIntervals": "8C03B23A",
+    "_GetCountdownTimeRemaining": "8C0101A8",
+    "_GetNextCheckpoint": "8C045BDA",
+    "_PlayGameSound": "8C011606",
+    "_ReadCheckpointData": "8C04500C",
+    "_RecordLap": "8C02C4E2",
+    "_ShowCheckpointTime": "8C038F7E",
+    "_finish_cam": "8C0BB240",
+    "_finish_cam_stime": "8C0BB228",
+    "_gEndGame": "8C12C64E",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameCar": "8C004000",
+    "_gGameState": "8C0BFD3C",
+    "_gLapDistance": "8C14C5CC",
+    "_gLink": "8C12C5A4",
+    "_gNumActiveCars": "8C14CB86",
+    "_gNumCars": "8C14CB84",
+    "_gNumLaps": "8C12C654",
+    "_gNumPlayers": "8C14CBB0",
+    "_gPlayers": "8C006000",
+    "_gRace": "8C12C628",
+    "_gSeconds": "8C122548",
+    "_gTrackNum": "8C15C9C0",
+    "_magnitude": "8C02628A",
+    "_model": "8C14CBB4",
+    "_num_humans": "8C14CB80"
+  },
+  "starts": {
+    "P": "8C01BAF4",
+    "D": "8C0BC248",
+    "B": "8C12BAB4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01BAF4",
+      "length": 2716
+    },
+    {
+      "name": "D",
+      "address": "8C0BC248",
+      "length": 24
+    },
+    {
+      "name": "B",
+      "address": "8C12BAB4",
+      "length": 920
+    }
+  ],
+  "equal_text_bytes_including_fill": 118,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 24,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 60,
+  "seconds": 1.9
+}

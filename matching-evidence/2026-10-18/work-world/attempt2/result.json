@@ -1,0 +1,126 @@
+{
+  "name": "world",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/world.c",
+  "source_sha256": "c6ea83ead83027cdb4019d606d76cc3fe6ddefb50e5ce3086f3123efe86dd09c",
+  "text": [
+    "8C065C78",
+    "8C065F2C"
+  ],
+  "text_bytes": 692,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 6,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "NewWorldObject",
+      "start": "8C065C78",
+      "end": "8C065DB0",
+      "size": 312,
+      "status": "differs",
+      "diff_bytes": 300,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "worldcmp",
+      "start": "8C065DB0",
+      "end": "8C065DCA",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 25,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "FindWorld",
+      "start": "8C065DCA",
+      "end": "8C065DFA",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 47,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "NewWorld",
+      "start": "8C065DFA",
+      "end": "8C065E2A",
+      "size": 48,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C065DF2",
+      "linked_size": 48
+    },
+    {
+      "name": "FindWorldGroup",
+      "start": "8C065E2A",
+      "end": "8C065ED6",
+      "size": 172,
+      "status": "moved",
+      "diff_bytes": 159,
+      "linked_at": "8C065E22",
+      "linked_size": 172
+    },
+    {
+      "name": "WorldClear",
+      "start": "8C065ED6",
+      "end": "8C065EE2",
+      "size": 12,
+      "status": "moved",
+      "diff_bytes": 12,
+      "linked_at": "8C065ECE",
+      "linked_size": 86
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C065EE2",
+      "end": "8C065F2C",
+      "exact": false,
+      "built": 66,
+      "diff_bytes": 57
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T14:29:56",
+  "defines": {
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_NewObjectCam": "8C03D0A2",
+    "_SetupTarget": "8C0576F2",
+    "_WorldBase": "8C15FF70",
+    "_WorldTable": "8C15FF28",
+    "_Worlddlidx": "8C15FF74",
+    "__slow_strcmp1": "8C09BB5C",
+    "__slow_strcpy": "8C09BB0C",
+    "_bsearch": "8C09BC04",
+    "_cur_world_obj": "8C15FF78",
+    "_func_8C05145C": "8C05145C",
+    "_func_8C0686F0": "8C0686F0",
+    "_func_8C0687B6": "8C0687B6",
+    "_gGameState": "8C0BFD3C",
+    "_gNumModels": "8C14CB1C",
+    "_gWorldData": "8C15FF24"
+  },
+  "starts": {
+    "P": "8C065C78"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C065C78",
+      "length": 684
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -8,
+  "seconds": 2.3
+}

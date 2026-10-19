@@ -1,0 +1,186 @@
+{
+  "unit": "fmath",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 25,
+    "functions_total": 31,
+    "functions_moved": 3,
+    "exact_text_bytes": 2508,
+    "equal_text_bytes_including_fill": 2508,
+    "text_bytes": 3820,
+    "exact_data_bytes": 72,
+    "source_sha256": "fefb5ca6613845c39b0f3454484d811d1a7e612e96284e49802c1aab2cac595a"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 31,
+    "functions_moved": 23,
+    "exact_text_bytes": 28,
+    "equal_text_bytes_including_fill": 28,
+    "text_bytes": 3820,
+    "exact_data_bytes": 72,
+    "source_sha256": "1ba1d9734a99231748b1ea2ef282a6ead7bd8e21db95bf2c10095a81a267c723"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "BodyVector",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 94
+    },
+    {
+      "name": "BodyY",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 30
+    },
+    {
+      "name": "CopyUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 70
+    },
+    {
+      "name": "MulUVS",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 302
+    },
+    {
+      "name": "PitchUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 180
+    },
+    {
+      "name": "RollUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 168
+    },
+    {
+      "name": "RotateUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 38
+    },
+    {
+      "name": "ScaleUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 98
+    },
+    {
+      "name": "ScaleUVXYZ",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 110
+    },
+    {
+      "name": "TransposeUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 64
+    },
+    {
+      "name": "U64WorldVector",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 96
+    },
+    {
+      "name": "WPitchUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 174
+    },
+    {
+      "name": "WRollUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 162
+    },
+    {
+      "name": "WYawUV",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 156
+    },
+    {
+      "name": "WorldVector",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 88
+    },
+    {
+      "name": "YawUV",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 162
+    },
+    {
+      "name": "direction",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 44
+    },
+    {
+      "name": "fpitch",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 100
+    },
+    {
+      "name": "froll",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 98
+    },
+    {
+      "name": "func_8C026278",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 18
+    },
+    {
+      "name": "func_8C0262D2",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 18
+    },
+    {
+      "name": "func_8C0262E4",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 14
+    },
+    {
+      "name": "fyaw",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 92
+    },
+    {
+      "name": "invmagnitude",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 44
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 2508,
+  "text_bytes_head": 28,
+  "report_consistency": {
+    "report_functions_exact": 25,
+    "dirty_rebuild_functions_exact": 25,
+    "report_exact_text_bytes": 2508,
+    "dirty_rebuild_exact_text_bytes": 2508,
+    "report_source_sha256": "fefb5ca6613845c39b0f3454484d811d1a7e612e96284e49802c1aab2cac595a",
+    "dirty_source_sha256": "fefb5ca6613845c39b0f3454484d811d1a7e612e96284e49802c1aab2cac595a",
+    "match": true
+  },
+  "head_source_sha256": "1ba1d9734a99231748b1ea2ef282a6ead7bd8e21db95bf2c10095a81a267c723",
+  "seconds": 5.3
+}

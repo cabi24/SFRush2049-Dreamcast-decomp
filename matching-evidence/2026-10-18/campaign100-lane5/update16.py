@@ -1,0 +1,4 @@
+import json,pathlib
+p=pathlib.Path('matching-evidence/2026-10-18/campaign100-lane5');r=json.loads((p/'tasks.json').read_text());updates={12:('bounded blocker; restored',1,'Separate menu increment changes downstream placement4 bytes, no exact gain; init begins16 bytes early from updateVideoScreen.'),13:('bounded blocker; restored',1,'Zero-local variant lowers73 to69 differing bytes but remains26 bytes early. Initial guessed tPane cast failed2225; uncast pointer failed2222; void-pointer cast compiled.'),14:('bounded blocker; restored',1,'Object-index declaration order unchanged12 byte register selection/scheduling residual.'),15:('bounded blocker; restored',2,'Index-first initializer and register pointer unchanged16 byte register-selection residual; target reuses incoming r4 as visuals pointer.')}
+for i,(s,n,b) in updates.items():r[i].update(status=s,attempts=n,residual=b)
+(p/'tasks.json').write_text(json.dumps(r,indent=2))

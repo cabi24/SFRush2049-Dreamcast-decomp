@@ -1,0 +1,77 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT zoidpoly.abs
+FORM A
+START P(8C068F28)
+START B(8C172844)
+DEFINE _gMirrorWaves(8C15FA14)
+DEFINE _gTexDefPtrs(8C14C71C)
+PRINT zoidpoly.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C068F28  -  H'8C0692AF  H'00000388
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C068F28  -  H'8C0692AF  H'00000388
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C172844  -  H'8C17798B  H'00005148
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C172844  -  H'8C17798B  H'00005148
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_PolyInstanceList                 H'8C17284C               DAT
+_ZOID_ClearPolyFlags              H'8C06925A               ENT
+_ZOID_HidePoly                    H'8C069246               ENT
+_ZOID_NewPoly                     H'8C068F28               ENT
+_ZOID_RemovePoly                  H'8C06926C               ENT
+_ZOID_SetPolyFlags                H'8C069264               ENT
+_ZOID_SetPolyZ                    H'8C069240               ENT
+_ZOID_ShowPoly                    H'8C069250               ENT
+_ZOID_UpdatePoly                  H'8C068FBE               ENT
+_gMaxPolyInsts                    H'8C172848               DAT
+_gNumPolyInsts                    H'8C172844               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_gMirrorWaves                                                       H'8C15FA14
+_gTexDefPtrs                                                        H'8C14C71C

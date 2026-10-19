@@ -1,0 +1,15 @@
+{
+  "unit": "dc_unk_8C069E34",
+  "label": "typed-pointer",
+  "source_sha256": "82dbd680e98bc0a53db1dede4372238fb5b512846eb48201ac3790a5b1613728",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 0,
+  "delta_text": 88,
+  "delta_data": 0,
+  "new_exact_functions": [],
+  "hashes": {
+    "object": "a0bfc909dd34dccc9883c907fd4b9eeae3b09b8cc85aa3048dcee2a2c8615428",
+    "abs": "bb8665af6467ed7ca8d168a4f2a2afbcc72f0d5eb73b3f1c90bbd790628e7861"
+  }
+}

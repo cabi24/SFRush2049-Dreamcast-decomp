@@ -1,0 +1,38 @@
+{
+  "gamerecords": {
+    "sha256": "78d59cf89ec754155509b8326f153905f689d61df16c697bc449c57da366f369",
+    "restored_baseline": true
+  },
+  "HAL_text": {
+    "sha256": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226",
+    "restored_baseline": false
+  },
+  "headlights": {
+    "sha256": "badf9073dc7e7f60d548245c3117d4243b9c17c40a27dddbf4f93ec9e37e1e20",
+    "restored_baseline": true
+  },
+  "highscorescr": {
+    "sha256": "dfc3628327d5d528e075ee577c950a39f2a3537edc018c9168defb936e251fb8",
+    "restored_baseline": true
+  },
+  "hud": {
+    "sha256": "89d89a262aa884d410d310c7e237544130daf1d236cc9fe1d562a781f05e06e3",
+    "restored_baseline": true
+  },
+  "Init": {
+    "sha256": "8d97456af1ff7ba975be5039015a286475580b4f161f63ef4d3551fb5f8ae279",
+    "restored_baseline": true
+  },
+  "unk_8C03A360": {
+    "sha256": "deeb7230ff237bc5779d239d8bd411eb250dad47376b711accbeb1e9fa82ffb7",
+    "restored_baseline": true
+  },
+  "maxpath": {
+    "sha256": "9fb812373260cc455a552506c21799536e09597415e2987e8ab0bbf69510e209",
+    "restored_baseline": true
+  },
+  "mdrive": {
+    "sha256": "378bdef97dbbbaea4472ca95a5dd2cbf87b6e47d97a527a12cea34e018f92256",
+    "restored_baseline": true
+  }
+}

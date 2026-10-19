@@ -1,0 +1,165 @@
+{
+  "name": "password",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/password.c",
+  "source_sha256": "29900864cca050cb808034abf25087beced6976632afd3dd0325980026b7e124",
+  "text": [
+    "8C044C2C",
+    "8C04500C"
+  ],
+  "text_bytes": 992,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 305,
+  "exact_data_bytes": 305,
+  "functions_total": 6,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "NewPassword",
+      "start": "8C044C2C",
+      "end": "8C044CA4",
+      "size": 120,
+      "status": "differs",
+      "diff_bytes": 8,
+      "linked_at": "8C044C2C",
+      "linked_size": 120
+    },
+    {
+      "name": "StorePasswordElement",
+      "start": "8C044CA4",
+      "end": "8C044D0C",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 90,
+      "linked_at": "8C044CA4",
+      "linked_size": 98
+    },
+    {
+      "name": "GetPasswordElement",
+      "start": "8C044D0C",
+      "end": "8C044D80",
+      "size": 116,
+      "status": "differs",
+      "diff_bytes": 106,
+      "linked_at": "8C044D06",
+      "linked_size": 116
+    },
+    {
+      "name": "GetPasswordString",
+      "start": "8C044D80",
+      "end": "8C044E72",
+      "size": 242,
+      "status": "differs",
+      "diff_bytes": 227,
+      "linked_at": "8C044D7A",
+      "linked_size": 274
+    },
+    {
+      "name": "SetPasswordString",
+      "start": "8C044E94",
+      "end": "8C044F78",
+      "size": 228,
+      "status": "differs",
+      "diff_bytes": 209,
+      "linked_at": "8C044E8C",
+      "linked_size": 376
+    },
+    {
+      "name": "CalcChecksum",
+      "start": "8C044F78",
+      "end": "8C045002",
+      "size": 138,
+      "status": "differs",
+      "diff_bytes": 125,
+      "note": "symbol not in the compiled object"
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C044E72",
+      "end": "8C044E94",
+      "exact": false,
+      "built": 34,
+      "diff_bytes": 21
+    },
+    {
+      "kind": "pool",
+      "start": "8C045002",
+      "end": "8C04500C",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC338",
+      "end": "8C0AC359",
+      "exact": true,
+      "built": 33,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BF968",
+      "end": "8C0BFA78",
+      "exact": true,
+      "built": 272,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C15037C",
+      "end": "8C15039C",
+      "exact": true,
+      "linked": [
+        "8C15037C",
+        "8C15039C"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T14:30:02",
+  "defines": {},
+  "starts": {
+    "P": "8C044C2C",
+    "C": "8C0AC338",
+    "D": "8C0BF968",
+    "B": "8C15037C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C044C2C",
+      "length": 984
+    },
+    {
+      "name": "C",
+      "address": "8C0AC338",
+      "length": 33
+    },
+    {
+      "name": "D",
+      "address": "8C0BF968",
+      "length": 272
+    },
+    {
+      "name": "B",
+      "address": "8C15037C",
+      "length": 32
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 305,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -8,
+  "seconds": 1.9
+}

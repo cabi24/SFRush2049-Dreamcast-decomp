@@ -1,0 +1,350 @@
+{
+  "name": "gameoverscr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/gameoverscr.c",
+  "source_sha256": "91368329375ed875d84a8fb843f85d176abb0e97b8ad5e180629c7a52cd5b822",
+  "text": [
+    "8C0291CC",
+    "8C02B114"
+  ],
+  "text_bytes": 8008,
+  "exact_text_bytes": 180,
+  "align_bytes": 0,
+  "data_bytes": 74,
+  "exact_data_bytes": 7,
+  "functions_total": 16,
+  "functions_exact": 2,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "updateGameOverScreen",
+      "start": "8C0291CC",
+      "end": "8C029244",
+      "size": 120,
+      "status": "differs",
+      "diff_bytes": 4,
+      "linked_at": "8C0291CC",
+      "linked_size": 120
+    },
+    {
+      "name": "initScreen",
+      "start": "8C029244",
+      "end": "8C029298",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C029244",
+      "linked_size": 84
+    },
+    {
+      "name": "uninitScreen",
+      "start": "8C029298",
+      "end": "8C0292C2",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C029298",
+      "linked_size": 124
+    },
+    {
+      "name": "setGameOverState",
+      "start": "8C029314",
+      "end": "8C029508",
+      "size": 500,
+      "status": "differs",
+      "diff_bytes": 427,
+      "linked_at": "8C029314",
+      "linked_size": 498
+    },
+    {
+      "name": "validOption",
+      "start": "8C029508",
+      "end": "8C0295B2",
+      "size": 170,
+      "status": "differs",
+      "diff_bytes": 78,
+      "linked_at": "8C029506",
+      "linked_size": 172
+    },
+    {
+      "name": "controlMain",
+      "start": "8C0295B2",
+      "end": "8C029758",
+      "size": 422,
+      "status": "differs",
+      "diff_bytes": 6,
+      "linked_at": "8C0295B2",
+      "linked_size": 422
+    },
+    {
+      "name": "controlScore",
+      "start": "8C029758",
+      "end": "8C029774",
+      "size": 28,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C029758",
+      "linked_size": 60
+    },
+    {
+      "name": "drawMain",
+      "start": "8C029794",
+      "end": "8C0298E8",
+      "size": 340,
+      "status": "differs",
+      "diff_bytes": 221,
+      "linked_at": "8C029794",
+      "linked_size": 340
+    },
+    {
+      "name": "drawRaceStandings",
+      "start": "8C0298E8",
+      "end": "8C029D9A",
+      "size": 1202,
+      "status": "differs",
+      "diff_bytes": 906,
+      "linked_at": "8C0298E8",
+      "linked_size": 1196
+    },
+    {
+      "name": "drawStuntStandings",
+      "start": "8C029DC8",
+      "end": "8C02A070",
+      "size": 680,
+      "status": "differs",
+      "diff_bytes": 673,
+      "linked_at": "8C029D94",
+      "linked_size": 680
+    },
+    {
+      "name": "drawBattleStandings",
+      "start": "8C02A070",
+      "end": "8C02A34C",
+      "size": 732,
+      "status": "differs",
+      "diff_bytes": 721,
+      "linked_at": "8C02A03C",
+      "linked_size": 776
+    },
+    {
+      "name": "drawRaceScore",
+      "start": "8C02A378",
+      "end": "8C02A8E2",
+      "size": 1386,
+      "status": "differs",
+      "diff_bytes": 1360,
+      "linked_at": "8C02A344",
+      "linked_size": 1340
+    },
+    {
+      "name": "drawStuntScore",
+      "start": "8C02A8E2",
+      "end": "8C02AC16",
+      "size": 820,
+      "status": "differs",
+      "diff_bytes": 813,
+      "linked_at": "8C02A880",
+      "linked_size": 840
+    },
+    {
+      "name": "drawBattleScore",
+      "start": "8C02AC40",
+      "end": "8C02B00A",
+      "size": 970,
+      "status": "differs",
+      "diff_bytes": 951,
+      "linked_at": "8C02ABC8",
+      "linked_size": 970
+    },
+    {
+      "name": "animText",
+      "start": "8C02B00A",
+      "end": "8C02B08E",
+      "size": 132,
+      "status": "differs",
+      "diff_bytes": 132,
+      "linked_at": "8C02AF92",
+      "linked_size": 132
+    },
+    {
+      "name": "drawRect",
+      "start": "8C02B08E",
+      "end": "8C02B104",
+      "size": 118,
+      "status": "moved",
+      "diff_bytes": 118,
+      "linked_at": "8C02B016",
+      "linked_size": 134
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0292C2",
+      "end": "8C029314",
+      "exact": true,
+      "built": 82,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C029774",
+      "end": "8C029794",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C029D9A",
+      "end": "8C029DC8",
+      "exact": false,
+      "built": 46,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "pool",
+      "start": "8C02A34C",
+      "end": "8C02A378",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C02AC16",
+      "end": "8C02AC40",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "pool",
+      "start": "8C02B104",
+      "end": "8C02B114",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AA9D4",
+      "end": "8C0AAA16",
+      "exact": false,
+      "built": 66,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BDF78",
+      "end": "8C0BDF80",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C6F0",
+      "end": "8C12C6F8",
+      "exact": true,
+      "linked": [
+        "8C12C6F0",
+        "8C12C6F8"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:43:12",
+  "defines": {
+    "_AbortGame": "8C028C58",
+    "_AudKillSong": "8C01450E",
+    "_AudStopAllEffects": "8C014ADC",
+    "_BlinkResurrectingCars": "8C04A3DC",
+    "_ClearScreen": "8C02E2A0",
+    "_DC_SendFillRect": "8C06F1EC",
+    "_HAL_GetTextWidth": "8C02F502",
+    "_HAL_SetFont": "8C02EF96",
+    "_HAL_SetTextDepth": "8C02F226",
+    "_InitPane": "8C044700",
+    "_NewMultiBlit": "8C018B56",
+    "_PlayStartABSound": "8C011586",
+    "_PlayUDSound": "8C0115BE",
+    "_RemoveBlit": "8C0187BA",
+    "_RemoveEnvirons": "8C05FE72",
+    "_RemoveMultiplayerHUD": "8C034B82",
+    "_RemovePanes": "8C044B3C",
+    "_TB_DrawEllipseText": "8C05AD4C",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_SetJust": "8C05A73A",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Sprintf": "8C05AC1E",
+    "_UnloadTrack": "8C05C2A2",
+    "_ZOID_SplitScreen": "8C069798",
+    "__modlu": "8C09B8F4",
+    "_gActiveAutoEdges": "8C12C1BC",
+    "_gActiveEdges": "8C12C1B4",
+    "_gBattlePoints": "8C12C89C",
+    "_gBestLapTime": "8C12C784",
+    "_gCarTeam": "8C15D020",
+    "_gCircuitPlayer": "8C12BE4C",
+    "_gGhostPlayer": "8C1341F0",
+    "_gLap": "8C12C794",
+    "_gLapTimes": "8C12C704",
+    "_gNumActiveCars": "8C14CB86",
+    "_gNumCars": "8C14CB84",
+    "_gNumLaps": "8C12C654",
+    "_gNumPlayers": "8C14CBB0",
+    "_gNumWindows": "8C12B644",
+    "_gRace": "8C12C628",
+    "_gRankedPlayer": "8C12C6F8",
+    "_gRestartGame": "8C0BDD54",
+    "_gSkipToGameState": "8C0BFD44",
+    "_gSoftReset": "8C12C200",
+    "_gStuntPlayer": "8C14FBE4",
+    "_gText": "8C15C98C",
+    "_gTrackNum": "8C15C9C0",
+    "_model": "8C14CBB4",
+    "_playerTextColor": "8C0BDDA8",
+    "_setGameState": "8C05137C"
+  },
+  "starts": {
+    "P": "8C0291CC",
+    "C": "8C0AA9D4",
+    "D": "8C0BDF78",
+    "B": "8C12C6F0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0291CC",
+      "length": 7888
+    },
+    {
+      "name": "C",
+      "address": "8C0AA9D4",
+      "length": 66
+    },
+    {
+      "name": "D",
+      "address": "8C0BDF78",
+      "length": 8
+    },
+    {
+      "name": "B",
+      "address": "8C12C6F0",
+      "length": 8
+    }
+  ],
+  "equal_text_bytes_including_fill": 184,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 8,
+  "excluded_exact_data_fill": 1,
+  "excluded_data_padding": [],
+  "text_size_delta": -120,
+  "seconds": 2.2
+}

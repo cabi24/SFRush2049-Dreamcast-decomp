@@ -1,0 +1,160 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT cheatscr.abs
+FORM A
+START P(8C07A21C)
+START C(8C0B22B4)
+START D(8C0CC884)
+DEFINE _AudPlayEffect(8C014552)
+DEFINE _CheckForEgg(8C07D92C)
+DEFINE _HAL_GetFontAscent(8C02F39C)
+DEFINE _HAL_SetFont(8C02EF96)
+DEFINE _HAL_SetTextDepth(8C02F226)
+DEFINE _InitEgg(8C07D910)
+DEFINE _NewMultiBlit(8C018B56)
+DEFINE _PlayLRSound(8C0115A4)
+DEFINE _RemoveBlit(8C0187BA)
+DEFINE _TB_CenterText(8C05A708)
+DEFINE _TB_DrawText(8C05ACA6)
+DEFINE _TB_GetFontLineHeight(8C05A828)
+DEFINE _TB_RightText(8C05A722)
+DEFINE _TB_SetTextColor(8C05A742)
+DEFINE _TB_Sprintf(8C05AC1E)
+DEFINE _createBG(8C027320)
+DEFINE _gActiveAutoEdges(8C12C1BC)
+DEFINE _gActiveEdges(8C12C1B4)
+DEFINE _gCarMines(8C158699)
+DEFINE _gCheatActive(8C0BEE84)
+DEFINE _gCheatState(8C0BEE9C)
+DEFINE _gDemolitionBattle(8C15869B)
+DEFINE _gEnableTireScaling(8C15CFDE)
+DEFINE _gFogColor(8C12C658)
+DEFINE _gFrameScale(8C15CFDD)
+DEFINE _gInvincible(8C12C571)
+DEFINE _gInvisibleCar(8C15CFDC)
+DEFINE _gInvisibleTrack(8C15FF2C)
+DEFINE _gMassiveMass(8C12BAB0)
+DEFINE _gMineCones(8C158698)
+DEFINE _gNoAutoAbort(8C1503E6)
+DEFINE _gNoBrakes(8C12C110)
+DEFINE _gNoCarCollisions(8C12C0D0)
+DEFINE _gRandomWeapons(8C15869A)
+DEFINE _gResurrectInPlace(8C1503E7)
+DEFINE _gSoftReset(8C12C200)
+DEFINE _gSpecialTires(8C12C572)
+DEFINE _gSuicideMode(8C12C0D1)
+DEFINE _gSuperSpeed(8C12C570)
+DEFINE _gText(8C15C98C)
+DEFINE _removeBG(8C027824)
+DEFINE _setGameState(8C05137C)
+PRINT cheatscr.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C07A21C  -  H'8C07ABFB  H'000009E0
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C07A21C  -  H'8C07ABFB  H'000009E0
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0B22B4  -  H'8C0B22DA  H'00000027
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0B22B4  -  H'8C0B22DA  H'00000027
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0CC884  -  H'8C0CC893  H'00000010
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0CC884  -  H'8C0CC893  H'00000010
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_animText                         H'8C07A7DC               ENT
+_initScreen                       H'8C07A5AE               ENT
+_printOption                      H'8C07A698               ENT
+_uninitScreen                     H'8C07A672               ENT
+_updateCheatScreen                H'8C07A21C               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AudPlayEffect                                                      H'8C014552
+_CheckForEgg                                                        H'8C07D92C
+_HAL_GetFontAscent                                                  H'8C02F39C
+_HAL_SetFont                                                        H'8C02EF96
+_HAL_SetTextDepth                                                   H'8C02F226
+_InitEgg                                                            H'8C07D910
+_NewMultiBlit                                                       H'8C018B56
+_PlayLRSound                                                        H'8C0115A4
+_RemoveBlit                                                         H'8C0187BA
+_TB_CenterText                                                      H'8C05A708
+_TB_DrawText                                                        H'8C05ACA6
+_TB_GetFontLineHeight                                               H'8C05A828
+_TB_RightText                                                       H'8C05A722
+_TB_SetTextColor                                                    H'8C05A742
+_TB_Sprintf                                                         H'8C05AC1E
+_createBG                                                           H'8C027320
+_gActiveAutoEdges                                                   H'8C12C1BC
+_gActiveEdges                                                       H'8C12C1B4
+_gCarMines                                                          H'8C158699
+_gCheatActive                                                       H'8C0BEE84
+_gCheatState                                                        H'8C0BEE9C
+_gDemolitionBattle                                                  H'8C15869B
+_gEnableTireScaling                                                 H'8C15CFDE
+_gFogColor                                                          H'8C12C658
+_gFrameScale                                                        H'8C15CFDD
+_gInvincible                                                        H'8C12C571
+_gInvisibleCar                                                      H'8C15CFDC
+_gInvisibleTrack                                                    H'8C15FF2C
+_gMassiveMass                                                       H'8C12BAB0
+_gMineCones                                                         H'8C158698
+_gNoAutoAbort                                                       H'8C1503E6
+_gNoBrakes                                                          H'8C12C110
+_gNoCarCollisions                                                   H'8C12C0D0
+_gRandomWeapons                                                     H'8C15869A
+_gResurrectInPlace                                                  H'8C1503E7
+_gSoftReset                                                         H'8C12C200
+_gSpecialTires                                                      H'8C12C572
+_gSuicideMode                                                       H'8C12C0D1
+_gSuperSpeed                                                        H'8C12C570
+_gText                                                              H'8C15C98C
+_removeBG                                                           H'8C027824
+_setGameState                                                       H'8C05137C

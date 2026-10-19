@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/mdrive.c');s=Path('matching-evidence/2026-10-18/campaign100-lane3/mdrive/baseline/source.c').read_text();a=s.index('void init_cars(void)\n{');b=s.index('void func_8C03DD58(',a);f=s[a:b].replace('        dt = model[i].fastin.dt;', '        m = &model[i];\n        dt = model[i].fastin.dt;').replace('&model[i]', 'm').replace('m = m;', 'm = &model[i];').replace('model[i].','m->');s=s[:a]+f+s[b:];p.write_text(s)

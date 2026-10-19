@@ -1,0 +1,436 @@
+{
+  "name": "highscorescr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/highscorescr.c",
+  "source_sha256": "8ad215f8b97a1fbde0620e063416c5865a80e39b2054f0b7c98cac3e0e4134b1",
+  "text": [
+    "8C030ACC",
+    "8C03478C"
+  ],
+  "text_bytes": 15552,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 1297,
+  "exact_data_bytes": 1177,
+  "functions_total": 20,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "updateHighScoreScreen",
+      "start": "8C030ACC",
+      "end": "8C030C7E",
+      "size": 434,
+      "status": "differs",
+      "diff_bytes": 379,
+      "linked_at": "8C030ACC",
+      "linked_size": 1740
+    },
+    {
+      "name": "_InitScreen",
+      "start": "8C030CC8",
+      "end": "8C0310EA",
+      "size": 1058,
+      "status": "differs",
+      "diff_bytes": 965,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_UninitScreen",
+      "start": "8C0310EA",
+      "end": "8C0311B2",
+      "size": 200,
+      "status": "differs",
+      "diff_bytes": 198,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_SetHighScoreState",
+      "start": "8C03120C",
+      "end": "8C031730",
+      "size": 1316,
+      "status": "differs",
+      "diff_bytes": 1307,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_RankScores",
+      "start": "8C031770",
+      "end": "8C031904",
+      "size": 404,
+      "status": "missing",
+      "diff_bytes": 404
+    },
+    {
+      "name": "_PrintScores",
+      "start": "8C031904",
+      "end": "8C03217E",
+      "size": 2170,
+      "status": "missing",
+      "diff_bytes": 2170
+    },
+    {
+      "name": "_FindGhosts",
+      "start": "8C0321B8",
+      "end": "8C03232A",
+      "size": 370,
+      "status": "missing",
+      "diff_bytes": 370
+    },
+    {
+      "name": "ControlUnlocked",
+      "start": "8C03232A",
+      "end": "8C032486",
+      "size": 348,
+      "status": "missing",
+      "diff_bytes": 348
+    },
+    {
+      "name": "ControlCircuitCode",
+      "start": "8C032486",
+      "end": "8C0324DE",
+      "size": 88,
+      "status": "missing",
+      "diff_bytes": 88
+    },
+    {
+      "name": "ControlName",
+      "start": "8C032500",
+      "end": "8C032920",
+      "size": 1056,
+      "status": "missing",
+      "diff_bytes": 1056
+    },
+    {
+      "name": "ControlGhost",
+      "start": "8C032954",
+      "end": "8C032D70",
+      "size": 1052,
+      "status": "missing",
+      "diff_bytes": 1052
+    },
+    {
+      "name": "ControlScores",
+      "start": "8C032DA0",
+      "end": "8C032E40",
+      "size": 160,
+      "status": "missing",
+      "diff_bytes": 160
+    },
+    {
+      "name": "DrawUnlocked",
+      "start": "8C032E40",
+      "end": "8C033856",
+      "size": 2582,
+      "status": "missing",
+      "diff_bytes": 2582
+    },
+    {
+      "name": "DrawCircuitCode",
+      "start": "8C033856",
+      "end": "8C0339A2",
+      "size": 332,
+      "status": "missing",
+      "diff_bytes": 332
+    },
+    {
+      "name": "DrawName",
+      "start": "8C0339B0",
+      "end": "8C033D76",
+      "size": 966,
+      "status": "missing",
+      "diff_bytes": 966
+    },
+    {
+      "name": "DrawGhost",
+      "start": "8C033D98",
+      "end": "8C0343AC",
+      "size": 1556,
+      "status": "missing",
+      "diff_bytes": 1556
+    },
+    {
+      "name": "DrawScores",
+      "start": "8C0343C4",
+      "end": "8C0345B4",
+      "size": 496,
+      "status": "missing",
+      "diff_bytes": 496
+    },
+    {
+      "name": "animText",
+      "start": "8C0345B4",
+      "end": "8C034634",
+      "size": 128,
+      "status": "missing",
+      "diff_bytes": 128
+    },
+    {
+      "name": "censor",
+      "start": "8C034660",
+      "end": "8C0346A2",
+      "size": 66,
+      "status": "missing",
+      "diff_bytes": 66,
+      "linked_at": "8C031198",
+      "linked_size": 396
+    },
+    {
+      "name": "fixword",
+      "start": "8C0346A2",
+      "end": "8C034778",
+      "size": 214,
+      "status": "missing",
+      "diff_bytes": 214
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C030C7E",
+      "end": "8C030CC8",
+      "exact": false,
+      "built": 74,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C0311B2",
+      "end": "8C03120C",
+      "exact": false,
+      "built": 90,
+      "diff_bytes": 77
+    },
+    {
+      "kind": "pool",
+      "start": "8C031730",
+      "end": "8C031770",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 64
+    },
+    {
+      "kind": "pool",
+      "start": "8C03217E",
+      "end": "8C0321B8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 58
+    },
+    {
+      "kind": "pool",
+      "start": "8C0324DE",
+      "end": "8C032500",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "pool",
+      "start": "8C032920",
+      "end": "8C032954",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 52
+    },
+    {
+      "kind": "pool",
+      "start": "8C032D70",
+      "end": "8C032DA0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 48
+    },
+    {
+      "kind": "pool",
+      "start": "8C0339A2",
+      "end": "8C0339B0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "pool",
+      "start": "8C033D76",
+      "end": "8C033D98",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 34
+    },
+    {
+      "kind": "pool",
+      "start": "8C0343AC",
+      "end": "8C0343C4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C034634",
+      "end": "8C034660",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C034778",
+      "end": "8C03478C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AAAD4",
+      "end": "8C0AAE15",
+      "exact": true,
+      "built": 833,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BE038",
+      "end": "8C0BE208",
+      "exact": true,
+      "built": 464,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C134224",
+      "end": "8C13422E",
+      "exact": true,
+      "linked": [
+        "8C134224",
+        "8C13422E"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:33:42",
+  "defines": {
+    "_AudKillSong": "8C01450E",
+    "_AudPlaySong": "8C0144BA",
+    "_AudSetMusicVol": "8C014F8C",
+    "_CalcUnlockedStuff": "8C02D434",
+    "_ClearRushControls": "8C01E8C2",
+    "_CompressGhost": "8C04E080",
+    "_ControlCircuitCode": "8C032486",
+    "_ControlGhost": "8C032954",
+    "_ControlName": "8C032500",
+    "_ControlScores": "8C032DA0",
+    "_ControlUnlocked": "8C03232A",
+    "_GetCircuitCode": "8C01D0C8",
+    "_PS_LockFile": "8C06D530",
+    "_RecordGameOver": "8C02B5F2",
+    "_RemovePane": "8C044BC2",
+    "_SaveFlush": "8C04B9EC",
+    "_SaveGhost": "8C04E2F4",
+    "_SaveServer": "8C04B746",
+    "_TB_Strcpy": "8C05AAE6",
+    "_UnloadWaveAll": "8C0652B4",
+    "_UpdateCircuit": "8C01CDB8",
+    "__RankScores": "8C031770",
+    "__SetHighScoreState": "8C03120C",
+    "__quick_mvn": "8C09BA14",
+    "_circuitCode": "8C1340DE",
+    "_codePane": "8C1341F8",
+    "_gBackwards": "8C12C657",
+    "_gBlocksNeeded": "8C19FD48",
+    "_gCircuitCode": "8C1340DF",
+    "_gCircuitPlayer": "8C12BE4C",
+    "_gCircuitSize": "8C12C08F",
+    "_gCircuitTrack": "8C12C08E",
+    "_gDrawName": "8C1340FF",
+    "_gGameCar": "8C004000",
+    "_gGhostPak": "8C134164",
+    "_gGhostPlayer": "8C1341F0",
+    "_gGhostToSave": "8C1335F4",
+    "_gHighScoreState": "8C133F80",
+    "_gNumPlayers": "8C14CBB0",
+    "_gOptions": "8C14FDC8",
+    "_gPlayers": "8C006000",
+    "_gPrevUnlockedCars": "8C133FE7",
+    "_gPrevUnlockedCircuits": "8C13401B",
+    "_gPrevUnlockedEngines": "8C13404B",
+    "_gPrevUnlockedFrames": "8C134083",
+    "_gPrevUnlockedTires": "8C13406F",
+    "_gPrevUnlockedTracks": "8C133F9B",
+    "_gPrevUnlockedTrans": "8C13402B",
+    "_gRace": "8C12C628",
+    "_gRealGhostPlayer": "8C1341B0",
+    "_gSaveGhostFile": "8C1341F4",
+    "_gSaveGhostFiles": "8C0BFCE2",
+    "_gSavedGhost": "8C13418C",
+    "_gScoreName": "8C1340AA",
+    "_gSoftReset": "8C12C200",
+    "_gStuffUnlocked": "8C133F96",
+    "_gThisTrack": "8C133F94",
+    "_gTrackNum": "8C15C9C0",
+    "_gUnlockedCars": "8C12C7E4",
+    "_gUnlockedCircuits": "8C12C818",
+    "_gUnlockedEngines": "8C12C848",
+    "_gUnlockedFrames": "8C12C880",
+    "_gUnlockedTires": "8C12C86C",
+    "_gUnlockedTracks": "8C12C798",
+    "_gUnlockedTrans": "8C12C828",
+    "_ghostPanes": "8C13420C",
+    "_memcmp": "8C09BCCC",
+    "_memcpy": "8C09BD00",
+    "_namePanes": "8C1341FC",
+    "_scorePanes": "8C134218",
+    "_setGameState": "8C05137C"
+  },
+  "starts": {
+    "P": "8C030ACC",
+    "C": "8C0AAAD4",
+    "D": "8C0BE038",
+    "B": "8C134224"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C030ACC",
+      "length": 2136
+    },
+    {
+      "name": "C",
+      "address": "8C0AAAD4",
+      "length": 833
+    },
+    {
+      "name": "D",
+      "address": "8C0BE038",
+      "length": 464
+    },
+    {
+      "name": "B",
+      "address": "8C134224",
+      "length": 10
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 1297,
+  "excluded_exact_data_fill": 120,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BE121",
+      "end": "8C0BE124",
+      "reason": "byte inited to pointer alignment"
+    },
+    {
+      "start": "8C0BE129",
+      "end": "8C0BE12C",
+      "reason": "byte table to pointer alignment"
+    }
+  ],
+  "text_size_delta": -13416,
+  "seconds": 2.0
+}

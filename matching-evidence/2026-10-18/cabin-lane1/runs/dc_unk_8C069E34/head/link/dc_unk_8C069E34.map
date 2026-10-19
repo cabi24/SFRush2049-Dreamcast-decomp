@@ -1,0 +1,92 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT dc_unk_8C069E34.abs
+FORM A
+START P(8C069E34)
+DEFINE _AllocateMemoryHeap(8C040256)
+DEFINE _InitLL(8C03A1B8)
+DEFINE _InsertLLE(8C03A1C8)
+DEFINE _PurgeableMemory(8C040924)
+DEFINE _dcQueueWorkWord8C0C7C34(8C0C7C34)
+DEFINE _func_8C0A18E6(8C0A18E6)
+DEFINE _func_8C0A191C(8C0A191C)
+DEFINE _midiActive8C177B4C(8C177B4C)
+DEFINE _midiFree8C177B3C(8C177B3C)
+DEFINE _midiInitNodes8C177B6C(8C177B6C)
+DEFINE _midiPending8C177B5C(8C177B5C)
+DEFINE _midiRead1_8C0C7C38(8C0C7C38)
+DEFINE _midiRead2_8C0C7C3C(8C0C7C3C)
+DEFINE _midiReadBytes8C0C7C30(8C0C7C30)
+DEFINE _midiWorkBytes8C0C7C2C(8C0C7C2C)
+DEFINE _streamActive8C177FD0(8C177FD0)
+DEFINE _streamFree8C177FC0(8C177FC0)
+DEFINE _streamInitNodes8C177FF0(8C177FF0)
+DEFINE _streamPending8C177FE0(8C177FE0)
+PRINT dc_unk_8C069E34.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C069E34  -  H'8C069F73  H'00000140
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C069E34  -  H'8C069F73  H'00000140
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_func_8C069E34                    H'8C069E34               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AllocateMemoryHeap                                                 H'8C040256
+_InitLL                                                             H'8C03A1B8
+_InsertLLE                                                          H'8C03A1C8
+_PurgeableMemory                                                    H'8C040924
+_dcQueueWorkWord8C0C7C34                                            H'8C0C7C34
+_func_8C0A18E6                                                      H'8C0A18E6
+_func_8C0A191C                                                      H'8C0A191C
+_midiActive8C177B4C                                                 H'8C177B4C
+_midiFree8C177B3C                                                   H'8C177B3C
+_midiInitNodes8C177B6C                                              H'8C177B6C
+_midiPending8C177B5C                                                H'8C177B5C
+_midiRead1_8C0C7C38                                                 H'8C0C7C38
+_midiRead2_8C0C7C3C                                                 H'8C0C7C3C
+_midiReadBytes8C0C7C30                                              H'8C0C7C30
+_midiWorkBytes8C0C7C2C                                              H'8C0C7C2C
+_streamActive8C177FD0                                               H'8C177FD0
+_streamFree8C177FC0                                                 H'8C177FC0
+_streamInitNodes8C177FF0                                            H'8C177FF0
+_streamPending8C177FE0                                              H'8C177FE0

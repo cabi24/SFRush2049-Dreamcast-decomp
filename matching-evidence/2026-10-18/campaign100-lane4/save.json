@@ -1,0 +1,18 @@
+{
+  "unit": "save",
+  "selected": "final-independent",
+  "baseline_functions": 0,
+  "final_functions": 0,
+  "new_functions": [],
+  "baseline_text": 0,
+  "final_text": 0,
+  "baseline_data": 35,
+  "final_data": 35,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\save.c": "43aa41d848f8ea09d664fbee70753fa7301cf453e86350f8a90ea6953d01360d",
+    "build\\campaign100-lane4\\save\\final-independent\\obj\\save.obj": "a6598bc2adc688df766dfe084a1c876638bc00b9a1ab969240a9c7993b25af8b",
+    "build\\campaign100-lane4\\save\\final-independent\\link\\save.abs": "77772990f226e4ab11b449db3c43b63d0f0e8ecd285998d4e1b7661418fc0bfe",
+    "build\\campaign100-lane4\\save\\final-independent\\pp\\save.c": "719651ff840b3462905e3f768e98837c39dfce220052c95b3ffaf604d9518a0b"
+  }
+}

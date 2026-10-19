@@ -1,0 +1,179 @@
+{
+  "name": "state",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/state.c",
+  "source_sha256": "dcad66c0ff89f6c6d70099dfd1614f2f76cdebb36707b045289c33f8165e9b17",
+  "text": [
+    "8C050D84",
+    "8C05138C"
+  ],
+  "text_bytes": 1544,
+  "exact_text_bytes": 94,
+  "align_bytes": 0,
+  "data_bytes": 12,
+  "exact_data_bytes": 12,
+  "functions_total": 6,
+  "functions_exact": 2,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "_LockAndLoad",
+      "start": "8C050D84",
+      "end": "8C050DB8",
+      "size": 52,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_UnloadFrontEndWaves",
+      "start": "8C050DB8",
+      "end": "8C050DE2",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "initGameState",
+      "start": "8C050DE2",
+      "end": "8C0512C4",
+      "size": 1250,
+      "status": "differs",
+      "diff_bytes": 536,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "uninitGameState",
+      "start": "8C0512C4",
+      "end": "8C051326",
+      "size": 98,
+      "status": "differs",
+      "diff_bytes": 95,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "updateGameState",
+      "start": "8C051358",
+      "end": "8C05137C",
+      "size": 36,
+      "status": "differs",
+      "diff_bytes": 36,
+      "linked_at": "8C051364",
+      "linked_size": 36
+    },
+    {
+      "name": "setGameState",
+      "start": "8C05137C",
+      "end": "8C051382",
+      "size": 6,
+      "status": "moved",
+      "diff_bytes": 6,
+      "linked_at": "8C051388",
+      "linked_size": 16
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C051326",
+      "end": "8C051358",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 45
+    },
+    {
+      "kind": "pool",
+      "start": "8C051382",
+      "end": "8C05138C",
+      "exact": false,
+      "built": 10,
+      "diff_bytes": 9
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BFD3C",
+      "end": "8C0BFD48",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C158340",
+      "end": "8C158346",
+      "exact": true,
+      "linked": [
+        "8C158340",
+        "8C158346"
+      ]
+    }
+  ],
+  "notes": [
+    "12 built bytes fall outside the mapped ranges (first 8C05138C, last 8C051397)"
+  ],
+  "built_at": "2026-10-18T15:02:19",
+  "defines": {
+    "_AudKillSong": "8C01450E",
+    "_AudSetFxVol": "8C014F86",
+    "_AudioLoadBank": "8C015EF0",
+    "_AudioUnloadAllBanks": "8C016044",
+    "_FindWaveInstance": "8C0656DE",
+    "_HAL_PurgeFonts": "8C02EFBE",
+    "_HAL_SetFont": "8C02EF96",
+    "_InitRecords": "8C02B114",
+    "_InitWaves": "8C064FDC",
+    "_LoadWave": "8C0651B8",
+    "_LockWaveInstance": "8C065660",
+    "_PS_LockFile": "8C06D530",
+    "_SaveFlush": "8C04B9EC",
+    "_SaveServer": "8C04B746",
+    "_SetControllerActive": "8C01F180",
+    "_SetControllerStickEdges": "8C01F1DC",
+    "_SetCountdownTimer": "8C010176",
+    "_SetOptions": "8C041690",
+    "_UnloadWaveAll": "8C0652B4",
+    "_UnlockWaveInstance": "8C06568A",
+    "_ZOID_SetFog": "8C06967C",
+    "_gFogColors": "8C0BDD56",
+    "_gNumPlayers": "8C14CBB0",
+    "_gNumWindows": "8C12B644",
+    "_gOptions": "8C14FDC8",
+    "_gPlayers": "8C006000",
+    "_gRace": "8C12C628",
+    "_gRestartGame": "8C0BDD54",
+    "_gSfxBanks": "8C0A7904",
+    "_gTrackNum": "8C15C9C0",
+    "_gUpsideDownTrack": "8C12B8A8"
+  },
+  "starts": {
+    "P": "8C050D84",
+    "D": "8C0BFD3C",
+    "B": "8C158340"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C050D84",
+      "length": 1556
+    },
+    {
+      "name": "D",
+      "address": "8C0BFD3C",
+      "length": 12
+    },
+    {
+      "name": "B",
+      "address": "8C158340",
+      "length": 6
+    }
+  ],
+  "equal_text_bytes_including_fill": 94,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 12,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 12,
+  "seconds": 2.1
+}

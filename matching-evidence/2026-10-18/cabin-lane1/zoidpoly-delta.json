@@ -1,0 +1,48 @@
+{
+  "unit": "zoidpoly",
+  "verdict": "keep",
+  "dirty": {
+    "status": "exact",
+    "functions_exact": 8,
+    "functions_total": 8,
+    "functions_moved": 0,
+    "exact_text_bytes": 896,
+    "equal_text_bytes_including_fill": 900,
+    "text_bytes": 900,
+    "exact_data_bytes": 0,
+    "source_sha256": "e677e9dc00067f90d21a8d95a9f380aea0b1d6d62ccbe2d6011da2180fca8ecf"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 7,
+    "functions_total": 8,
+    "functions_moved": 0,
+    "exact_text_bytes": 848,
+    "equal_text_bytes_including_fill": 852,
+    "text_bytes": 900,
+    "exact_data_bytes": 0,
+    "source_sha256": "e2e2d6c38aaad34c8d59a8ea9ed40bbda508e3922b5451b3629599af8436150c"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "ZOID_RemovePoly",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 48
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 896,
+  "text_bytes_head": 848,
+  "report_consistency": {
+    "report_functions_exact": 8,
+    "dirty_rebuild_functions_exact": 8,
+    "report_exact_text_bytes": 896,
+    "dirty_rebuild_exact_text_bytes": 896,
+    "report_source_sha256": "e677e9dc00067f90d21a8d95a9f380aea0b1d6d62ccbe2d6011da2180fca8ecf",
+    "dirty_source_sha256": "e677e9dc00067f90d21a8d95a9f380aea0b1d6d62ccbe2d6011da2180fca8ecf",
+    "match": true
+  },
+  "head_source_sha256": "e2e2d6c38aaad34c8d59a8ea9ed40bbda508e3922b5451b3629599af8436150c",
+  "seconds": 5.7
+}

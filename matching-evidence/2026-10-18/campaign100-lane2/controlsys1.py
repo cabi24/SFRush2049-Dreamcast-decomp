@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/controlsys.c');s=p.read_text();s=s.replace('        x = _PotRange(gNewStick[i][0], gContStickRange[i][0], 1.0f);\n        y = _PotRange(gNewStick[i][1], gContStickRange[i][1], 1.0f);\n        gContStick[i][0] = x;\n        gContStick[i][1] = y;', '        gContStick[i][0] = _PotRange(gNewStick[i][0], gContStickRange[i][0], 1.0f);\n        gContStick[i][1] = _PotRange(gNewStick[i][1], gContStickRange[i][1], 1.0f);');p.write_text(s)

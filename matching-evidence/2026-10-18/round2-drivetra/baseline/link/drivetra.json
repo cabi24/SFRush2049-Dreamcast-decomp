@@ -1,0 +1,115 @@
+{
+ "name": "drivetra",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT drivetra.abs",
+  "FORM A",
+  "START P(8C022CA4)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __divws(8C09B7DC)",
+  "DEFINE __modls(8C09B82C)",
+  "DEFINE __modws(8C09B9AC)",
+  "DEFINE _carEngineTorque(8C0BBC4C)",
+  "DEFINE _carTransGearRatio(8C0BBA48)",
+  "PRINT drivetra.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-drivetra\\baseline\\obj\\drivetra.obj",
+   "sha256": "01acbcd177bb3c4bd2d4c924f0ca812b06fad289f31d5e607be810d324681c00"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C022CA4",
+   "length": 1608
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C022CA4",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 18,
+   "sha256": "b9b85313210624d25a9683a2a8ec1f8b61934fec74de0d7389bc54b861c1e97b"
+  },
+  {
+   "section": "P",
+   "address": "8C022D9A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "021fd441ee510746088242d21bc554b43a05bbf0270991f88cc74bd53e4d5033"
+  },
+  {
+   "section": "P",
+   "address": "8C022E90",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e810491721ffda8bac52d2f41b5eade6d2b9849a4434ca4e982abbe7a87e3b47"
+  },
+  {
+   "section": "P",
+   "address": "8C022F86",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "6b8ae8235a0ee74de71c90999ff464fa2fb799a0577b49616c43ee3fd582f09f"
+  },
+  {
+   "section": "P",
+   "address": "8C02307C",
+   "size": 46,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "96f0a3e0dc3d60698a3291eb97a6344d2c1246055b01202e418ee90ca9415084"
+  },
+  {
+   "section": "P",
+   "address": "8C0230AC",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 132,
+   "first_diff_offset": 16,
+   "sha256": "c06208039c736a1a1112dc723497e0a6b42c6d8a55c815051d7408e46c3afdb0"
+  },
+  {
+   "section": "P",
+   "address": "8C0231A2",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 239,
+   "first_diff_offset": 0,
+   "sha256": "cb7f65634088dbb2e0cec2cc03ddf52b65474ddcbb859ff9510ef4d9cf82ced9"
+  },
+  {
+   "section": "P",
+   "address": "8C023298",
+   "size": 2,
+   "exact": false,
+   "diff_bytes": 2,
+   "first_diff_offset": 0,
+   "sha256": "e4918de4024a9f134bdf9a0eca65831b25bb799fca9245ed6b787b87c5cef7f5"
+  },
+  {
+   "section": "P",
+   "address": "8C02329A",
+   "size": 82,
+   "exact": false,
+   "diff_bytes": 78,
+   "first_diff_offset": 0,
+   "sha256": "8bd6945b9277752a8aa8b6345f8b3e484de97c95ef531107af4b5fa42d0639df"
+  }
+ ],
+ "all_exact": false
+}

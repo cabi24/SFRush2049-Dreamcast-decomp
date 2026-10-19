@@ -1,0 +1,21 @@
+{
+  "unit": "pane",
+  "selected": "indexed-loop",
+  "baseline_functions": 3,
+  "final_functions": 5,
+  "new_functions": [
+    "RemovePane",
+    "RemovePanes"
+  ],
+  "baseline_text": 1082,
+  "final_text": 1320,
+  "baseline_data": 480,
+  "final_data": 480,
+  "note": "Whole unit exact5/5; ordinary indexed removal loops",
+  "hashes": {
+    "src\\pane.c": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8",
+    "build\\campaign60-lane4\\pane\\indexed-loop\\obj\\pane.obj": "5b8bbac24610bfc95636cefd7cb51da7e4a2c05a4d2442c2b8b65637672a1747",
+    "build\\campaign60-lane4\\pane\\indexed-loop\\link\\pane.abs": "088f511fc3692a2e0b0a3c680dd3033f9a4e81c92c01f034c51fe323540d6325",
+    "build\\campaign60-lane4\\pane\\indexed-loop\\pp\\pane.c": "174fcb931de8b49db059f8b4076bdbc5a20a23447efb0b189e9060513119bdee"
+  }
+}

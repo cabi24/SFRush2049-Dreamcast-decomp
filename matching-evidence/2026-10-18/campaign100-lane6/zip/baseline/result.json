@@ -1,0 +1,374 @@
+{
+  "name": "zip",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/zip.c",
+  "source_sha256": "98bc2664e05d36c2bc98733d221937a9b2e3ad884a8e1f776b59a965adea042f",
+  "text": [
+    "8C0663D4",
+    "8C0686F4"
+  ],
+  "text_bytes": 8992,
+  "exact_text_bytes": 6838,
+  "align_bytes": 0,
+  "data_bytes": 476,
+  "exact_data_bytes": 475,
+  "functions_total": 25,
+  "functions_exact": 19,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "tr_static_init",
+      "start": "8C0663D4",
+      "end": "8C066602",
+      "size": 558,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C066614",
+      "start": "8C066614",
+      "end": "8C066660",
+      "size": 76,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C066614",
+      "linked_size": 3940
+    },
+    {
+      "name": "func_8C066660",
+      "start": "8C066660",
+      "end": "8C0666DC",
+      "size": 124,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C0666F8",
+      "start": "8C0666F8",
+      "end": "8C066812",
+      "size": 282,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C066818",
+      "start": "8C066818",
+      "end": "8C0669FA",
+      "size": 482,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "gen_codes",
+      "start": "8C0669FA",
+      "end": "8C066A8E",
+      "size": 148,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "build_tree",
+      "start": "8C066A8E",
+      "end": "8C066C7E",
+      "size": 496,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "scan_tree",
+      "start": "8C066C7E",
+      "end": "8C066D66",
+      "size": 232,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "send_tree",
+      "start": "8C066D66",
+      "end": "8C06728E",
+      "size": 1320,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "build_bl_tree",
+      "start": "8C06728E",
+      "end": "8C0672F2",
+      "size": 100,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "send_all_trees",
+      "start": "8C06730C",
+      "end": "8C067578",
+      "size": 620,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_tr_stored_block",
+      "start": "8C067578",
+      "end": "8C067620",
+      "size": 168,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C067578",
+      "linked_size": 168
+    },
+    {
+      "name": "_tr_flush_block",
+      "start": "8C067620",
+      "end": "8C06781A",
+      "size": 506,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C067620",
+      "linked_size": 506
+    },
+    {
+      "name": "func_8C06781A",
+      "start": "8C06781A",
+      "end": "8C06795A",
+      "size": 320,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06781A",
+      "linked_size": 1660
+    },
+    {
+      "name": "func_8C067974",
+      "start": "8C067974",
+      "end": "8C067D84",
+      "size": 1040,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C067D98",
+      "start": "8C067D98",
+      "end": "8C067DB2",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C067DB2",
+      "start": "8C067DB2",
+      "end": "8C067E0C",
+      "size": 90,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "copy_block",
+      "start": "8C067E0C",
+      "end": "8C067E90",
+      "size": 132,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "func_8C067E96",
+      "start": "8C067E96",
+      "end": "8C068012",
+      "size": 380,
+      "status": "differs",
+      "diff_bytes": 185,
+      "linked_at": "8C067E96",
+      "linked_size": 1386
+    },
+    {
+      "name": "func_8C068030",
+      "start": "8C068030",
+      "end": "8C06808C",
+      "size": 92,
+      "status": "differs",
+      "diff_bytes": 78,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C06808C",
+      "start": "8C06808C",
+      "end": "8C0680D0",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 66,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C0680D0",
+      "start": "8C0680D0",
+      "end": "8C0682B8",
+      "size": 488,
+      "status": "differs",
+      "diff_bytes": 472,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "func_8C0682B8",
+      "start": "8C0682B8",
+      "end": "8C0683FC",
+      "size": 324,
+      "status": "differs",
+      "diff_bytes": 311,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "deflate_slow",
+      "start": "8C0683FC",
+      "end": "8C0686EA",
+      "size": 750,
+      "status": "differs",
+      "diff_bytes": 714,
+      "linked_at": "8C068400",
+      "linked_size": 752
+    },
+    {
+      "name": "func_8C0686F0",
+      "start": "8C0686F0",
+      "end": "8C0686F4",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0686F0",
+      "linked_size": 8
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C066602",
+      "end": "8C066614",
+      "exact": true,
+      "built": 18,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0666DC",
+      "end": "8C0666F8",
+      "exact": true,
+      "built": 28,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C066812",
+      "end": "8C066818",
+      "exact": true,
+      "built": 6,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0672F2",
+      "end": "8C06730C",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06795A",
+      "end": "8C067974",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C067D84",
+      "end": "8C067D98",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C067E90",
+      "end": "8C067E96",
+      "exact": true,
+      "built": 6,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C068012",
+      "end": "8C068030",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C0686EA",
+      "end": "8C0686F0",
+      "exact": false,
+      "built": 6,
+      "diff_bytes": 6
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7970",
+      "end": "8C0C7B4C",
+      "exact": true,
+      "built": 476,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C15FF7C",
+      "end": "8C15FF7D",
+      "exact": false,
+      "linked": [
+        "8C15FF7C",
+        "8C160860"
+      ]
+    }
+  ],
+  "notes": [
+    "B extent differs from the map",
+    "4 built bytes fall outside the mapped ranges (first 8C0686F4, last 8C0686F7)"
+  ],
+  "built_at": "2026-10-18T15:57:23",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "__divlu": "8C09B734",
+    "_appFree": "8C040832",
+    "_memcpy": "8C09BD00",
+    "_memset": "8C09BE04"
+  },
+  "starts": {
+    "P": "8C0663D4",
+    "D": "8C0C7970",
+    "B": "8C15FF7C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0663D4",
+      "length": 8996
+    },
+    {
+      "name": "D",
+      "address": "8C0C7970",
+      "length": 476
+    },
+    {
+      "name": "B",
+      "address": "8C15FF7C",
+      "length": 2276
+    }
+  ],
+  "equal_text_bytes_including_fill": 6854,
+  "excluded_exact_text_fill_or_gaps": 16,
+  "equal_data_bytes_including_fill": 476,
+  "excluded_exact_data_fill": 1,
+  "excluded_data_padding": [],
+  "text_size_delta": 4,
+  "seconds": 1.9
+}

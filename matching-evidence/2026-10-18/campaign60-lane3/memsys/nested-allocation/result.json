@@ -1,0 +1,421 @@
+{
+  "name": "memsys",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/memsys.c",
+  "source_sha256": "6dadf0323ce7982bda70f9d3e7b142a8f12edf5afc01c4eb60af92b4c235dd84",
+  "text": [
+    "8C03FD08",
+    "8C040C24"
+  ],
+  "text_bytes": 3868,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 1,
+  "exact_data_bytes": 1,
+  "functions_total": 30,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "InitMemory",
+      "start": "8C03FD08",
+      "end": "8C03FD54",
+      "size": 76,
+      "status": "differs",
+      "diff_bytes": 72,
+      "linked_at": "8C03FD08",
+      "linked_size": 78
+    },
+    {
+      "name": "func_8C03FD54",
+      "start": "8C03FD54",
+      "end": "8C03FD8A",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C03FD56",
+      "linked_size": 52
+    },
+    {
+      "name": "func_8C03FD8A",
+      "start": "8C03FD8A",
+      "end": "8C03FE02",
+      "size": 120,
+      "status": "differs",
+      "diff_bytes": 15,
+      "linked_at": "8C03FD8A",
+      "linked_size": 120
+    },
+    {
+      "name": "_InitHeap",
+      "start": "8C03FE02",
+      "end": "8C03FE8E",
+      "size": 140,
+      "status": "differs",
+      "diff_bytes": 127,
+      "linked_at": "8C03FE02",
+      "linked_size": 130
+    },
+    {
+      "name": "func_8C03FE8E",
+      "start": "8C03FE8E",
+      "end": "8C03FF46",
+      "size": 184,
+      "status": "differs",
+      "diff_bytes": 179,
+      "linked_at": "8C03FE84",
+      "linked_size": 174
+    },
+    {
+      "name": "func_8C03FF46",
+      "start": "8C03FF46",
+      "end": "8C03FFBC",
+      "size": 118,
+      "status": "differs",
+      "diff_bytes": 109,
+      "linked_at": "8C03FF32",
+      "linked_size": 112
+    },
+    {
+      "name": "func_8C03FFBC",
+      "start": "8C03FFBC",
+      "end": "8C04002A",
+      "size": 110,
+      "status": "differs",
+      "diff_bytes": 107,
+      "linked_at": "8C03FFA2",
+      "linked_size": 110
+    },
+    {
+      "name": "func_8C04002A",
+      "start": "8C04002A",
+      "end": "8C0401AA",
+      "size": 384,
+      "status": "differs",
+      "diff_bytes": 379,
+      "linked_at": "8C040010",
+      "linked_size": 396
+    },
+    {
+      "name": "func_8C0401AA",
+      "start": "8C0401AA",
+      "end": "8C0401E0",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 53,
+      "linked_at": "8C04019C",
+      "linked_size": 54
+    },
+    {
+      "name": "func_8C0401E0",
+      "start": "8C0401E0",
+      "end": "8C0401FE",
+      "size": 30,
+      "status": "moved",
+      "diff_bytes": 30,
+      "linked_at": "8C0401D2",
+      "linked_size": 30
+    },
+    {
+      "name": "LargestAvailableMemoryHeapChunk",
+      "start": "8C0401FE",
+      "end": "8C040234",
+      "size": 54,
+      "status": "differs",
+      "diff_bytes": 53,
+      "linked_at": "8C0401F0",
+      "linked_size": 54
+    },
+    {
+      "name": "_LargestAvailableMemoryChunk",
+      "start": "8C040234",
+      "end": "8C040256",
+      "size": 34,
+      "status": "moved",
+      "diff_bytes": 31,
+      "linked_at": "8C040226",
+      "linked_size": 34
+    },
+    {
+      "name": "AllocateMemoryHeap",
+      "start": "8C040256",
+      "end": "8C040292",
+      "size": 60,
+      "status": "differs",
+      "diff_bytes": 60,
+      "linked_at": "8C040248",
+      "linked_size": 60
+    },
+    {
+      "name": "_AllocateMemory",
+      "start": "8C040292",
+      "end": "8C04036E",
+      "size": 220,
+      "status": "differs",
+      "diff_bytes": 216,
+      "linked_at": "8C040284",
+      "linked_size": 218
+    },
+    {
+      "name": "func_8C040380",
+      "start": "8C040380",
+      "end": "8C040474",
+      "size": 244,
+      "status": "differs",
+      "diff_bytes": 240,
+      "linked_at": "8C04035E",
+      "linked_size": 260
+    },
+    {
+      "name": "func_8C040474",
+      "start": "8C040474",
+      "end": "8C0405B2",
+      "size": 318,
+      "status": "differs",
+      "diff_bytes": 314,
+      "linked_at": "8C040462",
+      "linked_size": 272
+    },
+    {
+      "name": "ReallocateMemory",
+      "start": "8C0405B2",
+      "end": "8C0405DC",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C040572",
+      "linked_size": 54
+    },
+    {
+      "name": "_ReallocateMemory",
+      "start": "8C0405EC",
+      "end": "8C04072C",
+      "size": 320,
+      "status": "differs",
+      "diff_bytes": 316,
+      "linked_at": "8C0405A8",
+      "linked_size": 302
+    },
+    {
+      "name": "AllocateHandleHeap",
+      "start": "8C04072C",
+      "end": "8C040814",
+      "size": 232,
+      "status": "differs",
+      "diff_bytes": 221,
+      "linked_at": "8C0406D6",
+      "linked_size": 242
+    },
+    {
+      "name": "_FillFreeMem",
+      "start": "8C040814",
+      "end": "8C040832",
+      "size": 30,
+      "status": "differs",
+      "diff_bytes": 28,
+      "linked_at": "8C0407C8",
+      "linked_size": 28
+    },
+    {
+      "name": "DeallocateMemory",
+      "start": "8C040832",
+      "end": "8C040858",
+      "size": 38,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C0407E4",
+      "linked_size": 64
+    },
+    {
+      "name": "_DeallocateMemory",
+      "start": "8C040870",
+      "end": "8C040924",
+      "size": 180,
+      "status": "differs",
+      "diff_bytes": 179,
+      "linked_at": "8C040824",
+      "linked_size": 180
+    },
+    {
+      "name": "PurgeableMemory",
+      "start": "8C040924",
+      "end": "8C040986",
+      "size": 98,
+      "status": "differs",
+      "diff_bytes": 91,
+      "linked_at": "8C0408D8",
+      "linked_size": 108
+    },
+    {
+      "name": "func_8C040990",
+      "start": "8C040990",
+      "end": "8C0409D4",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 67,
+      "linked_at": "8C040944",
+      "linked_size": 64
+    },
+    {
+      "name": "func_8C0409D4",
+      "start": "8C0409D4",
+      "end": "8C040A16",
+      "size": 66,
+      "status": "differs",
+      "diff_bytes": 56,
+      "linked_at": "8C040984",
+      "linked_size": 60
+    },
+    {
+      "name": "func_8C040A16",
+      "start": "8C040A16",
+      "end": "8C040B44",
+      "size": 302,
+      "status": "differs",
+      "diff_bytes": 297,
+      "linked_at": "8C0409C0",
+      "linked_size": 298
+    },
+    {
+      "name": "GetPtrSize",
+      "start": "8C040B44",
+      "end": "8C040B6E",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C040AEA",
+      "linked_size": 42
+    },
+    {
+      "name": "_GetPtrSize",
+      "start": "8C040B6E",
+      "end": "8C040B8E",
+      "size": 32,
+      "status": "differs",
+      "diff_bytes": 32,
+      "linked_at": "8C040B14",
+      "linked_size": 32
+    },
+    {
+      "name": "_FindHeap",
+      "start": "8C040B8E",
+      "end": "8C040BB2",
+      "size": 36,
+      "status": "differs",
+      "diff_bytes": 35,
+      "linked_at": "8C040B34",
+      "linked_size": 34
+    },
+    {
+      "name": "_FindChunk",
+      "start": "8C040BB2",
+      "end": "8C040C10",
+      "size": 94,
+      "status": "differs",
+      "diff_bytes": 94,
+      "linked_at": "8C040B56",
+      "linked_size": 102
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C04036E",
+      "end": "8C040380",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C0405DC",
+      "end": "8C0405EC",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "pool",
+      "start": "8C040858",
+      "end": "8C040870",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C040986",
+      "end": "8C040990",
+      "exact": false,
+      "built": 10,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "pool",
+      "start": "8C040C10",
+      "end": "8C040C24",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 20
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEE7C",
+      "end": "8C0BEE7D",
+      "exact": true,
+      "built": 1,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C14CBA4",
+      "end": "8C14CBAC",
+      "exact": true,
+      "linked": [
+        "8C14CBA4",
+        "8C14CBAC"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:38:53",
+  "defines": {
+    "_SetInterruptMask": "8C010080",
+    "_memmove": "8C09BDC0",
+    "_memset": "8C09BE04",
+    "_sdk_heap_alloc": "8C09B2B4",
+    "_sdk_heap_bounds": "8C09B244"
+  },
+  "starts": {
+    "P": "8C03FD08",
+    "D": "8C0BEE7C",
+    "B": "8C14CBA4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03FD08",
+      "length": 3764
+    },
+    {
+      "name": "D",
+      "address": "8C0BEE7C",
+      "length": 1
+    },
+    {
+      "name": "B",
+      "address": "8C14CBA4",
+      "length": 8
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 1,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -104,
+  "seconds": 2.0
+}

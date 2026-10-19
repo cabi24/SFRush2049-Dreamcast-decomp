@@ -1,0 +1,204 @@
+{
+  "name": "blit",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/blit.c",
+  "source_sha256": "5127d62d2cedcab79039e04eb09ffa61c64ba502e6fe6e115908ceadec29d851",
+  "text": [
+    "8C018790",
+    "8C018CBC"
+  ],
+  "text_bytes": 1324,
+  "exact_text_bytes": 1118,
+  "align_bytes": 0,
+  "data_bytes": 4,
+  "exact_data_bytes": 4,
+  "functions_total": 10,
+  "functions_exact": 9,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitBlits",
+      "start": "8C018790",
+      "end": "8C0187BA",
+      "size": 42,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018790",
+      "linked_size": 42
+    },
+    {
+      "name": "RemoveBlit",
+      "start": "8C0187BA",
+      "end": "8C01882A",
+      "size": 112,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0187BA",
+      "linked_size": 112
+    },
+    {
+      "name": "DrawBlits",
+      "start": "8C01882A",
+      "end": "8C01887A",
+      "size": 80,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01882A",
+      "linked_size": 102
+    },
+    {
+      "name": "InitBlit",
+      "start": "8C018890",
+      "end": "8C018910",
+      "size": 128,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018890",
+      "linked_size": 128
+    },
+    {
+      "name": "UpdateBlit",
+      "start": "8C018910",
+      "end": "8C018992",
+      "size": 130,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018910",
+      "linked_size": 130
+    },
+    {
+      "name": "NewBlit",
+      "start": "8C018992",
+      "end": "8C018A5E",
+      "size": 204,
+      "status": "differs",
+      "diff_bytes": 44,
+      "linked_at": "8C018992",
+      "linked_size": 204
+    },
+    {
+      "name": "RenameBlit",
+      "start": "8C018A5E",
+      "end": "8C018A96",
+      "size": 56,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018A5E",
+      "linked_size": 56
+    },
+    {
+      "name": "SelectBlit",
+      "start": "8C018A96",
+      "end": "8C018B56",
+      "size": 192,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018A96",
+      "linked_size": 192
+    },
+    {
+      "name": "NewMultiBlit",
+      "start": "8C018B56",
+      "end": "8C018C66",
+      "size": 272,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018B56",
+      "linked_size": 306
+    },
+    {
+      "name": "func_8C018C88",
+      "start": "8C018C88",
+      "end": "8C018CBC",
+      "size": 52,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018C88",
+      "linked_size": 52
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01887A",
+      "end": "8C018890",
+      "exact": true,
+      "built": 22,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C018C66",
+      "end": "8C018C88",
+      "exact": true,
+      "built": 34,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB224",
+      "end": "8C0BB228",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C128120",
+      "end": "8C12B644",
+      "exact": true,
+      "linked": [
+        "8C128120",
+        "8C12B644"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:02:44",
+  "defines": {
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_ZOID_AddBlit": "8C068DC8",
+    "_ZOID_CropBlit": "8C068D50",
+    "_ZOID_FlipBlit": "8C068E94",
+    "_ZOID_RemoveBlit": "8C068E86",
+    "_ZOID_SetBlitData": "8C068D92",
+    "_ZOID_TextBlit": "8C068EBE",
+    "_ZOID_UpdateBlit": "8C068D2C",
+    "__divls": "8C09B680",
+    "__modls": "8C09B82C",
+    "_gNumModels": "8C14CB1C",
+    "_inactiveBlit": "8C0BDDC0"
+  },
+  "starts": {
+    "P": "8C018790",
+    "D": "8C0BB224",
+    "B": "8C128120"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C018790",
+      "length": 1324
+    },
+    {
+      "name": "D",
+      "address": "8C0BB224",
+      "length": 4
+    },
+    {
+      "name": "B",
+      "address": "8C128120",
+      "length": 13604
+    }
+  ],
+  "equal_text_bytes_including_fill": 1120,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 4,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.7
+}

@@ -15,9 +15,7 @@ float magnitude(float *vec)
 }
 float invmagnitude(float *vec)
 {
-    float x,y,z;
-    x=vec[0]; y=vec[1]; z=vec[2];
-    return func_8C026278(x*x+y*y+z*z);
+    return func_8C026278(vec[0]*vec[0]+vec[1]*vec[1]+vec[2]*vec[2]);
 }
 #pragma inline(func_8C0262D2)
 float func_8C0262D2(float x, float y, float z) { return sqrtf(x*x + y*y + z*z); }

@@ -1,0 +1,545 @@
+{
+  "name": "camera",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/camera.c",
+  "source_sha256": "599d911809365f4255608181687a6fb511b5438d0ae8cc7c1c43d0ad7872187a",
+  "text": [
+    "8C018D98",
+    "8C01B6F0"
+  ],
+  "text_bytes": 10584,
+  "exact_text_bytes": 108,
+  "align_bytes": 0,
+  "data_bytes": 1642,
+  "exact_data_bytes": 1642,
+  "functions_total": 23,
+  "functions_exact": 1,
+  "functions_moved": 4,
+  "functions": [
+    {
+      "name": "ZeroCameras",
+      "start": "8C018D98",
+      "end": "8C018DF2",
+      "size": 90,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C018D98",
+      "linked_size": 90
+    },
+    {
+      "name": "ZeroCamera",
+      "start": "8C018DF2",
+      "end": "8C018E4C",
+      "size": 90,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C018DF2",
+      "linked_size": 110
+    },
+    {
+      "name": "init_views",
+      "start": "8C018E60",
+      "end": "8C018F0A",
+      "size": 170,
+      "status": "differs",
+      "diff_bytes": 138,
+      "linked_at": "8C018E60",
+      "linked_size": 172
+    },
+    {
+      "name": "init_view3",
+      "start": "8C018F0A",
+      "end": "8C018F54",
+      "size": 74,
+      "status": "differs",
+      "diff_bytes": 70,
+      "linked_at": "8C018F0C",
+      "linked_size": 156
+    },
+    {
+      "name": "UpdateCameras",
+      "start": "8C018FA0",
+      "end": "8C019048",
+      "size": 168,
+      "status": "moved",
+      "diff_bytes": 154,
+      "linked_at": "8C018FA8",
+      "linked_size": 168
+    },
+    {
+      "name": "SetCameraView",
+      "start": "8C019048",
+      "end": "8C019064",
+      "size": 28,
+      "status": "moved",
+      "diff_bytes": 25,
+      "linked_at": "8C019050",
+      "linked_size": 68
+    },
+    {
+      "name": "CheckCameraView",
+      "start": "8C01908C",
+      "end": "8C0194AC",
+      "size": 1056,
+      "status": "differs",
+      "diff_bytes": 957,
+      "linked_at": "8C019094",
+      "linked_size": 1092
+    },
+    {
+      "name": "view1_suscomp_offset",
+      "start": "8C0194C4",
+      "end": "8C0194EE",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C0194D8",
+      "linked_size": 42
+    },
+    {
+      "name": "View3Cam",
+      "start": "8C0194EE",
+      "end": "8C019D68",
+      "size": 2170,
+      "status": "differs",
+      "diff_bytes": 2094,
+      "linked_at": "8C019502",
+      "linked_size": 2094
+    },
+    {
+      "name": "update_camera",
+      "start": "8C019D68",
+      "end": "8C01A34E",
+      "size": 1510,
+      "status": "differs",
+      "diff_bytes": 1470,
+      "linked_at": "8C019D30",
+      "linked_size": 2136
+    },
+    {
+      "name": "_UpdateDroneObjects",
+      "start": "8C01A34E",
+      "end": "8C01A3FA",
+      "size": 172,
+      "status": "differs",
+      "diff_bytes": 168,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "update_car_object",
+      "start": "8C01A420",
+      "end": "8C01A494",
+      "size": 116,
+      "status": "moved",
+      "diff_bytes": 114,
+      "linked_at": "8C01A588",
+      "linked_size": 116
+    },
+    {
+      "name": "UpdateCarObj",
+      "start": "8C01A494",
+      "end": "8C01A4FE",
+      "size": 106,
+      "status": "differs",
+      "diff_bytes": 104,
+      "linked_at": "8C01A5FC",
+      "linked_size": 136
+    },
+    {
+      "name": "DeathCam",
+      "start": "8C01A51C",
+      "end": "8C01A61E",
+      "size": 258,
+      "status": "differs",
+      "diff_bytes": 256,
+      "linked_at": "8C01A684",
+      "linked_size": 832
+    },
+    {
+      "name": "_UpdateRearCamera",
+      "start": "8C01A61E",
+      "end": "8C01A860",
+      "size": 578,
+      "status": "differs",
+      "diff_bytes": 566,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "circle_camera_around_car",
+      "start": "8C01A878",
+      "end": "8C01A98C",
+      "size": 276,
+      "status": "differs",
+      "diff_bytes": 270,
+      "linked_at": "8C01A9C4",
+      "linked_size": 328
+    },
+    {
+      "name": "init_camera_on_track",
+      "start": "8C01A9C8",
+      "end": "8C01AB68",
+      "size": 416,
+      "status": "differs",
+      "diff_bytes": 409,
+      "linked_at": "8C01AB0C",
+      "linked_size": 448
+    },
+    {
+      "name": "fix_camera_in_space",
+      "start": "8C01AB68",
+      "end": "8C01AC52",
+      "size": 234,
+      "status": "differs",
+      "diff_bytes": 232,
+      "linked_at": "8C01ACCC",
+      "linked_size": 280
+    },
+    {
+      "name": "init_steady_move_cam",
+      "start": "8C01AC80",
+      "end": "8C01ACE8",
+      "size": 104,
+      "status": "moved",
+      "diff_bytes": 101,
+      "linked_at": "8C01ADE4",
+      "linked_size": 104
+    },
+    {
+      "name": "steady_move_cam",
+      "start": "8C01ACE8",
+      "end": "8C01B196",
+      "size": 1198,
+      "status": "differs",
+      "diff_bytes": 1163,
+      "linked_at": "8C01AE4C",
+      "linked_size": 1088
+    },
+    {
+      "name": "maxpath_cam",
+      "start": "8C01B1C0",
+      "end": "8C01B406",
+      "size": 582,
+      "status": "differs",
+      "diff_bytes": 576,
+      "linked_at": "8C01B28C",
+      "linked_size": 580
+    },
+    {
+      "name": "point_at_car",
+      "start": "8C01B406",
+      "end": "8C01B58E",
+      "size": 392,
+      "status": "differs",
+      "diff_bytes": 384,
+      "linked_at": "8C01B4D0",
+      "linked_size": 386
+    },
+    {
+      "name": "LookInDir",
+      "start": "8C01B58E",
+      "end": "8C01B6EE",
+      "size": 352,
+      "status": "differs",
+      "diff_bytes": 345,
+      "linked_at": "8C01B652",
+      "linked_size": 332
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C018E4C",
+      "end": "8C018E60",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C018F54",
+      "end": "8C018FA0",
+      "exact": false,
+      "built": 76,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C019064",
+      "end": "8C01908C",
+      "exact": false,
+      "built": 40,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C0194AC",
+      "end": "8C0194C4",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C01A3FA",
+      "end": "8C01A420",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 37
+    },
+    {
+      "kind": "pool",
+      "start": "8C01A4FE",
+      "end": "8C01A51C",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C01A860",
+      "end": "8C01A878",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C01A98C",
+      "end": "8C01A9C8",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C01AC52",
+      "end": "8C01AC80",
+      "exact": false,
+      "built": 46,
+      "diff_bytes": 43
+    },
+    {
+      "kind": "pool",
+      "start": "8C01B196",
+      "end": "8C01B1C0",
+      "exact": false,
+      "built": 42,
+      "diff_bytes": 42
+    },
+    {
+      "kind": "gap",
+      "start": "8C01B6EE",
+      "end": "8C01B6F0",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB228",
+      "end": "8C0BB240",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB240",
+      "end": "8C0BB246",
+      "exact": true,
+      "built": 6,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB248",
+      "end": "8C0BB258",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB258",
+      "end": "8C0BB268",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB268",
+      "end": "8C0BB274",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB274",
+      "end": "8C0BB384",
+      "exact": true,
+      "built": 272,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB384",
+      "end": "8C0BB444",
+      "exact": true,
+      "built": 192,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB444",
+      "end": "8C0BB534",
+      "exact": true,
+      "built": 240,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB534",
+      "end": "8C0BB5F4",
+      "exact": true,
+      "built": 192,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB5F4",
+      "end": "8C0BB724",
+      "exact": true,
+      "built": 304,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB724",
+      "end": "8C0BB874",
+      "exact": true,
+      "built": 336,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB874",
+      "end": "8C0BB88C",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BB88C",
+      "end": "8C0BB894",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12B644",
+      "end": "8C12BAB0",
+      "exact": false,
+      "linked": [
+        "8C12B644",
+        "8C12BAA8"
+      ]
+    }
+  ],
+  "notes": [
+    "B extent differs from the map",
+    "176 built bytes fall outside the mapped ranges (first 8C01B6F0, last 8C0BB247)"
+  ],
+  "built_at": "2026-10-18T15:30:53",
+  "defines": {
+    "_BlinkResurrectingCars": "8C04A3DC",
+    "_BodyVector": "8C026B00",
+    "_CameraCollision": "8C052FDC",
+    "_CopyUV": "8C02631E",
+    "_Distance2D": "8C0262E4",
+    "_GetCountdownTimeRemaining": "8C0101A8",
+    "_GetPlayerCarView": "8C04BD68",
+    "_Interpolate": "8C049A80",
+    "_NextPathPt": "8C04628C",
+    "_Random": "8C027134",
+    "_SavePlayerCarView": "8C04BDB6",
+    "_ShowCountdown": "8C022654",
+    "_SkyUpdate": "8C04F4C8",
+    "_UpdateHUDPostCamera": "8C034B9E",
+    "_WorldVector": "8C026B8C",
+    "_YawUV": "8C02669A",
+    "_ZOID_FindMatrix": "8C068722",
+    "_ZOID_UpdateObject": "8C068774",
+    "__modlu": "8C09B8F4",
+    "_dc_cos": "8C09BC7C",
+    "_dc_sin": "8C09BEBC",
+    "_direction": "8C0262F2",
+    "_gContEdges": "8C12C194",
+    "_gContLevels": "8C12C184",
+    "_gCountDown": "8C12C510",
+    "_gDronePaths": "8C14C59C",
+    "_gFrameScale": "8C15CFDD",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameCar": "8C004000",
+    "_gGameState": "8C0BFD3C",
+    "_gLastFrameCount": "8C122550",
+    "_gModelTime": "8C14CB64",
+    "_gNumCars": "8C14CB84",
+    "_gPauseState": "8C0BFA78",
+    "_gPlayers": "8C006000",
+    "_gRace": "8C12C628",
+    "_gTrackNum": "8C15C9C0",
+    "_magnitude": "8C02628A",
+    "_model": "8C14CBB4",
+    "_rvector": "8C0BD960",
+    "_unitmatrix": "8C0BD924",
+    "_uvector": "8C0BD954"
+  },
+  "starts": {
+    "P": "8C018D98",
+    "D": "8C0BB228",
+    "B": "8C12B644"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C018D98",
+      "length": 10758
+    },
+    {
+      "name": "D",
+      "address": "8C0BB228",
+      "length": 1644
+    },
+    {
+      "name": "B",
+      "address": "8C12B644",
+      "length": 1124
+    }
+  ],
+  "equal_text_bytes_including_fill": 110,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 1642,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 176,
+  "seconds": 2.4
+}

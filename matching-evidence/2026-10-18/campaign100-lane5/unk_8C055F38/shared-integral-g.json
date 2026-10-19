@@ -1,0 +1,65 @@
+{
+  "name": "unk_8C055F38",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unk_8C055F38.c",
+  "source_sha256": "381eb92c656676cade3f6cd628911d121f0799195ef4a598ffd9bb1d57d62508",
+  "text": [
+    "8C055F38",
+    "8C056058"
+  ],
+  "text_bytes": 288,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 1,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C055F38",
+      "start": "8C055F38",
+      "end": "8C05601E",
+      "size": 230,
+      "status": "differs",
+      "diff_bytes": 205,
+      "linked_at": "8C055F38",
+      "linked_size": 296
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05601E",
+      "end": "8C056058",
+      "exact": false,
+      "built": 58,
+      "diff_bytes": 54
+    }
+  ],
+  "notes": [
+    "8 built bytes fall outside the mapped ranges (first 8C056058, last 8C05605F)"
+  ],
+  "built_at": "2026-10-18T15:59:36",
+  "defines": {
+    "_modff": "8C09BE1C"
+  },
+  "starts": {
+    "P": "8C055F38"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C055F38",
+      "length": 296
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 8,
+  "seconds": 2.1
+}

@@ -1,0 +1,219 @@
+{
+ "name": "fmath",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT fmath.abs",
+  "FORM A",
+  "START P(8C026278)",
+  "START D(8C0BD924)",
+  "DEFINE _cosf(8C09BC7C)",
+  "DEFINE _facos(8C01137A)",
+  "DEFINE _fatan2(8C01145C)",
+  "DEFINE _rand(8C047BC8)",
+  "DEFINE _sinf(8C09BEBC)",
+  "PRINT fmath.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\fmath\\dirty\\obj\\fmath.obj",
+   "sha256": "13f5bff8eeb28ff4d8524226651291f116e31fd675b3bd015576afa1142d928f"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C026278",
+   "length": 3804
+  },
+  {
+   "name": "D",
+   "address": "8C0BD924",
+   "length": 72
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C026278",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2c11150269bf73f85043fa667df3b8e26cc885b99798a2b5552fba7b6142c202"
+  },
+  {
+   "section": "P",
+   "address": "8C02636E",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "01af10ea417b36929a7be1a7b965493cd8e28cb04a9dac32789acaee3547ef2e"
+  },
+  {
+   "section": "P",
+   "address": "8C026464",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "5d65dea6f9366149e93ccdc117ac73063b53ea1f3eaa150e613188ccb8abdce9"
+  },
+  {
+   "section": "P",
+   "address": "8C02655A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "bd9615243124202bac6834ab83cc93a6a26f142dfb60a18996c0c38d7aa48db4"
+  },
+  {
+   "section": "P",
+   "address": "8C026650",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "f8aa05caaf2865be07c272c25b01d226592310a3726bfe1655931b9dc86089dd"
+  },
+  {
+   "section": "P",
+   "address": "8C026746",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "87c05f017e86c90250fb3accfcb6809085b82214211aad4591a546d77353a212"
+  },
+  {
+   "section": "P",
+   "address": "8C02683C",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "a4cf20d510d65bfaa4c7bd54cd73bc4d3b9f32f8e360e14df6ccb88ba063fb7f"
+  },
+  {
+   "section": "P",
+   "address": "8C026932",
+   "size": 2,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "e25a6291f92eea897f1fec4a20847407f62603bcf42b2700de3bb99975983e99"
+  },
+  {
+   "section": "P",
+   "address": "8C026934",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "118fd5130dc0eef3089b9b50409e962c8fc0b91116e5da7b301c9786fd4b5e36"
+  },
+  {
+   "section": "P",
+   "address": "8C026A2A",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ed3e328fcb689424955f26292d2ea14ae0ece05760ba9273d19c71d620a334d7"
+  },
+  {
+   "section": "P",
+   "address": "8C026B20",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "41c780d2995c91ade308f09cf34eb027f222d3e611cbc8b99425a5460398bc0d"
+  },
+  {
+   "section": "P",
+   "address": "8C026C16",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 192,
+   "first_diff_offset": 46,
+   "sha256": "ede9a17e2d8eff6f9846ee58974206138dc093cbc14e520194c6172133446432"
+  },
+  {
+   "section": "P",
+   "address": "8C026D0C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 236,
+   "first_diff_offset": 0,
+   "sha256": "28c2405f92301b89107e787818c82c90f11b3d0f93f2238df03ef5bbe7403309"
+  },
+  {
+   "section": "P",
+   "address": "8C026E02",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 240,
+   "first_diff_offset": 0,
+   "sha256": "f181ab0c2007626a94be77152689b25e87ab70a4096e8848297bb539d745404e"
+  },
+  {
+   "section": "P",
+   "address": "8C026EF8",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 237,
+   "first_diff_offset": 0,
+   "sha256": "5c71bd79acdabae7de9b8d1174919c796cf7bdba987bb5dc447683f5cfba34ad"
+  },
+  {
+   "section": "P",
+   "address": "8C026FEE",
+   "size": 2,
+   "exact": false,
+   "diff_bytes": 2,
+   "first_diff_offset": 0,
+   "sha256": "44f589105aae347066cd79e0c3c5fc70fd019710c0c195ce2d18f19acf771c9c"
+  },
+  {
+   "section": "P",
+   "address": "8C026FF0",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 242,
+   "first_diff_offset": 0,
+   "sha256": "0ba3b1b86180315352651180fe4259109fc2b9290e5dfef3815a5967f92517af"
+  },
+  {
+   "section": "P",
+   "address": "8C0270E6",
+   "size": 100,
+   "exact": false,
+   "diff_bytes": 97,
+   "first_diff_offset": 0,
+   "sha256": "89d874c095563f3ac1445e42310c167446ac7ea6cd0c20b5f5fe81686cbc9834"
+  },
+  {
+   "section": "P",
+   "address": "8C02714C",
+   "size": 8,
+   "exact": false,
+   "diff_bytes": 8,
+   "first_diff_offset": 0,
+   "sha256": "450243452c066b484863b96b9bb79bdc477da25847ac0f4f5c875f961bf6fd9f"
+  },
+  {
+   "section": "D",
+   "address": "8C0BD924",
+   "size": 72,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "c0cad244da71af6dde35cbef97f64f1e9ff02f200b31b1ec941e72480a5bc51e"
+  }
+ ],
+ "all_exact": false
+}

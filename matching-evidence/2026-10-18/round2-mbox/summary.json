@@ -1,0 +1,515 @@
+{
+  "result": "No strict improvement; source restored byte-for-byte",
+  "delta_functions": 0,
+  "delta_text_bytes": 0,
+  "variants": [
+    {
+      "label": "baseline",
+      "source_sha256": "a78c06f4afc3b21dec4287b6209fe669de8bf2050564606737ded59f4d942df1",
+      "exact_functions": 6,
+      "exact_text_bytes": 530,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 95,
+          "linked_size": 282
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 106,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 102,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "c0b3d66c3212d71c9f7d04657bf033f16396145a2b4346f0a1206212029b516d",
+      "abs_sha256": "8557b63f3f79f3b9466c6405622b3a9d6e46df816d4b4700af173f5c56850fb0"
+    },
+    {
+      "label": "cam-volatile",
+      "source_sha256": "3a454957c5f4bfa4266c8b4a3c7d1b61a960bc4e9c7c53ebed71c416398eb162",
+      "exact_functions": 0,
+      "exact_text_bytes": 0,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObject",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": 18
+        },
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 40
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 172,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_ShowObject",
+          "status": "moved",
+          "diff_bytes": 181,
+          "linked_size": 234
+        },
+        {
+          "name": "objcmp",
+          "status": "differs",
+          "diff_bytes": 38,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_GetPosition",
+          "status": "moved",
+          "diff_bytes": 126,
+          "linked_size": 162
+        },
+        {
+          "name": "MBOX_GetObjectRadius",
+          "status": "moved",
+          "diff_bytes": 64,
+          "linked_size": 64
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 239,
+          "linked_size": 282
+        },
+        {
+          "name": "texcmp",
+          "status": "differs",
+          "diff_bytes": 22,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 180,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 177,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "d719c58c8f81a96888d3bc4806fa997bd0ff6f560feccfe65df66ecc5c0aa5c3",
+      "abs_sha256": "085d902b9b1edb743e895eaed7118594537a7abf03a4aa3d7ef78056bb300525"
+    },
+    {
+      "label": "cam-direct",
+      "source_sha256": "0f9282c323e7f7d385dd2e05250a00eac2a823ac7dd6e9c3c57d5cbf1ef9f5ce",
+      "exact_functions": 6,
+      "exact_text_bytes": 530,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 23,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 95,
+          "linked_size": 282
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 106,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 102,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "48b33b397a63754b48abae183bdac6c893fce2ee2896e6e94c27861d783362be",
+      "abs_sha256": "5138b05544f3902b7bb03e59a6f21f72a2b92f50f6c44e25aa94609bcc7cb858"
+    },
+    {
+      "label": "cam-direct-volatile",
+      "source_sha256": "1eced6980c9e92e07a13205f3bab3a991251272382f73c9dcc0e2761fcc84e78",
+      "exact_functions": 0,
+      "exact_text_bytes": 0,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObject",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": 18
+        },
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 19,
+          "linked_size": 38
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 143,
+          "linked_size": 232
+        },
+        {
+          "name": "MBOX_ShowObject",
+          "status": "moved",
+          "diff_bytes": 181,
+          "linked_size": 234
+        },
+        {
+          "name": "objcmp",
+          "status": "differs",
+          "diff_bytes": 38,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_GetPosition",
+          "status": "moved",
+          "diff_bytes": 126,
+          "linked_size": 162
+        },
+        {
+          "name": "MBOX_GetObjectRadius",
+          "status": "moved",
+          "diff_bytes": 64,
+          "linked_size": 64
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 239,
+          "linked_size": 282
+        },
+        {
+          "name": "texcmp",
+          "status": "differs",
+          "diff_bytes": 22,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 180,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 177,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "14d47cf6ae3babfe4c6de558d25190a50ff7c235a50a7bf56d4646962d3706cf",
+      "abs_sha256": "665f31f208737beef29551fe68aa599f05d75b4aeb93db185bb3fe49065529cf"
+    },
+    {
+      "label": "texture-register",
+      "source_sha256": "4323ced47992bb2f1d0db4de76201cbd0751437b1dad4910b7c17ca4ef874394",
+      "exact_functions": 5,
+      "exact_text_bytes": 508,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 96,
+          "linked_size": 282
+        },
+        {
+          "name": "texcmp",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 167,
+          "linked_size": 200
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 180,
+          "linked_size": 238
+        }
+      ],
+      "object_sha256": "f829029bfbd16dc3b0761cc77a2ffa90f0045cf298708276b052f9f27d135116",
+      "abs_sha256": "56f968fbb70ea6ec3c53a279992c63ab5842b4a79305428484d080b060dcc488"
+    },
+    {
+      "label": "texture-goto",
+      "source_sha256": "9edce04137073c1acd747b1fc9e7f470a2db47b678331dc39bcf795b8341276d",
+      "exact_functions": 5,
+      "exact_text_bytes": 508,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 96,
+          "linked_size": 282
+        },
+        {
+          "name": "texcmp",
+          "status": "differs",
+          "diff_bytes": 1,
+          "linked_size": null
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 176,
+          "linked_size": 188
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 181,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "f60c390bd4e75869ecf4a00dfc8844c3a9ba050a2c09e8cec12b7d05aeea8e33",
+      "abs_sha256": "f6cabca870ce47292fc642ff457c5c2c1da9695dbbde8854bd7f14edc9d37408"
+    },
+    {
+      "label": "texture-register-last",
+      "source_sha256": "924135e2d70a29925a349da5030c6c765c4374fdf200ec242b1f5b5a7f5cd3d4",
+      "exact_functions": 6,
+      "exact_text_bytes": 530,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 95,
+          "linked_size": 282
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 110,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 102,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "77c878fb9041a6ad6e35064e5dcaf5200436286f2e3ab623b4dae47763baa976",
+      "abs_sha256": "6ad148cbda518bf05224ccf1d3744cd630f64fef4de40ccc612200961a8d3b0b"
+    },
+    {
+      "label": "restored",
+      "source_sha256": "a78c06f4afc3b21dec4287b6209fe669de8bf2050564606737ded59f4d942df1",
+      "exact_functions": 6,
+      "exact_text_bytes": 530,
+      "exact_data_bytes": 523,
+      "residuals": [
+        {
+          "name": "MBOX_NewObjectCam",
+          "status": "differs",
+          "diff_bytes": 32,
+          "linked_size": 36
+        },
+        {
+          "name": "MBOX_GetChild",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_GetNext",
+          "status": "moved",
+          "diff_bytes": 10,
+          "linked_size": 12
+        },
+        {
+          "name": "MBOX_HideObject",
+          "status": "differs",
+          "diff_bytes": 76,
+          "linked_size": 230
+        },
+        {
+          "name": "MBOX_FindObject_WORK",
+          "status": "differs",
+          "diff_bytes": 95,
+          "linked_size": 282
+        },
+        {
+          "name": "MBOX_FindTexture_WORK",
+          "status": "differs",
+          "diff_bytes": 106,
+          "linked_size": 196
+        },
+        {
+          "name": "func_8C03D56E",
+          "status": "differs",
+          "diff_bytes": 102,
+          "linked_size": 230
+        }
+      ],
+      "object_sha256": "cc7f7dd261b9a99d81b8377e5fb95340c7232bd23fd6dc068cc6db423b8d2053",
+      "abs_sha256": "13eaf1dfc16b29bf2c2ca8ac0e343c88157e1cdde0e20e219c3e43c0feab14fb"
+    }
+  ]
+}

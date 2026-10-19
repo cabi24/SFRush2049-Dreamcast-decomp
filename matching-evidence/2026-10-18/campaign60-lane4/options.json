@@ -1,0 +1,20 @@
+{
+  "unit": "options",
+  "selected": "final",
+  "baseline_functions": 1,
+  "final_functions": 2,
+  "new_functions": [
+    "InitOptions"
+  ],
+  "baseline_text": 756,
+  "final_text": 856,
+  "baseline_data": 0,
+  "final_data": 0,
+  "note": "InitOptions exact; GetDefaultOption register residual10 bytes",
+  "hashes": {
+    "src\\options.c": "b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063",
+    "build\\campaign60-lane4\\options\\final\\obj\\options.obj": "68272a7e0eaffc3b666f2f16a4c5d4dedeeb75a050d1488cd82f26633337adee",
+    "build\\campaign60-lane4\\options\\final\\link\\options.abs": "adb585f0d8fd24af0a8a1ee6a1a67ff5be235ef744603259f10f4a360a2c829a",
+    "build\\campaign60-lane4\\options\\final\\pp\\options.c": "92410984196a2201861a29a037003aac534eccca48aa05310c20020cb4306f4b"
+  }
+}

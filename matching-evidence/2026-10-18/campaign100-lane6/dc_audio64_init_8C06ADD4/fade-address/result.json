@@ -1,0 +1,337 @@
+{
+  "name": "dc_audio64_init_8C06ADD4",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_audio64_init_8C06ADD4.c",
+  "source_sha256": "d419bef4edbe763699edff135d5330fc859ee7bca7099bbaa11a3a8980248d50",
+  "text": [
+    "8C06ADD4",
+    "8C06B2EC"
+  ],
+  "text_bytes": 1304,
+  "exact_text_bytes": 924,
+  "align_bytes": 0,
+  "data_bytes": 330,
+  "exact_data_bytes": 317,
+  "functions_total": 16,
+  "functions_exact": 10,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C06ADD4",
+      "start": "8C06ADD4",
+      "end": "8C06AE46",
+      "size": 114,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C06ADD4",
+      "linked_size": 114
+    },
+    {
+      "name": "func_8C06AE46",
+      "start": "8C06AE46",
+      "end": "8C06AE4C",
+      "size": 6,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AE46",
+      "linked_size": 6
+    },
+    {
+      "name": "func_8C06AE4C",
+      "start": "8C06AE4C",
+      "end": "8C06AEB2",
+      "size": 102,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AE4C",
+      "linked_size": 102
+    },
+    {
+      "name": "func_8C06AEB2",
+      "start": "8C06AEB2",
+      "end": "8C06AEC8",
+      "size": 22,
+      "status": "differs",
+      "diff_bytes": 11,
+      "linked_at": "8C06AEB2",
+      "linked_size": 20
+    },
+    {
+      "name": "func_8C06AEC8",
+      "start": "8C06AEC8",
+      "end": "8C06AECE",
+      "size": 6,
+      "status": "differs",
+      "diff_bytes": 6,
+      "linked_at": "8C06AEC6",
+      "linked_size": 106
+    },
+    {
+      "name": "func_8C06AF30",
+      "start": "8C06AF30",
+      "end": "8C06AF48",
+      "size": 24,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AF30",
+      "linked_size": 24
+    },
+    {
+      "name": "func_8C06AF48",
+      "start": "8C06AF48",
+      "end": "8C06AF60",
+      "size": 24,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AF48",
+      "linked_size": 24
+    },
+    {
+      "name": "func_8C06AF60",
+      "start": "8C06AF60",
+      "end": "8C06AFC4",
+      "size": 100,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AF60",
+      "linked_size": 100
+    },
+    {
+      "name": "func_8C06AFC4",
+      "start": "8C06AFC4",
+      "end": "8C06B052",
+      "size": 142,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AFC4",
+      "linked_size": 142
+    },
+    {
+      "name": "func_8C06B052",
+      "start": "8C06B052",
+      "end": "8C06B182",
+      "size": 304,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B052",
+      "linked_size": 304
+    },
+    {
+      "name": "func_8C06B182",
+      "start": "8C06B182",
+      "end": "8C06B1A8",
+      "size": 38,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B182",
+      "linked_size": 38
+    },
+    {
+      "name": "func_8C06B1A8",
+      "start": "8C06B1A8",
+      "end": "8C06B1C8",
+      "size": 32,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B1A8",
+      "linked_size": 32
+    },
+    {
+      "name": "func_8C06B1C8",
+      "start": "8C06B1C8",
+      "end": "8C06B1F0",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 10,
+      "linked_at": "8C06B1C8",
+      "linked_size": 100
+    },
+    {
+      "name": "func_8C06B22C",
+      "start": "8C06B22C",
+      "end": "8C06B254",
+      "size": 40,
+      "status": "differs",
+      "diff_bytes": 10,
+      "linked_at": "8C06B22C",
+      "linked_size": 40
+    },
+    {
+      "name": "func_8C06B254",
+      "start": "8C06B254",
+      "end": "8C06B298",
+      "size": 68,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B254",
+      "linked_size": 68
+    },
+    {
+      "name": "func_8C06B298",
+      "start": "8C06B298",
+      "end": "8C06B2D4",
+      "size": 60,
+      "status": "differs",
+      "diff_bytes": 26,
+      "linked_at": "8C06B298",
+      "linked_size": 84
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06AECE",
+      "end": "8C06AF30",
+      "exact": false,
+      "built": 98,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "pool",
+      "start": "8C06B1F0",
+      "end": "8C06B22C",
+      "exact": true,
+      "built": 60,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06B2D4",
+      "end": "8C06B2EC",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B1BBC",
+      "end": "8C0B1CD6",
+      "exact": true,
+      "built": 282,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7C48",
+      "end": "8C0C7C78",
+      "exact": true,
+      "built": 48,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C17843C",
+      "end": "8C17844C",
+      "exact": true,
+      "linked": [
+        "8C17843C",
+        "8C17844C"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T16:02:22",
+  "defines": {
+    "_AllocateMemoryHeap": "8C040256",
+    "_AudioSfxInit": "8C016704",
+    "_AudioSfxServer": "8C016858",
+    "_DeallocateMemory": "8C040832",
+    "_func_8C010080": "8C010080",
+    "_func_8C069E34": "8C069E34",
+    "_func_8C06A1E4": "8C06A1E4",
+    "_func_8C09C044": "8C09C044",
+    "_func_8C09C06C": "8C09C06C",
+    "_func_8C09C354": "8C09C354",
+    "_func_8C09C456": "8C09C456",
+    "_func_8C09E3A2": "8C09E3A2",
+    "_func_8C09E946": "8C09E946",
+    "_func_8C09EA0C": "8C09EA0C",
+    "_func_8C09EE78": "8C09EE78",
+    "_func_8C09EEE6": "8C09EEE6",
+    "_func_8C09EF10": "8C09EF10",
+    "_func_8C09F2CC": "8C09F2CC",
+    "_func_8C0A1832": "8C0A1832",
+    "_func_8C0A18E6": "8C0A18E6",
+    "_func_8C0A26C8": "8C0A26C8",
+    "_func_8C0A273A": "8C0A273A",
+    "_func_8C0D8726": "8C0D8726",
+    "_func_8C0D8730": "8C0D8730",
+    "_func_8C0D8736": "8C0D8736",
+    "_func_8C0D9484": "8C0D9484"
+  },
+  "starts": {
+    "P": "8C06ADD4",
+    "C": "8C0B1BBC",
+    "D": "8C0C7C48",
+    "B": "8C17843C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06ADD4",
+      "length": 1304
+    },
+    {
+      "name": "C",
+      "address": "8C0B1BBC",
+      "length": 282
+    },
+    {
+      "name": "D",
+      "address": "8C0C7C48",
+      "length": 48
+    },
+    {
+      "name": "B",
+      "address": "8C17843C",
+      "length": 16
+    }
+  ],
+  "equal_text_bytes_including_fill": 924,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 330,
+  "excluded_exact_data_fill": 13,
+  "excluded_data_padding": [
+    {
+      "start": "8C0B1BFB",
+      "end": "8C0B1BFC",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0B1C0D",
+      "end": "8C0B1C10",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0B1C27",
+      "end": "8C0B1C28",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0B1C5E",
+      "end": "8C0B1C60",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0B1C73",
+      "end": "8C0B1C74",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0B1C96",
+      "end": "8C0B1C98",
+      "reason": "Natural string-literal alignment, no semantic data credit."
+    },
+    {
+      "start": "8C0C7C51",
+      "end": "8C0C7C54",
+      "reason": "Natural alignment after mono signed byte; no semantic data credit."
+    }
+  ],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

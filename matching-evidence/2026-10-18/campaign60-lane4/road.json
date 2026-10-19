@@ -1,0 +1,18 @@
+{
+  "unit": "road",
+  "selected": "baseline",
+  "baseline_functions": 0,
+  "final_functions": 0,
+  "new_functions": [],
+  "baseline_text": 18,
+  "final_text": 18,
+  "baseline_data": 0,
+  "final_data": 0,
+  "note": "No retained gain;3 pointer/component shapes fail whole function; cast offsets gave only10 incidental pool bytes",
+  "hashes": {
+    "src\\road.c": "175ef520a11f62e8f6a6ce5b4f5e5114fc2a4f5b8cf602d8c09ab214abb122a0",
+    "build\\campaign60-lane4\\road\\baseline\\obj\\road.obj": "290efba0e20e6a24adcc697dcffd3baea4f7464086c465d5cfbb9a971fa157f5",
+    "build\\campaign60-lane4\\road\\baseline\\link\\road.abs": "c746a98fa936aae5cfc72ee0d4d3ba36c896d4846b4e632f0969eea05ae970d8",
+    "build\\campaign60-lane4\\road\\baseline\\pp\\road.c": "3e5846c5312a0a6a98b5ad22469bf8fae60301dd5c3476ae13a20ee15ffaac49"
+  }
+}

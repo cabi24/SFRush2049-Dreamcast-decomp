@@ -1,0 +1,205 @@
+{
+  "assignments_completed": 10,
+  "delta_functions": 11,
+  "delta_text": 2230,
+  "delta_data": 0,
+  "units": [
+    {
+      "unit": "controls",
+      "selected": "split-clear",
+      "baseline_functions": 6,
+      "final_functions": 7,
+      "new_functions": [
+        "ClearRushControls"
+      ],
+      "baseline_text": 1688,
+      "final_text": 1742,
+      "baseline_data": 104,
+      "final_data": 104,
+      "note": "ClearRushControls exact; other capped hypotheses parked",
+      "hashes": {
+        "src\\controls.c": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08",
+        "build\\campaign60-lane4\\controls\\split-clear\\obj\\controls.obj": "6ab681a9dab769f706a47457decc10f126c248fdd2be1815bc1454dee780342f",
+        "build\\campaign60-lane4\\controls\\split-clear\\link\\controls.abs": "db07defdb99d3b4ebb11a8bed679a4763dd2d77c397f873548b36f4d1d766506",
+        "build\\campaign60-lane4\\controls\\split-clear\\pp\\controls.c": "b34073b789a382440b7a8d77e298047ba2b86ee3c50789ded7bab5584afd620e"
+      }
+    },
+    {
+      "unit": "options",
+      "selected": "final",
+      "baseline_functions": 1,
+      "final_functions": 2,
+      "new_functions": [
+        "InitOptions"
+      ],
+      "baseline_text": 756,
+      "final_text": 856,
+      "baseline_data": 0,
+      "final_data": 0,
+      "note": "InitOptions exact; GetDefaultOption register residual10 bytes",
+      "hashes": {
+        "src\\options.c": "b881e53788aa6bbb50abee2b7bd0559fe5e1803fc2fd1fdbc88336ce43fd5063",
+        "build\\campaign60-lane4\\options\\final\\obj\\options.obj": "68272a7e0eaffc3b666f2f16a4c5d4dedeeb75a050d1488cd82f26633337adee",
+        "build\\campaign60-lane4\\options\\final\\link\\options.abs": "adb585f0d8fd24af0a8a1ee6a1a67ff5be235ef744603259f10f4a360a2c829a",
+        "build\\campaign60-lane4\\options\\final\\pp\\options.c": "92410984196a2201861a29a037003aac534eccca48aa05310c20020cb4306f4b"
+      }
+    },
+    {
+      "unit": "optionscr",
+      "selected": "height-init",
+      "baseline_functions": 1,
+      "final_functions": 3,
+      "new_functions": [
+        "calcOptionMenuMaxSize",
+        "initButtons"
+      ],
+      "baseline_text": 166,
+      "final_text": 1118,
+      "baseline_data": 2092,
+      "final_data": 2092,
+      "note": "calcOptionMenuMaxSize and initButtons exact; early screen bodies displaced",
+      "hashes": {
+        "src\\optionscr.c": "c302bdca78503cc33ea5ba867c335c75f697b2ea25665f982b62744bf074f17f",
+        "build\\campaign60-lane4\\optionscr\\height-init\\obj\\optionscr.obj": "dac43fb6883bc153b7c9a6f2d5d9a498019f65d482fe9b42f53ca383531b9d10",
+        "build\\campaign60-lane4\\optionscr\\height-init\\link\\optionscr.abs": "a476847cc4d5a8ac83138b0c92c1cd03f0db281aaf8a11aabbe8a5ec9f694fa6",
+        "build\\campaign60-lane4\\optionscr\\height-init\\pp\\optionscr.c": "5e4b85da46e1d7e598701eca2a8fe890feaa0da144555af29d941c12feffe798"
+      }
+    },
+    {
+      "unit": "pakerr",
+      "selected": "shape1",
+      "baseline_functions": 6,
+      "final_functions": 11,
+      "new_functions": [
+        "_DrawChoice",
+        "_DrawPakErrFull",
+        "_DrawPakErrInconsistent",
+        "_DrawPakErrNewPak",
+        "_DrawPakHeading"
+      ],
+      "baseline_text": 760,
+      "final_text": 1646,
+      "baseline_data": 52,
+      "final_data": 52,
+      "note": "5 exact helpers; SetPakError is2 bytes short; NQA6-byte register residual",
+      "hashes": {
+        "src\\pakerr.c": "5ff8dd44b48360f4c21302aa9b578d8d95a422a20e7f16821a2cde0fbbbe6ac3",
+        "build\\campaign60-lane4\\pakerr\\shape1\\obj\\pakerr.obj": "8f6230f1fd9c0520c851aed0f104bcb99b36139eeb94371cc562a196987cb338",
+        "build\\campaign60-lane4\\pakerr\\shape1\\link\\pakerr.abs": "aa09d9909aa23a000e08b425be8eb0e62a790fdd045f790b66089c047137f876",
+        "build\\campaign60-lane4\\pakerr\\shape1\\pp\\pakerr.c": "0d1922474ef63abf2229adf3f2bc1438091b803ee94f866b03352f2d77d99b01"
+      }
+    },
+    {
+      "unit": "pane",
+      "selected": "indexed-loop",
+      "baseline_functions": 3,
+      "final_functions": 5,
+      "new_functions": [
+        "RemovePane",
+        "RemovePanes"
+      ],
+      "baseline_text": 1082,
+      "final_text": 1320,
+      "baseline_data": 480,
+      "final_data": 480,
+      "note": "Whole unit exact5/5; ordinary indexed removal loops",
+      "hashes": {
+        "src\\pane.c": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8",
+        "build\\campaign60-lane4\\pane\\indexed-loop\\obj\\pane.obj": "5b8bbac24610bfc95636cefd7cb51da7e4a2c05a4d2442c2b8b65637672a1747",
+        "build\\campaign60-lane4\\pane\\indexed-loop\\link\\pane.abs": "088f511fc3692a2e0b0a3c680dd3033f9a4e81c92c01f034c51fe323540d6325",
+        "build\\campaign60-lane4\\pane\\indexed-loop\\pp\\pane.c": "174fcb931de8b49db059f8b4076bdbc5a20a23447efb0b189e9060513119bdee"
+      }
+    },
+    {
+      "unit": "pausescr",
+      "selected": "baseline",
+      "baseline_functions": 1,
+      "final_functions": 1,
+      "new_functions": [],
+      "baseline_text": 6,
+      "final_text": 6,
+      "baseline_data": 445,
+      "final_data": 445,
+      "note": "No gain; 3 lifetime/boolean/snapshot shapes failed; updatePauseScreen12 bytes short",
+      "hashes": {
+        "src\\pausescr.c": "783c7df00f0750a060379a146d556da942520556793c35d2ca24ad389f9b734d",
+        "build\\campaign60-lane4\\pausescr\\baseline\\obj\\pausescr.obj": "b8e8369cc7d06762cd63c0346c5e7c43ade4932ac718fa3e5df8cabde65fe97e",
+        "build\\campaign60-lane4\\pausescr\\baseline\\link\\pausescr.abs": "d754a44b75454288e7881398570fe1d1e718d16d84e90e0cc89bca85408d3cdf",
+        "build\\campaign60-lane4\\pausescr\\baseline\\pp\\pausescr.c": "7a4daf9944bb2c300a60a7accaea2ca4bf27c719f511128fd0a031cc8d6415f4"
+      }
+    },
+    {
+      "unit": "resurrect",
+      "selected": "baseline",
+      "baseline_functions": 0,
+      "final_functions": 0,
+      "new_functions": [],
+      "baseline_text": 0,
+      "final_text": 0,
+      "baseline_data": 328,
+      "final_data": 328,
+      "note": "Blocked semantic gap47FFA appearance-bit test; first body70 bytes long/frame48 vs36; later quaternion helpers moved-exact",
+      "hashes": {
+        "src\\resurrect.c": "c8c39607f53487c4dd37b4f2b67eca1d3c3f0c7ce6fe874e3c816cf4f598d1aa",
+        "build\\campaign60-lane4\\resurrect\\baseline\\obj\\resurrect.obj": "4882852209bb00dff8ec643401d43b7c6c96f5818bae88304e6eaeceb18861cb",
+        "build\\campaign60-lane4\\resurrect\\baseline\\link\\resurrect.abs": "11b0b5f0f1962a8362f96e36ebb1b33a52c346d24aa9c1e134123acab2e90702",
+        "build\\campaign60-lane4\\resurrect\\baseline\\pp\\resurrect.c": "80a538af8136457dbf107d776749119196f249ff6d30a0e5d843b1d6512b7584"
+      }
+    },
+    {
+      "unit": "road",
+      "selected": "baseline",
+      "baseline_functions": 0,
+      "final_functions": 0,
+      "new_functions": [],
+      "baseline_text": 18,
+      "final_text": 18,
+      "baseline_data": 0,
+      "final_data": 0,
+      "note": "No retained gain;3 pointer/component shapes fail whole function; cast offsets gave only10 incidental pool bytes",
+      "hashes": {
+        "src\\road.c": "175ef520a11f62e8f6a6ce5b4f5e5114fc2a4f5b8cf602d8c09ab214abb122a0",
+        "build\\campaign60-lane4\\road\\baseline\\obj\\road.obj": "290efba0e20e6a24adcc697dcffd3baea4f7464086c465d5cfbb9a971fa157f5",
+        "build\\campaign60-lane4\\road\\baseline\\link\\road.abs": "c746a98fa936aae5cfc72ee0d4d3ba36c896d4846b4e632f0969eea05ae970d8",
+        "build\\campaign60-lane4\\road\\baseline\\pp\\road.c": "3e5846c5312a0a6a98b5ad22469bf8fae60301dd5c3476ae13a20ee15ffaac49"
+      }
+    },
+    {
+      "unit": "save",
+      "selected": "baseline",
+      "baseline_functions": 0,
+      "final_functions": 0,
+      "new_functions": [],
+      "baseline_text": 0,
+      "final_text": 0,
+      "baseline_data": 35,
+      "final_data": 35,
+      "note": "No gain; fixed-array2 variants failed register allocation; most serialization bodies unsourced",
+      "hashes": {
+        "src\\save.c": "43aa41d848f8ea09d664fbee70753fa7301cf453e86350f8a90ea6953d01360d",
+        "build\\campaign60-lane4\\save\\baseline\\obj\\save.obj": "4dbffedac103768ea5fa0a4ba69fee08383e37551892c76ab234d2e74d43bb61",
+        "build\\campaign60-lane4\\save\\baseline\\link\\save.abs": "722fb61f29fcb16420f595f67f592df4a3f5546b894f7a870c5196dae3d17f4e",
+        "build\\campaign60-lane4\\save\\baseline\\pp\\save.c": "719651ff840b3462905e3f768e98837c39dfce220052c95b3ffaf604d9518a0b"
+      }
+    },
+    {
+      "unit": "smoke",
+      "selected": "baseline",
+      "baseline_functions": 2,
+      "final_functions": 2,
+      "new_functions": [],
+      "baseline_text": 92,
+      "final_text": 92,
+      "baseline_data": 154,
+      "final_data": 154,
+      "note": "No gain; InitSmoke24-byte argument scheduling residual;3 qualifier/prototype/address shapes fail; restored",
+      "hashes": {
+        "src\\smoke.c": "b98aeb22a0dd9f1194dd9012c70a6e92d20b4528af4a7a2ef562bde713160b1f",
+        "build\\campaign60-lane4\\smoke\\baseline\\obj\\smoke.obj": "239762aa7ff45dc5e760d3b0bfa18f0118b5b31aac8e749a5a7eed7bc3852cc6",
+        "build\\campaign60-lane4\\smoke\\baseline\\link\\smoke.abs": "37ffb54759952280f73c8e428febe0b88b8d32bd74c0596c9abf1bf6555971e1",
+        "build\\campaign60-lane4\\smoke\\baseline\\pp\\smoke.c": "88a9b3c2cc1ba8ce8900074a1be1cb67ddd40da2de42264ee0f1fd249b3fc56d"
+      }
+    }
+  ],
+  "canonical_outputs_written": false
+}

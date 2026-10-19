@@ -1,0 +1,71 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT textureanim.abs
+FORM A
+START P(8C05B2E4)
+DEFINE _MBOX_FindTexture_WORK(8C03D4AA)
+DEFINE _PaletteLists(8C0C38C4)
+DEFINE _TextureSwapLists(8C0C3170)
+DEFINE _gFrameSeconds(8C12254C)
+DEFINE _gLastFrameCount(8C122550)
+DEFINE _gNumModels(8C14CB1C)
+DEFINE _gRestartGame(8C0BDD54)
+DEFINE _gTrackNum(8C15C9C0)
+PRINT textureanim.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C05B2E4  -  H'8C05B569  H'00000286
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C05B2E4  -  H'8C05B569  H'00000286
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_InitTextureAnimation             H'8C05B2E4               ENT
+_TextureAnimation                 H'8C05B3C6               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_MBOX_FindTexture_WORK                                              H'8C03D4AA
+_PaletteLists                                                       H'8C0C38C4
+_TextureSwapLists                                                   H'8C0C3170
+_gFrameSeconds                                                      H'8C12254C
+_gLastFrameCount                                                    H'8C122550
+_gNumModels                                                         H'8C14CB1C
+_gRestartGame                                                       H'8C0BDD54
+_gTrackNum                                                          H'8C15C9C0

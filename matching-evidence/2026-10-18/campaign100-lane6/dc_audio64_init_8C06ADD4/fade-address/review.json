@@ -1,0 +1,27 @@
+{
+  "unit": "dc_audio64_init_8C06ADD4",
+  "label": "fade-address",
+  "source_sha256": "d419bef4edbe763699edff135d5330fc859ee7bca7099bbaa11a3a8980248d50",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 1,
+  "delta_text": 100,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "func_8C06AF60",
+      "start": "8C06AF60",
+      "end": "8C06AFC4",
+      "size": 100,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06AF60",
+      "linked_size": 100
+    }
+  ],
+  "hashes": {
+    "object": "c9065cbb928b1a793ca859d024f41b1712dbd38a704cb96d37be762d3f5974c9",
+    "abs": "90611fa38cb46a816c553bca98d0acc63200a2525a2e6a25f9e2ac338d49a07c",
+    "compiler_input": "747a4338d54af88e1ff5b918f984dcac65e2b7583268d18f84f8191272c5f260"
+  }
+}

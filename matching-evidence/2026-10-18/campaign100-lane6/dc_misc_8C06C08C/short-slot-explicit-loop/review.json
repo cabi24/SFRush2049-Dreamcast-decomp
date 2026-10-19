@@ -1,0 +1,27 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "label": "short-slot-explicit-loop",
+  "source_sha256": "742b666fdaecc75e939087fb684423e4a0f6408b956bff875e6b422809ba06ff",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 1,
+  "delta_text": 12,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "func_8C06C2A6",
+      "start": "8C06C2A6",
+      "end": "8C06C2B2",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C2A6",
+      "linked_size": 12
+    }
+  ],
+  "hashes": {
+    "object": "1496fc62f74da7d33d67631e19297e248644b230b3ad92e0b80506eb69a8e3a1",
+    "abs": "9c7a19ea95dd52e89e7261dc58e69f47ca2e7c9a71cec6742331c3934d2d6cd9",
+    "compiler_input": "ed40a62074b613af4796ad526eaedcd9716206fafd7a9e2a5718d5dd00f01ddb"
+  }
+}

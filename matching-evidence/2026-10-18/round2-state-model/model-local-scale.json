@@ -1,0 +1,107 @@
+{
+  "name": "model",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/model.c",
+  "source_sha256": "4516491de1939aa2e0f6c7536e44f865208f7a8573c41e8966457e510fe6ad82",
+  "text": [
+    "8C040C24",
+    "8C041220"
+  ],
+  "text_bytes": 1532,
+  "exact_text_bytes": 132,
+  "align_bytes": 0,
+  "data_bytes": 1,
+  "exact_data_bytes": 1,
+  "functions_total": 3,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "ModelThread",
+      "start": "8C040C24",
+      "end": "8C040C6A",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C040C24",
+      "linked_size": 118
+    },
+    {
+      "name": "no_catchup",
+      "start": "8C040C6A",
+      "end": "8C040C9A",
+      "size": 48,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "SetCatchup",
+      "start": "8C040C9A",
+      "end": "8C041210",
+      "size": 1398,
+      "status": "differs",
+      "diff_bytes": 45,
+      "linked_at": "8C040C9A",
+      "linked_size": 1414
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C041210",
+      "end": "8C041220",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEE80",
+      "end": "8C0BEE81",
+      "exact": true,
+      "built": 1,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:03:33",
+  "defines": {
+    "_ControllerUpdate": "8C01F214",
+    "_PeriodicMaintenance": "8C013D4E",
+    "_dcAudioMain": "8C06E5B4",
+    "_dcModelService": "8C0726F4",
+    "_gDifficulty": "8C12C650",
+    "_gLink": "8C12C5A4",
+    "_gNumPlayers": "8C14CBB0",
+    "_gUseCatchup": "8C14CBAF",
+    "_init_model_task": "8C03E21C",
+    "_model": "8C14CBB4",
+    "_model_iteration": "8C03E4E8",
+    "_modelrun": "8C14CBAC"
+  },
+  "starts": {
+    "P": "8C040C24",
+    "D": "8C0BEE80"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C040C24",
+      "length": 1532
+    },
+    {
+      "name": "D",
+      "address": "8C0BEE80",
+      "length": 1
+    }
+  ],
+  "equal_text_bytes_including_fill": 134,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 1,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.8
+}

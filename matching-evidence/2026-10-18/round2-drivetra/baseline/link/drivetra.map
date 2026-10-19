@@ -1,0 +1,75 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT drivetra.abs
+FORM A
+START P(8C022CA4)
+DEFINE __divls(8C09B680)
+DEFINE __divws(8C09B7DC)
+DEFINE __modls(8C09B82C)
+DEFINE __modws(8C09B9AC)
+DEFINE _carEngineTorque(8C0BBC4C)
+DEFINE _carTransGearRatio(8C0BBA48)
+PRINT drivetra.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C022CA4  -  H'8C0232EB  H'00000648
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C022CA4  -  H'8C0232EB  H'00000648
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_autoshift                        H'8C022EFC               ENT
+_downshift                        H'8C023074               ENT
+_drivetrain                       H'8C022CA4               ENT
+_engine                           H'8C0231DC               ENT
+_enginetorque                     H'8C0230B0               ENT
+_find_best_gear                   H'8C022FEC               ENT
+_interp                           H'8C0231C8               ENT
+_transmission                     H'8C022F96               ENT
+_upshift                          H'8C023048               ENT
+_whatslips                        H'8C022D94               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+__divls                                                             H'8C09B680
+__divws                                                             H'8C09B7DC
+__modls                                                             H'8C09B82C
+__modws                                                             H'8C09B9AC
+_carEngineTorque                                                    H'8C0BBC4C
+_carTransGearRatio                                                  H'8C0BBA48

@@ -1,0 +1,143 @@
+{
+ "name": "dc_zoid_8C06ED90",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT dc_zoid_8C06ED90.abs",
+  "FORM A",
+  "START P(8C06ED90)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE _dcClipFunctions8C0C9778(8C0C9778)",
+  "DEFINE _dcClippedTriangles8C19E950(8C19E950)",
+  "DEFINE _dcCornerOrderA8C0C9758(8C0C9758)",
+  "DEFINE _dcCornerOrderB8C0C9768(8C0C9768)",
+  "DEFINE _dcCurrentList8C19E9DC(8C19E9DC)",
+  "DEFINE _dcListStrips8C19E900(8C19E900)",
+  "DEFINE _dcMaxOpaque8C19F4EC(8C19F4EC)",
+  "DEFINE _dcMaxPunch8C19F4F4(8C19F4F4)",
+  "DEFINE _dcMaxTrans8C19F4F0(8C19F4F0)",
+  "DEFINE _dcPackets8C19E940(8C19E940)",
+  "DEFINE _dcPass8C19E970(8C19E970)",
+  "DEFINE _dcPerfA8C19E95C(8C19E95C)",
+  "DEFINE _dcPerfB8C19E964(8C19E964)",
+  "DEFINE _dcPerfC8C19E96C(8C19E96C)",
+  "DEFINE _dcPlainTriangles8C19E930(8C19E930)",
+  "DEFINE _dcReverseQuad8C15FA14(8C15FA14)",
+  "DEFINE _dcSampleEnabled8C0C9754(8C0C9754)",
+  "DEFINE _dcSavedOpaque8C19F4F8(8C19F4F8)",
+  "DEFINE _dcSavedPunch8C19F500(8C19F500)",
+  "DEFINE _dcSavedTrans8C19F4FC(8C19F4FC)",
+  "DEFINE _dcSelectedSlot8C19E9D8(8C19E9D8)",
+  "DEFINE _dcStatsMaximum8C19E9D4(8C19E9D4)",
+  "DEFINE _dcStatsValue8C19E9D0(8C19E9D0)",
+  "DEFINE _dcStrips8C19E920(8C19E920)",
+  "DEFINE _dcTriangles8C19E928(8C19E928)",
+  "DEFINE _dcUsedOpaque8C19F4E0(8C19F4E0)",
+  "DEFINE _dcUsedPunch8C19F4E8(8C19F4E8)",
+  "DEFINE _dcUsedTrans8C19F4E4(8C19F4E4)",
+  "DEFINE _dcVertices8C19E938(8C19E938)",
+  "DEFINE _func_8C0D8BC0(8C0D8BC0)",
+  "DEFINE _func_8C0D9076(8C0D9076)",
+  "DEFINE _func_8C0DAC20(8C0DAC20)",
+  "DEFINE _func_8C0DC2A0(8C0DC2A0)",
+  "PRINT dc_zoid_8C06ED90.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\campaign-1000\\alpha\\runs\\dc_zoid_8C06ED90\\A0009-face-index\\obj\\dc_zoid_8C06ED90.obj",
+   "sha256": "4457e1fdb05f7dc4fd77a815dd562dc4a33d8c2b6a08c7320d475cca402a7c7e"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C06ED90",
+   "length": 1396
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C06ED90",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 26,
+   "first_diff_offset": 129,
+   "sha256": "5263be1dd18fb5434fb1670a2e72300c4bdd93db7dfa914008aef4fd59bd61f0"
+  },
+  {
+   "section": "P",
+   "address": "8C06EE86",
+   "size": 188,
+   "exact": false,
+   "diff_bytes": 65,
+   "first_diff_offset": 2,
+   "sha256": "db916d26fc93b1dcdea23d383e0ae3a98264da9b56f66a5a9f6d70178f787c20"
+  },
+  {
+   "section": "P",
+   "address": "8C06EF44",
+   "size": 28,
+   "exact": false,
+   "diff_bytes": 28,
+   "first_diff_offset": 0,
+   "sha256": "15a1c53591e38184d84698e3f721f7cec6de9aea91f526dbe29e0d323ceefd57"
+  },
+  {
+   "section": "P",
+   "address": "8C06EF60",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 228,
+   "first_diff_offset": 0,
+   "sha256": "c1fc7cb9af94de2bbbbcbf176a34b72dd8c81311ecafb4bc5ccbbe817fe31e24"
+  },
+  {
+   "section": "P",
+   "address": "8C06F056",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 229,
+   "first_diff_offset": 0,
+   "sha256": "f5fa18a2cf5900a9c8cfa5a6824a84e75221b8f86d06cc12c153aa83f9843314"
+  },
+  {
+   "section": "P",
+   "address": "8C06F14C",
+   "size": 86,
+   "exact": false,
+   "diff_bytes": 84,
+   "first_diff_offset": 0,
+   "sha256": "30b3b4fcba72c6f80043b6ddc789a57a484c6621226fbc11755641fd64755aa2"
+  },
+  {
+   "section": "P",
+   "address": "8C06F1A4",
+   "size": 24,
+   "exact": false,
+   "diff_bytes": 15,
+   "first_diff_offset": 0,
+   "sha256": "137add9533f1de3923e90a2988c013e3ff8d97c148f53a3bb26fd4b03dc1ec65"
+  },
+  {
+   "section": "P",
+   "address": "8C06F1BC",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 236,
+   "first_diff_offset": 0,
+   "sha256": "76f4aba48686eb1d7515d8eeb3c3edb6d9de347b8ca42fb46992858d3acd068f"
+  },
+  {
+   "section": "P",
+   "address": "8C06F2B2",
+   "size": 82,
+   "exact": false,
+   "diff_bytes": 78,
+   "first_diff_offset": 0,
+   "sha256": "3e520acbad9b2f714459dec26b9e13e439812feb6c730c427bf8d8b59b20f71a"
+  }
+ ],
+ "all_exact": false
+}

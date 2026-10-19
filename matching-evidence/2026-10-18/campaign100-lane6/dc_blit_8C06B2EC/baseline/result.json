@@ -1,0 +1,245 @@
+{
+  "name": "dc_blit_8C06B2EC",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_blit_8C06B2EC.c",
+  "source_sha256": "e1de5d6a0c04091cd2fc571de0dd1da02bc32c8080b2f374321aa9e235fab503",
+  "text": [
+    "8C06B2EC",
+    "8C06B80C"
+  ],
+  "text_bytes": 1312,
+  "exact_text_bytes": 1252,
+  "align_bytes": 0,
+  "data_bytes": 8,
+  "exact_data_bytes": 5,
+  "functions_total": 12,
+  "functions_exact": 10,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C06B2EC",
+      "start": "8C06B2EC",
+      "end": "8C06B35A",
+      "size": 110,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B2EC",
+      "linked_size": 110
+    },
+    {
+      "name": "BlitInit",
+      "start": "8C06B35A",
+      "end": "8C06B3A6",
+      "size": 76,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B35A",
+      "linked_size": 76
+    },
+    {
+      "name": "BlitFinish",
+      "start": "8C06B3A6",
+      "end": "8C06B3AA",
+      "size": 4,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B3A6",
+      "linked_size": 4
+    },
+    {
+      "name": "BlitSetAttribute",
+      "start": "8C06B3AA",
+      "end": "8C06B3BE",
+      "size": 20,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B3AA",
+      "linked_size": 20
+    },
+    {
+      "name": "BlitClearAttribute",
+      "start": "8C06B3BE",
+      "end": "8C06B3D2",
+      "size": 20,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B3BE",
+      "linked_size": 86
+    },
+    {
+      "name": "BlitZDist",
+      "start": "8C06B414",
+      "end": "8C06B42E",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 3,
+      "linked_at": "8C06B414",
+      "linked_size": 26
+    },
+    {
+      "name": "BlitXLU",
+      "start": "8C06B42E",
+      "end": "8C06B44C",
+      "size": 30,
+      "status": "differs",
+      "diff_bytes": 9,
+      "linked_at": "8C06B42E",
+      "linked_size": 30
+    },
+    {
+      "name": "BlitScissor",
+      "start": "8C06B44C",
+      "end": "8C06B48A",
+      "size": 62,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B44C",
+      "linked_size": 62
+    },
+    {
+      "name": "BlitClearColors",
+      "start": "8C06B48A",
+      "end": "8C06B4A0",
+      "size": 22,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B48A",
+      "linked_size": 22
+    },
+    {
+      "name": "BlitColors",
+      "start": "8C06B4A0",
+      "end": "8C06B4B4",
+      "size": 20,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B4A0",
+      "linked_size": 64
+    },
+    {
+      "name": "BlitDraw",
+      "start": "8C06B4E0",
+      "end": "8C06B6DA",
+      "size": 506,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B4E0",
+      "linked_size": 560
+    },
+    {
+      "name": "BlitRect",
+      "start": "8C06B710",
+      "end": "8C06B7E4",
+      "size": 212,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06B710",
+      "linked_size": 252
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06B3D2",
+      "end": "8C06B414",
+      "exact": true,
+      "built": 66,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06B4B4",
+      "end": "8C06B4E0",
+      "exact": true,
+      "built": 44,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06B6DA",
+      "end": "8C06B710",
+      "exact": true,
+      "built": 54,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C06B7E4",
+      "end": "8C06B80C",
+      "exact": true,
+      "built": 40,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7C78",
+      "end": "8C0C7C7C",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7C7C",
+      "end": "8C0C7C80",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C17844C",
+      "end": "8C178478",
+      "exact": true,
+      "linked": [
+        "8C17844C",
+        "8C178478"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:57:32",
+  "defines": {
+    "_func_8C06F062": "8C06F062",
+    "_func_8C06F1EC": "8C06F1EC"
+  },
+  "starts": {
+    "P": "8C06B2EC",
+    "D": "8C0C7C78",
+    "B": "8C17844C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06B2EC",
+      "length": 1312
+    },
+    {
+      "name": "D",
+      "address": "8C0C7C78",
+      "length": 8
+    },
+    {
+      "name": "B",
+      "address": "8C17844C",
+      "length": 44
+    }
+  ],
+  "equal_text_bytes_including_fill": 1256,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 8,
+  "excluded_exact_data_fill": 3,
+  "excluded_data_padding": [
+    {
+      "start": "8C0C7C78",
+      "end": "8C0C7C7B",
+      "reason": "Primitive RGB object ownership inferred, not independently accessed; conservative exclusion of three bytes."
+    }
+  ],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

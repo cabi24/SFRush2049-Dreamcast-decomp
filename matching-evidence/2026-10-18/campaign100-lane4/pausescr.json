@@ -1,0 +1,18 @@
+{
+  "unit": "pausescr",
+  "selected": "final-independent",
+  "baseline_functions": 1,
+  "final_functions": 1,
+  "new_functions": [],
+  "baseline_text": 6,
+  "final_text": 6,
+  "baseline_data": 445,
+  "final_data": 445,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\pausescr.c": "783c7df00f0750a060379a146d556da942520556793c35d2ca24ad389f9b734d",
+    "build\\campaign100-lane4\\pausescr\\final-independent\\obj\\pausescr.obj": "e15eec7b76a0726f38db6dae57b2fc12ee0d68ec998f9804b0904db222156b1b",
+    "build\\campaign100-lane4\\pausescr\\final-independent\\link\\pausescr.abs": "4facee424241761dd52016de2da842005ffa62930a7a54042a9d0c0d78beba83",
+    "build\\campaign100-lane4\\pausescr\\final-independent\\pp\\pausescr.c": "7a4daf9944bb2c300a60a7accaea2ca4bf27c719f511128fd0a031cc8d6415f4"
+  }
+}

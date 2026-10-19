@@ -1,0 +1,295 @@
+{
+  "name": "dc_misc_8C06B80C",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/dc_misc_8C06B80C.c",
+  "source_sha256": "109f962fe561cf8b9093e26c767bb194a7a2254710c9e2ef67c9a92273535bce",
+  "text": [
+    "8C06B80C",
+    "8C06C08C"
+  ],
+  "text_bytes": 2176,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 24,
+  "exact_data_bytes": 24,
+  "functions_total": 13,
+  "functions_exact": 0,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "func_8C06B80C",
+      "start": "8C06B80C",
+      "end": "8C06B82C",
+      "size": 32,
+      "status": "differs",
+      "diff_bytes": 2,
+      "linked_at": "8C06B80C",
+      "linked_size": 32
+    },
+    {
+      "name": "func_8C06B82C",
+      "start": "8C06B82C",
+      "end": "8C06B8EE",
+      "size": 194,
+      "status": "differs",
+      "diff_bytes": 145,
+      "linked_at": "8C06B82C",
+      "linked_size": 188
+    },
+    {
+      "name": "func_8C06B954",
+      "start": "8C06B954",
+      "end": "8C06B976",
+      "size": 34,
+      "status": "differs",
+      "diff_bytes": 28,
+      "linked_at": "8C06B8E8",
+      "linked_size": 142
+    },
+    {
+      "name": "func_8C06B976",
+      "start": "8C06B976",
+      "end": "8C06BA20",
+      "size": 170,
+      "status": "differs",
+      "diff_bytes": 84,
+      "linked_at": "8C06B976",
+      "linked_size": 168
+    },
+    {
+      "name": "func_8C06BA20",
+      "start": "8C06BA20",
+      "end": "8C06BA3A",
+      "size": 26,
+      "status": "differs",
+      "diff_bytes": 26,
+      "linked_at": "8C06BA1E",
+      "linked_size": 26
+    },
+    {
+      "name": "func_8C06BA3A",
+      "start": "8C06BA3A",
+      "end": "8C06BAD4",
+      "size": 154,
+      "status": "differs",
+      "diff_bytes": 151,
+      "linked_at": "8C06BA38",
+      "linked_size": 142
+    },
+    {
+      "name": "func_8C06BAD4",
+      "start": "8C06BAD4",
+      "end": "8C06BB0C",
+      "size": 56,
+      "status": "differs",
+      "diff_bytes": 51,
+      "linked_at": "8C06BAC6",
+      "linked_size": 54
+    },
+    {
+      "name": "func_8C06BB0C",
+      "start": "8C06BB0C",
+      "end": "8C06BD7E",
+      "size": 626,
+      "status": "differs",
+      "diff_bytes": 569,
+      "linked_at": "8C06BAFC",
+      "linked_size": 618
+    },
+    {
+      "name": "func_8C06BD7E",
+      "start": "8C06BD7E",
+      "end": "8C06BDE6",
+      "size": 104,
+      "status": "moved",
+      "diff_bytes": 98,
+      "linked_at": "8C06BD66",
+      "linked_size": 104
+    },
+    {
+      "name": "func_8C06BDE6",
+      "start": "8C06BDE6",
+      "end": "8C06BE10",
+      "size": 42,
+      "status": "moved",
+      "diff_bytes": 38,
+      "linked_at": "8C06BDCE",
+      "linked_size": 102
+    },
+    {
+      "name": "func_8C06BE4C",
+      "start": "8C06BE4C",
+      "end": "8C06BE76",
+      "size": 42,
+      "status": "differs",
+      "diff_bytes": 41,
+      "linked_at": "8C06BE34",
+      "linked_size": 42
+    },
+    {
+      "name": "func_8C06BE76",
+      "start": "8C06BE76",
+      "end": "8C06BF56",
+      "size": 224,
+      "status": "differs",
+      "diff_bytes": 217,
+      "linked_at": "8C06BE5E",
+      "linked_size": 274
+    },
+    {
+      "name": "func_8C06BF9C",
+      "start": "8C06BF9C",
+      "end": "8C06C054",
+      "size": 184,
+      "status": "differs",
+      "diff_bytes": 183,
+      "linked_at": "8C06BF70",
+      "linked_size": 240
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C06B8EE",
+      "end": "8C06B954",
+      "exact": false,
+      "built": 102,
+      "diff_bytes": 79
+    },
+    {
+      "kind": "pool",
+      "start": "8C06BE10",
+      "end": "8C06BE4C",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 48
+    },
+    {
+      "kind": "pool",
+      "start": "8C06BF56",
+      "end": "8C06BF9C",
+      "exact": false,
+      "built": 70,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C06C054",
+      "end": "8C06C08C",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 54
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B1CD8",
+      "end": "8C0B1CEB",
+      "exact": true,
+      "built": 19,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7C80",
+      "end": "8C0C7C85",
+      "exact": true,
+      "built": 5,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C18483C",
+      "end": "8C18487C",
+      "exact": true,
+      "linked": [
+        "8C18483C",
+        "8C18487C"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:57:34",
+  "defines": {
+    "_AllocateHandleHeap": "8C04072C",
+    "_AllocateMemoryHeap": "8C040256",
+    "_DeallocateMemory": "8C040832",
+    "_InitLL": "8C03A1B8",
+    "_InsertLLE": "8C03A1C8",
+    "_LargestAvailableMemoryHeapChunk": "8C0401FE",
+    "_ReallocateMemory": "8C0405B2",
+    "_RemoveLLE": "8C03A28E",
+    "__divls": "8C09B680",
+    "__divlu": "8C09B734",
+    "_dcFrameCounter": "8C12253C",
+    "_dcGdfsDirectory": "8C17980C",
+    "_dcGdfsWork": "8C178478",
+    "_dcInputBits": "8C0BFD3C",
+    "_dcMode_BFA78": "8C0BFA78",
+    "_dcMode_FDD4": "8C14FDD4",
+    "_dcMode_FDD6": "8C14FDD6",
+    "_dcProbeBuffer": "8C18487C",
+    "_dcSharedDiscFlag": "8C0BEBBC",
+    "_func_8C039718": "8C039718",
+    "_func_8C03FD54": "8C03FD54",
+    "_func_8C03FD8A": "8C03FD8A",
+    "_func_8C03FE8E": "8C03FE8E",
+    "_func_8C03FF46": "8C03FF46",
+    "_func_8C03FFBC": "8C03FFBC",
+    "_func_8C0401AA": "8C0401AA",
+    "_func_8C06A1CA": "8C06A1CA",
+    "_func_8C06CA44": "8C06CA44",
+    "_func_8C0D5536": "8C0D5536",
+    "_func_8C0D62D8": "8C0D62D8",
+    "_func_8C0D62FC": "8C0D62FC",
+    "_func_8C0D6334": "8C0D6334",
+    "_func_8C0D6368": "8C0D6368",
+    "_func_8C0D6426": "8C0D6426",
+    "_func_8C0D6B3C": "8C0D6B3C",
+    "_func_8C0D6B52": "8C0D6B52",
+    "_func_8C0D6BDE": "8C0D6BDE",
+    "_func_8C0D6C66": "8C0D6C66",
+    "_func_8C0D6C94": "8C0D6C94",
+    "_memcpy": "8C09BD00",
+    "_strcmp": "8C09BB5C",
+    "_strcpy": "8C09BB0C"
+  },
+  "starts": {
+    "P": "8C06B80C",
+    "C": "8C0B1CD8",
+    "D": "8C0C7C80",
+    "B": "8C18483C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C06B80C",
+      "length": 2132
+    },
+    {
+      "name": "C",
+      "address": "8C0B1CD8",
+      "length": 19
+    },
+    {
+      "name": "D",
+      "address": "8C0C7C80",
+      "length": 5
+    },
+    {
+      "name": "B",
+      "address": "8C18483C",
+      "length": 64
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 24,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -44,
+  "seconds": 2.0
+}

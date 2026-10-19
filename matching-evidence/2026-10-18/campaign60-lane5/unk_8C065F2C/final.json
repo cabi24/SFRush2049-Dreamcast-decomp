@@ -1,0 +1,345 @@
+{
+  "name": "unk_8C065F2C",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unk_8C065F2C.c",
+  "source_sha256": "a29ff252f734ccb9a19cba0f26d80feab182323a8bec271c2c66f02bc7b0c599",
+  "text": [
+    "8C065F2C",
+    "8C0663D4"
+  ],
+  "text_bytes": 1192,
+  "exact_text_bytes": 604,
+  "align_bytes": 0,
+  "data_bytes": 12223,
+  "exact_data_bytes": 12223,
+  "functions_total": 3,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C065F2C",
+      "start": "8C065F2C",
+      "end": "8C06602E",
+      "size": 258,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C065F2C",
+      "linked_size": 258
+    },
+    {
+      "name": "func_8C06602E",
+      "start": "8C06602E",
+      "end": "8C066206",
+      "size": 472,
+      "status": "differs",
+      "diff_bytes": 181,
+      "linked_at": "8C06602E",
+      "linked_size": 586
+    },
+    {
+      "name": "func_8C066278",
+      "start": "8C066278",
+      "end": "8C0663AA",
+      "size": 306,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C066278",
+      "linked_size": 348
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C066206",
+      "end": "8C066278",
+      "exact": false,
+      "built": 114,
+      "diff_bytes": 9
+    },
+    {
+      "kind": "pool",
+      "start": "8C0663AA",
+      "end": "8C0663D4",
+      "exact": true,
+      "built": 42,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C49B0",
+      "end": "8C0C5100",
+      "exact": true,
+      "built": 1872,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C5100",
+      "end": "8C0C5850",
+      "exact": true,
+      "built": 1872,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C5850",
+      "end": "8C0C5FA0",
+      "exact": true,
+      "built": 1872,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C5FA0",
+      "end": "8C0C6730",
+      "exact": true,
+      "built": 1936,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C6730",
+      "end": "8C0C6DA0",
+      "exact": true,
+      "built": 1648,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C6DA0",
+      "end": "8C0C7540",
+      "exact": true,
+      "built": 1952,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7540",
+      "end": "8C0C7550",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7550",
+      "end": "8C0C7560",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7560",
+      "end": "8C0C7570",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7570",
+      "end": "8C0C7580",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7580",
+      "end": "8C0C7660",
+      "exact": true,
+      "built": 224,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7660",
+      "end": "8C0C7670",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7670",
+      "end": "8C0C7680",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7680",
+      "end": "8C0C7690",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7690",
+      "end": "8C0C76A0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C76A0",
+      "end": "8C0C76B0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C76B0",
+      "end": "8C0C76C0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C76C0",
+      "end": "8C0C76D0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C76D0",
+      "end": "8C0C7860",
+      "exact": true,
+      "built": 400,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7860",
+      "end": "8C0C7873",
+      "exact": true,
+      "built": 19,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7874",
+      "end": "8C0C7884",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7884",
+      "end": "8C0C78A4",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C78A4",
+      "end": "8C0C78F0",
+      "exact": true,
+      "built": 76,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C78F0",
+      "end": "8C0C7910",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7910",
+      "end": "8C0C7950",
+      "exact": true,
+      "built": 64,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C7950",
+      "end": "8C0C7970",
+      "exact": true,
+      "built": 32,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [
+    "1 built bytes fall outside the mapped ranges (first 8C0C7873, last 8C0C7873)"
+  ],
+  "built_at": "2026-10-18T15:40:41",
+  "defines": {
+    "_Distance2D": "8C0262E4",
+    "_ObjInstanceList": "8C160870",
+    "_WYawUV": "8C026474",
+    "_WorldBase": "8C15FF70",
+    "_Worlddlidx": "8C15FF74",
+    "_ZoidWinInfo": "8C1779DC",
+    "__divls": "8C09B680",
+    "_gFogIntensity": "8C15FF20",
+    "_gInvisibleTrack": "8C15FF2C",
+    "_gNumPlayers": "8C14CBB0",
+    "_gPauseState": "8C0BFA78",
+    "_gTrackNum": "8C15C9C0",
+    "_gViewableDistance": "8C177994"
+  },
+  "starts": {
+    "P": "8C065F2C",
+    "D": "8C0C49B0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C065F2C",
+      "length": 1192
+    },
+    {
+      "name": "D",
+      "address": "8C0C49B0",
+      "length": 12224
+    }
+  ],
+  "equal_text_bytes_including_fill": 606,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 12223,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

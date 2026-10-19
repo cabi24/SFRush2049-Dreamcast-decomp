@@ -1,0 +1,92 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT drones.abs
+FORM A
+START P(8C02555C)
+START B(8C12C574)
+DEFINE _SetCatchup(8C040C9A)
+DEFINE _gBackwards(8C12C657)
+DEFINE _gCircuitCars(8C12BEC6)
+DEFINE _gCoastFlag(8C12C64C)
+DEFINE _gDifficulty(8C12C650)
+DEFINE _gEndGame(8C12C64E)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gModelTime(8C14CB64)
+DEFINE _gNumActiveCars(8C14CB86)
+DEFINE _gOneMoreCP(8C12BDE1)
+DEFINE _gRace(8C12C628)
+DEFINE _gTrackNum(8C15C9C0)
+DEFINE _model(8C14CBB4)
+PRINT drones.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C02555C  -  H'8C0260DF  H'00000B84
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C02555C  -  H'8C0260DF  H'00000B84
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C12C574  -  H'8C12C5A3  H'00000030
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C12C574  -  H'8C12C5A3  H'00000030
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_DoDrones                         H'8C025580               ENT
+_InitDrones                       H'8C02555C               ENT
+_old_boost                        H'8C12C58C               DAT
+_old_drone_scale                  H'8C12C574               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_SetCatchup                                                         H'8C040C9A
+_gBackwards                                                         H'8C12C657
+_gCircuitCars                                                       H'8C12BEC6
+_gCoastFlag                                                         H'8C12C64C
+_gDifficulty                                                        H'8C12C650
+_gEndGame                                                           H'8C12C64E
+_gGameState                                                         H'8C0BFD3C
+_gModelTime                                                         H'8C14CB64
+_gNumActiveCars                                                     H'8C14CB86
+_gOneMoreCP                                                         H'8C12BDE1
+_gRace                                                              H'8C12C628
+_gTrackNum                                                          H'8C15C9C0
+_model                                                              H'8C14CBB4

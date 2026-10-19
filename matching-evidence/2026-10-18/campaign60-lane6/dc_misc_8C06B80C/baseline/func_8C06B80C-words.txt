@@ -1,0 +1,16 @@
+8C06B80C mov r5,r0                                      | 8C06B80C mov r5,r0                                      
+8C06B80E cmp/eq #-23,r0                                 | 8C06B80E cmp/eq #-23,r0                                 
+8C06B810 bt 0x8C06B81E                                  | 8C06B810 bt 0x8C06B81E                                  
+8C06B812 mov r5,r0                                      | 8C06B812 mov r5,r0                                      
+8C06B814 cmp/eq #-37,r0                                 | 8C06B814 cmp/eq #-37,r0                                 
+8C06B816 bt 0x8C06B81E                                  | 8C06B816 bt 0x8C06B81E                                  
+8C06B818 mov r5,r0                                      | 8C06B818 mov r5,r0                                      
+8C06B81A cmp/eq #-33,r0                                 | 8C06B81A cmp/eq #-33,r0                                 
+8C06B81C bf 0x8C06B828                                  | 8C06B81C bf 0x8C06B828                                  
+8C06B81E mov.l @(0x8C06B8F8,pc),r3                      | 8C06B81E mov.l @(0x8C06B90C,pc),r3                      *
+8C06B820 mov #1,r4                                      | 8C06B820 mov #1,r4                                      
+8C06B822 mov.l @(0x8C06B8F4,pc),r2                      | 8C06B822 mov.l @(0x8C06B908,pc),r2                      *
+8C06B824 mov.b r4,@r2                                   | 8C06B824 mov.b r4,@r2                                   
+8C06B826 mov.b r4,@r3                                   | 8C06B826 mov.b r4,@r3                                   
+8C06B828 rts                                            | 8C06B828 rts                                            
+8C06B82A nop                                            | 8C06B82A nop                                            

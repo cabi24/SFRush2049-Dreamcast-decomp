@@ -1,0 +1,848 @@
+{
+  "name": "visuals",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/visuals.c",
+  "source_sha256": "1a21943fb1969a8888b7f68c6f985861588723b1d46735d82d6e0a992e6280bc",
+  "text": [
+    "8C05E7A4",
+    "8C064FDC"
+  ],
+  "text_bytes": 26680,
+  "exact_text_bytes": 44,
+  "align_bytes": 0,
+  "data_bytes": 600,
+  "exact_data_bytes": 600,
+  "functions_total": 60,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitTrackDynamicObjs",
+      "start": "8C05E7A4",
+      "end": "8C05E952",
+      "size": 430,
+      "status": "differs",
+      "diff_bytes": 90,
+      "linked_at": "8C05E7A4",
+      "linked_size": 836
+    },
+    {
+      "name": "InitWheelDynamicObjs",
+      "start": "8C05E952",
+      "end": "8C05EA78",
+      "size": 294,
+      "status": "differs",
+      "diff_bytes": 50,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "InitDynamicTextures",
+      "start": "8C05EAA4",
+      "end": "8C05EAE8",
+      "size": 68,
+      "status": "differs",
+      "diff_bytes": 12,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "InitCarDynamicObjs",
+      "start": "8C05EAE8",
+      "end": "8C05EBCE",
+      "size": 230,
+      "status": "differs",
+      "diff_bytes": 19,
+      "linked_at": "8C05EAE8",
+      "linked_size": 230
+    },
+    {
+      "name": "InitEnvs",
+      "start": "8C05EBCE",
+      "end": "8C05EC78",
+      "size": 170,
+      "status": "differs",
+      "diff_bytes": 151,
+      "linked_at": "8C05EBCE",
+      "linked_size": 190
+    },
+    {
+      "name": "InitVisuals",
+      "start": "8C05ECB0",
+      "end": "8C05ED66",
+      "size": 182,
+      "status": "differs",
+      "diff_bytes": 182,
+      "linked_at": "8C05EC8C",
+      "linked_size": 182
+    },
+    {
+      "name": "InitCarVisuals",
+      "start": "8C05ED66",
+      "end": "8C05ED8C",
+      "size": 38,
+      "status": "differs",
+      "diff_bytes": 38,
+      "linked_at": "8C05ED42",
+      "linked_size": 82
+    },
+    {
+      "name": "SetSheen",
+      "start": "8C05EDB8",
+      "end": "8C05EE76",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 188,
+      "linked_at": "8C05ED94",
+      "linked_size": 174
+    },
+    {
+      "name": "SetFrameColor",
+      "start": "8C05EE76",
+      "end": "8C05EEC6",
+      "size": 80,
+      "status": "differs",
+      "diff_bytes": 80,
+      "linked_at": "8C05EE42",
+      "linked_size": 80
+    },
+    {
+      "name": "SetSheenColor",
+      "start": "8C05EEC6",
+      "end": "8C05EEF2",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 42,
+      "linked_at": "8C05EE92",
+      "linked_size": 44
+    },
+    {
+      "name": "SetTSheenColor",
+      "start": "8C05EEF2",
+      "end": "8C05EF1E",
+      "size": 44,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C05EEBE",
+      "linked_size": 44
+    },
+    {
+      "name": "InitCarObj",
+      "start": "8C05EF1E",
+      "end": "8C05EF86",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 102,
+      "linked_at": "8C05EEEA",
+      "linked_size": 158
+    },
+    {
+      "name": "CreateCar",
+      "start": "8C05EF86",
+      "end": "8C05F4DC",
+      "size": 1366,
+      "status": "differs",
+      "diff_bytes": 1366,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "SetupCarColor",
+      "start": "8C05F504",
+      "end": "8C05F6F8",
+      "size": 500,
+      "status": "missing",
+      "diff_bytes": 500
+    },
+    {
+      "name": "SetupCar",
+      "start": "8C05F730",
+      "end": "8C05F9E4",
+      "size": 692,
+      "status": "missing",
+      "diff_bytes": 692
+    },
+    {
+      "name": "StartCar",
+      "start": "8C05F9E4",
+      "end": "8C05FA58",
+      "size": 116,
+      "status": "missing",
+      "diff_bytes": 116
+    },
+    {
+      "name": "PickCar",
+      "start": "8C05FA58",
+      "end": "8C05FA7A",
+      "size": 34,
+      "status": "missing",
+      "diff_bytes": 34
+    },
+    {
+      "name": "RemoveCar",
+      "start": "8C05FAA8",
+      "end": "8C05FAE8",
+      "size": 64,
+      "status": "missing",
+      "diff_bytes": 64
+    },
+    {
+      "name": "StartEnvironment",
+      "start": "8C05FAF8",
+      "end": "8C05FD52",
+      "size": 602,
+      "status": "missing",
+      "diff_bytes": 602
+    },
+    {
+      "name": "GrabEnvEntry",
+      "start": "8C05FD60",
+      "end": "8C05FDA6",
+      "size": 70,
+      "status": "missing",
+      "diff_bytes": 70
+    },
+    {
+      "name": "AddToEnvList",
+      "start": "8C05FDA6",
+      "end": "8C05FDB0",
+      "size": 10,
+      "status": "missing",
+      "diff_bytes": 10
+    },
+    {
+      "name": "UpdateEnvirons",
+      "start": "8C05FDB0",
+      "end": "8C05FDEE",
+      "size": 62,
+      "status": "missing",
+      "diff_bytes": 62
+    },
+    {
+      "name": "ReleaseEnviron",
+      "start": "8C05FDEE",
+      "end": "8C05FE72",
+      "size": 132,
+      "status": "missing",
+      "diff_bytes": 132
+    },
+    {
+      "name": "RemoveEnvirons",
+      "start": "8C05FE72",
+      "end": "8C05FE92",
+      "size": 32,
+      "status": "missing",
+      "diff_bytes": 32
+    },
+    {
+      "name": "UpdateVisuals",
+      "start": "8C05FEB0",
+      "end": "8C0600E0",
+      "size": 560,
+      "status": "missing",
+      "diff_bytes": 560
+    },
+    {
+      "name": "RemoveVisuals",
+      "start": "8C0600F8",
+      "end": "8C06021C",
+      "size": 292,
+      "status": "missing",
+      "diff_bytes": 292
+    },
+    {
+      "name": "StartFrame",
+      "start": "8C06021C",
+      "end": "8C06035C",
+      "size": 320,
+      "status": "missing",
+      "diff_bytes": 320
+    },
+    {
+      "name": "AnimateRocketFlame",
+      "start": "8C0603A0",
+      "end": "8C0609EC",
+      "size": 1612,
+      "status": "missing",
+      "diff_bytes": 1612
+    },
+    {
+      "name": "GetCarsIRColor",
+      "start": "8C060A0C",
+      "end": "8C060D1A",
+      "size": 782,
+      "status": "missing",
+      "diff_bytes": 782
+    },
+    {
+      "name": "AnimateFrame",
+      "start": "8C060D1A",
+      "end": "8C0614AE",
+      "size": 1940,
+      "status": "missing",
+      "diff_bytes": 1940
+    },
+    {
+      "name": "StartWing",
+      "start": "8C0614E4",
+      "end": "8C0615F8",
+      "size": 276,
+      "status": "missing",
+      "diff_bytes": 276
+    },
+    {
+      "name": "AnimateWing",
+      "start": "8C061634",
+      "end": "8C061A4A",
+      "size": 1046,
+      "status": "missing",
+      "diff_bytes": 1046
+    },
+    {
+      "name": "StartWingFlame",
+      "start": "8C061A4A",
+      "end": "8C061B60",
+      "size": 278,
+      "status": "missing",
+      "diff_bytes": 278
+    },
+    {
+      "name": "AnimateWingFlame",
+      "start": "8C061B60",
+      "end": "8C061CF8",
+      "size": 408,
+      "status": "missing",
+      "diff_bytes": 408
+    },
+    {
+      "name": "InitBlast",
+      "start": "8C061D1C",
+      "end": "8C061DC6",
+      "size": 170,
+      "status": "missing",
+      "diff_bytes": 170
+    },
+    {
+      "name": "StartNewBlast",
+      "start": "8C061DE4",
+      "end": "8C062308",
+      "size": 1316,
+      "status": "missing",
+      "diff_bytes": 1316
+    },
+    {
+      "name": "AnimateNewBlast",
+      "start": "8C06235C",
+      "end": "8C0628F4",
+      "size": 1432,
+      "status": "missing",
+      "diff_bytes": 1432
+    },
+    {
+      "name": "StartNewBlastRing",
+      "start": "8C062914",
+      "end": "8C0629EA",
+      "size": 214,
+      "status": "missing",
+      "diff_bytes": 214
+    },
+    {
+      "name": "AnimateNewBlastRing",
+      "start": "8C0629EA",
+      "end": "8C062C44",
+      "size": 602,
+      "status": "missing",
+      "diff_bytes": 602
+    },
+    {
+      "name": "StartBlast",
+      "start": "8C062C44",
+      "end": "8C062DA8",
+      "size": 356,
+      "status": "missing",
+      "diff_bytes": 356
+    },
+    {
+      "name": "AnimateBlast",
+      "start": "8C062DA8",
+      "end": "8C062F12",
+      "size": 362,
+      "status": "missing",
+      "diff_bytes": 362
+    },
+    {
+      "name": "StartTire",
+      "start": "8C062F38",
+      "end": "8C062F8C",
+      "size": 84,
+      "status": "missing",
+      "diff_bytes": 84
+    },
+    {
+      "name": "AnimateTire",
+      "start": "8C062F8C",
+      "end": "8C063378",
+      "size": 1004,
+      "status": "missing",
+      "diff_bytes": 1004
+    },
+    {
+      "name": "func_8C063378",
+      "start": "8C063378",
+      "end": "8C0633E4",
+      "size": 108,
+      "status": "missing",
+      "diff_bytes": 108
+    },
+    {
+      "name": "AnimateShadow",
+      "start": "8C063434",
+      "end": "8C063F54",
+      "size": 2848,
+      "status": "missing",
+      "diff_bytes": 2848
+    },
+    {
+      "name": "UpdateArrowVis",
+      "start": "8C063F74",
+      "end": "8C0640B6",
+      "size": 322,
+      "status": "missing",
+      "diff_bytes": 322
+    },
+    {
+      "name": "StartArrow",
+      "start": "8C0640E4",
+      "end": "8C064258",
+      "size": 372,
+      "status": "missing",
+      "diff_bytes": 372
+    },
+    {
+      "name": "AnimateArrow",
+      "start": "8C064258",
+      "end": "8C0647BA",
+      "size": 1378,
+      "status": "missing",
+      "diff_bytes": 1378
+    },
+    {
+      "name": "StartBrakeLights",
+      "start": "8C0647BA",
+      "end": "8C0647F0",
+      "size": 54,
+      "status": "missing",
+      "diff_bytes": 54
+    },
+    {
+      "name": "AnimateBrakeLights",
+      "start": "8C064828",
+      "end": "8C064882",
+      "size": 90,
+      "status": "missing",
+      "diff_bytes": 90
+    },
+    {
+      "name": "StartSparks",
+      "start": "8C064882",
+      "end": "8C064928",
+      "size": 166,
+      "status": "missing",
+      "diff_bytes": 166
+    },
+    {
+      "name": "AnimateLFSpark",
+      "start": "8C06495C",
+      "end": "8C064A16",
+      "size": 186,
+      "status": "missing",
+      "diff_bytes": 186
+    },
+    {
+      "name": "AnimateLRSpark",
+      "start": "8C064A34",
+      "end": "8C064AEC",
+      "size": 184,
+      "status": "missing",
+      "diff_bytes": 184
+    },
+    {
+      "name": "AnimateRFSpark",
+      "start": "8C064B0C",
+      "end": "8C064BC0",
+      "size": 180,
+      "status": "missing",
+      "diff_bytes": 180
+    },
+    {
+      "name": "AnimateRRSpark",
+      "start": "8C064BE0",
+      "end": "8C064C98",
+      "size": 184,
+      "status": "missing",
+      "diff_bytes": 184
+    },
+    {
+      "name": "AnimateBSpark",
+      "start": "8C064CB8",
+      "end": "8C064D9C",
+      "size": 228,
+      "status": "missing",
+      "diff_bytes": 228
+    },
+    {
+      "name": "HandleASpark",
+      "start": "8C064D9C",
+      "end": "8C064EA2",
+      "size": 262,
+      "status": "missing",
+      "diff_bytes": 262
+    },
+    {
+      "name": "PositionObject",
+      "start": "8C064EE0",
+      "end": "8C064F46",
+      "size": 102,
+      "status": "missing",
+      "diff_bytes": 102
+    },
+    {
+      "name": "CheckVisibleAll",
+      "start": "8C064F46",
+      "end": "8C064F7E",
+      "size": 56,
+      "status": "missing",
+      "diff_bytes": 56
+    },
+    {
+      "name": "CheckVisible",
+      "start": "8C064F7E",
+      "end": "8C064FCC",
+      "size": 78,
+      "status": "missing",
+      "diff_bytes": 78
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05EA78",
+      "end": "8C05EAA4",
+      "exact": true,
+      "built": 44,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C05EC78",
+      "end": "8C05ECB0",
+      "exact": false,
+      "built": 56,
+      "diff_bytes": 50
+    },
+    {
+      "kind": "pool",
+      "start": "8C05ED8C",
+      "end": "8C05EDB8",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 44
+    },
+    {
+      "kind": "pool",
+      "start": "8C05F4DC",
+      "end": "8C05F504",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 40
+    },
+    {
+      "kind": "pool",
+      "start": "8C05F6F8",
+      "end": "8C05F730",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C05FA7A",
+      "end": "8C05FAA8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "pool",
+      "start": "8C05FAE8",
+      "end": "8C05FAF8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "pool",
+      "start": "8C05FD52",
+      "end": "8C05FD60",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 14
+    },
+    {
+      "kind": "pool",
+      "start": "8C05FE92",
+      "end": "8C05FEB0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C0600E0",
+      "end": "8C0600F8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C06035C",
+      "end": "8C0603A0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 68
+    },
+    {
+      "kind": "pool",
+      "start": "8C0609EC",
+      "end": "8C060A0C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C0614AE",
+      "end": "8C0614E4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 54
+    },
+    {
+      "kind": "pool",
+      "start": "8C0615F8",
+      "end": "8C061634",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 60
+    },
+    {
+      "kind": "pool",
+      "start": "8C061CF8",
+      "end": "8C061D1C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "pool",
+      "start": "8C061DC6",
+      "end": "8C061DE4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C062308",
+      "end": "8C06235C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 84
+    },
+    {
+      "kind": "pool",
+      "start": "8C0628F4",
+      "end": "8C062914",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C062F12",
+      "end": "8C062F38",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 38
+    },
+    {
+      "kind": "pool",
+      "start": "8C0633E4",
+      "end": "8C063434",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 80
+    },
+    {
+      "kind": "pool",
+      "start": "8C063F54",
+      "end": "8C063F74",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C0640B6",
+      "end": "8C0640E4",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "pool",
+      "start": "8C0647F0",
+      "end": "8C064828",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C064928",
+      "end": "8C06495C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 52
+    },
+    {
+      "kind": "pool",
+      "start": "8C064A16",
+      "end": "8C064A34",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "pool",
+      "start": "8C064AEC",
+      "end": "8C064B0C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C064BC0",
+      "end": "8C064BE0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C064C98",
+      "end": "8C064CB8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 32
+    },
+    {
+      "kind": "pool",
+      "start": "8C064EA2",
+      "end": "8C064EE0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 62
+    },
+    {
+      "kind": "pool",
+      "start": "8C064FCC",
+      "end": "8C064FDC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 16
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C3D94",
+      "end": "8C0C3FEC",
+      "exact": true,
+      "built": 600,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:36:46",
+  "defines": {
+    "_CarNames": "8C0BB8C8",
+    "_CarPartFormat": "8C0AE49C",
+    "_InitVisualsCarScr": "8C08AF1C",
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObjectCam": "8C03D0A2",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_MineName": "8C0AE408",
+    "_ObjNames": "8C0AE088",
+    "_SetTargetDefs": "8C0581A8",
+    "_TexNames": "8C0AE42C",
+    "_TrkNames": "8C0AE17C",
+    "_WeaponNames": "8C0AE038",
+    "_WheelObjNames": "8C0AE428",
+    "_WingNames": "8C0AE058",
+    "_ZOID_NewMatrix": "8C06872E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_ZOID_SetEnvColor": "8C0692CE",
+    "_ZOID_SetTexture": "8C0692F0",
+    "__divls": "8C09B680",
+    "_carObjNames": "8C0AE478",
+    "_gCarMatrices": "8C19F544",
+    "_gCarMines": "8C158699",
+    "_gCarModelNums": "8C15ED14",
+    "_gCarPaintJobInited": "8C15EE48",
+    "_gCarParts": "8C15D994",
+    "_gCarTeamColor": "8C15D024",
+    "_gEnvCount": "8C15CA34",
+    "_gEnvList": "8C15D98C",
+    "_gEnvirons": "8C15D02C",
+    "_gFreeVis": "8C15D990",
+    "_gGameState": "8C0BFD3C",
+    "_gLink": "8C12C5A4",
+    "_gMineCones": "8C158698",
+    "_gNumModels": "8C14CB1C",
+    "_gObjList": "8C15CA5E",
+    "_gRomObjDefPtrs": "8C0BEBE8",
+    "_gTexDefPtrs": "8C14C71C",
+    "_gTexList": "8C15CA38",
+    "_gWheelNames": "8C0C3FEC",
+    "_gWheelTextures": "8C15EE7C",
+    "_memset": "8C09BE04",
+    "_sheenName": "8C0C40AC",
+    "_sprintf": "8C09BF0C",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C05E7A4",
+    "D": "8C0C3D94"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C05E7A4",
+      "length": 2020
+    },
+    {
+      "name": "D",
+      "address": "8C0C3D94",
+      "length": 600
+    }
+  ],
+  "equal_text_bytes_including_fill": 44,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 600,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -24660,
+  "seconds": 2.1
+}

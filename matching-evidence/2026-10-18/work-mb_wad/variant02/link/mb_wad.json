@@ -1,0 +1,46 @@
+{
+ "name": "mb_wad",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT mb_wad.abs",
+  "FORM A",
+  "START P(8C03CF94)",
+  "PRINT mb_wad.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\work-mb_wad\\variant02\\obj\\mb_wad.obj",
+   "sha256": "0a27ec611d2130316edc276e357b860779b72f84c20f4bc30bb259d17f09d5fc"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C03CF94",
+   "length": 252
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C03CF94",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 3,
+   "first_diff_offset": 5,
+   "sha256": "9161619fbe20fb0821fc25e4f48215485dee16262c442bf148a957d96d2eecea"
+  },
+  {
+   "section": "P",
+   "address": "8C03D08A",
+   "size": 6,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2e6595aaaaa71054e0ec9c59412a996adc0c5dd608991e0523e7a88d9426ed64"
+  }
+ ],
+ "all_exact": false
+}

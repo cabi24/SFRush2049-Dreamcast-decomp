@@ -42,7 +42,7 @@ int GameLoop(void)
  int renderFlag=0;
  static signed char sInited=0;
  static signed char pauseAllowed=0;
- if(!sInited) {gFrames=0;sInited=1;}
+ if(!sInited) {(*(volatile unsigned int *)&gFrames)=0;sInited=1;}
  OncePerFrame();
  if(game_InactiveSeconds()>300.0f && !(gGameState&0x4000000f)) {
   if(!inactiveBlit)inactiveBlit=NewMultiBlit(0,0,inactiveBlitDef,1);
@@ -55,7 +55,7 @@ int GameLoop(void)
  if((gGameState&0x600000)&&gPauseState) {UpdateGraphics(1,1);return 1;}
  if(gGameState&0x3fc0000)_UpdateGame();
  if(gNewGameState==gGameState) {func_8C02901E();UpdateGraphics(1,1);renderFlag=1;}
- gFrames++;return renderFlag;
+ (*(volatile unsigned int *)&gFrames)++;return renderFlag;
 }
 void OncePerFrame(void)
 {UpdateFrameTimer();UpdateRushControls();HAL_CallOncePerFrameFuncs();}

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign60-lane5/unk_8C065F2C');s=(p/'baseline.c').read_text();s=s.replace('            w++;','            ptr++;\n            if (ptr_no_clip) ptr_no_clip++;').replace('mask & ptr_no_clip[w]','mask & *ptr_no_clip').replace('(mask & ptr[w]) || (ptr_no_clip ? mask & *ptr_no_clip : 0) || show','(mask & *ptr) || show');Path('src/unk_8C065F2C.c').write_text(s)

@@ -1,0 +1,196 @@
+{
+ "name": "Init",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT Init.abs",
+  "FORM A",
+  "START P(8C039280)",
+  "START C(8C0AC074)",
+  "DEFINE _AudMono(8C014F92)",
+  "DEFINE _AudioInit(8C013A40)",
+  "DEFINE _AudioShutdown(8C013D1C)",
+  "DEFINE _DeallocateMemory(8C040832)",
+  "DEFINE _HAL_InitText(8C02ECF4)",
+  "DEFINE _InitGraphics(8C02E3EE)",
+  "DEFINE _InitMemory(8C03FD08)",
+  "DEFINE _InitOptions(8C041220)",
+  "DEFINE _InitRushControls(8C01E84C)",
+  "DEFINE _InitializeTimer(8C0100AE)",
+  "DEFINE _SaveInit(8C04B628)",
+  "DEFINE _SetControllerActive(8C01F180)",
+  "DEFINE _func_8C02E350(8C02E350)",
+  "DEFINE _func_8C02E390(8C02E390)",
+  "DEFINE _func_8C06B82C(8C06B82C)",
+  "DEFINE _func_8C06B954(8C06B954)",
+  "DEFINE _func_8C06BA3A(8C06BA3A)",
+  "DEFINE _func_8C06C4A6(8C06C4A6)",
+  "DEFINE _func_8C06C664(8C06C664)",
+  "DEFINE _func_8C06C712(8C06C712)",
+  "DEFINE _func_8C06E5B4(8C06E5B4)",
+  "DEFINE _func_8C06E7BC(8C06E7BC)",
+  "DEFINE _func_8C06ED90(8C06ED90)",
+  "DEFINE _func_8C072690(8C072690)",
+  "DEFINE _func_8C09B1E4(8C09B1E4)",
+  "DEFINE _func_8C09B240(8C09B240)",
+  "DEFINE _func_8C09B2B4(8C09B2B4)",
+  "DEFINE _func_8C09B380(8C09B380)",
+  "DEFINE _func_8C0D7290(8C0D7290)",
+  "DEFINE _func_8C0D77B0(8C0D77B0)",
+  "DEFINE _func_8C0D7E0A(8C0D7E0A)",
+  "DEFINE _func_8C0D7E5C(8C0D7E5C)",
+  "DEFINE _func_8C0D7E86(8C0D7E86)",
+  "DEFINE _func_8C0D8458(8C0D8458)",
+  "DEFINE _func_8C0D84B8(8C0D84B8)",
+  "DEFINE _func_8C0D84CA(8C0D84CA)",
+  "DEFINE _func_8C0D850A(8C0D850A)",
+  "DEFINE _func_8C0D8558(8C0D8558)",
+  "DEFINE _func_8C0D8588(8C0D8588)",
+  "DEFINE _func_8C0D8610(8C0D8610)",
+  "DEFINE _func_8C0D863A(8C0D863A)",
+  "DEFINE _func_8C0D8974(8C0D8974)",
+  "DEFINE _func_8C0D98F8(8C0D98F8)",
+  "DEFINE _func_8C0D9922(8C0D9922)",
+  "DEFINE _func_8C0D9932(8C0D9932)",
+  "DEFINE _func_8C0DAD60(8C0DAD60)",
+  "DEFINE _func_8C0DAE8E(8C0DAE8E)",
+  "DEFINE _func_8C0DAFE0(8C0DAFE0)",
+  "DEFINE _func_8C0DC260(8C0DC260)",
+  "DEFINE _gFrameCounter(8C12253C)",
+  "DEFINE _gInitCableType(8C1224C0)",
+  "DEFINE _gInitExitFlag(8C14CBAC)",
+  "DEFINE _gInitGraphicsBufferA(8C134540)",
+  "DEFINE _gInitGraphicsBufferB(8C140560)",
+  "DEFINE _gInitHeapAlias(8C0D6F4C)",
+  "DEFINE _gInitLanguageMode(8C15C988)",
+  "DEFINE _gInitMemoryEnd(8C115210)",
+  "DEFINE _gInitMonoSetting(8C14C580)",
+  "DEFINE _gInitSdkSetting(8C14C584)",
+  "DEFINE _gInitVideoDescriptor(8C19E970)",
+  "DEFINE _gRetraceRate(8C0B8C28)",
+  "DEFINE _gRetraceTime(8C0B8C2C)",
+  "DEFINE _osTvType(8C1224C4)",
+  "PRINT Init.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\Init\\dirty\\obj\\Init.obj",
+   "sha256": "2266373778240484ed3ecdc440d261df5b362ca3eb037609eff93992cfc18daf"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C039280",
+   "length": 1304
+  },
+  {
+   "name": "C",
+   "address": "8C0AC074",
+   "length": 12
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C039280",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "bf3d46ba895335da8c4b5d43a08812c07bc9a855e06b390ab20784b8b3c95a79"
+  },
+  {
+   "section": "P",
+   "address": "8C039376",
+   "size": 78,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "02740b127c562de7a6b09547c04cc94d13ee42a0e456e39e6255a927de59a249"
+  },
+  {
+   "section": "P",
+   "address": "8C0393C4",
+   "size": 94,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "154eecdd41df86cb8d8facb938f2dd2cff65e797bd1d04bab750976cfa31e6f9"
+  },
+  {
+   "section": "P",
+   "address": "8C039424",
+   "size": 228,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "de9c39e4f9cd83fea9cd43080288f5b048befef6902ab9b95a65d41b0fbaec4d"
+  },
+  {
+   "section": "P",
+   "address": "8C039508",
+   "size": 178,
+   "exact": false,
+   "diff_bytes": 8,
+   "first_diff_offset": 92,
+   "sha256": "60c8b793b6e0eb8e2e832d56ac74a3b488ca3de701a4b4a48b4579707c86c2db"
+  },
+  {
+   "section": "P",
+   "address": "8C0395BC",
+   "size": 32,
+   "exact": false,
+   "diff_bytes": 1,
+   "first_diff_offset": 28,
+   "sha256": "3e741efd98a4eba50fc8b783848bc4b2798913a13483c0e8a6266bf56bcbb3d2"
+  },
+  {
+   "section": "P",
+   "address": "8C0395DC",
+   "size": 222,
+   "exact": false,
+   "diff_bytes": 87,
+   "first_diff_offset": 0,
+   "sha256": "8d61124a2eabb6919b35e8d3950c56c1ebda0773840e991c79bf330a48c1c000"
+  },
+  {
+   "section": "P",
+   "address": "8C0396BC",
+   "size": 48,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "5543f2fc55f25e7018db761a38f56803d8605f17a36954426e089950c4cc2f37"
+  },
+  {
+   "section": "P",
+   "address": "8C0396EC",
+   "size": 148,
+   "exact": false,
+   "diff_bytes": 52,
+   "first_diff_offset": 50,
+   "sha256": "cf1541c6ce4e2ba7709967a3c57135d874c71bc68807dc0cbacab1ef5f9a8a3d"
+  },
+  {
+   "section": "P",
+   "address": "8C039780",
+   "size": 24,
+   "exact": false,
+   "diff_bytes": 16,
+   "first_diff_offset": 0,
+   "sha256": "b220f114a8ab3f982a52e8d8ebc0878198c69d758906045d6e45136327210db8"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC074",
+   "size": 12,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "affc9dc688401407bf32ceb9ccbc72c2ae34eda77ff9a2b55978bb60ecd5c740"
+  }
+ ],
+ "all_exact": false
+}

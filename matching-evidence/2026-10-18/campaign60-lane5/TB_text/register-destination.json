@@ -1,0 +1,360 @@
+{
+  "name": "TB_text",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/TB_text.c",
+  "source_sha256": "a935b679e38f863cb9b8e971427113eb77f9424ce9c25139c3396e37d48f465f",
+  "text": [
+    "8C05A6AC",
+    "8C05B09C"
+  ],
+  "text_bytes": 2544,
+  "exact_text_bytes": 492,
+  "align_bytes": 0,
+  "data_bytes": 332,
+  "exact_data_bytes": 329,
+  "functions_total": 21,
+  "functions_exact": 10,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "TB_TextInit",
+      "start": "8C05A6AC",
+      "end": "8C05A6CA",
+      "size": 30,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A6AC",
+      "linked_size": 30
+    },
+    {
+      "name": "TB_TextOncePerFrame",
+      "start": "8C05A6CA",
+      "end": "8C05A708",
+      "size": 62,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A6CA",
+      "linked_size": 62
+    },
+    {
+      "name": "TB_CenterText",
+      "start": "8C05A708",
+      "end": "8C05A722",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A708",
+      "linked_size": 26
+    },
+    {
+      "name": "TB_RightText",
+      "start": "8C05A722",
+      "end": "8C05A73A",
+      "size": 24,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A722",
+      "linked_size": 24
+    },
+    {
+      "name": "TB_SetJust",
+      "start": "8C05A73A",
+      "end": "8C05A742",
+      "size": 8,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A73A",
+      "linked_size": 8
+    },
+    {
+      "name": "TB_SetTextColor",
+      "start": "8C05A742",
+      "end": "8C05A7FA",
+      "size": 184,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A742",
+      "linked_size": 184
+    },
+    {
+      "name": "TB_FlashTextColors",
+      "start": "8C05A7FA",
+      "end": "8C05A808",
+      "size": 14,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A7FA",
+      "linked_size": 14
+    },
+    {
+      "name": "TB_GetFlashTextCycle",
+      "start": "8C05A808",
+      "end": "8C05A80E",
+      "size": 6,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A808",
+      "linked_size": 6
+    },
+    {
+      "name": "TB_GetFontHeight",
+      "start": "8C05A80E",
+      "end": "8C05A828",
+      "size": 26,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A80E",
+      "linked_size": 26
+    },
+    {
+      "name": "TB_GetFontLineHeight",
+      "start": "8C05A828",
+      "end": "8C05A84C",
+      "size": 36,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05A828",
+      "linked_size": 100
+    },
+    {
+      "name": "TB_GetTextNumLines",
+      "start": "8C05A88C",
+      "end": "8C05A97A",
+      "size": 238,
+      "status": "differs",
+      "diff_bytes": 164,
+      "linked_at": "8C05A88C",
+      "linked_size": 252
+    },
+    {
+      "name": "TB_EllipseText",
+      "start": "8C05A988",
+      "end": "8C05AA9C",
+      "size": 276,
+      "status": "differs",
+      "diff_bytes": 142,
+      "linked_at": "8C05A988",
+      "linked_size": 292
+    },
+    {
+      "name": "TB_Strlen",
+      "start": "8C05AAAC",
+      "end": "8C05AAE6",
+      "size": 58,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C05AAAC",
+      "linked_size": 58
+    },
+    {
+      "name": "TB_Strcpy",
+      "start": "8C05AAE6",
+      "end": "8C05AB3A",
+      "size": 84,
+      "status": "differs",
+      "diff_bytes": 7,
+      "linked_at": "8C05AAE6",
+      "linked_size": 84
+    },
+    {
+      "name": "TB_Strcat",
+      "start": "8C05AB3A",
+      "end": "8C05AC1E",
+      "size": 228,
+      "status": "differs",
+      "diff_bytes": 220,
+      "linked_at": "8C05AB3A",
+      "linked_size": 230
+    },
+    {
+      "name": "TB_Sprintf",
+      "start": "8C05AC1E",
+      "end": "8C05AC50",
+      "size": 50,
+      "status": "differs",
+      "diff_bytes": 48,
+      "linked_at": "8C05AC20",
+      "linked_size": 50
+    },
+    {
+      "name": "TB_Printf",
+      "start": "8C05AC50",
+      "end": "8C05ACA6",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 43,
+      "linked_at": "8C05AC52",
+      "linked_size": 84
+    },
+    {
+      "name": "TB_DrawText",
+      "start": "8C05ACA6",
+      "end": "8C05AD4C",
+      "size": 166,
+      "status": "differs",
+      "diff_bytes": 159,
+      "linked_at": "8C05ACA6",
+      "linked_size": 112
+    },
+    {
+      "name": "TB_DrawEllipseText",
+      "start": "8C05AD4C",
+      "end": "8C05AD92",
+      "size": 70,
+      "status": "differs",
+      "diff_bytes": 69,
+      "linked_at": "8C05AD16",
+      "linked_size": 70
+    },
+    {
+      "name": "TB_DrawTextC",
+      "start": "8C05AD92",
+      "end": "8C05ADB2",
+      "size": 32,
+      "status": "differs",
+      "diff_bytes": 32,
+      "linked_at": "8C05AD5C",
+      "linked_size": 72
+    },
+    {
+      "name": "TB_DrawTextScrollBox",
+      "start": "8C05ADE4",
+      "end": "8C05B094",
+      "size": 688,
+      "status": "differs",
+      "diff_bytes": 677,
+      "linked_at": "8C05ADA4",
+      "linked_size": 696
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05A84C",
+      "end": "8C05A88C",
+      "exact": true,
+      "built": 64,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C05A97A",
+      "end": "8C05A988",
+      "exact": true,
+      "built": 14,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C05AA9C",
+      "end": "8C05AAAC",
+      "exact": false,
+      "built": 16,
+      "diff_bytes": 3
+    },
+    {
+      "kind": "pool",
+      "start": "8C05ADB2",
+      "end": "8C05ADE4",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 50
+    },
+    {
+      "kind": "pool",
+      "start": "8C05B094",
+      "end": "8C05B09C",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 8
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AD628",
+      "end": "8C0AD6AC",
+      "exact": true,
+      "built": 132,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C1770",
+      "end": "8C0C1838",
+      "exact": true,
+      "built": 200,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C15C984",
+      "end": "8C15C988",
+      "exact": true,
+      "linked": [
+        "8C15C984",
+        "8C15C988"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:36:28",
+  "defines": {
+    "_HAL_DrawText": "8C02F658",
+    "_HAL_GetCharWidth": "8C02F46A",
+    "_HAL_GetFontAscent": "8C02F39C",
+    "_HAL_GetFontDescent": "8C02F3C4",
+    "_HAL_GetFontLeading": "8C02F3EC",
+    "_HAL_GetFontSpacing": "8C02F406",
+    "_HAL_GetTextWidth": "8C02F502",
+    "_HAL_InstallOncePerFrameFunc": "8C02FD2C",
+    "_HAL_SetTextColor": "8C02F1E0",
+    "_HAL_SetTextPos": "8C02F2B4",
+    "__slow_mvn": "8C09BAD4",
+    "_gFrameSeconds": "8C12254C",
+    "_vsprintf": "8C09C044"
+  },
+  "starts": {
+    "P": "8C05A6AC",
+    "C": "8C0AD628",
+    "D": "8C0C1770",
+    "B": "8C15C984"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C05A6AC",
+      "length": 2480
+    },
+    {
+      "name": "C",
+      "address": "8C0AD628",
+      "length": 132
+    },
+    {
+      "name": "D",
+      "address": "8C0C1770",
+      "length": 200
+    },
+    {
+      "name": "B",
+      "address": "8C15C984",
+      "length": 4
+    }
+  ],
+  "equal_text_bytes_including_fill": 494,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 332,
+  "excluded_exact_data_fill": 3,
+  "excluded_data_padding": [
+    {
+      "start": "8C0C1771",
+      "end": "8C0C1774",
+      "reason": "Three-byte alignment between separate initialized flag byte and gJust int pair; targetA84C/A86C base references. No semantic fields or credit."
+    }
+  ],
+  "text_size_delta": -64,
+  "seconds": 2.0
+}

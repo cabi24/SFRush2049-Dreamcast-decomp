@@ -1,0 +1,98 @@
+{
+  "name": "unk_8C03A360",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/unk_8C03A360.c",
+  "source_sha256": "02b2314d5d61128b1cf5f64b6ff0bc23a0e2bf351d2b69f2be2c6243f63c94ef",
+  "text": [
+    "8C03A360",
+    "8C03A41C"
+  ],
+  "text_bytes": 188,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 8,
+  "exact_data_bytes": 5,
+  "functions_total": 2,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C03A360",
+      "start": "8C03A360",
+      "end": "8C03A3AE",
+      "size": 78,
+      "status": "differs",
+      "diff_bytes": 58,
+      "linked_at": "8C03A360",
+      "linked_size": 82
+    },
+    {
+      "name": "func_8C03A3AE",
+      "start": "8C03A3AE",
+      "end": "8C03A3EE",
+      "size": 64,
+      "status": "differs",
+      "diff_bytes": 62,
+      "linked_at": "8C03A3B2",
+      "linked_size": 114
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C03A3EE",
+      "end": "8C03A41C",
+      "exact": false,
+      "built": 46,
+      "diff_bytes": 36
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEBBC",
+      "end": "8C0BEBC4",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [
+    "8 built bytes fall outside the mapped ranges (first 8C03A41C, last 8C03A423)"
+  ],
+  "built_at": "2026-10-18T15:36:48",
+  "defines": {
+    "_GameLoop": "8C0278C0",
+    "_func_8C02E350": "8C02E350",
+    "_func_8C02E390": "8C02E390",
+    "_func_8C039718": "8C039718",
+    "_func_8C06B976": "8C06B976",
+    "_func_8C06BA20": "8C06BA20",
+    "_gFrameCounter": "8C12253C",
+    "_gGameStarted": "8C158340",
+    "_gSoftReset": "8C12C200"
+  },
+  "starts": {
+    "P": "8C03A360",
+    "D": "8C0BEBBC"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03A360",
+      "length": 196
+    },
+    {
+      "name": "D",
+      "address": "8C0BEBBC",
+      "length": 8
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 8,
+  "excluded_exact_data_fill": 3,
+  "excluded_data_padding": [],
+  "text_size_delta": 8,
+  "seconds": 1.9
+}

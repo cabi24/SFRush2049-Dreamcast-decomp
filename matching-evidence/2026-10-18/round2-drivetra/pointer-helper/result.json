@@ -1,0 +1,184 @@
+{
+  "name": "drivetra",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/drivetra.c",
+  "source_sha256": "adca3f1425cf1ae6a69e30c9ea6f6f2fe18f5b7e5e154c85712ff807cf5a81cc",
+  "text": [
+    "8C022CA4",
+    "8C0232F8"
+  ],
+  "text_bytes": 1620,
+  "exact_text_bytes": 794,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 10,
+  "functions_exact": 6,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "drivetrain",
+      "start": "8C022CA4",
+      "end": "8C022D94",
+      "size": 240,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C022CA4",
+      "linked_size": 240
+    },
+    {
+      "name": "whatslips",
+      "start": "8C022D94",
+      "end": "8C022EE2",
+      "size": 334,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022D94",
+      "linked_size": 360
+    },
+    {
+      "name": "autoshift",
+      "start": "8C022EFC",
+      "end": "8C022F96",
+      "size": 154,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022EFC",
+      "linked_size": 154
+    },
+    {
+      "name": "transmission",
+      "start": "8C022F96",
+      "end": "8C022FD2",
+      "size": 60,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022F96",
+      "linked_size": 86
+    },
+    {
+      "name": "find_best_gear",
+      "start": "8C022FEC",
+      "end": "8C023048",
+      "size": 92,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C022FEC",
+      "linked_size": 92
+    },
+    {
+      "name": "upshift",
+      "start": "8C023048",
+      "end": "8C023074",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C023048",
+      "linked_size": 44
+    },
+    {
+      "name": "downshift",
+      "start": "8C023074",
+      "end": "8C0230A0",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C023074",
+      "linked_size": 60
+    },
+    {
+      "name": "enginetorque",
+      "start": "8C0230B0",
+      "end": "8C0231D2",
+      "size": 290,
+      "status": "differs",
+      "diff_bytes": 270,
+      "linked_at": "8C0230B0",
+      "linked_size": 302
+    },
+    {
+      "name": "interp",
+      "start": "8C0231D2",
+      "end": "8C0231E6",
+      "size": 20,
+      "status": "differs",
+      "diff_bytes": 20,
+      "linked_at": "8C0231DE",
+      "linked_size": 46
+    },
+    {
+      "name": "engine",
+      "start": "8C0231E6",
+      "end": "8C0232E4",
+      "size": 254,
+      "status": "differs",
+      "diff_bytes": 245,
+      "linked_at": "8C02320C",
+      "linked_size": 244
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C022EE2",
+      "end": "8C022EFC",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C022FD2",
+      "end": "8C022FEC",
+      "exact": true,
+      "built": 26,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0230A0",
+      "end": "8C0230B0",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0232E4",
+      "end": "8C0232F8",
+      "exact": false,
+      "built": 20,
+      "diff_bytes": 19
+    }
+  ],
+  "notes": [
+    "8 built bytes fall outside the mapped ranges (first 8C0232F8, last 8C0232FF)"
+  ],
+  "built_at": "2026-10-18T15:01:56",
+  "defines": {
+    "__divls": "8C09B680",
+    "__divws": "8C09B7DC",
+    "__modls": "8C09B82C",
+    "__modws": "8C09B9AC",
+    "_carEngineTorque": "8C0BBC4C",
+    "_carTransGearRatio": "8C0BBA48"
+  },
+  "starts": {
+    "P": "8C022CA4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C022CA4",
+      "length": 1628
+    }
+  ],
+  "equal_text_bytes_including_fill": 796,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 8,
+  "seconds": 2.0
+}

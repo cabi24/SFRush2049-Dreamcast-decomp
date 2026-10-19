@@ -1,0 +1,13 @@
+{
+  "unit": "HAL_text",
+  "label": "purge-condition",
+  "preserved_old_exact_spans": true,
+  "delta_text": 168,
+  "delta_data": 0,
+  "delta_functions": 1,
+  "hashes": {
+    "src\\HAL_text.c": "17e25c1198ffe2fc3124b49a835903a1d7443af4c748500e1cef440559535226",
+    "build\\campaign100-lane3\\HAL_text\\purge-condition\\obj\\HAL_text.obj": "393f373967447d4af517573800df60ac4facca47f6c20ed472e74f36082e55cb",
+    "build\\campaign100-lane3\\HAL_text\\purge-condition\\link\\HAL_text.abs": "d1e592e1727e2577ac1076180878c6c4e3118e3d9e88af292acb7fff0319464b"
+  }
+}

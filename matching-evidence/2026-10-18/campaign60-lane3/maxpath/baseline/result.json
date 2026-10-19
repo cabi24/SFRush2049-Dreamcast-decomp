@@ -1,0 +1,431 @@
+{
+  "name": "maxpath",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/maxpath.c",
+  "source_sha256": "9fb812373260cc455a552506c21799536e09597415e2987e8ab0bbf69510e209",
+  "text": [
+    "8C03A41C",
+    "8C03CF94"
+  ],
+  "text_bytes": 11128,
+  "exact_text_bytes": 496,
+  "align_bytes": 0,
+  "data_bytes": 57,
+  "exact_data_bytes": 57,
+  "functions_total": 25,
+  "functions_exact": 4,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "InitPathData",
+      "start": "8C03A41C",
+      "end": "8C03A46A",
+      "size": 78,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03A41C",
+      "linked_size": 78
+    },
+    {
+      "name": "InitCarPath",
+      "start": "8C03A46A",
+      "end": "8C03A4D2",
+      "size": 104,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03A46A",
+      "linked_size": 104
+    },
+    {
+      "name": "SyncMaxpathToLastCheckpoint",
+      "start": "8C03A4D2",
+      "end": "8C03A50E",
+      "size": 60,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03A4D2",
+      "linked_size": 122
+    },
+    {
+      "name": "MaxPathControls",
+      "start": "8C03A54C",
+      "end": "8C03A608",
+      "size": 188,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03A54C",
+      "linked_size": 188
+    },
+    {
+      "name": "FindInterval",
+      "start": "8C03A608",
+      "end": "8C03A6B4",
+      "size": 172,
+      "status": "differs",
+      "diff_bytes": 7,
+      "linked_at": "8C03A608",
+      "linked_size": 176
+    },
+    {
+      "name": "IntervalPosChange",
+      "start": "8C03A6B8",
+      "end": "8C03B114",
+      "size": 2652,
+      "status": "differs",
+      "diff_bytes": 2521,
+      "linked_at": "8C03A6B8",
+      "linked_size": 2540
+    },
+    {
+      "name": "IntervalPos",
+      "start": "8C03B120",
+      "end": "8C03B23A",
+      "size": 282,
+      "status": "differs",
+      "diff_bytes": 276,
+      "linked_at": "8C03B0A4",
+      "linked_size": 272
+    },
+    {
+      "name": "FindMaxpathIntervals",
+      "start": "8C03B23A",
+      "end": "8C03B9B4",
+      "size": 1914,
+      "status": "differs",
+      "diff_bytes": 1885,
+      "linked_at": "8C03B1B4",
+      "linked_size": 1960
+    },
+    {
+      "name": "TargetSpeed",
+      "start": "8C03B9B4",
+      "end": "8C03BA94",
+      "size": 224,
+      "status": "differs",
+      "diff_bytes": 222,
+      "linked_at": "8C03B95C",
+      "linked_size": 240
+    },
+    {
+      "name": "TargetSteerPos",
+      "start": "8C03BAB0",
+      "end": "8C03BC06",
+      "size": 342,
+      "status": "differs",
+      "diff_bytes": 332,
+      "linked_at": "8C03BA4C",
+      "linked_size": 368
+    },
+    {
+      "name": "AdjustSpeed",
+      "start": "8C03BC20",
+      "end": "8C03BD06",
+      "size": 230,
+      "status": "differs",
+      "diff_bytes": 221,
+      "linked_at": "8C03BBBC",
+      "linked_size": 276
+    },
+    {
+      "name": "AdjustSteer",
+      "start": "8C03BD38",
+      "end": "8C03BDA0",
+      "size": 104,
+      "status": "differs",
+      "diff_bytes": 104,
+      "linked_at": "8C03BCD0",
+      "linked_size": 108
+    },
+    {
+      "name": "AvoidAreas",
+      "start": "8C03BDBC",
+      "end": "8C03C460",
+      "size": 1700,
+      "status": "differs",
+      "diff_bytes": 1672,
+      "linked_at": "8C03BD3C",
+      "linked_size": 1632
+    },
+    {
+      "name": "SetDroneResPathIndex",
+      "start": "8C03C460",
+      "end": "8C03C5CE",
+      "size": 366,
+      "status": "differs",
+      "diff_bytes": 360,
+      "linked_at": "8C03C39C",
+      "linked_size": 358
+    },
+    {
+      "name": "SetNewPathIndex",
+      "start": "8C03C5CE",
+      "end": "8C03C600",
+      "size": 50,
+      "status": "differs",
+      "diff_bytes": 50,
+      "linked_at": "8C03C502",
+      "linked_size": 74
+    },
+    {
+      "name": "FindClosestResPathPt",
+      "start": "8C03C620",
+      "end": "8C03C696",
+      "size": 118,
+      "status": "moved",
+      "diff_bytes": 116,
+      "linked_at": "8C03C54C",
+      "linked_size": 118
+    },
+    {
+      "name": "FindClosestPathPt",
+      "start": "8C03C696",
+      "end": "8C03C71A",
+      "size": 132,
+      "status": "moved",
+      "diff_bytes": 132,
+      "linked_at": "8C03C5C2",
+      "linked_size": 132
+    },
+    {
+      "name": "FindClosestDronePathPtEfficiently",
+      "start": "8C03C71A",
+      "end": "8C03C8A6",
+      "size": 396,
+      "status": "differs",
+      "diff_bytes": 387,
+      "linked_at": "8C03C646",
+      "linked_size": 398
+    },
+    {
+      "name": "TraceToMain",
+      "start": "8C03C8A6",
+      "end": "8C03C92C",
+      "size": 134,
+      "status": "differs",
+      "diff_bytes": 134,
+      "linked_at": "8C03C7D4",
+      "linked_size": 132
+    },
+    {
+      "name": "TraceToEnd",
+      "start": "8C03C92C",
+      "end": "8C03C9D4",
+      "size": 168,
+      "status": "differs",
+      "diff_bytes": 165,
+      "linked_at": "8C03C858",
+      "linked_size": 168
+    },
+    {
+      "name": "TraceToIndex",
+      "start": "8C03C9D4",
+      "end": "8C03CAB4",
+      "size": 224,
+      "status": "differs",
+      "diff_bytes": 208,
+      "linked_at": "8C03C900",
+      "linked_size": 222
+    },
+    {
+      "name": "TracePathPtForward",
+      "start": "8C03CAB4",
+      "end": "8C03CBB4",
+      "size": 256,
+      "status": "differs",
+      "diff_bytes": 253,
+      "linked_at": "8C03C9DE",
+      "linked_size": 254
+    },
+    {
+      "name": "NumPtsToCheckpoint",
+      "start": "8C03CBB4",
+      "end": "8C03CCF0",
+      "size": 316,
+      "status": "differs",
+      "diff_bytes": 311,
+      "linked_at": "8C03CADC",
+      "linked_size": 334
+    },
+    {
+      "name": "FindResPtRecurse",
+      "start": "8C03CCF0",
+      "end": "8C03CF4A",
+      "size": 602,
+      "status": "differs",
+      "diff_bytes": 595,
+      "linked_at": "8C03CC2A",
+      "linked_size": 582
+    },
+    {
+      "name": "FindResPt",
+      "start": "8C03CF4A",
+      "end": "8C03CF82",
+      "size": 56,
+      "status": "missing",
+      "diff_bytes": 56,
+      "linked_at": "8C03CE70",
+      "linked_size": 72
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C03A50E",
+      "end": "8C03A54C",
+      "exact": true,
+      "built": 62,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C03A6B4",
+      "end": "8C03A6B8",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C03B114",
+      "end": "8C03B120",
+      "exact": false,
+      "built": 12,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "pool",
+      "start": "8C03BA94",
+      "end": "8C03BAB0",
+      "exact": false,
+      "built": 28,
+      "diff_bytes": 27
+    },
+    {
+      "kind": "pool",
+      "start": "8C03BC06",
+      "end": "8C03BC20",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C03BD06",
+      "end": "8C03BD38",
+      "exact": false,
+      "built": 50,
+      "diff_bytes": 49
+    },
+    {
+      "kind": "pool",
+      "start": "8C03BDA0",
+      "end": "8C03BDBC",
+      "exact": false,
+      "built": 28,
+      "diff_bytes": 28
+    },
+    {
+      "kind": "pool",
+      "start": "8C03C600",
+      "end": "8C03C620",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 31
+    },
+    {
+      "kind": "pool",
+      "start": "8C03CF82",
+      "end": "8C03CF94",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC0A0",
+      "end": "8C0AC0B5",
+      "exact": true,
+      "built": 21,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEBC4",
+      "end": "8C0BEBE8",
+      "exact": true,
+      "built": 36,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:36:14",
+  "defines": {
+    "_AreWeSolid": "8C04AA34",
+    "_BodyVector": "8C026B00",
+    "_GetPathDistance": "8C045FEA",
+    "_NextPathPt": "8C04628C",
+    "_NextResPathPt": "8C0461C6",
+    "_PrevPathPt": "8C04623E",
+    "_ReadPathData": "8C045BF0",
+    "_TB_DrawTextC": "8C05AD92",
+    "_TB_Vector2Normalize": "8C05B09C",
+    "_TB_Vector3Normalize": "8C05B0D4",
+    "_TargetPathAvoid": "8C057E16",
+    "_TraceCheck": "8C0462DC",
+    "__divls": "8C09B680",
+    "_current_drone": "8C14C6D4",
+    "_drones": "8C14CB74",
+    "_fatan2": "8C01145C",
+    "_gCheckpoints": "8C12BAB4",
+    "_gDronePaths": "8C14C59C",
+    "_gFirstLapDistance": "8C14C5C8",
+    "_gGameCar": "8C004000",
+    "_gGravityScale": "8C14C5F8",
+    "_gLapDistance": "8C14C5CC",
+    "_gLastPathSwitchTime": "8C14C6D8",
+    "_gModelTime": "8C14CB64",
+    "_gNumActiveCars": "8C14CB86",
+    "_gPathSearch": "8C14C6E0",
+    "_gResPath": "8C14C58C",
+    "_last_dir": "8C14C644",
+    "_last_save_dir": "8C14C68C",
+    "_lastbrake": "8C14C614",
+    "_lastthrottle": "8C14C62C",
+    "_lastwheel": "8C14C5FC",
+    "_magnitude": "8C02628A",
+    "_model": "8C14CBB4",
+    "_num_drones": "8C14CB82"
+  },
+  "starts": {
+    "P": "8C03A41C",
+    "C": "8C0AC0A0",
+    "D": "8C0BEBC4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03A41C",
+      "length": 10908
+    },
+    {
+      "name": "C",
+      "address": "8C0AC0A0",
+      "length": 21
+    },
+    {
+      "name": "D",
+      "address": "8C0BEBC4",
+      "length": 36
+    }
+  ],
+  "equal_text_bytes_including_fill": 496,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 57,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -220,
+  "seconds": 2.1
+}

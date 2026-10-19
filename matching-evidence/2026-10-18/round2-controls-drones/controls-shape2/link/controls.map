@@ -1,0 +1,130 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT controls.abs
+FORM A
+START P(8C01E44C)
+START D(8C0BC3E0)
+START B(8C12C0D4)
+DEFINE _ClearControls(8C01EEB4)
+DEFINE _InitControlSys(8C01EDEC)
+DEFINE _SavePlayerControls(8C04C706)
+DEFINE _SetControllerActive(8C01F180)
+DEFINE _UpdateControls(8C01EF2C)
+DEFINE _gAutoEdges(8C12C1A4)
+DEFINE _gCoastFlag(8C12C64C)
+DEFINE _gContEdges(8C12C194)
+DEFINE _gContLevels(8C12C184)
+DEFINE _gContStick(8C12C164)
+DEFINE _gControllerData(8C12C114)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gJustPlayers(8C15044C)
+DEFINE _gMirrorWaves(8C15FA14)
+DEFINE _gNumPlayers(8C14CBB0)
+DEFINE _gPauseState(8C0BFA78)
+DEFINE _gRace(8C12C628)
+DEFINE _gRealEdges(8C12C1F0)
+DEFINE _gRealLevels(8C12C1E0)
+DEFINE _gRealStick(8C12C1C0)
+DEFINE _gUpsideDownTrack(8C12B8A8)
+DEFINE _memcpy(8C09BD00)
+DEFINE _model(8C14CBB4)
+PRINT controls.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C01E44C  -  H'8C01EDD7  H'0000098C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C01E44C  -  H'8C01EDD7  H'0000098C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BC3E0  -  H'8C0BC447  H'00000068
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BC3E0  -  H'8C0BC447  H'00000068
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C12C0D4  -  H'8C12C110  H'0000003D
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C12C0D4  -  H'8C12C110  H'0000003D
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_ClearRushControls                H'8C01E8C6               ENT
+_FindPlayerNum                    H'8C01EBFC               ENT
+_InitRushControls                 H'8C01E81E               ENT
+_SetControls                      H'8C01EC68               ENT
+_SetDefaultControls               H'8C01E898               ENT
+_SetPlayerControls                H'8C01ED74               ENT
+_UpdateModelControls              H'8C01EB10               ENT
+_UpdateRushControls               H'8C01E8FC               ENT
+_gControlsSet                     H'8C12C0D4               DAT
+_gDefaultControls                 H'8C12C104               DAT
+_gMirrorControls                  H'8C12C10F               DAT
+_gNewControls                     H'8C12C0D8               DAT
+_gNoBrakes                        H'8C12C110               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_ClearControls                                                      H'8C01EEB4
+_InitControlSys                                                     H'8C01EDEC
+_SavePlayerControls                                                 H'8C04C706
+_SetControllerActive                                                H'8C01F180
+_UpdateControls                                                     H'8C01EF2C
+_gAutoEdges                                                         H'8C12C1A4
+_gCoastFlag                                                         H'8C12C64C
+_gContEdges                                                         H'8C12C194
+_gContLevels                                                        H'8C12C184
+_gContStick                                                         H'8C12C164
+_gControllerData                                                    H'8C12C114
+_gGameState                                                         H'8C0BFD3C
+_gJustPlayers                                                       H'8C15044C
+_gMirrorWaves                                                       H'8C15FA14
+_gNumPlayers                                                        H'8C14CBB0
+_gPauseState                                                        H'8C0BFA78
+_gRace                                                              H'8C12C628
+_gRealEdges                                                         H'8C12C1F0
+_gRealLevels                                                        H'8C12C1E0
+_gRealStick                                                         H'8C12C1C0
+_gUpsideDownTrack                                                   H'8C12B8A8
+_memcpy                                                             H'8C09BD00
+_model                                                              H'8C14CBB4

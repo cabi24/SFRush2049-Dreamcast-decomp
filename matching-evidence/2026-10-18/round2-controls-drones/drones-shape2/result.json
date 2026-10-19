@@ -1,0 +1,128 @@
+{
+  "name": "drones",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/drones.c",
+  "source_sha256": "a3d2140ebed14568df31a00cf50b14b026f05e0264f3c4af000b47a71032d21d",
+  "text": [
+    "8C02555C",
+    "8C0260F0"
+  ],
+  "text_bytes": 2964,
+  "exact_text_bytes": 46,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 4,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitDrones",
+      "start": "8C02555C",
+      "end": "8C025580",
+      "size": 36,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02555C",
+      "linked_size": 36
+    },
+    {
+      "name": "DoDrones",
+      "start": "8C025580",
+      "end": "8C02558A",
+      "size": 10,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C025580",
+      "linked_size": 2908
+    },
+    {
+      "name": "_AssignDrones",
+      "start": "8C02558A",
+      "end": "8C02606A",
+      "size": 2784,
+      "status": "differs",
+      "diff_bytes": 2267,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_LinearInterp",
+      "start": "8C026090",
+      "end": "8C0260E6",
+      "size": 86,
+      "status": "differs",
+      "diff_bytes": 81,
+      "note": "symbol not in the compiled object"
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C02606A",
+      "end": "8C026090",
+      "exact": false,
+      "built": 38,
+      "diff_bytes": 37
+    },
+    {
+      "kind": "pool",
+      "start": "8C0260E6",
+      "end": "8C0260F0",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C574",
+      "end": "8C12C5A4",
+      "exact": true,
+      "linked": [
+        "8C12C574",
+        "8C12C5A4"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:06:26",
+  "defines": {
+    "_SetCatchup": "8C040C9A",
+    "_gBackwards": "8C12C657",
+    "_gCircuitCars": "8C12BEC6",
+    "_gCoastFlag": "8C12C64C",
+    "_gDifficulty": "8C12C650",
+    "_gEndGame": "8C12C64E",
+    "_gGameState": "8C0BFD3C",
+    "_gModelTime": "8C14CB64",
+    "_gNumActiveCars": "8C14CB86",
+    "_gOneMoreCP": "8C12BDE1",
+    "_gRace": "8C12C628",
+    "_gTrackNum": "8C15C9C0",
+    "_model": "8C14CBB4"
+  },
+  "starts": {
+    "P": "8C02555C",
+    "B": "8C12C574"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C02555C",
+      "length": 2944
+    },
+    {
+      "name": "B",
+      "address": "8C12C574",
+      "length": 48
+    }
+  ],
+  "equal_text_bytes_including_fill": 46,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -20,
+  "seconds": 1.8
+}

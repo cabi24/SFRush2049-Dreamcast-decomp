@@ -1,0 +1,351 @@
+{
+  "name": "gamerecords",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/gamerecords.c",
+  "source_sha256": "afce4764d1df280de1d4607f993a518e903c880adf771477ddc4c1af556f2171",
+  "text": [
+    "8C02B114",
+    "8C02E118"
+  ],
+  "text_bytes": 12292,
+  "exact_text_bytes": 192,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 25,
+  "functions_exact": 2,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "func_8C02B114",
+      "start": "8C02B114",
+      "end": "8C02B174",
+      "size": 96,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02B114",
+      "linked_size": 96
+    },
+    {
+      "name": "func_8C02B174",
+      "start": "8C02B174",
+      "end": "8C02B1A8",
+      "size": 52,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C02B174",
+      "linked_size": 96
+    },
+    {
+      "name": "FindWinner",
+      "start": "8C02B1D4",
+      "end": "8C02B5EE",
+      "size": 1050,
+      "status": "differs",
+      "diff_bytes": 893,
+      "linked_at": "8C02B1D4",
+      "linked_size": 1058
+    },
+    {
+      "name": "RecordRace",
+      "start": "8C02B5F2",
+      "end": "8C02C2CE",
+      "size": 3292,
+      "status": "differs",
+      "diff_bytes": 3292,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "RecordCircuit",
+      "start": "8C02C2CE",
+      "end": "8C02C482",
+      "size": 436,
+      "status": "missing",
+      "diff_bytes": 436
+    },
+    {
+      "name": "ResetHighScores",
+      "start": "8C02C494",
+      "end": "8C02C4E2",
+      "size": 78,
+      "status": "missing",
+      "diff_bytes": 78
+    },
+    {
+      "name": "RecordLap",
+      "start": "8C02C4E2",
+      "end": "8C02C582",
+      "size": 160,
+      "status": "missing",
+      "diff_bytes": 160
+    },
+    {
+      "name": "InitBattlePoints",
+      "start": "8C02C582",
+      "end": "8C02C59A",
+      "size": 24,
+      "status": "missing",
+      "diff_bytes": 24
+    },
+    {
+      "name": "RecordBattlePoints",
+      "start": "8C02C59A",
+      "end": "8C02C5AE",
+      "size": 20,
+      "status": "missing",
+      "diff_bytes": 20
+    },
+    {
+      "name": "FoundCoin",
+      "start": "8C02C5DC",
+      "end": "8C02C774",
+      "size": 408,
+      "status": "missing",
+      "diff_bytes": 408
+    },
+    {
+      "name": "IsCoinFound",
+      "start": "8C02C774",
+      "end": "8C02C86E",
+      "size": 250,
+      "status": "missing",
+      "diff_bytes": 250
+    },
+    {
+      "name": "NumCoinsFound",
+      "start": "8C02C888",
+      "end": "8C02C958",
+      "size": 208,
+      "status": "missing",
+      "diff_bytes": 208
+    },
+    {
+      "name": "CountBits",
+      "start": "8C02C958",
+      "end": "8C02C980",
+      "size": 40,
+      "status": "missing",
+      "diff_bytes": 40
+    },
+    {
+      "name": "AddPlayerScores",
+      "start": "8C02C998",
+      "end": "8C02CA74",
+      "size": 220,
+      "status": "missing",
+      "diff_bytes": 220
+    },
+    {
+      "name": "AddPlayerStats",
+      "start": "8C02CA80",
+      "end": "8C02D390",
+      "size": 2320,
+      "status": "missing",
+      "diff_bytes": 2320
+    },
+    {
+      "name": "RemovePlayerScores",
+      "start": "8C02D392",
+      "end": "8C02D434",
+      "size": 162,
+      "status": "missing",
+      "diff_bytes": 162
+    },
+    {
+      "name": "CalcUnlockedStuff",
+      "start": "8C02D434",
+      "end": "8C02DD2C",
+      "size": 2296,
+      "status": "missing",
+      "diff_bytes": 2296
+    },
+    {
+      "name": "IsTrackUnlocked",
+      "start": "8C02DD2E",
+      "end": "8C02DD5A",
+      "size": 44,
+      "status": "missing",
+      "diff_bytes": 44
+    },
+    {
+      "name": "IsCarUnlocked",
+      "start": "8C02DD5A",
+      "end": "8C02DD68",
+      "size": 14,
+      "status": "missing",
+      "diff_bytes": 14
+    },
+    {
+      "name": "IsEngineUnlocked",
+      "start": "8C02DD68",
+      "end": "8C02DD7A",
+      "size": 18,
+      "status": "missing",
+      "diff_bytes": 18
+    },
+    {
+      "name": "IsTransUnlocked",
+      "start": "8C02DD7A",
+      "end": "8C02DD88",
+      "size": 14,
+      "status": "missing",
+      "diff_bytes": 14
+    },
+    {
+      "name": "IsTiresUnlocked",
+      "start": "8C02DD88",
+      "end": "8C02DD98",
+      "size": 16,
+      "status": "missing",
+      "diff_bytes": 16
+    },
+    {
+      "name": "IsFrameUnlocked",
+      "start": "8C02DD98",
+      "end": "8C02DDAA",
+      "size": 18,
+      "status": "missing",
+      "diff_bytes": 18
+    },
+    {
+      "name": "IsCircuitUnlocked",
+      "start": "8C02DDAA",
+      "end": "8C02DDD6",
+      "size": 44,
+      "status": "missing",
+      "diff_bytes": 44
+    },
+    {
+      "name": "FindTempNameIdx",
+      "start": "8C02DDD6",
+      "end": "8C02E110",
+      "size": 826,
+      "status": "missing",
+      "diff_bytes": 826
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C02B1A8",
+      "end": "8C02B1D4",
+      "exact": true,
+      "built": 44,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C02B5EE",
+      "end": "8C02B5F2",
+      "exact": false,
+      "built": 4,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "pool",
+      "start": "8C02C482",
+      "end": "8C02C494",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 18
+    },
+    {
+      "kind": "pool",
+      "start": "8C02C5AE",
+      "end": "8C02C5DC",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "pool",
+      "start": "8C02C86E",
+      "end": "8C02C888",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 26
+    },
+    {
+      "kind": "pool",
+      "start": "8C02C980",
+      "end": "8C02C998",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C02CA74",
+      "end": "8C02CA80",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 12
+    },
+    {
+      "kind": "pool",
+      "start": "8C02D390",
+      "end": "8C02D392",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C02DD2C",
+      "end": "8C02DD2E",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C02E110",
+      "end": "8C02E118",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 8
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:31:59",
+  "defines": {
+    "_gCarTeam": "8C15D020",
+    "_gGameCar": "8C004000",
+    "_gNumPlayers": "8C14CBB0",
+    "_gNumWindows": "8C12B644",
+    "_gRace": "8C12C628",
+    "_gRankedPlayer": "8C12C6F8",
+    "_gRecordsStuntPlayer": "8C14FBE4",
+    "_gTeamPoints": "8C12C8AC",
+    "_gTempNameAges": "8C12D2EC",
+    "_gTempNames": "8C12D1E8",
+    "_gTotalBattleStats": "8C12CE30",
+    "_gTotalCircuitStats": "8C12CEA8",
+    "_gTotalNames": "8C12CF18",
+    "_gTotalObstacleStats": "8C12CE90",
+    "_gTotalRaceStats": "8C12C8B0",
+    "_gTotalStuntStats": "8C12CD30",
+    "_memset": "8C09BE04",
+    "_model": "8C14CBB4",
+    "_tied": "8C12C700",
+    "_ties": "8C12C6FC"
+  },
+  "starts": {
+    "P": "8C02B114"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C02B114",
+      "length": 1250
+    }
+  ],
+  "equal_text_bytes_including_fill": 192,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -11042,
+  "seconds": 1.9
+}

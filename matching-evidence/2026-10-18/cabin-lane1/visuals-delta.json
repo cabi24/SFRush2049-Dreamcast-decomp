@@ -1,0 +1,48 @@
+{
+  "unit": "visuals",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 60,
+    "functions_moved": 0,
+    "exact_text_bytes": 326,
+    "equal_text_bytes_including_fill": 326,
+    "text_bytes": 26680,
+    "exact_data_bytes": 600,
+    "source_sha256": "013b5f5d0a007f0c03ee02a1ea3ed083e819aa95360a603a5322940bd71500f9"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 0,
+    "functions_total": 60,
+    "functions_moved": 0,
+    "exact_text_bytes": 44,
+    "equal_text_bytes_including_fill": 44,
+    "text_bytes": 26680,
+    "exact_data_bytes": 600,
+    "source_sha256": "e21c8ee790e0a0ca20032d09b3621b91e8bbd5ddac9b7df3bbefee3d0cafd779"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "InitVisuals",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 182
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 326,
+  "text_bytes_head": 44,
+  "report_consistency": {
+    "report_functions_exact": 1,
+    "dirty_rebuild_functions_exact": 1,
+    "report_exact_text_bytes": 326,
+    "dirty_rebuild_exact_text_bytes": 326,
+    "report_source_sha256": "013b5f5d0a007f0c03ee02a1ea3ed083e819aa95360a603a5322940bd71500f9",
+    "dirty_source_sha256": "013b5f5d0a007f0c03ee02a1ea3ed083e819aa95360a603a5322940bd71500f9",
+    "match": true
+  },
+  "head_source_sha256": "e21c8ee790e0a0ca20032d09b3621b91e8bbd5ddac9b7df3bbefee3d0cafd779",
+  "seconds": 5.0
+}

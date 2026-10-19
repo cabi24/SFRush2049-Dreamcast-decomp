@@ -1,0 +1,54 @@
+{
+  "unit": "controls",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 7,
+    "functions_total": 11,
+    "functions_moved": 0,
+    "exact_text_bytes": 1742,
+    "equal_text_bytes_including_fill": 1752,
+    "text_bytes": 2464,
+    "exact_data_bytes": 104,
+    "source_sha256": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 5,
+    "functions_total": 11,
+    "functions_moved": 0,
+    "exact_text_bytes": 1190,
+    "equal_text_bytes_including_fill": 1200,
+    "text_bytes": 2464,
+    "exact_data_bytes": 104,
+    "source_sha256": "40cf561e0b7d274cfb42d26452a41d60b06315debe8552942765618557bdf02c"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "ClearRushControls",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 54
+    },
+    {
+      "name": "UpdateRushControls",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 498
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1742,
+  "text_bytes_head": 1190,
+  "report_consistency": {
+    "report_functions_exact": 7,
+    "dirty_rebuild_functions_exact": 7,
+    "report_exact_text_bytes": 1742,
+    "dirty_rebuild_exact_text_bytes": 1742,
+    "report_source_sha256": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08",
+    "dirty_source_sha256": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08",
+    "match": true
+  },
+  "head_source_sha256": "40cf561e0b7d274cfb42d26452a41d60b06315debe8552942765618557bdf02c",
+  "seconds": 5.4
+}

@@ -1,0 +1,57 @@
+{
+  "unit": "zoid",
+  "label": "pointer-order-loop-break",
+  "source_sha256": "0d60367ca4006eaff52f810aae3d7c75fddc5aae24fba0852666e228f52025a1",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 4,
+  "delta_text": 160,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "ZOID_SetObjectDef",
+      "start": "8C068BAC",
+      "end": "8C068BB8",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068BAC",
+      "linked_size": 12
+    },
+    {
+      "name": "func_8C068C68",
+      "start": "8C068C68",
+      "end": "8C068CC6",
+      "size": 94,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068C68",
+      "linked_size": 94
+    },
+    {
+      "name": "ZOID_ObjectFlags",
+      "start": "8C068D0E",
+      "end": "8C068D1A",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068D0E",
+      "linked_size": 12
+    },
+    {
+      "name": "ZOID_SetObjectFlags",
+      "start": "8C068D1A",
+      "end": "8C068D26",
+      "size": 12,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C068D1A",
+      "linked_size": 18
+    }
+  ],
+  "hashes": {
+    "object": "9ff9d38dffc510a524136b4114bcfc606e11d32655e6a53c8792848e92928f6f",
+    "abs": "4aa374f891b7fe4f2a82ca63e95b2aa6a5680bfa72d9be687d91a3e5be5b625f",
+    "compiler_input": "1286cd7bc5596566dd12e5527c7b0f97b0e12e3f5e440fdc29d9bcf061cd965d"
+  }
+}

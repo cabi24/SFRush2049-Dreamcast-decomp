@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('src/fmath.c');s=p.read_text();a=s.index('float NormalVector(');b=s.index('void CreateYPRMatrix',a);part=s[a:b].replace('    float mag = sqrtf(v[2]*v[2]+v[0]*v[0]+v[1]*v[1]);','    float *x = v, *y = v+1, *z = v+2;\n    float mag = sqrtf(*z * *z + *x * *x + *y * *y);').replace('    v[0] *= invmag; v[1] *= invmag; v[2] *= invmag;','    *x *= invmag; *y *= invmag; *z *= invmag;');p.write_text(s[:a]+part+s[b:])

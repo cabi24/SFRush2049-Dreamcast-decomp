@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign100-lane5/targetpaths');s=(p/'baseline.c').read_text();a=s.index('void _PlacePathTargetQuat(tTarget *t)\n{');b=s.index('void _PlaceGhostRacePath(tTarget *t)\n{',a);t=s[a:b].replace('    float nquat[4];','    float delta[3];\n    float nquat[4];').replace('            float delta[3];\n','');s=s[:a]+t+s[b:];Path('src/targetpaths.c').write_text(s)

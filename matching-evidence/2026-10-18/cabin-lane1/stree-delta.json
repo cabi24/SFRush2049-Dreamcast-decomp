@@ -1,0 +1,66 @@
+{
+  "unit": "stree",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 5,
+    "functions_total": 25,
+    "functions_moved": 0,
+    "exact_text_bytes": 616,
+    "equal_text_bytes_including_fill": 618,
+    "text_bytes": 14444,
+    "exact_data_bytes": 72,
+    "source_sha256": "16d8260fc3f6e564965fc1af3a193f3c4d1085924b9a1a6bd434ec1566b1fd59"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 1,
+    "functions_total": 25,
+    "functions_moved": 0,
+    "exact_text_bytes": 58,
+    "equal_text_bytes_including_fill": 58,
+    "text_bytes": 14444,
+    "exact_data_bytes": 72,
+    "source_sha256": "7b4f30538cfc4d2518498f017800db6e504b3b03549c3d5aff599bea3deaa531"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "InitSTree",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 136
+    },
+    {
+      "name": "matf2scopy",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 128
+    },
+    {
+      "name": "mats2fcopy",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 140
+    },
+    {
+      "name": "updownleaf",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 106
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 616,
+  "text_bytes_head": 58,
+  "report_consistency": {
+    "report_functions_exact": 5,
+    "dirty_rebuild_functions_exact": 5,
+    "report_exact_text_bytes": 616,
+    "dirty_rebuild_exact_text_bytes": 616,
+    "report_source_sha256": "16d8260fc3f6e564965fc1af3a193f3c4d1085924b9a1a6bd434ec1566b1fd59",
+    "dirty_source_sha256": "16d8260fc3f6e564965fc1af3a193f3c4d1085924b9a1a6bd434ec1566b1fd59",
+    "match": true
+  },
+  "head_source_sha256": "7b4f30538cfc4d2518498f017800db6e504b3b03549c3d5aff599bea3deaa531",
+  "seconds": 5.5
+}

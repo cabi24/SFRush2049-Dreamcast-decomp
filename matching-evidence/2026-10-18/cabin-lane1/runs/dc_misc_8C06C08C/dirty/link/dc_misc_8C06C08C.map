@@ -1,0 +1,173 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT dc_misc_8C06C08C.abs
+FORM A
+START P(8C06C08C)
+START D(8C0C96DC)
+START B(8C18507C)
+DEFINE _AllocateMemoryHeap(8C040256)
+DEFINE _DeallocateMemory(8C040832)
+DEFINE __divls(8C09B680)
+DEFINE _dcLcdDigits(8C0C8288)
+DEFINE _dcLcdIcons(8C0C831E)
+DEFINE _dcLcdLabelA(8C0C8382)
+DEFINE _dcLcdLabelB(8C0C840E)
+DEFINE _dcLcdLargeDigits(8C0C8486)
+DEFINE _dcLcdSmallIcon(8C0C8372)
+DEFINE _dcLcdSplash(8C0C7C88)
+DEFINE _func_8C06ED2A(8C06ED2A)
+DEFINE _func_8C06ED90(8C06ED90)
+DEFINE _func_8C0A3BF2(8C0A3BF2)
+DEFINE _func_8C0D2628(8C0D2628)
+DEFINE _func_8C0D262E(8C0D262E)
+DEFINE _func_8C0D265C(8C0D265C)
+DEFINE _func_8C0D26EA(8C0D26EA)
+DEFINE _func_8C0D2A40(8C0D2A40)
+DEFINE _func_8C0D3E70(8C0D3E70)
+DEFINE _func_8C0D3ECC(8C0D3ECC)
+DEFINE _func_8C0D437C(8C0D437C)
+DEFINE _func_8C0D448A(8C0D448A)
+DEFINE _func_8C0D461A(8C0D461A)
+DEFINE _func_8C0D4764(8C0D4764)
+DEFINE _func_8C0D4952(8C0D4952)
+DEFINE _func_8C0D6368(8C0D6368)
+DEFINE _func_8C0D6BDE(8C0D6BDE)
+DEFINE _func_8C0D6D7C(8C0D6D7C)
+DEFINE _func_8C0D6DDA(8C0D6DDA)
+DEFINE _func_8C0D6DEC(8C0D6DEC)
+DEFINE _func_8C0DAA98(8C0DAA98)
+DEFINE _memcpy(8C09BD00)
+DEFINE _memset(8C09BE04)
+PRINT dc_misc_8C06C08C.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C06C08C  -  H'8C06CAC7  H'00000A3C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C06C08C  -  H'8C06CAC7  H'00000A3C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0C96DC  -  H'8C0C96F3  H'00000018
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0C96DC  -  H'8C0C96F3  H'00000018
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C18507C  -  H'8C1850BF  H'00000044
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C18507C  -  H'8C1850BF  H'00000044
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_dcPeripheral                     H'8C185090               DAT
+_dcPeripheralActive               H'8C0C96DC               DAT
+_dcPeripheralInit                 H'8C18507C               DAT
+_dcPeripheralStateMap             H'8C0C96E0               DAT
+_dcPeripheralSystemStatus         H'8C1850BC               DAT
+_func_8C06C08C                    H'8C06C08C               ENT
+_func_8C06C0DC                    H'8C06C0DC               ENT
+_func_8C06C18C                    H'8C06C18C               ENT
+_func_8C06C1E6                    H'8C06C1E6               ENT
+_func_8C06C2A6                    H'8C06C2A6               ENT
+_func_8C06C2B2                    H'8C06C2B2               ENT
+_func_8C06C2BE                    H'8C06C2BE               ENT
+_func_8C06C374                    H'8C06C374               ENT
+_func_8C06C3D0                    H'8C06C3D0               ENT
+_func_8C06C4A6                    H'8C06C4A6               ENT
+_func_8C06C524                    H'8C06C524               ENT
+_func_8C06C58C                    H'8C06C58A               ENT
+_func_8C06C5E2                    H'8C06C5DC               ENT
+_func_8C06C5E6                    H'8C06C5E0               ENT
+_func_8C06C664                    H'8C06C63C               ENT
+_func_8C06C692                    H'8C06C694               ENT
+_func_8C06C712                    H'8C06C70C               ENT
+_func_8C06C792                    H'8C06C78C               ENT
+_func_8C06C7A4                    H'8C06C79E               ENT
+_func_8C06C808                    H'8C06C800               ENT
+_func_8C06C902                    H'8C06C8FA               ENT
+_func_8C06C95C                    H'8C06C954               ENT
+_func_8C06C986                    H'8C06C97E               ENT
+_func_8C06CA0A                    H'8C06C9FE               ENT
+_func_8C06CA44                    H'8C06CA38               ENT
+_func_8C06CA6A                    H'8C06CA5A               ENT
+_func_8C06CA76                    H'8C06CA5E               ENT
+_func_8C06CA7C                    H'8C06CA64               ENT
+_func_8C06CA98                    H'8C06CA68               ENT
+_func_8C06CAA8                    H'8C06CA78               ENT
+_func_8C06CAB4                    H'8C06CA84               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AllocateMemoryHeap                                                 H'8C040256
+_DeallocateMemory                                                   H'8C040832
+__divls                                                             H'8C09B680
+_dcLcdDigits                                                        H'8C0C8288
+_dcLcdIcons                                                         H'8C0C831E
+_dcLcdLabelA                                                        H'8C0C8382
+_dcLcdLabelB                                                        H'8C0C840E
+_dcLcdLargeDigits                                                   H'8C0C8486
+_dcLcdSmallIcon                                                     H'8C0C8372
+_dcLcdSplash                                                        H'8C0C7C88
+_func_8C06ED2A                                                      H'8C06ED2A
+_func_8C06ED90                                                      H'8C06ED90
+_func_8C0A3BF2                                                      H'8C0A3BF2
+_func_8C0D2628                                                      H'8C0D2628
+_func_8C0D262E                                                      H'8C0D262E
+_func_8C0D265C                                                      H'8C0D265C
+_func_8C0D26EA                                                      H'8C0D26EA
+_func_8C0D2A40                                                      H'8C0D2A40
+_func_8C0D3E70                                                      H'8C0D3E70
+_func_8C0D3ECC                                                      H'8C0D3ECC
+_func_8C0D437C                                                      H'8C0D437C
+_func_8C0D448A                                                      H'8C0D448A
+_func_8C0D461A                                                      H'8C0D461A
+_func_8C0D4764                                                      H'8C0D4764
+_func_8C0D4952                                                      H'8C0D4952
+_func_8C0D6368                                                      H'8C0D6368
+_func_8C0D6BDE                                                      H'8C0D6BDE
+_func_8C0D6D7C                                                      H'8C0D6D7C
+_func_8C0D6DDA                                                      H'8C0D6DDA
+_func_8C0D6DEC                                                      H'8C0D6DEC
+_func_8C0DAA98                                                      H'8C0DAA98
+_memcpy                                                             H'8C09BD00
+_memset                                                             H'8C09BE04

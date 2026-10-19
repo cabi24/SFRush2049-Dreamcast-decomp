@@ -1,0 +1,427 @@
+{
+  "name": "pakerr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/pakerr.c",
+  "source_sha256": "4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c",
+  "text": [
+    "8C0435F4",
+    "8C044700"
+  ],
+  "text_bytes": 4364,
+  "exact_text_bytes": 2178,
+  "align_bytes": 0,
+  "data_bytes": 98,
+  "exact_data_bytes": 52,
+  "functions_total": 19,
+  "functions_exact": 12,
+  "functions_moved": 3,
+  "functions": [
+    {
+      "name": "_ControlChoice",
+      "start": "8C0435F4",
+      "end": "8C04365A",
+      "size": 102,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0435F4",
+      "linked_size": 102
+    },
+    {
+      "name": "_ControlPakErrNQA",
+      "start": "8C04365A",
+      "end": "8C043698",
+      "size": 62,
+      "status": "differs",
+      "diff_bytes": 6,
+      "linked_at": "8C04365A",
+      "linked_size": 62
+    },
+    {
+      "name": "_ControlPakErrTimeout",
+      "start": "8C043698",
+      "end": "8C0436C0",
+      "size": 40,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043698",
+      "linked_size": 40
+    },
+    {
+      "name": "_DrawPakHeading",
+      "start": "8C0436C0",
+      "end": "8C04373E",
+      "size": 126,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0436C0",
+      "linked_size": 184
+    },
+    {
+      "name": "_DrawChoice",
+      "start": "8C043778",
+      "end": "8C0438BE",
+      "size": 326,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043778",
+      "linked_size": 364
+    },
+    {
+      "name": "_DrawPakErrNoController",
+      "start": "8C0438E4",
+      "end": "8C0439AE",
+      "size": 202,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0438E4",
+      "linked_size": 202
+    },
+    {
+      "name": "_DrawPakErrNoPak",
+      "start": "8C0439AE",
+      "end": "8C043BC4",
+      "size": 534,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C0439AE",
+      "linked_size": 534
+    },
+    {
+      "name": "_DrawPakErrNQA",
+      "start": "8C043BC4",
+      "end": "8C043C4A",
+      "size": 134,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043BC4",
+      "linked_size": 134
+    },
+    {
+      "name": "_DrawPakErrNewPak",
+      "start": "8C043C4A",
+      "end": "8C043D1E",
+      "size": 212,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043C4A",
+      "linked_size": 212
+    },
+    {
+      "name": "_DrawPakErrInconsistent",
+      "start": "8C043D1E",
+      "end": "8C043D64",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043D1E",
+      "linked_size": 70
+    },
+    {
+      "name": "_DrawPakErrFull",
+      "start": "8C043D64",
+      "end": "8C043DCA",
+      "size": 102,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043D64",
+      "linked_size": 156
+    },
+    {
+      "name": "_DrawPakErrBadData",
+      "start": "8C043E00",
+      "end": "8C043E46",
+      "size": 70,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043E00",
+      "linked_size": 70
+    },
+    {
+      "name": "_DrawPakErrUnknown",
+      "start": "8C043E46",
+      "end": "8C043E9A",
+      "size": 84,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C043E46",
+      "linked_size": 118
+    },
+    {
+      "name": "SetPakError",
+      "start": "8C043EBC",
+      "end": "8C0440E6",
+      "size": 554,
+      "status": "differs",
+      "diff_bytes": 383,
+      "linked_at": "8C043EBC",
+      "linked_size": 552
+    },
+    {
+      "name": "PakErrorActive",
+      "start": "8C0440E6",
+      "end": "8C044112",
+      "size": 44,
+      "status": "moved",
+      "diff_bytes": 42,
+      "linked_at": "8C0440E4",
+      "linked_size": 44
+    },
+    {
+      "name": "CancelPakError",
+      "start": "8C044112",
+      "end": "8C04413E",
+      "size": 44,
+      "status": "moved",
+      "diff_bytes": 41,
+      "linked_at": "8C044110",
+      "linked_size": 68
+    },
+    {
+      "name": "ShowPakError",
+      "start": "8C044154",
+      "end": "8C044564",
+      "size": 1040,
+      "status": "differs",
+      "diff_bytes": 437,
+      "linked_at": "8C044154",
+      "linked_size": 1060
+    },
+    {
+      "name": "PS_ErrorFunc",
+      "start": "8C044584",
+      "end": "8C0446B6",
+      "size": 306,
+      "status": "differs",
+      "diff_bytes": 295,
+      "linked_at": "8C044578",
+      "linked_size": 306
+    },
+    {
+      "name": "_AnimDim",
+      "start": "8C0446B6",
+      "end": "8C0446D2",
+      "size": 28,
+      "status": "moved",
+      "diff_bytes": 27,
+      "linked_at": "8C0446AA",
+      "linked_size": 74
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C04373E",
+      "end": "8C043778",
+      "exact": true,
+      "built": 58,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0438BE",
+      "end": "8C0438E4",
+      "exact": true,
+      "built": 38,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C043DCA",
+      "end": "8C043E00",
+      "exact": true,
+      "built": 54,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C043E9A",
+      "end": "8C043EBC",
+      "exact": true,
+      "built": 34,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C04413E",
+      "end": "8C044154",
+      "exact": false,
+      "built": 22,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "pool",
+      "start": "8C044564",
+      "end": "8C044584",
+      "exact": false,
+      "built": 32,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "pool",
+      "start": "8C0446D2",
+      "end": "8C044700",
+      "exact": false,
+      "built": 34,
+      "diff_bytes": 39
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC2DC",
+      "end": "8C0AC2E4",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC2E4",
+      "end": "8C0AC2E8",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC2E8",
+      "end": "8C0AC2F0",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC2F0",
+      "end": "8C0AC300",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC300",
+      "end": "8C0AC314",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC314",
+      "end": "8C0AC338",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 1
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BF760",
+      "end": "8C0BF766",
+      "exact": true,
+      "built": 6,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T19:44:06",
+  "defines": {
+    "_AudPlayEffect": "8C014552",
+    "_GetControllerActive": "8C01F154",
+    "_GetControllerStickEdges": "8C01F1B0",
+    "_HAL_SetFont": "8C02EF96",
+    "_NewMultiBlit": "8C018B56",
+    "_PS_PakRumble": "8C06D48A",
+    "_PlayLRSound": "8C0115A4",
+    "_PlayStartABSound": "8C011586",
+    "_RemoveBlit": "8C0187BA",
+    "_SaveServer": "8C04B746",
+    "_SetControllerActive": "8C01F180",
+    "_SetControllerStickEdges": "8C01F1DC",
+    "_TB_CenterText": "8C05A708",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_DrawTextScrollBox": "8C05ADE4",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_SetJust": "8C05A73A",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Strcat": "8C05AB3A",
+    "_TB_Strcpy": "8C05AAE6",
+    "_UpdateBlit": "8C018910",
+    "_UpdateFrame": "8C027AFC",
+    "_UpdateRushControls": "8C01E8F8",
+    "_ZOID_GetFog": "8C0696E8",
+    "_ZOID_SetFog": "8C06967C",
+    "_gActiveEdges": "8C12C1B4",
+    "_gActiveLevels": "8C12C1B8",
+    "_gFrameCounter": "8C12253C",
+    "_gGameState": "8C0BFD3C",
+    "_gNumWindows": "8C12B644",
+    "_gPS_ContName": "8C0C9714",
+    "_gPS_PakName": "8C0C96F4",
+    "_gPakError": "8C14FE9C",
+    "_gRetraceRate": "8C0B8C28",
+    "_gText": "8C15C98C",
+    "_sprintf": "8C09BF0C"
+  },
+  "starts": {
+    "P": "8C0435F4",
+    "C": "8C0AC2DC",
+    "D": "8C0BF760"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0435F4",
+      "length": 4352
+    },
+    {
+      "name": "C",
+      "address": "8C0AC2DC",
+      "length": 92
+    },
+    {
+      "name": "D",
+      "address": "8C0BF760",
+      "length": 6
+    }
+  ],
+  "equal_text_bytes_including_fill": 2186,
+  "excluded_exact_text_fill_or_gaps": 8,
+  "equal_data_bytes_including_fill": 62,
+  "excluded_exact_data_fill": 10,
+  "excluded_data_padding": [
+    {
+      "start": "8C0AC2E2",
+      "end": "8C0AC2E4",
+      "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+      "start": "8C0AC2E7",
+      "end": "8C0AC2E8",
+      "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+      "start": "8C0AC2EF",
+      "end": "8C0AC2F0",
+      "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+      "start": "8C0AC2FD",
+      "end": "8C0AC300",
+      "reason": "String trailing alignment; independent target pool addresses prove next object."
+    },
+    {
+      "start": "8C0AC311",
+      "end": "8C0AC314",
+      "reason": "String trailing alignment; independent target pool addresses prove next object."
+    }
+  ],
+  "text_size_delta": -12,
+  "seconds": 2.1
+}

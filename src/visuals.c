@@ -106,7 +106,8 @@ void InitEnvs(void)
     register int i; /* r4 */
     gFreeVis = gEnvirons;
     for (i = 0; i < 99; i++) {
-        gEnvirons[i].next = &gEnvirons[i + 1];
+        int next = i + 1;
+        gEnvirons[i].next = &gEnvirons[next];
         gEnvirons[i].objnum = -1;
     }
     gEnvirons[i].next = 0;

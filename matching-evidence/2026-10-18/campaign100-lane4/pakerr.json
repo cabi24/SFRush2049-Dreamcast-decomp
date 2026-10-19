@@ -1,0 +1,20 @@
+{
+  "unit": "pakerr",
+  "selected": "final-independent",
+  "baseline_functions": 11,
+  "final_functions": 12,
+  "new_functions": [
+    "_DrawPakErrNoPak"
+  ],
+  "baseline_text": 1646,
+  "final_text": 2178,
+  "baseline_data": 52,
+  "final_data": 52,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\pakerr.c": "4a281faebd86cd9bbb81cb84dec74e0b130fc366a1b5ccf97c48636ddf95ab8c",
+    "build\\campaign100-lane4\\pakerr\\final-independent\\obj\\pakerr.obj": "955889550f7f7ebeeef3a403541e9e2c7196998aef5514525944c5aa9312dae0",
+    "build\\campaign100-lane4\\pakerr\\final-independent\\link\\pakerr.abs": "b02afee5433253a194df76c7b6047eea725879ece93c3261330b33301ae4fa22",
+    "build\\campaign100-lane4\\pakerr\\final-independent\\pp\\pakerr.c": "791aa49c1a3b969a762ced13f688b171359236589226d12691695cdd6839fa43"
+  }
+}

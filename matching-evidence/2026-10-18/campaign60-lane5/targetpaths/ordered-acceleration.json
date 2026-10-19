@@ -1,0 +1,250 @@
+{
+  "name": "targetpaths",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/targetpaths.c",
+  "source_sha256": "4294b357ca85e25816bca1df468ef942daecbbd207d2e3f267a65bc273e45525",
+  "text": [
+    "8C056058",
+    "8C057634"
+  ],
+  "text_bytes": 5596,
+  "exact_text_bytes": 302,
+  "align_bytes": 0,
+  "data_bytes": 4,
+  "exact_data_bytes": 4,
+  "functions_total": 12,
+  "functions_exact": 2,
+  "functions_moved": 4,
+  "functions": [
+    {
+      "name": "func_8C056058",
+      "start": "8C056058",
+      "end": "8C05607C",
+      "size": 36,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C056058",
+      "linked_size": 36
+    },
+    {
+      "name": "GetTargetVelocity",
+      "start": "8C05607C",
+      "end": "8C056186",
+      "size": 266,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C05607C",
+      "linked_size": 266
+    },
+    {
+      "name": "_PlacePathTargetPos",
+      "start": "8C056186",
+      "end": "8C0563EE",
+      "size": 616,
+      "status": "differs",
+      "diff_bytes": 526,
+      "linked_at": "8C056186",
+      "linked_size": 630
+    },
+    {
+      "name": "_PlacePathTargetQuat",
+      "start": "8C0563EE",
+      "end": "8C05651C",
+      "size": 302,
+      "status": "differs",
+      "diff_bytes": 292,
+      "linked_at": "8C0563FC",
+      "linked_size": 344
+    },
+    {
+      "name": "_PlaceGhostRacePath",
+      "start": "8C056548",
+      "end": "8C05664C",
+      "size": 260,
+      "status": "differs",
+      "diff_bytes": 244,
+      "linked_at": "8C056554",
+      "linked_size": 256
+    },
+    {
+      "name": "_ResetPath",
+      "start": "8C05664C",
+      "end": "8C0568CC",
+      "size": 640,
+      "status": "moved",
+      "diff_bytes": 617,
+      "linked_at": "8C056654",
+      "linked_size": 640
+    },
+    {
+      "name": "_StartPathTarget",
+      "start": "8C0568CC",
+      "end": "8C056A94",
+      "size": 456,
+      "status": "differs",
+      "diff_bytes": 440,
+      "linked_at": "8C0568D4",
+      "linked_size": 508
+    },
+    {
+      "name": "_AnimatePathTarget",
+      "start": "8C056AC0",
+      "end": "8C0572E2",
+      "size": 2082,
+      "status": "differs",
+      "diff_bytes": 2001,
+      "linked_at": "8C056AD0",
+      "linked_size": 2112
+    },
+    {
+      "name": "_PlayStartSound",
+      "start": "8C0572FC",
+      "end": "8C05736E",
+      "size": 114,
+      "status": "moved",
+      "diff_bytes": 114,
+      "linked_at": "8C057310",
+      "linked_size": 114
+    },
+    {
+      "name": "_PlayStopSound",
+      "start": "8C05736E",
+      "end": "8C0573FC",
+      "size": 142,
+      "status": "moved",
+      "diff_bytes": 141,
+      "linked_at": "8C057382",
+      "linked_size": 166
+    },
+    {
+      "name": "_PlayMoveSound",
+      "start": "8C057414",
+      "end": "8C05760C",
+      "size": 504,
+      "status": "differs",
+      "diff_bytes": 494,
+      "linked_at": "8C057428",
+      "linked_size": 504
+    },
+    {
+      "name": "PauseTargetPaths",
+      "start": "8C05760C",
+      "end": "8C05761A",
+      "size": 14,
+      "status": "moved",
+      "diff_bytes": 14,
+      "linked_at": "8C057620",
+      "linked_size": 40
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05651C",
+      "end": "8C056548",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 39
+    },
+    {
+      "kind": "pool",
+      "start": "8C056A94",
+      "end": "8C056AC0",
+      "exact": false,
+      "built": 44,
+      "diff_bytes": 41
+    },
+    {
+      "kind": "pool",
+      "start": "8C0572E2",
+      "end": "8C0572FC",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C0573FC",
+      "end": "8C057414",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "pool",
+      "start": "8C05761A",
+      "end": "8C057634",
+      "exact": false,
+      "built": 26,
+      "diff_bytes": 25
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ACA6C",
+      "end": "8C0ACA70",
+      "exact": true,
+      "built": 4,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [
+    "20 built bytes fall outside the mapped ranges (first 8C057634, last 8C057647)"
+  ],
+  "built_at": "2026-10-18T15:35:00",
+  "defines": {
+    "_AddToEnvList": "8C05FDA6",
+    "_AudEmitterPlaying": "8C0156CC",
+    "_AudStopEmitter": "8C015618",
+    "_AudUpdateEmitter": "8C01574C",
+    "_CollisionTargetPtrs": "8C15861C",
+    "_CopyUV": "8C02631E",
+    "_CreateQuatMat": "8C026D58",
+    "_EmitGameSound": "8C01164C",
+    "_FreeStatLLE": "8C051400",
+    "_GrabEnvEntry": "8C05FD60",
+    "_InterpQuats": "8C026E20",
+    "_MoveCollisionObject": "8C05378E",
+    "_ReleaseEnviron": "8C05FDEE",
+    "_ResetCollisionObject": "8C053BD0",
+    "_RotateCollisionObject": "8C05395C",
+    "_TransposeUV": "8C026364",
+    "_UpdateMiniModelStruct": "8C057DB6",
+    "_ZOID_RemoveObject": "8C068B9E",
+    "_ZOID_SetObjectDef": "8C068BAC",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameCar": "8C004000",
+    "_gGameState": "8C0BFD3C",
+    "_gObjList": "8C15CA5E",
+    "_gPauseState": "8C0BFA78",
+    "_gRace": "8C12C628",
+    "_gTargetList": "8C15C88C",
+    "_numCollisionTargetPtrs": "8C158694",
+    "_targetInfo": "8C0BFD80",
+    "_unitmatrix": "8C0BD924"
+  },
+  "starts": {
+    "P": "8C056058",
+    "C": "8C0ACA6C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C056058",
+      "length": 5616
+    },
+    {
+      "name": "C",
+      "address": "8C0ACA6C",
+      "length": 4
+    }
+  ],
+  "equal_text_bytes_including_fill": 302,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 4,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 20,
+  "seconds": 2.0
+}

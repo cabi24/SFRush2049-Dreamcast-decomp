@@ -1,0 +1,12 @@
+8C06AF30 mov.l @(0x8C06B0A4,pc),r3                      | 8C06AF30 mov.l @(0x8C06B0A8,pc),r3                      *
+8C06AF32 fmov fr4,fr6                                   | 8C06AF32 fmov fr4,fr6                                   
+8C06AF34 fadd fr5,fr6                                   | 8C06AF34 fadd fr5,fr6                                   
+8C06AF36 fmov @r3,fr5                                   | 8C06AF36 fmov @r3,fr5                                   
+8C06AF38 fcmp/gt fr5,fr4                                | 8C06AF38 fcmp/gt fr5,fr4                                
+8C06AF3A bf 0x8C06AF42                                  | 8C06AF3A bf 0x8C06AF42                                  
+8C06AF3C mova @(0x8C06B0A8,pc),r0                       | 8C06AF3C mova @(0x8C06B0AC,pc),r0                       *
+8C06AF3E fmov @r0,fr3                                   | 8C06AF3E fmov @r0,fr3                                   
+8C06AF40 fsub fr3,fr6                                   | 8C06AF40 fsub fr3,fr6                                   
+8C06AF42 fcmp/gt fr6,fr5                                | 8C06AF42 fcmp/gt fr6,fr5                                
+8C06AF44 rts                                            | 8C06AF44 rts                                            
+8C06AF46 movt r0                                        | 8C06AF46 movt r0                                        

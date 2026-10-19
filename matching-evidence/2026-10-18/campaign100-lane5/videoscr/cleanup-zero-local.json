@@ -1,0 +1,25 @@
+{
+  "name": "videoscr",
+  "kind": "game",
+  "status": "failed",
+  "source": "src/videoscr.c",
+  "source_sha256": "83b46c84c14abcb371209c3475c601b2b58b2a3998787c6839ccd6619a9a62ff",
+  "text": [
+    "8C05C338",
+    "8C05E7A4"
+  ],
+  "text_bytes": 9324,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 1145,
+  "exact_data_bytes": 0,
+  "functions_total": 13,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [],
+  "segments": [],
+  "notes": [
+    "compile failed: [shc_cc] shc-v5.1r11 (native) failed rc=1: videoscr.c(194) : 2225 (E) Undeclared name \"tPane\" videoscr.c(194) : 2500 (E) Illegal token \")\""
+  ],
+  "built_at": "2026-10-18T16:03:52"
+}

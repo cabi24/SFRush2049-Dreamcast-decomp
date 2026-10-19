@@ -1,0 +1,48 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT mb_wad.abs
+FORM A
+START P(8C03CF94)
+PRINT mb_wad.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C03CF94  -  H'8C03D08D  H'000000FA
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C03CF94  -  H'8C03D08D  H'000000FA
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_MBFindInWad                      H'8C03D01A               ENT
+_MBGetFromWad                     H'8C03D058               ENT
+_MBOffsetWad                      H'8C03CFD8               ENT
+_MBSetupWad                       H'8C03CF94               ENT

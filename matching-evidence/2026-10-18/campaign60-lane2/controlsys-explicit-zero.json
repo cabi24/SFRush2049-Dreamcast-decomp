@@ -1,0 +1,262 @@
+{
+  "name": "controlsys",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/controlsys.c",
+  "source_sha256": "407071fae36943108ebee3016e6182d320eae4c1558ae7feb08e31ba152ef1f9",
+  "text": [
+    "8C01EDEC",
+    "8C01FDE8"
+  ],
+  "text_bytes": 4092,
+  "exact_text_bytes": 438,
+  "align_bytes": 0,
+  "data_bytes": 127,
+  "exact_data_bytes": 122,
+  "functions_total": 11,
+  "functions_exact": 5,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "InitControlSys",
+      "start": "8C01EDEC",
+      "end": "8C01EE8A",
+      "size": 158,
+      "status": "differs",
+      "diff_bytes": 7,
+      "linked_at": "8C01EDEC",
+      "linked_size": 200
+    },
+    {
+      "name": "ClearControls",
+      "start": "8C01EEB4",
+      "end": "8C01EF2C",
+      "size": 120,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01EEB4",
+      "linked_size": 120
+    },
+    {
+      "name": "UpdateControls",
+      "start": "8C01EF2C",
+      "end": "8C01F100",
+      "size": 468,
+      "status": "differs",
+      "diff_bytes": 344,
+      "linked_at": "8C01EF2C",
+      "linked_size": 552
+    },
+    {
+      "name": "GetControllerActive",
+      "start": "8C01F154",
+      "end": "8C01F180",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01F154",
+      "linked_size": 44
+    },
+    {
+      "name": "SetControllerActive",
+      "start": "8C01F180",
+      "end": "8C01F1B0",
+      "size": 48,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01F180",
+      "linked_size": 48
+    },
+    {
+      "name": "GetControllerStickEdges",
+      "start": "8C01F1B0",
+      "end": "8C01F1DC",
+      "size": 44,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01F1B0",
+      "linked_size": 44
+    },
+    {
+      "name": "SetControllerStickEdges",
+      "start": "8C01F1DC",
+      "end": "8C01F20C",
+      "size": 48,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C01F1DC",
+      "linked_size": 56
+    },
+    {
+      "name": "ControllerUpdate",
+      "start": "8C01F214",
+      "end": "8C01F4E2",
+      "size": 718,
+      "status": "differs",
+      "diff_bytes": 56,
+      "linked_at": "8C01F214",
+      "linked_size": 720
+    },
+    {
+      "name": "ControlIRQ",
+      "start": "8C01F4E2",
+      "end": "8C01FD86",
+      "size": 2212,
+      "status": "differs",
+      "diff_bytes": 2036,
+      "linked_at": "8C01F4E4",
+      "linked_size": 2180
+    },
+    {
+      "name": "_PotRange",
+      "start": "8C01FD86",
+      "end": "8C01FDA8",
+      "size": 34,
+      "status": "moved",
+      "diff_bytes": 33,
+      "linked_at": "8C01FD68",
+      "linked_size": 34
+    },
+    {
+      "name": "func_8C01FDA8",
+      "start": "8C01FDA8",
+      "end": "8C01FDCA",
+      "size": 34,
+      "status": "differs",
+      "diff_bytes": 32,
+      "linked_at": "8C01FD8A",
+      "linked_size": 62
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C01EE8A",
+      "end": "8C01EEB4",
+      "exact": true,
+      "built": 42,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01F100",
+      "end": "8C01F154",
+      "exact": true,
+      "built": 84,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01F20C",
+      "end": "8C01F214",
+      "exact": true,
+      "built": 8,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C01FDCA",
+      "end": "8C01FDE8",
+      "exact": false,
+      "built": 0,
+      "diff_bytes": 30
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A9214",
+      "end": "8C0A9260",
+      "exact": true,
+      "built": 76,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A9260",
+      "end": "8C0A9270",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A9270",
+      "end": "8C0A9282",
+      "exact": true,
+      "built": 18,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BC448",
+      "end": "8C0BC459",
+      "exact": true,
+      "built": 17,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12C114",
+      "end": "8C12C444",
+      "exact": true,
+      "linked": [
+        "8C12C114",
+        "8C12C444"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:36:38",
+  "defines": {
+    "_ModelThread": "8C040C24",
+    "_RegisterRetraceCallback": "8C0D9484",
+    "_SetInterruptMask": "8C010080",
+    "_gFrameCounter": "8C12253C",
+    "_gRetraceRate": "8C0B8C28",
+    "_gRetraceTime": "8C0B8C2C",
+    "_memset": "8C09BE04",
+    "_sdk_func_8C0D7686": "8C0D7686",
+    "_sdk_func_8C0D778C": "8C0D778C",
+    "_strlen": "8C09BF48",
+    "_strncmp": "8C09BF58"
+  },
+  "starts": {
+    "P": "8C01EDEC",
+    "C": "8C0A9214",
+    "D": "8C0BC448",
+    "B": "8C12C114"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C01EDEC",
+      "length": 4060
+    },
+    {
+      "name": "C",
+      "address": "8C0A9214",
+      "length": 110
+    },
+    {
+      "name": "D",
+      "address": "8C0BC448",
+      "length": 17
+    },
+    {
+      "name": "B",
+      "address": "8C12C114",
+      "length": 816
+    }
+  ],
+  "equal_text_bytes_including_fill": 438,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 127,
+  "excluded_exact_data_fill": 5,
+  "excluded_data_padding": [],
+  "text_size_delta": -32,
+  "seconds": 2.0
+}

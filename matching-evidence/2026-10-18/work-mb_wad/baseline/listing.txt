@@ -1,0 +1,35 @@
+8C03CF94 2448 tst r4,r4                    = 2448 tst r4,r4
+8C03CF96 891E bt 0x8C03CFD6                = 891E bt 0x8C03CFD6
+8C03CF98 6653 mov r5,r6                    ! 6753 mov r5,r7
+8C03CF9A 6263 mov r6,r2                    ! 6273 mov r7,r2
+8C03CF9C 2452 mov.l r5,@r4                 = 2452 mov.l r5,@r4
+8C03CF9E 6322 mov.l @r2,r3                 = 6322 mov.l @r2,r3
+8C03CFA0 1432 mov.l r3,@(8,r4)             = 1432 mov.l r3,@(8,r4)
+8C03CFA2 6242 mov.l @r4,r2                 = 6242 mov.l @r4,r2
+8C03CFA4 5321 mov.l @(4,r2),r3             = 5321 mov.l @(4,r2),r3
+8C03CFA6 1431 mov.l r3,@(4,r4)             = 1431 mov.l r3,@(4,r4)
+8C03CFA8 5242 mov.l @(8,r4),r2             = 5242 mov.l @(8,r4),r2
+8C03CFAA 326C add r6,r2                    ! 327C add r7,r2
+8C03CFAC 1422 mov.l r2,@(8,r4)             = 1422 mov.l r2,@(8,r4)
+8C03CFAE 6342 mov.l @r4,r3                 = 6342 mov.l @r4,r3
+8C03CFB0 2322 mov.l r2,@r3                 = 2322 mov.l r2,@r3
+8C03CFB2 5341 mov.l @(4,r4),r3             = 5341 mov.l @(4,r4),r3
+8C03CFB4 4315 cmp/pl r3                    = 4315 cmp/pl r3
+8C03CFB6 8F0E bf/s 0x8C03CFD6              = 8F0E bf/s 0x8C03CFD6
+8C03CFB8 E500 mov #0,r5                    = E500 mov #0,r5
+8C03CFBA 6753 mov r5,r7                    ! 6653 mov r5,r6
+8C03CFBC 4700 shll r7                      ! 4600 shll r6
+8C03CFBE 6353 mov r5,r3                    = 6353 mov r5,r3
+8C03CFC0 5242 mov.l @(8,r4),r2             = 5242 mov.l @(8,r4),r2
+8C03CFC2 373C add r3,r7                    ! 363C add r3,r6
+8C03CFC4 4708 shll2 r7                     ! 4608 shll2 r6
+8C03CFC6 372C add r2,r7                    ! 362C add r2,r6
+8C03CFC8 5371 mov.l @(4,r7),r3             ! 5361 mov.l @(4,r6),r3
+8C03CFCA 7501 add #1,r5                    = 7501 add #1,r5
+8C03CFCC 336C add r6,r3                    ! 337C add r7,r3
+8C03CFCE 1731 mov.l r3,@(4,r7)             ! 1631 mov.l r3,@(4,r6)
+8C03CFD0 5241 mov.l @(4,r4),r2             = 5241 mov.l @(4,r4),r2
+8C03CFD2 3523 cmp/ge r2,r5                 = 3523 cmp/ge r2,r5
+8C03CFD4 8BF1 bf 0x8C03CFBA                = 8BF1 bf 0x8C03CFBA
+8C03CFD6 000B rts                          = 000B rts
+8C03CFD8 0009 nop                          = 0009 nop

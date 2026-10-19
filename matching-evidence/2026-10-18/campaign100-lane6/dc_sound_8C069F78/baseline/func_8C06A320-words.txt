@@ -1,0 +1,20 @@
+8C06A320 mov.l @(0x8C06A390,pc),r3                              | 8C06A332 mov.l @(0x8C06A3A0,pc),r3                              
+8C06A322 mov.l r14,@-r15                                        | 8C06A334 mov.l r14,@-r15                                        
+8C06A324 sts.l pr,@-r15                                         | 8C06A336 sts.l pr,@-r15                                         
+8C06A326 mov.l @r3,r14                                          | 8C06A338 mov.l @(0x8C06A394,pc),r2                              *
+8C06A328 mov.l @(0x8C06A394,pc),r4                              | 8C06A33A mov.l @(0x8C06A3A4,pc),r4                              
+8C06A32A mov.l @(0x8C06A384,pc),r3                              | 8C06A33C mov.l @r3,r14                                          *
+8C06A32C tst r14,r14                                            | 8C06A33E jsr @r2                                                *
+8C06A32E jsr @r3                                                | 8C06A340 mov r14,r5                                             *
+8C06A330 mov r14,r5                                             | 8C06A342 mov.w @(0x8C06A386,pc),r0                              *
+8C06A332 mov.w @(0x8C06A376,pc),r0                              | 8C06A344 mov #0,r4                                              *
+8C06A334 mov #0,r4                                              | 8C06A346 mov.b r4,@(r0,r14)                                     *
+8C06A336 mov.b r4,@(r0,r14)                                     | 8C06A348 mov.w @(0x8C06A388,pc),r0                              *
+8C06A338 mov.w @(0x8C06A378,pc),r0                              | 8C06A34A mov.b r4,@(r0,r14)                                     *
+8C06A33A mov.b r4,@(r0,r14)                                     | 8C06A34C add #-4,r0                                             *
+8C06A33C mov.w @(0x8C06A374,pc),r0                              | 8C06A34E mov.l r4,@(r0,r14)                                     *
+8C06A33E mov.l r4,@(r0,r14)                                     | 8C06A350 mov r14,r0                                             *
+8C06A340 mov r14,r0                                             | 8C06A352 lds.l @r15+,pr                                         *
+8C06A342 lds.l @r15+,pr                                         | 8C06A354 rts                                                    *
+8C06A344 rts                                                    | 8C06A356 mov.l @r15+,r14                                        *
+8C06A346 mov.l @r15+,r14                                        | 8C06A358                                                        *

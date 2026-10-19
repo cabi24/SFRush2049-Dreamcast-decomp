@@ -1,0 +1,115 @@
+{
+  "new_text_bytes": 0,
+  "new_data_bytes": 0,
+  "new_functions": 0,
+  "units": [
+    {
+      "unit": "timer",
+      "text": 0,
+      "data": 16,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\timer.c": "7163e810e8646eb224495a47b70f43284bbb07976a13635dcad15506f5fe4032",
+        "build\\campaign100-lane1\\timer\\final\\link\\timer.abs": "aa11be6dd200268c85248cd2be12e20be4c25c0a3c7a6373725ba4fc3f23b7a1",
+        "build\\campaign100-lane1\\timer\\final\\obj\\timer.obj": "ff0ad04226bf2d5a899d4a2729f6ed7bc3c58a94f101fdb362a2d7dab9f7d8b2"
+      }
+    },
+    {
+      "unit": "unk_8C0102A4_lz",
+      "text": 0,
+      "data": 0,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\unk_8C0102A4_lz.c": "4228726af9ae61305a338fc8d078be1ec1b65d929824bf5ef8606757af8783c7",
+        "build\\campaign100-lane1\\unk_8C0102A4_lz\\final\\link\\unk_8C0102A4_lz.abs": "5ad89824c9ce0b04794a1568746478f7bb41349256c302c3995f761fc70e8e42",
+        "build\\campaign100-lane1\\unk_8C0102A4_lz\\final\\obj\\unk_8C0102A4_lz.obj": "1f202a4bd8e4dc99a35efa6beea8dced328304bc5e104bde211197e2a6e242de"
+      }
+    },
+    {
+      "unit": "unzip",
+      "text": 26,
+      "data": 362,
+      "exact_functions": 1,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\unzip.c": "1d589c470d8fe3e1e0a047f822564ab73a74ab55b87eec6283b347ca4e9199a9",
+        "build\\campaign100-lane1\\unzip\\final\\link\\unzip.abs": "ff123e7138a69362aeb3032c2e65e005827882ce84eada1eba6f66bebbc84d89",
+        "build\\campaign100-lane1\\unzip\\final\\obj\\unzip.obj": "c0e3f09edbaf2319f604f637d86358c8bcdba10f28327f32b64b85827411882c"
+      }
+    },
+    {
+      "unit": "asincos",
+      "text": 64,
+      "data": 16,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\asincos.c": "f701af23b85e47bf8d379977cbc33d2431e119138b54dab556c64b4cbc8763f0",
+        "build\\campaign100-lane1\\asincos\\final\\link\\asincos.abs": "53c186927416340e1c3de5e3cdff24b7659d4db46bcd4f632ebcd2f22127a524",
+        "build\\campaign100-lane1\\asincos\\final\\obj\\asincos.obj": "22dad51357f15925bacf1fc1344700131e2ef623a062a4ef112e7ff4a235b42c"
+      }
+    },
+    {
+      "unit": "audio",
+      "text": 580,
+      "data": 4857,
+      "exact_functions": 13,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\audio.c": "0540c27bba22de6edf4fd1fccd64d437e190cdf1b3dad31179038ae5993930a8",
+        "build\\campaign100-lane1\\audio\\final\\link\\audio.abs": "1b050c732cb85561deda2474f95ebefeea2345f0aede87577a026e3050719b3f",
+        "build\\campaign100-lane1\\audio\\final\\obj\\audio.obj": "05bda6a8a5016a101b07473a66b6bd07b6cbaf7aa137be39fbbf1760089636fa"
+      }
+    },
+    {
+      "unit": "audiomgr",
+      "text": 0,
+      "data": 381,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\audiomgr.c": "cf7a93ff2669ee3733b423686a41885aa73422d7afd24d9aa8ff2b9aa8f47ee3",
+        "build\\campaign100-lane1\\audiomgr\\final\\link\\audiomgr.abs": "2832861b2e65593843840e0dadf55a1c3ccf4a8e7741ac8f9b49196ca3266f7b",
+        "build\\campaign100-lane1\\audiomgr\\final\\obj\\audiomgr.obj": "6cc80a2fdf0347812ade7d82cd9fab1602320a12ecc61358990082c96e64f70e"
+      }
+    },
+    {
+      "unit": "audiosfx",
+      "text": 58,
+      "data": 0,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\audiosfx.c": "fd0ff19f256858f3bfe5898641eb0a67ddd0661219a4e94761255878261fd55c",
+        "build\\campaign100-lane1\\audiosfx\\final\\link\\audiosfx.abs": "d3289f26d51f01ab6b6f423d01e9be390254bfec6338dc4a41306825e83f1fba",
+        "build\\campaign100-lane1\\audiosfx\\final\\obj\\audiosfx.obj": "75339a4587b53798e9a428da84793d8e1b48844bb15da924cfef51f6c7f9084a"
+      }
+    },
+    {
+      "unit": "audioscr",
+      "text": 0,
+      "data": 935,
+      "exact_functions": 0,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\audioscr.c": "f27e13088d78df478a2c80d72d81811e79949de8f64f39d6865ad0ab5c4544d1",
+        "build\\campaign100-lane1\\audioscr\\final\\link\\audioscr.abs": "ede4abdf06edf2442deed02cf751ffc52263ca767caa57d0fae2cb1959b19656",
+        "build\\campaign100-lane1\\audioscr\\final\\obj\\audioscr.obj": "7661507f444e2726fd8ad041930a8250dee812ed0b207b2b4af3bd41ce7ccf64"
+      }
+    },
+    {
+      "unit": "gfx",
+      "text": 576,
+      "data": 88,
+      "exact_functions": 8,
+      "baseline_spans_preserved": true,
+      "sha256": {
+        "src\\gfx.c": "ffd762e9940c5f9e82e8009f64252fde96a5182ecff34b347dd7352e47448cec",
+        "build\\campaign100-lane1\\gfx\\final\\link\\gfx.abs": "702e3cd3b189dfa835b51470902c346a74509366f921c86d93ed12d4d2444412",
+        "build\\campaign100-lane1\\gfx\\final\\obj\\gfx.obj": "dcde41534dd3785f9e46b242f70d8ffa6c570d9f611dbd6a7da7ee1cf282cd17"
+      }
+    }
+  ]
+}

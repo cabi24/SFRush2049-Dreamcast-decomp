@@ -1,0 +1,26 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "label": "final",
+  "source_sha256": "87ef73dd100dc3b35196b33cc579f07929be4473385f3661d625bc745f5bc76e",
+  "old_exact_spans_preserved": true,
+  "failed_spans": [],
+  "delta_functions": 1,
+  "delta_text": 192,
+  "delta_data": 0,
+  "new_exact_functions": [
+    {
+      "name": "func_8C06C1E6",
+      "start": "8C06C1E6",
+      "end": "8C06C2A6",
+      "size": 192,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C06C1E6",
+      "linked_size": 192
+    }
+  ],
+  "hashes": {
+    "object": "a9e18d5c6a76db0950f6e2ce3e0fa1ed6343ac035221f0c8c69ea518e9477409",
+    "abs": "82c29d8a259ccf969313be97e8b6b4b21da0704fe7fca2f66242c4e537f5d977"
+  }
+}

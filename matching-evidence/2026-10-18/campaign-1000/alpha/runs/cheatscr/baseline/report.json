@@ -1,0 +1,191 @@
+{
+  "name": "cheatscr",
+  "kind": "game",
+  "status": "partial",
+  "source": "matching-evidence/2026-10-18/campaign-1000/alpha/candidates/cheatscr/cheatscr.c",
+  "source_sha256": "b29090fc23bd2a329cb9de9711ccc46454a6f17b85675706b88bbb95754c6c9a",
+  "text": [
+    "8C07A21C",
+    "8C07ABE0"
+  ],
+  "text_bytes": 2500,
+  "exact_text_bytes": 1482,
+  "align_bytes": 0,
+  "data_bytes": 55,
+  "exact_data_bytes": 52,
+  "functions_total": 5,
+  "functions_exact": 4,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "updateCheatScreen",
+      "start": "8C07A21C",
+      "end": "8C07A5AE",
+      "size": 914,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C07A21C",
+      "linked_size": 914
+    },
+    {
+      "name": "initScreen",
+      "start": "8C07A5AE",
+      "end": "8C07A672",
+      "size": 196,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C07A5AE",
+      "linked_size": 196
+    },
+    {
+      "name": "uninitScreen",
+      "start": "8C07A672",
+      "end": "8C07A698",
+      "size": 38,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C07A672",
+      "linked_size": 38
+    },
+    {
+      "name": "printOption",
+      "start": "8C07A698",
+      "end": "8C07A756",
+      "size": 190,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C07A698",
+      "linked_size": 324
+    },
+    {
+      "name": "animText",
+      "start": "8C07A7DC",
+      "end": "8C07ABD4",
+      "size": 1016,
+      "status": "differs",
+      "diff_bytes": 51,
+      "linked_at": "8C07A7DC",
+      "linked_size": 1028
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C07A756",
+      "end": "8C07A7DC",
+      "exact": true,
+      "built": 134,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C07ABD4",
+      "end": "8C07ABE0",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B22B4",
+      "end": "8C0B22D8",
+      "exact": true,
+      "built": 36,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0B22D8",
+      "end": "8C0B22DB",
+      "exact": true,
+      "built": 3,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0CC884",
+      "end": "8C0CC894",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T17:32:35",
+  "defines": {
+    "_AudPlayEffect": "8C014552",
+    "_CheckForEgg": "8C07D92C",
+    "_HAL_GetFontAscent": "8C02F39C",
+    "_HAL_SetFont": "8C02EF96",
+    "_HAL_SetTextDepth": "8C02F226",
+    "_InitEgg": "8C07D910",
+    "_NewMultiBlit": "8C018B56",
+    "_PlayLRSound": "8C0115A4",
+    "_RemoveBlit": "8C0187BA",
+    "_TB_CenterText": "8C05A708",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_RightText": "8C05A722",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Sprintf": "8C05AC1E",
+    "_createBG": "8C027320",
+    "_gActiveAutoEdges": "8C12C1BC",
+    "_gActiveEdges": "8C12C1B4",
+    "_gCarMines": "8C158699",
+    "_gCheatActive": "8C0BEE84",
+    "_gCheatState": "8C0BEE9C",
+    "_gDemolitionBattle": "8C15869B",
+    "_gEnableTireScaling": "8C15CFDE",
+    "_gFogColor": "8C12C658",
+    "_gFrameScale": "8C15CFDD",
+    "_gInvincible": "8C12C571",
+    "_gInvisibleCar": "8C15CFDC",
+    "_gInvisibleTrack": "8C15FF2C",
+    "_gMassiveMass": "8C12BAB0",
+    "_gMineCones": "8C158698",
+    "_gNoAutoAbort": "8C1503E6",
+    "_gNoBrakes": "8C12C110",
+    "_gNoCarCollisions": "8C12C0D0",
+    "_gRandomWeapons": "8C15869A",
+    "_gResurrectInPlace": "8C1503E7",
+    "_gSoftReset": "8C12C200",
+    "_gSpecialTires": "8C12C572",
+    "_gSuicideMode": "8C12C0D1",
+    "_gSuperSpeed": "8C12C570",
+    "_gText": "8C15C98C",
+    "_removeBG": "8C027824",
+    "_setGameState": "8C05137C"
+  },
+  "starts": {
+    "P": "8C07A21C",
+    "C": "8C0B22B4",
+    "D": "8C0CC884"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C07A21C",
+      "length": 2500
+    },
+    {
+      "name": "C",
+      "address": "8C0B22B4",
+      "length": 39
+    },
+    {
+      "name": "D",
+      "address": "8C0CC884",
+      "length": 16
+    }
+  ],
+  "equal_text_bytes_including_fill": 1484,
+  "excluded_exact_text_fill_or_gaps": 2,
+  "equal_data_bytes_including_fill": 55,
+  "excluded_exact_data_fill": 3,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.4
+}

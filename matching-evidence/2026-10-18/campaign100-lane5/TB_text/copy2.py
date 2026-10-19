@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('matching-evidence/2026-10-18/campaign100-lane5/TB_text');s=(p/'helpers-inline-before-decls.c').read_text().replace('    unsigned char *s=str1, *s1=str1;','    unsigned char c;\n    unsigned char *s=str1, *s1=str1;',1).replace('    } else while ((*s1++ = *s2++) != 0) {}\n    return s;','    } else do { c = *s2++; *s1++ = c; } while (c);\n    return s;',1);Path('src/TB_text.c').write_text(s)

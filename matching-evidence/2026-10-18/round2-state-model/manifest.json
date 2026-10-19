@@ -1,0 +1,282 @@
+{
+  "result": "one new exact function, +1402 emitted exact text bytes; state unchanged",
+  "trials": [
+    {
+      "unit": "state",
+      "label": "baseline",
+      "exact_functions": 5,
+      "exact_text_bytes": 290,
+      "diff_bytes": [
+        [
+          "_LockAndLoad",
+          0
+        ],
+        [
+          "_UnloadFrontEndWaves",
+          0
+        ],
+        [
+          "initGameState",
+          6
+        ],
+        [
+          "uninitGameState",
+          0
+        ],
+        [
+          "updateGameState",
+          0
+        ],
+        [
+          "setGameState",
+          0
+        ]
+      ],
+      "source_sha256": "c2926a1bf0f7fbc452739f2a8450d2097d5095093e0033e7bb380d69c1d86e65",
+      "text_size_delta": 0
+    },
+    {
+      "unit": "state",
+      "label": "shared-i",
+      "exact_functions": 5,
+      "exact_text_bytes": 290,
+      "diff_bytes": [
+        [
+          "_LockAndLoad",
+          0
+        ],
+        [
+          "_UnloadFrontEndWaves",
+          0
+        ],
+        [
+          "initGameState",
+          6
+        ],
+        [
+          "uninitGameState",
+          0
+        ],
+        [
+          "updateGameState",
+          0
+        ],
+        [
+          "setGameState",
+          0
+        ]
+      ],
+      "source_sha256": "a39b90b294d671da762641d386f484511abeabfa650feafc98aed8f9a9342ced",
+      "text_size_delta": 0
+    },
+    {
+      "unit": "state",
+      "label": "fog-pointers",
+      "exact_functions": 2,
+      "exact_text_bytes": 94,
+      "diff_bytes": [
+        [
+          "_LockAndLoad",
+          0
+        ],
+        [
+          "_UnloadFrontEndWaves",
+          0
+        ],
+        [
+          "initGameState",
+          107
+        ],
+        [
+          "uninitGameState",
+          94
+        ],
+        [
+          "updateGameState",
+          34
+        ],
+        [
+          "setGameState",
+          5
+        ]
+      ],
+      "source_sha256": "c27cc487acfe05c8e10fbaa588906e71369a6108db73c3510178a61f60a34b3f",
+      "text_size_delta": -12
+    },
+    {
+      "unit": "state",
+      "label": "short-loop",
+      "exact_functions": 2,
+      "exact_text_bytes": 94,
+      "diff_bytes": [
+        [
+          "_LockAndLoad",
+          0
+        ],
+        [
+          "_UnloadFrontEndWaves",
+          0
+        ],
+        [
+          "initGameState",
+          536
+        ],
+        [
+          "uninitGameState",
+          95
+        ],
+        [
+          "updateGameState",
+          36
+        ],
+        [
+          "setGameState",
+          6
+        ]
+      ],
+      "source_sha256": "dcad66c0ff89f6c6d70099dfd1614f2f76cdebb36707b045289c33f8165e9b17",
+      "text_size_delta": 12
+    },
+    {
+      "unit": "model",
+      "label": "baseline",
+      "exact_functions": 2,
+      "exact_text_bytes": 118,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          1245
+        ]
+      ],
+      "source_sha256": "bbc1ab76d5ee6210008ec7faebb5c50428af2c83cd0124d156bb3cd26bbf8129",
+      "text_size_delta": -2
+    },
+    {
+      "unit": "model",
+      "label": "reverse-product",
+      "exact_functions": 2,
+      "exact_text_bytes": 118,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          1245
+        ]
+      ],
+      "source_sha256": "67faf95637a0c2b06aed2051c02f608c5b1dc7ca27f4568c4027dec6427d227c",
+      "text_size_delta": -2
+    },
+    {
+      "unit": "model",
+      "label": "local-scale",
+      "exact_functions": 2,
+      "exact_text_bytes": 132,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          45
+        ]
+      ],
+      "source_sha256": "4516491de1939aa2e0f6c7536e44f865208f7a8573c41e8966457e510fe6ad82",
+      "text_size_delta": 0
+    },
+    {
+      "unit": "model",
+      "label": "reverse-blend",
+      "exact_functions": 3,
+      "exact_text_bytes": 1520,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          0
+        ]
+      ],
+      "source_sha256": "b3b010f2d0ed08072bfa5cd77a9a41210853a97f059db188bf9797fa29a2677e",
+      "text_size_delta": 0
+    },
+    {
+      "unit": "model",
+      "label": "selected",
+      "exact_functions": 3,
+      "exact_text_bytes": 1520,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          0
+        ]
+      ],
+      "source_sha256": "9550580759ae6c7a03435712cf27fca281cf3632d5e226ed08b994ac4feab730",
+      "text_size_delta": 0
+    },
+    {
+      "unit": "model",
+      "label": "final",
+      "exact_functions": 3,
+      "exact_text_bytes": 1520,
+      "diff_bytes": [
+        [
+          "ModelThread",
+          0
+        ],
+        [
+          "no_catchup",
+          0
+        ],
+        [
+          "SetCatchup",
+          0
+        ]
+      ],
+      "source_sha256": "ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501",
+      "text_size_delta": 0
+    }
+  ],
+  "hashes": {
+    "src\\state.c": "c2926a1bf0f7fbc452739f2a8450d2097d5095093e0033e7bb380d69c1d86e65",
+    "src\\model.c": "ecccc631993bc48c18d2aebcf4579dda91b2fb387a486c307096b94de08ed501",
+    "build\\round2-state-model\\model\\final\\link\\model.abs": "bd918054124d8813edc5bcf5b152c48a857921084faef4458d6707ca3d0a30a7",
+    "build\\round2-state-model\\model\\final\\obj\\model.obj": "9504a19607021c987f8595d32fd8728d824a8c0165b551c31f385eca04fa6faa"
+  },
+  "full_text_raw_equality": true,
+  "comparison_masks": false,
+  "canonical_outputs_modified": false
+}

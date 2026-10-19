@@ -1,0 +1,60 @@
+{
+  "unit": "dc_misc_8C06C08C",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 7,
+    "functions_total": 31,
+    "functions_moved": 2,
+    "exact_text_bytes": 652,
+    "equal_text_bytes_including_fill": 654,
+    "text_bytes": 2640,
+    "exact_data_bytes": 24,
+    "source_sha256": "3bd6bef73d2830cc1e54bf25b3bdffdfa9e717ff22c7cb405fcd8aaad9f3118e"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 4,
+    "functions_total": 31,
+    "functions_moved": 2,
+    "exact_text_bytes": 436,
+    "equal_text_bytes_including_fill": 438,
+    "text_bytes": 2640,
+    "exact_data_bytes": 24,
+    "source_sha256": "5c166a8370bd8567333db85f138bc8e60ac20ad87dc4233d261fa658282389bf"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "func_8C06C1E6",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 192
+    },
+    {
+      "name": "func_8C06C2A6",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 12
+    },
+    {
+      "name": "func_8C06C2B2",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 12
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 652,
+  "text_bytes_head": 436,
+  "report_consistency": {
+    "report_functions_exact": 7,
+    "dirty_rebuild_functions_exact": 7,
+    "report_exact_text_bytes": 652,
+    "dirty_rebuild_exact_text_bytes": 652,
+    "report_source_sha256": "3bd6bef73d2830cc1e54bf25b3bdffdfa9e717ff22c7cb405fcd8aaad9f3118e",
+    "dirty_source_sha256": "3bd6bef73d2830cc1e54bf25b3bdffdfa9e717ff22c7cb405fcd8aaad9f3118e",
+    "match": true
+  },
+  "head_source_sha256": "5c166a8370bd8567333db85f138bc8e60ac20ad87dc4233d261fa658282389bf",
+  "seconds": 5.4
+}

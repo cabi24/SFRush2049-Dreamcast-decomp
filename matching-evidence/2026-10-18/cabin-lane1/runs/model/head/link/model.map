@@ -1,0 +1,88 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT model.abs
+FORM A
+START P(8C040C24)
+START D(8C0BEE80)
+DEFINE _ControllerUpdate(8C01F214)
+DEFINE _PeriodicMaintenance(8C013D4E)
+DEFINE _dcAudioMain(8C06E5B4)
+DEFINE _dcModelService(8C0726F4)
+DEFINE _gDifficulty(8C12C650)
+DEFINE _gLink(8C12C5A4)
+DEFINE _gNumPlayers(8C14CBB0)
+DEFINE _gUseCatchup(8C14CBAF)
+DEFINE _init_model_task(8C03E21C)
+DEFINE _model(8C14CBB4)
+DEFINE _model_iteration(8C03E4E8)
+DEFINE _modelrun(8C14CBAC)
+PRINT model.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C040C24  -  H'8C04121D  H'000005FA
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C040C24  -  H'8C04121D  H'000005FA
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BEE80  -  H'8C0BEE80  H'00000001
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BEE80  -  H'8C0BEE80  H'00000001
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_ModelThread                      H'8C040C24               ENT
+_SetCatchup                       H'8C040C9A               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_ControllerUpdate                                                   H'8C01F214
+_PeriodicMaintenance                                                H'8C013D4E
+_dcAudioMain                                                        H'8C06E5B4
+_dcModelService                                                     H'8C0726F4
+_gDifficulty                                                        H'8C12C650
+_gLink                                                              H'8C12C5A4
+_gNumPlayers                                                        H'8C14CBB0
+_gUseCatchup                                                        H'8C14CBAF
+_init_model_task                                                    H'8C03E21C
+_model                                                              H'8C14CBB4
+_model_iteration                                                    H'8C03E4E8
+_modelrun                                                           H'8C14CBAC

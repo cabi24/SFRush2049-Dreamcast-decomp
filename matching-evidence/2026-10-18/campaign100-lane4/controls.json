@@ -1,0 +1,18 @@
+{
+  "unit": "controls",
+  "selected": "final-independent",
+  "baseline_functions": 7,
+  "final_functions": 7,
+  "new_functions": [],
+  "baseline_text": 1742,
+  "final_text": 1742,
+  "baseline_data": 104,
+  "final_data": 104,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\controls.c": "e17cc8bc4e25f59b021b1dffa22b644fd293f15249abfe107cb0e1c090bc4c08",
+    "build\\campaign100-lane4\\controls\\final-independent\\obj\\controls.obj": "9da44779c229039e83c2c6306f8b093079cadb44b4d129780aab89843530f8b2",
+    "build\\campaign100-lane4\\controls\\final-independent\\link\\controls.abs": "a29edbbeda40fc4b9ed5258a7917c9c6a833ccf4a72c714d3d38687a84d75d7e",
+    "build\\campaign100-lane4\\controls\\final-independent\\pp\\controls.c": "b34073b789a382440b7a8d77e298047ba2b86ee3c50789ded7bab5584afd620e"
+  }
+}

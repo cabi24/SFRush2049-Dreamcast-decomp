@@ -1,0 +1,19 @@
+8C06CA44 mov.l @(0x8C06CA80,pc),r5                              | 8C06CA38 mov.l @(0x8C06CAA8,pc),r6                              *
+8C06CA46 mov #0,r6                                              | 8C06CA3A mov r6,r3                                              *
+8C06CA48 mov r5,r3                                              | 8C06CA3C add #44,r3                                             *
+8C06CA4A add #44,r3                                             | 8C06CA3E mov r6,r4                                              *
+8C06CA4C mov r5,r4                                              | 8C06CA40 cmp/hs r3,r4                                           *
+8C06CA4E cmp/hs r3,r4                                           | 8C06CA42 bt/s 0x8C06CA5A                                        *
+8C06CA50 bt/s 0x8C06CA66                                        | 8C06CA44 mov #0,r5                                              *
+8C06CA52 mov #1,r7                                              | 8C06CA46 mov r6,r7                                              *
+8C06CA54 mov.l @(4,r4),r3                                       | 8C06CA48 mov #1,r6                                              *
+8C06CA56 tst r3,r3                                              | 8C06CA4A add #44,r7                                             *
+8C06CA58 bt/s 0x8C06CA5E                                        | 8C06CA4C mov.l @(4,r4),r3                                       *
+8C06CA5A add #44,r4                                             | 8C06CA4E tst r3,r3                                              *
+8C06CA5C mov r7,r6                                              | 8C06CA50 bt/s 0x8C06CA56                                        *
+8C06CA5E mov r5,r3                                              | 8C06CA52 add #44,r4                                             *
+8C06CA60 add #44,r3                                             | 8C06CA54 mov r6,r5                                              *
+8C06CA62 cmp/hs r3,r4                                           | 8C06CA56 cmp/hs r7,r4                                           *
+8C06CA64 bf 0x8C06CA54                                          | 8C06CA58 bf 0x8C06CA4C                                          *
+8C06CA66 rts                                                    | 8C06CA5A rts                                                    
+8C06CA68 mov r6,r0                                              | 8C06CA5C mov r5,r0                                              *

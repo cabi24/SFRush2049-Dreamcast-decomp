@@ -1,0 +1,18 @@
+{
+  "unit": "smoke",
+  "selected": "baseline",
+  "baseline_functions": 2,
+  "final_functions": 2,
+  "new_functions": [],
+  "baseline_text": 92,
+  "final_text": 92,
+  "baseline_data": 154,
+  "final_data": 154,
+  "note": "No gain; InitSmoke24-byte argument scheduling residual;3 qualifier/prototype/address shapes fail; restored",
+  "hashes": {
+    "src\\smoke.c": "b98aeb22a0dd9f1194dd9012c70a6e92d20b4528af4a7a2ef562bde713160b1f",
+    "build\\campaign60-lane4\\smoke\\baseline\\obj\\smoke.obj": "239762aa7ff45dc5e760d3b0bfa18f0118b5b31aac8e749a5a7eed7bc3852cc6",
+    "build\\campaign60-lane4\\smoke\\baseline\\link\\smoke.abs": "37ffb54759952280f73c8e428febe0b88b8d32bd74c0596c9abf1bf6555971e1",
+    "build\\campaign60-lane4\\smoke\\baseline\\pp\\smoke.c": "88a9b3c2cc1ba8ce8900074a1be1cb67ddd40da2de42264ee0f1fd249b3fc56d"
+  }
+}

@@ -1,0 +1,442 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT game.abs
+FORM A
+START P(8C0278C0)
+START C(8C0AA988)
+START D(8C0BDD54)
+START B(8C12C628)
+DEFINE _AreWeSolid(8C04AA34)
+DEFINE _AudKillSong(8C01450E)
+DEFINE _AudSetMusicVol(8C014F8C)
+DEFINE _AudStopAllEffects(8C014ADC)
+DEFINE _CalcRaceTime(8C01C518)
+DEFINE _CheckCPs(8C01BCF2)
+DEFINE _CheckForStunt(8C055AAC)
+DEFINE _CheckTargetCollision(8C0584E8)
+DEFINE _ClearRushControls(8C01E8C2)
+DEFINE _CountDown(8C0228E8)
+DEFINE _CountdownTimeOut(8C0101FC)
+DEFINE _CrashedStunt(8C054D32)
+DEFINE _DetectDroneAbort(8C04A558)
+DEFINE _DoDrones(8C025580)
+DEFINE _EmitGameSound(8C01164C)
+DEFINE _EnableGameSounds(8C0115D8)
+DEFINE _EndGraphics(8C02E390)
+DEFINE _End_MDrive(8C03FAD8)
+DEFINE _ExitSystem(8C039718)
+DEFINE _FindWinner(8C02B1D4)
+DEFINE _GetResPt(8C048A4C)
+DEFINE _GhostEnd(8C02EBC6)
+DEFINE _GhostStart(8C02E4B0)
+DEFINE _HAL_CallOncePerFrameFuncs(8C02FD68)
+DEFINE _HAL_GetTextWidth(8C02F502)
+DEFINE _HAL_SetFont(8C02EF96)
+DEFINE _HFOV(8C17798C)
+DEFINE _InitBattlePlayer(8C09939C)
+DEFINE _InitBattlePoints(8C02C582)
+DEFINE _InitBlits(8C018790)
+DEFINE _InitCPS(8C01BB02)
+DEFINE _InitCPTime(8C01BB12)
+DEFINE _InitDrones(8C02555C)
+DEFINE _InitSmokeBlast(8C04F5B4)
+DEFINE _InitStunt(8C054CC8)
+DEFINE _InitTextureAnimation(8C05B2E4)
+DEFINE _InitWaves(8C064FDC)
+DEFINE _Init_MDrive(8C03DF34)
+DEFINE _LoadTrack(8C05BED8)
+DEFINE _NewMultiBlit(8C018B56)
+DEFINE _PS_ErrorFunc(8C044584)
+DEFINE _PS_RumbleGo(8C06E7B4)
+DEFINE _PakErrorActive(8C0440E6)
+DEFINE _PlayGameSound(8C011606)
+DEFINE _Random(8C027134)
+DEFINE _ReloadTrack(8C05C292)
+DEFINE _RemoveBlit(8C0187BA)
+DEFINE _RemoveEnvirons(8C05FE72)
+DEFINE _RemoveHUD(8C034A8C)
+DEFINE _RemoveMultiplayerHUD(8C034B82)
+DEFINE _ResetHighScores(8C02C494)
+DEFINE _SaveServer(8C04B746)
+DEFINE _SetCameraView(8C019048)
+DEFINE _SetCountdownTimer(8C010176)
+DEFINE _SetOptions(8C041690)
+DEFINE _SetupCar(8C05F730)
+DEFINE _ShotInit(8C097110)
+DEFINE _ShotUpdate(8C098622)
+DEFINE _ShowCountdown(8C022654)
+DEFINE _ShowHUD(8C03478C)
+DEFINE _StartBlast(8C062C44)
+DEFINE _StartEnvironment(8C05FAF8)
+DEFINE _StartGameMusic(8C011714)
+DEFINE _StartGraphics(8C02E350)
+DEFINE _StartListeners(8C011726)
+DEFINE _StopCarSounds(8C01375C)
+DEFINE _StopListeners(8C01189A)
+DEFINE _TB_DrawText(8C05ACA6)
+DEFINE _TB_SetTextColor(8C05A742)
+DEFINE _TextureAnimation(8C05B3C6)
+DEFINE _UnloadTrack(8C05C2A2)
+DEFINE _UpdateArrowVis(8C063F74)
+DEFINE _UpdateBattlePowerUps(8C0962A8)
+DEFINE _UpdateBlit(8C018910)
+DEFINE _UpdateFrameTimer(8C01010A)
+DEFINE _UpdateGraphics(8C02E406)
+DEFINE _UpdateRushControls(8C01E8F8)
+DEFINE _UpdateSmoke(8C050766)
+DEFINE _UpdateStationaryEmitters(8C0118FC)
+DEFINE _UpdateVisuals(8C05FEB0)
+DEFINE _Update_MDrive(8C03E01C)
+DEFINE _WorldFogDensity(8C066278)
+DEFINE _ZOID_Reset(8C0686F4)
+DEFINE _ZOID_ResetWindows(8C0693C4)
+DEFINE _ZOID_SetFog(8C06967C)
+DEFINE _ZOID_SplitScreen(8C069798)
+DEFINE _are_all_cars_stopped(8C03FB9C)
+DEFINE _carsetup_flag(8C12C6A0)
+DEFINE _checkForExit(8C03A360)
+DEFINE _cur_drone(8C14CB88)
+DEFINE _drones(8C14CB74)
+DEFINE _gAPlayerReallyFinished(8C12C6A8)
+DEFINE _gCamera(8C12B648)
+DEFINE _gCarTeam(8C15D020)
+DEFINE _gCatchup(8C14CBAE)
+DEFINE _gCircuitCars(8C12BEC6)
+DEFINE _gCircuitPlayer(8C12BE4C)
+DEFINE _gCircuitTrack(8C12C08E)
+DEFINE _gControllerData(8C12C114)
+DEFINE _gDeathWaitEnd(8C14CBA0)
+DEFINE _gExitGame(8C0BEBBC)
+DEFINE _gGameCar(8C004000)
+DEFINE _gGameCheatStateBytes(8C0BEE9F)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gGhosts(8C15046C)
+DEFINE _gGravity(8C12C56C)
+DEFINE _gGravityScale(8C14C5F8)
+DEFINE _gLink(8C12C5A4)
+DEFINE _gNewGameState(8C0BFD40)
+DEFINE _gNumActiveCars(8C14CB86)
+DEFINE _gNumCars(8C14CB84)
+DEFINE _gNumPlayers(8C14CBB0)
+DEFINE _gNumWindows(8C12B644)
+DEFINE _gPakInserted(8C1503E0)
+DEFINE _gPauseState(8C0BFA78)
+DEFINE _gPlayers(8C006000)
+DEFINE _gRetraceRate(8C0B8C28)
+DEFINE _gSkipToGameState(8C0BFD44)
+DEFINE _gStuntPlayer(8C14FBE4)
+DEFINE _gTeamPoints(8C12C8AC)
+DEFINE _gTrackNum(8C15C9C0)
+DEFINE _gUpsideDownTrack(8C12B8A8)
+DEFINE _gUseCatchup(8C14CBAF)
+DEFINE _game_ControllerBypass(8C06CA44)
+DEFINE _game_InactiveDescription(8C0BDDD4)
+DEFINE _game_InactiveSeconds(8C01FDA8)
+DEFINE _game_Localized(8C15C990)
+DEFINE _game_WarningPlayer(8C12C6AC)
+DEFINE _init_cars(8C03D858)
+DEFINE _init_model_task(8C03E21C)
+DEFINE _init_views(8C018E60)
+DEFINE _memset(8C09BE04)
+DEFINE _model(8C14CBB4)
+DEFINE _modelstop(8C03EE5E)
+DEFINE _munge_gLink_data(8C03D654)
+DEFINE _new_sched_to_use(8C14CB8A)
+DEFINE _num_drones(8C14CB82)
+DEFINE _num_humans(8C14CB80)
+DEFINE _num_our_drones(8C14CB9C)
+DEFINE _our_drones(8C14CB90)
+DEFINE _sched_index(8C14CB8C)
+DEFINE _sched_to_use(8C14CB8E)
+DEFINE _setGameState(8C05137C)
+DEFINE _sprintf(8C09BF0C)
+DEFINE _unitmatrix(8C0BD924)
+DEFINE _updateFrontEnd(8C027164)
+DEFINE _updateGameOverScreen(8C0291CC)
+DEFINE _updateGameState(8C051358)
+DEFINE _updateHighScoreScreen(8C030ACC)
+DEFINE _updateSelectPauseScreen(8C04692E)
+DEFINE _updateTitleScreen(8C08CF50)
+PRINT game.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C0278C0  -  H'8C029237  H'00001978
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0278C0  -  H'8C029237  H'00001978
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AA988  -  H'8C0AA9D0  H'00000049
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AA988  -  H'8C0AA9D0  H'00000049
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BDD54  -  H'8C0BDDD3  H'00000080
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BDD54  -  H'8C0BDDD3  H'00000080
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C12C628  -  H'8C12C65F  H'00000038
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C12C628  -  H'8C12C65F  H'00000038
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_AbortGame                        H'8C028CC4               ENT
+_CarSetup                         H'8C028E3C               ENT
+_GameLoop                         H'8C0278C0               ENT
+_OncePerFrame                     H'8C0279D6               ENT
+_PlayGame                         H'8C028940               ENT
+_PrePlay                          H'8C028322               ENT
+_UpdateFrame                      H'8C027AFC               ENT
+__CalcPolePositions               H'8C028F1C               ENT
+__CheckButtons                    H'8C028EC6               ENT
+__EndGame                         H'8C028DC8               ENT
+__UpdateGame                      H'8C027B48               ENT
+_flashColors                      H'8C0BDDB8               DAT
+_func_8C0279EA                    H'8C0279EA               ENT
+_func_8C02901E                    H'8C029086               ENT
+_func_8C0291A6                    H'8C029218               ENT
+_gBackwards                       H'8C12C657               DAT
+_gBattleMode                      H'8C12C640               DAT
+_gBattleModeMins                  H'8C12C644               DAT
+_gBattleModePoints                H'8C12C648               DAT
+_gCoastFlag                       H'8C12C64C               DAT
+_gDeathMode                       H'8C12C656               DAT
+_gDifficulty                      H'8C12C650               DAT
+_gEndGame                         H'8C12C64E               DAT
+_gFogColor                        H'8C12C658               DAT
+_gFogColors                       H'8C0BDD56               DAT
+_gFrames                          H'8C12C65C               DAT
+_gGamePointPlayed                 H'8C0BDD55               DAT
+_gGhostSelect                     H'8C12C651               DAT
+_gNumDrones                       H'8C12C652               DAT
+_gNumLaps                         H'8C12C654               DAT
+_gOutOfTime                       H'8C12C64D               DAT
+_gRace                            H'8C12C628               DAT
+_gRestartGame                     H'8C0BDD54               DAT
+_gRetireGame                      H'8C12C64F               DAT
+_gStuntFlow                       H'8C12C630               DAT
+_gStuntMode                       H'8C12C62C               DAT
+_gStuntModeDeaths                 H'8C12C63C               DAT
+_gStuntModeMins                   H'8C12C634               DAT
+_gStuntModePoints                 H'8C12C638               DAT
+_gravityArray                     H'8C0AA988               DAT
+_inactiveBlit                     H'8C0BDDC0               DAT
+_playerTextColor                  H'8C0BDDA8               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AreWeSolid                                                         H'8C04AA34
+_AudKillSong                                                        H'8C01450E
+_AudSetMusicVol                                                     H'8C014F8C
+_AudStopAllEffects                                                  H'8C014ADC
+_CalcRaceTime                                                       H'8C01C518
+_CheckCPs                                                           H'8C01BCF2
+_CheckForStunt                                                      H'8C055AAC
+_CheckTargetCollision                                               H'8C0584E8
+_ClearRushControls                                                  H'8C01E8C2
+_CountDown                                                          H'8C0228E8
+_CountdownTimeOut                                                   H'8C0101FC
+_CrashedStunt                                                       H'8C054D32
+_DetectDroneAbort                                                   H'8C04A558
+_DoDrones                                                           H'8C025580
+_EmitGameSound                                                      H'8C01164C
+_EnableGameSounds                                                   H'8C0115D8
+_EndGraphics                                                        H'8C02E390
+_End_MDrive                                                         H'8C03FAD8
+_ExitSystem                                                         H'8C039718
+_FindWinner                                                         H'8C02B1D4
+_GetResPt                                                           H'8C048A4C
+_GhostEnd                                                           H'8C02EBC6
+_GhostStart                                                         H'8C02E4B0
+_HAL_CallOncePerFrameFuncs                                          H'8C02FD68
+_HAL_GetTextWidth                                                   H'8C02F502
+_HAL_SetFont                                                        H'8C02EF96
+_HFOV                                                               H'8C17798C
+_InitBattlePlayer                                                   H'8C09939C
+_InitBattlePoints                                                   H'8C02C582
+_InitBlits                                                          H'8C018790
+_InitCPS                                                            H'8C01BB02
+_InitCPTime                                                         H'8C01BB12
+_InitDrones                                                         H'8C02555C
+_InitSmokeBlast                                                     H'8C04F5B4
+_InitStunt                                                          H'8C054CC8
+_InitTextureAnimation                                               H'8C05B2E4
+_InitWaves                                                          H'8C064FDC
+_Init_MDrive                                                        H'8C03DF34
+_LoadTrack                                                          H'8C05BED8
+_NewMultiBlit                                                       H'8C018B56
+_PS_ErrorFunc                                                       H'8C044584
+_PS_RumbleGo                                                        H'8C06E7B4
+_PakErrorActive                                                     H'8C0440E6
+_PlayGameSound                                                      H'8C011606
+_Random                                                             H'8C027134
+_ReloadTrack                                                        H'8C05C292
+_RemoveBlit                                                         H'8C0187BA
+_RemoveEnvirons                                                     H'8C05FE72
+_RemoveHUD                                                          H'8C034A8C
+_RemoveMultiplayerHUD                                               H'8C034B82
+_ResetHighScores                                                    H'8C02C494
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_SaveServer                                                         H'8C04B746
+_SetCameraView                                                      H'8C019048
+_SetCountdownTimer                                                  H'8C010176
+_SetOptions                                                         H'8C041690
+_SetupCar                                                           H'8C05F730
+_ShotInit                                                           H'8C097110
+_ShotUpdate                                                         H'8C098622
+_ShowCountdown                                                      H'8C022654
+_ShowHUD                                                            H'8C03478C
+_StartBlast                                                         H'8C062C44
+_StartEnvironment                                                   H'8C05FAF8
+_StartGameMusic                                                     H'8C011714
+_StartGraphics                                                      H'8C02E350
+_StartListeners                                                     H'8C011726
+_StopCarSounds                                                      H'8C01375C
+_StopListeners                                                      H'8C01189A
+_TB_DrawText                                                        H'8C05ACA6
+_TB_SetTextColor                                                    H'8C05A742
+_TextureAnimation                                                   H'8C05B3C6
+_UnloadTrack                                                        H'8C05C2A2
+_UpdateArrowVis                                                     H'8C063F74
+_UpdateBattlePowerUps                                               H'8C0962A8
+_UpdateBlit                                                         H'8C018910
+_UpdateFrameTimer                                                   H'8C01010A
+_UpdateGraphics                                                     H'8C02E406
+_UpdateRushControls                                                 H'8C01E8F8
+_UpdateSmoke                                                        H'8C050766
+_UpdateStationaryEmitters                                           H'8C0118FC
+_UpdateVisuals                                                      H'8C05FEB0
+_Update_MDrive                                                      H'8C03E01C
+_WorldFogDensity                                                    H'8C066278
+_ZOID_Reset                                                         H'8C0686F4
+_ZOID_ResetWindows                                                  H'8C0693C4
+_ZOID_SetFog                                                        H'8C06967C
+_ZOID_SplitScreen                                                   H'8C069798
+_are_all_cars_stopped                                               H'8C03FB9C
+_carsetup_flag                                                      H'8C12C6A0
+_checkForExit                                                       H'8C03A360
+_cur_drone                                                          H'8C14CB88
+_drones                                                             H'8C14CB74
+_gAPlayerReallyFinished                                             H'8C12C6A8
+_gCamera                                                            H'8C12B648
+_gCarTeam                                                           H'8C15D020
+_gCatchup                                                           H'8C14CBAE
+_gCircuitCars                                                       H'8C12BEC6
+_gCircuitPlayer                                                     H'8C12BE4C
+_gCircuitTrack                                                      H'8C12C08E
+_gControllerData                                                    H'8C12C114
+_gDeathWaitEnd                                                      H'8C14CBA0
+_gExitGame                                                          H'8C0BEBBC
+_gGameCar                                                           H'8C004000
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     3
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_gGameCheatStateBytes                                               H'8C0BEE9F
+_gGameState                                                         H'8C0BFD3C
+_gGhosts                                                            H'8C15046C
+_gGravity                                                           H'8C12C56C
+_gGravityScale                                                      H'8C14C5F8
+_gLink                                                              H'8C12C5A4
+_gNewGameState                                                      H'8C0BFD40
+_gNumActiveCars                                                     H'8C14CB86
+_gNumCars                                                           H'8C14CB84
+_gNumPlayers                                                        H'8C14CBB0
+_gNumWindows                                                        H'8C12B644
+_gPakInserted                                                       H'8C1503E0
+_gPauseState                                                        H'8C0BFA78
+_gPlayers                                                           H'8C006000
+_gRetraceRate                                                       H'8C0B8C28
+_gSkipToGameState                                                   H'8C0BFD44
+_gStuntPlayer                                                       H'8C14FBE4
+_gTeamPoints                                                        H'8C12C8AC
+_gTrackNum                                                          H'8C15C9C0
+_gUpsideDownTrack                                                   H'8C12B8A8
+_gUseCatchup                                                        H'8C14CBAF
+_game_ControllerBypass                                              H'8C06CA44
+_game_InactiveDescription                                           H'8C0BDDD4
+_game_InactiveSeconds                                               H'8C01FDA8
+_game_Localized                                                     H'8C15C990
+_game_WarningPlayer                                                 H'8C12C6AC
+_init_cars                                                          H'8C03D858
+_init_model_task                                                    H'8C03E21C
+_init_views                                                         H'8C018E60
+_memset                                                             H'8C09BE04
+_model                                                              H'8C14CBB4
+_modelstop                                                          H'8C03EE5E
+_munge_gLink_data                                                   H'8C03D654
+_new_sched_to_use                                                   H'8C14CB8A
+_num_drones                                                         H'8C14CB82
+_num_humans                                                         H'8C14CB80
+_num_our_drones                                                     H'8C14CB9C
+_our_drones                                                         H'8C14CB90
+_sched_index                                                        H'8C14CB8C
+_sched_to_use                                                       H'8C14CB8E
+_setGameState                                                       H'8C05137C
+_sprintf                                                            H'8C09BF0C
+_unitmatrix                                                         H'8C0BD924
+_updateFrontEnd                                                     H'8C027164
+_updateGameOverScreen                                               H'8C0291CC
+_updateGameState                                                    H'8C051358
+_updateHighScoreScreen                                              H'8C030ACC
+_updateSelectPauseScreen                                            H'8C04692E
+_updateTitleScreen                                                  H'8C08CF50

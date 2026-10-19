@@ -1,0 +1,241 @@
+{
+  "name": "stunt",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/stunt.c",
+  "source_sha256": "74ebb7f0bf30d52a2cca4a64be3d6fa6e70628a76710e2bbedbabe2f50f52565",
+  "text": [
+    "8C054CC8",
+    "8C055F38"
+  ],
+  "text_bytes": 4720,
+  "exact_text_bytes": 1168,
+  "align_bytes": 0,
+  "data_bytes": 0,
+  "exact_data_bytes": 0,
+  "functions_total": 13,
+  "functions_exact": 7,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitStunt",
+      "start": "8C054CC8",
+      "end": "8C054CE8",
+      "size": 32,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C054CC8",
+      "linked_size": 106
+    },
+    {
+      "name": "ResetStunts",
+      "start": "8C054CE8",
+      "end": "8C054D32",
+      "size": 74,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "CrashedStunt",
+      "start": "8C054D32",
+      "end": "8C054D7A",
+      "size": 72,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C054D32",
+      "linked_size": 3450
+    },
+    {
+      "name": "_AddStunt",
+      "start": "8C054D98",
+      "end": "8C0550BC",
+      "size": 804,
+      "status": "differs",
+      "diff_bytes": 25,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_CheckAirTime",
+      "start": "8C0550CC",
+      "end": "8C055164",
+      "size": 152,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_CheckRoll",
+      "start": "8C055164",
+      "end": "8C05531E",
+      "size": 442,
+      "status": "differs",
+      "diff_bytes": 65,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_CheckSpin",
+      "start": "8C05531E",
+      "end": "8C05549C",
+      "size": 382,
+      "status": "differs",
+      "diff_bytes": 359,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_CheckFlip",
+      "start": "8C0554D0",
+      "end": "8C055648",
+      "size": 376,
+      "status": "differs",
+      "diff_bytes": 330,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_CheckMulti",
+      "start": "8C055648",
+      "end": "8C05577E",
+      "size": 310,
+      "status": "differs",
+      "diff_bytes": 219,
+      "note": "symbol not in the compiled object"
+    },
+    {
+      "name": "_Check2WheelSide",
+      "start": "8C055790",
+      "end": "8C055832",
+      "size": 162,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_Check2WheelFront",
+      "start": "8C055850",
+      "end": "8C055974",
+      "size": 292,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "_Check2WheelBack",
+      "start": "8C055988",
+      "end": "8C055AAC",
+      "size": 292,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "CheckForStunt",
+      "start": "8C055AAC",
+      "end": "8C055F08",
+      "size": 1116,
+      "status": "differs",
+      "diff_bytes": 843,
+      "linked_at": "8C055AAC",
+      "linked_size": 1144
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C054D7A",
+      "end": "8C054D98",
+      "exact": true,
+      "built": 30,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C0550BC",
+      "end": "8C0550CC",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C05549C",
+      "end": "8C0554D0",
+      "exact": false,
+      "built": 52,
+      "diff_bytes": 43
+    },
+    {
+      "kind": "pool",
+      "start": "8C05577E",
+      "end": "8C055790",
+      "exact": false,
+      "built": 18,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C055832",
+      "end": "8C055850",
+      "exact": true,
+      "built": 30,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C055974",
+      "end": "8C055988",
+      "exact": true,
+      "built": 20,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C055F08",
+      "end": "8C055F38",
+      "exact": false,
+      "built": 28,
+      "diff_bytes": 46
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C1583B0",
+      "end": "8C1585D4",
+      "exact": true,
+      "linked": [
+        "8C1583B0",
+        "8C1585D4"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:58:08",
+  "defines": {
+    "_gCoastFlag": "8C12C64C",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameCar": "8C004000",
+    "_gModelTime": "8C14CB64",
+    "_gNumPlayers": "8C14CBB0",
+    "_gStuntPlayer": "8C14FBE4",
+    "_gStuntsDone": "8C14FDC4",
+    "_memset": "8C09BE04",
+    "_model": "8C14CBB4"
+  },
+  "starts": {
+    "P": "8C054CC8",
+    "B": "8C1583B0"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C054CC8",
+      "length": 4700
+    },
+    {
+      "name": "B",
+      "address": "8C1583B0",
+      "length": 548
+    }
+  ],
+  "equal_text_bytes_including_fill": 1172,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 0,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -20,
+  "seconds": 2.0
+}

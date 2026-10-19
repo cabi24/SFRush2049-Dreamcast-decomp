@@ -1,0 +1,163 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT pakerr.abs
+FORM A
+START P(8C0435F4)
+START C(8C0AC2DC)
+START D(8C0BF760)
+DEFINE _AudPlayEffect(8C014552)
+DEFINE _GetControllerActive(8C01F154)
+DEFINE _GetControllerStickEdges(8C01F1B0)
+DEFINE _HAL_SetFont(8C02EF96)
+DEFINE _NewMultiBlit(8C018B56)
+DEFINE _PS_PakRumble(8C06D48A)
+DEFINE _PlayLRSound(8C0115A4)
+DEFINE _PlayStartABSound(8C011586)
+DEFINE _RemoveBlit(8C0187BA)
+DEFINE _SaveServer(8C04B746)
+DEFINE _SetControllerActive(8C01F180)
+DEFINE _SetControllerStickEdges(8C01F1DC)
+DEFINE _TB_CenterText(8C05A708)
+DEFINE _TB_DrawText(8C05ACA6)
+DEFINE _TB_DrawTextScrollBox(8C05ADE4)
+DEFINE _TB_GetFontLineHeight(8C05A828)
+DEFINE _TB_SetJust(8C05A73A)
+DEFINE _TB_SetTextColor(8C05A742)
+DEFINE _TB_Strcat(8C05AB3A)
+DEFINE _TB_Strcpy(8C05AAE6)
+DEFINE _UpdateBlit(8C018910)
+DEFINE _UpdateFrame(8C027AFC)
+DEFINE _UpdateRushControls(8C01E8F8)
+DEFINE _ZOID_GetFog(8C0696E8)
+DEFINE _ZOID_SetFog(8C06967C)
+DEFINE _gActiveEdges(8C12C1B4)
+DEFINE _gActiveLevels(8C12C1B8)
+DEFINE _gFrameCounter(8C12253C)
+DEFINE _gGameState(8C0BFD3C)
+DEFINE _gNumWindows(8C12B644)
+DEFINE _gPS_ContName(8C0C9714)
+DEFINE _gPS_PakName(8C0C96F4)
+DEFINE _gPakError(8C14FE9C)
+DEFINE _gRetraceRate(8C0B8C28)
+DEFINE _gText(8C15C98C)
+DEFINE _sprintf(8C09BF0C)
+PRINT pakerr.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C0435F4  -  H'8C0446F3  H'00001100
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0435F4  -  H'8C0446F3  H'00001100
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AC2DC  -  H'8C0AC337  H'0000005C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AC2DC  -  H'8C0AC337  H'0000005C
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0BF760  -  H'8C0BF765  H'00000006
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0BF760  -  H'8C0BF765  H'00000006
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_CancelPakError                   H'8C044110               ENT
+_PS_ErrorFunc                     H'8C044578               ENT
+_PakErrorActive                   H'8C0440E4               ENT
+_SetPakError                      H'8C043EBC               ENT
+_ShowPakError                     H'8C044154               ENT
+__AnimDim                         H'8C0446AA               ENT
+__ControlChoice                   H'8C0435F4               ENT
+__ControlPakErrNQA                H'8C04365A               ENT
+__ControlPakErrTimeout            H'8C043698               ENT
+__DrawChoice                      H'8C043778               ENT
+__DrawPakErrBadData               H'8C043E00               ENT
+__DrawPakErrFull                  H'8C043D64               ENT
+__DrawPakErrInconsistent          H'8C043D1E               ENT
+__DrawPakErrNQA                   H'8C043BC4               ENT
+__DrawPakErrNewPak                H'8C043C4A               ENT
+__DrawPakErrNoController          H'8C0438E4               ENT
+__DrawPakErrNoPak                 H'8C0439AE               ENT
+__DrawPakErrUnknown               H'8C043E46               ENT
+__DrawPakHeading                  H'8C0436C0               ENT
+_byte_8C0BF760                    H'8C0BF760               DAT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AudPlayEffect                                                      H'8C014552
+_GetControllerActive                                                H'8C01F154
+_GetControllerStickEdges                                            H'8C01F1B0
+_HAL_SetFont                                                        H'8C02EF96
+_NewMultiBlit                                                       H'8C018B56
+_PS_PakRumble                                                       H'8C06D48A
+_PlayLRSound                                                        H'8C0115A4
+_PlayStartABSound                                                   H'8C011586
+_RemoveBlit                                                         H'8C0187BA
+_SaveServer                                                         H'8C04B746
+_SetControllerActive                                                H'8C01F180
+_SetControllerStickEdges                                            H'8C01F1DC
+_TB_CenterText                                                      H'8C05A708
+_TB_DrawText                                                        H'8C05ACA6
+_TB_DrawTextScrollBox                                               H'8C05ADE4
+_TB_GetFontLineHeight                                               H'8C05A828
+_TB_SetJust                                                         H'8C05A73A
+_TB_SetTextColor                                                    H'8C05A742
+_TB_Strcat                                                          H'8C05AB3A
+_TB_Strcpy                                                          H'8C05AAE6
+_UpdateBlit                                                         H'8C018910
+_UpdateFrame                                                        H'8C027AFC
+_UpdateRushControls                                                 H'8C01E8F8
+_ZOID_GetFog                                                        H'8C0696E8
+_ZOID_SetFog                                                        H'8C06967C
+_gActiveEdges                                                       H'8C12C1B4
+_gActiveLevels                                                      H'8C12C1B8
+_gFrameCounter                                                      H'8C12253C
+_gGameState                                                         H'8C0BFD3C
+_gNumWindows                                                        H'8C12B644
+_gPS_ContName                                                       H'8C0C9714
+_gPS_PakName                                                        H'8C0C96F4
+_gPakError                                                          H'8C14FE9C
+_gRetraceRate                                                       H'8C0B8C28
+_gText                                                              H'8C15C98C
+_sprintf                                                            H'8C09BF0C

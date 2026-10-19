@@ -1,0 +1,108 @@
+{
+  "unit": "zoid",
+  "verdict": "keep",
+  "dirty": {
+    "status": "partial",
+    "functions_exact": 18,
+    "functions_total": 21,
+    "functions_moved": 0,
+    "exact_text_bytes": 1092,
+    "equal_text_bytes_including_fill": 1094,
+    "text_bytes": 1592,
+    "exact_data_bytes": 0,
+    "source_sha256": "0d60367ca4006eaff52f810aae3d7c75fddc5aae24fba0852666e228f52025a1"
+  },
+  "head": {
+    "status": "partial",
+    "functions_exact": 7,
+    "functions_total": 21,
+    "functions_moved": 1,
+    "exact_text_bytes": 440,
+    "equal_text_bytes_including_fill": 442,
+    "text_bytes": 1592,
+    "exact_data_bytes": 0,
+    "source_sha256": "353f9f8ac2ddfd9d5e5c40bf96a6b305923058637c2402184385a8c64b50aabe"
+  },
+  "gains_dirty_over_head": [
+    {
+      "name": "ZOID_AddObject",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 208
+    },
+    {
+      "name": "ZOID_InsertObject",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 100
+    },
+    {
+      "name": "ZOID_LastSibling",
+      "dirty": "exact",
+      "head": "moved",
+      "size": 34
+    },
+    {
+      "name": "ZOID_ObjPrevObj",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 46
+    },
+    {
+      "name": "ZOID_ObjectFlags",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 12
+    },
+    {
+      "name": "ZOID_RemoveObject",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 14
+    },
+    {
+      "name": "ZOID_RemoveObjectTree",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 4
+    },
+    {
+      "name": "ZOID_SetObjectDef",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 12
+    },
+    {
+      "name": "ZOID_SetObjectFlags",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 12
+    },
+    {
+      "name": "ZOID_TrueObjParent",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 86
+    },
+    {
+      "name": "func_8C068C68",
+      "dirty": "exact",
+      "head": "differs",
+      "size": 94
+    }
+  ],
+  "losses_dirty_vs_head": [],
+  "text_bytes_dirty": 1092,
+  "text_bytes_head": 440,
+  "report_consistency": {
+    "report_functions_exact": 18,
+    "dirty_rebuild_functions_exact": 18,
+    "report_exact_text_bytes": 1092,
+    "dirty_rebuild_exact_text_bytes": 1092,
+    "report_source_sha256": "0d60367ca4006eaff52f810aae3d7c75fddc5aae24fba0852666e228f52025a1",
+    "dirty_source_sha256": "0d60367ca4006eaff52f810aae3d7c75fddc5aae24fba0852666e228f52025a1",
+    "match": true
+  },
+  "head_source_sha256": "353f9f8ac2ddfd9d5e5c40bf96a6b305923058637c2402184385a8c64b50aabe",
+  "seconds": 4.9
+}

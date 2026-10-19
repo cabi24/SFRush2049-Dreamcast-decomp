@@ -159,10 +159,12 @@ void ZOID_RemovePoly(tPoly *poly)
 
     poly->nverts = 0;
     if (poly == &PolyInstanceList[*num - 1]) {
-        do {
+        for (;;) {
             (*num)--;
             poly--;
-        } while (poly->nverts == 0 && *num > 0);
+            if (poly->nverts != 0) break;
+            if (*num <= 0) break;
+        }
     }
 }
 

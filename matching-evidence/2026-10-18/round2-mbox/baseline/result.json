@@ -1,0 +1,253 @@
+{
+  "name": "mbox",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/mbox.c",
+  "source_sha256": "a78c06f4afc3b21dec4287b6209fe669de8bf2050564606737ded59f4d942df1",
+  "text": [
+    "8C03D090",
+    "8C03D654"
+  ],
+  "text_bytes": 1476,
+  "exact_text_bytes": 530,
+  "align_bytes": 0,
+  "data_bytes": 523,
+  "exact_data_bytes": 523,
+  "functions_total": 13,
+  "functions_exact": 6,
+  "functions_moved": 2,
+  "functions": [
+    {
+      "name": "MBOX_NewObject",
+      "start": "8C03D090",
+      "end": "8C03D0A2",
+      "size": 18,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D090",
+      "linked_size": 18
+    },
+    {
+      "name": "MBOX_NewObjectCam",
+      "start": "8C03D0A2",
+      "end": "8C03D0C8",
+      "size": 38,
+      "status": "differs",
+      "diff_bytes": 32,
+      "linked_at": "8C03D0A2",
+      "linked_size": 36
+    },
+    {
+      "name": "MBOX_GetChild",
+      "start": "8C03D0C8",
+      "end": "8C03D0D4",
+      "size": 12,
+      "status": "moved",
+      "diff_bytes": 10,
+      "linked_at": "8C03D0C6",
+      "linked_size": 12
+    },
+    {
+      "name": "MBOX_GetNext",
+      "start": "8C03D0D4",
+      "end": "8C03D0E0",
+      "size": 12,
+      "status": "moved",
+      "diff_bytes": 10,
+      "linked_at": "8C03D0D2",
+      "linked_size": 12
+    },
+    {
+      "name": "MBOX_HideObject",
+      "start": "8C03D0E0",
+      "end": "8C03D1A6",
+      "size": 198,
+      "status": "differs",
+      "diff_bytes": 76,
+      "linked_at": "8C03D0DE",
+      "linked_size": 230
+    },
+    {
+      "name": "MBOX_ShowObject",
+      "start": "8C03D1C4",
+      "end": "8C03D286",
+      "size": 194,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D1C4",
+      "linked_size": 234
+    },
+    {
+      "name": "objcmp",
+      "start": "8C03D286",
+      "end": "8C03D2AE",
+      "size": 40,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "MBOX_GetPosition",
+      "start": "8C03D2AE",
+      "end": "8C03D338",
+      "size": 138,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D2AE",
+      "linked_size": 162
+    },
+    {
+      "name": "MBOX_GetObjectRadius",
+      "start": "8C03D350",
+      "end": "8C03D390",
+      "size": 64,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C03D350",
+      "linked_size": 64
+    },
+    {
+      "name": "MBOX_FindObject_WORK",
+      "start": "8C03D390",
+      "end": "8C03D494",
+      "size": 260,
+      "status": "differs",
+      "diff_bytes": 95,
+      "linked_at": "8C03D390",
+      "linked_size": 282
+    },
+    {
+      "name": "texcmp",
+      "start": "8C03D494",
+      "end": "8C03D4AA",
+      "size": 22,
+      "status": "exact",
+      "diff_bytes": 0
+    },
+    {
+      "name": "MBOX_FindTexture_WORK",
+      "start": "8C03D4AA",
+      "end": "8C03D56E",
+      "size": 196,
+      "status": "differs",
+      "diff_bytes": 106,
+      "linked_at": "8C03D4AA",
+      "linked_size": 196
+    },
+    {
+      "name": "func_8C03D56E",
+      "start": "8C03D56E",
+      "end": "8C03D630",
+      "size": 194,
+      "status": "differs",
+      "diff_bytes": 102,
+      "linked_at": "8C03D56E",
+      "linked_size": 230
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C03D1A6",
+      "end": "8C03D1C4",
+      "exact": true,
+      "built": 30,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C03D338",
+      "end": "8C03D350",
+      "exact": true,
+      "built": 24,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C03D630",
+      "end": "8C03D654",
+      "exact": false,
+      "built": 36,
+      "diff_bytes": 6
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0AC0B8",
+      "end": "8C0AC0C3",
+      "exact": true,
+      "built": 11,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BEBE8",
+      "end": "8C0BEDE8",
+      "exact": true,
+      "built": 512,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C14C71C",
+      "end": "8C14CB1D",
+      "exact": true,
+      "linked": [
+        "8C14C71C",
+        "8C14CB1D"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:01:16",
+  "defines": {
+    "_ModelActive": "8C0656B4",
+    "_ObjInstanceList": "8C160870",
+    "_ZOID_AddObject": "8C0689A0",
+    "_ZOID_ObjectFlags": "8C068D0E",
+    "_ZOID_SetObjectFlags": "8C068D1A",
+    "_ZOID_TrueObjParent": "8C068896",
+    "__divls": "8C09B680",
+    "__slow_strcmp1": "8C09BB5C",
+    "__slow_strcpy": "8C09BB0C",
+    "_bsearch": "8C09BC04",
+    "_strncmp": "8C09BF58",
+    "_strncpy": "8C09BF98"
+  },
+  "starts": {
+    "P": "8C03D090",
+    "C": "8C0AC0B8",
+    "D": "8C0BEBE8",
+    "B": "8C14C71C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C03D090",
+      "length": 1476
+    },
+    {
+      "name": "C",
+      "address": "8C0AC0B8",
+      "length": 11
+    },
+    {
+      "name": "D",
+      "address": "8C0BEBE8",
+      "length": 512
+    },
+    {
+      "name": "B",
+      "address": "8C14C71C",
+      "length": 1025
+    }
+  ],
+  "equal_text_bytes_including_fill": 530,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 523,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.0
+}

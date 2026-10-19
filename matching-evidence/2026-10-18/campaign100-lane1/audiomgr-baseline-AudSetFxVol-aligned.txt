@@ -1,0 +1,4 @@
+{'name': 'AudSetFxVol', 'start': '8C014F86', 'end': '8C014F8C', 'size': 6, 'status': 'moved', 'diff_bytes': 6, 'linked_at': '8C014F30', 'linked_size': 6}
+8C014F30 01e5 mov #1,r5                                  | 8C014F86 01e5 mov #1,r5
+8C014F32 b7af bra 0x8C014EA4                             | 8C014F88 b7af bra 0x8C014EFA
+8C014F34 00e4 mov #0,r4                                  | 8C014F8A 00e4 mov #0,r4

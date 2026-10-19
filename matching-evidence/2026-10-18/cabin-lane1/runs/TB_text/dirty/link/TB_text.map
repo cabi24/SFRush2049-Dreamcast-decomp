@@ -1,0 +1,127 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT TB_text.abs
+FORM A
+START P(8C05A6AC)
+START C(8C0AD628)
+START D(8C0C1770)
+START B(8C15C984)
+DEFINE _HAL_DrawText(8C02F658)
+DEFINE _HAL_GetCharWidth(8C02F46A)
+DEFINE _HAL_GetFontAscent(8C02F39C)
+DEFINE _HAL_GetFontDescent(8C02F3C4)
+DEFINE _HAL_GetFontLeading(8C02F3EC)
+DEFINE _HAL_GetFontSpacing(8C02F406)
+DEFINE _HAL_GetTextWidth(8C02F502)
+DEFINE _HAL_InstallOncePerFrameFunc(8C02FD2C)
+DEFINE _HAL_SetTextColor(8C02F1E0)
+DEFINE _HAL_SetTextPos(8C02F2B4)
+DEFINE __slow_mvn(8C09BAD4)
+DEFINE _gFrameSeconds(8C12254C)
+DEFINE _vsprintf(8C09C044)
+PRINT TB_text.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C05A6AC  -  H'8C05B09B  H'000009F0
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C05A6AC  -  H'8C05B09B  H'000009F0
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AD628  -  H'8C0AD6AB  H'00000084
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AD628  -  H'8C0AD6AB  H'00000084
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+D                                 H'8C0C1770  -  H'8C0C1837  H'000000C8
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0C1770  -  H'8C0C1837  H'000000C8
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+B                                 H'8C15C984  -  H'8C15C987  H'00000004
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C15C984  -  H'8C15C987  H'00000004
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_TB_CenterText                    H'8C05A708               ENT
+_TB_DrawEllipseText               H'8C05AD4C               ENT
+_TB_DrawText                      H'8C05ACA6               ENT
+_TB_DrawTextC                     H'8C05AD92               ENT
+_TB_DrawTextScrollBox             H'8C05ADE4               ENT
+_TB_EllipseText                   H'8C05A988               ENT
+_TB_FlashTextColors               H'8C05A7FA               ENT
+_TB_GetFlashTextCycle             H'8C05A808               ENT
+_TB_GetFontHeight                 H'8C05A80E               ENT
+_TB_GetFontLineHeight             H'8C05A828               ENT
+_TB_GetTextNumLines               H'8C05A88C               ENT
+_TB_Printf                        H'8C05AC50               ENT
+_TB_RightText                     H'8C05A722               ENT
+_TB_SetJust                       H'8C05A73A               ENT
+_TB_SetTextColor                  H'8C05A742               ENT
+_TB_Sprintf                       H'8C05AC1E               ENT
+_TB_Strcat                        H'8C05AB3A               ENT
+_TB_Strcpy                        H'8C05AAE6               ENT
+_TB_Strlen                        H'8C05AAAC               ENT
+_TB_TextInit                      H'8C05A6AC               ENT
+_TB_TextOncePerFrame              H'8C05A6CA               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_HAL_DrawText                                                       H'8C02F658
+_HAL_GetCharWidth                                                   H'8C02F46A
+_HAL_GetFontAscent                                                  H'8C02F39C
+_HAL_GetFontDescent                                                 H'8C02F3C4
+_HAL_GetFontLeading                                                 H'8C02F3EC
+_HAL_GetFontSpacing                                                 H'8C02F406
+_HAL_GetTextWidth                                                   H'8C02F502
+_HAL_InstallOncePerFrameFunc                                        H'8C02FD2C
+_HAL_SetTextColor                                                   H'8C02F1E0
+_HAL_SetTextPos                                                     H'8C02F2B4
+__slow_mvn                                                          H'8C09BAD4
+_gFrameSeconds                                                      H'8C12254C
+_vsprintf                                                           H'8C09C044

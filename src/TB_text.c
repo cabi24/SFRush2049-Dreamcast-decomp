@@ -1,5 +1,6 @@
 /* TB_text.c - Text layout, formatting, and byte/double-byte string helpers. Status: in progress.
    Original: D:\rush_ngc\Rush_NGC\GameSource\src\TB_text.c; assembly: build/2049LE/asm/GameSource/src/TB_text.s */
+#pragma inline(TB_CenterText,TB_RightText,TB_GetFontHeight)
 #include "TB_text_types.h"
 void TB_TextInit(void);
 void TB_TextOncePerFrame(void);
@@ -210,7 +211,7 @@ void * TB_Strcpy(void * str1, void * str2)
 /* 0x8004f8d0, size 0x160 */
 void * TB_Strcat(void * str1, void * str2)
 {
-    unsigned char *s1=str1; unsigned char temp[256]; const unsigned char *s2=str2; unsigned char *s=str1; unsigned char *t;
+    unsigned char *s=str1; unsigned char *s1=str1; unsigned char temp[256]; const unsigned char *s2=str2; unsigned char *t;
     if (*s1 == 255 || *s2 == 255) {
         if (*s1 == 255) { s1++; while (s1[0] || s1[1]) s1+=2; }
         else {

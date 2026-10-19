@@ -1,0 +1,209 @@
+{
+  "name": "pane",
+  "kind": "game",
+  "status": "exact",
+  "source": "src/pane.c",
+  "source_sha256": "60713292b22353fb037e0f856ec587ee6e0e4ad664809cbdaeaa19c7058961b8",
+  "text": [
+    "8C044700",
+    "8C044C2C"
+  ],
+  "text_bytes": 1324,
+  "exact_text_bytes": 1320,
+  "align_bytes": 0,
+  "data_bytes": 512,
+  "exact_data_bytes": 480,
+  "functions_total": 5,
+  "functions_exact": 5,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "InitPane",
+      "start": "8C044700",
+      "end": "8C044812",
+      "size": 274,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C044700",
+      "linked_size": 284
+    },
+    {
+      "name": "ChangePaneSize",
+      "start": "8C04481C",
+      "end": "8C044914",
+      "size": 248,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C04481C",
+      "linked_size": 248
+    },
+    {
+      "name": "func_8C044914",
+      "start": "8C044914",
+      "end": "8C044B3C",
+      "size": 552,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C044914",
+      "linked_size": 552
+    },
+    {
+      "name": "RemovePanes",
+      "start": "8C044B3C",
+      "end": "8C044BC2",
+      "size": 134,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C044B3C",
+      "linked_size": 134
+    },
+    {
+      "name": "RemovePane",
+      "start": "8C044BC2",
+      "end": "8C044C20",
+      "size": 94,
+      "status": "exact",
+      "diff_bytes": 0,
+      "linked_at": "8C044BC2",
+      "linked_size": 106
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C044812",
+      "end": "8C04481C",
+      "exact": true,
+      "built": 10,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "pool",
+      "start": "8C044C20",
+      "end": "8C044C2C",
+      "exact": true,
+      "built": 12,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0BF768",
+      "end": "8C0BF968",
+      "exact": true,
+      "built": 512,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T19:44:11",
+  "defines": {
+    "_NewBlit": "8C018992",
+    "_RemoveBlit": "8C0187BA",
+    "_UpdateBlit": "8C018910"
+  },
+  "starts": {
+    "P": "8C044700",
+    "D": "8C0BF768"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C044700",
+      "length": 1324
+    },
+    {
+      "name": "D",
+      "address": "8C0BF768",
+      "length": 512
+    }
+  ],
+  "equal_text_bytes_including_fill": 1324,
+  "excluded_exact_text_fill_or_gaps": 4,
+  "equal_data_bytes_including_fill": 512,
+  "excluded_exact_data_fill": 32,
+  "excluded_data_padding": [
+    {
+      "start": "8C0BF772",
+      "end": "8C0BF774",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF792",
+      "end": "8C0BF794",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF7B2",
+      "end": "8C0BF7B4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF7D2",
+      "end": "8C0BF7D4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF7F2",
+      "end": "8C0BF7F4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF812",
+      "end": "8C0BF814",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF832",
+      "end": "8C0BF834",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF852",
+      "end": "8C0BF854",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF872",
+      "end": "8C0BF874",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF892",
+      "end": "8C0BF894",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF8B2",
+      "end": "8C0BF8B4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF8D2",
+      "end": "8C0BF8D4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF8F2",
+      "end": "8C0BF8F4",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF912",
+      "end": "8C0BF914",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF932",
+      "end": "8C0BF934",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    },
+    {
+      "start": "8C0BF952",
+      "end": "8C0BF954",
+      "reason": "gPaneBlits tBlitSet explicit pad0[2] at+A; shared type and InitPane prove stride20/blits+C."
+    }
+  ],
+  "text_size_delta": 0,
+  "seconds": 1.9
+}

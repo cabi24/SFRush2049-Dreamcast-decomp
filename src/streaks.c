@@ -56,7 +56,8 @@ void _AnimateStreakPolys(void)
                 if (sp->clr.c[3] < fade) {
                     goto remove;
                 }
-                sp->clr.c[3] = sp->clr.c[3] - fade;
+                fade = sp->clr.c[3] - fade;
+                sp->clr.c[3] = fade;
                 ZOID_UpdatePoly(sp->poly, 0, 0, 0, &sp->clr, 0, 0);
             }
         }

@@ -1,0 +1,119 @@
+{
+ "name": "streaks",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT streaks.abs",
+  "FORM A",
+  "START P(8C098E4C)",
+  "START D(8C0D1DE0)",
+  "START B(8C1A33F0)",
+  "DEFINE _FreeStatLLE(8C051400)",
+  "DEFINE _GetStatLLE(8C0513D8)",
+  "DEFINE _InitStatLL(8C05138C)",
+  "DEFINE _ZOID_NewPoly(8C068F28)",
+  "DEFINE _ZOID_RemovePoly(8C06926C)",
+  "DEFINE _ZOID_UpdatePoly(8C068FBE)",
+  "DEFINE _gFrameSeconds(8C12254C)",
+  "PRINT streaks.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\cabin-lane1\\runs\\streaks\\dirty\\obj\\streaks.obj",
+   "sha256": "05db3cfa466b9313939c2d9b561db69b6521e35252197d5c62371d6da18cfc0d"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C098E4C",
+   "length": 1360
+  },
+  {
+   "name": "D",
+   "address": "8C0D1DE0",
+   "length": 16
+  },
+  {
+   "name": "B",
+   "address": "8C1A33F0",
+   "length": 7448
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C098E4C",
+   "size": 234,
+   "exact": false,
+   "diff_bytes": 26,
+   "first_diff_offset": 174,
+   "sha256": "f37389f26f19943260bd733794c76ce2fec06d2ce845fd10eb6e2d3af84f9e4d"
+  },
+  {
+   "section": "P",
+   "address": "8C098F38",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "62500f722ea88c97c18243757f593e5aeb8c894f89b4c2f923f16d08870fb285"
+  },
+  {
+   "section": "P",
+   "address": "8C09902E",
+   "size": 8,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "19de31375c676f1b2559298ceea26d0aa8b23c53653976374a3e97b0c82bea8b"
+  },
+  {
+   "section": "P",
+   "address": "8C099038",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2a4b0577c8e5830f6ee392dd23cb3df7f6d8d07830b6b4031f597d2987b5a1e8"
+  },
+  {
+   "section": "P",
+   "address": "8C09912E",
+   "size": 130,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "ab0599ff8210d748f839ac5a6480a18dbd89300f605a6abb3a090a90edb52f12"
+  },
+  {
+   "section": "P",
+   "address": "8C0991B0",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "2b5d244542f64ab97b7c322731cfc65c02ebdc6d1e36fa1945daca29f89a584b"
+  },
+  {
+   "section": "P",
+   "address": "8C0992A6",
+   "size": 246,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "efdd40cfed09ad649b3d865948529a80397e9b7d8bc7e7af1853761c53685aa7"
+  },
+  {
+   "section": "D",
+   "address": "8C0D1DE0",
+   "size": 16,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "bea70405082cdd7691588543242111412b853ffd447b74ab383b6eed4447bb4f"
+  }
+ ],
+ "all_exact": false
+}

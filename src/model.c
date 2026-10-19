@@ -60,30 +60,33 @@ void SetCatchup(void)
         no_catchup();
         return;
     }
-    high_index = -1;
-    for (i = 0; i < 6; i++) {
-        if (model[i].in_game && gGameCar[i].dead < 2 && (model[i].drone_type == 2 || gDifficulty == 5)) {
-            if (high_index == -1) {
-                high_index = i;
-            } else if (gGameCar[i].distance > gGameCar[high_index].distance) {
-                high_index = i;
+    /* Target loads the shared scale into FR10 before the leader search. */
+    {
+        float catchup_scale = 0.100000002f;
+        high_index = -1;
+        for (i = 0; i < 6; i++) {
+            if (model[i].in_game && gGameCar[i].dead < 2 && (model[i].drone_type == 2 || gDifficulty == 5)) {
+                if (high_index == -1) {
+                    high_index = i;
+                } else if (gGameCar[i].distance > gGameCar[high_index].distance) {
+                    high_index = i;
+                }
             }
         }
-    }
-    firstdist = gGameCar[high_index].distance;
-    for (i = 0; i < 6; i++) {
-        if (model[i].in_game && gGameCar[i].dead < 2 && (model[i].drone_type == 2 || gDifficulty == 5)) {
-            lagdist = firstdist - gGameCar[i].distance;
-            if (lagdist > 1500.0f) {
-                target_catchup = 1.10000003f;
-            } else {
-                target_catchup = 1.0f + scalef(lagdist, 0.100000002f) / 1500.0f;
+        firstdist = gGameCar[high_index].distance;
+        for (i = 0; i < 6; i++) {
+            if (model[i].in_game && gGameCar[i].dead < 2 && (model[i].drone_type == 2 || gDifficulty == 5)) {
+                lagdist = firstdist - gGameCar[i].distance;
+                if (lagdist > 1500.0f) {
+                    target_catchup = 1.10000003f;
+                } else {
+                    target_catchup = 1.0f + scalef(lagdist, catchup_scale) / 1500.0f;
+                }
+                if (gUseCatchup == 1) {
+                    target_catchup = 1.0f + 0.5f * (1.0f - target_catchup);
+                }
+                model[i].catchup = 0.97000003f * model[i].catchup + 0.03f * target_catchup;
             }
-            if (gUseCatchup == 1) {
-                target_catchup = 1.0f + 0.5f * (1.0f - target_catchup);
-            }
-            model[i].catchup = 0.03f * target_catchup + 0.97000003f * model[i].catchup;
         }
     }
 }
-

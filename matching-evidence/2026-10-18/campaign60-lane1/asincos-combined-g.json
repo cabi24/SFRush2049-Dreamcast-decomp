@@ -1,0 +1,104 @@
+{
+  "name": "asincos",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/asincos.c",
+  "source_sha256": "cf997abff7d2a8d574806271c59a3603a721fe8a9862355dfd014d0f464d17df",
+  "text": [
+    "8C011290",
+    "8C0113C0"
+  ],
+  "text_bytes": 304,
+  "exact_text_bytes": 64,
+  "align_bytes": 0,
+  "data_bytes": 16,
+  "exact_data_bytes": 16,
+  "functions_total": 3,
+  "functions_exact": 0,
+  "functions_moved": 0,
+  "functions": [
+    {
+      "name": "farcsine",
+      "start": "8C011290",
+      "end": "8C011376",
+      "size": 230,
+      "status": "differs",
+      "diff_bytes": 172,
+      "linked_at": "8C011290",
+      "linked_size": 232
+    },
+    {
+      "name": "fasin",
+      "start": "8C011376",
+      "end": "8C01137A",
+      "size": 4,
+      "status": "differs",
+      "diff_bytes": 4,
+      "linked_at": "8C011378",
+      "linked_size": 4
+    },
+    {
+      "name": "facos",
+      "start": "8C01137A",
+      "end": "8C01137E",
+      "size": 4,
+      "status": "differs",
+      "diff_bytes": 4,
+      "linked_at": "8C01137C",
+      "linked_size": 68
+    }
+  ],
+  "segments": [
+    {
+      "kind": "gap",
+      "start": "8C01137E",
+      "end": "8C011380",
+      "exact": false,
+      "built": 2,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "pool",
+      "start": "8C011380",
+      "end": "8C0113C0",
+      "exact": true,
+      "built": 64,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0A78A4",
+      "end": "8C0A78B4",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:33:11",
+  "defines": {},
+  "starts": {
+    "P": "8C011290",
+    "C": "8C0A78A4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C011290",
+      "length": 304
+    },
+    {
+      "name": "C",
+      "address": "8C0A78A4",
+      "length": 16
+    }
+  ],
+  "equal_text_bytes_including_fill": 64,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 16,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": 0,
+  "seconds": 2.0
+}

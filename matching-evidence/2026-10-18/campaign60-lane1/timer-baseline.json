@@ -1,0 +1,184 @@
+{
+  "name": "timer",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/timer.c",
+  "source_sha256": "7163e810e8646eb224495a47b70f43284bbb07976a13635dcad15506f5fe4032",
+  "text": [
+    "8C0100A4",
+    "8C010218"
+  ],
+  "text_bytes": 372,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 16,
+  "exact_data_bytes": 16,
+  "functions_total": 9,
+  "functions_exact": 0,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "RetraceCallback",
+      "start": "8C0100A4",
+      "end": "8C0100AE",
+      "size": 10,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C0100A4",
+      "linked_size": 10
+    },
+    {
+      "name": "InitializeTimer",
+      "start": "8C0100AE",
+      "end": "8C0100FA",
+      "size": 76,
+      "status": "differs",
+      "diff_bytes": 13,
+      "linked_at": "8C0100AE",
+      "linked_size": 76
+    },
+    {
+      "name": "PauseTimer",
+      "start": "8C0100FA",
+      "end": "8C010102",
+      "size": 8,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C0100FA",
+      "linked_size": 8
+    },
+    {
+      "name": "ResumeTimer",
+      "start": "8C010102",
+      "end": "8C01010A",
+      "size": 8,
+      "status": "differs",
+      "diff_bytes": 1,
+      "linked_at": "8C010102",
+      "linked_size": 8
+    },
+    {
+      "name": "UpdateFrameTimer",
+      "start": "8C01010A",
+      "end": "8C010176",
+      "size": 108,
+      "status": "differs",
+      "diff_bytes": 60,
+      "linked_at": "8C01010A",
+      "linked_size": 106
+    },
+    {
+      "name": "SetCountdownTimer",
+      "start": "8C010176",
+      "end": "8C010194",
+      "size": 30,
+      "status": "differs",
+      "diff_bytes": 28,
+      "linked_at": "8C010174",
+      "linked_size": 30
+    },
+    {
+      "name": "AddCountdownTime",
+      "start": "8C010194",
+      "end": "8C0101A8",
+      "size": 20,
+      "status": "differs",
+      "diff_bytes": 18,
+      "linked_at": "8C010192",
+      "linked_size": 20
+    },
+    {
+      "name": "GetCountdownTimeRemaining",
+      "start": "8C0101A8",
+      "end": "8C0101C0",
+      "size": 24,
+      "status": "differs",
+      "diff_bytes": 24,
+      "linked_at": "8C0101A6",
+      "linked_size": 82
+    },
+    {
+      "name": "CountdownTimeOut",
+      "start": "8C0101FC",
+      "end": "8C01020E",
+      "size": 18,
+      "status": "moved",
+      "diff_bytes": 16,
+      "linked_at": "8C0101F8",
+      "linked_size": 28
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C0101C0",
+      "end": "8C0101FC",
+      "exact": false,
+      "built": 60,
+      "diff_bytes": 41
+    },
+    {
+      "kind": "pool",
+      "start": "8C01020E",
+      "end": "8C010218",
+      "exact": false,
+      "built": 6,
+      "diff_bytes": 7
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0B8C24",
+      "end": "8C0B8C34",
+      "exact": true,
+      "built": 16,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "bss",
+      "section": "B",
+      "start": "8C12253C",
+      "end": "8C122560",
+      "exact": true,
+      "linked": [
+        "8C12253C",
+        "8C122560"
+      ]
+    }
+  ],
+  "notes": [],
+  "built_at": "2026-10-18T15:30:36",
+  "defines": {
+    "_RegisterRetraceCallback": "8C0D9484",
+    "_SetInterruptMask": "8C010080"
+  },
+  "starts": {
+    "P": "8C0100A4",
+    "D": "8C0B8C24",
+    "B": "8C12253C"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C0100A4",
+      "length": 368
+    },
+    {
+      "name": "D",
+      "address": "8C0B8C24",
+      "length": 16
+    },
+    {
+      "name": "B",
+      "address": "8C12253C",
+      "length": 36
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 16,
+  "excluded_exact_data_fill": 0,
+  "excluded_data_padding": [],
+  "text_size_delta": -4,
+  "seconds": 2.2
+}

@@ -1,0 +1,157 @@
+{
+ "name": "mbox",
+ "lnk": "shc-v5.1r13/LNK.EXE",
+ "subcommands": [
+  "INPUT in0.obj",
+  "OUTPUT mbox.abs",
+  "FORM A",
+  "START P(8C03D090)",
+  "START C(8C0AC0B8)",
+  "START D(8C0BEBE8)",
+  "START B(8C14C71C)",
+  "DEFINE _ModelActive(8C0656B4)",
+  "DEFINE _ObjInstanceList(8C160870)",
+  "DEFINE _ZOID_AddObject(8C0689A0)",
+  "DEFINE _ZOID_ObjectFlags(8C068D0E)",
+  "DEFINE _ZOID_SetObjectFlags(8C068D1A)",
+  "DEFINE _ZOID_TrueObjParent(8C068896)",
+  "DEFINE __divls(8C09B680)",
+  "DEFINE __slow_strcmp1(8C09BB5C)",
+  "DEFINE __slow_strcpy(8C09BB0C)",
+  "DEFINE _bsearch(8C09BC04)",
+  "DEFINE _strncmp(8C09BF58)",
+  "DEFINE _strncpy(8C09BF98)",
+  "PRINT mbox.map",
+  "EXIT"
+ ],
+ "objects": [
+  {
+   "path": "C:\\rush2049-dreamcast\\matching-evidence\\2026-10-18\\round2-mbox\\cam-volatile\\obj\\mbox.obj",
+   "sha256": "d719c58c8f81a96888d3bc4806fa997bd0ff6f560feccfe65df66ecc5c0aa5c3"
+  }
+ ],
+ "sections": [
+  {
+   "name": "P",
+   "address": "8C03D090",
+   "length": 1480
+  },
+  {
+   "name": "C",
+   "address": "8C0AC0B8",
+   "length": 11
+  },
+  {
+   "name": "D",
+   "address": "8C0BEBE8",
+   "length": 512
+  },
+  {
+   "name": "B",
+   "address": "8C14C71C",
+   "length": 1025
+  }
+ ],
+ "runs": [
+  {
+   "section": "P",
+   "address": "8C03D090",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 198,
+   "first_diff_offset": 4,
+   "sha256": "f897945c283f46c48f32230fcf072c380ef3875b8e55c8461c9955bcae544dbe"
+  },
+  {
+   "section": "P",
+   "address": "8C03D186",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 223,
+   "first_diff_offset": 0,
+   "sha256": "e5aad1183c67e83ce95343cdd4b7a113f493e9b6af8bf91d79747c56fa290505"
+  },
+  {
+   "section": "P",
+   "address": "8C03D27C",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 223,
+   "first_diff_offset": 1,
+   "sha256": "856de84b896f2e13b2a1382b44ecc194a5da6a558a4096ed068bdb3271079343"
+  },
+  {
+   "section": "P",
+   "address": "8C03D372",
+   "size": 216,
+   "exact": false,
+   "diff_bytes": 207,
+   "first_diff_offset": 0,
+   "sha256": "e464fb5b9e217e913545e6154d042cf0bd015a3de9412cda75b70f69670f29b6"
+  },
+  {
+   "section": "P",
+   "address": "8C03D44C",
+   "size": 12,
+   "exact": false,
+   "diff_bytes": 9,
+   "first_diff_offset": 0,
+   "sha256": "6b0903c58e7c30bb6ce3bfa3947976d2944d7877ddf702e79c117d66d1ed8b56"
+  },
+  {
+   "section": "P",
+   "address": "8C03D458",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 226,
+   "first_diff_offset": 0,
+   "sha256": "99bd38f66616a16bb2fefadb1bb154699101bb24e58c096d5b2d1ac7eeb945b6"
+  },
+  {
+   "section": "P",
+   "address": "8C03D54E",
+   "size": 246,
+   "exact": false,
+   "diff_bytes": 217,
+   "first_diff_offset": 0,
+   "sha256": "2c4144f2b14623df5c0989353876b3fcc8b2a3411b6ab1c21f3fa60f8c53e976"
+  },
+  {
+   "section": "P",
+   "address": "8C03D644",
+   "size": 20,
+   "exact": false,
+   "diff_bytes": 13,
+   "first_diff_offset": 0,
+   "sha256": "d9ef59913b8d28c2fc34475af27b92c3671abc2df817ec346b7b2b9b246120b5"
+  },
+  {
+   "section": "D",
+   "address": "8C0BEBE8",
+   "size": 4,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+   "section": "D",
+   "address": "8C0BEBEC",
+   "size": 508,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "64d6c19683061d281bcee4c3cb3fa451f3724613dcc114467cebfd53ee182e31"
+  },
+  {
+   "section": "C",
+   "address": "8C0AC0B8",
+   "size": 11,
+   "exact": true,
+   "diff_bytes": 0,
+   "first_diff_offset": null,
+   "sha256": "5b846ba2e1981ba298cf67527f7074e017ccd7da0e23e0f861fe37286e3b9a9d"
+  }
+ ],
+ "all_exact": false
+}

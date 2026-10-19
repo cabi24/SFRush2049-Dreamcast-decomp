@@ -1,0 +1,18 @@
+{
+  "unit": "road",
+  "selected": "final-independent",
+  "baseline_functions": 0,
+  "final_functions": 0,
+  "new_functions": [],
+  "baseline_text": 18,
+  "final_text": 18,
+  "baseline_data": 0,
+  "final_data": 0,
+  "note": "Independent fresh native rebuild; all baseline exact spans preserved.",
+  "hashes": {
+    "src\\road.c": "175ef520a11f62e8f6a6ce5b4f5e5114fc2a4f5b8cf602d8c09ab214abb122a0",
+    "build\\campaign100-lane4\\road\\final-independent\\obj\\road.obj": "6dd6e877f1be12d6cdfd1ca72e31e5aaf0789619c5d5eced5c825e1440329968",
+    "build\\campaign100-lane4\\road\\final-independent\\link\\road.abs": "9af0af7ac65c6c8c308fa043cb264dc64e41c71383ff5a418ddb9c42f3c41312",
+    "build\\campaign100-lane4\\road\\final-independent\\pp\\road.c": "3e5846c5312a0a6a98b5ad22469bf8fae60301dd5c3476ae13a20ee15ffaac49"
+  }
+}

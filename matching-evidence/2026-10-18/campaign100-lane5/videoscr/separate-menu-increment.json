@@ -1,0 +1,528 @@
+{
+  "name": "videoscr",
+  "kind": "game",
+  "status": "partial",
+  "source": "src/videoscr.c",
+  "source_sha256": "12beb2b7cbd2f9ca53a89556cc71c3bd9f0c172013222298e4a82eaa190fe43e",
+  "text": [
+    "8C05C338",
+    "8C05E7A4"
+  ],
+  "text_bytes": 9324,
+  "exact_text_bytes": 0,
+  "align_bytes": 0,
+  "data_bytes": 1145,
+  "exact_data_bytes": 939,
+  "functions_total": 13,
+  "functions_exact": 0,
+  "functions_moved": 1,
+  "functions": [
+    {
+      "name": "updateVideoScreen",
+      "start": "8C05C338",
+      "end": "8C05C6D2",
+      "size": 922,
+      "status": "differs",
+      "diff_bytes": 732,
+      "linked_at": "8C05C338",
+      "linked_size": 906
+    },
+    {
+      "name": "initScreen",
+      "start": "8C05C6D2",
+      "end": "8C05C77A",
+      "size": 168,
+      "status": "differs",
+      "diff_bytes": 154,
+      "linked_at": "8C05C6C2",
+      "linked_size": 254
+    },
+    {
+      "name": "_TitlePane",
+      "start": "8C05C7D0",
+      "end": "8C05C88E",
+      "size": 190,
+      "status": "differs",
+      "diff_bytes": 184,
+      "linked_at": "8C05C7C0",
+      "linked_size": 184
+    },
+    {
+      "name": "uninitScreen",
+      "start": "8C05C88E",
+      "end": "8C05C8D8",
+      "size": 74,
+      "status": "differs",
+      "diff_bytes": 70,
+      "linked_at": "8C05C878",
+      "linked_size": 160
+    },
+    {
+      "name": "animPanes",
+      "start": "8C05C92C",
+      "end": "8C05C9D2",
+      "size": 166,
+      "status": "differs",
+      "diff_bytes": 166,
+      "linked_at": "8C05C918",
+      "linked_size": 162
+    },
+    {
+      "name": "animText",
+      "start": "8C05C9D2",
+      "end": "8C05CC7E",
+      "size": 684,
+      "status": "differs",
+      "diff_bytes": 652,
+      "linked_at": "8C05C9BA",
+      "linked_size": 750
+    },
+    {
+      "name": "animButtonText",
+      "start": "8C05CCC0",
+      "end": "8C05D23A",
+      "size": 1402,
+      "status": "differs",
+      "diff_bytes": 1360,
+      "linked_at": "8C05CCA8",
+      "linked_size": 1384
+    },
+    {
+      "name": "drawColorBars",
+      "start": "8C05D244",
+      "end": "8C05D3EE",
+      "size": 426,
+      "status": "differs",
+      "diff_bytes": 402,
+      "linked_at": "8C05D210",
+      "linked_size": 456
+    },
+    {
+      "name": "validOption",
+      "start": "8C05D40C",
+      "end": "8C05D42E",
+      "size": 34,
+      "status": "moved",
+      "diff_bytes": 34,
+      "linked_at": "8C05D3D8",
+      "linked_size": 34
+    },
+    {
+      "name": "calcMenuRect",
+      "start": "8C05D432",
+      "end": "8C05D72A",
+      "size": 760,
+      "status": "differs",
+      "diff_bytes": 742,
+      "linked_at": "8C05D3FA",
+      "linked_size": 790
+    },
+    {
+      "name": "initButtons",
+      "start": "8C05D748",
+      "end": "8C05DA5C",
+      "size": 788,
+      "status": "differs",
+      "diff_bytes": 766,
+      "linked_at": "8C05D710",
+      "linked_size": 884
+    },
+    {
+      "name": "uninitButtons",
+      "start": "8C05DABC",
+      "end": "8C05DB34",
+      "size": 120,
+      "status": "differs",
+      "diff_bytes": 119,
+      "linked_at": "8C05DA84",
+      "linked_size": 136
+    },
+    {
+      "name": "updateButtons",
+      "start": "8C05DB34",
+      "end": "8C05E78C",
+      "size": 3160,
+      "status": "differs",
+      "diff_bytes": 2894,
+      "linked_at": "8C05DB0C",
+      "linked_size": 3260
+    }
+  ],
+  "segments": [
+    {
+      "kind": "pool",
+      "start": "8C05C77A",
+      "end": "8C05C7D0",
+      "exact": false,
+      "built": 86,
+      "diff_bytes": 64
+    },
+    {
+      "kind": "pool",
+      "start": "8C05C8D8",
+      "end": "8C05C92C",
+      "exact": false,
+      "built": 84,
+      "diff_bytes": 65
+    },
+    {
+      "kind": "pool",
+      "start": "8C05CC7E",
+      "end": "8C05CCC0",
+      "exact": false,
+      "built": 66,
+      "diff_bytes": 56
+    },
+    {
+      "kind": "pool",
+      "start": "8C05D23A",
+      "end": "8C05D244",
+      "exact": false,
+      "built": 10,
+      "diff_bytes": 10
+    },
+    {
+      "kind": "pool",
+      "start": "8C05D3EE",
+      "end": "8C05D40C",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "gap",
+      "start": "8C05D42E",
+      "end": "8C05D432",
+      "exact": false,
+      "built": 4,
+      "diff_bytes": 4
+    },
+    {
+      "kind": "pool",
+      "start": "8C05D72A",
+      "end": "8C05D748",
+      "exact": false,
+      "built": 30,
+      "diff_bytes": 29
+    },
+    {
+      "kind": "pool",
+      "start": "8C05DA5C",
+      "end": "8C05DABC",
+      "exact": false,
+      "built": 96,
+      "diff_bytes": 86
+    },
+    {
+      "kind": "pool",
+      "start": "8C05E78C",
+      "end": "8C05E7A4",
+      "exact": false,
+      "built": 24,
+      "diff_bytes": 24
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ADEE0",
+      "end": "8C0ADF28",
+      "exact": false,
+      "built": 72,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ADF28",
+      "end": "8C0ADF70",
+      "exact": false,
+      "built": 72,
+      "diff_bytes": 2
+    },
+    {
+      "kind": "data",
+      "section": "C",
+      "start": "8C0ADF70",
+      "end": "8C0AE035",
+      "exact": true,
+      "built": 197,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C39F4",
+      "end": "8C0C3A18",
+      "exact": true,
+      "built": 36,
+      "diff_bytes": 0
+    },
+    {
+      "kind": "data",
+      "section": "D",
+      "start": "8C0C3A18",
+      "end": "8C0C3D18",
+      "exact": true,
+      "built": 768,
+      "diff_bytes": 0
+    }
+  ],
+  "notes": [
+    "36 built bytes fall outside the mapped ranges (first 8C05E7A4, last 8C05E7C7)"
+  ],
+  "built_at": "2026-10-18T16:03:50",
+  "defines": {
+    "_ChangePaneSize": "8C04481C",
+    "_ClearRushControls": "8C01E8C2",
+    "_CountdownTimeOut": "8C0101FC",
+    "_HAL_GetTextWidth": "8C02F502",
+    "_HAL_SetFont": "8C02EF96",
+    "_HAL_SetTextDepth": "8C02F226",
+    "_HAL_SetTextTranslucency": "8C02F27E",
+    "_InitPane": "8C044700",
+    "_MBOX_FindObject_WORK": "8C03D390",
+    "_MBOX_FindTexture_WORK": "8C03D4AA",
+    "_MBOX_HideObject": "8C03D0E0",
+    "_MBOX_NewObject": "8C03D090",
+    "_MBOX_ShowObject": "8C03D1C4",
+    "_NewMultiBlit": "8C018B56",
+    "_Pal60": "8C039338",
+    "_PlayLRSound": "8C0115A4",
+    "_PlayStartABSound": "8C011586",
+    "_PlayUDSound": "8C0115BE",
+    "_RemoveBlit": "8C0187BA",
+    "_RemovePane": "8C044BC2",
+    "_RemovePanes": "8C044B3C",
+    "_SaveFlush": "8C04B9EC",
+    "_SaveGlobals": "8C04BA38",
+    "_ScaleUV": "8C026412",
+    "_SetCountdownTimer": "8C010176",
+    "_TB_CenterText": "8C05A708",
+    "_TB_DrawText": "8C05ACA6",
+    "_TB_DrawTextScrollBox": "8C05ADE4",
+    "_TB_FlashTextColors": "8C05A7FA",
+    "_TB_GetFontLineHeight": "8C05A828",
+    "_TB_GetTextNumLines": "8C05A88C",
+    "_TB_RightText": "8C05A722",
+    "_TB_SetJust": "8C05A73A",
+    "_TB_SetTextColor": "8C05A742",
+    "_TB_Sprintf": "8C05AC1E",
+    "_VideoSetOffset": "8C010232",
+    "_WPitchUV": "8C026524",
+    "_WRollUV": "8C0265D2",
+    "_ZOID_ProjectWindow": "8C069C14",
+    "_ZOID_RemoveObject": "8C068B9E",
+    "_ZOID_SetColor": "8C0692AC",
+    "_ZOID_SetTexture": "8C0692F0",
+    "_ZeroCameras": "8C018D98",
+    "_createBG": "8C027320",
+    "_flashColors": "8C0BDDB8",
+    "_func_8C06F1EC": "8C06F1EC",
+    "_gActiveAutoEdges": "8C12C1BC",
+    "_gActiveEdges": "8C12C1B4",
+    "_gActiveLevels": "8C12C1B8",
+    "_gAutoEdges": "8C12C1A4",
+    "_gCamera": "8C12B648",
+    "_gContEdges": "8C12C194",
+    "_gContLevels": "8C12C184",
+    "_gControllerData": "8C12C114",
+    "_gFrameSeconds": "8C12254C",
+    "_gGameState": "8C0BFD3C",
+    "_gNumModels": "8C14CB1C",
+    "_gOptions": "8C14FDC8",
+    "_gSoftReset": "8C12C200",
+    "_gText": "8C15C98C",
+    "_memcpy": "8C09BD00",
+    "_osCblType": "8C1224C0",
+    "_osTvType": "8C1224C4",
+    "_playerInPause": "8C1503D8",
+    "_removeBG": "8C027824",
+    "_setGameState": "8C05137C",
+    "_setPauseState": "8C04751E",
+    "_unitmatrix": "8C0BD924",
+    "_videoBlit": "8C0C3D40",
+    "_videoButtonScale": "8C0C3D20",
+    "_videoButtonsInited": "8C0C3D18",
+    "_videoButtonsJustInited": "8C0C3D1C",
+    "_videoConfirmFrequency": "8C0C3D65",
+    "_videoConfirmHeight": "8C0C3D8E",
+    "_videoConfirmPane": "8C0C3D6C",
+    "_videoConfirmWidth": "8C0C3D8C",
+    "_videoControllerRemoved": "8C0C3D74",
+    "_videoCursorSpeed": "8C15CA30",
+    "_videoExit": "8C0C3D48",
+    "_videoHorzCenter": "8C0C3D60",
+    "_videoInited": "8C0C3D3C",
+    "_videoMenuRect": "8C0C3D78",
+    "_videoMenuSelect": "8C0C3D50",
+    "_videoOptionValid": "8C0C3D4C",
+    "_videoPanesCreated": "8C0C3D44",
+    "_videoTestFrequency": "8C0C3D64",
+    "_videoTestHeight": "8C0C3D8A",
+    "_videoTestPane": "8C0C3D68",
+    "_videoTestWidth": "8C0C3D88",
+    "_videoTitlePane": "8C0C3D70",
+    "_videoVertCenter": "8C0C3D5C",
+    "_videoYesFrequency": "8C0C3D66"
+  },
+  "starts": {
+    "P": "8C05C338",
+    "C": "8C0ADEE0",
+    "D": "8C0C39F4"
+  },
+  "sections": [
+    {
+      "name": "P",
+      "address": "8C05C338",
+      "length": 9360
+    },
+    {
+      "name": "C",
+      "address": "8C0ADEE0",
+      "length": 341
+    },
+    {
+      "name": "D",
+      "address": "8C0C39F4",
+      "length": 804
+    }
+  ],
+  "equal_text_bytes_including_fill": 0,
+  "excluded_exact_text_fill_or_gaps": 0,
+  "equal_data_bytes_including_fill": 1001,
+  "excluded_exact_data_fill": 62,
+  "excluded_data_padding": [
+    {
+      "start": "8C0ADF81",
+      "end": "8C0ADF84",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADF89",
+      "end": "8C0ADF8C",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADF8E",
+      "end": "8C0ADF90",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADF91",
+      "end": "8C0ADF94",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADF97",
+      "end": "8C0ADF98",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADF9F",
+      "end": "8C0ADFA0",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADFAF",
+      "end": "8C0ADFB0",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADFB3",
+      "end": "8C0ADFB4",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADFBB",
+      "end": "8C0ADFBC",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADFCA",
+      "end": "8C0ADFCC",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0ADFF9",
+      "end": "8C0ADFFC",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0AE013",
+      "end": "8C0AE014",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0AE01F",
+      "end": "8C0AE020",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0AE029",
+      "end": "8C0AE02C",
+      "reason": "natural string alignment"
+    },
+    {
+      "start": "8C0C3A55",
+      "end": "8C0C3A58",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3A95",
+      "end": "8C0C3A98",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3AD5",
+      "end": "8C0C3AD8",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3B15",
+      "end": "8C0C3B18",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3B55",
+      "end": "8C0C3B58",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3B95",
+      "end": "8C0C3B98",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3BD5",
+      "end": "8C0C3BD8",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3C15",
+      "end": "8C0C3C18",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3C55",
+      "end": "8C0C3C58",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3C95",
+      "end": "8C0C3C98",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3CD5",
+      "end": "8C0C3CD8",
+      "reason": "menu record tail padding"
+    },
+    {
+      "start": "8C0C3D15",
+      "end": "8C0C3D18",
+      "reason": "menu record tail padding"
+    }
+  ],
+  "text_size_delta": 36,
+  "seconds": 2.0
+}

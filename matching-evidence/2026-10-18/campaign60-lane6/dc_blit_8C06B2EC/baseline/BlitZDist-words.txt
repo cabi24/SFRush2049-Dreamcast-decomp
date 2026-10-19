@@ -1,0 +1,13 @@
+8C06B414 mov.l @(0x8C06B4C0,pc),r5                      | 8C06B414 mov.l @(0x8C06B4C0,pc),r5                      
+8C06B416 mov.l @(0x8C06B4BC,pc),r2                      | 8C06B416 mov.l @(0x8C06B4BC,pc),r2                      
+8C06B418 mov.w r4,@r2                                   | 8C06B418 mov.w r4,@r2                                   
+8C06B41A mov #16,r4                                     | 8C06B41A mov #16,r4                                     
+8C06B41C mov.l @r5,r0                                   | 8C06B41C mov.l @r5,r0                                   
+8C06B41E and r4,r0                                      | 8C06B41E and r4,r0                                      
+8C06B420 cmp/eq #16,r0                                  | 8C06B420 cmp/eq #16,r0                                  
+8C06B422 bt 0x8C06B42A                                  | 8C06B422 bt 0x8C06B42A                                  
+8C06B424 mov.l @r5,r3                                   | 8C06B424 mov.l @r5,r1                                   *
+8C06B426 or r4,r3                                       | 8C06B426 or r4,r1                                       *
+8C06B428 mov.l r3,@r5                                   | 8C06B428 mov.l r1,@r5                                   *
+8C06B42A rts                                            | 8C06B42A rts                                            
+8C06B42C nop                                            | 8C06B42C nop                                            

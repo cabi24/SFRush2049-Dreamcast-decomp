@@ -1,0 +1,47 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT atan.abs
+FORM A
+START P(8C0113C0)
+PRINT atan.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C0113C0  -  H'8C011533  H'00000174
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0113C0  -  H'8C011533  H'00000174
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_fatan                            H'8C0114D2               ENT
+_fatan2                           H'8C011460               ENT
+_fsatan                           H'8C01140A               ENT

@@ -1,0 +1,204 @@
+               H SERIES LINKAGE EDITOR Ver. 6.0E
+
+
+LINK COMMAND LINE
+
+LNK -SUBCOMMAND=link.sub 
+
+
+
+LINK SUBCOMMANDS
+
+INPUT in0.obj
+OUTPUT Init.abs
+FORM A
+START P(8C039280)
+START C(8C0AC074)
+DEFINE _AudMono(8C014F92)
+DEFINE _AudioInit(8C013A40)
+DEFINE _AudioShutdown(8C013D1C)
+DEFINE _DeallocateMemory(8C040832)
+DEFINE _HAL_InitText(8C02ECF4)
+DEFINE _InitGraphics(8C02E3EE)
+DEFINE _InitMemory(8C03FD08)
+DEFINE _InitOptions(8C041220)
+DEFINE _InitRushControls(8C01E84C)
+DEFINE _InitializeTimer(8C0100AE)
+DEFINE _SaveInit(8C04B628)
+DEFINE _SetControllerActive(8C01F180)
+DEFINE _func_8C02E350(8C02E350)
+DEFINE _func_8C02E390(8C02E390)
+DEFINE _func_8C06B82C(8C06B82C)
+DEFINE _func_8C06B954(8C06B954)
+DEFINE _func_8C06BA3A(8C06BA3A)
+DEFINE _func_8C06C4A6(8C06C4A6)
+DEFINE _func_8C06C664(8C06C664)
+DEFINE _func_8C06C712(8C06C712)
+DEFINE _func_8C06E5B4(8C06E5B4)
+DEFINE _func_8C06E7BC(8C06E7BC)
+DEFINE _func_8C06ED90(8C06ED90)
+DEFINE _func_8C072690(8C072690)
+DEFINE _func_8C09B1E4(8C09B1E4)
+DEFINE _func_8C09B240(8C09B240)
+DEFINE _func_8C09B2B4(8C09B2B4)
+DEFINE _func_8C09B380(8C09B380)
+DEFINE _func_8C0D7290(8C0D7290)
+DEFINE _func_8C0D77B0(8C0D77B0)
+DEFINE _func_8C0D7E0A(8C0D7E0A)
+DEFINE _func_8C0D7E5C(8C0D7E5C)
+DEFINE _func_8C0D7E86(8C0D7E86)
+DEFINE _func_8C0D8458(8C0D8458)
+DEFINE _func_8C0D84B8(8C0D84B8)
+DEFINE _func_8C0D84CA(8C0D84CA)
+DEFINE _func_8C0D850A(8C0D850A)
+DEFINE _func_8C0D8558(8C0D8558)
+DEFINE _func_8C0D8588(8C0D8588)
+DEFINE _func_8C0D8610(8C0D8610)
+DEFINE _func_8C0D863A(8C0D863A)
+DEFINE _func_8C0D8974(8C0D8974)
+DEFINE _func_8C0D98F8(8C0D98F8)
+DEFINE _func_8C0D9922(8C0D9922)
+DEFINE _func_8C0D9932(8C0D9932)
+DEFINE _func_8C0DAD60(8C0DAD60)
+DEFINE _func_8C0DAE8E(8C0DAE8E)
+DEFINE _func_8C0DAFE0(8C0DAFE0)
+DEFINE _func_8C0DC260(8C0DC260)
+DEFINE _gFrameCounter(8C12253C)
+DEFINE _gInitCableType(8C1224C0)
+DEFINE _gInitExitFlag(8C14CBAC)
+DEFINE _gInitGraphicsBufferA(8C134540)
+DEFINE _gInitGraphicsBufferB(8C140560)
+DEFINE _gInitHeapAlias(8C0D6F4C)
+DEFINE _gInitLanguageMode(8C15C988)
+DEFINE _gInitMemoryEnd(8C115210)
+DEFINE _gInitMonoSetting(8C14C580)
+DEFINE _gInitSdkSetting(8C14C584)
+DEFINE _gInitVideoDescriptor(8C19E970)
+DEFINE _gRetraceRate(8C0B8C28)
+DEFINE _gRetraceTime(8C0B8C2C)
+DEFINE _osTvType(8C1224C4)
+PRINT Init.map
+EXIT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                  ***     LINKAGE EDITOR LINK MAP LIST      ***
+
+
+SECTION NAME                         START    -     END        LENGTH
+              UNIT NAME                        MODULE NAME
+
+
+ATTRIBUTE  :   CODE  NOSHR
+
+P                                 H'8C039280  -  H'8C039797  H'00000518
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C039280  -  H'8C039797  H'00000518
+
+
+ATTRIBUTE  :   DATA  NOSHR
+
+C                                 H'8C0AC074  -  H'8C0AC07F  H'0000000C
+              dos_src                          dos_src                         
+
+* TOTAL ADDRESS *                 H'8C0AC074  -  H'8C0AC07F  H'0000000C
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+             ***  LINKAGE EDITOR EXTERNALLY DEFINED SYMBOLS LIST  ***
+
+SYMBOL NAME                          ADDR                 TYPE
+
+_Pal60                            H'8C039338               ENT
+_func_8C039280                    H'8C039280               ENT
+_func_8C039308                    H'8C039308               ENT
+_func_8C039332                    H'8C039332               ENT
+_func_8C03943C                    H'8C03943C               ENT
+_func_8C03954A                    H'8C03954A               ENT
+_func_8C039718                    H'8C039718               ENT
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     1
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_AudMono                                                            H'8C014F92
+_AudioInit                                                          H'8C013A40
+_AudioShutdown                                                      H'8C013D1C
+_DeallocateMemory                                                   H'8C040832
+_HAL_InitText                                                       H'8C02ECF4
+_InitGraphics                                                       H'8C02E3EE
+_InitMemory                                                         H'8C03FD08
+_InitOptions                                                        H'8C041220
+_InitRushControls                                                   H'8C01E84C
+_InitializeTimer                                                    H'8C0100AE
+_SaveInit                                                           H'8C04B628
+_SetControllerActive                                                H'8C01F180
+_func_8C02E350                                                      H'8C02E350
+_func_8C02E390                                                      H'8C02E390
+_func_8C06B82C                                                      H'8C06B82C
+_func_8C06B954                                                      H'8C06B954
+_func_8C06BA3A                                                      H'8C06BA3A
+_func_8C06C4A6                                                      H'8C06C4A6
+_func_8C06C664                                                      H'8C06C664
+_func_8C06C712                                                      H'8C06C712
+_func_8C06E5B4                                                      H'8C06E5B4
+_func_8C06E7BC                                                      H'8C06E7BC
+_func_8C06ED90                                                      H'8C06ED90
+_func_8C072690                                                      H'8C072690
+_func_8C09B1E4                                                      H'8C09B1E4
+_func_8C09B240                                                      H'8C09B240
+_func_8C09B2B4                                                      H'8C09B2B4
+_func_8C09B380                                                      H'8C09B380
+_func_8C0D7290                                                      H'8C0D7290
+_func_8C0D77B0                                                      H'8C0D77B0
+_func_8C0D7E0A                                                      H'8C0D7E0A
+_func_8C0D7E5C                                                      H'8C0D7E5C
+_func_8C0D7E86                                                      H'8C0D7E86
+_func_8C0D8458                                                      H'8C0D8458
+_func_8C0D84B8                                                      H'8C0D84B8
+_func_8C0D84CA                                                      H'8C0D84CA
+_func_8C0D850A                                                      H'8C0D850A
+_func_8C0D8558                                                      H'8C0D8558
+_func_8C0D8588                                                      H'8C0D8588
+_func_8C0D8610                                                      H'8C0D8610
+_func_8C0D863A                                                      H'8C0D863A
+_func_8C0D8974                                                      H'8C0D8974
+_func_8C0D98F8                                                      H'8C0D98F8
+_func_8C0D9922                                                      H'8C0D9922
+_func_8C0D9932                                                      H'8C0D9932
+_func_8C0DAD60                                                      H'8C0DAD60
+_func_8C0DAE8E                                                      H'8C0DAE8E
+_func_8C0DAFE0                                                      H'8C0DAFE0
+_func_8C0DC260                                                      H'8C0DC260
+_gFrameCounter                                                      H'8C12253C
+_gInitCableType                                                     H'8C1224C0
+
+
+
+               H SERIES LINKAGE EDITOR Ver. 6.0E       PAGE :     2
+
+                      ***  LINKAGE EDITOR DEFINE LIST  ***
+
+UNDEFINED SYMBOL                  DEFINED SYMBOL                   DEFINED VALUE
+
+_gInitExitFlag                                                      H'8C14CBAC
+_gInitGraphicsBufferA                                               H'8C134540
+_gInitGraphicsBufferB                                               H'8C140560
+_gInitHeapAlias                                                     H'8C0D6F4C
+_gInitLanguageMode                                                  H'8C15C988
+_gInitMemoryEnd                                                     H'8C115210
+_gInitMonoSetting                                                   H'8C14C580
+_gInitSdkSetting                                                    H'8C14C584
+_gInitVideoDescriptor                                               H'8C19E970
+_gRetraceRate                                                       H'8C0B8C28
+_gRetraceTime                                                       H'8C0B8C2C
+_osTvType                                                           H'8C1224C4
