@@ -46,7 +46,7 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | controlscr | 0 | 4,999 | 0/11 |
 | controlsys | 438 | 122 | 5/11 |
 | countdown | 770 | 69 | 2/2 |
-| dc_audio64_init_8C06ADD4 | 108 | 317 | 2/16 |
+| dc_audio64_init_8C06ADD4 | 1,244 | 317 | 15/16 |
 | dc_blit_8C06B2EC | 1,252 | 5 | 10/12 |
 | dc_kamui_tex_8C06E5B4 | 0 | 0 | 0/11 |
 | dc_misc_8C06B80C | 0 | 24 | 0/13 |
@@ -138,6 +138,11 @@ Whole-image credit: **119,061 /1,123,492 (10.5974%)**, **328 exact source functi
 The sixteenth batch adds 428 text/literal bytes, 397
 initialized data bytes and 4 exact functions. The audited batch is locally committed
 through `b16ca0045d04b385e0fae4a2c8d5c930e791e01c`. No remote push was performed.
+
+Working tree (not yet committed): the dc_audio64_init match below adds five exact functions
+and 320 text bytes; `python -B tools/audit_report.py` currently reports 62,498 game text bytes,
+131,829 whole-image bytes (11.7339%) and 417 exact functions. It folds in the earlier uncommitted
+campaign packets in this tree, so audit before committing as a batch.
 
 `matching-evidence/2026-10-18/integration-sixteenth.json` records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates

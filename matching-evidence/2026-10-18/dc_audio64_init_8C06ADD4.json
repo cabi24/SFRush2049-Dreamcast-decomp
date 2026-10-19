@@ -1,12 +1,16 @@
 {
   "unit": "dc_audio64_init_8C06ADD4",
-  "text_nonpadding": 108,
+  "text_nonpadding": 1244,
   "data_nonpadding": 317,
-  "exact_functions": 2,
+  "exact_functions": 15,
   "text_spans": [
     [
-      "8C06AE46",
-      "8C06AEB2"
+      "8C06ADD4",
+      "8C06B298"
+    ],
+    [
+      "8C06B2D4",
+      "8C06B2EC"
     ]
   ],
   "data_spans": [
@@ -47,12 +51,12 @@
       "8C0C7C78"
     ]
   ],
-  "source_sha256": "e584a8ac234aaeb423403f0ff488d001fd22da66c992ce4ea30b0a27a32cae45",
-  "expanded_source_sha256": "29817ab87440c89ef3d3da413a34dd7ec52bca8f676d3e1a1b227c4087ace01e",
-  "compiler_input_sha256": "51ac7b7d0005fa9a6119e29e91e768bd4b877db8bb2539f8740f05305a71ca51",
+  "source_sha256": "850e7a9aaa5ec76e8818de4d43ee277fc4f7975b3220ec02e1ab1c4d25c50855",
+  "expanded_source_sha256": "a0e349fd82c90a5e3c2a4844894dc397e740565ea59f50c25c2938daa960374d",
+  "compiler_input_sha256": "95eaba2778ca2f91eafae3d2bd9c5969cfb51b50ed59f21ccc1976577633a207",
   "compiler_input_matches_current_headers": true,
-  "linked_abs_sha256": "51f52db902062579129e7e24460f69519c181999c4a52c89a147a48d023e5b79",
-  "object_sha256": "9c768255b10cb08f7fd229b2e421af98004b47a51a58c595079042753853d87a",
+  "linked_abs_sha256": "74eb73fc924b296c190e6d718ad7021c2552c8da3678fa041c29fe9ac16b249e",
+  "object_sha256": "f97c74fa1eb2b036052db8c4dd8148eeb706a3dd4386d3ddcbc3d400c2358bb9",
   "comparison_masks": false,
   "linker_fill_credit": 0,
   "bss_image_credit": 0

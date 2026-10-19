@@ -97,7 +97,7 @@ void func_8C06AE4C(void)
 unsigned int func_8C06AEB2(void)
 {
     unsigned int result;
-    func_8C0A18E6(&result);
+    if (func_8C0A18E6(&result)) { /* target comparison has no branch/action */ }
     return result;
 }
 
@@ -122,15 +122,16 @@ float func_8C06AF48(float start, float duration)
 
 void func_8C06AF60(unsigned int milliseconds, int channelA, int channelB, float to)
 {
+    float *time = &dcAudioTime;
     float duration = (float)milliseconds / 1000.0f;
     if (channelA) {
-        dcAudioFadeAStart = dcAudioTime;
+        dcAudioFadeAStart = *time;
         dcAudioFadeADuration = duration;
         dcAudioFadeAFrom = dcAudioCurrentA;
         dcAudioFadeATo = (gMono ? .60000004f : 1.0f) * to;
     }
     if (channelB) {
-        dcAudioFadeBStart = dcAudioTime;
+        dcAudioFadeBStart = *time;
         dcAudioFadeBDuration = duration;
         dcAudioFadeBFrom = dcAudioCurrentB;
         dcAudioFadeBTo = to;
@@ -153,10 +154,12 @@ void func_8C06AFC4(void)
 
 void func_8C06B052(int driver, int param, int interrupts)
 {
-    const char *filename = 0;
+    const char *filename;
     unsigned int size = 0;
     unsigned int alignedSize;
     void *data;
+    /* Both defaults are zero; sharing this value reproduces B060..B06C. */
+    filename = (const char *)size;
     dcAudioErrorB = func_8C09E3A2(0);
     func_8C09C06C();
     func_8C09E946(interrupts);
@@ -190,10 +193,8 @@ int func_8C06B1A8(void)
 
 int func_8C06B1C8(void)
 {
-    unsigned int error;
     if (!dcAudioErrorA) return 0;
-    error = dcAudioErrorA->error;
-    if (!error || error == 301) return 0;
+    if (!dcAudioErrorA->error || dcAudioErrorA->error == 301) return 0;
     dcAudioErrorA->error = 0;
     dcAudioErrorA->flag = 0;
     return 1;
@@ -201,10 +202,8 @@ int func_8C06B1C8(void)
 
 int func_8C06B22C(void)
 {
-    unsigned int error;
     if (!dcAudioErrorB) return 0;
-    error = dcAudioErrorB->error;
-    if (!error || error == 301) return 0;
+    if (!dcAudioErrorB->error || dcAudioErrorB->error == 301) return 0;
     dcAudioErrorB->error = 0;
     dcAudioErrorB->flag = 0;
     return 1;

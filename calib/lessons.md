@@ -66,3 +66,12 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   wrappers selecting argument0/1. The unbuilt asincos unit owns this region through13C0;
   one previously unmapped body increases source-function denominators by one, with zero
   byte credit from this boundary correction.
+
+- In dc_audio64_init, a dead `tst r0,r0` after a status call is the retained condition of an
+  empty `if (func(...)) { }`, not a missing branch. Supplying it makes func_8C06AEB2 two bytes
+  longer, which restores func_8C06ADD4's `mov.w` pool displacement and func_8C06AEC8 outright.
+  In the same unit a redundant `unsigned int error` local forced the shared error pointer into
+  r6; removing it so both guards read `->error` puts the pointer in r5 and the loaded value in
+  r6, matching func_8C06B1C8 and func_8C06B22C. The variadic func_8C06B298 remains parked:
+  hand-written alignment gives `tst #3,r0` and args in r5 where the target's compiler-generated
+  va_start gives `mov #3,r6`/`tst r0,r6` and args in r6; a const local is folded away.
