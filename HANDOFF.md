@@ -205,7 +205,11 @@ Headless disassembly of any range: `.\tools\ghidra.ps1 -Headless ghidra-project 
 2. Write `src/<unit>.c` using `include/dc_types.h` (absolute include path; extend the header with
    evidence comments as offsets are proven) and MAT3 bodies; add externals to `src/externs.txt`.
 3. `python tools\dc_build.py --unit <unit> -v`, iterate on source shape only (flags are frozen);
-   record non-obvious codegen lessons in `calib/drivetra/notes.md`-style notes or the calibration report.
+   `python -B tools\fncmp.py <unit> <function>` shows the linked and target code side by side,
+   register-accurate, with the literal each PC-relative load reads and the first differing word
+   marked. Record non-obvious codegen lessons in `calib/drivetra/notes.md`-style notes or the
+   calibration report. Several workers may run `--unit` builds at once (different units);
+   `build/report.json` is merged under a lock.
 4. Commit per unit. Never count masked or fuzzy matches; alignment padding is never counted.
 
 ## Rules
