@@ -36,10 +36,13 @@ float fsatan(float arg)
 {
     if (arg < SQ2M1)
         return fxatan(arg);
-    else if (arg > SQ2P1)
-        return PIO2 - fxatan(1.0f / arg);
-    else
+    else {
+        /* Nested if/return instead of else-if: the flat chain allocates the third branch's
+           temporaries fr0/fr1/fr3; the target (8C01143C..4C) uses fr2/fr3/fr1 (fr0 untouched). */
+        if (arg > SQ2P1)
+            return PIO2 - fxatan(1.0f / arg);
         return PIO4 + fxatan((arg - 1.0f) / (arg + 1.0f));
+    }
 }
 
 float fatan2(float arg_1, float arg_2)
