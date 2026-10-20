@@ -19,7 +19,9 @@ void MBSetupWad(anon_base_TOCentries_c *wad, void *base)
     wad->base[0] = (unsigned int)wad->TOC;
     for (i = 0; i < wad->TOCentries; i++) {
         e = &wad->TOC[i];
-        e->address += fixup;
+        /* The explicit `x = x + fixup` form puts fixup in r7 and e in r6 (8C03CF98/8C03CFBA);
+           `e->address += fixup` swaps the two registers. */
+        e->address = e->address + fixup;
     }
 }
 
