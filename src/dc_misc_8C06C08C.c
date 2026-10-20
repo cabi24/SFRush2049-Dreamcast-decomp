@@ -114,7 +114,7 @@ void func_8C06C1E6(unsigned char *dest,float barA,float barB,int valueA,int valu
 void func_8C06C2A6(void) {func_8C0D6D7C();func_8C06C524();}
 void func_8C06C2B2(void) {func_8C06C4A6();func_8C0D6DDA();}
 
-void func_8C06C2BE(int player,int a,int b,float left,float right)
+void func_8C06C2BE(int player,float left,float right,int a,int b)
 {
     unsigned char frame[1536];
     int unit=dcController[player].port*6+1;
@@ -136,15 +136,14 @@ void func_8C06C374(int player)
 void func_8C06C3D0(void)
 {
     unsigned char frame[1536];
-    int port,slot;
-    volatile int unit;
+    int port,slot,unit;
     for(port=0;port<4;port++) {
-      unit=port*6+1;
       for(slot=0;slot<2;slot++) {
+        unit=port*6+slot+1;
         memset(frame,0,sizeof(frame));
         func_8C06C08C(frame+150,dcLcdLargeDigits,18,26,10,port);
         func_8C06C08C(frame+170,dcLcdLargeDigits,18,26,10,slot+4);
-        func_8C0D6DEC(unit++,frame,3);
+        func_8C0D6DEC(unit,frame,3);
       }
     }
 }
@@ -153,23 +152,30 @@ void func_8C06C4A6(void)
 {
     unsigned char frame[1536];
     int port,slot;
+    unsigned int unit;
     memset(frame,0,sizeof(frame));
-    for(port=0;port<24;port+=6)for(slot=0;slot<2;slot++)func_8C0D6DEC(port+slot+1,frame,3);
+    for(port=0;port<4;port++)for(slot=0;slot<2;slot++){unit=port*6+slot+1;func_8C0D6DEC(unit,frame,3);}
 }
 
 void func_8C06C524(void)
 {
     unsigned char frame[1536];
     int port,slot;
+    unsigned int unit;
     memcpy(frame,dcLcdSplash,sizeof(frame));
-    for(port=0;port<24;port+=6)for(slot=0;slot<2;slot++)func_8C0D6DEC(port+slot+1,frame,3);
+    for(port=0;port<24;port+=6)for(slot=0;slot<2;slot++){unit=port+slot+1;func_8C0D6DEC(unit,frame,3);}
 }
 
 void func_8C06C58C(int index)
 {
     unsigned char frame[1536];
+    int port,slot;
+    unsigned int unit;
     memcpy(frame,dcLcdSplash,sizeof(frame));
-    func_8C0D6DEC(index/2*6+index%2+1,frame,3);
+    port=index/2;
+    slot=index%2;
+    unit=port*6+slot+1;
+    func_8C0D6DEC(unit,frame,3);
 }
 
 /* Target-proven empty callback C5E2: rts;nop, not an unmatched placeholder. */
@@ -192,15 +198,17 @@ void func_8C06C664(int a,int b,int c,int d,int e)
 
 void func_8C06C692(void)
 {
-    int params[8];
+    struct {int a,b,c,d,e,f,g,h;} params;
+    int index;
     tDCPeripheral *p;
     func_8C06ED90();
-    memset(params,0,sizeof(params));
-    params[0]=dcPeripheralInit[1];params[1]=dcPeripheralInit[2];params[2]=dcPeripheralInit[3];params[3]=dcPeripheralInit[4];
-    func_8C0D448A(params);
+    memset(&params,0,sizeof(params));
+    params.a=dcPeripheralInit[1];params.b=dcPeripheralInit[2];params.c=dcPeripheralInit[3];params.d=dcPeripheralInit[4];
+    func_8C0D448A(&params);
     func_8C0D26EA(dcPeripheralInit[0]);
     func_8C0D262E(func_8C06CA7C,0);
-    for(p=dcPeripheral;p<dcPeripheral+1;p++) {
+    for(index=0;index<1;index++) {
+        p=&dcPeripheral[index];
         p->state=0;p->object=0;memset(&p->config,0,sizeof(p->config));
     }
     dcPeripheralActive=0;
@@ -208,10 +216,10 @@ void func_8C06C692(void)
 
 void func_8C06C712(void)
 {
-    char name[15];
+    char name[20];
     int location;
     void *file;
-    name[4]='A';name[12]='F';name[8]='G';name[1]='I';name[6]='L';name[0]='M';name[2]='D';name[7]='O';name[11]='S';name[3]='W';name[5]='Y';name[9]=name[7];name[13]=name[2];name[10]='.';name[14]=0;
+    name[4]='A';name[2]='D';name[12]='F';name[8]='G';name[1]='I';name[6]='L';name[0]='M';name[7]='O';name[11]='S';name[3]='W';name[5]='Y';name[9]=name[7];name[13]=name[2];name[10]='.';name[14]=0;
     func_8C06CA6A();
     func_8C0D461A();
     file=func_8C0D6BDE(name,0);
@@ -251,7 +259,7 @@ int func_8C06C902(int index)
 {
     dcPeripheral[index].object->ops->pause(dcPeripheral[index].object,1);
     dcPeripheral[index].state=3;
-    return 3;
+    return dcPeripheral[index].state;
 }
 
 int func_8C06C95C(int index)
@@ -262,7 +270,7 @@ int func_8C06C95C(int index)
 
 int func_8C06C986(int index)
 {
-    tDCPeripheral *p,*q;
+    tDCPeripheral *p;
     if(index>=0 && index<1) {
         p=&dcPeripheral[index];
         if(p->state) {
@@ -272,7 +280,7 @@ int func_8C06C986(int index)
         }
         p->state=0;p->object=0;memset(&p->config,0,sizeof(p->config));
         dcPeripheralActive=0;
-        for(q=dcPeripheral;q<dcPeripheral+1;q++)if(q->state)dcPeripheralActive=1;
+        for(index=0;index<1;index++)if(dcPeripheral[index].state)dcPeripheralActive=1;
     }
     return 4;
 }
@@ -286,12 +294,12 @@ int func_8C06CA0A(int index)
 
 int func_8C06CA44(void)
 {
-    tDCPeripheral *p;
+    int index;
     int result=0;
-    for(p=dcPeripheral;p<dcPeripheral+1;p++)if(p->object)result=1;
+    for(index=0;index<1;index++)if(dcPeripheral[index].object)result=1;
     return result;
 }
-void func_8C06CA6A(void) {func_8C06C986(0);}
+void func_8C06CA6A(void) {int result;result=func_8C06C986(0);}
 void func_8C06CA76(void) {func_8C0D265C();}
 /* Target-proven empty SDKcallback CA7C: rts;nop. */
 void func_8C06CA7C(void) {}
