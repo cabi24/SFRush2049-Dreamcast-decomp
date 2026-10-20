@@ -1,7 +1,7 @@
 #include "smoke_types.h"
 extern tSmokeCar gGameCar[];
 extern tSmokeModel model[];
-extern volatile signed char gNumModels;
+extern volatile unsigned char gNumModels; /* unsigned as in textureanim: the InitSmoke call sets r6/r5 before the push (8C04F56C..72); signed or non-volatile reorders it */
 extern volatile float gFrameSeconds;
 extern unsigned short gObjList[];
 extern tSmokeObj ObjInstanceList[];
