@@ -144,6 +144,17 @@ Repeatable per-unit build over the unit map; full description, outputs and rules
   `shc_link.py` at the map's addresses (externals `DEFINE`d from `src\externs.txt` and
   `symbols.txt`), compares function by function with nothing masked, and writes
   `build\report.json` (`--unit`, `-v` side-by-side listing via `..\calib\sh4dis.py`, `--check`).
+  Since 2026-10-20 several `--unit` builds may run concurrently (one unit per process): the
+  split (skipped when `build\target\split.json` is current; `--resplit` forces it) and the
+  read-merge-write of `build\report.json` / `objdiff.json` run under `build\report.lock`
+  (`dc_common.locked`, released with the process) and both files are replaced atomically
+  (`dc_common.write_atomic`). Verified with four simultaneous unit builds: every result kept,
+  summary unchanged.
+- `fncmp.py <unit> <function|address>` is the per-function view for matching work: linked and
+  target code side by side, both decoded with `..\calib\sh4dis.py`, aligned by instruction,
+  first differing word marked, PC-relative loads annotated with the literal they read, pool
+  words as data, trailing pool listed. `fndis.py` gives the same view for a raw `.abs` + range
+  (it used to print the target's mnemonics in both columns, hiding register differences).
 - `dc_objdiff.py` writes `..\objdiff.json` for `objdiff\objdiff.exe` (`objdiff-cli diff -p .. -u <unit>`).
 - `dc_common.py` holds the shared map loader (`map\units.json`, falling back to
   `map\units.seed.json`), the ELF writer/reader, and the symbol-file formats.

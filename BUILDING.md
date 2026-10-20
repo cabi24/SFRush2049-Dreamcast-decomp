@@ -13,8 +13,13 @@ python tools\dc_build.py -u timer -v -f UpdateFrameTimer   # list a chosen funct
 python tools\dc_objdiff.py               # objdiff.json for tools\objdiff\objdiff.exe
 ```
 
-`dc_build.py` runs the split first and refreshes `objdiff.json` afterwards, so usually it is the
-only command you need. Run Python **without `-I`**: the `--verbose` listing imports
+`dc_build.py` runs the split first (skipped when `build\target\split.json` already records this
+map, target and split tool; `--resplit` forces it) and refreshes `objdiff.json` afterwards, so
+usually it is the only command you need. Several `--unit` builds may run at the same time, one
+unit per process: the split and the read-merge-write of `build\report.json` / `objdiff.json`
+happen under `build\report.lock`, and both files are replaced atomically, so no worker drops
+another's results or reads a half-written file. Two workers must not build the same unit at once
+(they would overwrite each other's `build\obj`, `build\pp` and `build\link` files). Run Python **without `-I`**: the `--verbose` listing imports
 `calib\sh4dis.py`, which needs capstone from the user site.
 
 ## Inputs
@@ -35,7 +40,7 @@ only command you need. Run Python **without `-I`**: the `--verbose` listing impo
 | `build\obj\<unit>.elf` / `.obj` | Compiler output: the rof2elf relocatable and the raw SYSROF object. |
 | `build\link\<unit>.{abs,map,json}` | `shc_link.py` output: absolute SYSROF file, LNK map, and its own run-by-run comparison. |
 | `build\obj\<unit>.o` | The **linked** unit as an ELF relocatable. This is the objdiff base side, so both sides hold absolute pool words. |
-| `build\report.json` | Per-unit results and the progress summary (see below). Results are kept for units that were not rebuilt this run only if both the map and the unit's source are unchanged. |
+| `build\report.json` | Per-unit results and the progress summary (see below). Results are kept for units that were not rebuilt this run only if both the map and the unit's source are unchanged; the file is re-read and merged under `build\report.lock` right before it is rewritten, so results written by other processes in the meantime are kept. |
 | `objdiff.json` | objdiff project: `target_dir` `build/target`, `base_dir` `build/obj`, one unit per mapped unit. |
 
 ## How a unit is built

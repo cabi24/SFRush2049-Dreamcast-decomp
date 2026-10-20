@@ -65,9 +65,7 @@ def write_config(m, report=None, quiet=False):
         'progress_categories': [{'id': c, 'name': CATEGORY_NAMES.get(c, c)} for c in cats],
         'units': units,
     }
-    with open(OBJDIFF_JSON, 'w', newline='\n') as f:
-        json.dump(cfg, f, indent=2)
-        f.write('\n')
+    C.write_atomic(OBJDIFF_JSON, json.dumps(cfg, indent=2) + '\n', newline='\n')
     if not quiet:
         print(f'[dc_objdiff] {C.rel(OBJDIFF_JSON)}: {len(units)} units '
               f'({sum(1 for x in units if "base_path" in x)} with source) from {C.rel(m["path"])}')

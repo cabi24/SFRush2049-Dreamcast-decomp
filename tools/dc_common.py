@@ -4,11 +4,13 @@ Standard library only. Holds the project paths, the unit-map loader (map/units.j
 to missing fields), a minimal ELF32 little-endian SH relocatable writer/reader, and the
 symbols.txt / externs.txt formats.
 """
+import contextlib
 import hashlib
 import json
 import os
 import struct
 import sys
+import time
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))
 DC = os.path.dirname(TOOLS)
@@ -43,6 +45,58 @@ def sha256_bytes(b):
 def sha256_file(path):
     with open(path, 'rb') as f:
         return sha256_bytes(f.read())
+
+
+@contextlib.contextmanager
+def locked(path, timeout=600.0):
+    """Exclusive inter-process lock on the file `path` (created if missing). Blocks up to
+    `timeout` seconds, then raises TimeoutError. Released when the block exits or the process
+    dies, so a crashed worker never leaves a stale lock."""
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    fd = os.open(path, os.O_RDWR | os.O_CREAT)
+    try:
+        deadline = time.monotonic() + timeout
+        while True:
+            try:
+                if os.name == 'nt':
+                    import msvcrt
+                    msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+                else:
+                    import fcntl
+                    fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except OSError:
+                if time.monotonic() > deadline:
+                    raise TimeoutError(f'could not lock {path} within {timeout:.0f} s')
+                time.sleep(0.05)
+        yield
+    finally:
+        try:
+            if os.name == 'nt':
+                import msvcrt
+                msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+            else:
+                import fcntl
+                fcntl.flock(fd, fcntl.LOCK_UN)
+        except OSError:
+            pass
+        os.close(fd)
+
+
+def write_atomic(path, text, newline=None, retries=40):
+    """Write `text` to `path` through a temporary file and os.replace, so a reader never sees a
+    half-written file. On Windows the replace is retried while another process holds the file
+    open. `newline` is passed to open() (None = platform default, as a plain open(path, 'w'))."""
+    tmp = f'{path}.{os.getpid()}.tmp'
+    with open(tmp, 'w', newline=newline) as f:
+        f.write(text)
+    for i in range(retries):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            time.sleep(0.025 * (i + 1))
+    os.replace(tmp, path)
 
 
 def rel(path):

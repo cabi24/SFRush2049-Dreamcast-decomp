@@ -84,6 +84,12 @@ def collect_symbols(m):
     return table
 
 
+def tool_sha256():
+    """Hash of the code that produces the split (this file and dc_common.py); recorded in
+    build/target/split.json so dc_build.py can tell when a saved split is current."""
+    return C.sha256_bytes(open(os.path.abspath(__file__), 'rb').read() + open(os.path.abspath(C.__file__), 'rb').read())
+
+
 def split(map_path=None, units=None, out_dir=C.TARGET_DIR, quiet=False):
     m = C.load_map(map_path)
     C.load_target()
@@ -122,6 +128,7 @@ def split(map_path=None, units=None, out_dir=C.TARGET_DIR, quiet=False):
         for sym, (addr, unit, kind) in sorted(table.items(), key=lambda kv: (kv[1][0], kv[0])):
             f.write(f'{sym} 0x{addr:08X}\n')
     manifest = {'map': C.rel(m['path']), 'map_sha256': m['sha256'], 'target_sha256': C.TARGET_SHA256,
+                'tool_sha256': tool_sha256(),
                 'units': written, 'symbols': len(table)}
     if wanted is None:
         json.dump(manifest, open(os.path.join(out_dir, 'split.json'), 'w'), indent=1)

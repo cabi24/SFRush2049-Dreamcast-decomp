@@ -44,6 +44,10 @@ SHC_LINK = os.path.join(C.TOOLS, 'shc_link.py')
 FROZEN_VERSION = 'shc-v5.1r11'
 FROZEN_ARGS = ['--no-default-flags', '--', '-speed', '-noinline']
 REPORT = os.path.join(C.BUILD, 'report.json')
+# Held while build/target is (re)split and while build/report.json / objdiff.json are read,
+# merged and rewritten, so concurrent `--unit` builds by several workers never drop each
+# other's results. Compiling, linking and comparing run outside the lock.
+REPORT_LOCK = os.path.join(C.BUILD, 'report.lock')
 
 
 # ---------------------------------------------------------------- steps
@@ -498,6 +502,38 @@ def print_table(m, entries, summary, verbose_units=()):
           f'map covers {cov["percent"]:.2f}% of the image')
 
 
+def split_is_current(m):
+    """True when build/target holds dc_split.py's complete output for this map, target and
+    split tool version, so the split can be skipped (its output is a pure function of those)."""
+    try:
+        s = json.load(open(os.path.join(C.TARGET_DIR, 'split.json')))
+    except (OSError, ValueError):
+        return False
+    if (s.get('map_sha256') != m['sha256'] or s.get('target_sha256') != C.TARGET_SHA256
+            or s.get('tool_sha256') != dc_split.tool_sha256() or not os.path.isfile(C.SYMBOLS_TXT)):
+        return False
+    return all(os.path.isfile(os.path.join(C.DC, w['path'])) for w in s.get('units', []))
+
+
+def previous_entries(m, srcs, buildable):
+    """Results in build/report.json that are still valid: same map, and the unit's source
+    unchanged since it was built. Called under REPORT_LOCK right before the merge, so results
+    other workers wrote in the meantime are kept."""
+    entries = {}
+    if os.path.isfile(REPORT):
+        try:
+            old = json.load(open(REPORT))
+            if old.get('map_sha256') == m['sha256']:
+                for e in old.get('units', []):
+                    src = os.path.join(C.SRC, e['name'] + '.c')
+                    if e['name'] in srcs and os.path.isfile(src) and C.sha256_file(src) == e.get('source_sha256'):
+                        entries[e['name']] = e
+        except (ValueError, KeyError, OSError):
+            pass
+    names = {u['name'] for u in buildable}
+    return {n: e for n, e in entries.items() if n in names}
+
+
 def unit_names_from_args(args):
     names = []
     for a in (args.unit or []) + (args.targets or []):
@@ -522,12 +558,16 @@ def main():
     ap.add_argument('-j', '--jobs', type=int, default=4, help='units built in parallel (default 4)')
     ap.add_argument('--check', action='store_true', help='exit 1 unless every built unit is exact')
     ap.add_argument('--no-objdiff', action='store_true', help='do not refresh objdiff.json')
+    ap.add_argument('--resplit', action='store_true', help='redo the target split even if build/target is current')
     args = ap.parse_args()
 
     os.makedirs(os.path.join(tempfile.gettempdir(), 'rush2049-dc'), exist_ok=True)
     for d in (C.OBJ_DIR, C.LINK_DIR):
         os.makedirs(d, exist_ok=True)
-    m, _written = dc_split.split(args.map, quiet=True)
+    m = C.load_map(args.map)
+    with C.locked(REPORT_LOCK):
+        if args.resplit or not split_is_current(m):
+            m, _written = dc_split.split(args.map, quiet=True)
     symbols = C.read_symbol_file(C.SYMBOLS_TXT)
     externs = C.read_symbol_file(C.EXTERNS_TXT)
     for sym, addr in externs.items():
@@ -547,45 +587,39 @@ def main():
     buildable = [u for u in m['units'] if u['name'] in srcs and u['text']]
     todo = [u for u in buildable if not wanted or u['name'] in wanted]
 
-    # previous results for units not rebuilt now (same map, same source only)
-    entries = {}
-    if os.path.isfile(REPORT):
-        try:
-            old = json.load(open(REPORT))
-            if old.get('map_sha256') == m['sha256']:
-                for e in old.get('units', []):
-                    src = os.path.join(C.SRC, e['name'] + '.c')
-                    if e['name'] in srcs and os.path.isfile(src) and C.sha256_file(src) == e.get('source_sha256'):
-                        entries[e['name']] = e
-        except (ValueError, KeyError, OSError):
-            pass
-    entries = {n: e for n, e in entries.items() if n in {u['name'] for u in buildable}}
-
     print(f'[dc_build] map {C.rel(m["path"])}: {len(m["units"])} units, {len(buildable)} with source; '
           f'building {len(todo)} with {FROZEN_VERSION} {" ".join(FROZEN_ARGS)}')
+    built = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.jobs)) as ex:
         futs = {u['name']: ex.submit(build_unit, u, symbols, externs) for u in todo}
         for u in todo:
             try:
-                entries[u['name']] = futs[u['name']].result()
+                built[u['name']] = futs[u['name']].result()
             except Exception as e:  # keep going; report the unit as failed
-                entries[u['name']] = {'name': u['name'], 'kind': u['kind'], 'status': 'failed',
-                                      'notes': [f'{type(e).__name__}: {e}'], 'text_bytes': u['text'][1] - u['text'][0],
-                                      'exact_text_bytes': 0, 'exact_data_bytes': 0, 'functions_total': len(u['functions']),
-                                      'functions_exact': 0, 'functions_moved': 0}
-    for u in buildable:
-        if u['name'] not in entries:
-            entries[u['name']] = {'name': u['name'], 'kind': u['kind'], 'status': 'unbuilt',
-                                  'text_bytes': u['text'][1] - u['text'][0], 'exact_text_bytes': 0,
-                                  'exact_data_bytes': 0, 'functions_total': len(u['functions']),
-                                  'functions_exact': 0, 'functions_moved': 0, 'notes': ['not built yet with this map/source']}
+                built[u['name']] = {'name': u['name'], 'kind': u['kind'], 'status': 'failed',
+                                    'notes': [f'{type(e).__name__}: {e}'], 'text_bytes': u['text'][1] - u['text'][0],
+                                    'exact_text_bytes': 0, 'exact_data_bytes': 0, 'functions_total': len(u['functions']),
+                                    'functions_exact': 0, 'functions_moved': 0}
 
-    summary = summarize(m, entries)
-    report = {'generated': time.strftime('%Y-%m-%dT%H:%M:%S'), 'map': C.rel(m['path']), 'map_sha256': m['sha256'],
-              'target_sha256': C.TARGET_SHA256, 'compiler': {'version': FROZEN_VERSION, 'args': FROZEN_ARGS},
-              'summary': summary, 'units': [entries[u['name']] for u in m['units'] if u['name'] in entries]}
-    with open(REPORT, 'w') as f:
-        json.dump(report, f, indent=1)
+    # merge into build/report.json under the lock: previous results for units not rebuilt now
+    # (same map, same source only; re-read here so other workers' results are kept), then ours
+    with C.locked(REPORT_LOCK):
+        entries = previous_entries(m, srcs, buildable)
+        entries.update(built)
+        for u in buildable:
+            if u['name'] not in entries:
+                entries[u['name']] = {'name': u['name'], 'kind': u['kind'], 'status': 'unbuilt',
+                                      'text_bytes': u['text'][1] - u['text'][0], 'exact_text_bytes': 0,
+                                      'exact_data_bytes': 0, 'functions_total': len(u['functions']),
+                                      'functions_exact': 0, 'functions_moved': 0, 'notes': ['not built yet with this map/source']}
+        summary = summarize(m, entries)
+        report = {'generated': time.strftime('%Y-%m-%dT%H:%M:%S'), 'map': C.rel(m['path']), 'map_sha256': m['sha256'],
+                  'target_sha256': C.TARGET_SHA256, 'compiler': {'version': FROZEN_VERSION, 'args': FROZEN_ARGS},
+                  'summary': summary, 'units': [entries[u['name']] for u in m['units'] if u['name'] in entries]}
+        C.write_atomic(REPORT, json.dumps(report, indent=1))
+        if not args.no_objdiff:
+            import dc_objdiff
+            dc_objdiff.write_config(m, report, quiet=True)
     print_table(m, entries, summary)
     print(f'report: {C.rel(REPORT)}')
     if args.verbose:
@@ -595,9 +629,6 @@ def main():
                 listing(u, e, args.lines, args.function)
             elif e['status'] == 'failed':
                 print(f'\n  {u["name"]}: FAILED\n    ' + '\n    '.join(e.get('notes', [])))
-    if not args.no_objdiff:
-        import dc_objdiff
-        dc_objdiff.write_config(m, report, quiet=True)
     failed = [u['name'] for u in todo if entries[u['name']]['status'] == 'failed']
     if failed:
         print(f'[dc_build] FAILED: {", ".join(failed)}', file=sys.stderr)
