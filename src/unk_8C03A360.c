@@ -23,7 +23,7 @@ void func_8C03A3AE(void)
         func_8C02E350();
         do {
             func_8C03A360(0);
-        } while (!gExitGame && !GameLoop());
+        } while (gExitGame == 0 && GameLoop() == 0); /* == 0 form: GameLoop address in r1 (8C03A3CE), !x gives r3 */
         func_8C02E390();
         func_8C03A360(1);
         if (gExitGame == 1) func_8C039718();
