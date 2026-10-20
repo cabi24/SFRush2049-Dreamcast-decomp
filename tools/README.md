@@ -14,6 +14,7 @@ Exact SHA-256 hashes and source URLs for every archive are in `downloads/MANIFES
 | `jdk/jdk-25.0.4.1+1` | Temurin JDK 25 (Ghidra 12.1.4 requires Java 25) | adoptium.net API, checksum verified |
 | `wibo/wibo` | wibo 1.2.0 Linux x86_64 Win32 loader, used inside WSL for compiler builds Windows refuses to launch | decompals/wibo release 1.2.0 |
 | `shc_cc.py` | Compile wrapper reproducing the decomp.me Dreamcast recipe end to end (see below) | written here |
+| `objcmp.py` | Compares two `.obj`/`.elf` compiler outputs ignoring only the compile-time stamp (see "Compile wrapper work directories") | written here |
 | `ghidra.ps1` | Launcher that pins the JDK and keeps Ghidra's settings/cache under `../ghidra-home` | written here |
 
 Python extras: `capstone` 5.0.x (`pip install capstone`) is installed in the user site and decodes SH4
@@ -44,6 +45,30 @@ python tools\shc_cc.py -v shc-v5.1r11 src\interp.c -o build\interp.elf
 python tools\shc_cc.py -v shc-v5.1r11 src\interp.c -o build\interp.elf -- -optimize=1 -speed
 python tools\shc_cc.py -v shc-v5.1r13 src\interp.c -o build\interp.elf --launch wsl
 ```
+
+### Compile wrapper work directories (2026-10-20)
+
+Copying the 2.1 MB `bin/` into a fresh temp directory for every compile cost about 1.5 s per
+compile (the freshly copied executables are scanned on first launch; the compile itself takes
+0.4–0.5 s warm). `shc_cc.py` now copies the package once into a persistent slot
+`%TEMP%\rush2049-dc\shc-work\<version>\slotN\`, verifies every file's SHA-256 against the
+package on each call, holds the slot with an exclusive file lock while it compiles (a second
+caller takes `slot1`, and so on; the lock dies with the process), writes only `dos_src.c`, reads
+back `dos_src.obj` and removes both. The compiler still sees binaries in its current directory
+with `SHC_LIB=. SHC_TMP=.` and the same argv. rof2elf runs in-process instead of as a second
+Python process. `--work-root` moves the slots; `--keep` leaves `dos_src.*` in the slot.
+
+Measured over all 114 units in `src/` (one cold Python process per compile, 2026-10-20):
+old path mean 2.04 s / median 2.01 s, new path mean 0.80 s / median 0.77 s (a first round with
+rof2elf still as a subprocess measured 2.11 s against 0.96 s). Per unit:
+`evidence/shc_cc-identity-2026-10-20.json`.
+
+Output identity: SHC writes the compile time (`YYMMDDhhmmss`) into the SYSROF unit-header and
+module blocks, each block ends in a checksum covering it, and rof2elf copies the stamp into the
+ELF `.comment`, so two compiles are never byte-identical even on the old path. `objcmp.py` blanks
+exactly those fields and compares everything else byte for byte; every unit's `.obj` and `.elf`
+from the new path equal the old path's that way (and the `.obj` kept in `build/obj/`). The
+linked `.abs` compared by `dc_build.py` carries no stamp from the object (LNK writes its own).
 
 Facts learned while bringing it up:
 

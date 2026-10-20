@@ -1,0 +1,2548 @@
+{
+ "date": "2026-10-20",
+ "what": "tools/shc_cc.py persistent locked compiler slots + in-process rof2elf, against the committed per-compile temp copy (cac721e)",
+ "method": "For every src/*.c unit the exact compiler input dc_build.py uses (build/pp/<unit>.c when the source has quoted includes, else src/<unit>.c) was compiled once with the old script and once with the new one, each in a fresh python -I process, frozen flags (-v shc-v5.1r11 --no-default-flags -- -speed -noinline). The SYSROF .obj and the rof2elf .elf were compared with tools/objcmp.py, which blanks only the 12-digit compile-time stamp in the SYSROF 0x04/0x06 header blocks (and drops the per-block checksum byte that covers it) and the same stamp in the ELF .comment; everything else must be byte-identical. obj_raw_identical counts units whose raw .obj bytes were identical (never, since the stamp has one-second resolution). obj_same_as_build_obj compares the new .obj with the one kept in build/obj from the committed state.",
+ "tool_sha256": {
+  "shc_cc.py": "81e0dcab42af7c327a3fced5f49d2f8820ffe1456b33f206935c45d137366fa0",
+  "objcmp.py": "1a16cc1a2c2d34ad7c2ba0637551dc187c95230464396518c40f90f68de330ef",
+  "shc_cc.py_old_cac721e": "951401c9fb046d489b9f5913b382a2169f95df0a9a3a1c1bd54d0bf051a25405"
+ },
+ "round1_subprocess_rof2elf": {
+  "units": 114,
+  "compiled_both": 114,
+  "obj_same_modulo_stamp": 114,
+  "elf_same_modulo_stamp": 114,
+  "obj_raw_identical": 0,
+  "obj_same_as_build_obj": 114,
+  "old_total_s": 240.56,
+  "new_total_s": 109.25,
+  "old_mean_s": 2.11,
+  "new_mean_s": 0.958,
+  "old_median_s": 2.091,
+  "new_median_s": 0.919
+ },
+ "round2_inprocess_rof2elf": {
+  "units": 114,
+  "compiled_both": 114,
+  "obj_same_modulo_stamp": 114,
+  "elf_same_modulo_stamp": 114,
+  "obj_raw_identical": 0,
+  "obj_same_as_build_obj": 114,
+  "old_total_s": 232.31,
+  "new_total_s": 90.73,
+  "old_mean_s": 2.038,
+  "new_mean_s": 0.796,
+  "old_median_s": 2.014,
+  "new_median_s": 0.768
+ },
+ "units": [
+  {
+   "unit": "HAL_Support",
+   "input": "build/pp/HAL_Support.c",
+   "old_s": 1.99,
+   "new_s": 0.755,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070458",
+    "261020070458"
+   ],
+   "stamp_new": [
+    "261020070500",
+    "261020070500"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "HAL_text",
+   "input": "build/pp/HAL_text.c",
+   "old_s": 1.982,
+   "new_s": 0.854,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070501",
+    "261020070501"
+   ],
+   "stamp_new": [
+    "261020070503",
+    "261020070503"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "HAL_time",
+   "input": "build/pp/HAL_time.c",
+   "old_s": 1.979,
+   "new_s": 0.603,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070504",
+    "261020070504"
+   ],
+   "stamp_new": [
+    "261020070506",
+    "261020070506"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "Init",
+   "input": "build/pp/Init.c",
+   "old_s": 2.004,
+   "new_s": 0.747,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070507",
+    "261020070507"
+   ],
+   "stamp_new": [
+    "261020070509",
+    "261020070509"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "TB_Vector",
+   "input": "build/pp/TB_Vector.c",
+   "old_s": 1.857,
+   "new_s": 0.711,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070510",
+    "261020070510"
+   ],
+   "stamp_new": [
+    "261020070511",
+    "261020070511"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "TB_text",
+   "input": "build/pp/TB_text.c",
+   "old_s": 2.179,
+   "new_s": 0.79,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070512",
+    "261020070512"
+   ],
+   "stamp_new": [
+    "261020070514",
+    "261020070514"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "asincos",
+   "input": "build/pp/asincos.c",
+   "old_s": 1.932,
+   "new_s": 0.739,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070515",
+    "261020070515"
+   ],
+   "stamp_new": [
+    "261020070517",
+    "261020070517"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "atan",
+   "input": "build/pp/atan.c",
+   "old_s": 1.886,
+   "new_s": 0.81,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070518",
+    "261020070518"
+   ],
+   "stamp_new": [
+    "261020070520",
+    "261020070520"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "audio",
+   "input": "build/pp/audio.c",
+   "old_s": 2.355,
+   "new_s": 1.108,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070520",
+    "261020070520"
+   ],
+   "stamp_new": [
+    "261020070523",
+    "261020070523"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "audiomgr",
+   "input": "build/pp/audiomgr.c",
+   "old_s": 2.22,
+   "new_s": 1.098,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070524",
+    "261020070524"
+   ],
+   "stamp_new": [
+    "261020070526",
+    "261020070526"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "audioscr",
+   "input": "build/pp/audioscr.c",
+   "old_s": 2.343,
+   "new_s": 0.748,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070528",
+    "261020070528"
+   ],
+   "stamp_new": [
+    "261020070530",
+    "261020070530"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "audiosfx",
+   "input": "build/pp/audiosfx.c",
+   "old_s": 2.235,
+   "new_s": 0.79,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070531",
+    "261020070531"
+   ],
+   "stamp_new": [
+    "261020070533",
+    "261020070533"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "blit",
+   "input": "build/pp/blit.c",
+   "old_s": 2.127,
+   "new_s": 0.719,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070534",
+    "261020070534"
+   ],
+   "stamp_new": [
+    "261020070536",
+    "261020070536"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "bstree",
+   "input": "build/pp/bstree.c",
+   "old_s": 1.965,
+   "new_s": 0.792,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070537",
+    "261020070537"
+   ],
+   "stamp_new": [
+    "261020070538",
+    "261020070538"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "camera",
+   "input": "build/pp/camera.c",
+   "old_s": 2.235,
+   "new_s": 1.073,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070539",
+    "261020070539"
+   ],
+   "stamp_new": [
+    "261020070542",
+    "261020070542"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "carload",
+   "input": "build/pp/carload.c",
+   "old_s": 1.941,
+   "new_s": 0.795,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070543",
+    "261020070543"
+   ],
+   "stamp_new": [
+    "261020070545",
+    "261020070545"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "carscr",
+   "input": "build/pp/carscr.c",
+   "old_s": 2.227,
+   "new_s": 0.828,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070546",
+    "261020070546"
+   ],
+   "stamp_new": [
+    "261020070548",
+    "261020070548"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "cheatscr",
+   "input": "build/pp/cheatscr.c",
+   "old_s": 2.019,
+   "new_s": 0.782,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070549",
+    "261020070549"
+   ],
+   "stamp_new": [
+    "261020070551",
+    "261020070551"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "checkpoint",
+   "input": "build/pp/checkpoint.c",
+   "old_s": 2.138,
+   "new_s": 0.811,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070552",
+    "261020070552"
+   ],
+   "stamp_new": [
+    "261020070554",
+    "261020070554"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "circuit",
+   "input": "build/pp/circuit.c",
+   "old_s": 2.08,
+   "new_s": 0.798,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070555",
+    "261020070555"
+   ],
+   "stamp_new": [
+    "261020070556",
+    "261020070556"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "circuitscr",
+   "input": "build/pp/circuitscr.c",
+   "old_s": 2.175,
+   "new_s": 1.106,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070557",
+    "261020070557"
+   ],
+   "stamp_new": [
+    "261020070600",
+    "261020070600"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "collision",
+   "input": "build/pp/collision.c",
+   "old_s": 2.291,
+   "new_s": 0.739,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070601",
+    "261020070601"
+   ],
+   "stamp_new": [
+    "261020070603",
+    "261020070603"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "controls",
+   "input": "build/pp/controls.c",
+   "old_s": 1.985,
+   "new_s": 0.769,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070604",
+    "261020070604"
+   ],
+   "stamp_new": [
+    "261020070606",
+    "261020070606"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "controlscr",
+   "input": "build/pp/controlscr.c",
+   "old_s": 2.222,
+   "new_s": 0.968,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070607",
+    "261020070607"
+   ],
+   "stamp_new": [
+    "261020070609",
+    "261020070609"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "controlsys",
+   "input": "build/pp/controlsys.c",
+   "old_s": 1.941,
+   "new_s": 0.842,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070610",
+    "261020070610"
+   ],
+   "stamp_new": [
+    "261020070612",
+    "261020070612"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "countdown",
+   "input": "build/pp/countdown.c",
+   "old_s": 1.897,
+   "new_s": 0.723,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070613",
+    "261020070613"
+   ],
+   "stamp_new": [
+    "261020070614",
+    "261020070614"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_audio64_init_8C06ADD4",
+   "input": "build/pp/dc_audio64_init_8C06ADD4.c",
+   "old_s": 2.014,
+   "new_s": 0.687,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070615",
+    "261020070615"
+   ],
+   "stamp_new": [
+    "261020070617",
+    "261020070617"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_blit_8C06B2EC",
+   "input": "build/pp/dc_blit_8C06B2EC.c",
+   "old_s": 2.025,
+   "new_s": 0.718,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070618",
+    "261020070618"
+   ],
+   "stamp_new": [
+    "261020070620",
+    "261020070620"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_kamui_tex_8C06E5B4",
+   "input": "build/pp/dc_kamui_tex_8C06E5B4.c",
+   "old_s": 2.084,
+   "new_s": 0.758,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070621",
+    "261020070621"
+   ],
+   "stamp_new": [
+    "261020070623",
+    "261020070623"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_misc_8C06B80C",
+   "input": "build/pp/dc_misc_8C06B80C.c",
+   "old_s": 1.904,
+   "new_s": 0.779,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070624",
+    "261020070624"
+   ],
+   "stamp_new": [
+    "261020070626",
+    "261020070626"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_misc_8C06C08C",
+   "input": "build/pp/dc_misc_8C06C08C.c",
+   "old_s": 1.956,
+   "new_s": 0.724,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070627",
+    "261020070627"
+   ],
+   "stamp_new": [
+    "261020070628",
+    "261020070628"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_periph_8C06C664",
+   "input": "build/pp/dc_periph_8C06C664.c",
+   "old_s": 1.944,
+   "new_s": 0.685,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070629",
+    "261020070629"
+   ],
+   "stamp_new": [
+    "261020070631",
+    "261020070631"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_sound_8C069F78",
+   "input": "build/pp/dc_sound_8C069F78.c",
+   "old_s": 1.917,
+   "new_s": 0.767,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070632",
+    "261020070632"
+   ],
+   "stamp_new": [
+    "261020070634",
+    "261020070634"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_status_8C06CA98",
+   "input": "build/pp/dc_status_8C06CA98.c",
+   "old_s": 1.803,
+   "new_s": 0.632,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070635",
+    "261020070635"
+   ],
+   "stamp_new": [
+    "261020070636",
+    "261020070636"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_unk_8C069E34",
+   "input": "build/pp/dc_unk_8C069E34.c",
+   "old_s": 1.828,
+   "new_s": 0.7,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070637",
+    "261020070637"
+   ],
+   "stamp_new": [
+    "261020070639",
+    "261020070639"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "dc_zoid_8C06ED90",
+   "input": "build/pp/dc_zoid_8C06ED90.c",
+   "old_s": 1.876,
+   "new_s": 0.767,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070640",
+    "261020070640"
+   ],
+   "stamp_new": [
+    "261020070641",
+    "261020070641"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "demo",
+   "input": "build/pp/demo.c",
+   "old_s": 2.007,
+   "new_s": 0.657,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070642",
+    "261020070642"
+   ],
+   "stamp_new": [
+    "261020070644",
+    "261020070644"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "drivetra",
+   "input": "build/pp/drivetra.c",
+   "old_s": 1.916,
+   "new_s": 0.757,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070645",
+    "261020070645"
+   ],
+   "stamp_new": [
+    "261020070647",
+    "261020070647"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "drivsym",
+   "input": "build/pp/drivsym.c",
+   "old_s": 2.032,
+   "new_s": 0.91,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070648",
+    "261020070648"
+   ],
+   "stamp_new": [
+    "261020070650",
+    "261020070650"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "drones",
+   "input": "build/pp/drones.c",
+   "old_s": 2.096,
+   "new_s": 0.775,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070651",
+    "261020070651"
+   ],
+   "stamp_new": [
+    "261020070653",
+    "261020070653"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "fmath",
+   "input": "build/pp/fmath.c",
+   "old_s": 2.138,
+   "new_s": 0.783,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070654",
+    "261020070654"
+   ],
+   "stamp_new": [
+    "261020070656",
+    "261020070656"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "front",
+   "input": "build/pp/front.c",
+   "old_s": 1.93,
+   "new_s": 0.757,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070657",
+    "261020070657"
+   ],
+   "stamp_new": [
+    "261020070658",
+    "261020070658"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "game",
+   "input": "build/pp/game.c",
+   "old_s": 2.126,
+   "new_s": 0.936,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070659",
+    "261020070659"
+   ],
+   "stamp_new": [
+    "261020070701",
+    "261020070701"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "gameoverscr",
+   "input": "build/pp/gameoverscr.c",
+   "old_s": 2.067,
+   "new_s": 0.993,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070702",
+    "261020070702"
+   ],
+   "stamp_new": [
+    "261020070704",
+    "261020070704"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "gamerecords",
+   "input": "build/pp/gamerecords.c",
+   "old_s": 2.116,
+   "new_s": 1.012,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070706",
+    "261020070706"
+   ],
+   "stamp_new": [
+    "261020070708",
+    "261020070708"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "gfx",
+   "input": "build/pp/gfx.c",
+   "old_s": 1.948,
+   "new_s": 0.687,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070709",
+    "261020070709"
+   ],
+   "stamp_new": [
+    "261020070711",
+    "261020070711"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "headlights",
+   "input": "build/pp/headlights.c",
+   "old_s": 2.016,
+   "new_s": 0.829,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070711",
+    "261020070711"
+   ],
+   "stamp_new": [
+    "261020070713",
+    "261020070713"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "highscorescr",
+   "input": "build/pp/highscorescr.c",
+   "old_s": 2.032,
+   "new_s": 0.737,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070714",
+    "261020070714"
+   ],
+   "stamp_new": [
+    "261020070716",
+    "261020070716"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "hud",
+   "input": "build/pp/hud.c",
+   "old_s": 2.229,
+   "new_s": 0.734,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070717",
+    "261020070717"
+   ],
+   "stamp_new": [
+    "261020070719",
+    "261020070719"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "hudextra",
+   "input": "build/pp/hudextra.c",
+   "old_s": 2.069,
+   "new_s": 0.872,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070720",
+    "261020070720"
+   ],
+   "stamp_new": [
+    "261020070722",
+    "261020070722"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "licensescr",
+   "input": "build/pp/licensescr.c",
+   "old_s": 1.905,
+   "new_s": 0.703,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070723",
+    "261020070723"
+   ],
+   "stamp_new": [
+    "261020070725",
+    "261020070725"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "ll",
+   "input": "build/pp/ll.c",
+   "old_s": 1.948,
+   "new_s": 0.706,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070726",
+    "261020070726"
+   ],
+   "stamp_new": [
+    "261020070728",
+    "261020070728"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "maxpath",
+   "input": "build/pp/maxpath.c",
+   "old_s": 2.33,
+   "new_s": 0.963,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070729",
+    "261020070729"
+   ],
+   "stamp_new": [
+    "261020070731",
+    "261020070731"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "mb_wad",
+   "input": "build/pp/mb_wad.c",
+   "old_s": 1.818,
+   "new_s": 0.682,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070732",
+    "261020070732"
+   ],
+   "stamp_new": [
+    "261020070734",
+    "261020070734"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "mbox",
+   "input": "build/pp/mbox.c",
+   "old_s": 1.888,
+   "new_s": 0.779,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070734",
+    "261020070734"
+   ],
+   "stamp_new": [
+    "261020070736",
+    "261020070736"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "mdrive",
+   "input": "build/pp/mdrive.c",
+   "old_s": 2.136,
+   "new_s": 0.863,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070737",
+    "261020070737"
+   ],
+   "stamp_new": [
+    "261020070739",
+    "261020070739"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "memsys",
+   "input": "build/pp/memsys.c",
+   "old_s": 2.057,
+   "new_s": 0.845,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070740",
+    "261020070740"
+   ],
+   "stamp_new": [
+    "261020070742",
+    "261020070742"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "model",
+   "input": "build/pp/model.c",
+   "old_s": 2.067,
+   "new_s": 0.762,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070743",
+    "261020070743"
+   ],
+   "stamp_new": [
+    "261020070745",
+    "261020070745"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "modescr",
+   "input": "build/pp/modescr.c",
+   "old_s": 2.054,
+   "new_s": 0.776,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070746",
+    "261020070746"
+   ],
+   "stamp_new": [
+    "261020070748",
+    "261020070748"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "options",
+   "input": "build/pp/options.c",
+   "old_s": 2.152,
+   "new_s": 0.772,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070749",
+    "261020070749"
+   ],
+   "stamp_new": [
+    "261020070751",
+    "261020070751"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "optionscr",
+   "input": "build/pp/optionscr.c",
+   "old_s": 2.001,
+   "new_s": 0.95,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070752",
+    "261020070752"
+   ],
+   "stamp_new": [
+    "261020070754",
+    "261020070754"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "pakerr",
+   "input": "build/pp/pakerr.c",
+   "old_s": 1.918,
+   "new_s": 0.847,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070755",
+    "261020070755"
+   ],
+   "stamp_new": [
+    "261020070757",
+    "261020070757"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "pakscr",
+   "input": "build/pp/pakscr.c",
+   "old_s": 2.075,
+   "new_s": 0.789,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070758",
+    "261020070758"
+   ],
+   "stamp_new": [
+    "261020070800",
+    "261020070800"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "paksysdc",
+   "input": "build/pp/paksysdc.c",
+   "old_s": 1.818,
+   "new_s": 0.781,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070801",
+    "261020070801"
+   ],
+   "stamp_new": [
+    "261020070802",
+    "261020070802"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "pane",
+   "input": "build/pp/pane.c",
+   "old_s": 1.96,
+   "new_s": 0.738,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070803",
+    "261020070803"
+   ],
+   "stamp_new": [
+    "261020070805",
+    "261020070805"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "password",
+   "input": "build/pp/password.c",
+   "old_s": 1.996,
+   "new_s": 0.697,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070806",
+    "261020070806"
+   ],
+   "stamp_new": [
+    "261020070808",
+    "261020070808"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "pausescr",
+   "input": "build/pp/pausescr.c",
+   "old_s": 2.034,
+   "new_s": 0.8,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070809",
+    "261020070809"
+   ],
+   "stamp_new": [
+    "261020070811",
+    "261020070811"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "playerscr",
+   "input": "build/pp/playerscr.c",
+   "old_s": 2.334,
+   "new_s": 1.16,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070812",
+    "261020070812"
+   ],
+   "stamp_new": [
+    "261020070814",
+    "261020070814"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "powerups",
+   "input": "build/pp/powerups.c",
+   "old_s": 2.029,
+   "new_s": 0.766,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070815",
+    "261020070815"
+   ],
+   "stamp_new": [
+    "261020070817",
+    "261020070817"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "rekon",
+   "input": "build/pp/rekon.c",
+   "old_s": 2.048,
+   "new_s": 0.719,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070818",
+    "261020070818"
+   ],
+   "stamp_new": [
+    "261020070820",
+    "261020070820"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "resurrect",
+   "input": "build/pp/resurrect.c",
+   "old_s": 2.271,
+   "new_s": 0.952,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070821",
+    "261020070821"
+   ],
+   "stamp_new": [
+    "261020070823",
+    "261020070823"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "road",
+   "input": "build/pp/road.c",
+   "old_s": 2.021,
+   "new_s": 0.836,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070824",
+    "261020070824"
+   ],
+   "stamp_new": [
+    "261020070826",
+    "261020070826"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "save",
+   "input": "build/pp/save.c",
+   "old_s": 1.907,
+   "new_s": 0.768,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070827",
+    "261020070827"
+   ],
+   "stamp_new": [
+    "261020070829",
+    "261020070829"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "selectcarload",
+   "input": "build/pp/selectcarload.c",
+   "old_s": 2.047,
+   "new_s": 0.749,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070830",
+    "261020070830"
+   ],
+   "stamp_new": [
+    "261020070832",
+    "261020070832"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "shots",
+   "input": "build/pp/shots.c",
+   "old_s": 1.968,
+   "new_s": 0.752,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070833",
+    "261020070833"
+   ],
+   "stamp_new": [
+    "261020070834",
+    "261020070834"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "skids",
+   "input": "build/pp/skids.c",
+   "old_s": 2.003,
+   "new_s": 0.764,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070835",
+    "261020070835"
+   ],
+   "stamp_new": [
+    "261020070837",
+    "261020070837"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "sky",
+   "input": "build/pp/sky.c",
+   "old_s": 1.975,
+   "new_s": 0.679,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070838",
+    "261020070838"
+   ],
+   "stamp_new": [
+    "261020070840",
+    "261020070840"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "smoke",
+   "input": "build/pp/smoke.c",
+   "old_s": 2.526,
+   "new_s": 1.362,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070841",
+    "261020070841"
+   ],
+   "stamp_new": [
+    "261020070843",
+    "261020070843"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "startscr",
+   "input": "build/pp/startscr.c",
+   "old_s": 2.029,
+   "new_s": 0.868,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070845",
+    "261020070845"
+   ],
+   "stamp_new": [
+    "261020070847",
+    "261020070847"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "state",
+   "input": "build/pp/state.c",
+   "old_s": 1.989,
+   "new_s": 0.735,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070848",
+    "261020070848"
+   ],
+   "stamp_new": [
+    "261020070850",
+    "261020070850"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "statll",
+   "input": "build/pp/statll.c",
+   "old_s": 1.942,
+   "new_s": 0.7,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070851",
+    "261020070851"
+   ],
+   "stamp_new": [
+    "261020070852",
+    "261020070852"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "stdlib",
+   "input": "build/pp/stdlib.c",
+   "old_s": 2.029,
+   "new_s": 0.684,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070853",
+    "261020070853"
+   ],
+   "stamp_new": [
+    "261020070855",
+    "261020070855"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "streaks",
+   "input": "build/pp/streaks.c",
+   "old_s": 2.01,
+   "new_s": 0.782,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070856",
+    "261020070856"
+   ],
+   "stamp_new": [
+    "261020070858",
+    "261020070858"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "stree",
+   "input": "build/pp/stree.c",
+   "old_s": 2.279,
+   "new_s": 1.055,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070859",
+    "261020070859"
+   ],
+   "stamp_new": [
+    "261020070901",
+    "261020070901"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "stunt",
+   "input": "build/pp/stunt.c",
+   "old_s": 2.183,
+   "new_s": 0.797,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070902",
+    "261020070902"
+   ],
+   "stamp_new": [
+    "261020070904",
+    "261020070904"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "targetpaths",
+   "input": "build/pp/targetpaths.c",
+   "old_s": 2.101,
+   "new_s": 0.894,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070905",
+    "261020070905"
+   ],
+   "stamp_new": [
+    "261020070907",
+    "261020070907"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "targets",
+   "input": "build/pp/targets.c",
+   "old_s": 2.179,
+   "new_s": 1.024,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070908",
+    "261020070908"
+   ],
+   "stamp_new": [
+    "261020070910",
+    "261020070910"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "text",
+   "input": "build/pp/text.c",
+   "old_s": 1.822,
+   "new_s": 0.716,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070912",
+    "261020070912"
+   ],
+   "stamp_new": [
+    "261020070913",
+    "261020070913"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "textureanim",
+   "input": "build/pp/textureanim.c",
+   "old_s": 2.032,
+   "new_s": 0.743,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070914",
+    "261020070914"
+   ],
+   "stamp_new": [
+    "261020070916",
+    "261020070916"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "timer",
+   "input": "src/timer.c",
+   "old_s": 2.165,
+   "new_s": 0.637,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070917",
+    "261020070917"
+   ],
+   "stamp_new": [
+    "261020070919",
+    "261020070919"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "titlescr",
+   "input": "build/pp/titlescr.c",
+   "old_s": 1.942,
+   "new_s": 0.69,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070920",
+    "261020070920"
+   ],
+   "stamp_new": [
+    "261020070922",
+    "261020070922"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "tracks",
+   "input": "build/pp/tracks.c",
+   "old_s": 1.947,
+   "new_s": 0.768,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070922",
+    "261020070922"
+   ],
+   "stamp_new": [
+    "261020070924",
+    "261020070924"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "trackscr",
+   "input": "build/pp/trackscr.c",
+   "old_s": 2.253,
+   "new_s": 1.096,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070925",
+    "261020070925"
+   ],
+   "stamp_new": [
+    "261020070927",
+    "261020070927"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C01021C_video",
+   "input": "build/pp/unk_8C01021C_video.c",
+   "old_s": 1.826,
+   "new_s": 0.728,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070929",
+    "261020070929"
+   ],
+   "stamp_new": [
+    "261020070930",
+    "261020070930"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C01026C_entry",
+   "input": "build/pp/unk_8C01026C_entry.c",
+   "old_s": 1.951,
+   "new_s": 0.621,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070931",
+    "261020070931"
+   ],
+   "stamp_new": [
+    "261020070933",
+    "261020070933"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C0102A4_lz",
+   "input": "build/pp/unk_8C0102A4_lz.c",
+   "old_s": 1.987,
+   "new_s": 0.661,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070934",
+    "261020070934"
+   ],
+   "stamp_new": [
+    "261020070936",
+    "261020070936"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C03A360",
+   "input": "build/pp/unk_8C03A360.c",
+   "old_s": 1.901,
+   "new_s": 0.752,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070937",
+    "261020070937"
+   ],
+   "stamp_new": [
+    "261020070938",
+    "261020070938"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C055F38",
+   "input": "build/pp/unk_8C055F38.c",
+   "old_s": 1.931,
+   "new_s": 0.62,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070939",
+    "261020070939"
+   ],
+   "stamp_new": [
+    "261020070941",
+    "261020070941"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unk_8C065F2C",
+   "input": "build/pp/unk_8C065F2C.c",
+   "old_s": 1.95,
+   "new_s": 0.812,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070942",
+    "261020070942"
+   ],
+   "stamp_new": [
+    "261020070944",
+    "261020070944"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "unzip",
+   "input": "build/pp/unzip.c",
+   "old_s": 2.031,
+   "new_s": 0.819,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070945",
+    "261020070945"
+   ],
+   "stamp_new": [
+    "261020070946",
+    "261020070946"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "videoscr",
+   "input": "build/pp/videoscr.c",
+   "old_s": 2.161,
+   "new_s": 0.838,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070947",
+    "261020070947"
+   ],
+   "stamp_new": [
+    "261020070949",
+    "261020070949"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "visuals",
+   "input": "build/pp/visuals.c",
+   "old_s": 2.141,
+   "new_s": 0.817,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070951",
+    "261020070951"
+   ],
+   "stamp_new": [
+    "261020070952",
+    "261020070952"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "warningscr",
+   "input": "build/pp/warningscr.c",
+   "old_s": 2.005,
+   "new_s": 0.672,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070954",
+    "261020070954"
+   ],
+   "stamp_new": [
+    "261020070955",
+    "261020070955"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "waves",
+   "input": "build/pp/waves.c",
+   "old_s": 1.892,
+   "new_s": 0.742,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070956",
+    "261020070956"
+   ],
+   "stamp_new": [
+    "261020070958",
+    "261020070958"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "weapons",
+   "input": "build/pp/weapons.c",
+   "old_s": 2.22,
+   "new_s": 0.755,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020070959",
+    "261020070959"
+   ],
+   "stamp_new": [
+    "261020071001",
+    "261020071001"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "world",
+   "input": "build/pp/world.c",
+   "old_s": 1.902,
+   "new_s": 0.765,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071002",
+    "261020071002"
+   ],
+   "stamp_new": [
+    "261020071004",
+    "261020071004"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "worlddam",
+   "input": "build/pp/worlddam.c",
+   "old_s": 2.091,
+   "new_s": 0.759,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071005",
+    "261020071005"
+   ],
+   "stamp_new": [
+    "261020071007",
+    "261020071007"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zip",
+   "input": "build/pp/zip.c",
+   "old_s": 2.039,
+   "new_s": 0.852,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071007",
+    "261020071007"
+   ],
+   "stamp_new": [
+    "261020071009",
+    "261020071009"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoid",
+   "input": "build/pp/zoid.c",
+   "old_s": 1.995,
+   "new_s": 0.797,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071010",
+    "261020071010"
+   ],
+   "stamp_new": [
+    "261020071012",
+    "261020071012"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoidblit",
+   "input": "build/pp/zoidblit.c",
+   "old_s": 1.954,
+   "new_s": 0.623,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071013",
+    "261020071013"
+   ],
+   "stamp_new": [
+    "261020071015",
+    "261020071015"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoidlight",
+   "input": "build/pp/zoidlight.c",
+   "old_s": 2.006,
+   "new_s": 0.654,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071016",
+    "261020071016"
+   ],
+   "stamp_new": [
+    "261020071018",
+    "261020071018"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoidpoly",
+   "input": "build/pp/zoidpoly.c",
+   "old_s": 1.957,
+   "new_s": 0.725,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071019",
+    "261020071019"
+   ],
+   "stamp_new": [
+    "261020071020",
+    "261020071020"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoidtexture",
+   "input": "build/pp/zoidtexture.c",
+   "old_s": 1.926,
+   "new_s": 0.629,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071021",
+    "261020071021"
+   ],
+   "stamp_new": [
+    "261020071023",
+    "261020071023"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  },
+  {
+   "unit": "zoidwindow",
+   "input": "build/pp/zoidwindow.c",
+   "old_s": 1.974,
+   "new_s": 0.789,
+   "rc_old": 0,
+   "rc_new": 0,
+   "obj_same_modulo_stamp": true,
+   "elf_same_modulo_stamp": true,
+   "obj_raw_identical": false,
+   "stamp_old": [
+    "261020071024",
+    "261020071024"
+   ],
+   "stamp_new": [
+    "261020071026",
+    "261020071026"
+   ],
+   "obj_same_as_build_obj": true,
+   "obj_diffs": [],
+   "elf_diffs": []
+  }
+ ]
+}

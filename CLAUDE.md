@@ -29,7 +29,8 @@ types, algorithms, source bodies. It is **read-only**: never edit, build or comm
 | Tool | Use |
 |---|---|
 | `shc/shc-v5.0r10 â€¦ 5.1r13` | Hitachi SH SERIES C/C++ Compiler packages (decomp.me archive); `shc.exe`, `asmsh.exe`, `LNK.EXE`, `elfcnv.exe` |
-| `shc_cc.py` / `shc_cc.cmd` | compile one file the decomp.me way (CRLF, bin copied to cwd, `SHC_LIB=.`) â†’ SYSROF `.obj` + ELF via `rof2elf/rof2elf.py`; `.cmd` is the frozen config |
+| `shc_cc.py` / `shc_cc.cmd` | compile one file the decomp.me way (CRLF, bin in cwd, `SHC_LIB=.`) â†’ SYSROF `.obj` + ELF via `rof2elf/rof2elf.py` (in-process); `.cmd` is the frozen config. The bin is copied once into a locked persistent slot under `%TEMP%\rush2049-dc\shc-work\<version>\` and hash-verified per call (about 0.8 s per compile instead of 2.1 s); concurrent callers take separate slots |
+| `objcmp.py` | compare two compiler outputs (`.obj` or `.elf`) ignoring only SHC's 12-digit date stamp and the block checksums that cover it; the identity proof for any tool change (`evidence/shc_cc-identity-2026-10-20.json`) |
 | `shc_link.py` + `sysrof_abs.py` | fixed-address link with `LNK.EXE` (`START P/D/B`, `DEFINE` externals), reads the absolute SYSROF output, compares unmasked |
 | `dc_split.py`, `dc_build.py`, `dc_objdiff.py`, `dc_common.py` | the project loop: map â†’ target objects â†’ compile/link/compare â†’ `build/report.json`, `objdiff.json` |
 | `objdiff/objdiff.exe`, `objdiff-cli.exe` | 3.8.2, SuperH backend; open `objdiff.json` |
