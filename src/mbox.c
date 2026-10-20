@@ -25,9 +25,8 @@ signed short MBOX_NewObject(int obj, tUVMatrix *mat, int parent, unsigned int fl
 signed short MBOX_NewObjectCam(int obj, tUVMatrix *mat, signed short camlink, int parent, unsigned int flags)
 {
     signed short dlidx; /* r0 */
-    unsigned int camflags;
-    camflags = (camlink << 8) ^ 0xf00;
-    dlidx = ZOID_AddObject(obj, mat, parent, flags | camflags);
+    signed short cl = camlink; /* DC: short copy homed on the stack (mov.w store/reload) */
+    dlidx = ZOID_AddObject(obj, mat, parent, flags | ((cl << 8) ^ 0xf00));
     return dlidx;
 }
 
@@ -172,11 +171,12 @@ int MBOX_FindObject_WORK(const char *name, signed char firstModel, signed char l
         lastModel = gNumModels - 1;
     }
     for (i = firstModel; i <= lastModel; i++) {
-        if (ModelActive(i)) {
-            if ((ptr = bsearch(&odef, gRomObjDefPtrs[i].romObjDefs, gRomObjDefPtrs[i].count, sizeof(tModelDef),
-                          (int (*)(void *, void *))objcmp)) != 0) {
-                break;
-            }
+        if (!ModelActive(i)) {
+            continue;
+        }
+        if ((ptr = bsearch(&odef, gRomObjDefPtrs[i].romObjDefs, gRomObjDefPtrs[i].count, sizeof(tModelDef),
+                      (int (*)(void *, void *))objcmp)) != 0) {
+            break;
         }
     }
     if (!ptr) {
@@ -208,16 +208,18 @@ tTexture *MBOX_FindTexture_WORK(const char *name, unsigned short *index, signed 
         lastModel = gNumModels - 1;
     }
     for (i = firstModel; i <= lastModel; i++) {
-        if (ModelActive(i)) {
-            if ((ptr = bsearch(&ti, gTexDefPtrs[i].texDefs, gTexDefPtrs[i].count, sizeof(tTexture),
-                          (int (*)(void *, void *))texcmp)) != 0) {
-                break;
-            }
+        if (!ModelActive(i)) {
+            continue;
+        }
+        ptr = bsearch(&ti, gTexDefPtrs[i].texDefs, gTexDefPtrs[i].count, sizeof(tTexture),
+                      (int (*)(void *, void *))texcmp);
+        if (ptr) {
+            break;
         }
     }
     if (!ptr) {
-        *index = 0;
         if (flag) { }
+        *index = 0;
         return 0;
     }
     *index = (ptr - gTexDefPtrs[i].texDefs) | (i << 10);
@@ -240,16 +242,18 @@ tMboxPalette *func_8C03D56E(const char *name, unsigned short *index, signed char
         lastModel = gNumModels - 1;
     }
     for (i = firstModel; i <= lastModel; i++) {
-        if (ModelActive(i)) {
-            if ((ptr = bsearch(&ti, gPalDefPtrs[i].palDefs, gPalDefPtrs[i].count, sizeof(tMboxPalette),
-                          (int (*)(void *, void *))texcmp)) != 0) {
-                break;
-            }
+        if (!ModelActive(i)) {
+            continue;
+        }
+        ptr = bsearch(&ti, gPalDefPtrs[i].palDefs, gPalDefPtrs[i].count, sizeof(tMboxPalette),
+                      (int (*)(void *, void *))texcmp);
+        if (ptr) {
+            break;
         }
     }
     if (!ptr) {
-        *index = 0;
         if (flag) { }
+        *index = 0;
         return 0;
     }
     *index = (ptr - gPalDefPtrs[i].palDefs) | (i << 10);
