@@ -18,10 +18,11 @@ void _ControlChoice(int pak, int id)
 
 void _ControlPakErrNQA(int pak, int id)
 {
-    if (gPakError[pak][id].edges & 15) {
-        PlayStartABSound(gPakError[pak][id].edges);
-        gPakError[pak][id].done = 1;
-    }
+    /* Early-return guard: the call address then takes r3 and the saved record pointer r2
+       (8C04367E..8C04368C); the if-block form allocates r2/r3 the other way round. */
+    if (!(gPakError[pak][id].edges & 15)) return;
+    PlayStartABSound(gPakError[pak][id].edges);
+    gPakError[pak][id].done = 1;
 }
 
 void _ControlPakErrTimeout(int pak, int id)
@@ -185,11 +186,15 @@ void SetPakError(int pak, int err, void * name, int data, int left, int top, int
         if (gPakError[pak][i].err == kPS_ErrNone)
             break;
     }
+    /* Retained empty condition: the target evaluates i < 3 once more after the search loop
+       (dead cmp/ge at 8C043F42, two bytes), which also restores the later register numbering. */
+    if (i < 3) {
+    }
     gPakError[pak][i].done = 0;
     gPakError[pak][i].timeout = gFrameCounter + (int)(3.0f * gRetraceRate);
     if (err == kPS_ErrRecognize || err == kPS_ErrRemoved) {
         for (j=0;j<3;j++) {
-            if (gPakError[pak][j].err == err) {
+            if (err == gPakError[pak][j].err) { /* operand order: cmp/eq r3,r9 at 8C043F78 */
                 gPakError[pak][j].timeout=gFrameCounter+(int)(3.0f*gRetraceRate);
                 gPakError[pak][i].timeout=0;
             }
@@ -257,8 +262,10 @@ void ShowPakError(int pak, signed char *choice1, signed char *choice2, signed ch
         if (!gPakError[pak][i].done) {
             gPakError[pak][i].done = 1;
             *done = 1;
-            *choice2 = 0;
+            /* choice1 before choice2: SHC assigns the parameter spill slots by first use
+               (choice1 @4, choice2 @12 at 8C04416A..6C); MAT3 order swaps the two slots. */
             *choice1 = 0;
+            *choice2 = 0;
             goto restore;
         }
     }
