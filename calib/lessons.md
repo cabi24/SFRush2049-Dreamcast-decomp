@@ -178,3 +178,58 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   calls: target gives r14 to a model-pointer induction copy, ours to the gGameCar base; register,
   macro-address and declaration-order variants neutral or worse). CheckCPs/PassedCP/CarReportsGameOver
   prologues save fewer callee-saved registers in the target than our bodies need (not probed).
+
+# gamerecords port, 2026-10-20
+
+- The map's "RecordRace" range 8C02B5F2..C2CE is RecordGameOver (a compare chain of `bt` to
+  `bra` trampolines) tail-calling six separate bodies (RecordRace 8C02B638, RecordGhost BA60,
+  RecordPractice BD08, RecordStunt BE50, RecordBattle BFD4, RecordObstacle C154). Keep them as
+  separate functions in map order; the dispatcher's pool pad (8C02B632) depends on FindWinner's
+  end alignment.
+- DC tSaveData places raceStats at 0x8c, stuntStats 0x50c, battleStats 0x60c, obstacleStats
+  0x66c, circuitStats 0x684 and circuit 0x6f4: MAT3's offsets minus four for everything from
+  raceStats on (mov.w pool words 8C02B740/BEEE/C080/C1F2/C34A). Field layouts inside the records
+  equal MAT3 (AddPlayerStats 8C02CAA4..CB3E, RecordCircuit 8C02C38E..C3F0).
+- `__utof` is 8C09BE98 and `__ftou` 8C09BE78 (`stats->totalMiles += car->mileage / 528.0f` with
+  an unsigned int field emits utof, fadd, ftou at 8C02B9EC..BA00).
+- `gGameCar` must be the fixed-address macro `((tCarData *)0x8C004000)` here too: the extern
+  array form folds `gGameCar+0x108` into one pool word and never hoists the base, where the target
+  keeps the constant in a callee-saved register across the loop (RecordPractice 8C02BD42 r10,
+  RecordObstacle 8C02C170 r9). This alone made RecordPractice, RecordObstacle and RecordGhost exact.
+- RecordRace tests `if (gLap[p] > 0)` (extu.b; cmp/pl at 8C02B84C); RecordGhost reads
+  `gGameCar[gPlayers[p].slot].score` inline (recomputed at 8C02BB92) while `car` still serves
+  place_locked and mileage; RecordPractice is an if/else with `stats` and `car` locals, not the
+  MAT3 ternary; RecordBattle writes the abs as `x < 0 ? -x : x` (bt/s with neg in the delay slot).
+- ResetHighScores clears gNewTotalScore as a 3x5 nested loop (8C02C4BA..C4DC), not a flat 15-byte loop.
+- CountBits decrements numBits before testing the bit (bt/s with `add #-1,r5` in the delay slot).
+- IsCoinFound: `if (!save) return just; else if (datah) return save; return 1;` and
+  `else if (gTrackNum >= 14 ...) { if (!save) return just; else return save; }` fix every scratch
+  numbering; the flat MAT3 `if` chain swaps r2/r3 in the datah test.
+- FoundCoin: the mirrored index is unsigned, `raceStats[(unsigned)(gTrackNum + 6)]`: a signed
+  `gTrackNum + 6` folds to `t*0x60 + 0x240` (pool word), the target recomputes (t+6)*0x60 after
+  reloading gTrackNum (8C02C64A..C66A). An inline helper or an int local also unfolds but costs a
+  register copy (`mov r4,r2`) and shifts the mask/gJustPlayers allocation.
+- CalcUnlockedStuff: every `if (datah) { ... }` body in the non-cheat player loops is an
+  `if (!datah) continue;` guard (bra-to-test loop entry at 8C02D488); the stunt/battle point sums
+  use int counters (pointer-form loops with a hoisted end pointer, 8C02DAFA..DB1C), not `short i`.
+- FindTempNameIdx: strcpy is the `_builtin_strcpy` helper (dest r0 / src r1 at 8C02DE4C..DE58)
+  and strcmp the `_builtin_strcmp` expansion (address reloaded per iteration, 8C02DE1A); the final
+  test and return share one int copy (`nameIdx = oldest; if (nameIdx) ...; return nameIdx;`,
+  8C02E0E0 exts.w r10,r4 / 8C02E0FA mov r4,r0).
+- SHC does not kill a `signed char` global on an int store to another global (probe), but
+  reloads it after a halfword store through a struct pointer; declaring it plain `char` changes nothing.
+- Parked with first differing instruction: FindWinner 8C02B1E6 (`mov #0,r14` vs `mov #0,r13`;
+  the target allocates the hoisted gStuntPlayer/gGameCar base to r14 and the stride to r7
+  before the zero constant; int slot locals give the target's mul.l and the dead home write of
+  slot2 at 8C02B278; a block-scoped pointer local puts the base in r14 but moves the zero to r7;
+  +4 bytes, three shape changes used). RecordLap 8C02C4E2 (target hoists the gGameState load
+  above three pushes and keeps gLap in r12 while recomputing p*32 after the loop; ours spills
+  p*32 to a 4-byte frame; -4 bytes; pointer/macro/register/volatile probes neutral).
+  NumCoinsFound 8C02C892 (ours caches gTrackNum in r13 across the save store, the target reloads
+  it per block). RemovePlayerScores 8C02D3A2 (callee-saved permutation r7/r12/r13/r14 and index
+  form `(i+1)*4` with the base in r0; direct indexing and declaration order neutral).
+  FindTempNameIdx 8C02DE02 (first-loop load temp r3 vs r2; ++, +=, while, do, int/short variants
+  neutral). CalcUnlockedStuff 8C02D444 (frame 32 vs 36, one more spill slot in the target).
+- gamerecords: FindWinner +4 and RecordLap -4 currently cancel, so the tail from InitBattlePoints
+  on sits at its real addresses (16 exact functions); the RecordRace range and RecordCircuit are
+  displaced by +4 until FindWinner is exact.

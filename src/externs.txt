@@ -1657,3 +1657,6 @@ _dcVertices8C19E938 0x8c19e938
 _func_8C0D8BC0 0x8c0d8bc0
 _func_8C0DAC20 0x8c0dac20
 _func_8C0DC2A0 0x8c0dc2a0
+_gNewTotalScore 0x8C12D314
+__utof 0x8C09BE98
+__ftou 0x8C09BE78

@@ -547,10 +547,55 @@ typedef struct tCircuit {
     float totalTime; /* +10:8C01CF0C/12 */
     unsigned char ranks[6][9]; /* +14,row9:8C01CE40..6A;6car loop */
 } tCircuit;
+/* Per-mode save statistics. DC offsets are MAT3's minus4 for every array from raceStats on
+   (gamerecords: raceStats base0x8c at8C02B72E, stunt0x50c at8C02BEEE, battle0x60c at8C02C080,
+   obstacle0x66c at8C02C1F2, circuitStats0x684 stride0x1c at8C02C30C/C34A). */
+typedef struct tRaceStats {
+    unsigned int checksum;
+    float scores[3][5]; /* +4: gamerecords8C02B690 (+20 per row). */
+    float totalTime; /* +40: AddPlayerStats8C02CAA4 mov#64. */
+    unsigned short totalLaps,totalRaces,total1st,total2nd,total3rd,totalCrashes; /* +44..4e: 8C02CABE..CB16. */
+    unsigned short totalDeathAttempted,totalDeathCompleted,totalGhosts; /* +50/+52/+54: 8C02B98E/B9A2/B9AE. */
+    char pad56[2];
+    unsigned int totalMiles; /* +58: 8C02B9EA mov#88. */
+    unsigned short coinsFound; /* +5c: FoundCoin8C02C63E mov#92. */
+    char pad5e[2];
+} tRaceStats; /* stride0x60: 8C02B666 mov#60 mul. */
+typedef struct tStuntStats {
+    unsigned int checksum;
+    unsigned int bestStunt,bestAvg,totalPoints; /* +4/+8/+c: RecordStunt8C02BF24/BF38/BF48. */
+    unsigned short totalTime,totalCrashes; /* +10/+12: 8C02BF56/BF62. */
+    unsigned int totalStunts[10]; /* +14..3c: 8C02BF4E add#20, bound add#60. */
+    unsigned short coinsFound; /* +3c: FoundCoin8C02C70C mov#60. */
+    char pad3e[2];
+} tStuntStats; /* stride0x40: 8C02C704 shll2 x3. */
+typedef struct tBattleStats {
+    unsigned int checksum;
+    unsigned short totalMatches,totalWins,totalKills,totalDeaths; /* +4/+6/+8/+a: RecordBattle8C02C0F6/C11A/C0BC. */
+} tBattleStats; /* stride0xc. */
+typedef struct tObstacleStats {
+    unsigned int checksum;
+    float bestTime,totalTime; /* +4/+8. */
+    unsigned short totalRaces,totalFinished,totalCrashes,numDeathAttempted,numDeathCompleted; /* +c..+14: RecordObstacle8C02C246..C294. */
+    char pad16[2];
+} tObstacleStats; /* stride0x18. */
+typedef struct tCircuitStats {
+    unsigned int checksum;
+    unsigned short numCircuits,num1st,num2nd,num3rd,numDeathAttempted,numDeathCompleted,bestPts; /* +4..+10: RecordCircuit8C02C38E..C3EE. */
+    char pad12[2];
+    float bestTime; /* +14: 8C02C3F0 mov#20. */
+    unsigned int totalPts; /* +18: 8C02C3DA. */
+} tCircuitStats; /* stride0x1c: 8C02C30C mov#28. */
 typedef struct tSaveData {
-    char pad0[0x6f4];
+    char pad0[0x8c];
+    tRaceStats raceStats[12]; /* +8c: 8C02B72E. */
+    tStuntStats stuntStats[4]; /* +50c: 8C02BEEE. */
+    tBattleStats battleStats[8]; /* +60c: 8C02C080. */
+    tObstacleStats obstacleStats[1]; /* +66c: 8C02C1F2. */
+    tCircuitStats circuitStats[4]; /* +684: 8C02C34A. */
     tCircuit circuit; /* +6f4:word8C01C686 */
 } tSaveData;
+typedef char dc_check_save_data_circuit[(sizeof(tSaveData)==0x6f4+0x4c)?1:-1];
 typedef struct tCircuitCar {
     unsigned char name; /* +0:8C01C6DC */
     unsigned char totalPlace; /* +1:8C01CF66 */
