@@ -19871,7 +19871,7 @@
    "confidence": "low",
    "text": {
     "start": "0x8C06C08C",
-    "end": "0x8C06CADC"
+    "end": "0x8C06C664"
    },
    "functions": [
     {
@@ -19971,7 +19971,44 @@
      "end": "0x8C06C642",
      "mat3": null,
      "confidence": "low"
+    }
+   ],
+   "pools": [
+    {
+     "start": "0x8C06C1AE",
+     "end": "0x8C06C1C4"
     },
+    {
+     "start": "0x8C06C2FE",
+     "end": "0x8C06C32C"
+    },
+    {
+     "start": "0x8C06C3BA",
+     "end": "0x8C06C3D0"
+    },
+    {
+     "start": "0x8C06C50C",
+     "end": "0x8C06C524"
+    },
+    {
+     "start": "0x8C06C642",
+     "end": "0x8C06C664"
+    }
+   ],
+   "data": [],
+   "bss": [],
+   "notes": "LCD/VMU display helpers. Split 2026-10-19 from the former 8C06C08C..8C06CADC unit: SHC flushes a pending pool before the next function only when (F_end - first pending reference) >= 0x146 bytes, and the target pools at 8C06C642 (measure 0x13E) and 8C06CA80 (0x142) cannot occur inside one TU; compiling the three ranges separately reproduces every pool and function address."
+  },
+  {
+   "name": "dc_periph_8C06C664",
+   "source": null,
+   "kind": "game",
+   "confidence": "low",
+   "text": {
+    "start": "0x8C06C664",
+    "end": "0x8C06CA98"
+   },
+   "functions": [
     {
      "name": "func_8C06C664",
      "start": "0x8C06C664",
@@ -20069,7 +20106,50 @@
      "end": "0x8C06CA80",
      "mat3": null,
      "confidence": "low"
+    }
+   ],
+   "pools": [
+    {
+     "start": "0x8C06C7C0",
+     "end": "0x8C06C808"
     },
+    {
+     "start": "0x8C06C932",
+     "end": "0x8C06C95C"
+    },
+    {
+     "start": "0x8C06CA80",
+     "end": "0x8C06CA98"
+    }
+   ],
+   "data": [
+    {
+     "name": "peripheral_active_and_state_translation",
+     "section": "D",
+     "start": "0x8C0C96DC",
+     "end": "0x8C0C96F4"
+    }
+   ],
+   "bss": [
+    {
+     "name": "peripheral_init_params_and_record",
+     "section": "B",
+     "start": "0x8C18507C",
+     "end": "0x8C1850BC"
+    }
+   ],
+   "notes": "Peripheral manager (VMU/maple object lifecycle). Second TU of the former dc_misc_8C06C08C unit, boundary proved by the pool-flush rule (see dc_misc_8C06C08C notes); owns the D translation table and the init-parameter/record BSS."
+  },
+  {
+   "name": "dc_status_8C06CA98",
+   "source": null,
+   "kind": "game",
+   "confidence": "low",
+   "text": {
+    "start": "0x8C06CA98",
+    "end": "0x8C06CADC"
+   },
+   "functions": [
     {
      "name": "func_8C06CA98",
      "start": "0x8C06CA98",
@@ -20094,59 +20174,20 @@
    ],
    "pools": [
     {
-     "start": "0x8C06C1AE",
-     "end": "0x8C06C1C4"
-    },
-    {
-     "start": "0x8C06C2FE",
-     "end": "0x8C06C32C"
-    },
-    {
-     "start": "0x8C06C3BA",
-     "end": "0x8C06C3D0"
-    },
-    {
-     "start": "0x8C06C50C",
-     "end": "0x8C06C524"
-    },
-    {
-     "start": "0x8C06C642",
-     "end": "0x8C06C664"
-    },
-    {
-     "start": "0x8C06C7C0",
-     "end": "0x8C06C808"
-    },
-    {
-     "start": "0x8C06C932",
-     "end": "0x8C06C95C"
-    },
-    {
-     "start": "0x8C06CA80",
-     "end": "0x8C06CA98"
-    },
-    {
      "start": "0x8C06CAD0",
      "end": "0x8C06CADC"
     }
    ],
-   "data": [
-    {
-     "name": "peripheral_active_and_state_translation",
-     "section": "D",
-     "start": "0x8C0C96DC",
-     "end": "0x8C0C96F4"
-    }
-   ],
+   "data": [],
    "bss": [
     {
-     "name": "peripheral_parameters_record_and_status",
+     "name": "peripheral_system_status",
      "section": "B",
-     "start": "0x8C18507C",
+     "start": "0x8C1850BC",
      "end": "0x8C1850C0"
     }
    ],
-   "notes": "helpers used by updateTitleScreen and SaveServer (VMU/peripheral?); unknown file(s)."
+   "notes": "System status helpers. Third TU of the former dc_misc_8C06C08C unit (pool-flush boundary at 8C06CA98); owns the status word at the tail of the former BSS range."
   },
   {
    "name": "paksysdc",

@@ -6,7 +6,7 @@ Generated 2026-10-18. Static analysis only: nothing here was compiled or execute
 
 | File | Content |
 |---|---|
-| `units.json` | 154 contiguous, non-overlapping units covering `0x8C010000..0x8C1224A4` (schema from the task: name, source, kind, confidence, text, functions, pools, data, bss, notes) |
+| `units.json` | 156 contiguous, non-overlapping units covering `0x8C010000..0x8C1224A4` (schema from the task: name, source, kind, confidence, text, functions, pools, data, bss, notes) |
 | `functions.csv` | 4,726 functions: unit, name, start, end (exclusive, delay slot included), size, mat3_name, confidence, evidence |
 | `scripts/` | the pipeline (Python, reads the image and MAT3 read-only); `unit_spec.py` holds the reviewed unit boundaries |
 | `raw/` | intermediate data (Ghidra export, function walk, atoms, MAT3 inventory, matcher output, reports) |
@@ -19,7 +19,7 @@ is 0x8C022CA4..0x8C0232F8 (code ends 0x8C0232E4, pool to 0x8C0232F8); `ll` start
 `units.seed.json` (written by the dc_* build tooling, not by this map) agrees: identical function extents and pools
 for the three units (here timer.c's last pool also covers the 0x8C01020E alignment pad, as drivetra's pools do in
 the seed); its calibrated timer.c D/B symbol layout is copied into `units.json`. `tools/dc_common.load_map` loads
-`units.json` without warnings (154 units, 4,726 functions).
+`units.json` without warnings (156 units, 4,726 functions).
 
 ## Coverage
 
@@ -31,7 +31,7 @@ the seed); its calibrated timer.c D/B symbol layout is copied into `units.json`.
 | library (Hitachi SHC runtime / C library) | 2 | 12,432 | 1.1% |
 | startup (entry stub, section table, SDK startup) | 3 | 872 | 0.1% |
 | data (C and D sections, SDK data blocks) | 6 | 222,042 | 19.8% |
-| **total** | **154** | **1,123,492** | 100% |
+| **total** | **156** | **1,123,492** | 100% |
 
 Unit confidence: game units with a MAT3 source 71 high / 25 medium / 6 low; the 17 DC-only game units, 23 of
 24 SDK units and one library unit are low.
@@ -173,3 +173,12 @@ python mat3strings.py; python mat3funcs.py; python match.py; python build.py
 Python must run without `-I` (capstone is in the user site). `build.py` also writes `raw/units.tsv` (start, end,
 name, source, kind, confidence) for `ApplyUnitMap.java`, asserts contiguity and full coverage, and re-checks the
 three anchor units. `functions.py` takes about 2 minutes (iterative discovery, 30 rounds).
+
+**2026-10-19 split:** the former `dc_misc_8C06C08C` unit (0x8C06C08C..0x8C06CADC) is three translation units:
+`dc_misc_8C06C08C` (..0x8C06C664, LCD/VMU display helpers), `dc_periph_8C06C664` (..0x8C06CA98, peripheral
+manager, owns the D table at 0x8C0C96DC and BSS 0x8C18507C..BC) and `dc_status_8C06CA98` (..0x8C06CADC, owns the
+status word at 0x8C1850BC). Evidence: SHC emits a pending literal pool before the next function only when
+(next function end - first pending reference) >= 0x146 bytes, plus an unconditional flush at the end of a
+translation unit; the target pools at 0x8C06C642 (measure 0x13E) and 0x8C06CA80 (0x142) cannot occur inside one
+unit, and separate fixed-address links of the three ranges reproduce every pool and function address. The same
+rule can locate other boundaries in the Dreamcast platform group.

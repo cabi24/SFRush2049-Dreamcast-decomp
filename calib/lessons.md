@@ -132,3 +132,33 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   larger frame with a word spill of gText.tab[25]). func_8C03A360 8C03A378 (three temps numbered
   r2/r3/r1 versus r1/r2/r3; a non-void prototype for func_8C06B976 is an untested candidate).
   _AssignDrones 8C0255AC (`mov #0,r4` vs `mov r12,r5`, 18 bytes too long, not probed).
+
+- Pool-flush rule and translation-unit boundary detection: at the end of function G, SHC emits the
+  pending literal pool before the next function F iff (F_end - first_pending_reference) >= 0x146
+  bytes (0x144 no flush, 0x146 flush; pool size, entry count and dead code do not matter), plus an
+  unconditional flush at TU end. A target pool that violates the rule marks a TU boundary. The
+  former dc_misc_8C06C08C unit is three TUs (boundaries 8C06C664 and 8C06CA98): pools at 8C06C642
+  (measure 0x13E) and 8C06CA80 (0x142); splitting it took the range from 11/31 to 25/31 exact.
+- Dead-result assignment suppresses a tail call: `int r; r = f(0);` gives `sts.l pr; bsr; lds.l pr;
+  rts` where a plain call, `(void)f()` or `return f()` tail-calls with `bra`/`jmp` (func_8C06CA6A).
+- Conversion assignments are not folded: `unsigned int unit = <int expr>` keeps a dead `mov rIV,r9`
+  copy in an unrolled body (func_8C06C4A6) and a dead `mov.l r4,@r15` home write (func_8C06C58C);
+  `signed short cl = camlink` is homed on the stack with a mov.w store and reload instead of
+  `exts.w` (MBOX_NewObjectCam). Plain int copies fold away.
+- Index loops over a one-element array strength-reduce to a pointer IV whose bound `base+44` is
+  recomputed into a scratch register every iteration; pointer loops `p < base+1` hoist the bound
+  into a callee-saved register (func_8C06C692/C986/CA44).
+- A struct-typed local is addressed from r15 directly in calls and stores; an `int[8]` local used
+  as a value across a call gets its address CSE'd into a callee-saved register (func_8C06C692).
+- Parameter declaration order changes prologue scheduling of FP copies and constants without
+  changing the ABI registers (func_8C06C2BE: `(int, float, float, int, int)`).
+- `if (!cond) continue;` in a for loop yields `bra test; body; test; bf body` with a signed-char
+  bound re-extended per iteration; a nested `if` gives the -speed top-tested shape with the
+  extension hoisted (mbox search loops). `if ((ptr = f()) != 0)` tests r0 (`tst r0,r0; bf/s;
+  mov r0,r13`); `ptr = f(); if (ptr)` tests the variable register (`mov r0,r13; tst r13,r13`).
+- Parked with first differing instruction: func_8C06C524 8C06C544 (`mov.l 6DEC,r11` vs r10, port
+  and address registers swapped), func_8C06C58C 8C06C596 (target loads `mov.w 1536,r6` before the
+  index home store), func_8C06C712 8C06C785 (`jsr @r3` vs `jsr @r1`), func_8C06CAB4 8C06CAB6
+  (pool temps r3/r2 vs r2/r1; its size also displaces func_8C06CA98/CAA8's pool), MBOX_FindObject_WORK
+  8C03D3B5 (scratch rotation only), MBOX_NewObjectCam 8C03D0A8, MBOX_HideObject 8C03D0E6 (target
+  interleaves the camlink copy with the pushes and branches into the body after the prologue).
