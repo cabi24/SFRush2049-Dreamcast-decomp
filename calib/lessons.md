@@ -162,3 +162,19 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   (pool temps r3/r2 vs r2/r1; its size also displaces func_8C06CA98/CAA8's pool), MBOX_FindObject_WORK
   8C03D3B5 (scratch rotation only), MBOX_NewObjectCam 8C03D0A8, MBOX_HideObject 8C03D0E6 (target
   interleaves the camlink copy with the pushes and branches into the body after the prologue).
+
+- Explicit `== 0` / `!= 0` tests number the loaded operands differently from `!x || y` on a
+  `return` expression (GetDefaultOption 8C04162C..38: r3/r0 then r2/r0 versus r2/r3, r1/r3).
+- `volatile unsigned char` versus `volatile signed char` changes argument scheduling for an extern
+  read as a call argument (InitSmoke 8C04F56C..72: unsigned sets r6/r5 before the stack push,
+  signed pushes first); removing `volatile` rewrites the prologue. DC `gNumModels` is
+  `volatile unsigned char` (textureanim and smoke agree).
+- Independent integer statements in a loop body are emitted in source order (DecodeSlist 8C05176C:
+  `next &= 0x1fff;` before `snum -= cnt + 1;` gives `sub` then `and`); DecodeSlist is content-exact
+  and waits only on its neighbours' shared pool.
+- Parked with first differing instruction: SetOptions 8C04190A (case-block address temps r1/r3/r1
+  versus r3/r2/r1, recurring in every case; entry block matches), downleaf 8C05164E (two parameter
+  sign-extensions numbered the other way), PlaceUnlockedCars 8C01BB72 (pure allocation order with no
+  calls: target gives r14 to a model-pointer induction copy, ours to the gGameCar base; register,
+  macro-address and declaration-order variants neutral or worse). CheckCPs/PassedCP/CarReportsGameOver
+  prologues save fewer callee-saved registers in the target than our bodies need (not probed).

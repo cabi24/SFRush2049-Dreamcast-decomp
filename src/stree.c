@@ -141,8 +141,8 @@ void DecodeSlist(unsigned char *slp, int snum, unsigned short *slnum, unsigned i
         next = (slp[0] << 8) + slp[1];
         slp += 2;
         cnt = next >> 13;
+        next &= 0x1fff; /* and before sub: target order 8C05176C (sub r2,r5; and r12,r14) comes from this statement order */
         snum -= cnt + 1;
-        next &= 0x1fff;
         do {
             if (next == sli) *slnum++ = next++;
             else *slnum2-- = next++;

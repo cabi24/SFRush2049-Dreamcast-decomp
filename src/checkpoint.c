@@ -2,7 +2,7 @@
    Original: D:\rush_ngc\Rush_NGC\GameSource\src\checkpoint.c; assembly: build/2049LE/asm/GameSource/src/checkpoint.s */
 #include "checkpoint_types.h"
 
-static void PlaceUnlockedCars(void);
+void PlaceUnlockedCars(void); /* non-static: SHC exports no symbol for a static function, so the map entry could not be compared */
 
 float ghostRaceTimes[6] = { 225.0f, 285.0f, 300.0f, 390.0f, 330.0f, 450.0f };
 anon_startTime_loopPt_32c gCheckpoints;
@@ -43,7 +43,7 @@ void InitCPTime(void)
 }
 
 /* 0x800097bc, size 0x354 */
-static void PlaceUnlockedCars(void)
+void PlaceUnlockedCars(void)
 {
     signed short i; /* r8 */
     signed short j; /* r22 */
