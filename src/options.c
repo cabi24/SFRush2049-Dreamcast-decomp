@@ -139,7 +139,8 @@ signed char GetDefaultOption(int opt)
     case 29:
         return 0;
     case 9:
-        return !optionsFlag_8C1224C4 || gLang;
+        /* explicit == 0 / != 0 tests: the two loads use r3/r0 and r2/r0 (8C04162C..38); !x || y gives r2/r3, r1/r3 */
+        return optionsFlag_8C1224C4 == 0 || gLang != 0;
     case 30:
         return 0;
     case 10:
