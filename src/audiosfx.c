@@ -3,6 +3,8 @@
  */
 #include "..\include\audiosfx_private.h"
 
+signed char func_8C016508(float volume);
+
 void func_8C015EF0(DcSfxBank *bank, int lock)
 {
     unsigned int size;
@@ -48,7 +50,8 @@ void func_8C016044(void)
     DcSfxBank **loaded;
     time = func_8C06AEC8() - 1.0f;
     loaded=gAudLoadedBanks;
-    while (gAudNumLoadedBanks && !loaded[gAudNumLoadedBanks-1]->locked) {
+    while (gAudNumLoadedBanks) {
+        if (loaded[gAudNumLoadedBanks-1]->locked) break;
         for (i=0; i<256; i++) {
             if (gSfxInstances[i].used && gSfxInstances[i].started &&
                 func_8C0A2EEA(&gSfxInstances[i].handle) &&
