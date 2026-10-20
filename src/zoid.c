@@ -214,9 +214,16 @@ void _RemoveObjectTree(signed short objnum, int removeChildren, int removeNext)
     ObjInstanceList[objnum].child = -1;
     ObjInstanceList[objnum].next = -1;
     if (objnum == gNumObjects - 1) {
-        do {
+        /* Separate statements: the target re-reads gNumObjects for the second test (8C068B86)
+           instead of keeping the decremented value in r5, which also frees r5/r6 for the
+           0xffff and 88 constants. A do/while with && caches it. */
+        for (;;) {
             gNumObjects--;
-        } while (ObjInstanceList[gNumObjects - 1].index == 0xffff && gNumObjects > 0);
+            if (ObjInstanceList[gNumObjects - 1].index != 0xffff)
+                break;
+            if (gNumObjects <= 0)
+                break;
+        }
     }
 }
 
@@ -237,17 +244,20 @@ void ZOID_SetObjectDef(signed short objnum, unsigned short def)
 
 void ZOID_SetObjectParent(signed short objnum, signed short newparent)
 {
-    tZoidUnitObject *object;
-    signed short parent; /* r0 */
+    register signed short parent; /* r0 */
     signed short idx; /* r0 */
+    tZoidUnitObject *object;
 
+    /* `register parent` is allocated first (r4, 8C068BC8) and object follows in r5; routing
+       object->next through idx lets the load reuse r5 (8C068BEC) and keeps 88 in r3. */
     parent = ZOID_ObjParent(objnum);
     if (parent != -1 && parent == newparent) {
         return;
     }
     object=&ObjInstanceList[objnum];
     if (parent >= 0) {
-        ObjInstanceList[parent].child = object->next;
+        idx = object->next;
+        ObjInstanceList[parent].child = idx;
     } else if (ObjHead == objnum) {
         ObjHead = object->next;
     } else {
@@ -273,10 +283,10 @@ int func_8C068C68(tZoidUnitObject *obj,int window)
  }
  return 0;
 }
-int func_8C068CC6(tZoidUnitObject *instance,int window)
+int func_8C068CC6(tZoidUnitObject *obj,int window)
 {
- tZoidUnitObject *obj=instance;
- if(!(obj->flags&(0x100<<window)))return 1;
+ unsigned int mask=0x100<<window; /* named mask lands in r4 (8C068CCE) as in func_8C068C68 */
+ if(!(obj->flags&mask))return 1;
  if(obj->child>=0) {
   if(func_8C068C68(&ObjInstanceList[obj->child],window))return 1;
  }

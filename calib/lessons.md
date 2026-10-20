@@ -75,3 +75,34 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   r6, matching func_8C06B1C8 and func_8C06B22C. The variadic func_8C06B298 remains parked:
   hand-written alignment gives `tst #3,r0` and args in r5 where the target's compiler-generated
   va_start gives `mov #3,r6`/`tst r0,r6` and args in r6; a const local is folded away.
+
+- `register` is honoured and changes allocation order. SHC allocates register-qualified locals
+  before the others: one not live across a call takes the lowest free arg register
+  (ZOID_SetObjectParent: `register signed short parent` -> r4 at 8C068BC8, the plain `object`
+  then r5; without `register` the order is r5/r4). Register variables live across calls take
+  callee-saved registers from r14 downward. Declaration order among several register variables
+  did not decide the order.
+- `x = x + v` and `x += v` can swap two long-lived registers with identical instructions:
+  MBSetupWad's explicit form gives fixup r7 / loop pointer r6 (8C03CF98, 8C03CFBA); `+=` swaps them.
+- `do {..} while (a && b)` keeps a just-decremented global in a register for `b`; separate
+  `if (...) break;` statements re-read it per statement (extends the per-block reload finding):
+  _RemoveObjectTree 8C068B86 `mov.l @r4,r3; cmp/pl r3` versus the cached `cmp/pl r5`.
+- Inlined body shape matters independently of the standalone copy. In a `#pragma inline` function
+  `if (cond) return; stmt;` and `if (!cond) stmt;` compile identically standalone but allocate the
+  inlined temporaries differently (dc_blit BlitSetAttribute: r3 at 8C06B424/8C06B440 versus r1,
+  which also shifted BlitXLU's pointer registers). An explicit local block is byte-identical to the
+  pragma-inlined call, and an evidence-only `-inline=16` probe without the pragma was byte-identical
+  to `-noinline` + pragma, so dc_blit does not distinguish the two policies either.
+- Nested `else { if (c) return x; return y; }` versus a flat `else if` chain changes FP temporary
+  allocation in the last arm with identical instruction sequences (fsatan 8C01143C: fr2/fr3/fr1
+  versus fr0/fr1/fr3); a fully flat `if/if/return` chain instead moves the second compare's
+  constant register (fr3 versus fr2).
+- A named loop mask local (`unsigned int mask = 0x100 << window`) is allocated into the dead arg
+  register r4 after the pointer copy where the inline expression takes a scratch
+  (zoid func_8C068CC6 8C068CCE).
+- Parked with first differing instruction: statll InitStatLL 8C051396 (ours `mov #0,r0` before
+  `mov.l @(12,r4),r6`; target loads `list->list` first, then the shared zero; eleven neutral
+  source variants). textureanim InitTextureAnimation 8C05B30A (rotated loop's entry copy of the
+  `plist->name` test uses r2 for us, r3 in the target; the loop-back copy already matches).
+  zoid _RemoveObjectTree 8C068AA0 (ours `sts macl,r11; add r13,r11` with `mov #-1,r12` in the
+  delay slot; target `mov #-1,r12; sts macl,r11` with the add in the delay slot).
