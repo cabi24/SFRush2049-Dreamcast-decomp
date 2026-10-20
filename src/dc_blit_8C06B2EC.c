@@ -50,7 +50,10 @@ void BlitFinish(void)
 #pragma inline(BlitSetAttribute)
 void BlitSetAttribute(unsigned int attribute)
 {
-    if((blitAttribute&attribute)!=attribute) blitAttribute|=attribute;
+    /* Early-return guard: as an inlined body it keeps the or-temporary in r3 (06B424/06B440);
+       the single-if form allocates r1 there and shifts BlitXLU's pointer registers. */
+    if((blitAttribute&attribute)==attribute) return;
+    blitAttribute|=attribute;
 }
 
 void BlitClearAttribute(unsigned int attribute)
