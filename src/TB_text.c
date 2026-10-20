@@ -204,7 +204,7 @@ void * TB_Strcpy(void * str1, void * str2)
         *s1++ = *s2++;
         while (s2[0] || s2[1]) { *s1++ = *s2++; *s1++ = *s2++; }
         *s1++=0; *s1=0;
-    } else while ((*s1++ = *s2++) != 0) {}
+    } else do {} while ((*s1++ = *s2++) != 0); /* do/while: byte temp in r2 (8C05AB2A); while(){} gives r3 */
     return s;
 }
 
