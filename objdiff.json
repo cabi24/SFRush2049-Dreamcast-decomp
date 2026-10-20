@@ -155,7 +155,7 @@
       "target_path": "build/target/atan.o",
       "base_path": "build/obj/atan.o",
       "metadata": {
-        "complete": false,
+        "complete": true,
         "reverse_fn_order": false,
         "progress_categories": [
           "game"
@@ -695,7 +695,7 @@
       "target_path": "build/target/mb_wad.o",
       "base_path": "build/obj/mb_wad.o",
       "metadata": {
-        "complete": false,
+        "complete": true,
         "reverse_fn_order": false,
         "progress_categories": [
           "game"
@@ -1363,7 +1363,7 @@
       "target_path": "build/target/dc_blit_8C06B2EC.o",
       "base_path": "build/obj/dc_blit_8C06B2EC.o",
       "metadata": {
-        "complete": false,
+        "complete": true,
         "reverse_fn_order": false,
         "progress_categories": [
           "game"
@@ -1398,6 +1398,34 @@
         ],
         "auto_generated": false,
         "source_path": "src/dc_misc_8C06C08C.c"
+      }
+    },
+    {
+      "name": "dc_periph_8C06C664",
+      "target_path": "build/target/dc_periph_8C06C664.o",
+      "base_path": "build/obj/dc_periph_8C06C664.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false,
+        "source_path": "src/dc_periph_8C06C664.c"
+      }
+    },
+    {
+      "name": "dc_status_8C06CA98",
+      "target_path": "build/target/dc_status_8C06CA98.o",
+      "base_path": "build/obj/dc_status_8C06CA98.o",
+      "metadata": {
+        "complete": false,
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false,
+        "source_path": "src/dc_status_8C06CA98.c"
       }
     },
     {

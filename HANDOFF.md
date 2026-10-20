@@ -1,6 +1,6 @@
 # HANDOFF â€” Rush 2049 Dreamcast matching decompilation
 
-Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `include/README.md`,
+Updated 2026-10-19. Read this first, then `BUILDING.md`, `map/README.md`, `include/README.md`,
 `pilot/lanes/toolchain/calibration.md` (compiler facts) and `tools/README.md` (tool provenance).
 `CODEX.md`, `overview.md` and `mat3-to-dreamcast-plan.md` are the earlier planning record.
 
@@ -13,26 +13,20 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
   (`-inline=16` is an equivalent alternative so far). Never add decomp.me's `-aggressive=2 -extra=asm=1800 -pic=0`.
   Linker: H-series `LNK.EXE` 6.0E. Details and all compiler quirks in `pilot/lanes/toolchain/calibration.md`
   and `calib/drivetra/notes.md` (float literals truncate; `short / short-typed` â†’ `__divws`; products written left to right; `-speed` loop shape; per-block address loads).
-- Map: `map/units.json`, 154 contiguous units, 4,726 functions, 102 of 124 MAT3 GameSource files placed
+- Map: `map/units.json`, 156 contiguous units, 4,726 functions, 102 of 124 MAT3 GameSource files placed
   (`map/README.md` lists the 22 unplaced and the five weakest boundaries). Ghidra project `ghidra-project/RushDC.gpr`
   carries the same names (`tools/ghidra.ps1`).
 - Build: `python tools/dc_split.py && python tools/dc_build.py` (strict, unmasked, at real addresses). Current:
 
 | Unit | Exact text/literals | Initialized data | Exact functions |
 |---|---:|---:|---:|
-| HAL_Support | 32 | 0 | 1/1 |
-| HAL_text | 40 | 15 | 0/26 |
-| HAL_time | 234 | 1 | 4/4 |
-| Init | 342 | 12 | 3/7 |
-| TB_Vector | 132 | 0 | 2/2 |
-| TB_text | 492 | 329 | 10/21 |
 | asincos | 64 | 16 | 0/3 |
-| atan | 286 | 0 | 3/4 |
+| atan | 368 | 0 | 4/4 |
 | audio | 580 | 4,857 | 13/30 |
 | audiomgr | 0 | 381 | 0/57 |
 | audioscr | 0 | 935 | 0/12 |
-| audiosfx | 58 | 0 | 0/30 |
-| blit | 1,038 | 4 | 8/10 |
+| audiosfx | 590 | 0 | 8/30 |
+| blit | 1,322 | 4 | 10/10 |
 | bstree | 220 | 0 | 6/6 |
 | camera | 108 | 1,642 | 1/23 |
 | carload | 1,024 | 0 | 1/1 |
@@ -42,47 +36,53 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | circuit | 144 | 376 | 1/5 |
 | circuitscr | 0 | 949 | 0/19 |
 | collision | 280 | 0 | 2/7 |
-| controls | 1,190 | 104 | 5/11 |
+| controls | 1,742 | 104 | 7/11 |
 | controlscr | 0 | 4,999 | 0/11 |
 | controlsys | 438 | 122 | 5/11 |
 | countdown | 770 | 69 | 2/2 |
 | dc_audio64_init_8C06ADD4 | 1,244 | 317 | 15/16 |
-| dc_blit_8C06B2EC | 1,252 | 5 | 10/12 |
+| dc_blit_8C06B2EC | 1,308 | 5 | 12/12 |
 | dc_kamui_tex_8C06E5B4 | 0 | 0 | 0/11 |
 | dc_misc_8C06B80C | 0 | 24 | 0/13 |
-| dc_misc_8C06C08C | 436 | 24 | 4/31 |
+| dc_misc_8C06C08C | 1,302 | 0 | 12/14 |
+| dc_periph_8C06C664 | 948 | 24 | 13/14 |
 | dc_sound_8C069F78 | 0 | 28 | 0/23 |
-| dc_unk_8C069E34 | 0 | 0 | 0/1 |
+| dc_status_8C06CA98 | 0 | 0 | 0/3 |
+| dc_unk_8C069E34 | 88 | 0 | 0/1 |
 | dc_zoid_8C06ED90 | 108 | 0 | 2/31 |
 | demo | 842 | 45 | 7/7 |
 | drivetra | 794 | 0 | 6/10 |
 | drivsym | 244 | 44 | 1/17 |
 | drones | 46 | 0 | 2/4 |
-| fmath | 28 | 72 | 1/31 |
+| fmath | 2,508 | 72 | 25/31 |
 | front | 1,880 | 1,102 | 5/5 |
-| game | 0 | 163 | 0/14 |
+| game | 528 | 163 | 4/14 |
 | gameoverscr | 122 | 7 | 1/16 |
 | gamerecords | 192 | 0 | 2/25 |
 | gfx | 576 | 88 | 8/10 |
+| HAL_Support | 32 | 0 | 1/1 |
+| HAL_text | 208 | 15 | 1/26 |
+| HAL_time | 234 | 1 | 4/4 |
 | headlights | 308 | 172 | 1/4 |
 | highscorescr | 0 | 1,177 | 0/20 |
 | hud | 1,264 | 4,855 | 5/33 |
 | hudextra | 0 | 1,788 | 0/13 |
+| Init | 712 | 12 | 5/7 |
 | licensescr | 526 | 143 | 2/2 |
 | ll | 422 | 0 | 4/4 |
 | maxpath | 496 | 57 | 4/25 |
-| mb_wad | 182 | 0 | 3/4 |
-| mbox | 530 | 523 | 6/13 |
+| mb_wad | 252 | 0 | 4/4 |
+| mbox | 956 | 523 | 8/13 |
 | mdrive | 0 | 378 | 0/20 |
 | memsys | 0 | 1 | 0/30 |
-| model | 118 | 1 | 2/3 |
+| model | 1,520 | 1 | 3/3 |
 | modescr | 250 | 986 | 2/8 |
-| options | 756 | 0 | 1/4 |
-| optionscr | 166 | 2,092 | 1/11 |
-| pakerr | 760 | 52 | 6/19 |
+| options | 1,136 | 0 | 3/4 |
+| optionscr | 1,118 | 2,092 | 3/11 |
+| pakerr | 2,904 | 52 | 16/19 |
 | pakscr | 236 | 43 | 2/17 |
 | paksysdc | 0 | 102 | 0/38 |
-| pane | 1,082 | 480 | 3/5 |
+| pane | 1,320 | 480 | 5/5 |
 | password | 884 | 305 | 5/6 |
 | pausescr | 6 | 445 | 1/12 |
 | playerscr | 0 | 6,038 | 0/30 |
@@ -95,16 +95,18 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | shots | 0 | 280 | 0/16 |
 | skids | 2,186 | 20 | 6/8 |
 | sky | 458 | 7 | 3/3 |
-| smoke | 92 | 154 | 2/6 |
+| smoke | 244 | 154 | 3/6 |
 | startscr | 0 | 1,270 | 0/9 |
 | state | 290 | 12 | 5/6 |
 | statll | 130 | 0 | 2/3 |
 | stdlib | 64 | 4 | 2/2 |
-| streaks | 1,116 | 16 | 4/5 |
-| stree | 58 | 72 | 1/25 |
-| stunt | 1,016 | 0 | 6/13 |
+| streaks | 1,168 | 16 | 4/5 |
+| stree | 616 | 72 | 5/25 |
+| stunt | 1,168 | 0 | 7/13 |
 | targetpaths | 302 | 4 | 2/12 |
 | targets | 0 | 525 | 0/32 |
+| TB_text | 1,322 | 329 | 18/21 |
+| TB_Vector | 132 | 0 | 2/2 |
 | text | 450 | 7 | 3/3 |
 | textureanim | 418 | 0 | 1/2 |
 | timer | 0 | 16 | 0/9 |
@@ -114,37 +116,37 @@ Updated 2026-10-18. Read this first, then `BUILDING.md`, `map/README.md`, `inclu
 | unk_8C01021C_video | 78 | 0 | 3/3 |
 | unk_8C01026C_entry | 56 | 0 | 1/1 |
 | unk_8C0102A4_lz | 0 | 0 | 0/1 |
-| unk_8C03A360 | 46 | 5 | 0/2 |
+| unk_8C03A360 | 110 | 5 | 1/2 |
 | unk_8C055F38 | 56 | 0 | 0/1 |
-| unk_8C065F2C | 258 | 12,223 | 1/3 |
+| unk_8C065F2C | 604 | 12,223 | 2/3 |
 | unzip | 26 | 362 | 1/11 |
 | videoscr | 0 | 939 | 0/13 |
-| visuals | 44 | 600 | 0/60 |
+| visuals | 326 | 600 | 1/60 |
 | warningscr | 0 | 24 | 0/2 |
 | waves | 1,850 | 630 | 20/22 |
 | weapons | 600 | 1,252 | 3/5 |
 | world | 378 | 0 | 5/6 |
 | worlddam | 500 | 80 | 2/3 |
 | zip | 6,838 | 475 | 19/25 |
-| zoid | 440 | 0 | 7/21 |
+| zoid | 1,316 | 0 | 20/21 |
 | zoidblit | 464 | 0 | 7/7 |
 | zoidlight | 44 | 0 | 2/2 |
-| zoidpoly | 848 | 0 | 7/8 |
+| zoidpoly | 896 | 0 | 8/8 |
 | zoidtexture | 280 | 0 | 7/7 |
 | zoidwindow | 2,666 | 224 | 15/15 |
 
-Game text/literal credit: **49,730 /569,664 (8.7297%)**, plus **69,331 initialized data bytes**.
-Whole-image credit: **119,061 /1,123,492 (10.5974%)**, **328 exact source functions**, 112 source units.
-The sixteenth batch adds 428 text/literal bytes, 397
-initialized data bytes and 4 exact functions. The audited batch is locally committed
-through `b16ca0045d04b385e0fae4a2c8d5c930e791e01c`. No remote push was performed.
+Game text/literal credit: **66,792 /569,664 (11.7248%)**, plus **69,331 initialized data bytes**.
+Whole-image credit: **136,123 /1,123,492 (12.1161%)**, **459 exact source functions**, 114 source units.
+The 2026-10-19 worker round adds 4,294 text/literal bytes and 42 exact functions over the
+2026-10-18 lane-1 commit (`a5908c7`): atan, mb_wad and dc_blit_8C06B2EC are now fully exact; pakerr,
+zoid, mbox, TB_text, options, smoke, unk_8C03A360 and audiosfx gained functions; the former
+dc_misc_8C06C08C unit was split into three translation units by the pool-flush rule (see
+`map/README.md`), taking that range from 11/31 to 25/31. Every unit is committed separately with its
+exact byte and function delta, and `calib/lessons.md` records each round's codegen lessons and every
+parked function's first differing instruction. No remote push was performed.
 
-Working tree (not yet committed): the dc_audio64_init match below adds five exact functions
-and 320 text bytes; `python -B tools/audit_report.py` currently reports 62,498 game text bytes,
-131,829 whole-image bytes (11.7339%) and 417 exact functions. It folds in the earlier uncommitted
-campaign packets in this tree, so audit before committing as a batch.
 
-`matching-evidence/2026-10-18/integration-sixteenth.json` records current source/header/compiler-input,
+`evidence/strict-integration-receipt.json` (regenerated by `python -B tools/audit_report.py`) records current source/header/compiler-input,
 tool/output hashes and disjoint earned address spans. `python -B tools/audit_report.py` validates
 saved outputs without compiling. No linker fill, gaps, alignment, explicit record padding or BSS
 earns image credit. Full fixed-address equality remains required; no comparison masks are used.
