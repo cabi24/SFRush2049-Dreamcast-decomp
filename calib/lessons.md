@@ -106,3 +106,29 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
   `plist->name` test uses r2 for us, r3 in the target; the loop-back copy already matches).
   zoid _RemoveObjectTree 8C068AA0 (ours `sts macl,r11; add r13,r11` with `mov #-1,r12` in the
   delay slot; target `mov #-1,r12; sts macl,r11` with the add in the delay slot).
+
+- Static functions are invisible to the comparison: SHC emits no symbol for a `static` function,
+  so a map entry naming one reports "symbol not in the compiled object" and is silently
+  uncredited. Declare map-named DC helpers non-static (drones `_AssignDrones`/`_LinearInterp`;
+  `_LinearInterp` is content-exact but moved until `_AssignDrones` matches).
+- Parameter spill slots are assigned by first use (ShowPakError: `*choice1 = 0` before
+  `*choice2 = 0` gives choice1 @4 / choice2 @12 at 8C04416A; the reverse order swaps the slots
+  while `done`, used first, stays @8).
+- A retained empty `if (i < 3) { }` after a `for (i = 0; i < 3; i++) ... break;` search loop emits
+  a dead `cmp/ge` (SetPakError 8C043F42); its two bytes shift the whole later register numbering
+  (same family as the dc_audio64 empty-if lesson).
+- Comparison operand order is visible in `cmp/eq Rm,Rn`: SetPakError `err == field` gives
+  `cmp/eq r3,r9` at 8C043F78, `field == err` gives `cmp/eq r9,r3`.
+- Statement forms that only renumber scratch registers: TB_Strcpy `do {} while ((*s1++ = *s2++) != 0)`
+  puts the byte temp in r2 (8C05AB2A), the `while` form r3; `x == 0 && y() == 0` loads the callee
+  address into r1 where `!x && !y()` uses r3 (func_8C03A3AE 8C03A3CE); an early-return guard versus
+  an if-block swaps r2/r3 (_ControlPakErrNQA 8C04367E).
+- Parked with first differing instruction: TB_GetTextNumLines 8C05A89C (frame -20 vs -16; SHC keeps
+  a sign-extended copy of `ch` in r12 and spills `dbl`, the target re-extends `ch` per statement and
+  keeps `dbl` in r8; the same ext caching shows in TB_DrawTextScrollBox, so it is systematic, not
+  found in 20 source variants). TB_EllipseText 8C05A998 (frame -24 vs -28; target keeps `width` in
+  r8 and `w`/`ew` as stack words). ShowPakError 8C0441AE after the spill-order fix (ours tail-merges
+  the two _DrawChoice calls, the target has separate call sites at 8C0443DC/8C04440C and a 4-byte
+  larger frame with a word spill of gText.tab[25]). func_8C03A360 8C03A378 (three temps numbered
+  r2/r3/r1 versus r1/r2/r3; a non-void prototype for func_8C06B976 is an untested candidate).
+  _AssignDrones 8C0255AC (`mov #0,r4` vs `mov r12,r5`, 18 bytes too long, not probed).

@@ -18,8 +18,9 @@ void SetCatchup(void);
 float old_drone_scale[6];
 float old_boost[6];
 
-static void _AssignDrones(void);
-static float _LinearInterp(float in_bound1, float in_bound2, float out_bound1, float out_bound2, float input);
+/* Non-static: SHC exports no symbol for a static function, so the map entries could not be compared. */
+void _AssignDrones(void);
+float _LinearInterp(float in_bound1, float in_bound2, float out_bound1, float out_bound2, float input);
 
 /* 0x800114A4, lines 56-60 */
 void InitDrones(void)
@@ -40,7 +41,7 @@ void DoDrones(void)
 }
 
 /* 0x80011508, lines 91-499 */
-static void _AssignDrones(void)
+void _AssignDrones(void)
 {
     signed short i; /* r11 */
     signed short k; /* r9 */
@@ -305,7 +306,7 @@ static void _AssignDrones(void)
 }
 
 /* 0x8001269C, lines 522-544 */
-static float _LinearInterp(float in_bound1, float in_bound2, float out_bound1, float out_bound2, float input)
+float _LinearInterp(float in_bound1, float in_bound2, float out_bound1, float out_bound2, float input)
 {
     float slope;
     float intercept;
