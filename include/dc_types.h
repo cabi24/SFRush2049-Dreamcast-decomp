@@ -535,7 +535,7 @@ typedef struct anon_base_TOCentries_c {
 
 typedef struct tPS_File tPS_File;
 typedef struct tCircuit {
-    char pad0[4];
+    unsigned int checksum; /* +0: SavePlayerCircuit 8C04C98E..C99C checksums +4..+4c into it. */
     unsigned char active; /* +4:8C01C5C2 */
     unsigned char death; /* +5:8C01C5D0 */
     unsigned char temp; /* +6:8C01D354 */
@@ -586,16 +586,61 @@ typedef struct tCircuitStats {
     float bestTime; /* +14: 8C02C3F0 mov#20. */
     unsigned int totalPts; /* +18: 8C02C3DA. */
 } tCircuitStats; /* stride0x1c: 8C02C30C mov#28. */
+/* Mode settings (save GetPlayerCar 8C04BC16/BC24/BC5A/BC66: car at+5 of 0x48/0x5c/0x6c/0x80;
+   setting switches 8C04C1F8..C30A give the byte fields). */
+typedef struct tRaceSettings {
+    unsigned int checksum;
+    unsigned char track,car,trans,carView;
+    signed char laps,drones,gravity,difficulty,catchup,backwards,mirror,fog,wind,deaths; /* +8..+11 */
+    char pad12[2];
+} tRaceSettings;
+typedef struct tBattleSettings {
+    unsigned int checksum;
+    unsigned char track,car,trans,carView;
+    signed char gravity,mirror,fog,wind,mode,points,minutes,neg; /* +8..+f */
+} tBattleSettings;
+typedef struct tStuntSettings {
+    unsigned int checksum;
+    unsigned char track,car,trans,carView;
+    signed char gravity,mirror,fog,wind,mode,flow,points,minutes,deaths; /* +8..+10 */
+    char pad11[3];
+} tStuntSettings;
+typedef struct tObstacleSettings {
+    unsigned int checksum;
+    unsigned char track,car,trans,carView;
+    signed char gravity,mirror,fog,wind; /* +8..+b */
+} tObstacleSettings;
+typedef struct tCarSettings {
+    unsigned int checksum;
+    signed char settings[10]; /* SavePlayerCarSetting 8C04C6BE: checksum over12 from+4, record16. */
+    char pad0e[2];
+} tCarSettings;
 typedef struct tSaveData {
-    char pad0[0x8c];
+    unsigned int nameChecksum; /* +0: CreatePlayer 8C04DAC4..DAD0 over id..options-4. */
+    unsigned int id[2]; /* +4: 8C04DA72/DAB6. */
+    unsigned char revision; /* +c: _InitPlayer 8C04CBDE. */
+    unsigned char name[13]; /* +d: save 8C04B678, CreatePlayer 8C04DABE. */
+    char pad1a[2];
+    unsigned int optChecksum; /* +1c: SavePlayerOption 8C04C354. */
+    signed char options[20]; /* +20: GetPlayerOption 8C04C150, twenty on DC (8C04C13E cmp #20). */
+    unsigned int contChecksum; /* +34: SavePlayerControls 8C04C754. */
+    signed char controls[11]; /* +38: 8C04C72A. */
+    signed char rumble; /* +43: _InitPlayer 8C04CBE4 mov#67. */
+    unsigned char raceType; /* +44: GetPlayerRaceType 8C04BBB4 mov#68. */
+    char pad45[3];
+    tRaceSettings raceSettings; /* +48 */
+    tBattleSettings battleSettings; /* +5c */
+    tStuntSettings stuntSettings; /* +6c */
+    tObstacleSettings obstacleSettings; /* +80 */
     tRaceStats raceStats[12]; /* +8c: 8C02B72E. */
     tStuntStats stuntStats[4]; /* +50c: 8C02BEEE. */
     tBattleStats battleStats[8]; /* +60c: 8C02C080. */
     tObstacleStats obstacleStats[1]; /* +66c: 8C02C1F2. */
     tCircuitStats circuitStats[4]; /* +684: 8C02C34A. */
     tCircuit circuit; /* +6f4:word8C01C686 */
-} tSaveData;
-typedef char dc_check_save_data_circuit[(sizeof(tSaveData)==0x6f4+0x4c)?1:-1];
+    tCarSettings carSettings[13]; /* +740: 8C04C676 mov.w 0x740, stride16. */
+} tSaveData; /* size0x810: _InitPlayer memset 8C04CBAA, SaveInit stride 8C04B646. */
+typedef char dc_check_save_data_circuit[(sizeof(tSaveData)==0x810)?1:-1];
 typedef struct tCircuitCar {
     unsigned char name; /* +0:8C01C6DC */
     unsigned char totalPlace; /* +1:8C01CF66 */
@@ -613,13 +658,13 @@ typedef struct tCircuitTrack {
 } tCircuitTrack;
 
 typedef struct tPlayerProfile {
-    char pad0[8];
+    tDLLE ll; /* +0: save list links, _AlreadyReadPlayer 8C04CDC0. */
     tPS_File **fileh; /* +8: 8C050EF2 mov.l @(8,r4),r4. */
-    char pad_name[8];
+    unsigned int id[2]; /* +c: _ReadPlayer memcpy 8C04CEDC add#12. */
     unsigned char name[13]; /* gameover8C029B14/16,+14,ghost bound13. */
     signed char controls[11]; /* profile+21..2b, controlscr byte accesses. */
     signed char rumble; /* controls8C01ED3C. */
-    char pad_datah[0x3c-0x2d];
+    char filename[15]; /* +2d: _ReadPlayer strcpy 8C04CE7A add#45, up to datah. */
     tSaveData **datah; /* circuit8C01C57E, profile+3c. */
     /* Profile stride40; camera accesses the same datah handle at+3c. */
 } tPlayerProfile;

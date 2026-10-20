@@ -233,3 +233,71 @@ enginetorque and UpdateFrameTimer residuals remain parked. See the receipts for 
 - gamerecords: FindWinner +4 and RecordLap -4 currently cancel, so the tail from InitBattlePoints
   on sits at its real addresses (16 exact functions); the RecordRace range and RecordCircuit are
   displaced by +4 until FindWinner is exact.
+
+# save port, 2026-10-20
+
+Unit `save` (8C04B628..8C04E880): from 0/12888 text bytes and 0/62 functions to 8250 text bytes and
+45/62 functions exact (35/40 data bytes unchanged). Every function is now the target's size; the
+remaining seven differ only in register numbering, spill placement or one scheduling slot.
+
+Codegen lessons (all verified against the target bytes):
+
+- Pool-flush distance is to the *next flush opportunity*, not the next function end: SaveInit's pool
+  sits inside SaveServer after its first `bra` (8C04B770) because `bra`+4 - first pending reference
+  (0x138) < 0x146. Shrinking SaveInit by 22 bytes made our pool defer the same way.
+- A loop bound kept in a local variable (`numLimbo = 36`, assigned just before use) gives the plain
+  counted loop with the bound hoisted into a callee-saved register (`mov #36,r12; cmp/ge`); a literal
+  bound unrolls the loop by three. Assigning the variable at the top of the function spills it instead.
+- Static helpers that the target tail-calls with `bra` after the epilogue (the four option getters
+  laid out after GetPlayerOption) must stay out of `#pragma inline`; their `unsigned char track`
+  parameter makes callers compute `gTrackNum + 250` (`mov.w 0xfa; add`) instead of `add #-6`.
+- An `if`/`else if` chain merges identical tail-call bodies into one site (GetPlayerOption's two
+  race ranges both branch to 8C04C176) while re-extending the char global per test; a combined
+  `(a && b) || (c && d)` condition shares one `exts.b`, separate `if` statements keep two copies.
+- `(char *)&data->xSettings + 4` as the checksum base gives `add #120,r4; add r14,r4; ...; add #4,r4`
+  when the member offset exceeds 127 (obstacle settings 0x80, circuit 0x6f4); `&x.firstField` folds it.
+- `while (size > 0)` on an unsigned count compiles to `cmp/hi` against a zero register; `while (size)`
+  gives `tst`.
+- `track >= 0 &&` on an unsigned char parameter is not folded: the target keeps `cmp/pz` in
+  SavePlayerStats/SavePlayerCoins.
+- A `#pragma inline` on an empty non-static function (PurgePlayerData) removes the call and keeps the
+  standalone `rts; nop` copy.
+- Argument evaluation of an inlined helper: `_NewPlayer((*fileh)->pak, (*fileh)->id)` keeps the dead
+  `id` load (`mov #20,r3; add r4,r3; mov.l @r3,r3`); passing the already-loaded `pak` local drops it.
+- `float t[5][13]` tables indexed as `t[0][car]` give the `fmov fr15,fr3; fmov.s @(r0,r3),fr2; fmac`
+  order and the `add r3,r2; fmov.s @r2` second-row form; MAT3's `((float *)t)[car]` cast does not.
+- Local layout: scalars at the bottom, then aggregates in reverse declaration order (last declared
+  lowest); pixel arrays stay on top. SaveGhost needs `str[32]`/`ext[16]` declared before the palette.
+- `char ext[16]` (not `[4]`) in CreatePlayer/SaveGhost; `struct { int size; int pad[2]; }` for the
+  12-byte slot the GD-ROM size check uses; the boot-file name "1ST_READ.BIN" is assembled byte by byte
+  in the order 0,8,3,6,9,7,5,10,11,4,1,2,12 (also, unused, in CompressGhost) so the string never
+  appears in the image; the size limit is 401000, the GD call result is kept in a local before the test.
+- A chained assignment `a->offset = a->size = 0` shares one dereference for both stores; separate
+  statements re-dereference per store (lesson 6).
+- `if (x != 0)` versus `if (x)` changes temp numbering of the following statement (`_ScrambleGhost`:
+  the seed load becomes r1).
+- Right-to-left argument temporaries: `header->size * 2 + header->start` puts the start temporary in
+  the lower spill slot (8C04E0D0/E0D4); the MAT3 operand order swaps the two slots.
+- The DC `_ReadPlayer` cheat tail stores `gCheatActive[23] = 1` twenty-three times (constant index,
+  counted down by -speed): `for (i = 0; i < 23; i++) gCheatActive[23] = 1;`.
+- `_CheckAndRepairPlayer` loops over the single obstacle record like the other tables.
+
+Parked (size-exact, first differing instruction):
+
+- SaveServer 8C04B83C: PS_PakInserted/"RUSH2049" hoisted into r9/r10 the other way round, and the
+  `*fileh`/`next` stack slots swapped (8C04B8C4). Declaration order and block scope of `next` do not
+  change it.
+- SavePlayerCoins 8C04C892: the target homes `raceTrack` on the stack (store 8C04C8CE, reload
+  8C04C8FE, then `add #6` and scale); ours keeps it in r10/r11. int/unsigned/char raceTrack, two-branch
+  assignment, conditional expression and `[track]` forms all fail (probe `pr/coins*.c`).
+- _InitPlayer 8C04CB6C: the hoisted constants 0 and 20 are r8/r9 in the target, r9/r8 in ours.
+- CreatePlayer 8C04DA6E: `mov.l @r1,r3` (gFrameCounter) is scheduled before the gInitSdkSetting
+  address load in the target, after it in ours.
+- _ReadTraining 8C04DC5C: target `cmp/hi r3,r1; bf`, ours `cmp/hs r1,r3; bt` with the same operands
+  (`<`, `>`, nested if and a stamp local all tried).
+- CompressGhost 8C04E0B6: a dead spill of `header->size` before the first memmove (`mov.l r6,@(4,r15)`);
+  `sorted`/`header->start`, int/unsigned maxsize and the double constant do not reproduce it.
+- SaveGhostInLimbo 8C04E5AA: `limboGhosts` and the `&limboGhosts[i]` common subexpression take
+  r11/r12 the other way round.
+- SaveGhost 8C04E306: the two mov.w frame constants (-0x250, 0x230) sit in the opposite pool order;
+  ours also emits a 0x200 constant (the pixel initializer copy) that the target does not.

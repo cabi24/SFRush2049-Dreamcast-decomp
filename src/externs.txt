@@ -1660,3 +1660,9 @@ _func_8C0DC2A0 0x8c0dc2a0
 _gNewTotalScore 0x8C12D314
 __utof 0x8C09BE98
 __ftou 0x8C09BE78
+__divlu 0x8C09B734
+__modlu 0x8C09B8F4
+__slow_mvn 0x8C09BAD4
+_zip 0x8C067E96
+_gTrainingRecord 0x8C152628
+_GdFsGetFileSize8C0D6BC8 0x8C0D6BC8
