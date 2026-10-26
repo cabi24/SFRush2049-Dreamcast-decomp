@@ -40,3 +40,6 @@ calib/link/*.map
 
 # Map pipeline intermediates (regenerable; contain strings extracted from the game image)
 map/raw/
+
+# Local agent notes for other projects; never tracked
+n64-helper.md
