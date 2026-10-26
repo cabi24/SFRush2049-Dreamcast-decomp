@@ -1,0 +1,99 @@
+# San Francisco Rush 2049 (Dreamcast) decompilation
+
+A byte-matching decompilation of **San Francisco Rush 2049** for the Sega Dreamcast
+(US v1.001, Midway, 2000). The goal is C source that the original Hitachi SHC compiler turns back
+into the exact bytes of the retail executable, function by function, at the real addresses.
+
+The GameCube port decompiled from *Midway Arcade Treasures 3* is the semantic reference for names,
+types and algorithms. Its bodies are reshaped here until they compile to the Dreamcast bytes.
+
+## Status
+
+Strict credit only: a byte counts when it is equal to the target at its real address after a real
+fixed-address link. There are no masks, no fuzzy or displaced matches, and no credit for padding,
+linker fill or copied original bytes.
+
+| Measure | Exact | Total | Share |
+|---|---:|---:|---:|
+| Game code and literals | 78,554 | 569,664 | 13.79% |
+| Whole executable | 147,885 | 1,123,492 | 13.16% |
+| Game functions | 518 | 1,555 | 33.3% |
+
+The per-unit table is in [HANDOFF.md](HANDOFF.md). The audit receipt
+[evidence/strict-integration-receipt.json](evidence/strict-integration-receipt.json) records the
+source, header, compiler-input and output hashes and the exact address spans behind these numbers.
+
+## What is not in this repository
+
+- **No game files.** The retail executable, disc images and all other game media are git-ignored and
+  never committed. You need your own copy of the US v1.001 disc.
+- **No compilers or analyzers.** The Hitachi SH compiler packages come from the decomp.me compiler
+  archive; Ghidra, the JDK and objdiff come from their own releases. Sources and SHA-256 hashes for
+  every download are in [tools/downloads/MANIFEST.json](tools/downloads/MANIFEST.json), and
+  [tools/README.md](tools/README.md) explains the setup.
+
+Build outputs under `build/` are regenerated locally and are not tracked either.
+
+## Target
+
+| | |
+|---|---|
+| File | `1ST_READ.BIN`, raw little-endian SH-4 loaded at `0x8C010000` |
+| Size | 1,123,492 bytes |
+| SHA-256 | `336c97aa409e4b38582c43077381b1c99d6a64bbec630e3be7a9829adda8e688` |
+
+[retail-v1.001-evidence/verify_retail.py](retail-v1.001-evidence/verify_retail.py) verifies a disc
+image and extracts the executable. Place it at `pilot/orig/1ST_READ.BIN`.
+
+## Building
+
+Windows is required, because the compiler runs natively. You also need Python 3.12 with `capstone`
+installed, and the toolchain provisioned into `tools/` as described in `tools/README.md`.
+
+```
+python tools\dc_split.py                 # target side: per-unit objects and symbol table
+python tools\dc_build.py                 # compile, link and compare every unit with source
+python tools\dc_build.py --unit ll -v    # one unit, with a listing of the first differing function
+python tools\fncmp.py pakerr ShowPakError   # register-accurate side-by-side of one function
+python -B tools\audit_report.py          # re-verify saved outputs and rewrite the receipt
+```
+
+Open `objdiff.json` in `tools\objdiff\objdiff.exe` for an interactive diff. A full strict build plus
+audit takes under a minute. [BUILDING.md](BUILDING.md) covers inputs, outputs and what "exact" means.
+
+### Frozen compiler configuration
+
+`shc-v5.1r11` with
+
+```
+-comment=nonest -cpu=sh4 -division=cpu -fpu=single -endian=little -macsave=0 -sjis -string=const -speed -noinline
+```
+
+and the H SERIES LINKAGE EDITOR 6.0E. The flags are frozen: functions are matched by changing the
+shape of the C source, never the compiler options.
+
+## Layout
+
+| Path | Contents |
+|---|---|
+| `src/` | One C file per translation unit, plus `externs.txt` for addresses no unit defines yet |
+| `include/` | Shared and per-unit headers; every struct field cites the instruction that proves its offset |
+| `map/` | The unit map: 156 contiguous units and 4,726 functions covering the whole executable |
+| `tools/` | Compile, link, compare and audit scripts, and the toolchain manifest |
+| `calib/` | Compiler calibration, the SH-4 decoder and [calib/lessons.md](calib/lessons.md), the record of SHC code-generation lessons |
+| `evidence/`, `matching-evidence/` | Audit receipts and per-round matching evidence |
+| `retail-v1.001-evidence/`, `betafindings-evidence/`, `mat3-to-dreamcast-evidence/` | Target verification and analysis of the retail and prototype builds |
+| `pilot/` | The original toolchain pilot and calibration lanes |
+
+## Where to start
+
+1. [HANDOFF.md](HANDOFF.md) for current state, resume commands and the per-unit workflow.
+2. [BUILDING.md](BUILDING.md) for the build loop.
+3. [map/README.md](map/README.md) for how the unit map was built and where it is weak.
+4. [include/README.md](include/README.md) for the rules on proving struct layouts.
+5. [calib/lessons.md](calib/lessons.md) before reshaping a function.
+
+Much of the matching is done by AI agents. [CLAUDE.md](CLAUDE.md) holds their working rules, and
+`CODEX.md` and `QWEN.md` are 2026-10-18 handoffs written for other agents. The earlier planning and
+analysis record is [mat3-to-dreamcast-plan.md](mat3-to-dreamcast-plan.md), [overview.md](overview.md)
+on the retail executable and [betafindings.md](betafindings.md) on the prototype builds.
