@@ -1,0 +1,37 @@
+diff --git a/include/warningscr_types.h b/include/warningscr_types.h
+index b2e3217..b59f59e 100644
+--- a/include/warningscr_types.h
++++ b/include/warningscr_types.h
+@@ -36,7 +36,7 @@ _tBlit *NewMultiBlit(signed short x,signed short y,const tWarningBlitDef *def,si
+ void RemoveBlit(_tBlit *blit);
+ void SetControllerActive(int which,int active);
+ void SetControllerStickEdges(int which,int active);
+-void PlayStartABSound(void);
++void PlayStartABSound(unsigned int edges);
+ void setGameState(unsigned int state);
+ void HAL_SetTextDepth(float depth);
+ int HAL_SetFont(int font);
+diff --git a/src/warningscr.c b/src/warningscr.c
+index 43dd95e..d94afa3 100644
+--- a/src/warningscr.c
++++ b/src/warningscr.c
+@@ -10,6 +10,7 @@ static const tWarningBlitDef WarningBlit[1] = {
+ void updateWarningScreen(void)
+ {
+     static _tBlit *sBlit = 0;
++    unsigned int edges;
+     int numPaks;
+     int i;
+ 
+@@ -36,8 +37,9 @@ void updateWarningScreen(void)
+                     SetControllerActive(-1,1);
+                     SetControllerStickEdges(-1,1);
+                 }
+-                if (!(11 & gActiveEdges)) return;
+-                PlayStartABSound();
++                edges = gActiveEdges;
++                if (!(11 & edges)) return;
++                PlayStartABSound(edges);
+             }
+         }
+     }

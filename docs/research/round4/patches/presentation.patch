@@ -1,0 +1,33 @@
+diff --git a/src/HAL_text.c b/src/HAL_text.c
+index f41d33b..9585961 100644
+--- a/src/HAL_text.c
++++ b/src/HAL_text.c
+@@ -164,8 +164,6 @@ void _SetupFontData(int force)
+         gFontHeader = (void *)data;
+         data += sizeof(*gFontHeader);
+         gFontLetters = (void *)data;
+-        for (i = 0; i < gFontHeader->numChars; i++) {
+-        }
+         data += gFontHeader->numChars * sizeof(*gFontLetters);
+         if (gFontHeader->kern)
+             for (i = 0; i < gFontHeader->numChars; i++) {
+@@ -566,7 +564,7 @@ unsigned int _TextLen(const unsigned char *text, signed short numChars)
+         do {
+             len += 2;
+             nc++;
+-        } while ((text[len - 1] || text[len - 2]) && (numChars < 0 || nc <= numChars));
++        } while ((text[len - 1] != 0 || text[len - 2] != 0) && (numChars < 0 || nc <= numChars));
+     } else {
+         len = 0;
+         do {
+diff --git a/src/weapons.c b/src/weapons.c
+index 73fcc35..d9ea225 100644
+--- a/src/weapons.c
++++ b/src/weapons.c
+@@ -1,5 +1,5 @@
+ #include "weapons_types.h"
+-extern tWeaponCar gGameCar[];
++#define gGameCar ((tWeaponCar *)0x8C004000)
+ extern tWeaponModel model[];
+ extern tWeaponParts gCarParts[];
+ extern unsigned short gObjList[];
