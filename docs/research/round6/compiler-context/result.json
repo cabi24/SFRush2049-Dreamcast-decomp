@@ -1,0 +1,130 @@
+{
+  "synthetic_targets_counted": 0,
+  "rows": [
+    {
+      "arrangement": "same_tu_direct",
+      "caller_address": "8C010000",
+      "callee_address": "8C010016",
+      "caller_instruction_bytes_through_return_delay": 22,
+      "caller_call_site": "8C010004",
+      "call_form": "BSR direct PC-relative",
+      "distance_from_call_pc_plus4": 14,
+      "linked_sections": [
+        {
+          "name": "P",
+          "address": "8C010000",
+          "bytes": 34
+        }
+      ],
+      "lnk_diagnostics": "No undefined external or duplicate unit diagnostics",
+      "all_dependencies_real_objects": true
+    },
+    {
+      "arrangement": "separate_objects_direct",
+      "caller_address": "8C010000",
+      "callee_address": "8C01001C",
+      "caller_instruction_bytes_through_return_delay": 24,
+      "caller_call_site": "8C010006",
+      "call_form": "JSR register-indirect",
+      "distance_from_call_pc_plus4": 18,
+      "linked_sections": [
+        {
+          "name": "P",
+          "address": "8C010000",
+          "bytes": 28
+        },
+        {
+          "name": "P",
+          "address": "8C01001C",
+          "bytes": 12
+        }
+      ],
+      "lnk_diagnostics": "No undefined external or duplicate unit diagnostics",
+      "all_dependencies_real_objects": true
+    },
+    {
+      "arrangement": "define_only_direct",
+      "caller_address": "8C010000",
+      "callee_address": "8C01001C",
+      "caller_instruction_bytes_through_return_delay": 24,
+      "caller_call_site": "8C010006",
+      "call_form": "JSR register-indirect",
+      "distance_from_call_pc_plus4": 18,
+      "linked_sections": [
+        {
+          "name": "P",
+          "address": "8C010000",
+          "bytes": 28
+        }
+      ],
+      "lnk_diagnostics": "No undefined external or duplicate unit diagnostics",
+      "all_dependencies_real_objects": false
+    }
+  ],
+  "separate_vs_define_caller_full28_bytes_identical": true,
+  "caller28_sha256": "30a1cd67582f0c623cbd5c7396b6b8bddd316c34e268374a60772c8608cf7c2c",
+  "conclusion": "Default LNK6.0E did not relax this near external call when a real callee object was linked. The caller remains identical to DEFINE-only output. Same-TU compilation selected a direct BSR instead.",
+  "limits": "One small deterministic control, frozen flags; not proof that no other compiler/linker mode has relaxation. No game source repair or quota credit.",
+  "compiler": "SHC5.1r11",
+  "linker": "H-series LNK6.0E from shc-v5.1r13 package",
+  "compiler_flags": [
+    "-comment=nonest",
+    "-cpu=sh4",
+    "-division=cpu",
+    "-fpu=single",
+    "-endian=little",
+    "-macsave=0",
+    "-sjis",
+    "-string=const",
+    "-speed",
+    "-noinline"
+  ],
+  "compiler_package_sha256": {
+    "asmsh.exe": "7f913357db2ce63221efeb31d5bfc7793675077ae1f037a0711aa4e4cfa6fd38",
+    "elfcnv.exe": "e17511b9bfcb3f9ada07dbdc727ddb81a876be179085db9286ef5b8f1533fe20",
+    "shc.exe": "10d544d829edabc0ac3b26161e311e8bd09edeba00f0bf76ad80743f3299eca6",
+    "shcasm.exe": "f2435048eedf28b64813c128a5f5395c2ca7a49d00d0859233a47f5f100d859b",
+    "shcerr.msg": "24c662f6c9c0443659f8059468c6b43d972340b0e9ee975bb8794a93ced2d644",
+    "shcerr.off": "8a45f26d2562fadca71494aca516effeb8c1053313974a3cb2d3fc165cd3dd49",
+    "shcfrt.exe": "857663a9a4ae30b60d4bf5fb4e4ce24f84089e5d967843720f2125ac23418b8d",
+    "shcgen.exe": "113c15b4e89b1ac4dd1d1c0d381c2e8378e98e04e54c5d98bad1950f45915ac3",
+    "shchlp.msg": "ea482824f22725e4b054d10ad0e0d4aa384f40220a3223b0c9d288b0d3ca3b22",
+    "shcmdl.exe": "5cf083cb374a4b395ee6da6e9fd1fd0d09ae14564a44081382adb3070a40c787",
+    "shcpep.exe": "1844dde96e8f4ccf9e1ade6f66db0cea0e656e8ca51224387f4facb55041c744",
+    "shcprep.exe": "de14cb78dd64f15f4d895faa1e8cdeee4545fb5700429dea58d7cec98d1b1f00",
+    "shcprm.exe": "76e2069a09f7fe5780f52496ecdf9f6cb0b063b33f20aee1260a107291933d4c",
+    "shctil.exe": "a20bed76c910db608e792b5d242fc38c10eeb4a9aa374d4ec37778a41e26fb4c"
+  },
+  "linker_sha256": "9671d37b5705ca27ad7fd6ced14eddd958326bcc3da8cbfe902b256608d4b04c",
+  "loader_sha256": "13f86a2d618f0dbe67179d349625345eabf9b46450295cb4c904e49f6aff85af",
+  "source_sha256": {
+    "caller.c": "20a34aaecd18443548732ed36649aca29243e2be468b62b49af589a94d371fc1",
+    "callee.c": "a81613a3c0ba84a93a46b9d070da29a110a038ceed47069fcb4371d03a9fab9e",
+    "both.c": "a397822e22b0637e8bdd505842c187fa2fcbce3ec08f45946df8f355bb56dd88"
+  },
+  "compiler_CRLF_input_sha256": {
+    "caller.c": "67cb38236384b5129e40e531525ed6c701edb720b60e0427f4e6f1ee6c1ffc46",
+    "callee.c": "186fa3992432e023a8d30ccb3c82ac3c1909a577b6fad9a74e4e5d3283eb6c13",
+    "both.c": "d99eb9430bdd22341c2b753d864d97689d2a81b491091bea406e87ac19f78fcd"
+  },
+  "artifacts_sha256": {
+    "both-direct.obj": "ecb0f341c5909861925ba9dd66a1e9757b49eef1139230b711faee1848abf60c",
+    "caller-direct.obj": "bb973eba3a8becf00b396445261aee3cf7dca7749c5d526ba734f339dd186ea5",
+    "callee-direct.obj": "7cfa691cdb83cb7ac5dc95c1cf9790f9c957b4d12f74b205463fca8313512e1a",
+    "same_tu_direct.abs": "feff22e72e64db1b7657572b98001fff5604271c028fdc7a50da5dbc67b902e8",
+    "separate_objects_direct.abs": "af14e9dc901a370e4369c35583bbbd65bb04540da213e8b1293bf01e80c3d03b",
+    "define_only_direct.abs": "88a475e6972564ec67512507ff287d1d7933c2f1789b04d1aaa598b6a80a1510"
+  },
+  "artifacts_note": "All binaries and raw dumps remain private; hashes record this run. SYSROF objects contain source timestamp metadata and need not hash-identically across recompiles.",
+  "attempts": {
+    "invalid_initial_wrapper_control": "shc_cc emits every module/unit asdos_src; LNK deleted the second unit and left callee undefined. Excluded from conclusions.",
+    "valid_controls": "Identical frozen SHC argv flags, explicit distinct filenames, three genuine arrangements. All3 compiler exits0 and LNK exits0; unrelated retail-comparison wrapper exits1 are not link failures."
+  },
+  "production_checks": {
+    "all_source_hashes_equal_last_full114_accepted_report": true,
+    "all_audited_production_tool_hashes_unchanged": true,
+    "map_hash_unchanged": true,
+    "common_header_unchanged": true,
+    "map_report_pin_unchanged": true
+  }
+}

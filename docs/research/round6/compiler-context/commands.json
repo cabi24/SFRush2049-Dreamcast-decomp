@@ -1,0 +1,170 @@
+{
+  "setup": [
+    "Use the approved pinned Linux loader; SHC_LIB=. and SHC_TMP=.",
+    "Copy frozen SHC5.1r11 bin files into ignored $SCRATCH/direct-work; verify every package file hash inresult.json.",
+    "Copy caller.c,callee.c,both.c there using CRLF; keep source filenames distinct.",
+    "Compile with exact recorded flags; keep raw objects, then use unmodified tools/shc_link.py commands."
+  ],
+  "commands": [
+    {
+      "name": "compile-both",
+      "executable": "SHC-v5.1r11/shc.exe",
+      "cwd": "scratch/direct-work",
+      "argv": [
+        "both.c",
+        "-comment=nonest",
+        "-cpu=sh4",
+        "-division=cpu",
+        "-fpu=single",
+        "-endian=little",
+        "-macsave=0",
+        "-sjis",
+        "-string=const",
+        "-speed",
+        "-noinline",
+        "-object=both.obj"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-caller",
+      "executable": "SHC-v5.1r11/shc.exe",
+      "cwd": "scratch/direct-work",
+      "argv": [
+        "caller.c",
+        "-comment=nonest",
+        "-cpu=sh4",
+        "-division=cpu",
+        "-fpu=single",
+        "-endian=little",
+        "-macsave=0",
+        "-sjis",
+        "-string=const",
+        "-speed",
+        "-noinline",
+        "-object=caller.obj"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "compile-callee",
+      "executable": "SHC-v5.1r11/shc.exe",
+      "cwd": "scratch/direct-work",
+      "argv": [
+        "callee.c",
+        "-comment=nonest",
+        "-cpu=sh4",
+        "-division=cpu",
+        "-fpu=single",
+        "-endian=little",
+        "-macsave=0",
+        "-sjis",
+        "-string=const",
+        "-speed",
+        "-noinline",
+        "-object=callee.obj"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "same_tu_direct",
+      "argv": [
+        "$PYTHON",
+        "tools/shc_link.py",
+        "--obj",
+        "$SCRATCH/both-direct.obj",
+        "--start",
+        "P=8C010000",
+        "--out-dir",
+        "$SCRATCH",
+        "--name",
+        "same_tu_direct",
+        "--launch",
+        "wibo",
+        "--wibo",
+        "$WIBO",
+        "--wibo-sha256",
+        "13f86a2d618f0dbe67179d349625345eabf9b46450295cb4c904e49f6aff85af"
+      ],
+      "wrapper_exit": 1,
+      "note": "Wrapper exit1 is expected unrelated retail comparison; LNK success checked from produced ABS/map and absence of diagnostic errors."
+    },
+    {
+      "name": "separate_objects_direct",
+      "argv": [
+        "$PYTHON",
+        "tools/shc_link.py",
+        "--obj",
+        "$SCRATCH/caller-direct.obj",
+        "--obj",
+        "$SCRATCH/callee-direct.obj",
+        "--start",
+        "P=8C010000",
+        "--out-dir",
+        "$SCRATCH",
+        "--name",
+        "separate_objects_direct",
+        "--launch",
+        "wibo",
+        "--wibo",
+        "$WIBO",
+        "--wibo-sha256",
+        "13f86a2d618f0dbe67179d349625345eabf9b46450295cb4c904e49f6aff85af"
+      ],
+      "wrapper_exit": 1,
+      "note": "Wrapper exit1 is expected unrelated retail comparison; LNK success checked from produced ABS/map and absence of diagnostic errors."
+    },
+    {
+      "name": "define_only_direct",
+      "argv": [
+        "$PYTHON",
+        "tools/shc_link.py",
+        "--obj",
+        "$SCRATCH/caller-direct.obj",
+        "--start",
+        "P=8C010000",
+        "--out-dir",
+        "$SCRATCH",
+        "--name",
+        "define_only_direct",
+        "--define",
+        "_context_callee=8C01001C",
+        "--launch",
+        "wibo",
+        "--wibo",
+        "$WIBO",
+        "--wibo-sha256",
+        "13f86a2d618f0dbe67179d349625345eabf9b46450295cb4c904e49f6aff85af"
+      ],
+      "wrapper_exit": 1,
+      "note": "Wrapper exit1 is expected unrelated retail comparison; LNK success checked from produced ABS/map and absence of diagnostic errors."
+    }
+  ],
+  "link_subcommands": {
+    "same_tu_direct": [
+      "INPUT in0.obj",
+      "OUTPUT same_tu_direct.abs",
+      "FORM A",
+      "START P(8C010000)",
+      "PRINT same_tu_direct.map",
+      "EXIT"
+    ],
+    "separate_objects_direct": [
+      "INPUT in0.obj,in1.obj",
+      "OUTPUT separate_objects_direct.abs",
+      "FORM A",
+      "START P(8C010000)",
+      "PRINT separate_objects_direct.map",
+      "EXIT"
+    ],
+    "define_only_direct": [
+      "INPUT in0.obj",
+      "OUTPUT define_only_direct.abs",
+      "FORM A",
+      "START P(8C010000)",
+      "DEFINE _context_callee(8C01001C)",
+      "PRINT define_only_direct.map",
+      "EXIT"
+    ]
+  }
+}
