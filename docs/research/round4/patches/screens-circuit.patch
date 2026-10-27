@@ -1,0 +1,14 @@
+diff --git a/include/circuitscr_types.h b/include/circuitscr_types.h
+index 465a6a5..7800dac 100644
+--- a/include/circuitscr_types.h
++++ b/include/circuitscr_types.h
+@@ -17,7 +17,8 @@ typedef struct dcCircuitColor { unsigned char c[4]; } dcCircuitColor;
+ typedef char check_circuit_button[(sizeof(tMenuButton)==0x40)?1:-1];
+ typedef char check_circuit_color[(sizeof(dcCircuitColor)==4)?1:-1];
+ #define gPlayers ((tPadState *)0x8C006000)
+-extern unsigned char gCircuitPlayer,gNumModels;
++extern unsigned char gCircuitPlayer;
++extern volatile unsigned char gNumModels;
+ extern signed char gCircuitSize,gSoftReset;
+ extern signed short gNumPlayers;
+ extern unsigned int gSkipToGameState,gGameState,gActiveEdges,gActiveAutoEdges;

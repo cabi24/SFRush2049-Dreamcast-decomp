@@ -1,0 +1,14 @@
+diff --git a/src/mdrive.c b/src/mdrive.c
+index b826aab..848aea6 100644
+--- a/src/mdrive.c
++++ b/src/mdrive.c
+@@ -279,8 +279,7 @@ void multiinit(signed short mode, signed short droneIndex)
+ 
+ void SetClutch(tModelData *m)
+ {
+-    int revs=m->rpm;
+-    if(revs<0) revs=-revs;
++    int revs = m->rpm < 0 ? -m->rpm : m->rpm;
+     if (revs < 1000 && m->mainin.throttle < 0.100000002f) {
+         m->mainin.clutch = 1.0f;
+     } else if (m->mainin.brake > 0.80000002f) {
