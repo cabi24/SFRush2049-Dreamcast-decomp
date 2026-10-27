@@ -1,5 +1,5 @@
 /* modescr.c - race mode menu and animated 3D buttons. Status: in progress.
-   Original: D:\rush_ngc\Rush_NGC\GameSource\src\modescr.c; assembly: build/2049LE/asm/GameSource/src/modescr.s */
+   Reference: MAT3 GameSource/src/modescr.c (reconstructed C). */
 #include "modescr_types.h"
 
 
@@ -112,6 +112,7 @@ int animText(void)
     unsigned char *str; /* r29 */
     unsigned char str1[40]; /* stack */
     signed short screenPos[2]; /* stack */
+    unsigned char *format;
 
     HAL_SetTextDepth(0.0f); HAL_SetFont(13); TB_SetTextColor(1);
     x=160; y=10;
@@ -123,15 +124,16 @@ int animText(void)
     str=gText.single[40];
     TB_DrawText(TB_CenterText(str,x),y,str);
     y+=TB_GetFontLineHeight()*2;
-    if(gNumPlayers == 1) TB_Sprintf(str1,"%d %s",gNumPlayers,gText.single[29]);
-    else TB_Sprintf(str1,"%d %s",gNumPlayers,gText.taba[gText.tab[21]]);
+    format=(unsigned char *)"%d %s";
+    if(gNumPlayers == 1) TB_Sprintf(str1,format,gNumPlayers,gText.single[29]);
+    else TB_Sprintf(str1,format,gNumPlayers,gText.taba[gText.tab[21]]);
     TB_SetTextColor(10); y+=TB_GetFontLineHeight()*2; HAL_SetFont(10);
     for(i=0;i<7;i++) {
         if(!optionValid(i)) continue;
         TB_SetTextColor(i == gModeMenuSelect ? 22 : 1);
         if(buttonsInited == 1) {
             if(buttonInfo[i].angle>0.6981317f && buttonInfo[i].angle<2.443461f) continue;
-            if(buttonInfo[i].angle>0.34906584f && buttonInfo[i].angle<2.7925267f) HAL_SetTextTranslucency(128.0f);
+            if(buttonInfo[i].angle>0.34906585f && buttonInfo[i].angle<2.7925268f) HAL_SetTextTranslucency(128.0f);
             else HAL_SetTextTranslucency(-1.0f);
             if(buttonInfo[i].angle<1.5707964f) {
                 TB_FlashTextColors(flashColors[0],flashColors[1]); TB_SetTextColor(1);
@@ -166,9 +168,8 @@ void initButtons(void)
     tTexture *tex; /* r3 */
     unsigned short texIdx; /* stack */
     int buttonIdx; /* r30 */
-    tMenuButton *buttonEnd=buttonInfo+13;
 
-    for(buttonIdx=0;buttonInfo+buttonIdx<buttonEnd;buttonIdx++) {
+    for(buttonIdx=0;buttonIdx<13;buttonIdx++) {
         if(buttonInfo[buttonIdx].objIdx == -1) {
             memcpy(buttonInfo[buttonIdx].mat.uvs,unitmatrix,36);
             buttonInfo[buttonIdx].objIdx=MBOX_NewObject(MBOX_FindObject_WORK(buttonNames[buttonInfo[buttonIdx].buttonType],0,gNumModels-1,1),&buttonInfo[buttonIdx].mat,-1,(buttonInfo[buttonIdx].buttonType == 0 || buttonInfo[buttonIdx].buttonType == 1) ? 0x42000 : 0);
@@ -229,8 +230,7 @@ void updateButtons(void)
 
     if(!buttonsInited) return;
     buttonY=maxY;
-    buttonIdx=0;
-    while(buttonIdx<7) {
+    for(buttonIdx=0;buttonIdx<7;buttonIdx++) {
         if(buttonIdx == gModeMenuSelect) {
             selectY=buttonY;
             if(buttonInfo[buttonIdx].angle<3.14159275f) buttonInfo[buttonIdx].angle+=12.566371f*gFrameSeconds;
@@ -252,17 +252,20 @@ void updateButtons(void)
         if(buttonInfo[buttonIdx].angle>1.5707964f) tex=MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
         else tex=MBOX_FindTexture_WORK("BUTTON",&texIdx,0,gNumModels-1,1);
         ZOID_SetTexture(buttonInfo[buttonIdx].objIdx,tex,-1);
-        if(!optionValid(buttonIdx)) MBOX_HideObject(buttonInfo[buttonIdx].objIdx,0,15);
-        else { MBOX_ShowObject(buttonInfo[buttonIdx].objIdx,0,15); buttonY-=gButtonSpace*gButtonScale; }
-        buttonIdx++;
+        if(!optionValid(buttonIdx)) {
+            MBOX_HideObject(buttonInfo[buttonIdx].objIdx,0,15);
+            continue;
+        }
+        MBOX_ShowObject(buttonInfo[buttonIdx].objIdx,0,15);
+        buttonY-=gButtonSpace*gButtonScale;
     }
     memcpy(prevPos,buttonInfo[7].mat.uvs[3],12);
     buttonInfo[7].angle+=6.2831855f*gFrameSeconds;
     if(buttonInfo[7].angle>6.2831855f) buttonInfo[7].angle-=6.2831855f;
     CopyUV(unitmatrix,buttonInfo[7].mat.uvs);
-    buttonInfo[7].mat.uvs[3][2]=cursorZ;
     buttonInfo[7].mat.uvs[3][0]=buttonX-80.0f;
     buttonInfo[7].mat.uvs[3][1]=selectY*cursorZ/buttonZ;
+    buttonInfo[7].mat.uvs[3][2]=cursorZ;
     if(!buttonsJustInited) {
         if(60.0f*fabs(buttonInfo[7].mat.uvs[3][1]-prevPos[1])/10.0f>gModeMenuCursorSpeed) {
             gModeMenuCursorSpeed=60.0f*fabs(buttonInfo[7].mat.uvs[3][1]-prevPos[1])/10.0f;

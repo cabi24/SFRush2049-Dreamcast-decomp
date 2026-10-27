@@ -1,5 +1,5 @@
 /* HUD overlays, text and object animations. Dreamcast candidate; root-approved13-function scope; original anonymous final ID retained.
-   Original: D:\rush_ngc\Rush_NGC\GameSource\src\hudextra.c; assembly: build/2049LE/asm/GameSource/src/hudextra.s */
+   Reference: MAT3 GameSource/src/hudextra.c (reconstructed C). */
 #include "hudextra_types.h"
 
 static int animStuntPoints();
@@ -96,13 +96,11 @@ void ShowHUDExtra(void)
             else HAL_SetFont(12);
             w = HAL_GetTextWidth("8888888", -1) + 8;
             h = TB_GetFontLineHeight() + 4;
-            w /= 2;
-            h /= 2;
             for (playerIdx = 0; playerIdx < gNumPlayers; playerIdx++) {
-                pane = InitPane(stuntPos[gNumWindows-1][playerIdx][0]-w,
-                    stuntPos[gNumWindows-1][playerIdx][1]-h,
-                    stuntPos[gNumWindows-1][playerIdx][0]+w,
-                    stuntPos[gNumWindows-1][playerIdx][1]+h,
+                pane = InitPane(stuntPos[gNumWindows-1][playerIdx][0]-w/2,
+                    stuntPos[gNumWindows-1][playerIdx][1]-h/2,
+                    stuntPos[gNumWindows-1][playerIdx][0]+w/2,
+                    stuntPos[gNumWindows-1][playerIdx][1]+h/2,
                     128, 0, playerIdx << 4, 1);
                 ChangePaneColor(pane, playerPaneColors[playerIdx][0], playerPaneColors[playerIdx][1]);
             }

@@ -16,7 +16,7 @@ extern signed char gModeMenuInited;
 extern signed char validOption[4][7]; /*E1CE..E1E6 row7,indexed signed byte*/
 extern float gButtonScale,gButtonSpace,maxY,buttonZ,cursorZ,buttonX,gModeMenuCursorSpeed;
 extern tCamera gCamera[4];
-extern unsigned char gNumModels;
+extern volatile unsigned char gNumModels; /* DC E2C6 reload; shared model-count contract. */
 extern volatile float gFrameSeconds; /*E6B8/E6DA repeated nocallloads*/
 extern float unitmatrix[3][3];
 extern tRGBA flashColors[2];
