@@ -1,14 +1,16 @@
 # San Francisco Rush 2049 (Dreamcast) decompilation
 
-## Latest verified checkpoint — round 6, 2026-10-27
+## Latest matching results — round 6, 2026-10-27
 
-The **500-target campaign is ongoing**. Two accepted checkpoints add
-**1,414 emitted bytes and ten exact functions**, preserving all earlier matches.
-Current total: **89,978 / 569,664 game code/literal bytes**,
-**159,309 / 1,123,492 image bytes**, **579 / 1,555 game functions**.
-Full 114-unit builds, strict audits, independent negative controls and 22 tests pass.
-See [checkpoint 2](docs/round6-checkpoint2.md) and [checkpoint 1](docs/round6-checkpoint1.md).
-These checkpoints do not claim all 500 attempts or their research publication are finished.
+**473 qualifying attempts out of 500 requested; 27 blocked pending new evidence.**
+The two accepted checkpoints add **1,414 emitted bytes and ten exact functions**,
+with all earlier matches preserved. Current total:
+**89,978 / 569,664 game code/literal bytes (15.7949%)**,
+**159,309 / 1,123,492 image bytes (14.1798%)**, **579 / 1,555 game functions**.
+Full 114-unit builds, strict audits, negative controls and 22 tests pass.
+See [round 6 scope, results and shortfall](docs/round6-results.md) and
+[draft research PR 6](https://github.com/cabi24/SFRush2049-Dreamcast-decomp/pull/6).
+Research probes, moved bodies and unattempted/capped targets are not matching credit.
 
 ## Latest verified matches — round 5, 2026-10-27
 
