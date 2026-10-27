@@ -1,0 +1,11 @@
+--- a/src/hudextra.c
++++ b/src/hudextra.c
+@@ -451,7 +451,7 @@
+         ScaleUV(gCamera[player].mat.uvs, weaponIcon[player].mat.uvs, 0.068999999202787876f);
+         YawUV(hudObjAngle,weaponIcon[player].mat.uvs);
+         screenPos[0] = 2 * ammoPos[gNumWindows-1][player][0];
+-        screenPos[1] = 2.0f * ammoPos[gNumWindows-1][player][1];
++        screenPos[1] = 2.0f * ammoPos[gNumWindows-1][player][1] + 4.0f;
+         ZOID_WindowTo3D(player, screenPos, &gCamera[player].mat, 2.0f, weaponIcon[player].mat.uvs[3]);
+     }
+     return 1;

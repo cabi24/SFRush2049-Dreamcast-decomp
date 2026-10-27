@@ -1,0 +1,22 @@
+--- a/src/drivsym.c
++++ b/src/drivsym.c
+@@ -270,7 +270,7 @@
+ }
+ 
+ /* 0x8000fdf8, size 0x34 */
+-void forces(tModelData * volatile m)
++void forces(tModelData *m)
+ {
+     forces1(m);
+     forces2(m);
+--- a/include/drivsym_types.h
++++ b/include/drivsym_types.h
+@@ -38,7 +38,7 @@
+ void make_super_speed(tModelData *);
+ void AddBattlePoint(signed char,signed char,signed char);
+ void syminit(tModelData *);void sym(tModelData *);void regular(tModelData *);void antispin(tModelData *);
+-void MovingSurfaceForce(tModelData *);void forces(tModelData * volatile);void forces1(tModelData *);void forces2(tModelData *);
++void MovingSurfaceForce(tModelData *);void forces(tModelData *);void forces1(tModelData *);void forces2(tModelData *);
+ void torques(tModelData *);void accelerations(tModelData *);void velocities(tModelData *);void positions(tModelData *);
+ void calcaa(tModelData *,float *,float *);void checkok(tModelData *);void mcommunication(tModelData *);
+ #endif

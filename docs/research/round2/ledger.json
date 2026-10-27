@@ -1,0 +1,776 @@
+{
+  "scope": "Forty historical target outcomes; partial/negative is not matching credit. Local artifact paths omitted.",
+  "targets": [
+    {
+      "id": 1,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "sym",
+      "address": "8C0235FE",
+      "size": 752,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "sym-negative-first-abs"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C02367E negative-first branch/neg delay slot motivated inverted abs ternary. Function remains displaced -4; fixed-address differences 679 to 680; no strict gain.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C026C44",
+      "original_size": 86
+    },
+    {
+      "id": 2,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "forces2",
+      "address": "8C02429E",
+      "size": 730,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "forces2-explicit-branches"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Native N64 func_800E1C30 uses explicit rear-thrust branches. Converted ternaries to equivalent branches; differences 672 to 680. Target frame20 vs baseline12 and prefix drift remain.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C026C9A",
+      "original_size": 190
+    },
+    {
+      "id": 3,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "torques",
+      "address": "8C024598",
+      "size": 952,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "torques-explicit-vector-add",
+        "torques-array-order",
+        "torques-counted-loop"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Native N64 func_800E15A0 corroborates two live vector temporaries and explicit vector add. Explicit sums increased body1360 to1508; array declaration swap neutral; target loop backedge motivated local count bound, but it regressed antispin/shared pool and was rejected. Three-probe cap reached; first target discrepancy8C0245A0 saved r9 vs r10, frame36 vs32.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C026D58",
+      "original_size": 200
+    },
+    {
+      "id": 4,
+      "lane": "physics_math",
+      "unit": "fmath",
+      "function": "InterpQuats",
+      "address": "8C026E20",
+      "size": 678,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "interp-delta-lifetime"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target saves one fewer integer register and homes a different component pointer. Widening existing delta local lifetime is neutral (660 fixed-address differing bytes). No new concrete shaping evidence after this probe; NormalVector capped prefix still displaces function16 bytes.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "original_address": "8C026E20",
+      "original_size": 678
+    },
+    {
+      "id": 5,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "velocities",
+      "address": "8C0249AC",
+      "size": 662,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "velocities-explicit-vector-add",
+        "velocities-comma-vector-add"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "N64 func_800E114C corroborates explicit V+temp/W+temp form; explicit addition reproduces target early r11/r13 pointer allocation, but further destination-pointer scheduling at8C0249DA differs. Comma vector additions do not fix it. No fixed-address credit; baseline body668, candidates676/672 vs mapped662.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C0270C6",
+      "original_size": 90
+    },
+    {
+      "id": 6,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "positions",
+      "address": "8C024C5C",
+      "size": 1104,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "positions-array-order",
+        "positions-comma-copy"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Two existing vector array declarations swapped based on target stack layout: differences1081 to1082. N64 func_800D0424 previous-position comma-copy variant neutral. Target frame68 vs32 remains unexplained; no unused padding introduced.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C027134",
+      "original_size": 36
+    },
+    {
+      "id": 7,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "MovingSurfaceForce",
+      "address": "8C023A30",
+      "size": 946,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "moving-surface-early-return"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Native N64 func_800E1F80 early-return structure replaces first outer else. Fixed-address differences624 to625; frame56 vs target52 still first difference8C023A44. Earlier two probes plus this third exhaust budget. Reverted.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "syminit has no defensible new prefix probe; MovingSurfaceForce has one remaining shape after two earlier campaign probes and newly inspected native N64 early-return control structure.",
+      "original_address": "8C0235CA",
+      "original_size": 52
+    },
+    {
+      "id": 8,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "checkok",
+      "address": "8C0250E6",
+      "size": 1080,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "checkok-rounded-literals",
+        "checkok-target-literals"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target literal inspection proves1.2,.6,.15,.4,.2,-.1,.707 require target-rounding spellings. Initial variant also adjusted .9, but target0x3F666666 proves .9 already correct; second corrected that. No strict bytes gained (1066 diff); branch/pool ordering at8C02511A and later loop remains. Literal correctness only, not whole-function match.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Original exhausted or moved behind capped NormalVector / _ModelControls; replacement has own target-grounded discrepancy.",
+      "original_address": "8C023314",
+      "original_size": 688
+    },
+    {
+      "id": 9,
+      "lane": "physics_math",
+      "unit": "drivsym",
+      "function": "forces",
+      "address": "8C023DE2",
+      "size": 14,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "forces-nonvolatile"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Parent approved narrow header experiment. Removing top-level parameter volatile reproduces seven-instruction target save/call/reload/tail-call shape (14 bytes versus baseline22), but linked6 bytes early; relative branch distances differ. No credit. Research patch includes declaration and definition.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "original_address": "8C023DE2",
+      "original_size": 14
+    },
+    {
+      "id": 10,
+      "lane": "physics_math",
+      "unit": "controls",
+      "function": "_ReadShifter",
+      "address": "8C01E44C",
+      "size": 228,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "shifter-zero-branch",
+        "shifter-shared-return",
+        "shifter-zero-else"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target8C01E4D2 requires true-zero branch into speed selection; explicit goto and structured zero/else each reduce5 differing bytes to2 and preserve all baseline spans. Residual8C01E4D4 compiler RTS versus target BRA to shared return. Shared-return-label variant regresses existing exact controls spans and rejected. Three-probe cap reached, all restored.",
+      "next_evidence_needed": "Resolve target-specific pointer/stack and shared-pool context with new donor or target dataflow evidence; do not repeat exhausted shapes.",
+      "replacement_reason": "Parent explicitly extended ownership to controls after all other owned targets exhausted or prefix-blocked; InitStatLL rejected due eleven prior neutral variants.",
+      "original_address": "8C024950",
+      "original_size": 62
+    },
+    {
+      "id": 11,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "ProximityDamage",
+      "address": "8C096550",
+      "size": 472,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "probe1: target left-associated damage*y*y rather than damage*(y*y)",
+        "probe3: give delta whole-function scope to test target stack-array lifetime"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: ProximityDamage [differs, 455 bytes differ]  target 8C096550..8C096728 (0x1d8)  linked 8C096548 +0x1bc;   words: 236 linked / 236 target; 6 displacement-only, 173 differing; first diff at target 8C096568",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 12,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "ElevateGun",
+      "address": "8C096728",
+      "size": 616,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "probe2: MAT3 algorithm with target-backed pitch/yaw views, positive one/negation and weapon stride",
+        "probe5: explicit position assignments supported by target address temporaries and N64 source clue; rejected for selected source"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: ElevateGun [differs, 582 bytes differ]  target 8C096728..8C096990 (0x268)  linked 8C096704 +0x28a;   words: 325 linked / 308 target; 7 displacement-only, 211 differing; first diff at target 8C096742",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 13,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "MissileLock",
+      "address": "8C096990",
+      "size": 452,
+      "baseline_status": "differs",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "probe2: MAT3 algorithm using native sqrt builtin",
+        "probe3: retain all three best-vector components as target96AAA..ABC proves, instead of scalar yaw/pitch"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: MissileLock [differs, 177 bytes differ]  target 8C096990..8C096B54 (0x1c4)  linked 8C09698E +0x1c6;   words: 227 linked / 226 target; 11 displacement-only, 40 differing; first diff at target 8C0969A6",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 14,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "ShotToCarCollision",
+      "address": "8C096B54",
+      "size": 822,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "probe2: MAT3 algorithm with target radius float at+10 and existing DC car/model layouts"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: ShotToCarCollision [differs, 660 bytes differ]  target 8C096B54..8C096E8A (0x336)  linked 8C096B54 +0x34e;   words: 423 linked / 411 target; 3 displacement-only, 265 differing; first diff at target 8C096B6C",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 15,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "SonicCarCollision",
+      "address": "8C096E8A",
+      "size": 620,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "negative",
+      "hypotheses_tested": [
+        "probe2: target removes MAT3 wall-collision guard/store and reloads shot->obj per component",
+        "probe3: target multiply association and binary32 0.6 literal"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: SonicCarCollision [differs, 592 bytes differ]  target 8C096E8A..8C0970F6 (0x26c) + pool ..8C097110  linked 8C096EA2 +0x266;   words: 323 linked / 323 target; 8 displacement-only, 198 differing; first diff at target 8C096EA6; first non-displacement diff at target 8C096EC8",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 16,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "ShotInit",
+      "address": "8C097110",
+      "size": 406,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "probe3: signed-byte conversion to reflect target no unsigned extension",
+        "probe4: direct signed-byte view reflects native mov.b loads and removes conversion artifacts"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: ShotInit [differs, 368 bytes differ]  target 8C097110..8C0972A6 (0x196)  linked 8C097108 +0x196;   words: 203 linked / 203 target; 0 displacement-only, 28 differing",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 17,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "ShotDone",
+      "address": "8C0972A6",
+      "size": 96,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "probe1: target switch case order 3,1,8,0,2,4,6,7",
+        "probe3: separate case-3 object local to test target r13/r14 lifetime"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: ShotDone [differs, 77 bytes differ]  target 8C0972A6..8C097306 (0x60)  linked 8C09729E +0x60;   words: 48 linked / 48 target; 0 displacement-only, 7 differing",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 18,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "_CreateShotObject",
+      "address": "8C097306",
+      "size": 76,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "probe1: literal NULL argument rather than local NULL matrix (target97332)"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: _CreateShotObject [moved, 73 bytes differ]  target 8C097306..8C097352 (0x4c)  linked 8C0972FE +0x4c;   words: 38 linked / 38 target; 0 displacement-only, 0 differing",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 19,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "_UpdateShotObject",
+      "address": "8C097352",
+      "size": 248,
+      "baseline_status": "missing",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "probe3: correct target binary32 0.4 and 0.18 pool constants",
+        "probe4: safely above exact binary32 0.18 decimal to avoid SHC truncation"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: _UpdateShotObject [moved, 200 bytes differ]  target 8C097352..8C09744A (0xf8)  linked 8C09734A +0xf8;   words: 124 linked / 124 target; 0 displacement-only, 0 differing",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 20,
+      "lane": "shots",
+      "unit": "shots",
+      "function": "_InitNewShot",
+      "address": "8C09744A",
+      "size": 120,
+      "baseline_status": "moved",
+      "status": "terminal",
+      "result": "partial",
+      "hypotheses_tested": [
+        "research: whole-TU upstream closure and corrected shared pool; no direct body change because existing body already matches shifted target"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "shots: _InitNewShot [moved, 98 bytes differ]  target 8C09744A..8C0974C2 (0x78) + pool ..8C0974DC  linked 8C097442 +0x92;   words: 73 linked / 73 target; 0 displacement-only, 0 differing",
+      "next_evidence_needed": "Natural upstream source/pool closure plus residual register/stack lifetime explanation; no padding or shifted credit."
+    },
+    {
+      "id": 21,
+      "lane": "hud",
+      "unit": "hud",
+      "function": "Hidden",
+      "address": "8C038FAC",
+      "size": 32,
+      "baseline_status": "missing",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 body with DC-verified field types and global addresses, whole-TU appended in target order among implemented bodies"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C038FAC, actual linked 8C035704; missing preceding HUD bodies prevent native placement",
+      "next_evidence_needed": "Recover intervening HUD source in true TU order; no padding or relocated-credit workaround"
+    },
+    {
+      "id": 22,
+      "lane": "hud",
+      "unit": "hud",
+      "function": "ShowCheckpointTime",
+      "address": "8C038F7E",
+      "size": 46,
+      "baseline_status": "missing",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 body with DC-verified field types and global addresses, whole-TU appended in target order among implemented bodies"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C038F7E, actual linked 8C035720; missing preceding HUD bodies prevent native placement",
+      "next_evidence_needed": "Recover intervening HUD source in true TU order; no padding or relocated-credit workaround"
+    },
+    {
+      "id": 23,
+      "lane": "hud",
+      "unit": "hud",
+      "function": "animBones",
+      "address": "8C035F94",
+      "size": 144,
+      "baseline_status": "missing",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 body with DC-verified field types and global addresses, whole-TU appended in target order among implemented bodies"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C035F94, actual linked 8C035720; missing preceding HUD bodies prevent native placement",
+      "next_evidence_needed": "Recover intervening HUD source in true TU order; no padding or relocated-credit workaround"
+    },
+    {
+      "id": 24,
+      "lane": "hud",
+      "unit": "hud",
+      "function": "animRadar",
+      "address": "8C038238",
+      "size": 226,
+      "baseline_status": "missing",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 body with DC-verified field types and global addresses, whole-TU appended in target order among implemented bodies"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C038238, actual linked 8C035720; missing preceding HUD bodies prevent native placement",
+      "next_evidence_needed": "Recover intervening HUD source in true TU order; no padding or relocated-credit workaround"
+    },
+    {
+      "id": 25,
+      "lane": "hud",
+      "unit": "hud",
+      "function": "animElapsedTimer",
+      "address": "8C036D78",
+      "size": 268,
+      "baseline_status": "missing",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 body with DC-verified field types and global addresses, whole-TU appended in target order among implemented bodies",
+        "Correct target-specific z assignment to 1 from instruction at 8C036E6E; initial transcription used 0 and was rejected"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Target 8C036D78, actual linked 8C035720; missing preceding HUD bodies prevent native placement",
+      "next_evidence_needed": "Recover intervening HUD source in true TU order; no padding or relocated-credit workaround"
+    },
+    {
+      "id": 26,
+      "lane": "hud",
+      "unit": "hudextra",
+      "function": "animStuntPoints",
+      "address": "8C093C88",
+      "size": 1240,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "Move TB_SetTextColor before player pointer materialization and recover DC screen Y minus4 before division from 8C093E08",
+        "Use per-iteration coin pointer corresponding to target pointer spill at 8C093D74; no strict improvement"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Baseline stack60 vs target68; candidate coin pointer enlarges output; repeated loop/unroll and lifetime differences remain. y-4 is a semantics finding only.",
+      "next_evidence_needed": "Resolve upstream TU layout and register lifetimes from actual target, not padding or flag changes"
+    },
+    {
+      "id": 27,
+      "lane": "hud",
+      "unit": "hudextra",
+      "function": "ShowHUDExtra",
+      "address": "8C0938E8",
+      "size": 382,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "exact",
+      "hypotheses_tested": [
+        "N64 native counterpart places w/2,h/2 in InitPane arguments; DC width spill and invariant division sequence confirm this shape rather than MAT3 pre-halved locals"
+      ],
+      "byte_delta": 382,
+      "function_delta": 1,
+      "residual": null,
+      "next_evidence_needed": null
+    },
+    {
+      "id": 28,
+      "lane": "hud",
+      "unit": "hudextra",
+      "function": "animStuntCoins",
+      "address": "8C094160",
+      "size": 1296,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "Extend backward predecessor pointer lifetime to function scope based on pointer traversal across 94428..4AC; emitted strict result unchanged"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Stack28 vs target68; scope probe does not fix allocation or +upstream drift. Earlier MAT3 block-scope reconstruction remains accepted baseline.",
+      "next_evidence_needed": "Resolve upstream TU layout and register lifetimes from actual target, not padding or flag changes"
+    },
+    {
+      "id": 29,
+      "lane": "hud",
+      "unit": "hudextra",
+      "function": "animAmmoCounts",
+      "address": "8C0948BC",
+      "size": 248,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "Promote x/y coordinate locals from signed short to int, target holds both in registers rather than current y spill; no strict improvement"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Stack12 vs target8 and top-tested vs target bottom-tested entry; candidate does not repair upstream drift.",
+      "next_evidence_needed": "Resolve upstream TU layout and register lifetimes from actual target, not padding or flag changes"
+    },
+    {
+      "id": 30,
+      "lane": "hud",
+      "unit": "hudextra",
+      "function": "animWeaponIcons",
+      "address": "8C0949D8",
+      "size": 550,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "Recover target screenPos Y +4.0f from fmac at 8C094BBC and constant pool",
+        "Replace cached car pointer with direct indexed loads to shorten lifetime; larger output, no strict credit"
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Missing fourth saved FP register is repaired by Y+4 semantics, but integer allocation/pool/layout differences persist; no strict gains.",
+      "next_evidence_needed": "Resolve upstream TU layout and register lifetimes from actual target, not padding or flag changes"
+    },
+    {
+      "id": 31,
+      "lane": "frontend",
+      "unit": "gameoverscr",
+      "function": "updateGameOverScreen",
+      "address": "8C0291CC",
+      "size": 120,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "partial",
+      "hypotheses_tested": [
+        "Explicit reset !=0 guard changed scratch allocation, no strict gain.",
+        "Approved legacy UnloadTrack() private declaration corrects four scratch differences; only two upstream displaced calls remain."
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Needs capped setGameOverState layout fix; header-only proposal retained as research, source restored."
+    },
+    {
+      "id": 32,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "updateModeScreen",
+      "address": "8C07DC08",
+      "size": 538,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 block-local fileh without extra player temporary: no gain, lost6 pool bytes; restored.",
+        "Approved PS_PakChanged(int) argument ABI: target extu.b reproduced, but moves later exact functions; restored."
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "First mismatch frame8 vs12 at8C07DC18; target explicitly homes player and fileh separately. Need independent original local-lifetime evidence.",
+      "replacement_reason": "Original target is instruction-correct but displaced by upstream shape; replacing with unused unmatched root having direct donor/target shape evidence."
+    },
+    {
+      "id": 33,
+      "lane": "frontend",
+      "unit": "gameoverscr",
+      "function": "setGameOverState",
+      "address": "8C029314",
+      "size": 500,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "MAT3 width=max/2 lifetime reuse with direct state access; neutral relative prior direct shape.",
+        "MAT3 enum parameter/global typing instead of int; neutral.",
+        "State pointer plus donor menuSize*lineHeight order and width reuse; no strict gain."
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Baseline first mismatch 8C029324 frame12 versus target8. Direct donor uses frame8 but retains newState in r14 instead of homing it; target keeps state address in r14. Need genuine lifetime/alias evidence; no more probes this round."
+    },
+    {
+      "id": 34,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "animText",
+      "address": "8C07DF0C",
+      "size": 694,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "partial",
+      "hypotheses_tested": [
+        "Single shared conditional Sprintf call: rejected layout regression.",
+        "Target float constants0.34906585f/2.7925268f account for SHC truncation.",
+        "Format local hoisted before singular/plural branch, as target; gains external pools."
+      ],
+      "byte_delta": 72,
+      "function_delta": 0,
+      "residual": "Function still25 bytes differ, first8C07DF38 fr14 vsfr15. Three probes consumed. Strict72-byte external-pool improvement retained, not a function claim.",
+      "replacement_reason": "Original target is instruction-correct but displaced by upstream shape; replacing with unused unmatched root having direct donor/target shape evidence."
+    },
+    {
+      "id": 35,
+      "lane": "frontend",
+      "unit": "gameoverscr",
+      "function": "controlMain",
+      "address": "8C0295B2",
+      "size": 422,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "partial",
+      "hypotheses_tested": [
+        "Shared approved UnloadTrack() contract probe fixes both RemoveEnvirons callee register differences in this body."
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "Remaining six instruction differences are calls to displaced earlier helpers; no strict gain. Header change research-only pending setter layout."
+    },
+    {
+      "id": 36,
+      "lane": "frontend",
+      "unit": "gameoverscr",
+      "function": "drawMain",
+      "address": "8C029794",
+      "size": 340,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "negative",
+      "hypotheses_tested": [
+        "Donor literal menu-count bound removes reconstructed stack bound.",
+        "Target rotated-loop shape via continue after invalid option.",
+        "Target title position loads before text pointer."
+      ],
+      "byte_delta": 0,
+      "function_delta": 0,
+      "residual": "No strict gain. Target retains4-byte frame absent donor literal/continue version; target entry also shifted by upstream setter. All rejected source restored.",
+      "replacement_reason": "Original target is instruction-correct but displaced by upstream shape; replacing with unused unmatched root having direct donor/target shape evidence."
+    },
+    {
+      "id": 37,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "updateButtons",
+      "address": "8C07E556",
+      "size": 1088,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "exact",
+      "hypotheses_tested": [
+        "Donor for instead of reconstructed while: neutral.",
+        "Continue after hidden button prevents unrolling and reproduces target initial branch/pool placement.",
+        "Cursor XYZ stores rather than donor ZXY reproduce target instruction order."
+      ],
+      "byte_delta": 1104,
+      "function_delta": 1,
+      "residual": "None within updateButtons; fullTU remains partial at updateModeScreen/animText.",
+      "replacement_reason": "Original target is instruction-correct but displaced by upstream shape; replacing with unused unmatched root having direct donor/target shape evidence."
+    },
+    {
+      "id": 38,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "initButtons",
+      "address": "8C07E248",
+      "size": 710,
+      "baseline_status": "moved",
+      "status": "completed",
+      "result": "exact",
+      "hypotheses_tested": [
+        "Donor index<13 loop replaces invented pointer-end bound and fixes frame16->12.",
+        "Approved private gNumModels canonical volatile unsigned-char contract fixes body; downstream updateButtons loop restores pools."
+      ],
+      "byte_delta": 710,
+      "function_delta": 1,
+      "residual": "None within initButtons.",
+      "replacement_reason": "drawRect instruction content exact but moved -116; no local change justified. initButtons is upstream root for two mode-screen targets."
+    },
+    {
+      "id": 39,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "uninitScreen",
+      "address": "8C07DEAC",
+      "size": 42,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "exact",
+      "hypotheses_tested": [
+        "WholeTU initButtons size correction resolves sole call displacement. No pointless local source mutation."
+      ],
+      "byte_delta": 42,
+      "function_delta": 1,
+      "residual": "No local probe required: exact result established by supported upstream modifications."
+    },
+    {
+      "id": 40,
+      "lane": "frontend",
+      "unit": "modescr",
+      "function": "uninitButtons",
+      "address": "8C07E50E",
+      "size": 72,
+      "baseline_status": "differs",
+      "status": "completed",
+      "result": "exact",
+      "hypotheses_tested": [
+        "WholeTU initButtons corrected entry; updateButtons continue shape restores its shared pool. No local mutation needed."
+      ],
+      "byte_delta": 72,
+      "function_delta": 1,
+      "residual": "No local probe required: exact result established by supported upstream modifications."
+    }
+  ]
+}

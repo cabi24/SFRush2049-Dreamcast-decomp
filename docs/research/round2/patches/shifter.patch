@@ -1,0 +1,15 @@
+--- a/src/controls.c
++++ b/src/controls.c
+@@ -42,7 +42,11 @@
+         if (player->controls[3] & gRealEdges[player->controller]) {
+             m->mainin.gear++;
+             if (m->mainin.gear > 4) m->mainin.gear = 4;
+-            if (m->mainin.gear != 0) return;
++            if (m->mainin.gear == 0) {
++                /* Continue into the speed-based gear selection below. */
++            } else {
++                return;
++            }
+         } else if (m->mainin.gear >= 0) return;
+         mph = gGameCar[m->slot].rwmph >> 2;
+         if (mph > 110) m->mainin.gear = 4;

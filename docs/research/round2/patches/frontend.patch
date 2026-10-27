@@ -1,0 +1,43 @@
+diff --git a/include/gameoverscr_types.h b/include/gameoverscr_types.h
+index 6d7e4b8..a328ecc 100644
+--- a/include/gameoverscr_types.h
++++ b/include/gameoverscr_types.h
+@@ -43,7 +43,7 @@ extern tModelData model[6];
+ #define gPlayers ((tPadState *)0x8C006000)
+ void BlinkResurrectingCars(void);
+ void AudKillSong(void);
+-void UnloadTrack(signed char);
++void UnloadTrack(); /* Definition has no parameters; legacy callers pass ignored track. */
+ void RemoveEnvirons(void);
+ int ZOID_SplitScreen(int);
+ void RemoveMultiplayerHUD(void);
+diff --git a/src/gameoverscr.c b/src/gameoverscr.c
+index b94ed6e..bbba48a 100644
+--- a/src/gameoverscr.c
++++ b/src/gameoverscr.c
+@@ -209,21 +209,21 @@ void controlScore(void)
+ void drawMain(void)
+ {
+     int i;
+-    int menuCount = kGameOverMainMenuCount;
+     signed short x, y;
+     unsigned char *str;
+     HAL_SetTextDepth(0.0f);
+     TB_SetJust(1, 3);
+     HAL_SetFont(13);
+     TB_SetTextColor(1);
+-    str = gText.single[67];
+     x = titlePos[0];
+     y = titlePos[1];
++    str = gText.single[67];
+     TB_DrawText(x, y, str);
+     y = 118;
+     HAL_SetFont(10);
+-    for (i = 0; i < menuCount; i++) {
+-        if (validOption(i)) {
++    for (i = 0; i < kGameOverMainMenuCount; i++) {
++        if (!validOption(i)) continue;
++        {
+             str = gText.taba[gText.tab[46] + i];
+             if (i == kGameOverMainMenuScore && gRace != kStunt && gRace != kBattle)
+                 str = gText.single[0];

@@ -1,0 +1,346 @@
+diff --git a/src/shots.c b/src/shots.c
+index 2413b3b..6b96d58 100644
+--- a/src/shots.c
++++ b/src/shots.c
+@@ -102,12 +102,12 @@ void ProximityDamage(float *pos, float *old, int owner, float radiussq, int dama
+     float pos3[3];
+     float distsq;
+     float y;
++    float delta[3];
+ 
+     for (hit = gGameCar; hit < &gGameCar[gNumCars]; hit++) {
+         if (model[hit->slot].crashflag || !hit->collidable || hit->dead)
+             continue;
+         {
+-            float delta[3];
+             delta[0] = pos[0] - hit->dr_pos[0];
+             delta[1] = pos[1] - hit->dr_pos[1];
+             delta[2] = pos[2] - hit->dr_pos[2];
+@@ -121,16 +121,250 @@ void ProximityDamage(float *pos, float *old, int owner, float radiussq, int dama
+                 pos2[2] = old[2] - pos[2];
+                 BodyVector(pos2, pos3, hit->dr_uvs);
+                 if (fabs(fatan2(pos3[0], pos3[2])) < 1.35f)
+-                    BattleDamage(&gGameCar[owner], hit, 0.35f * (damage * (y * y)));
++                    BattleDamage(&gGameCar[owner], hit, 0.35f * ((damage * y) * y));
+                 else
+-                    BattleDamage(&gGameCar[owner], hit, damage * (y * y));
++                    BattleDamage(&gGameCar[owner], hit, (damage * y) * y);
+             } else {
+-                BattleDamage(&gGameCar[owner], hit, damage * (y * y));
++                BattleDamage(&gGameCar[owner], hit, (damage * y) * y);
+             }
+         }
+     }
+ }
+ 
++
++/* Local minimum views: no shared layout changes. ElevateGun float loads/stores
++   9691A..972 prove yaw +3C8 and pitch +3C4. Collision 96D98 proves radius +10. */
++#define SHOT_YAW(c) (*(float *)((char *)(c) + 0x3c8))
++#define SHOT_PITCH(c) (*(float *)((char *)(c) + 0x3c4))
++#define SHOT_RADIUS(s) (*(float *)((char *)(s) + 0x10))
++extern float weaponOffsets[][13][3]; /* 9684C stride9C; body index times0C. */
++extern tZoidObjectDC ObjInstanceList[]; /* 96EAA stride58, 96EBA base+0C. */
++extern float _builtin_sqrtf(float);
++#define sqrtf _builtin_sqrtf
++void YawUV(float,float (*)[3]);
++
++void ElevateGun(tCarData *car)
++{
++    tCarData *hit;
++    float vec[3];
++    float pos[3];
++    float best = 2000.0f;
++    float pitch = 0.0f;
++    float yaw = 0.0f;
++    float h;
++
++    for (hit = gGameCar; hit < &gGameCar[gNumCars]; hit++) {
++        if (car->slot == hit->slot || gCarTeam[car->slot] == gCarTeam[hit->slot] ||
++            model[hit->slot].crashflag || !hit->collidable || hit->dead)
++            continue;
++        pos[0] = hit->dr_pos[0] - car->dr_pos[0];
++        pos[1] = hit->dr_pos[1] - car->dr_pos[1];
++        pos[2] = hit->dr_pos[2] - car->dr_pos[2];
++        if (car->battle.weapon.type >= 8)
++            h = 1.0f * ShotOffsets[car->battle.weapon.type][1];
++        else
++            h = 1.0f * (ShotOffsets[car->battle.weapon.type][1] +
++                  weaponOffsets[car->battle.weapon.type][model[car->slot].body_type][1]);
++        pos[0] += car->dr_uvs[1][0] * -h;
++        pos[1] += car->dr_uvs[1][1] * -h;
++        pos[2] += car->dr_uvs[1][2] * -h;
++        BodyVector(pos, vec, car->dr_uvs);
++        if (vec[2] < 0.0f || vec[0] < -0.5f * vec[2] || vec[0] > 0.5f * vec[2] ||
++            vec[1] < -vec[2] || vec[1] > vec[2] || vec[2] > best)
++            continue;
++        best = vec[2];
++        yaw = fatan2(vec[0], vec[2]);
++        pitch = fatan2(vec[1], vec[2]);
++    }
++    if (yaw < SHOT_YAW(car))
++        SHOT_YAW(car) -= 0.01f;
++    else if (yaw > SHOT_YAW(car))
++        SHOT_YAW(car) += 0.01f;
++    if (pitch < SHOT_PITCH(car))
++        SHOT_PITCH(car) -= 0.01f;
++    else if (pitch > SHOT_PITCH(car))
++        SHOT_PITCH(car) += 0.01f;
++}
++
++
++void MissileLock(tShotInfoDC *shot)
++{
++    tCarData *hit;
++    float vec[3];
++    float pos[3];
++    float aim[3];
++    float best = 2000.0f;
++    float dist;
++
++    for (hit = gGameCar; hit < &gGameCar[gNumCars]; hit++) {
++        if (shot->slot == hit->slot || gCarTeam[shot->slot] == gCarTeam[hit->slot] ||
++            model[hit->slot].crashflag || !hit->collidable || hit->dead)
++            continue;
++        pos[0] = hit->dr_pos[0] - shot->pos[0];
++        pos[1] = hit->dr_pos[1] - shot->pos[1];
++        pos[2] = hit->dr_pos[2] - shot->pos[2];
++        BodyVector(pos, vec, shot->uvs);
++        if (vec[2] < 0.0f || vec[0] < -vec[2] || vec[0] > vec[2] ||
++            vec[1] < -vec[2] || vec[1] > vec[2])
++            continue;
++        dist = sqrtf(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
++        if (dist >= best)
++            continue;
++        best = dist;
++        aim[0] = vec[0];
++        aim[1] = vec[1];
++        aim[2] = vec[2];
++    }
++    if (best < 2000.0f) {
++        if (aim[0] > 0.0f)
++            YawUV(-0.04f, shot->uvs);
++        else
++            YawUV(0.04f, shot->uvs);
++        if (aim[1] > 0.0f)
++            PitchUV(0.03f, shot->uvs);
++        else
++            PitchUV(-0.03f, shot->uvs);
++    }
++}
++
++
++tCarData *ShotToCarCollision(tShotInfoDC *shot, float *old)
++{
++    tCarData *car;
++    tCarData *hit;
++    float pos[3];
++    float pos2[3];
++    float dir[3];
++    float normal[3];
++    float projected[3];
++    float delta[3];
++    float t;
++    float d0;
++    float t0;
++    float y;
++    int i;
++
++    if (shot->type == 3)
++        return 0;
++    dir[0] = shot->pos[0] - old[0];
++    dir[1] = shot->pos[1] - old[1];
++    dir[2] = shot->pos[2] - old[2];
++    normal[0] = -dir[0];
++    normal[1] = 0.0f;
++    normal[2] = -dir[2];
++    d0 = dir[0] * normal[0] + dir[1] * normal[1] + dir[2] * normal[2];
++    if (fabs(d0) < 0.001f)
++        return 0;
++    t0 = 1.0f;
++    hit = 0;
++    for (i = 0, car = gGameCar; i < gNumCars; i++, car++) {
++        if (shot->slot == car->slot || model[i].resurrect.moving_state != -1 ||
++            !car->collidable || model[i].crashflag)
++            continue;
++        delta[0] = car->dr_pos[0] - old[0];
++        delta[1] = car->dr_pos[1] - old[1];
++        delta[2] = car->dr_pos[2] - old[2];
++        t = (delta[0] * normal[0] + delta[1] * normal[1] + delta[2] * normal[2]) / d0;
++        if (t < 0.0f || t > t0)
++            continue;
++        projected[0] = dir[0] * t + old[0];
++        projected[1] = dir[1] * t + old[1];
++        projected[2] = dir[2] * t + old[2];
++        pos[0] = projected[0] - car->dr_pos[0];
++        pos[1] = projected[1] - car->dr_pos[1];
++        pos[2] = projected[2] - car->dr_pos[2];
++        if (pos[1] < -SHOT_RADIUS(shot) || pos[1] > 3.5f + SHOT_RADIUS(shot))
++            continue;
++        y = sqrtf(pos[0] * pos[0] + pos[2] * pos[2]);
++        if (y > 6.75f + SHOT_RADIUS(shot) - 0.5f)
++            continue;
++        if (car->battle.weapon.type == 5) {
++            pos2[0] = old[0] - shot->pos[0];
++            pos2[1] = old[1] - shot->pos[1];
++            pos2[2] = old[2] - shot->pos[2];
++            BodyVector(pos2, pos, car->dr_uvs);
++            if (fabs(fatan2(pos[0], pos[2])) < 1.35f)
++                shot->flags |= 1;
++        }
++        shot->pos[0] = projected[0];
++        t0 = t;
++        hit = car;
++        shot->pos[1] = projected[1];
++        shot->pos[2] = projected[2];
++    }
++    return hit;
++}
++
++
++
++void SonicCarCollision(tShotInfoDC *shot)
++{
++    tCarData *car;
++    tCarData *our;
++    tModelData *m;
++    int i;
++    int dam;
++    float vec[3];
++    float vec2[3];
++    float dist;
++    float rad;
++    float radsq;
++    float mul;
++    float scale;
++    float pos[3];
++
++    our = &gGameCar[shot->slot];
++    scale = ObjInstanceList[shot->obj->mbIdx].scale;
++    rad = 4.0f * scale;
++    radsq = rad * rad;
++    if (scale <= 8.0f) {
++        mul = 1.0f;
++        dam = 800;
++    } else if (scale <= 20.0f) {
++        mul = 0.6000000238418579f;
++        dam = 400;
++    } else {
++        dam = 200;
++        mul = 0.5f;
++    }
++    pos[0] = shot->obj->mat.mat3.pos[0];
++    pos[1] = shot->obj->mat.mat3.pos[1];
++    pos[2] = shot->obj->mat.mat3.pos[2];
++    for (i = 0, car = gGameCar; i < gNumCars; i++, car++) {
++        if (shot->slot == car->slot || model[i].resurrect.moving_state != -1 ||
++            !car->collidable || (shot->slotDamaged & (1 << car->slot)))
++            continue;
++        vec[0] = car->dr_pos[0] - pos[0];
++        vec[1] = car->dr_pos[1] - pos[1];
++        vec[2] = car->dr_pos[2] - pos[2];
++        dist = vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2];
++        if (dist <= radsq) {
++            shot->slotDamaged |= 1 << car->slot;
++            BattleDamage(our, car, dam);
++            m = &model[car->slot];
++            {
++                rad = sqrtf(dist);
++                vec2[2] = 330000.0f * (mul * (vec[2] / rad));
++                vec2[1] = mul * (330000.0f * (vec[1] / rad) + 66000.0f);
++                vec2[0] = 330000.0f * (mul * (vec[0] / rad));
++                BodyVector(vec2, vec, car->dr_uvs);
++                m->centerForce[0] += vec[0];
++                m->centerForce[1] += vec[1];
++                m->centerForce[2] += vec[2];
++                vec[1] = 0.0f;
++                m->centerMoment[0] += vec[0];
++                m->centerMoment[1] += vec[1];
++                m->centerMoment[2] += vec[2];
++
++            }
++        }
++    }
++}
++
++
++
++/* 97178/192 read signed byte; shared declaration remains untouched. */
++#define SHOT_NUM_MODELS (*(signed char *)&gNumModels)
+ void ShotInit(void)
+ {
+     int i;
+@@ -141,13 +375,13 @@ void ShotInit(void)
+     InitStatLL(&gShotObjList, gShotObjs, sizeof(gShotObjs[0]), 24, 0);
+     InitStatLL(&gShotCaseList, gShotCase, sizeof(gShotCase[0]), 30, 0);
+     for (i = 0; i < 10; i++)
+-        gWprObjList[i] = MBOX_FindObject_WORK(WprObjNames[i], 0, gNumModels - 1, 0);
++        gWprObjList[i] = MBOX_FindObject_WORK(WprObjNames[i], 0, SHOT_NUM_MODELS - 1, 0);
+     for (i = 0; i < 7; i++)
+-        gWfxObjList[i] = MBOX_FindObject_WORK(WfxObjNames[i], 0, gNumModels - 1, 0);
++        gWfxObjList[i] = MBOX_FindObject_WORK(WfxObjNames[i], 0, SHOT_NUM_MODELS - 1, 0);
+     for (i = 0; i < 5; i++)
+-        MBOX_FindTexture_WORK(MineTexNames[i], &gMineTextures[i], 0, gNumModels - 1, 1);
++        MBOX_FindTexture_WORK(MineTexNames[i], &gMineTextures[i], 0, SHOT_NUM_MODELS - 1, 1);
+     for (i = 0; i < 5; i++)
+-        MBOX_FindTexture_WORK(RipTexNames[i], &gRipTextures[i], 0, gNumModels - 1, 1);
++        MBOX_FindTexture_WORK(RipTexNames[i], &gRipTextures[i], 0, SHOT_NUM_MODELS - 1, 1);
+     for (i = 0; i < 4; i++)
+         gCarShield[i].dlIdx = -1;
+     InitStreaks();
+@@ -157,17 +391,18 @@ void ShotDone(tShotInfoDC *shot)
+ {
+     tShotDC *o;
+     switch (shot->type) {
+-    case 3:
+-        o = shot->obj2;
+-        ZOID_RemoveObject(o->mbIdx);
+-        FreeStatLLE(&gShotObjList, o);
+-    case 0:
++    case 3: {
++        tShotDC *o2 = shot->obj2;
++        ZOID_RemoveObject(o2->mbIdx);
++        FreeStatLLE(&gShotObjList, o2);
++    }
+     case 1:
++    case 8:
++    case 0:
+     case 2:
+     case 4:
+     case 6:
+     case 7:
+-    case 8:
+         o = shot->obj;
+         ZOID_RemoveObject(o->mbIdx);
+         FreeStatLLE(&gShotObjList, o);
+@@ -178,10 +413,9 @@ void ShotDone(tShotInfoDC *shot)
+ tShotDC *_CreateShotObject(int idx, int parent, unsigned int flags, int o2)
+ {
+     tShotDC *o;
+-    tUVMatrix *mat = 0; /* DC97332 passesNULLwheno2; backenddefaultmatrix. */
+     o = GetStatLLE(&gShotObjList);
+     if (o2)
+-        o->mbIdx = MBOX_NewObject(gWprObjList[idx], mat, parent, flags);
++        o->mbIdx = MBOX_NewObject(gWprObjList[idx], 0, parent, flags);
+     else
+         o->mbIdx = MBOX_NewObject(gWprObjList[idx], &o->mat, parent, flags);
+     return o;
+@@ -209,14 +443,14 @@ reduceScale:
+             if (shot->flags & 0x80) {
+                 goto reduceScale;
+             } else {
+-                o->mat.mat3.uvs[2][0] *= 0.4f;
+-                o->mat.mat3.uvs[2][1] *= 0.4f;
+-                o->mat.mat3.uvs[2][2] *= 0.4f;
++                o->mat.mat3.uvs[2][0] *= 0.4000000059604645f;
++                o->mat.mat3.uvs[2][1] *= 0.4000000059604645f;
++                o->mat.mat3.uvs[2][2] *= 0.4000000059604645f;
+             }
+         }
+     }
+     if (shot->flags & 2)
+-        PitchUV(0.18f, o->mat.mat3.uvs);
++        PitchUV(0.18000001f, o->mat.mat3.uvs);
+ }
+ 
+ void _InitNewShot(tShotInfoDC *shot, tCarData *car)
