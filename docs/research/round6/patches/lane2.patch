@@ -1,0 +1,4080 @@
+diff --git a/include/hud_round6.h b/include/hud_round6.h
+new file mode 100644
+index 0000000..d553c21
+--- /dev/null
++++ b/include/hud_round6.h
+@@ -0,0 +1,48 @@
++#ifndef HUD_ROUND6_H
++#define HUD_ROUND6_H
++/* Research-only native views, corroborating the existing maxpath/resurrect
++ * overlays without modifying their headers or the common ABI. */
++typedef struct tHudAltPathR6 {
++ unsigned char resurrect; /* 38812 byte+0. */
++ char unknown01[9];
++ unsigned short numPts; /* 387EE/38818: +A, extu.w. */
++ signed short (*pts)[3]; /* 387E8: +C. */
++} tHudAltPathR6;
++typedef struct tHudPathR6 {
++ unsigned short numPts; /* 387BA/38934: +0. */
++ char unknown02[2];
++ signed short (*pts)[3]; /* 38822: +4, point stride6. */
++ unsigned char numAlt; /* 387CC: +8. */
++ char unknown09[3];
++ tHudAltPathR6 *alt; /* 387E4: +C, row stride10. */
++} tHudPathR6;
++typedef struct tHudCheckPointR6 {
++ float pos[3]; /* 38D80,38DBA; row stride50. */
++ char unknown0c[0x50-0x0c];
++} tHudCheckPointR6;
++typedef struct tHudCheckpointsR6 {
++ char unknown00[4];
++ signed short finishPt; /* 38D4C-52: +4. */
++ char unknown06[6];
++ tHudCheckPointR6 points[10]; /* +C; existing checkpoint aggregate32C. */
++} tHudCheckpointsR6;
++typedef struct tHudTextureR6 {
++ char unknown00[0x18];
++ unsigned short *pixels; /* 3878E and388F0, native16-bit map raster. */
++ char unknown1c[0x30-0x1c];
++} tHudTextureR6;
++typedef char checkHudAltR6[(sizeof(tHudAltPathR6)==0x10)?1:-1];
++typedef char checkHudPathR6[(sizeof(tHudPathR6)==0x10)?1:-1];
++typedef char checkHudCheckPointR6[(sizeof(tHudCheckPointR6)==0x50)?1:-1];
++typedef char checkHudCheckpointsR6[(sizeof(tHudCheckpointsR6)==0x32c)?1:-1];
++typedef char checkHudTextureR6[(sizeof(tHudTextureR6)==0x30)?1:-1];
++extern tHudPathR6 gResPath;
++extern tHudCheckpointsR6 gCheckpoints;
++#define gPathMin ((signed short *)0x8C14C5D0) /* 3870E/38712. */
++#define gPathMax ((signed short *)0x8C14C5D6) /* 3870C/38710. */
++#define gResPathPtList (*(signed short (**)[3])0x8C14C5DC) /* 387DA-7E0. */
++#define kMapSize (*(int *)0x8C0BEBB4) /* 386AA/386AC. */
++#define mapPos ((int (*)[2])0x8C0BEA40) /* 386B8. */
++#define coinPos ((int (*)[4][2])0x8C0BE840) /* 37798. */
++#define coinStuntPos ((int (*)[4][2])0x8C0D1B2C) /* 37750. */
++#endif
+diff --git a/include/packet_round6.h b/include/packet_round6.h
+new file mode 100644
+index 0000000..ec83a2e
+--- /dev/null
++++ b/include/packet_round6.h
+@@ -0,0 +1,17 @@
++#ifndef PACKET_ROUND6_H
++#define PACKET_ROUND6_H
++#include "dc_types.h"
++/* Native 026184-194 indexes texture records with stride0x30. */
++typedef struct tPacketTextureR6 {
++    char unknown00[0x20];
++    unsigned int flags; /* 0261B6 long+20, tests00020000. */
++    unsigned int inlineContext[2]; /* 0261D0 takes address+24. */
++    unsigned int *context; /* 026196-19A dereferences long+2C. */
++} tPacketTextureR6;
++typedef struct tPacketTexturesR6 { tPacketTextureR6 *textures; int count; } tPacketTexturesR6;
++typedef char checkPacketTextureR6[(sizeof(tPacketTextureR6)==0x30)?1:-1];
++typedef char checkPacketTexturesR6[(sizeof(tPacketTexturesR6)==8)?1:-1];
++extern tPacketTexturesR6 gTexDefPtrs[];
++extern unsigned char gBackwards;
++extern unsigned char dcContextA[];
++#endif
+diff --git a/include/paksysdc_round6.h b/include/paksysdc_round6.h
+new file mode 100644
+index 0000000..b0d32cf
+--- /dev/null
++++ b/include/paksysdc_round6.h
+@@ -0,0 +1,61 @@
++#ifndef PAKSYSDC_ROUND6_H
++#define PAKSYSDC_ROUND6_H
++/* Research-only native layouts.  The existing prefix stays authoritative;
++ * this separate view allocates no storage and does not import GC offsets. */
++typedef struct tDCPakR6 {
++ signed char changed; /* D424: byte at record+0. */
++ signed char inserted; /* D430: byte at +1. */
++ char unknown02[3];
++ signed char damaged,wasRemoved; /* D47C (+5), D494 (+6). */
++ signed char flushing; /* DE62/E388 +7. */
++ signed char flushed; /* DE74/DECA +8. */
++ signed char original; /* DF42 +9. */
++ signed char inUse; /* DE50/E370 +A. */
++ signed char locked; /* D55E +B. */
++ signed char flush; /* DF04 +C. */
++ signed char status0d; /* D488 via literal D568 = gPaks+0D. */
++ char unknown0e[2];
++ unsigned int completion10,completion14,completion18; /* CCF2..CCF6. */
++ char unknown1c[0x40-0x1c];
++ unsigned short freeBlocks; /* D4E4 +40 with extu.w. */
++ char unknown42[0xd8-0x42];
++ int error;
++ char unknowndc[4];
++ tDLList files;
++} tDCPakR6;
++typedef char checkDCPakR6[(sizeof(tDCPakR6)==0xf0)?1:-1];
++#define DCPAK6(i) (((tDCPakR6 *)gPaks)[i])
++typedef struct tDCPakFileR6 tDCPakFileR6;
++typedef struct tDCFileMetaR6 {
++ tDLLE ll;
++ signed char exists,locked,flush,partial; /* D994/D53A/DDFE/DB34: +8/+9/+A/+B. */
++ char unknown0c[0x20-0x0c]; /* SDK directory record; word+C copied to file size. */
++ char text20[18],text32[34],text54[16]; /* D604/D624/D644 observed capacities. */
++ void *pointer64,*pointer68; /* D6D6/D6EE, DD52/DD6A. */
++ unsigned short count6c,value6e; /* D668/D66C; DD2E extu.w. */
++ char unknown70[4];
++ unsigned short value74; /* D6F4. */
++ char unknown76[2];
++ void *pointer78; /* D842, DD90. */
++ unsigned int size7c; /* D6FA, DD80; distinct from SDK directory word+C. */
++ void *icon; /* D23A/D9E0: native +80, unlike GC +E0. */
++ tDCPakFileR6 **file; /* D358: +84; D2BC allocation size88. */
++} tDCFileMetaR6;
++struct tDCPakFileR6 {
++ tDLLE ll;
++ void (*RemoveFile)(tDCPakFileR6 **); /* D21A..D224: +8 callback. */
++ char unknown0c[4];
++ unsigned char pak; /* DEEC/DEEE: +10 unsigned. */
++ char unknown11[3];
++ tDCFileMetaR6 **id; /* DB1E/DDC6: +14 followed by pointer dereference. */
++ char filename[13]; /* +18..24: layout capacity, native copy uses12 bytes. */
++ char name[9]; /* +25..2D: D380-38A copy; termination not guaranteed by capacity. */
++ char ext[4]; /* +2E..31: _GetFileExt output includes byte3 terminator. */
++ char unknown32[2];
++ unsigned int size; /* +34: D362; metadata byte count. */
++ unsigned int blocks; /* DB26: +38, then scale512. */
++ void *data; /* DDCC: +3C, handle passed to DeallocateMemory. */
++};
++typedef char checkDCFileViewR6[(sizeof(tDCPakFileR6)==0x40)?1:-1];
++typedef char checkDCMetaViewR6[(sizeof(tDCFileMetaR6)==0x88)?1:-1];
++#endif
+diff --git a/include/records_buttons_round6.h b/include/records_buttons_round6.h
+new file mode 100644
+index 0000000..1e7cf13
+--- /dev/null
++++ b/include/records_buttons_round6.h
+@@ -0,0 +1,44 @@
++#ifndef RECORDS_BUTTONS_ROUND6_H
++#define RECORDS_BUTTONS_ROUND6_H
++#include "dc_types.h"
++/* Native button record: 089944-956 index*64 object+4; 089FF2 angle+8;
++   089FD6 matrix+C;08A154 positionY+34;08A19C byte alpha+3C. */
++typedef struct tRecordButtonR6 {
++    int buttonType,objIdx;
++    float angle;
++    tUVMatrix mat;
++    unsigned char alpha;
++    char unknown3d[3];
++} tRecordButtonR6;
++typedef char checkRecordButtonR6[(sizeof(tRecordButtonR6)==0x40)?1:-1];
++#define buttonInfo ((tRecordButtonR6 *)0x8C0CF798)
++#define buttonsInited (*(int *)0x8C19FFBC)
++#define buttonsJustInited (*(int *)0x8C19FFC0)
++#define cursorSpeed (*(float *)0x8C19FFC4)
++#define scrollSpeed (*(float *)0x8C19FFC8)
++#define gSelectMenuVisible ((signed char *)0x8C19FFD7)
++#define gViewMenuVisible ((signed char *)0x8C19FFE4)
++#define gRecordState (*(int *)0x8C1A0004)
++#define gSelectMenuSelect (*(int *)0x8C1A0008)
++#define gSelectMenuClear (*(signed char *)0x8C1A000C)
++#define gViewMenuSelect (*(int *)0x8C1A0010)
++#define gDeleteConfirm (*(signed char *)0x8C1A0059)
++#define gDeleteNotify (*(signed char *)0x8C1A005B)
++#define gButtonScale (*(float *)0x8C0CFD5C)
++#define gButtonSpace (*(float *)0x8C0CFD60)
++#define buttonX (*(float *)0x8C0CFD64)
++#define maxY (*(float *)0x8C0CFD68)
++#define minY (*(float *)0x8C0CFD6C)
++#define buttonZ (*(float *)0x8C0CFD70)
++#define cursorZ (*(float *)0x8C0CFD74)
++extern float gFrameSeconds,unitmatrix[3][3];
++extern signed char gNumModels;
++extern void *memcpy(void *,const void *,unsigned int);
++extern float _builtin_fabsf(float);
++#define fabs _builtin_fabsf
++extern void MBOX_ShowObject(int,int,int),MBOX_HideObject(int,int,int);
++extern tTexture *MBOX_FindTexture_WORK(char *,unsigned short *,int,int,int);
++extern void WRollUV(float,float (*)[3]),WPitchUV(float,float (*)[3]);
++extern void ScaleUV(float (*)[3],float (*)[3],float);
++extern void ZOID_SetTexture(int,tTexture *,int),ZOID_SetColor(int,tRGBA *);
++#endif
+diff --git a/include/shots_round6.h b/include/shots_round6.h
+new file mode 100644
+index 0000000..4133994
+--- /dev/null
++++ b/include/shots_round6.h
+@@ -0,0 +1,45 @@
++#ifndef SHOTS_ROUND6_H
++#define SHOTS_ROUND6_H
++#include "streaks_types.h"
++/* Native slices only; shared car fields are still accessed through tCarData. */
++typedef struct tShotCarR6 {
++ char unknown00[0x364];
++ tRGBA IRclr; /* 9798A-990; corroborates weapons_types.h. */
++ char unknown368[0x3b8-0x368];
++ int loaded; /* 9790E/97980 long at3B8. */
++ char unknown3bc[8];
++ float pitch,yaw; /* 98930/98934 and9897A/9897C. */
++} tShotCarR6;
++#define SHOT_LOADED(c) (((tShotCarR6 *)(c))->loaded)
++#define SHOT_PITCH(c) (((tShotCarR6 *)(c))->pitch)
++#define SHOT_YAW(c) (((tShotCarR6 *)(c))->yaw)
++#define SHOT_IRCLR(c) (((tShotCarR6 *)(c))->IRclr)
++typedef struct tShotCollSizeR6 {float colfront,colrear,colside,colheight;} tShotCollSizeR6;
++typedef struct tShotTexDefsR6 {tTexture *texDefs;int count;} tShotTexDefsR6;
++typedef char checkShotCarR6[(sizeof(tShotCarR6)==0x3cc)?1:-1];
++typedef char checkShotSizeR6[(sizeof(tShotCollSizeR6)==0x10)?1:-1];
++typedef char checkShotTexDefsR6[(sizeof(tShotTexDefsR6)==8)?1:-1];
++extern float weaponOffsets[8][13][3];
++extern tShotCollSizeR6 collsize[13];
++extern tShotTexDefsR6 gTexDefPtrs[];
++extern tZoidObjectDC ObjInstanceList[]; /* 9844A/9845A use common58 stride;98460/98464 read scale+C. */
++#define gShieldSizes ((float *)0x8C0D1DAC) /* 975A6 plus body_type*4. */
++#define hitColor (*(tRGBA *)0x8C0D1DA8) /* 9828A. */
++#define gShotSoundDirection ((float *)0x8C0BD948) /* 98022+98038: unitmatrix+36. */
++extern void ZOID_SetColor(int,tRGBA *),ZOID_SetTexture(int,tTexture *,int);
++extern void ElevateGun(tCarData *),MissileLock(tShotInfoDC *),SonicCarCollision(tShotInfoDC *);
++extern tCarData *ShotToCarCollision(tShotInfoDC *,float *);
++extern surftyp *ShotToWorldCollision(float *,float *,float (*)[3],float,signed char,unsigned short);
++extern void SetupTarget(char *,int,float *,float (*)[3],int,int,void *);
++extern void StartBlast(void *,int,float,int);
++extern tPoly *ZOID_NewPoly(int,float (*)[3],unsigned short,tRGBA *,int,int);
++extern void ZOID_RemovePoly(tPoly *);
++extern void ScaleUV(float (*)[3],float (*)[3],float),YawUV(float,float (*)[3]),RollUV(float,float (*)[3]);
++extern void WorldVector(float *,float *,float (*)[3]);
++extern int EmitGameSound(float *,float *,float,float,float,float,int,int,int,unsigned char);
++extern void PlayGameSound(int,int,int,int);
++extern float Random(float),_builtin_sqrtf(float);
++#define sqrtf _builtin_sqrtf
++extern tStreak *NewStreak(int,float *,float *); /* native98D8C/98D8E retain duplicatedpos. */
++extern void UpdateStreaks(void);
++#endif
+diff --git a/include/shots_types.h b/include/shots_types.h
+index 4924387..af35cfb 100644
+--- a/include/shots_types.h
++++ b/include/shots_types.h
+@@ -18,21 +18,23 @@ typedef struct tShotDC {
+ struct tShotInfoDC {
+  tShotInfoDC *next;
+  signed char slot,slotDamaged,type,flags; /* +4..7:97454/62/6A/70. */
+- char unknown08[4];
++ float lifeTime; /* 97BAA..7BB0: +8 countdown. */
+  float incTime; /* +C:97474. */
+- char unknown10[4];
++ float radius; /* 97A2E..7A32: +10 float store. */
+  float vel[3],pos[3],old[3]; /* +14/+20/+2C:97476..4BA. */
+  float uvs[3][3]; /* +38:974A8 andCopyUV. */
+- char unknown5c[4]; /* gap betweenknownUVending5C andobj+60; semantics unclaimed. */
++ struct tStreak *streak; /* 97DFE..7E30: +5C, flags8/newpos10..18. */
+  tShotDC *obj,*obj2; /* +60/+64:9745A/5E andShotDone972D8/EA. */
+ }; /* stride68/count24:97128..134; fullfieldsemantics onlywherecited. */
+-typedef struct tShotHitPolyDC {char opaque[8];} tShotHitPolyDC; /* stride8:97142; fields unused/unclaimed here. */
+-typedef struct tShotShieldDC {int dlIdx;char unknown04[0x34-4];} tShotShieldDC; /* stride34/fourrecords97121A..230, onlydlIdxusedhere. */
++typedef struct tShotHitPolyDC {struct tShotHitPolyDC *next; tPoly *poly;} tShotHitPolyDC; /* 98DF0 next0,98DF4 poly4; stride8 unchanged. */
++typedef struct tShotShieldDC {int dlIdx;tUVMatrix mat;} tShotShieldDC; /* native9757C matrix4,97568/74/7E pos28/2C/30; stride34. */
+ typedef struct tShotsDamageView {char unknown00[0x3a0];signed short damageThisFrame;} tShotsDamageView; /* 963E0/E2; minimumviewonly, nofullsizeclaim. */
+ #define SHOT_DAMAGE(c) (((tShotsDamageView *)(c))->damageThisFrame)
+ typedef char checkShotsCase[(sizeof(tShotCaseDC)==0x48)?1:-1];
+ typedef char checkShotsObject[(sizeof(tShotDC)==0x3c)?1:-1];
+ typedef char checkShotsInfo[(sizeof(tShotInfoDC)==0x68)?1:-1];
++typedef char checkShotsHitPoly[(sizeof(tShotHitPolyDC)==8)?1:-1];
++typedef char checkShotsShield[(sizeof(tShotShieldDC)==0x34)?1:-1];
+ extern volatile float gFrameSeconds;
+ extern float gGravity;
+ extern tModelData model[];
+diff --git a/include/targets_private.h b/include/targets_private.h
+index 364ddd8..28a272e 100644
+--- a/include/targets_private.h
++++ b/include/targets_private.h
+@@ -179,7 +179,8 @@ extern unsigned short gObjList[],gMineTextures[];
+ extern int gWprObjList[];
+ extern signed char gCarTeam[];
+ extern unsigned char gNumModels;
+-extern int gNumPlayers,gRace,gPauseState;
++extern signed short gNumPlayers;
++extern int gRace,gPauseState;
+ extern unsigned int gGameState;
+ extern signed char gRestartGame,gBackwards;
+ extern volatile float gFrameSeconds;
+diff --git a/src/Init.c b/src/Init.c
+index 67c4e85..8eb4058 100644
+--- a/src/Init.c
++++ b/src/Init.c
+@@ -141,9 +141,9 @@ void func_8C039718(void)
+     func_8C06E7BC();
+     while(!func_8C06E5B4()) { }
+     func_8C06B954();
+-    if(gFrameCounter) {
++    if(gFrameCounter != 0) {
+         frame=gFrameCounter;
+-        while(gFrameCounter<frame+60) { }
++        do { } while(gFrameCounter<frame+60);
+     }
+     func_8C039308();
+     func_8C06ED90();
+diff --git a/src/circuit.c b/src/circuit.c
+index f743608..80ea06f 100644
+--- a/src/circuit.c
++++ b/src/circuit.c
+@@ -179,7 +179,7 @@ void func_8C01C5E4(void)
+ }
+ 
+ 
+-void UpdateCircuit(unsigned char *ranks, float time)
++void UpdateCircuit(register unsigned char *ranks, float time)
+ {
+     int i; 
+     int n; 
+@@ -191,7 +191,7 @@ void UpdateCircuit(unsigned char *ranks, float time)
+     int first; 
+     int second; 
+     tCircuit *circuit; 
+-    circuit = &(*(*gPlayers[gCircuitPlayer].save)->datah)->circuit;
++    circuit = &(*(*((tPadState *)0x8C006000)[gCircuitPlayer].save)->datah)->circuit;
+     n = 6 - (gNumPlayers == 1 ? 0 : 2);
+     if (gCircuitPlayer > 0) {
+         ranks[0] ^= ranks[1];
+diff --git a/src/collision.c b/src/collision.c
+index 8e6967a..8db7a29 100644
+--- a/src/collision.c
++++ b/src/collision.c
+@@ -31,11 +31,10 @@ void collision(tModelData *m)
+     float pos[3]; /* stack */
+     float posr[3]; /* stack */
+     float dsq; /* f3 */
+-    int i; /* r28 */
++    float *component;
+     float (*corner)[3];
+     if (gNoCarCollisions && gRace != 1) return;
+-    if (!m->collidable) return;
+-    if (gRace == 2) return;
++    if (!m->collidable || gRace == 2) return;
+     for (m2 = m + 1; m2 < model + 6; m2++) {
+         if (!m2->in_game) continue;
+         if (!m2->collidable) continue;
+@@ -43,8 +42,8 @@ void collision(tModelData *m)
+         vec[1] = m->reckon.rwr[1] - m2->reckon.rwr[1];
+         vec[2] = m->reckon.rwr[2] - m2->reckon.rwr[2];
+         dsq = 0.0f;
+-        for (i = 0; i < 3; i++) {
+-            dsq += vec[i] * vec[i];
++        for (component = vec; component < vec + 3; ++component) {
++            dsq += *component * *component;
+         }
+         if (dsq > (m->colrad + m2->colrad) * (m->colrad + m2->colrad)) continue;
+         for (corner = m->bodyR; corner < m->bodyR + 4; ++corner) {
+@@ -108,15 +107,13 @@ void ForceApart(tModelData *m, tModelData *m1, tModelData *m2, float *dir)
+         for (i = 0; i < 3; i++) temp[i] = invdist * dir[i];
+     }
+     BodyVector(temp, cent, m->reckon.uvs);
+-    cf = m->centerForce;
+-    cf[0] += cent[0];
+-    cf[1] += cent[1];
+-    cf[2] += cent[2];
++    m->centerForce[0] += cent[0];
++    m->centerForce[1] += cent[1];
++    m->centerForce[2] += cent[2];
+     BodyVector(temp, cent, other->reckon.uvs);
+-    of = other->centerForce;
+-    of[0] -= cent[0];
+-    of[1] -= cent[1];
+-    of[2] -= cent[2];
++    other->centerForce[0] -= cent[0];
++    other->centerForce[1] -= cent[1];
++    other->centerForce[2] -= cent[2];
+ }
+ 
+ /* 0x8000bd54, size 0x1c8 */
+@@ -138,10 +135,9 @@ void MiniForceApart(tModelData *m, float *dir)
+         for (i = 0; i < 3; i++) temp[i] = invdist * dir[i];
+     }
+     BodyVector(temp, cent, m->reckon.uvs);
+-    cf = m->centerForce;
+-    cf[0] += cent[0];
+-    cf[1] += cent[1];
+-    cf[2] += cent[2];
++    m->centerForce[0] += cent[0];
++    m->centerForce[1] += cent[1];
++    m->centerForce[2] += cent[2];
+ }
+ 
+ /* 0x8000bf1c, size 0x8dc */
+diff --git a/src/controlscr.c b/src/controlscr.c
+index 635f4a6..1493d86 100644
+--- a/src/controlscr.c
++++ b/src/controlscr.c
+@@ -575,7 +575,7 @@ int animControls(_tBlit_2 *blt)
+     for (i = 0, j = 0; i < id; j++) {
+         int valid = validOption(p, j + gControlFirst[p]);
+         if (!valid) action++;
+-        if (valid) i++;
++        else i++;
+     }
+     if (Hidden(blt, gPlayers[p].controller == 5 ||
+         (conflict && !gConflict[p][action]) || action >= 11 || !controlScrActive[p] || id > gControlMenuSize))
+@@ -641,10 +641,7 @@ int animText(void)
+     unsigned char pName[14];
+     int itemsDrawn;
+     HAL_SetTextDepth(0.0f);
+-    p = 0;
+-    goto testWindow;
+-windowBody:
+-    {
++    for (p = 0; p < gNumWindows; p++) {
+         if (buttonsInited[p] == 1) {
+             animButtonText(p);
+         } else {
+@@ -703,9 +700,6 @@ windowBody:
+             }
+         }
+     }
+-    p++;
+-testWindow:
+-    if (p < gNumWindows) goto windowBody;
+     HAL_SetTextDepth(-1.0f);
+     return 1;
+ }
+@@ -722,14 +716,14 @@ void animButtonText(signed char p)
+     if (gNumWindows > 1) gTextPosScale *= 0.5f;
+     HAL_SetFont(11);
+     TB_SetJust(1, 1);
+-    if (gPlayers[p].controller != 5 && (controlScrActive[p] == 1 || (gGameState & 0x7c0000))) {
++    if (((tPadState *)0x8C006000)[p].controller != 5 && (controlScrActive[p] == 1 || (gGameState & 0x7c0000))) {
+         ZOID_ProjectWindow(p, buttonInfo[p][14].mat.mat3.pos, &gCamera[p].mat, 0, screenPos);
+         x = screenPos[0] / 2;
+         y = (screenPos[1] - 4) / 2.0f;
+         if (gNumWindows > 1) HAL_SetFont(11);
+         else HAL_SetFont(13);
+         TB_SetTextColor(1);
+-        TB_DrawEllipseText(x, y, gNumWindows == 1 ? 150 : 69, (*gPlayers[p].save)->name);
++        TB_DrawEllipseText(x, y, gNumWindows == 1 ? 150 : 69, (*((tPadState *)0x8C006000)[p].save)->name);
+         TB_SetJust(0, 1);
+         if (!controlScrActive[p]) {
+             if (gGameState & 0x7c0000) {
+@@ -760,17 +754,11 @@ void animButtonText(signed char p)
+                     x = screenPos[0] / 2 - (300.0f * (45.0f * gTextPosScale)) / buttonZ;
+                 y = (screenPos[1] - 4) / 2.0f;
+                 if (buttonInfo[p][i].angle < 1.57079638f) {
+-                    tRGBA color1, color2;
+-                    color2 = flashColors[1];
+-                    color1 = flashColors[0];
+-                    TB_FlashTextColors(color1, color2);
++                    TB_FlashTextColors(flashColors[0], flashColors[1]);
+                     TB_SetTextColor(1);
+-                    if (!PS_PakRumble(gPlayers[p].controller) && i == 11) TB_SetTextColor(3);
++                    if (!PS_PakRumble(((tPadState *)0x8C006000)[p].controller) && i == 11) TB_SetTextColor(3);
+                 } else {
+-                    tRGBA color1, color2;
+-                    color2 = flashColors[1];
+-                    color1 = flashColors[0];
+-                    TB_FlashTextColors(color1, color2);
++                    TB_FlashTextColors(flashColors[0], flashColors[1]);
+                     TB_SetTextColor(22);
+                 }
+                 str = gText.taba[gText.tab[20] + i];
+@@ -779,8 +767,8 @@ void animButtonText(signed char p)
+                     ZOID_ProjectWindow(p, buttonInfo[p][13].mat.mat3.pos, &gCamera[p].mat, 0, screenPos);
+                     x = screenPos[0] / 2 - (300.0f * (25.0f * gTextPosScale)) / buttonZ;
+                     y = (screenPos[1] - 4) / 2.0f;
+-                    if (PS_PakRumble(gPlayers[p].controller))
+-                        str = gText.taba[gText.tab[18] + (*gPlayers[p].save)->rumble];
++                    if (PS_PakRumble(((tPadState *)0x8C006000)[p].controller))
++                        str = gText.taba[gText.tab[18] + (*((tPadState *)0x8C006000)[p].save)->rumble];
+                     else
+                         str = gText.taba[gText.tab[18]];
+                     TB_DrawText(x, y, str);
+@@ -797,7 +785,7 @@ void calcControlMenuMaxSize(void)
+ {
+     register int rectHeight = gPlayerRects[gNumWindows - 1][0].h;
+     int i;
+-    int gControlMenuCount;
++    register int gControlMenuCount;
+     HAL_SetFont(11);
+     gControlMenuSize = (rectHeight - 24) / 16;
+     gControlMenuCount = 2;
+@@ -818,7 +806,7 @@ int validControl(signed char p)
+ {
+     signed char *controls = gNewControls[gPlayers[p].controller];
+     signed short cur_action = gControlSelect[p];
+-    int cur_control = controls[cur_action];
++    signed char cur_control = controls[cur_action];
+     if (cur_control == 23) return 0;
+     if (!gControlValid[(signed char)cur_control]) return 0;
+     if (cur_action == 2 && controls[2] != 25 && controls[2] != 19) return 0;
+@@ -853,6 +841,7 @@ void initButtons(signed char p)
+     buttonInfo[p][14].mat.uvs[3][2] = 200.0f;
+     buttonInfo[p][14].mat.uvs[3][0] = buttonInfo[p][14].mat.uvs[3][0] * 1.0f;
+     buttonInfo[p][14].mat.uvs[3][1] = buttonInfo[p][14].mat.uvs[3][1] * 1.0f;
++    buttonInfo[p][14].mat.uvs[3][2] = buttonInfo[p][14].mat.uvs[3][2] * 1.0f;
+ 
+     tex = MBOX_FindTexture_WORK("CURSOR", &texIdx, 0, gNumModels - 1, 1);
+     ZOID_SetTexture(buttonInfo[p][15].objIdx, tex, -1);
+@@ -875,6 +864,7 @@ void initButtons(signed char p)
+     buttonInfo[p][17].mat.uvs[3][2] = 100.0f;
+     buttonInfo[p][17].mat.uvs[3][0] = buttonInfo[p][17].mat.uvs[3][0] * 1.0f;
+     buttonInfo[p][17].mat.uvs[3][1] = buttonInfo[p][17].mat.uvs[3][1] * 1.0f;
++    buttonInfo[p][17].mat.uvs[3][2] = buttonInfo[p][17].mat.uvs[3][2] * 1.0f;
+     buttonsInited[p] = 1;
+     buttonsJustInited[p] = 1;
+     ZeroCameras();
+@@ -910,8 +900,8 @@ void updateButtons(signed char p)
+         gWhichControl = 0;
+         for (i = 0; i < 13; i++) {
+             if (validOption(p,i)) {
+-                if (i < gControlSelect[p]) gWhichControl++;
+                 gControlMenuCount++;
++                if (i < gControlSelect[p]) gWhichControl++;
+             }
+         }
+         if (gButtonScale * (gControlMenuCount - 1) * gButtonSpace > maxY - minY)
+diff --git a/src/dc_unk_8C069E34.c b/src/dc_unk_8C069E34.c
+index 2fce16c..057310b 100644
+--- a/src/dc_unk_8C069E34.c
++++ b/src/dc_unk_8C069E34.c
+@@ -3,16 +3,14 @@
+ void func_8C069E34(void)
+ {
+     tDCInitNode *node;
++    int i;
+     unsigned int available;
+     InitLL(&midiFree8C177B3C,0,1);
+     InitLL(&midiPending8C177B5C,0,1);
+     InitLL(&midiActive8C177B4C,0,1);
+-    node=midiInitNodes8C177B6C;
+-    if(node<midiInitNodes8C177B6C+1) {
+-        do {
+-            InsertLLE(&midiFree8C177B3C,node,midiFree8C177B3C.head);
+-            node++;
+-        } while(node<midiInitNodes8C177B6C+1);
++    for(i=0;i<1;i++) {
++        node=&midiInitNodes8C177B6C[i];
++        InsertLLE(&midiFree8C177B3C,node,midiFree8C177B3C.head);
+     }
+     midiWorkBytes8C0C7C2C=0x10000;
+     midiReadBytes8C0C7C30=0x20000;
+@@ -25,11 +23,8 @@ void func_8C069E34(void)
+     InitLL(&streamFree8C177FC0,0,1);
+     InitLL(&streamPending8C177FE0,0,1);
+     InitLL(&streamActive8C177FD0,0,1);
+-    node=streamInitNodes8C177FF0;
+-    if(node<streamInitNodes8C177FF0+1) {
+-        do {
+-            InsertLLE(&streamFree8C177FC0,node,streamFree8C177FC0.head);
+-            node++;
+-        } while(node<streamInitNodes8C177FF0+1);
++    for(i=0;i<1;i++) {
++        node=&streamInitNodes8C177FF0[i];
++        InsertLLE(&streamFree8C177FC0,node,streamFree8C177FC0.head);
+     }
+ }
+diff --git a/src/drivsym.c b/src/drivsym.c
+index 8ff9d18..2ea946a 100644
+--- a/src/drivsym.c
++++ b/src/drivsym.c
+@@ -282,6 +282,7 @@ void forces1(tModelData *m)
+     static const float offroadSand = -30.0f; /* addressed C literal at8C0AA910 */
+     static const float offroadDirt = -40.0f; /* addressed C literal at8C0AA914 */
+     static const float offroadTires = -0.7f; /* addressed C literal at8C0AA918 */
++    register float one = 1.0f;
+     float speed; /* f3 */
+     float airfact; /* f2 */
+     float drag; /* f1 */
+@@ -293,9 +294,9 @@ void forces1(tModelData *m)
+     calctireuv(m->v, m->w, m->car->tireR[2], 0.0f, m->uvs, m->roaduvs[2], m->tireuvs[2], m->tireV[2]);
+     calctireuv(m->v, m->w, m->car->tireR[3], 0.0f, m->uvs, m->roaduvs[3], m->tireuvs[3], m->tireV[3]);
+     dotireforce(m, m->tireV[0], m->tireuvs[0], &m->tires[0], m->torque[0], m->tireForce[0],
+-        m->suscomp[0], m->suscomp[1], m->car->springrate[0], m->car->farspringrate, m->car->cdamping[0], m->car->rdamping[0], 0, 1.0f);
++        m->suscomp[0], m->suscomp[1], m->car->springrate[0], m->car->farspringrate, m->car->cdamping[0], m->car->rdamping[0], 0, one);
+     dotireforce(m, m->tireV[1], m->tireuvs[1], &m->tires[1], m->torque[1], m->tireForce[1],
+-        m->suscomp[1], m->suscomp[0], m->car->springrate[1], m->car->farspringrate, m->car->cdamping[1], m->car->rdamping[1], 0, 1.0f);
++        m->suscomp[1], m->suscomp[0], m->car->springrate[1], m->car->farspringrate, m->car->cdamping[1], m->car->rdamping[1], 0, one);
+     airfact = 1.0f - m->throttle;
+     if (m->tireForce[0][2] < 0.0f) {
+         m->tireForce[0][2] *= airfact;
+@@ -303,15 +304,16 @@ void forces1(tModelData *m)
+     if (m->tireForce[1][2] < 0.0f) {
+         m->tireForce[1][2] *= airfact;
+     }
+-    poortract = 0;
+     if ((m->roadcode[2] == 1 || m->roadcode[2] == 2) &&
+         (m->roadcode[3] == 1 || m->roadcode[0] == 2)) {
+         poortract = 1;
++    } else {
++        poortract = 0;
+     }
+     dotireforce(m, m->tireV[2], m->tireuvs[2], &m->tires[2], m->torque[2], m->tireForce[2],
+-        m->suscomp[2], m->suscomp[3], m->car->springrate[2], m->car->farspringrate, m->car->cdamping[2], m->car->rdamping[2], poortract, 1.0f);
++        m->suscomp[2], m->suscomp[3], m->car->springrate[2], m->car->farspringrate, m->car->cdamping[2], m->car->rdamping[2], poortract, one);
+     dotireforce(m, m->tireV[3], m->tireuvs[3], &m->tires[3], m->torque[3], m->tireForce[3],
+-        m->suscomp[3], m->suscomp[2], m->car->springrate[3], m->car->farspringrate, m->car->cdamping[3], m->car->rdamping[3], poortract, 1.0f);
++        m->suscomp[3], m->suscomp[2], m->car->springrate[3], m->car->farspringrate, m->car->cdamping[3], m->car->rdamping[3], poortract, one);
+     if (m->movingSurface) {
+         MovingSurfaceForce(m);
+     }
+diff --git a/src/hud.c b/src/hud.c
+index 699217a..3c9958a 100644
+--- a/src/hud.c
++++ b/src/hud.c
+@@ -3,6 +3,7 @@
+  * DC RemoveHUD has no CleanupOverlay call at 8C034AB4..AB8.
+  */
+ #include "hud_types.h"
++#include "hud_round6.h"
+ #include "hud_data_externs.h"
+ 
+ unsigned char *cStrCreditNames[14][11] = {
+@@ -305,8 +306,9 @@ int updateFrame(void)
+     signed short cars_in_order[6];
+     signed short index, i, j;
+     int slot;
+-    for (slot = 0; slot < 4; slot++)
+-        cvt_time(gGameCar[slot].place_locked == 1 ? gGameCar[slot].score : gModelTime,
++    tCarData *car;
++    for (slot = 0, car = gGameCar; car < gGameCar + 4; slot++, car++)
++        cvt_time(car->place_locked == 1 ? car->score : gModelTime,
+                  TrackTimeStr[slot], 'f');
+     for (i = 0; i < 6; i++)
+         dot_order_list[i] = -1;
+@@ -339,8 +341,7 @@ void CheckResults(void)
+     int gAPlayerFinished = 0;
+     int gNumPlayersFinished = 0;
+     for (playerIdx = 0; playerIdx < gNumWindows; playerIdx++) {
+-        signed short numLaps = gNumLaps;
+-        if (numLaps == model[playerIdx].laps)
++        if (model[playerIdx].laps == gNumLaps)
+             gAPlayerFinished = 1;
+         if (gGameCar[model[playerIdx].slot].place_locked == 1)
+             gNumPlayersFinished++;
+@@ -428,3 +429,1026 @@ void CheckResults(void)
+     }
+ }
+ 
++
++
++/* Round 6 research callbacks: native blit record is shared DC _tBlit, not GC. */
++extern signed char gShowSpeed,gShowMetric,gShowTach,gShowShifter,gShowOdometer;
++extern signed char gShowRemaining,gShowElapsed,gShowPlace,gShowWrongWay,gShowRadar,gShowTrackMap;
++extern signed short gNumPlayers,gNumCars,gNumLapsLeft;
++extern int gBattleMode,gStuntMode;
++extern signed char gMirrorWaves;
++extern volatile unsigned int gFrameCounter;
++extern int lapTimePos[4][4][2],lapCountPos[4][4][2];
++extern int radarPos[4][4][2],radarWidth,radarHeight;
++extern float wrongWayTime[4];
++extern unsigned char lapTimeBGColor[4][4],playerColor[4][3];
++extern signed char gOptions[];
++extern int Hidden(_tBlit *,int);
++extern void UpdateBlit(_tBlit *),RenameBlit(_tBlit *,const char *,int);
++extern void SelectBlit(_tBlit *,int,int,int);
++extern int HAL_GetCharWidth(int),TB_GetFontHeight(void);
++extern signed char HAL_SetFontFixedWidth(signed char);
++extern void HAL_SetTextDepth(float),HAL_SetTextTranslucency(float);
++extern void HAL_SetTextColor(int,int,int,int);
++extern void TB_SetJust(int,int),TB_SetTextColor(int),TB_DrawText(int,int,void *);
++extern int TB_RightText(void *,int);
++extern void TB_DrawTextScrollBox(int,int,int,int,int,int,void *);
++extern void PlayGameSound(int,int,int,int);
++extern float TB_GetFlashTextCycle(void);
++extern int AreWeSolid(int);
++extern void BodyVector(float *,float *,float (*)[3]);
++#define kPointStuntMode 0
++#define kCircuit 3
++#define kPractice 1
++
++int animSpeed(_tBlit *blt)
++{
++    int win = blt->animID & 15;
++    int show = (blt->animID >> 4) & 15;
++    int digitW;
++    if (Hidden((_tBlit *)blt, (show == 1 && gNumWindows > 1) ||
++               (show == 2 && gNumWindows < 2) || win >= gNumWindows)) {
++        blt->animFunc = 0;
++        return 1;
++    }
++    if (Hidden((_tBlit *)blt, !gShowSpeed || !(gGameState & 0x400000) ||
++               gGameCar[model[win].slot].place_locked == 1))
++        return 1;
++    if (gNumWindows == 1)
++        HAL_SetFont(4);
++    else
++        HAL_SetFont(1);
++    digitW = HAL_GetCharWidth('8') + 1;
++    blt->x = speedPos[gNumWindows - 1][win][0] - 2 * digitW + (gNumWindows == 1);
++    blt->y = speedPos[gNumWindows - 1][win][1] + (gNumWindows == 1);
++    blt->alpha = 128;
++    UpdateBlit((_tBlit *)blt);
++    return 1;
++}
++
++int animSpeedText(void)
++{
++    float mph;
++    unsigned char digits[3];
++    unsigned char str[2];
++    int digitW, x, y, digitIdx, slot;
++    if (!gShowSpeed || !(gGameState & 0x400000))
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gNumWindows == 1)
++        HAL_SetFont(4);
++    else
++        HAL_SetFont(1);
++    digitW = HAL_GetCharWidth('8') + 1;
++    for (slot = 0; slot < gNumWindows; slot++) {
++        if (gGameCar[model[slot].slot].place_locked == 1)
++            continue;
++        mph = gGameCar[slot].rwmph >> 2;
++        mph *= 1.2000000476837158f;
++        if (gShowMetric)
++            mph *= 1.6100000143051147f;
++        if (mph < 0.0f)
++            mph = -mph;
++        x = speedPos[gNumWindows - 1][slot][0];
++        x -= digitW;
++        y = speedPos[gNumWindows - 1][slot][1];
++        digits[0] = ((int)(mph / 100.0f) % 10) + '0';
++        digits[1] = ((int)(mph / 10.0f) % 10) + '0';
++        digits[2] = ((int)mph % 10) + '0';
++        if (gNumWindows == 1)
++            HAL_SetFont(4);
++        else
++            HAL_SetFont(1);
++        for (digitIdx = 0; digitIdx < 3; digitIdx++) {
++            str[1] = 0;
++            if (digits[digitIdx] != ':' && digits[digitIdx] != '.') {
++                str[0] = '8';
++                TB_SetTextColor(0);
++                TB_DrawText(x, y, str);
++            }
++            str[0] = digits[digitIdx];
++            TB_SetTextColor(14);
++            TB_DrawText(x, y, str);
++            x += digitW;
++        }
++        x = speedPos[gNumWindows - 1][slot][0];
++        y += TB_GetFontHeight() - 4;
++        HAL_SetFont(12);
++        if (gShowMetric) {
++            TB_SetTextColor(0);
++            TB_DrawText(x + 1, y + 1, gText.single[214]);
++            TB_SetTextColor(1);
++            TB_DrawText(x, y, gText.single[214]);
++        } else {
++            TB_SetTextColor(0);
++            TB_DrawText(x + 1, y + 1, gText.single[213]);
++            TB_SetTextColor(1);
++            TB_DrawText(x, y, gText.single[213]);
++        }
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animTach(_tBlit *blt)
++{
++    int slot = (blt->animID >> 4) & 15;
++    int type = blt->animID & 15;
++    float tach;
++    if (slot >= gNumWindows) {
++        if (slot >= gNumPlayers)
++            blt->animFunc = 0;
++        Hidden(blt, 1);
++        return 1;
++    }
++    if (Hidden(blt, !gShowTach || !(gGameState & 0x400000) ||
++               model[slot].autotrans || gGameCar[model[slot].slot].place_locked == 1))
++        return 1;
++    if (gNumWindows == 2)
++        RenameBlit((_tBlit *)blt, "TACHOMETER_MD", 0);
++    else if (gNumWindows > 2)
++        RenameBlit((_tBlit *)blt, "TACHOMETER_SM", 0);
++    blt->x = tachPos[gNumWindows - 1][slot][0] - (blt->width / 2) / 2;
++    blt->y = tachPos[gNumWindows - 1][slot][1];
++    if (type == 0)
++        blt->bot = blt->height / 2 - 1;
++    else if (type == 1) {
++        tach = 0.0001f * (1.350000023841858f * model[slot].rpm);
++        if (tach < 0.0f)
++            tach = -tach;
++        if (tach > 1.0f)
++            tach = 1.0f;
++        blt->right = (blt->width - 1) * tach;
++        blt->top = blt->height / 2;
++        blt->bot = blt->height - 1;
++    }
++    blt->alpha = 254;
++    UpdateBlit((_tBlit *)blt);
++    return 1;
++}
++
++int animGear(void)
++{
++    unsigned char str[2];
++    int slot;
++    signed short x, y;
++    signed char gear;
++    if (!gShowShifter || !(gGameState & 0x400000))
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    if (gNumWindows == 1)
++        HAL_SetFont(10);
++    else if (gNumWindows == 2)
++        HAL_SetFont(11);
++    else
++        HAL_SetFont(12);
++    for (slot = 0; slot < gNumWindows; slot++) {
++        gear = model[slot].mainin.gear;
++        if (slot >= gNumWindows || model[slot].autotrans ||
++            gGameCar[model[slot].slot].place_locked == 1)
++            continue;
++        x = gearPos[gNumWindows - 1][slot][0] - 4;
++        y = gearPos[gNumWindows - 1][slot][1];
++        TB_SetTextColor(0);
++        TB_DrawText(TB_RightText(gText.single[215], x + 1), y + 1, gText.single[215]);
++        TB_SetTextColor(1);
++        TB_DrawText(TB_RightText(gText.single[215], x), y, gText.single[215]);
++        x = gearPos[gNumWindows - 1][slot][0] + 4;
++        y = gearPos[gNumWindows - 1][slot][1];
++        if (gear == -1)
++            str[0] = 'R';
++        else if (gear == 0)
++            str[0] = 'N';
++        else
++            str[0] = gear + '0';
++        str[1] = 0;
++        TB_SetTextColor(0);
++        TB_DrawText(x + 1, y + 1, str);
++        TB_SetTextColor(14);
++        TB_DrawText(x, y, str);
++    }
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animResults(_tBlit *blt)
++{
++    int playerIdx, x, y;
++    unsigned char str[128];
++    int gNumPlayersFinished = 0;
++    int gAPlayerFinished = 0;
++    for (playerIdx = 0; playerIdx < gNumWindows; playerIdx++) {
++        if (gNumLaps == model[playerIdx].laps)
++            gAPlayerFinished = 1;
++        if (gGameCar[model[playerIdx].slot].place_locked == 1)
++            gNumPlayersFinished++;
++    }
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 1);
++    HAL_SetFont(10);
++    if (gNumWindows > 1 && gNumPlayersFinished == gNumWindows && (!gDeathMode || (gDeathMode && gAPlayerFinished))) {
++        TB_SetTextColor(22);
++        if (model[model[gRankedPlayer[0]].slot].drone_type == 1)
++            TB_Sprintf(str, gText.single[211]);
++        else if (ties)
++            TB_Sprintf(str, gText.single[212], ties + 1);
++        else
++            TB_Sprintf(str, gText.single[210], (*gPlayers[gRankedPlayer[0]].save)->name);
++        TB_DrawTextScrollBox(160, 112, 160, 112, -1, 0, str);
++    }
++    TB_SetTextColor(1);
++    for (playerIdx = 0; playerIdx < gNumWindows; playerIdx++) {
++        if ((!gDeathMode || gNumLaps == model[playerIdx].laps) && gGameCar[model[playerIdx].slot].place_locked == 1) {
++            x = wrongWayPos[gNumWindows - 1][playerIdx][0];
++            y = wrongWayPos[gNumWindows - 1][playerIdx][1];
++            if (gNumWindows == 4 && playerIdx >= 2)
++                y += 12;
++            if (gRace == kStunt) {
++                TB_Sprintf(str, "%s\n%d %s", (*gPlayers[playerIdx].save)->name, gStuntPlayer[playerIdx].totalPoints, gText.single[140]);
++            } else if (gRace == kObstacle) {
++                if (gLap[playerIdx] != 1)
++                    TB_Sprintf(str, "%s\n%s", (*gPlayers[playerIdx].save)->name, gText.single[225]);
++                else {
++                    unsigned int min;
++
++                    unsigned int sec = (unsigned int)gGameCar[gPlayers[playerIdx].slot].score;
++
++                    unsigned int thou;
++
++                    min = sec / 60;
++
++                    min %= 100;
++
++                    sec %= 60;
++
++                    thou = (unsigned int)(1000.0f * gGameCar[gPlayers[playerIdx].slot].score);
++                    thou %= 1000;
++                    TB_Sprintf(str, "%s\n%s %d:%02d.%03d", (*gPlayers[playerIdx].save)->name, gText.single[219], min, sec, thou);
++                }
++            } else if (gRace == kBattle) {
++                TB_Sprintf(str, "%s\n%d %s", (*gPlayers[playerIdx].save)->name, gGameCar[playerIdx].battle.Points, gText.single[140]);
++            } else {
++                unsigned char str1[32], str2[32];
++                int place = gGameCar[gPlayers[playerIdx].slot].place;
++                TB_Sprintf(str1, gText.single[209], place + 1, gText.taba[gText.tab[57] + place]);
++                if (gNumLaps != model[gPlayers[playerIdx].slot].laps)
++                    TB_Sprintf(str2, gText.single[218], model[gPlayers[playerIdx].slot].laps, gNumLaps); /* extra varargs pin the compare operands to r5/r6, which fixes CheckResults' whole callee-saved permutation */
++                else {
++                    unsigned int min;
++
++                    unsigned int sec = (unsigned int)gGameCar[gPlayers[playerIdx].slot].score;
++
++                    unsigned int thou;
++
++                    min = sec / 60;
++
++                    min %= 100;
++
++                    sec %= 60;
++
++                    thou = (unsigned int)(1000.0f * gGameCar[gPlayers[playerIdx].slot].score);
++                    thou %= 1000;
++                    TB_Sprintf(str2, "%s %d:%02d.%03d", gText.single[219], min, sec, thou);
++                }
++                TB_Sprintf(str, "%s\n%s\n%s", (*gPlayers[playerIdx].save)->name, str1, str2);
++            }
++            TB_DrawTextScrollBox(x, y, 160, 112, -1, 0, str);
++        }
++    }
++    HAL_SetTextDepth(-1.0f);
++    TB_SetJust(0, 3);
++    return 1;
++}
++
++int animOdometer(_tBlit *blt)
++{
++    int p = (blt->animID >> 4) & 15;
++    int d = blt->animID & 15;
++    float carMileage = gGameCar[p].mileage;
++    float flipAmount = 0.0f;
++    if (gOptions[9])
++        carMileage /= 0.6000000238418579f;
++    if (p >= gNumWindows || gRace == kObstacle) {
++        blt->animFunc = 0;
++        Hidden((_tBlit *)blt, 1);
++        return 1;
++    }
++    if (Hidden((_tBlit *)blt, !gShowOdometer || !(gGameState & 0x400000) || gGameCar[model[p].slot].place_locked == 1))
++        return 1;
++    if ((int)(carMileage / 528.0f) % 10 == 9)
++        flipAmount = carMileage / 528.0f - (int)(carMileage / 528.0f);
++    switch (d) {
++    case 0:
++        blt->x = odometerPos[gNumWindows - 1][p][0] - (blt->width / 2 * 2) / 2;
++        blt->y = odometerPos[gNumWindows - 1][p][1];
++        blt->left = 0;
++        blt->top = ((int)(carMileage / 528000.0f) % 10) * (blt->width / 2);
++        if ((int)(carMileage / 52800.0f) % 10 == 9 && (int)(carMileage / 5280.0f) % 10 == 9 && (int)(carMileage / 528.0f) % 10 == 9)
++            blt->top += flipAmount * (blt->width / 2);
++        break;
++    case 1:
++        blt->x = odometerPos[gNumWindows - 1][p][0] - (blt->width / 2) / 2;
++        blt->y = odometerPos[gNumWindows - 1][p][1];
++        blt->left = 0;
++        blt->top = ((int)(carMileage / 52800.0f) % 10) * (blt->width / 2);
++        if ((int)(carMileage / 5280.0f) % 10 == 9 && (int)(carMileage / 528.0f) % 10 == 9)
++            blt->top += flipAmount * (blt->width / 2);
++        break;
++    case 2:
++        blt->x = odometerPos[gNumWindows - 1][p][0];
++        blt->y = odometerPos[gNumWindows - 1][p][1];
++        blt->left = 0;
++        blt->top = ((int)(carMileage / 5280.0f) % 10) * (blt->width / 2);
++        if ((int)(carMileage / 528.0f) % 10 == 9)
++            blt->top += flipAmount * (blt->width / 2);
++        break;
++    case 3:
++        blt->x = odometerPos[gNumWindows - 1][p][0] + (blt->width / 2) / 2;
++        blt->y = odometerPos[gNumWindows - 1][p][1];
++        blt->left = blt->width / 2;
++        flipAmount = (int)(carMileage / 528.0f) % 10 + carMileage / 528.0f - (int)(carMileage / 528.0f);
++        blt->top = flipAmount * (blt->width / 2);
++        break;
++    }
++    blt->right = blt->left + blt->width / 2 - 1;
++    blt->bot = blt->top + blt->width / 2 - 1;
++    UpdateBlit(blt);
++    return 1;
++}
++
++int animCountdownTimer(void)
++{
++    int t;
++    unsigned char digits[5];
++    unsigned char str[2];
++    int digitW, colonW, x, y, digitIdx;
++    static int sec;
++    static int nextBeep = 30;
++    if (!(gGameState & 0x400000) || !gShowRemaining ||
++        (gRace == kBattle && gBattleMode == 0) ||
++        (gRace == kStunt && gStuntMode == kPointStuntMode) ||
++        (unsigned int)gRace <= 1 || gRace == kCircuit)
++        return 1;
++    t = GetCountdownTimeRemaining();
++    if (t < 0)
++        t = 0;
++    sec = t;
++    if (sec <= 30) {
++        if (sec <= nextBeep) {
++            if (nextBeep > 5)
++                nextBeep = 5;
++            else
++                nextBeep--;
++            PlayGameSound(54, 0, 2, 0);
++        }
++        if (sec <= 5 && (gFrameCounter & 8))
++            return 1;
++    } else
++        nextBeep = 30;
++    x = countdownTimerPos[gNumWindows - 1][0];
++    y = countdownTimerPos[gNumWindows - 1][1];
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gRace == kStunt && gNumWindows > 1) {
++        x = mapPos[gNumWindows - 1][0];
++        y = mapPos[gNumWindows - 1][1];
++        TB_SetJust(1, 1);
++    }
++    digits[0] = t / 600 + '0';
++    digits[1] = (t / 60) % 10 + '0';
++    digits[2] = ':';
++    digits[3] = (t / 10) % 6 + '0';
++    digits[4] = t % 10 + '0';
++    if (gNumWindows == 1)
++        HAL_SetFont(9);
++    else if (gNumWindows <= 3)
++        HAL_SetFont(8);
++    else
++        HAL_SetFont(5);
++    digitW = HAL_GetCharWidth('8') + 1;
++    colonW = HAL_GetCharWidth(':') + 1;
++    x -= (3 * digitW + colonW) / 2;
++    for (digitIdx = 0; digitIdx < 5; digitIdx++) {
++        str[0] = digits[digitIdx];
++        str[1] = 0;
++        if (digitIdx > 0 || digits[digitIdx] != '0') {
++            TB_SetTextColor(0);
++            TB_DrawText(x + 1, y + 1, str);
++            TB_SetTextColor(14);
++            TB_DrawText(x, y, str);
++        }
++        if (digitIdx == 1 || digitIdx == 2)
++            x += (digitW + colonW) / 2;
++        else
++            x += digitW;
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animElapsedTimerText(void)
++{
++    int t;
++    unsigned char digits[9];
++    unsigned char str[2];
++    int digitW, colonW;
++    signed char fixedWidth;
++    int x, y, digitIdx;
++    if ((gGameState & 8) || !(gGameState & 0x400000) || !gShowElapsed)
++        return 1;
++    t = 1000.0f * gModelTime;
++    if (t < 0)
++        t = 0;
++    digits[0] = (t / 600000) % 6 + '0';
++    digits[1] = (t / 60000) % 10 + '0';
++    digits[2] = ':';
++    digits[3] = (t / 10000) % 6 + '0';
++    digits[4] = (t / 1000) % 10 + '0';
++    digits[5] = '.';
++    digits[6] = (t / 100) % 10 + '0';
++    digits[7] = (t / 10) % 10 + '0';
++    digits[8] = t % 10 + '0';
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gNumWindows == 1)
++        HAL_SetFont(1);
++    else
++        HAL_SetFont(2);
++    digitW = HAL_GetCharWidth('8') + 1;
++    fixedWidth = HAL_SetFontFixedWidth(0);
++    colonW = HAL_GetCharWidth(':') + 1;
++    HAL_SetFontFixedWidth(fixedWidth);
++    y = elapsedTimerPos[gNumWindows - 1][1];
++    str[1] = 0;
++    x = elapsedTimerPos[gNumWindows - 1][0] - (5 * digitW + 2 * colonW) / 2;
++    for (digitIdx = 0; digitIdx < 8; digitIdx++) {
++        str[0] = digits[digitIdx];
++        if (digits[digitIdx] != ':' && digits[digitIdx] != '.') {
++            str[0] = '8';
++            TB_SetTextColor(0);
++            TB_DrawText(x, y, str);
++            str[0] = digits[digitIdx];
++        }
++        TB_SetTextColor(1);
++        TB_DrawText(x, y, str);
++        if (digitIdx == 1 || digitIdx == 2 || digitIdx == 4 || digitIdx == 5)
++            x += (digitW + colonW) / 2;
++        else
++            x += digitW;
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animPlace(_tBlit *blt)
++{
++    unsigned char digits[3];
++    unsigned char str[2];
++    int digitW, x, y, digitIdx, slot;
++    if ((gGameState & 8) || !(gGameState & 0x400000) || gNumCars < 2 ||
++        gRace == kPractice || !gShowPlace)
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gNumWindows == 1)
++        HAL_SetFont(8);
++    else
++        HAL_SetFont(5);
++    digitW = HAL_GetCharWidth('8');
++    digits[1] = '/';
++    digits[2] = gNumCars + '0';
++    for (slot = 0; slot < gNumWindows; slot++) {
++        if (!AreWeSolid(slot) || gGameCar[slot].place_locked == 1)
++            continue;
++        x = placePos[gNumWindows - 1][slot][0];
++        y = placePos[gNumWindows - 1][slot][1];
++        digits[0] = gGameCar[slot].place + '1';
++        x -= digitW;
++        for (digitIdx = 0; digitIdx < 3; digitIdx++) {
++            str[0] = digits[digitIdx];
++            str[1] = 0;
++            if (digitIdx < 2) {
++                if (gNumWindows == 1)
++                    HAL_SetFont(8);
++                else
++                    HAL_SetFont(5);
++            } else {
++                if (gNumWindows == 1)
++                    HAL_SetFont(5);
++                else
++                    HAL_SetFont(6);
++            }
++            TB_SetTextColor(0);
++            TB_DrawText(x + 1, y + 1, str);
++            if (digitIdx == 0)
++                HAL_SetTextColor(playerColor[slot][0], playerColor[slot][1], playerColor[slot][2], 255);
++            else
++                TB_SetTextColor(1);
++            TB_DrawText(x, y, str);
++            x += digitW;
++        }
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animLapCount(_tBlit *blt)
++{
++    int x, y, slot;
++    if ((gGameState & 8) || !(gGameState & 0x400000) ||
++        gRace == kPractice || gRace == kObstacle || !gShowPlace)
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gNumWindows == 1)
++        HAL_SetFont(11);
++    else
++        HAL_SetFont(12);
++    for (slot = 0; slot < gNumWindows; slot++) {
++        if (model[slot].laps == gNumLaps || gGameCar[slot].place_locked == 1)
++            continue;
++        x = lapCountPos[gNumWindows - 1][slot][0];
++        y = lapCountPos[gNumWindows - 1][slot][1];
++        TB_SetTextColor(0);
++        TB_Printf(x + 1, y + 1, gText.single[217], model[slot].laps + 1, gNumLaps);
++        TB_SetTextColor(1);
++        TB_Printf(x, y, gText.single[217], model[slot].laps + 1, gNumLaps);
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animLapTime(_tBlit *blt)
++{
++    int w, digitW, colonW;
++    int win = blt->animID & 15;
++    int show = (blt->animID >> 4) & 15;
++    signed char fixedWidth;
++    if (Hidden((_tBlit *)blt, (show == 1 && gNumWindows > 1) ||
++               (show == 2 && gNumWindows < 2) || win >= gNumWindows)) {
++        blt->animFunc = 0;
++        return 1;
++    }
++    if (Hidden((_tBlit *)blt, (gGameState & 8) || !gShowElapsed ||
++               gCheckPtTimeout[win] <= 0.0f || gGameCar[win].place_locked == 1))
++        return 1;
++    if (gNumWindows == 1)
++        HAL_SetFont(1);
++    else
++        HAL_SetFont(2);
++    digitW = HAL_GetCharWidth('8') + 1;
++    fixedWidth = HAL_SetFontFixedWidth(0);
++    colonW = HAL_GetCharWidth(':') + 1;
++    HAL_SetFontFixedWidth(fixedWidth);
++    w = 7 * digitW + 2 * colonW;
++    if (gCheckPtTimeout[win] < 3.0f)
++        lapTimeBGColor[win][3] = 192.0f * gCheckPtTimeout[win] / 3.0f;
++    else
++        lapTimeBGColor[win][3] = 192;
++    blt->x = lapTimePos[gNumWindows - 1][win][0] - w / 2;
++    blt->y = lapTimePos[gNumWindows - 1][win][1];
++    blt->alpha = lapTimeBGColor[win][3];
++    UpdateBlit(blt);
++    return 1;
++}
++
++int animLapTimeText(void)
++{
++    int t;
++    float remaining;
++    unsigned char digits[9];
++    unsigned char str[2];
++    int digitW, colonW, x, y, digitIdx, slot;
++    signed char fixedWidth;
++    if ((gGameState & 8) || !gShowElapsed)
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 3);
++    if (gNumWindows == 1)
++        HAL_SetFont(1);
++    else
++        HAL_SetFont(2);
++    digitW = HAL_GetCharWidth('8') + 1;
++    fixedWidth = HAL_SetFontFixedWidth(0);
++    colonW = HAL_GetCharWidth(':') + 1;
++    HAL_SetFontFixedWidth(fixedWidth);
++    for (slot = 0; slot < gNumWindows; slot++) {
++        if (gPauseState == 0)
++            gCheckPtTimeout[slot] -= gFrameSeconds;
++        remaining = gCheckPtTimeout[slot];
++        if (remaining <= 0.0f || gGameCar[slot].place_locked == 1) {
++            gCheckPtTimeout[slot] = 0.0f;
++            continue;
++        }
++        t = 1000.0f * gLapTime[slot];
++        if (t < 0)
++            t = 0;
++        digits[0] = t / 600000 + '0';
++        digits[1] = (t / 60000) % 10 + '0';
++        digits[2] = ':';
++        digits[3] = (t / 10000) % 6 + '0';
++        digits[4] = (t / 1000) % 10 + '0';
++        digits[5] = '.';
++        digits[6] = (t / 100) % 10 + '0';
++        digits[7] = (t / 10) % 10 + '0';
++        digits[8] = t % 10 + '0';
++        y = lapTimePos[gNumWindows - 1][slot][1];
++        str[1] = 0;
++        if (remaining < 3.0f)
++            HAL_SetTextTranslucency((int)(255.0f * remaining / 3.0f));
++        x = lapTimePos[gNumWindows - 1][slot][0] - (6 * digitW + 2 * colonW) / 2;
++        for (digitIdx = 0; digitIdx < 9; digitIdx++) {
++            str[0] = digits[digitIdx];
++            if (digits[digitIdx] != ':' && digits[digitIdx] != '.') {
++                str[0] = '8';
++                TB_SetTextColor(0);
++                TB_DrawText(x, y, str);
++                str[0] = digits[digitIdx];
++            }
++            TB_SetTextColor(22);
++            TB_DrawText(x, y, str);
++            if (digitIdx == 1 || digitIdx == 2 || digitIdx == 4 || digitIdx == 5)
++                x += (digitW + colonW) / 2;
++            else
++                x += digitW;
++        }
++        HAL_SetTextTranslucency(-1.0f);
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animWrongWay(void)
++{
++    int x, y, slot;
++    static signed char wasStrayed[4];
++    if (gRace == kObstacle)
++        return 1;
++    HAL_SetTextDepth(0.0f);
++    TB_SetJust(1, 1);
++    for (slot = 0; slot < gNumWindows; slot++) {
++        if ((-1.5707964f <= gGameCar[slot].strayAngle &&
++             gGameCar[slot].strayAngle <= 1.5707964f) ||
++            !(gGameState & 0x400000) || gGameCar[slot].place_locked == 1 ||
++            !gShowWrongWay || gRace == kPractice) {
++            wrongWayTime[slot] = gSeconds;
++            wasStrayed[slot] = 0;
++            continue;
++        }
++        wasStrayed[slot] = 1;
++        if (gSeconds - wrongWayTime[slot] < 2.0f)
++            continue;
++        if (gNumWindows == 1)
++            HAL_SetFont(10);
++        else
++            HAL_SetFont(11);
++        HAL_SetTextTranslucency(255.0f * TB_GetFlashTextCycle());
++        x = wrongWayPos[gNumWindows - 1][slot][0];
++        y = wrongWayPos[gNumWindows - 1][slot][1];
++        TB_SetTextColor(0);
++        TB_DrawText(x + 1, y + 1, gText.single[26]);
++        TB_SetTextColor(14);
++        TB_DrawText(x, y, gText.single[26]);
++    }
++    TB_SetJust(0, 3);
++    HAL_SetTextTranslucency(-1.0f);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animRadarBlip(_tBlit *blt)
++{
++    float scale = 1.0f / 480.0f;
++    int window = (blt->animID >> 8) & 15;
++    short slot;
++    float rpos[3], lpos[3];
++    tCarData *gc;
++    tModelData *m;
++    int blipWidth = blt->width / 8.0f / 2.0f;
++    int blipHeight = blt->height / 2.0f;
++    if (window >= gNumWindows || (gGameState & 8) || gNumCars < 2) {
++        blt->animFunc = 0;
++        return Hidden((_tBlit *)blt, 1);
++    }
++    slot = blt->animID & 15;
++    m = &model[slot];
++    gc = &gGameCar[slot];
++    if (Hidden((_tBlit *)blt, !gShowRadar || !(gGameState & 0x400000) || gGameCar[window].place_locked == 1))
++        return 1;
++    if (!m->in_game) {
++        blt->animFunc = 0;
++        return Hidden((_tBlit *)blt, 1);
++    }
++    if (Hidden((_tBlit *)blt, slot != window && !AreWeSolid(slot)))
++        return 1;
++    lpos[0] = gc->dr_pos[0] - gGameCar[window].dr_pos[0];
++    lpos[1] = gc->dr_pos[1] - gGameCar[window].dr_pos[1];
++    lpos[2] = gc->dr_pos[2] - gGameCar[window].dr_pos[2];
++    BodyVector(lpos, rpos, gGameCar[window].dr_uvs);
++    blt->x = radarWidth / 2.0f;
++    blt->y = 16;
++    if (gMirrorWaves)
++        blt->x += radarWidth * (-rpos[0] * scale);
++    else
++        blt->x += radarWidth * (rpos[0] * scale);
++    blt->y += radarHeight * (rpos[2] * -scale);
++    if (Hidden((_tBlit *)blt, blt->x < blipWidth || blt->x > radarWidth - blipWidth || blt->y < blipHeight || blt->y > radarHeight - blipHeight))
++        return 1;
++    blt->x += radarPos[gNumWindows - 1][window][0];
++    blt->y += radarPos[gNumWindows - 1][window][1];
++    if (m->drone_type == 2)
++        SelectBlit(blt, m->slot, blt->width / 8.0f, blt->height);
++    else if (m->drone_type == 1)
++        SelectBlit(blt, 5, blt->width / 8.0f, blt->height);
++    blt->x -= blipWidth / 2;
++    blt->y -= blipHeight / 2;
++    UpdateBlit(blt);
++    return 1;
++}
++
++int animDot(_tBlit *blt)
++{
++    int gDotSize;
++    short flash;
++    short slot = dot_order_list[blt->animID & 15];
++    tModelData *m;
++    tCarData *c;
++    int width, height, w, h, yOffset;
++    if (Hidden((_tBlit *)blt, gNumWindows > 4 || slot == -1 || !(gGameState & 0x400000) || !gShowTrackMap))
++        return 1;
++    gDotSize = blt->height;
++    m = &model[slot];
++    c = &gGameCar[slot];
++    width = gPathMax[0] - gPathMin[0];
++    height = gPathMax[2] - gPathMin[2];
++    if (width > height) {
++        w = kMapSize - 8;
++        h = height * (kMapSize - 8) / width;
++    } else {
++        w = kMapSize - 8;
++        h = kMapSize - 8;
++    }
++    yOffset = (kMapSize - 8 - h) / 2 + 4;
++    blt->x = mapPos[gNumWindows - 1][0] + ((kMapSize - 8 - w) / 2 + 4 - (gDotSize + kMapSize) / 2) / 2;
++    blt->y = mapPos[gNumWindows - 1][1] + (yOffset - (gDotSize + kMapSize) / 2) / 2.0f;
++    if (gMirrorWaves)
++        blt->x += w * (c->dr_pos[0] - gPathMin[0]) / width / 2.0f;
++    else
++        blt->x += (w - 1 - w * (c->dr_pos[0] - gPathMin[0]) / width) / 2.0f;
++    blt->y += h * (c->dr_pos[2] - gPathMin[2]) / height / 2.0f;
++    flash = c->crash_state || m->crashflag || !m->solid || m->hide_car || m->resurrect.moving_state != -1;
++    if (c->dead > 0)
++        flash = 0;
++    if (slot < gNumCars) {
++        blt->alpha = (gFrameCounter & 8) && flash ? 64 : 255;
++        if (m->drone_type == 2)
++            SelectBlit(blt, slot, gDotSize, gDotSize);
++        else if (m->drone_type == 1)
++            SelectBlit(blt, 7, gDotSize, gDotSize);
++    } else {
++        return Hidden((_tBlit *)blt, 1);
++    }
++    UpdateBlit(blt);
++    return 1;
++}
++
++int animCreditText(_tBlit *blt)
++{
++    int x, y, i;
++    if (Hidden((_tBlit *)blt, !(gGameState & 8) || !gShowCredits))
++        return 1;
++    switch (gCorner) {
++    case 0: x = 30; y = 30; break;
++    case 1: x = 290 - gCreditWidth; y = 30; break;
++    case 2: x = 30; y = 159 - 10 * gNumCreditNames; break;
++    default: x = 290 - gCreditWidth; y = 159 - 10 * gNumCreditNames; break;
++    }
++    HAL_SetFont(11);
++    TB_SetTextColor(14);
++    TB_DrawText(x, y, gText.taba[gText.tab[0] + gCredit]);
++    TB_SetTextColor(1);
++    y += 15;
++    for (i = 0; i < gNumCreditNames; i++, y += 10) {
++        TB_DrawText(x, y, cStrCreditNames[gCredit][i]);
++    }
++    return 1;
++}
++
++unsigned char func_8C038FCC(float t, unsigned char *dest, char format)
++{
++    unsigned int hun;
++    unsigned int sec;
++    unsigned int min;
++
++    if (t < 0.0f)
++        t = 0.0f;
++    switch (format) {
++    case 'c':
++        sec = (unsigned int)t;
++        if (sec > 999)
++            sec = 999;
++        dest[0] = (sec / 100) % 10;
++        dest[1] = (sec / 10) % 10;
++        dest[2] = sec % 10;
++        dest[3] = 0;
++        return 3;
++    case 'f':
++        sec = (unsigned int)t;
++        min = sec / 60;
++        sec %= 60;
++        hun = (unsigned int)(100.0f * t) % 100;
++        dest[0] = (min / 10) % 10;
++        dest[1] = min % 10;
++        dest[2] = sec / 10;
++        dest[3] = sec % 10;
++        dest[4] = hun / 10;
++        dest[5] = hun % 10;
++        dest[6] = 0;
++        return 6;
++    }
++    return 0;
++}
++
++int func_8C03913A(_tBlit *blt)
++{
++    if(gGameState & 0x02000000) Hidden(blt,0);
++    return 1;
++}
++
++extern tCamera gCamera[4];
++extern unsigned char gNumModels;
++extern tZoidObjectDC ObjInstanceList[];
++extern int MBOX_FindObject_WORK(const char *,signed char,signed char,int);
++extern signed short MBOX_NewObject(int,tUVMatrix *,int,unsigned int);
++extern void MBOX_HideObject(signed short,int,int),MBOX_ShowObject(signed short,int,int);
++extern void ScaleUV(float (*)[3],float (*)[3],float),YawUV(float,float (*)[3]);
++extern void ZOID_WindowTo3D(int,signed short *,tUVMatrix *,float,float *);
++extern unsigned char NumCoinsFound(int,int);
++extern void func_8C06EAD0(tTexture *),func_8C06E95C(tTexture *);
++
++int animCoins(void)
++{
++    short screenPos[2];
++    short player,coin;
++    int x,y;
++    char str[4];
++    HAL_SetTextDepth(0.0f);
++    if(gNumWindows==1) HAL_SetFont(10);
++    else HAL_SetFont(12);
++    TB_SetJust(0,1);
++    for(player=0;player<gNumWindows;player++) {
++        for(coin=0;coin<2;coin++) {
++            if(gPlayerCoin[player][coin].idx==-1) {
++                char *names[2]={"GOLDCOINL4_LOD1","SILVERCOINL4_LO"};
++                gPlayerCoin[player][coin].idx=MBOX_NewObject(MBOX_FindObject_WORK(names[coin],0,gNumModels-1,1),&gPlayerCoin[player][coin].mat,-1,0);
++                MBOX_HideObject(gPlayerCoin[player][coin].idx,1,15);
++                ObjInstanceList[gPlayerCoin[player][coin].idx].w=10.0f;
++            }
++            ScaleUV(gCamera[player].mat.mat3.uvs,gPlayerCoin[player][coin].mat.mat3.uvs,gNumPlayers==1?0.029999999329447746f:gNumPlayers==2?0.029999999329447746f:0.039999999105930328f);
++            YawUV(hudObjAngle,gPlayerCoin[player][coin].mat.mat3.uvs);
++            if(gRace==kStunt) {
++                screenPos[0]=coinStuntPos[gNumWindows-1][player][0]*2;
++                screenPos[1]=4.0f+(coinStuntPos[gNumWindows-1][player][1]+coin*(gNumWindows==1?15:gNumWindows==2?12:8))*2.0f;
++            } else {
++                screenPos[0]=coinPos[gNumWindows-1][player][0]*2;
++                screenPos[1]=4.0f+(coinPos[gNumWindows-1][player][1]+coin*(gNumWindows==1?15:gNumWindows==2?12:8))*2.0f;
++            }
++            ZOID_WindowTo3D(player,screenPos,&gCamera[player].mat,2.0f,gPlayerCoin[player][coin].mat.mat3.pos);
++            if(gOptions[11] && (gGameState&0x400000) && gGameCar[player].place_locked!=1) {
++                MBOX_ShowObject(gPlayerCoin[player][coin].idx,0,whichCam[player]);
++                if(gRace==kStunt) {
++                    x=coinStuntPos[gNumWindows-1][player][0]+(gNumWindows==1?12:8);
++                    y=coinStuntPos[gNumWindows-1][player][1]+coin*(gNumWindows==1?15:gNumWindows==2?12:8);
++                } else {
++                    x=coinPos[gNumWindows-1][player][0]+(gNumWindows==1?12:8);
++                    y=coinPos[gNumWindows-1][player][1]+coin*(gNumWindows==1?15:gNumWindows==2?12:8);
++                }
++                TB_Sprintf(str,"%d",NumCoinsFound(player,coin+1));
++                TB_SetTextColor(0);
++                TB_DrawText(x+1,y+1,str);
++                TB_SetTextColor(1);
++                TB_DrawText(x,y,str);
++            } else MBOX_HideObject(gPlayerCoin[player][coin].idx,1,15);
++        }
++    }
++    TB_SetJust(0,3);
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++int animTrackMap(_tBlit *blt)
++{
++    int width,height,w,h,xOffset,yOffset;
++    int x,y,x1,y1,x2,p,i;
++    unsigned short *pixel;
++    if(Hidden(blt,gNumWindows>4 || !(gGameState&0x400000) || !gShowTrackMap)) return 1;
++    if(!(blt->animID&16)) return 1;
++    if(gNumWindows==4) RenameBlit(blt,"MAP_MD",0);
++    kMapSize=blt->width;
++    if(blt->animID&16) {
++        blt->animID&=15;
++        blt->x=mapPos[gNumWindows-1][0]-(kMapSize/2)/2;
++        blt->y=mapPos[gNumWindows-1][1]-(kMapSize/2)/2.0f;
++        UpdateBlit(blt);
++    }
++    width=gPathMax[0]-gPathMin[0];
++    height=gPathMax[2]-gPathMin[2];
++    if(width>height) {
++        w=kMapSize-8;
++        h=height*(kMapSize-8)/width;
++    } else {
++        w=width*(kMapSize-8)/height;
++        h=kMapSize-8;
++    }
++    xOffset=(kMapSize-8-w)/2+4;
++    yOffset=(kMapSize-8-h)/2+4;
++    for(y=0;y<kMapSize;y++)
++        for(x=0;x<kMapSize*2;x++)
++            ((unsigned char *)((tHudTextureR6 *)blt->texture)->pixels)[y*kMapSize*2+x]=0;
++    for(p=0;p<gResPath.numPts;p++) {
++        if(p>=gResPath.numPts) {
++            for(i=0;i<gResPath.numAlt;i++) {
++                if(gResPathPtList+p>=gResPath.alt[i].pts && gResPathPtList+p<gResPath.alt[i].pts+gResPath.alt[i].numPts) break;
++            }
++            if(!gResPath.alt[i].resurrect) {
++                p+=gResPath.alt[i].numPts-1;
++                continue;
++            }
++        }
++        x=xOffset+w*(gResPath.pts[p][0]-gPathMin[0])/width;
++        y=yOffset+h*(gResPath.pts[p][2]-gPathMin[2])/height;
++        for(y1=y-3;y1<=y+3;y1++) {
++            for(x1=x-3;x1<=x+3;x1++) {
++                if(x1>=0 && x1<kMapSize && y1>=0 && y1<kMapSize) {
++                    x2=gMirrorWaves?x1:kMapSize-1-x1;
++                    pixel=&((tHudTextureR6 *)blt->texture)->pixels[(kMapSize-1-y1)*kMapSize+x2];
++                    if(x1>x-2 && x1<x+2 && y1>y-2 && y1<y+2) *pixel=0xffff;
++                    else if(*pixel!=0xffff) *pixel=0x8000;
++                }
++            }
++        }
++    }
++    func_8C06EAD0(blt->texture);
++    func_8C06E95C(blt->texture);
++    return 1;
++}
++
++int animFlag(_tBlit *blt)
++{
++    int x, y, width, height, w, h;
++    if (Hidden((_tBlit *)blt, gNumWindows > 4 || !(gGameState & 0x400000) || gNumLapsLeft > 1 || gRace == 6 || gRace == 4 || gRace == 5 || !gShowTrackMap))
++        return 1;
++    width = gPathMax[0] - gPathMin[0];
++    height = gPathMax[2] - gPathMin[2];
++    if (width > height) {
++        w = kMapSize - 8;
++        h = height * (kMapSize - 8) / width;
++    } else {
++        h = kMapSize - 8;
++        w = width * (kMapSize - 8) / height;
++    }
++    x = mapPos[gNumWindows - 1][0] + ((kMapSize - 8 - w) / 2 + 4 - kMapSize / 2) / 2;
++    y = mapPos[gNumWindows - 1][1] + ((kMapSize - 8 - h) / 2 + 4 - kMapSize / 2) / 2.0f;
++    if (gMirrorWaves)
++        x += w * (gCheckpoints.points[gCheckpoints.finishPt].pos[0] - gPathMin[0]) / width / 2.0f;
++    else
++        x += (w - 1 - w * (gCheckpoints.points[gCheckpoints.finishPt].pos[0] - gPathMin[0]) / width) / 2.0f;
++    y += h * (gCheckpoints.points[gCheckpoints.finishPt].pos[2] - gPathMin[2]) / height / 2.0f;
++    blt->x = x - (blt->width / 2) / 2;
++    blt->y = y - (blt->width / 2) / 2.0f;
++    if (Hidden((_tBlit *)blt, gRace == 1 || gNumLapsLeft > 1 || (gGameState & 8))) {
++        if (gRace != 1 && !(gGameState & 8)) {
++            if (gNumWindows < 4)
++                HAL_SetFont(6);
++            else
++                HAL_SetFont(7);
++            HAL_SetTextDepth(0.0f);
++            TB_SetJust(1, 1);
++            TB_SetTextColor(0);
++            TB_Printf(x + 1, y + 1, "%d", gNumLapsLeft);
++            TB_SetTextColor(11);
++            TB_Printf(x, y, "%d", gNumLapsLeft);
++            TB_SetJust(0, 3);
++            HAL_SetTextDepth(-1.0f);
++        }
++        return 1;
++    }
++    if (gMirrorWaves)
++        blt->flip = 1;
++    blt->alpha = 128;
++    if (!gPauseState)
++        blt->animDTA -= 1000.0f * gFrameSeconds;
++    if (blt->animDTA <= 0) {
++        blt->animDTA = 100;
++        blt->animID = (blt->animID + 1) % 5;
++    }
++    SelectBlit(blt, blt->animID, blt->width, blt->width);
++    return 1;
++}
+diff --git a/src/hudextra.c b/src/hudextra.c
+index ceb467c..97ba434 100644
+--- a/src/hudextra.c
++++ b/src/hudextra.c
+@@ -339,7 +339,7 @@ static int animStuntCoins()
+ /* 0x80023754, size 0x334 */
+ static int animHealth(_tBlit_2 *blt)
+ {
+-    int slot = (blt->animID >> 4) & 15;
++    int slot = (blt->animID & 0xf0) >> 4;
+     int type = blt->animID & 15;
+     float healthPct;
+     if (slot >= gNumPlayers) {
+@@ -487,7 +487,7 @@ static int animPowerupIcons()
+         ScaleUV(gCamera[player].mat.uvs,powerupIcon[player].mat.uvs,0.025000000605359674f);
+         YawUV(hudObjAngle,powerupIcon[player].mat.uvs);
+         screenPos[0]=2 * powerupPos[gNumWindows-1][player][0];
+-        screenPos[1]=2.0f * powerupPos[gNumWindows-1][player][1];
++        screenPos[1]=4.0f + 2.0f * powerupPos[gNumWindows-1][player][1];
+         ZOID_WindowTo3D(player,screenPos,&gCamera[player].mat,2.0f,powerupIcon[player].mat.uvs[3]);
+     }
+     return 1;
+@@ -522,7 +522,7 @@ static int animBattleCoins()
+         ScaleUV(gCamera[player].mat.uvs,battleCoin[player].mat.uvs,gNumPlayers>2 ? 0.01200000022072345f : 0.0089999997289851308f);
+         PitchUV(-1.5707963705062866f,battleCoin[player].mat.uvs);
+         screenPos[0]=2 * fragPos[gNumWindows-1][player][0];
+-        screenPos[1]=2.0f * fragPos[gNumWindows-1][player][1];
++        screenPos[1]=4.0f + 2.0f * fragPos[gNumWindows-1][player][1];
+         ZOID_WindowTo3D(player,screenPos,&gCamera[player].mat,2.0f,battleCoin[player].mat.uvs[3]);
+     }
+     return 1;
+@@ -572,7 +572,7 @@ int func_8C0951C0()
+     unsigned char str[32];
+     int i;
+     int x, y;
+-    float xoffset, yoffset;
++    int xoffset, yoffset;
+     HAL_SetTextDepth(0.0f);
+     HAL_SetFont(10);
+     TB_SetJust(1,1);
+diff --git a/src/optionscr.c b/src/optionscr.c
+index 2860722..6eb4e59 100644
+--- a/src/optionscr.c
++++ b/src/optionscr.c
+@@ -140,7 +140,7 @@ void updateOptionScreen(void)
+ /* 0x80074de8, size 0x160 */
+ void initScreen(void)
+ {
+-    register signed short y;
++    signed short y;
+     SaveGlobals();
+     calcOptionMenuMaxSize();
+     gSelectedOption = 0;
+@@ -189,17 +189,18 @@ void _TitlePane(void)
+ /* 0x80075054, size 0x68 */
+ void uninitScreen(void)
+ {
++    register int cleared = 0;
+     if (!(gGameState & 0x7c03fffe)) {
+         RemovePanes(0);
+-        gTitlePane = 0;
++        gTitlePane = (tBlitSet *)cleared;
+     }
+     if (blit) {
+         RemoveBlit((_tBlit *)blit);
+-        blit = 0;
++        blit = (_tBlit_2 *)cleared;
+     }
+     removeBG();
+     uninitButtons();
+-    inited = 0;
++    inited = cleared;
+ }
+ 
+ /* 0x800750bc, size 0x110 */
+@@ -224,7 +225,8 @@ void printOption(int x, int y, int item, const unsigned char *name, const unsign
+ int animText(void)
+ {
+     int i;
+-    int y;
++    int y = 10;
++    int x = 160;
+     unsigned char *str;
+     signed short itemsDrawn;
+     char str1[40];
+@@ -235,31 +237,31 @@ int animText(void)
+     if (gGameState & 0x7c03fffe) {}
+     if ((gGameState & 0x7c0000) && gControllerRemoved) {
+         TB_Sprintf(str1, "CONTROLLER %d %s", playerInPause + 1, gText.single[242]);
+-        TB_DrawText(TB_CenterText(str1, 160), 10, str1);
++        TB_DrawText(TB_CenterText(str1, x), y, str1);
+     } else {
+         str = gText.single[50];
+-        TB_DrawText(TB_CenterText(str, 160), 10, str);
++        TB_DrawText(TB_CenterText(str, x), y, str);
+     }
+-    y = 10 + TB_GetFontLineHeight() * 2;
++    y += TB_GetFontLineHeight() * 2;
+     HAL_SetFont(11);
+     itemsDrawn = 0;
+     for (i = 0; i < 14; i++) {
+         if (validOption[i] && i >= gFirstOption && itemsDrawn < gOptionMenuSize) {
+             switch (i) {
+-        case 1: printOption(160, y, 1, gText.single[13], gText.taba[gText.tab[17] + gOptions[10]]); break;
+-        case 2: printOption(160, y, 2, gText.single[15], gText.taba[gText.tab[17] + gOptions[0]]); break;
+-        case 3: printOption(160, y, 3, gText.single[16], gText.taba[gText.tab[17] + gOptions[1]]); break;
+-        case 4: printOption(160, y, 4, gText.single[17], gText.taba[gText.tab[17] + gOptions[2]]); break;
+-        case 5: printOption(160, y, 5, gText.single[18], gText.taba[gText.tab[17] + gOptions[3]]); break;
+-        case 6: printOption(160, y, 6, gText.single[19], gText.taba[gText.tab[17] + gOptions[4]]); break;
+-        case 7: printOption(160, y, 7, gText.single[20], gText.taba[gText.tab[17] + gOptions[5]]); break;
+-        case 8: printOption(160, y, 8, gText.single[21], gText.taba[gText.tab[17] + gOptions[6]]); break;
+-        case 9: printOption(160, y, 9, gText.single[22], gText.taba[gText.tab[17] + gOptions[7]]); break;
+-        case 10: printOption(160, y, 10, gText.single[23], gText.taba[gText.tab[17] + gOptions[8]]); break;
+-        case 11: printOption(160, y, 11, gText.single[24], gText.taba[gText.tab[17] + gOptions[9]]); break;
+-        case 12: printOption(160, y, 12, gText.single[26], gText.taba[gText.tab[17] + gOptions[17]]); break;
+-        case 13: printOption(160, y, 13, gText.single[14], gText.taba[gText.tab[17] + gOptions[11]]); break;
+-        case 0: printOption(160, y, 0, gText.single[25], cStrLanguageNames[gLang]); break;
++        case 1: printOption(x, y, 1, gText.single[13], gText.taba[gText.tab[17] + gOptions[10]]); break;
++        case 2: printOption(x, y, 2, gText.single[15], gText.taba[gText.tab[17] + gOptions[0]]); break;
++        case 3: printOption(x, y, 3, gText.single[16], gText.taba[gText.tab[17] + gOptions[1]]); break;
++        case 4: printOption(x, y, 4, gText.single[17], gText.taba[gText.tab[17] + gOptions[2]]); break;
++        case 5: printOption(x, y, 5, gText.single[18], gText.taba[gText.tab[17] + gOptions[3]]); break;
++        case 6: printOption(x, y, 6, gText.single[19], gText.taba[gText.tab[17] + gOptions[4]]); break;
++        case 7: printOption(x, y, 7, gText.single[20], gText.taba[gText.tab[17] + gOptions[5]]); break;
++        case 8: printOption(x, y, 8, gText.single[21], gText.taba[gText.tab[17] + gOptions[6]]); break;
++        case 9: printOption(x, y, 9, gText.single[22], gText.taba[gText.tab[17] + gOptions[7]]); break;
++        case 10: printOption(x, y, 10, gText.single[23], gText.taba[gText.tab[17] + gOptions[8]]); break;
++        case 11: printOption(x, y, 11, gText.single[24], gText.taba[gText.tab[17] + gOptions[9]]); break;
++        case 12: printOption(x, y, 12, gText.single[26], gText.taba[gText.tab[17] + gOptions[17]]); break;
++        case 13: printOption(x, y, 13, gText.single[14], gText.taba[gText.tab[17] + gOptions[11]]); break;
++        case 0: printOption(x, y, 0, gText.single[25], cStrLanguageNames[gLang]); break;
+             }
+             y += TB_GetFontLineHeight();
+             itemsDrawn++;
+@@ -438,10 +440,7 @@ void updateButtons(void)
+         WPitchUV(1.5707964f, buttonInfo[28].mat.uvs);
+         ScaleUV(buttonInfo[28].mat.uvs, buttonInfo[28].mat.uvs, 0.400000006f);
+         buttonY = 1.33000004f * selectedPos + whichItem * 40;
+-        buttonIdx = 0;
+-        goto buttonLoopTest;
+-buttonLoopBody:
+-        {
++        for (buttonIdx = 0; buttonIdx < 14; buttonIdx++) {
+             if (buttonIdx == gSelectedOption) {
+                 if (buttonInfo[buttonIdx].angle < 3.14159275f) buttonInfo[buttonIdx].angle += 12.566371f * gFrameSeconds;
+                 if (buttonInfo[buttonIdx].angle > 3.14159275f) buttonInfo[buttonIdx].angle = 3.14159275f;
+@@ -503,9 +502,6 @@ buttonLoopBody:
+                 buttonY -= 40.0f;
+             }
+         }
+-        buttonIdx++;
+-buttonLoopTest:
+-        if (buttonIdx < 14) goto buttonLoopBody;
+         if (clearScrollSpeed == 1) optionsScrollSpeed = 0.0f;
+         buttonsJustInited = 0;
+     }
+diff --git a/src/pakerr.c b/src/pakerr.c
+index 51dd558..7a8520d 100644
+--- a/src/pakerr.c
++++ b/src/pakerr.c
+@@ -356,7 +356,7 @@ void PS_ErrorFunc(int pak,int error,void *name,int data,signed char *choice1,sig
+  }
+  while(!done) { UpdateFrame();SaveServer(0,0);ShowPakError(pak,choice1,choice2,&done,cancelFunc); }
+  RemoveBlit(dimBlit);
+- for(i=0;i<gNumWindows;i++) ZOID_SetFog(min[i],max[i],red[i],green[i],blue[i],alpha[i],i);
++ for(i=0;i<gNumWindows;i++) { int a = alpha[i]; ZOID_SetFog(min[i],max[i],red[i],green[i],blue[i],a,i); }
+ }
+ 
+ int _AnimDim(_tBlit *blt)
+diff --git a/src/paksysdc.c b/src/paksysdc.c
+index 858c2c5..5ce7871 100644
+--- a/src/paksysdc.c
++++ b/src/paksysdc.c
+@@ -1,7 +1,8 @@
+ /* Target-derived Dreamcast pak initialization slice, 8C06CADC..CC40.
+- * Unsupported platform server/file bodies remain external. Original 38-function
++ * Complete target-backed research TU. Original 38-function
+  * map and anonymous identities are retained; no placeholder code or spacing. */
+ #include "paksysdc_types.h"
++#include "paksysdc_round6.h"
+ /* Target string/pointer tables; references gPS_PakName/ContName are also
+  * used by UI clients. DC names identify two VMU slots on each of four ports. */
+ const char gDCPakFileFormat[] = "%s.%s";
+@@ -22,6 +23,97 @@ extern void func_8C0D9A14(int, int, void *, void (*)(void));
+ extern int func_8C0D9AFA(void);
+ extern void DeallocateMemory(void *);
+ 
++extern unsigned int func_8C0DA860(unsigned int, unsigned int, unsigned int);
++
++/* Mapped name retained. Target is a callback-pointer setter, not GC's return-one stub. */
++
++/* Provisional map identity: target reads removed/status byte +6. */
++
++extern int func_8C06CC40(int, int, int);
++extern void func_8C0D9C9C(int (*)(int,int,int));
++extern void func_8C0D9CA2(int (*)(int,unsigned int,unsigned int,unsigned int));
++extern void RemoveLLE(tDLList *,void *);
++extern void PS_ReadPartialFile(tDCPakFileR6 **,unsigned int,unsigned int);
++extern int func_8C06DF64(tDCPakFileR6 **,int);
++void _ClearFlush(int);
++
++/* Native status/event adapters, not the GC memory-card adapter. */
++extern int func_8C0D9E24(int, void *);
++int func_8C06E4A0(int result);
++
++extern int func_8C0DA27A(int, const char *, void *);
++extern int func_8C09BCCC(const void *, const void *, unsigned int);
++
++int _DeleteFile(int pak, char *name);
++
++extern int func_8C0DA15A(int, char *);
++extern int func_8C0D9CB4(int);
++extern int func_8C0DA2AC(int);
++extern int func_8C0DA2C6(int);
++/* Native callback-visible current pak at D974..D98E; provisional neutral name. */
++#define gDCPakErrorPak (*(signed char *)0x8C0C973E)
++
++extern int func_8C0D9E80(int, char *);
++extern int func_8C0D9EAE(int, char *);
++extern void *AllocateHandleHeap(int, unsigned int);
++extern void InsertLLE(tDLList *, void *, int);
++extern char *strncpy(char *, const char *, unsigned int);
++extern char *strcpy(char *, const char *);
++
++extern tPadInfo gControllerData[4];
++extern void *memcpy(void *, const void *, unsigned int);
++extern void ClearLL(tDLList *);
++
++extern void *AllocateMemoryHeap(int,unsigned int);
++extern unsigned int strlen(const char *);
++extern int sprintf(char *,const char *,...);
++extern int func_8C0DA668(void *,void *);
++extern int func_8C0DA8B4(void *,void *);
++extern int func_8C0DA4E4(int,char *,void *,unsigned int,unsigned int);
++extern int func_8C0DA428(int,char *,void *,unsigned int,void *,unsigned int);
++extern int func_8C0D7EBE(void *);
++
++/* Native source order; declarations retain native external identities. */
++void PS_InitPakSys(void (*errorFunc)());
++void func_8C06CBA8(void);
++int func_8C06CBC2(int pak);
++int func_8C06CC40(int pak, int event, int result);
++int func_8C06CCE8(int pak, unsigned int a, unsigned int b, unsigned int c);
++void func_8C06CCFC(void);
++void _CompleteCallback(void (*callback)());
++void PS_PakServer(void);
++int _SamePak(int pak, int otherPak);
++void _RemovePak(int pak);
++void _ReadDirectory(int pak);
++void _GetFileExt(char *name, char *ext);
++int PS_PakChanged(int pak);
++int PS_PakInserted(int pak);
++int PS_PakDamaged(int pak);
++int PS_PakFormatted(int pak);
++int PS_PakRumble(int pak);
++unsigned int PS_GetFreeBytes(int pak);
++unsigned int PS_GetFreeBlocks(int pak);
++unsigned int PS_GetFreeFiles(int pak);
++unsigned int func_8C06D518(unsigned int numBytes);
++void PS_LockFile(tDCPakFileR6 **psfileh,int lock);
++tDCPakFileR6 **PS_CreateFile(int pak,char *name,char *ext,unsigned int numBytes,
++                            char *gameName,char *bootStr,char *vmuStr,void *palette,void *pixels);
++void PS_DeleteFile(tDCPakFileR6 **h);
++int _DeleteFile(int pak, char *name);
++void PS_ReadFile(tDCPakFileR6 **psfileh);
++void PS_ReadPartialFile(tDCPakFileR6 **h,unsigned int offset,unsigned int numBytes);
++void PS_PurgeFile(tDCPakFileR6 **psfileh);
++void PS_WriteFile(tDCPakFileR6 **psfileh);
++int PS_FlushFile(tDCPakFileR6 **psfileh,int ignoreErrors);
++void PS_DiscardFileChanges(tDCPakFileR6 **psfileh);
++void _ClearFlush(int pak);
++int func_8C06DF64(tDCPakFileR6 **h,int ignoreErrors);
++int PS_FlushPak(int pak,int ignoreErrors);
++int func_8C06E3F8(tDCPakFileR6 **h);
++void _ClearPak(unsigned char pak);
++int func_8C06E4A0(int result);
++int func_8C06E51A(int entry, int result, const unsigned char *bytes, int pak);
++
+ void PS_InitPakSys(void (*errorFunc)())
+ {
+     int i;
+@@ -52,3 +144,737 @@ int func_8C06CBC2(int pak)
+     if (!gPaks[pak].inserted && !gPaks[pak].wasRemoved) return 1;
+     return 0;
+ }
++
++int func_8C06CC40(int pak, int event, int result)
++{
++    tDCPakR6 *p = &DCPAK6(pak);
++    switch (event) {
++    case 1:
++        if (!result) {
++            p->unknown02[0] = 1;
++            if (!func_8C0D9E24(pak, (char *)p + 0x1c)) p->status0d = 1;
++        }
++        break;
++    case 2:
++        p->unknown02[0] = 0;
++        p->status0d = 0;
++        p->unknown02[1] = 1;
++        p->completion10 = 0;
++        p->completion14 = 0;
++        p->completion18 = 0;
++        memset((char *)p + 0x1c, 0, 0x38);
++        break;
++    default:
++        p->error = func_8C06E4A0(result);
++        func_8C0D9E24(pak, (char *)p + 0x1c);
++        break;
++    }
++    DCPAK6(pak).completion18 = 0;
++    return 0;
++}
++
++int func_8C06CCE8(int pak, unsigned int a, unsigned int b, unsigned int c)
++{
++    DCPAK6(pak).completion18 = a;
++    DCPAK6(pak).completion10 = b;
++    DCPAK6(pak).completion14 = c;
++    return 0;
++}
++
++void func_8C06CCFC(void)
++{
++    func_8C0D9C9C(func_8C06CC40);
++    func_8C0D9CA2(func_8C06CCE8);
++}
++
++void _CompleteCallback(void (*callback)())
++{
++    gDCPakErrorFunc = callback;
++}
++
++void PS_PakServer(void)
++{
++    signed char changed[8];
++    int i,j;
++    tDCPakR6 *p,*other;
++    tDCPakFileR6 **h;
++    signed char same,pendingMove,move;
++    if (!gDCPakInited) return;
++    memset(changed,0,sizeof(changed));
++    for (i=0;i<8;i++) {
++        if (gDCPakErrorPak>=0 && gDCPakErrorPak!=i) continue;
++        p=&DCPAK6(i);
++        if (!gControllerData[i/2].attached || !p->unknown02[0] ||
++            !p->status0d || p->unknown02[1]) {
++            p->unknown02[1]=0;
++            if (p->inserted) {
++                p->inserted=0;
++                p->original=0;
++                p->damaged=0;
++                changed[i]=1;
++                if (p->locked || p->flush || p->flushing || p->inUse) continue;
++                _RemovePak(i);
++                _ClearPak(i);
++            } else if (p->unknown02[2] && !p->locked && !p->flush && !p->flushing && !p->inUse) {
++                _RemovePak(i);
++                _ClearPak(i);
++            }
++            continue;
++        }
++        if (p->inserted) {
++            if (p->original || !p->unknown02[2] || p->locked || p->flush ||
++                p->flushing || p->inUse || p->damaged) continue;
++        }
++        p->inserted=1;
++        changed[i]=1;
++        same=0;
++        pendingMove=0;
++        move=0;
++        if (!p->unknown02[2]) p->unknown02[2]=1;
++        else if (_SamePak(i,i)) {
++            changed[i]=0;
++            p->original=1;
++            if (p->flushing) continue;
++            same=1;
++        }
++        if (!same) {
++            for (j=0;j<8;j++) {
++                if (j==i || !DCPAK6(j).unknown02[2] || !_SamePak(j,i)) continue;
++                if (p->inUse) break;
++                if (p->unknown02[2]) pendingMove=1;
++                else move=1;
++                break;
++            }
++            if (j<8 && !pendingMove && !move) continue;
++            if (j==8) {
++                if (p->flushing) { changed[i]=0; continue; }
++                if (p->inUse) { changed[i]=0; p->original=1; continue; }
++            }
++            if (!move && p->locked) { changed[i]=0; continue; }
++        }
++        if (!move) {
++            if (!PS_FlushPak(i,0)) { changed[i]=0; continue; }
++            if (same) continue;
++            _RemovePak(i);
++        }
++        if (move || pendingMove) {
++            other=&DCPAK6(j);
++            p->original=1;
++            memcpy(&gPS_Files[i],&gPS_Files[j],sizeof(tDLList));
++            ClearLL(&gPS_Files[j]);
++            for (h=gPS_Files[i].head;h;h=(tDCPakFileR6 **)(*h)->ll.next) (*h)->pak=i;
++            memcpy(&p->files,&other->files,sizeof(tDLList));
++            ClearLL(&other->files);
++            changed[i]=0;
++            other->unknown02[2]=0;
++            other->original=0;
++            p->locked=other->locked;
++            other->locked=0;
++            p->flush=other->flush;
++            other->flush=0;
++            if (other->inserted && !other->damaged) other->unknown02[1]=1;
++            changed[j]=1;
++        } else {
++            _ReadDirectory(i);
++            p->original=1;
++            p->locked=0;
++            p->flush=0;
++        }
++    }
++    for (i=0;i<8;i++) DCPAK6(i).changed=changed[i];
++}
++
++int _SamePak(int pak, int otherPak)
++{
++    tDCPakFileR6 **h;
++    tDCPakFileR6 *p;
++    tDCFileMetaR6 *meta;
++    signed char info[20];
++    signed char *saved;
++    for (h = gPS_Files[pak].head; h; h = (tDCPakFileR6 **)(*h)->ll.next) {
++        p = *h;
++        meta = *p->id;
++        saved = (signed char *)meta->unknown0c;
++        if (meta->locked || meta->flush) {
++            if (!func_8C0DA27A(otherPak, p->filename, info) &&
++                *(unsigned int *)info == *(unsigned int *)saved &&
++                *(signed short *)(info+4) == *(signed short *)(saved+4) &&
++                info[6] == saved[6] && info[7] == saved[7] &&
++                *(signed short *)(info+8) == *(signed short *)(saved+8) &&
++                *(signed short *)(info+10) == *(signed short *)(saved+10) &&
++                info[12] == saved[12] && info[13] == saved[13] &&
++                info[14] == saved[14] && info[15] == saved[15] &&
++                info[16] == saved[16] && info[17] == saved[17]) return 1;
++        }
++    }
++    return 0;
++}
++
++void _RemovePak(int pak)
++{
++    tDCPakFileR6 **psfileh,**next,*psfile;
++    tDCFileMetaR6 **fileh,*file;
++    for (psfileh=gPS_Files[pak].head;psfileh;psfileh=next) {
++        psfile=*psfileh;
++        fileh=psfile->id;
++        file=*fileh;
++        next=(tDCPakFileR6 **)psfile->ll.next;
++        if (psfile->data) {
++            if (psfile->RemoveFile) psfile->RemoveFile(psfileh);
++            DeallocateMemory(psfile->data);
++            psfile->data=0;
++        }
++        RemoveLLE(&gPS_Files[pak],psfileh);
++        DeallocateMemory(psfileh);
++        if (file->icon) DeallocateMemory(file->icon);
++        RemoveLLE(&gPaks[pak].files,fileh);
++        DeallocateMemory(fileh);
++    }
++}
++
++void _ReadDirectory(int pak)
++{
++    int ret;
++    char filename[16];
++    tDCFileMetaR6 **meta;
++    tDCFileMetaR6 *m;
++    tDCPakFileR6 **h;
++    tDCPakFileR6 *p;
++    ret = func_8C0D9E80(pak, filename);
++    while (ret != -251 && filename[0]) {
++        if (!ret) {
++            meta = AllocateHandleHeap(0, sizeof(*m));
++            m = *meta;
++            memset(m, 0, sizeof(*m));
++            m->exists = 1;
++            ret = func_8C0DA27A(pak, filename, m->unknown0c);
++            if (ret) DeallocateMemory(m);
++            else {
++                DCPAK6(pak).error = func_8C06E4A0(ret);
++                InsertLLE(&DCPAK6(pak).files, meta, 0);
++                h = AllocateHandleHeap(0, sizeof(*p));
++                p = *h;
++                memset(p, 0, sizeof(*p));
++                m->file = h;
++                p->pak = pak;
++                p->id = meta;
++                p->size = *(unsigned int *)m->unknown0c;
++                p->blocks = (p->size + 511) >> 9;
++                strncpy(p->filename, filename, 12);
++                _GetFileExt(p->filename, p->ext);
++                strcpy(p->name, p->filename);
++                strncpy(p->filename, filename, 12);
++                InsertLLE(&gPS_Files[pak], h, 0);
++            }
++        }
++        ret = func_8C0D9EAE(pak, filename);
++    }
++}
++
++void _GetFileExt(char *name, char *ext)
++{
++    int end, c, l;
++    ext[3] = 0;
++    name += 11;
++    ext += 2;
++    end = 0;
++    c = 11;
++    l = 0;
++    while (c >= 0 && l < 3) {
++        if (end || *name > ' ') {
++            *ext-- = *name;
++            end = 1;
++            l++;
++        }
++        c--;
++        name--;
++    }
++    if (l >= 3) *name = 0;
++    for (; l < 3; l++) *ext-- = 0;
++}
++
++int PS_PakChanged(int pak) { return DCPAK6(pak).changed; }
++
++int PS_PakInserted(int pak)
++{
++    if (gPaks[pak].inserted || gPaks[pak].wasRemoved) return 1;
++    return 0;
++}
++
++int PS_PakDamaged(int pak) { return gPaks[pak].damaged; }
++
++int PS_PakFormatted(int pak) { return DCPAK6(pak).status0d; }
++
++int PS_PakRumble(int pak) { return gPaks[pak].wasRemoved; }
++
++unsigned int PS_GetFreeBytes(int pak)
++{
++    unsigned int overhead = func_8C0DA860(1, 0, 0);
++    if (overhead > DCPAK6(pak).freeBlocks) return 0;
++    return (DCPAK6(pak).freeBlocks - overhead) * 512;
++}
++
++unsigned int PS_GetFreeBlocks(int pak) { return DCPAK6(pak).freeBlocks; }
++
++unsigned int PS_GetFreeFiles(int pak)
++{
++    unsigned int blocks = DCPAK6(pak).freeBlocks;
++    return blocks / func_8C0DA860(1, 0, 1);
++}
++
++unsigned int func_8C06D518(unsigned int numBytes)
++{
++    return func_8C0DA860(1, 0, numBytes);
++}
++
++void PS_LockFile(tDCPakFileR6 **psfileh,int lock)
++{
++    tDCFileMetaR6 **fileh,*file;
++    int pak;
++    if (!psfileh) return;
++    file=*(*psfileh)->id;
++    if (file->locked==lock) return;
++    file->locked=lock;
++    pak=(*psfileh)->pak;
++    if (lock) DCPAK6(pak).locked=1;
++    else {
++        fileh=gPaks[pak].files.head;
++        while (fileh) {
++            file=*fileh;
++            if(file->locked) break;
++            fileh=(tDCFileMetaR6 **)file->ll.next;
++        }
++        if(!fileh) {
++            DCPAK6(pak).locked=0;
++            if(!DCPAK6(pak).flush && !DCPAK6(pak).original) gPaks[pak].inserted=0;
++        }
++    }
++}
++
++tDCPakFileR6 **PS_CreateFile(int pak,char *name,char *ext,unsigned int numBytes,
++                            char *gameName,char *bootStr,char *vmuStr,void *palette,void *pixels)
++{
++    tDCFileMetaR6 **meta,*m;
++    tDCPakFileR6 **h,*p;
++    char str[64];
++    signed char choice1,choice2;
++    int blocks,ret;
++    void *buffer;
++    DCPAK6(pak).inUse=1;
++    meta=AllocateHandleHeap(0,sizeof(*m));
++    m=*meta;
++    memset(m,0,sizeof(*m));
++    memset(m->text20,' ',sizeof(m->text20));
++    strncpy(m->text20,vmuStr,strlen(vmuStr));
++    memset(m->text32,' ',sizeof(m->text32));
++    strncpy(m->text32,bootStr,strlen(bootStr));
++    memset(m->text54,' ',sizeof(m->text54));
++    strncpy(m->text54,gameName,strlen(gameName));
++    m->count6c=1;
++    m->value6e=1;
++    m->icon=AllocateHandleHeap(0,m->count6c*544);
++    memcpy(*(void **)m->icon,palette,m->count6c*32);
++    memcpy((char *)*(void **)m->icon+m->count6c*32,pixels,m->count6c*512);
++    m->pointer64=*(void **)m->icon;
++    m->pointer68=(char *)*(void **)m->icon+m->count6c*32;
++    m->value74=0;
++    m->size7c=numBytes;
++    sprintf(str,gDCPakFileFormat,name,ext);
++    blocks=func_8C0DA860(m->count6c,m->value74,m->size7c);
++    if(blocks<=0) {
++        DCPAK6(pak).error=14;
++        gDCPakErrorPak=pak;
++        gDCPakErrorFunc(pak,DCPAK6(pak).error,str,0,&choice1,&choice2,func_8C06CBC2);
++        gDCPakErrorPak=-1;
++        DeallocateMemory(meta);
++        DCPAK6(pak).inUse=0;
++        return 0;
++    }
++    h=AllocateHandleHeap(0,sizeof(*p));
++    p=*h;
++    memset(p,0,sizeof(*p));
++    p->pak=pak;
++    p->id=meta;
++    p->blocks=blocks;
++    p->size=blocks*512;
++    memset(p->name,' ',8);
++    strncpy(p->filename,str,strlen(str));
++    strcpy(p->name,name);
++    strcpy(p->ext,ext);
++    m->file=h;
++    p->data=AllocateHandleHeap(0,numBytes);
++    memset(*(void **)p->data,0,numBytes);
++    buffer=AllocateMemoryHeap(0,p->size);
++    memset(buffer,0,p->size);
++    m->pointer78=*(void **)p->data;
++    ret=func_8C0DA668(buffer,m->text20);
++    if(ret<=0 || ret!=p->blocks || func_8C0DA8B4(m->text20,buffer)) {
++        DCPAK6(pak).error=14;
++        gDCPakErrorPak=pak;
++        gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++        gDCPakErrorPak=-1;
++        DeallocateMemory(buffer);
++        DeallocateMemory(p->data);
++        DeallocateMemory(h);
++        DeallocateMemory(meta);
++        DCPAK6(pak).inUse=0;
++        return 0;
++    }
++    DeallocateMemory(buffer);
++    InsertLLE(&DCPAK6(pak).files,meta,0);
++    InsertLLE(&gPS_Files[pak],h,0);
++    DCPAK6(pak).inUse=0;
++    return h;
++}
++
++void PS_DeleteFile(tDCPakFileR6 **h)
++{
++    tDCPakFileR6 *p = *h;
++    int pak = p->pak;
++    tDCFileMetaR6 **meta = p->id;
++    DCPAK6(pak).inUse = 1;
++    PS_LockFile(h, 0);
++    if ((*meta)->exists && !_DeleteFile(pak, p->filename)) {
++        DCPAK6(pak).inUse = 0;
++        return;
++    }
++    if (p->RemoveFile) p->RemoveFile(h);
++    RemoveLLE(&gPS_Files[pak], h);
++    RemoveLLE(&DCPAK6(pak).files, meta);
++    if (p->data) DeallocateMemory(p->data);
++    if ((*meta)->icon) DeallocateMemory((*meta)->icon);
++    DeallocateMemory(h);
++    DeallocateMemory(meta);
++    _ClearFlush(pak);
++    DCPAK6(pak).inUse = 0;
++}
++
++int _DeleteFile(int pak, char *name)
++{
++    int err;
++    signed char choice1, choice2;
++    for (;;) {
++        err = func_8C0DA15A(pak, name);
++        if (!err) {
++            while (func_8C0D9CB4(pak)) {
++                if (!func_8C0DA2AC(pak)) {
++                    err = func_8C0DA2C6(pak);
++                    if (!err) return 1;
++                    break;
++                }
++            }
++            if (!err) {
++                DCPAK6(pak).error = 14;
++                gDCPakErrorPak = pak;
++                gDCPakErrorFunc(pak,DCPAK6(pak).error,name,0,&choice1,&choice2,func_8C06CBC2);
++                gDCPakErrorPak = -1;
++                return 0;
++            }
++        }
++        DCPAK6(pak).error = func_8C06E4A0(err);
++        gDCPakErrorPak = pak;
++        gDCPakErrorFunc(pak,DCPAK6(pak).error,name,0,&choice1,&choice2,func_8C06CBC2);
++        gDCPakErrorPak = -1;
++        if (choice2 || !DCPAK6(pak).inserted || DCPAK6(pak).error == 14) return 0;
++    }
++}
++
++void PS_ReadFile(tDCPakFileR6 **psfileh)
++{
++    tDCFileMetaR6 *file = *(*psfileh)->id;
++    PS_ReadPartialFile(psfileh, 0, (*psfileh)->blocks * 512);
++    file->partial = 0;
++}
++
++void PS_ReadPartialFile(tDCPakFileR6 **h,unsigned int offset,unsigned int numBytes)
++{
++    tDCPakFileR6 *p=*h;
++    tDCFileMetaR6 *m=*p->id;
++    int pak=p->pak;
++    int err,completed;
++    unsigned int blocks,start;
++    void *buffer;
++    signed char choice1,choice2;
++    if(p->data) return;
++    DCPAK6(pak).inUse=1;
++    blocks=(numBytes+511)>>9;
++    if(blocks<p->blocks) blocks++;
++    start=(offset+511)>>9;
++    buffer=AllocateMemoryHeap(0,blocks*512);
++    for(;;) {
++        err=func_8C0DA4E4(pak,p->filename,buffer,start,blocks+1);
++        completed=0;
++        if(!err) {
++            while(func_8C0D9CB4(pak)) {
++                if(!func_8C0DA2AC(pak)) {
++                    err=func_8C0DA2C6(pak);
++                    completed=1;
++                    break;
++                }
++            }
++            if(!completed) {
++                DCPAK6(pak).error=14;
++                gDCPakErrorPak=pak;
++                gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++                gDCPakErrorPak=-1;
++                break;
++            }
++        }
++        if(err) {
++            DCPAK6(pak).error=func_8C06E4A0(err);
++            gDCPakErrorPak=pak;
++            gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++            gDCPakErrorPak=-1;
++            if(choice1 && DCPAK6(pak).error!=14) continue;
++            break;
++        }
++        if(func_8C0DA8B4(m->text20,buffer)) {
++            DCPAK6(pak).error=14;
++            gDCPakErrorPak=pak;
++            gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++            gDCPakErrorPak=-1;
++            break;
++        }
++        m->icon=AllocateHandleHeap(0,m->count6c*544);
++        memcpy(*(void **)m->icon,m->pointer64,m->count6c*32);
++        memcpy((char *)*(void **)m->icon+32,m->pointer68,m->count6c*512);
++        p->data=AllocateHandleHeap(0,m->size7c);
++        memcpy(*(void **)p->data,m->pointer78,m->size7c);
++        DeallocateMemory(buffer);
++        m->partial=1;
++        DCPAK6(pak).inUse=0;
++        return;
++    }
++    DeallocateMemory(buffer);
++    DCPAK6(pak).inUse=0;
++}
++
++void PS_PurgeFile(tDCPakFileR6 **psfileh)
++{
++    tDCPakFileR6 *psfile = *psfileh;
++    tDCFileMetaR6 *file = *psfile->id;
++    if (psfile->data) {
++        DeallocateMemory(psfile->data);
++        psfile->data = 0;
++        file->partial = 0;
++    }
++}
++
++void PS_WriteFile(tDCPakFileR6 **psfileh)
++{
++    if (psfileh) (*(*psfileh)->id)->flush = 1;
++}
++
++int PS_FlushFile(tDCPakFileR6 **psfileh,int ignoreErrors)
++{
++    DCPAK6((*psfileh)->pak).inUse = 1;
++    DCPAK6((*psfileh)->pak).flushing = 1;
++    DCPAK6((*psfileh)->pak).flushed = 0;
++    DCPAK6((*psfileh)->pak).flushed = func_8C06DF64(psfileh,ignoreErrors);
++    DCPAK6((*psfileh)->pak).flushing = 0;
++    DCPAK6((*psfileh)->pak).inUse = 0;
++    return DCPAK6((*psfileh)->pak).flushed;
++}
++
++void PS_DiscardFileChanges(tDCPakFileR6 **psfileh)
++{
++    tDCFileMetaR6 *file;
++    if (psfileh) {
++        file = *(*psfileh)->id;
++        if (file->flush) {
++            file->flush = 0;
++            _ClearFlush((*psfileh)->pak);
++        }
++    }
++}
++
++void _ClearFlush(int pak)
++{
++    tDCPakFileR6 **psfileh,**next;
++    tDCFileMetaR6 *file;
++    if (!DCPAK6(pak).flush) return;
++    for (psfileh=gPS_Files[pak].head;psfileh;psfileh=next) {
++        file=*(*psfileh)->id;
++        next=(tDCPakFileR6 **)(*psfileh)->ll.next;
++        if ((*psfileh)->data && file->flush) break;
++    }
++    if (!psfileh) {
++        DCPAK6(pak).flush=0;
++        if (!DCPAK6(pak).locked && !DCPAK6(pak).original) gPaks[pak].inserted=0;
++    }
++}
++
++int func_8C06DF64(tDCPakFileR6 **h,int ignoreErrors)
++{
++    tDCPakFileR6 *p;
++    tDCFileMetaR6 *m;
++    int pak,ret,completed;
++    signed char choice1,choice2;
++    unsigned char sdkDate[10],fileDate[8];
++    void *buffer;
++    if(!h) return 1;
++    p=*h;
++    m=*p->id;
++    pak=p->pak;
++    if(!m->flush) return 1;
++    for(;;) {
++        if(DCPAK6(pak).wasRemoved || (DCPAK6(pak).inserted && !DCPAK6(pak).original)) DCPAK6(pak).error=3;
++        else if(!DCPAK6(pak).inserted) DCPAK6(pak).error=2;
++        else DCPAK6(pak).error=0;
++        if(!DCPAK6(pak).error) break;
++        if(ignoreErrors) return 0;
++        gDCPakErrorPak=pak;
++        gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++        gDCPakErrorPak=-1;
++        if(choice1) continue;
++        if(DCPAK6(pak).error==3 && !DCPAK6(pak).inserted && !DCPAK6(pak).wasRemoved) continue;
++        if(DCPAK6(pak).error==2 && DCPAK6(pak).inserted) continue;
++        m->flush=0;
++        _ClearFlush(pak);
++        return 0;
++    }
++    func_8C0D7EBE(sdkDate);
++    *(unsigned short *)fileDate=*(unsigned short *)sdkDate;
++    fileDate[2]=sdkDate[2]; fileDate[3]=sdkDate[3];
++    fileDate[4]=sdkDate[4]; fileDate[5]=sdkDate[5];
++    fileDate[6]=sdkDate[6]; fileDate[7]=sdkDate[7];
++    buffer=AllocateMemoryHeap(0,p->size);
++    memset(buffer,0,p->size);
++    m->pointer64=*(void **)m->icon;
++    m->pointer68=(char *)*(void **)m->icon+m->count6c*32;
++    m->pointer78=*(void **)p->data;
++    ret=func_8C0DA668(buffer,m->text20);
++    if(ret<=0 || ret!=p->blocks) {
++        DCPAK6(pak).error=14;
++        if(!ignoreErrors) {
++            gDCPakErrorPak=pak;
++            gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++            gDCPakErrorPak=-1;
++            m->flush=0;
++            _ClearFlush(pak);
++        }
++        DeallocateMemory(buffer);
++        return 0;
++    }
++    for(;;) {
++        ret=func_8C0DA428(pak,p->filename,buffer,p->blocks,fileDate,0x80000000);
++        completed=0;
++        if(!ret) {
++            while(func_8C0D9CB4(pak)) {
++                if(!func_8C0DA2AC(pak)) {
++                    ret=func_8C0DA2C6(pak);
++                    completed=1;
++                    break;
++                }
++            }
++            if(!completed) {
++                DCPAK6(pak).error=2;
++                if(!ignoreErrors) {
++                    gDCPakErrorPak=pak;
++                    gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++                    gDCPakErrorPak=-1;
++                    m->flush=0;
++                    _ClearFlush(pak);
++                }
++                DeallocateMemory(buffer);
++                return 0;
++            }
++        }
++        if(ret) {
++            DCPAK6(pak).error=func_8C06E4A0(ret);
++            if(!ignoreErrors) {
++                gDCPakErrorPak=pak;
++                gDCPakErrorFunc(pak,DCPAK6(pak).error,p->filename,0,&choice1,&choice2,func_8C06CBC2);
++                gDCPakErrorPak=-1;
++                if(choice1 && DCPAK6(pak).error!=14) {
++                    if(DCPAK6(pak).error==8) _DeleteFile(pak,p->filename);
++                    continue;
++                }
++                m->flush=0;
++                _ClearFlush(pak);
++            }
++            DeallocateMemory(buffer);
++            return 0;
++        }
++        DeallocateMemory(buffer);
++        m->exists=1;
++        func_8C0DA27A(pak,p->filename,m->unknown0c);
++        m->flush=0;
++        _ClearFlush(pak);
++        return 1;
++    }
++}
++
++int PS_FlushPak(int pak,int ignoreErrors)
++{
++    tDCPakFileR6 **psfileh,**next;
++    tDCFileMetaR6 *file;
++    DCPAK6(pak).inUse=1;
++    DCPAK6(pak).flushed=0;
++    if (!DCPAK6(pak).flush) {
++        DCPAK6(pak).inUse=0;
++        return 1;
++    }
++    DCPAK6(pak).flushing=1;
++    for (psfileh=gPS_Files[pak].head;psfileh;psfileh=next) {
++        file=*(*psfileh)->id;
++        next=(tDCPakFileR6 **)(*psfileh)->ll.next;
++        if ((*psfileh)->data && file->flush) {
++            if (!func_8C06DF64(psfileh,ignoreErrors)) break;
++            DCPAK6(pak).flushed=1;
++        }
++    }
++    DCPAK6(pak).flushing=0;
++    DCPAK6(pak).inUse=0;
++    return psfileh==0;
++}
++
++int func_8C06E3F8(tDCPakFileR6 **h)
++{
++    tDCPakFileR6 *p = *h;
++    tDCFileMetaR6 *meta = *p->id;
++    unsigned char directoryEntry[20];
++    int pak = p->pak;
++    if (!PS_PakInserted(pak) || !meta->exists) return 0;
++    if (func_8C0DA27A(pak, p->filename, directoryEntry)) return 0;
++    if (func_8C09BCCC(directoryEntry, meta->unknown0c, 20)) return 0;
++    return 1;
++}
++
++void _ClearPak(unsigned char pak)
++{
++    signed char damaged = gPaks[pak].damaged;
++    memset(&gPaks[pak], 0, sizeof(gPaks[pak]));
++    gPaks[pak].damaged = damaged;
++    InitLL(&gPaks[pak].files, 1, 1);
++}
++
++int func_8C06E4A0(int result)
++{
++    switch (result) {
++    case 0: return 0;
++    case -255: return 2;
++    case -252: return 6;
++    case -250: case -247: return 8;
++    case -249: case -248: return 7;
++    case -256: return 9;
++    case -127: case -125: return 13;
++    case -1: case -253: case -251: case -245: case -240:
++    default: return 14;
++    }
++}
++
++int func_8C06E51A(int entry, int result, const unsigned char *bytes, int pak)
++{
++    tDCPakR6 *p = &DCPAK6(pak);
++    unsigned char *dst = (unsigned char *)p + 0x56 + entry * 8;
++    if (!result) {
++        dst[0] = bytes[0]; dst[1] = bytes[1];
++        dst[2] = bytes[2]; dst[3] = bytes[3];
++        dst[4] = bytes[4]; dst[5] = bytes[5];
++        dst[6] = bytes[6]; dst[7] = bytes[7];
++        p->wasRemoved = 1;
++    } else if (result == -2) p->wasRemoved = 0;
++    return 0;
++}
++
+diff --git a/src/selectcarload.c b/src/selectcarload.c
+index a79dd8f..f65f1ec 100644
+--- a/src/selectcarload.c
++++ b/src/selectcarload.c
+@@ -78,10 +78,11 @@ void SetSelectTireSizes(signed short slot, signed short player)
+ /* 0x8003be44, size 0xbc */
+ void CreateSelectCar(signed short slot, signed short player, signed short cam)
+ {
+-    CreateCar(slot,cam,0);
+-    MBOX_ShowObject(gCarParts[slot].frame,1,cam);
+-    MBOX_HideObject(gCarParts[slot].hood,1,cam);
+-    MBOX_HideObject(gCarParts[slot].brakes,1,cam);
++    int camera = cam;
++    CreateCar(slot,camera,0);
++    MBOX_ShowObject(gCarParts[slot].frame,1,camera);
++    MBOX_HideObject(gCarParts[slot].hood,1,camera);
++    MBOX_HideObject(gCarParts[slot].brakes,1,camera);
+     SetSelectTireSizes(slot,player);
+ }
+ 
+@@ -89,7 +90,7 @@ void CreateSelectCar(signed short slot, signed short player, signed short cam)
+ void UpdateSelectCar(signed short slot, signed short player, unsigned char PaintJob, signed short sheenIdx, float *pos, float (*uvs)[3], unsigned char alpha)
+ {
+     float newuvs[3][3];
+-    signed short idx;
++    register signed short idx;
+     signed short cam;
+     tRGBA alphaCol={255,255,255,255};
+     tTexture *wheelTex;
+diff --git a/src/shots.c b/src/shots.c
+index 2413b3b..3769540 100644
+--- a/src/shots.c
++++ b/src/shots.c
+@@ -1,5 +1,6 @@
+ /* Target-backed Dreamcast shot damage/lifecycle packet; renderer update remainsexternal. */
+ #include "shots_types.h"
++#include "shots_round6.h"
+ extern char shotsName8C0B35A4[];
+ extern char shotsName8C0B35B4[];
+ extern char shotsName8C0B35C4[];
+@@ -37,7 +38,7 @@ int sWeaponFx[10] = {28,25,24,26,27,29,30,31,20,-1};
+ void AnimateCase(void)
+ {
+     tShotCaseDC *casing;
+-    tShotCaseDC *next;
++    register tShotCaseDC *next;
+ 
+     for (casing = gShotCaseList.head; casing; casing = next) {
+         next = (tShotCaseDC *)casing->next;
+@@ -46,7 +47,7 @@ void AnimateCase(void)
+             ZOID_RemoveObject(casing->mbIdx);
+             FreeStatLLE(&gShotCaseList, casing);
+         } else {
+-            casing->vel[1] -= 2.5f * (gGravity * gFrameSeconds);
++            casing->vel[1] -= 2.5f * gGravity * gFrameSeconds;
+             casing->mat.mat3.pos[0] += casing->vel[0] * gFrameSeconds;
+             casing->mat.mat3.pos[1] += casing->vel[1] * gFrameSeconds;
+             casing->mat.mat3.pos[2] += casing->vel[2] * gFrameSeconds;
+@@ -56,7 +57,8 @@ void AnimateCase(void)
+ 
+ void BattleDamage(tCarData *car, tCarData *hit, int damage)
+ {
+-    if (!model[hit->slot].crashflag && hit->slot != car->slot &&
++    int hitSlot = hit->slot;
++    if (!model[hitSlot].crashflag && hit->slot != car->slot &&
+         gCarTeam[hit->slot] != gCarTeam[car->slot]) {
+         if (hit->battle.defense.active & 4)
+             damage *= 0.20000000298023224f;
+@@ -72,7 +74,8 @@ void BattleDamage(tCarData *car, tCarData *hit, int damage)
+ 
+ void BattleDamage2(tCarData *car1, tCarData *car2, int damage1, int damage2)
+ {
+-    if (!model[car1->slot].crashflag && !model[car2->slot].crashflag &&
++    int slot1 = car1->slot;
++    if (!model[slot1].crashflag && !model[car2->slot].crashflag &&
+         gCarTeam[car1->slot] != gCarTeam[car2->slot]) {
+         if (car2->battle.defense.active & 4)
+             damage1 *= 0.20000000298023224f;
+@@ -239,3 +242,629 @@ void _InitNewShot(tShotInfoDC *shot, tCarData *car)
+     shot->old[2] = car->dr_pos[2];
+     CopyUV(car->dr_uvs, shot->uvs);
+ }
++
++void UpdateDefense(tCarData *car, tModelData *m, anon_active_invsTime_10 *defense, int i)
++{
++    tRGBA clr = { 255, 255, 255, 255 };
++    int j;
++    tShotShieldDC *shield;
++    tUVMatrix *mat;
++
++    if ((defense->active & 1) && car->battle.fadeState != 2) {
++        defense->invsTime -= gFrameSeconds;
++        if (defense->invsTime <= 0.0f || m->crashflag) {
++            defense->invsTime = 0.0f;
++            car->battle.fadeState = 2;
++            car->battle.fadeTime = 0.6666669845581055f;
++            car->battle.fadeAlpha = 16;
++        }
++    }
++    if (defense->active & 2) {
++        if (m->crashflag)
++            goto removeShield;
++        shield = &gCarShield[i];
++        mat = &shield->mat;
++        shield->mat.mat3.pos[0] = car->dr_pos[0];
++        shield->mat.mat3.pos[1] = car->dr_pos[1];
++        shield->mat.mat3.pos[2] = car->dr_pos[2];
++        CopyUV(car->dr_uvs, mat->mat3.uvs);
++        defense->shldTime -= gFrameSeconds;
++        if (defense->shldTime <= 0.0f) {
++            if (defense->active & 8) {
++                if (defense->shldScale >= gShieldSizes[m->body_type]) {
++                    defense->shldScale = gShieldSizes[m->body_type];
++                    defense->active &= ~8;
++                    defense->active |= 4;
++                    defense->shldTime = 30.0f;
++                } else {
++                    defense->shldScale += 0.05000000074505806f;
++                    if (defense->shldScale > gShieldSizes[m->body_type])
++                        defense->shldScale = gShieldSizes[m->body_type];
++                    defense->shldTime = 0.03333330154418945f;
++                }
++            } else if (defense->active & 16) {
++                if (defense->shldScale <= 0.05999999865889549f) {
++removeShield:
++                    defense->shldTime = 0.0f;
++                    defense->active &= ~0x1e;
++                    if (gCarShield[i].dlIdx != -1) {
++                        ZOID_RemoveObject(gCarShield[i].dlIdx);
++                        gCarShield[i].dlIdx = -1;
++                    }
++                    return;
++                } else {
++                    defense->shldScale -= 0.05000000074505806f;
++                    defense->shldTime = 0.03333330154418945f;
++                }
++            } else {
++                defense->active &= ~4;
++                defense->active |= 16;
++                defense->shldTime = 0.03333330154418945f;
++            }
++        }
++        for (j = 0; j < 3; j++) {
++            shield->mat.mat3.uvs[j][0] *= defense->shldScale;
++            shield->mat.mat3.uvs[j][1] *= defense->shldScale;
++            shield->mat.mat3.uvs[j][2] *= defense->shldScale;
++        }
++        if (shield->dlIdx == -1)
++            shield->dlIdx = MBOX_NewObject(gWfxObjList[5], mat, -1, 0x802000);
++        if (car->battle.defense.active & 1) {
++            clr.c[3] = car->battle.fadeAlpha;
++            if (clr.c[3] < 48)
++                clr.c[3] = 48;
++        }
++        ZOID_SetColor(shield->dlIdx, &clr);
++    }
++}
++
++void UpdateShots(void)
++{
++    tShotInfoDC *shot, *nexts;
++    tShotHitPolyDC *h;
++    tShotDC *o;
++    tCarData *car, *hit;
++    tModelData *m;
++    float old[3];
++    float vel;
++    tRGBA clr = {255,255,255,255};
++    float verts[4][3];
++    float scale;
++    float radius;
++    float uvs[3][3];
++    int damage;
++    float v1[3];
++
++    for (shot = gShotList.head; shot; shot = nexts) {
++        nexts = (tShotInfoDC *)shot->next;
++        if (shot->type == 3) {
++            car = &gGameCar[shot->slot];
++            m = &model[shot->slot];
++            if (shot->incTime == 0.0f) {
++                float x, y, z;
++                shot->pos[0] = car->dr_pos[0];
++                shot->pos[1] = car->dr_pos[1];
++                shot->pos[2] = car->dr_pos[2];
++                x = ShotOffsets[3][0] + weaponOffsets[3][m->body_type][0];
++                y = ShotOffsets[3][1] + weaponOffsets[3][m->body_type][1];
++                z = ShotOffsets[3][2] + weaponOffsets[3][m->body_type][2];
++                shot->pos[0] += car->dr_uvs[2][0]*z;
++                shot->pos[1] += car->dr_uvs[2][1]*z;
++                shot->pos[2] += car->dr_uvs[2][2]*z;
++                shot->pos[0] += car->dr_uvs[1][0]*y;
++                shot->pos[1] += car->dr_uvs[1][1]*y;
++                shot->pos[2] += car->dr_uvs[1][2]*y;
++                shot->pos[0] += car->dr_uvs[0][0]*x;
++                shot->pos[1] += car->dr_uvs[0][1]*x;
++                shot->pos[2] += car->dr_uvs[0][2]*x;
++                CopyUV(car->dr_uvs, shot->uvs);
++                PitchUV(2.073451280593872f, shot->uvs);
++                if (SHOT_LOADED(car) == 1) {
++                    if (car->battle.weapon.type != 3 || m->crashflag || !car->collidable || car->dead) {
++                        SHOT_LOADED(car) = 0;
++                        FreeStatLLE(&gShotList, shot);
++                        continue;
++                    }
++                    SHOT_LOADED(car) = 2;
++                    if (!shot->obj) {
++                        clr = SHOT_IRCLR(car);
++                        if (car->battle.defense.active & 1) {
++                            clr.c[3] = car->battle.fadeAlpha;
++                            if (clr.c[3] < 48)
++                                clr.c[3] = 48;
++                        }
++                        shot->obj = _CreateShotObject(4, -1, 0x2000, 0);
++                        ZOID_SetColor(((tShotDC *)shot->obj)->mbIdx, &clr);
++                        shot->obj2 = _CreateShotObject(5, ((tShotDC *)shot->obj)->mbIdx, 0x2080, 1);
++                        h = (tShotHitPolyDC *)shot->obj2;
++                        ZOID_SetColor(((tShotDC *)h)->mbIdx, &clr);
++                        ZOID_SetTexture(((tShotDC *)h)->mbIdx,
++                            (tTexture *)&gTexDefPtrs[gMineTextures[gCarTeam[shot->slot]] >> 10].texDefs[gMineTextures[gCarTeam[shot->slot]] & 1023], -1);
++                    }
++                    shot->radius = 0.0f;
++                }
++                if (SHOT_LOADED(car) == 2) {
++                    if (car->battle.weapon.type != 3 || m->crashflag || !car->collidable || car->dead) {
++                        SHOT_LOADED(car) = 0;
++                        ShotDone(shot);
++                        FreeStatLLE(&gShotList, shot);
++                        continue;
++                    }
++                    o = shot->obj;
++                    o->mat.mat3.pos[0] = shot->pos[0];
++                    o->mat.mat3.pos[1] = shot->pos[1];
++                    o->mat.mat3.pos[2] = shot->pos[2];
++                    CopyUV(shot->uvs, o->mat.mat3.uvs);
++                    clr = SHOT_IRCLR(car);
++                    if (car->battle.defense.active & 1) {
++                        clr.c[3] = car->battle.fadeAlpha;
++                        if (clr.c[3] < 48)
++                            clr.c[3] = 48;
++                    }
++                    ZOID_SetColor(((tShotDC *)shot->obj)->mbIdx, &clr);
++                    ZOID_SetColor(((tShotDC *)shot->obj2)->mbIdx, &clr);
++                    if (car->player && (car->player->edges & car->player->controls[7])) {
++                        clr.c[3] = 255;
++                        ZOID_SetColor(((tShotDC *)shot->obj)->mbIdx, &clr);
++                        ZOID_SetColor(((tShotDC *)shot->obj2)->mbIdx, &clr);
++                        if (car->battle.weapon.ammoCnt > 0)
++                            car->battle.weapon.ammoCnt--;
++                        car->battle.shoot = 6;
++                        PlayGameSound(sWeaponFx[3], shot->slot, 1, 1);
++                        car->battle.reloadingTime = 1.0f;
++                        shot->vel[0] = car->dr_vel[0] + 15.0f*shot->uvs[1][0];
++                        shot->vel[1] = car->dr_vel[1] + 15.0f*shot->uvs[1][1];
++                        shot->vel[2] = car->dr_vel[2] + 15.0f*shot->uvs[1][2];
++                        SHOT_LOADED(car) = 0;
++                        shot->lifeTime = 5.0f;
++                    } else {
++                        o = shot->obj;
++                        ScaleUV(o->mat.mat3.uvs, o->mat.mat3.uvs, 0.5f);
++                        continue;
++                    }
++                }
++            }
++        }
++        shot->lifeTime -= gFrameSeconds;
++        shot->incTime += gFrameSeconds;
++        if (shot->lifeTime <= 0.0f) {
++            ShotDone(shot);
++            FreeStatLLE(&gShotList, shot);
++            continue;
++        }
++        car = &gGameCar[shot->slot];
++        old[0] = shot->pos[0];
++        old[1] = shot->pos[1];
++        old[2] = shot->pos[2];
++        radius = shot->radius;
++        switch (shot->type) {
++        case 3:
++            vel = gFrameSeconds;
++            damage = 960;
++            scale = 10.0f;
++            shot->vel[1] -= gGravity*gFrameSeconds;
++            shot->vel[0] *= 0.8999999761581421f;
++            shot->vel[2] *= 0.8999999761581421f;
++            shot->pos[0] = old[0] + shot->vel[0]*gFrameSeconds;
++            shot->pos[1] = old[1] + shot->vel[1]*gFrameSeconds;
++            shot->pos[2] = old[2] + shot->vel[2]*gFrameSeconds;
++            break;
++        case 2:
++            damage = 800;
++            shot->vel[1] -= 2.5f*(gGravity*gFrameSeconds);
++            radius = 0.5f;
++            scale = 10.0f;
++            shot->pos[0] = old[0] + shot->vel[0]*gFrameSeconds;
++            shot->pos[1] = old[1] + shot->vel[1]*gFrameSeconds;
++            shot->pos[2] = old[2] + shot->vel[2]*gFrameSeconds;
++            break;
++        case 4:
++            scale = 12.0f;
++            damage = 960;
++            MissileLock(shot);
++            shot->vel[2] += (100.0f - shot->vel[2])*gFrameSeconds;
++            vel = shot->vel[2]*gFrameSeconds;
++            goto straightShot;
++        case 6:
++            damage = 520;
++            shot->vel[0] += shot->uvs[2][0]*(800.0f*gFrameSeconds);
++            shot->vel[1] += shot->uvs[2][1]*(800.0f*gFrameSeconds);
++            shot->vel[2] += shot->uvs[2][2]*(800.0f*gFrameSeconds);
++            scale = 8.0f;
++            shot->pos[0] = old[0] + shot->vel[0]*gFrameSeconds;
++            shot->pos[1] = old[1] + shot->vel[1]*gFrameSeconds;
++            shot->pos[2] = old[2] + shot->vel[2]*gFrameSeconds;
++            break;
++        case 0:
++            damage = 400;
++            vel = 1000.0f*gFrameSeconds;
++            scale = 10.0f;
++            goto straightShot;
++        case 1:
++            damage = 114;
++            vel = 2000.0f*gFrameSeconds;
++            scale = 3.0f;
++            goto straightShot;
++        case 7:
++            damage = 66;
++            break;
++        case 8:
++        default:
++            damage = 80;
++            vel = 2000.0f*gFrameSeconds;
++            scale = 3.0f;
++straightShot:
++            shot->pos[0] = old[0] + shot->uvs[2][0]*vel;
++            shot->pos[1] = old[1] + shot->uvs[2][1]*vel;
++            shot->pos[2] = old[2] + shot->uvs[2][2]*vel;
++            break;
++        }
++        if (shot->streak) {
++            shot->streak->flags |= 0x10;
++            shot->streak->newpos[0] = shot->pos[0];
++            shot->streak->newpos[1] = shot->pos[1];
++            shot->streak->newpos[2] = shot->pos[2];
++        }
++        if (shot->type != 7) {
++            if (shot->type == 4 || shot->type == 6)
++                hit = ShotToCarCollision(shot, shot->old);
++            else
++                hit = ShotToCarCollision(shot, old);
++            if (hit)
++                shot->flags |= 0x80;
++            if (ShotToWorldCollision(old, shot->pos, uvs, radius, 0, 65535)) {
++                shot->flags |= 0x80;
++                switch (shot->type) {
++                case 3:
++                    if (shot->flags & 2) {
++                        if (fabs(shot->vel[0]) < 10.0 && fabs(shot->vel[2]) < 10.0) {
++                            shot->lifeTime = 1.0000000116860974e-07f;
++                            SetupTarget("WPR_MINE", -2, shot->pos, 0, shot->slot, 1, 0);
++                        } else {
++                            BodyVector(shot->vel, v1, uvs);
++                            v1[1] = 0.4000000059604645f*-v1[1];
++                            WorldVector(v1, shot->vel, uvs);
++                        }
++                    } else {
++                        shot->flags |= 2;
++                        BodyVector(shot->vel, v1, uvs);
++                        v1[1] = 15.0f;
++                        WorldVector(v1, shot->vel, uvs);
++                    }
++                    break;
++                case 4: case 6:
++                    ProximityDamage(shot->pos, shot->old, shot->slot, 900.0f, damage);
++                    StartBlast(shot->pos, 0, 0.5f, 1);
++                    shot->lifeTime = 1.0000000116860974e-07f;
++                    if (shot->streak)
++                        shot->streak->flags |= 0x1000;
++                    break;
++                case 2:
++                    if (hit || shot->lifeTime <= gFrameSeconds)
++                        goto carHit;
++                    BodyVector(shot->vel, v1, uvs);
++                    v1[1] = 0.8999999761581421f*-v1[1];
++                    WorldVector(v1, shot->vel, uvs);
++                    EmitGameSound(shot->pos, gShotSoundDirection, 400.0f, 0.0f, 1.0f, 0.0f, 21.0f + Random(3.0f), shot->slot, 0, 0x80);
++                    break;
++                default:
++wallHit:
++                    shot->lifeTime = 1.0000000116860974e-07f;
++                    {
++                        float side[3];
++                        side[0] = shot->uvs[0][0]*scale;
++                        side[1] = shot->uvs[0][1]*scale;
++                        side[2] = shot->uvs[0][2]*scale;
++                        v1[0] = shot->uvs[1][0]*scale;
++                        v1[1] = shot->uvs[1][1]*scale;
++                        v1[2] = shot->uvs[1][2]*scale;
++                        verts[0][0] = shot->pos[0] - side[0];
++                        verts[0][1] = shot->pos[1] - side[1];
++                        verts[0][2] = shot->pos[2] - side[2];
++                        verts[1][0] = shot->pos[0] + side[0];
++                        verts[1][1] = shot->pos[1] + side[1];
++                        verts[1][2] = shot->pos[2] + side[2];
++                        verts[2][0] = shot->pos[0] + side[0];
++                        verts[2][1] = shot->pos[1] + side[1];
++                        verts[2][2] = shot->pos[2] + side[2];
++                        verts[3][0] = shot->pos[0] - side[0];
++                        verts[3][1] = shot->pos[1] - side[1];
++                        verts[3][2] = shot->pos[2] - side[2];
++                        verts[0][0] -= v1[0];
++                        verts[0][1] -= v1[1];
++                        verts[0][2] -= v1[2];
++                        verts[1][0] -= v1[0];
++                        verts[1][1] -= v1[1];
++                        verts[1][2] -= v1[2];
++                        verts[2][0] += v1[0];
++                        verts[2][1] += v1[1];
++                        verts[2][2] += v1[2];
++                        verts[3][0] += v1[0];
++                        verts[3][1] += v1[1];
++                        verts[3][2] += v1[2];
++                    }
++                    if (!wallTidx)
++                        MBOX_FindTexture_WORK("HIT_WALL", &wallTidx, 0, gNumModels-1, 1);
++                    h = GetStatLLE(&gHitPolyList);
++                    h->poly = ZOID_NewPoly(4, verts, wallTidx, &hitColor, 0x20f, 1);
++                    if (!h->poly)
++                        FreeStatLLE(&gHitPolyList, h);
++                    break;
++                }
++            } else if (hit) {
++carHit:
++                shot->lifeTime = 1.0000000116860974e-07f;
++                if (shot->type == 2 || shot->type == 4 || shot->type == 6) {
++                    if (shot->streak)
++                        shot->streak->flags |= 0x1000;
++                    if (shot->type == 4 || shot->type == 6)
++                        ProximityDamage(shot->pos, shot->old, shot->slot, 900.0f, damage);
++                    else
++                        ProximityDamage(shot->pos, old, shot->slot, 900.0f, damage);
++                    StartBlast(shot->pos, 0, 0.5f, 1);
++                } else {
++                    if (shot->flags & 1)
++                        damage *= 0.3499999940395355f;
++                    BattleDamage(car, hit, damage);
++                    goto wallHit;
++                }
++            } else if (shot->lifeTime <= gFrameSeconds) {
++                if (shot->type == 2 || shot->type == 4 || shot->type == 6) {
++                    if (shot->type == 4 || shot->type == 6)
++                        ProximityDamage(shot->pos, shot->old, shot->slot, 900.0f, damage);
++                    else
++                        ProximityDamage(shot->pos, old, shot->slot, 900.0f, damage);
++                    StartBlast(shot->pos, 0, 0.5f, 1);
++                    if (shot->streak)
++                        shot->streak->flags |= 0x1000;
++                    shot->lifeTime = 1.0000000116860974e-07f;
++                }
++            }
++        } else if (shot->obj) {
++            SonicCarCollision(shot);
++            ((tShotDC *)shot->obj)->mat.mat3.pos[0] = car->dr_pos[0];
++            ((tShotDC *)shot->obj)->mat.mat3.pos[1] = car->dr_pos[1];
++            ((tShotDC *)shot->obj)->mat.mat3.pos[2] = car->dr_pos[2];
++            if (shot->incTime >= 0.03333330154418945f) {
++                shot->incTime -= 0.03333330154418945f;
++                ObjInstanceList[((tShotDC *)shot->obj)->mbIdx].scale += 1.0f;
++                ((tShotDC *)shot->obj)->mat.mat3.uvs[0][0] = ObjInstanceList[((tShotDC *)shot->obj)->mbIdx].scale;
++                ((tShotDC *)shot->obj)->mat.mat3.uvs[1][1] = ObjInstanceList[((tShotDC *)shot->obj)->mbIdx].scale;
++                ((tShotDC *)shot->obj)->mat.mat3.uvs[2][2] = ObjInstanceList[((tShotDC *)shot->obj)->mbIdx].scale;
++            }
++        }
++        if (!(shot->flags & 0x70)) {
++            shot->old[0] = old[0];
++            shot->old[1] = old[1];
++            shot->old[2] = old[2];
++        }
++        switch (shot->type) {
++        case 0:
++            if (!shot->obj)
++                shot->obj = _CreateShotObject(2, -1, 0, 0);
++            _UpdateShotObject(shot, 0);
++            break;
++        case 2:
++            if (!shot->obj)
++                shot->obj = _CreateShotObject(3, -1, 0, 0);
++            _UpdateShotObject(shot, 0);
++            break;
++        case 3:
++            _UpdateShotObject(shot, 2);
++            break;
++        case 4:
++            if (!shot->obj)
++                shot->obj = _CreateShotObject(7, -1, 0, 0);
++            _UpdateShotObject(shot, 0);
++            break;
++        case 6:
++            if (!shot->obj)
++                shot->obj = _CreateShotObject(8, -1, 0, 0);
++            _UpdateShotObject(shot, 0);
++            break;
++        case 7:
++            if (!shot->obj) {
++                shot->obj = _CreateShotObject(9, -1, 0x800000, 0);
++                _UpdateShotObject(shot, 1);
++            }
++            break;
++        case 1: case 8:
++            if (!shot->obj)
++                shot->obj = _CreateShotObject(1, -1, 0, 0);
++            _UpdateShotObject(shot, 0);
++            break;
++        }
++        if (shot->flags & 0x10) {
++            shot->flags &= ~0x10;
++            shot->flags |= 0x20;
++        } else if (shot->flags & 0x20) {
++            shot->flags &= ~0x20;
++            shot->flags |= 0x40;
++        } else if (shot->flags & 0x40) {
++            shot->flags &= ~0x40;
++        }
++    }
++}
++
++void ShotUpdate(void)
++{
++    int i;
++    int StartStreak;
++    int streaktype;
++    tShotInfoDC *shot;
++    tShotCaseDC *h;
++    tShotHitPolyDC *hp, *nexth;
++    anon_active_invsTime_10 *defense;
++    tCarData *car;
++    tModelData *m;
++    tShotCollSizeR6 *sizep;
++
++    AnimateCase();
++    for (i = 0, car = gGameCar; i < gNumCars; i++, car++) {
++        m = &model[car->slot];
++        defense = &car->battle.defense;
++        if (defense->active)
++            UpdateDefense(car, m, defense, car->slot);
++        switch (car->battle.weapon.type) {
++        case 0: case 1: case 6: case 8:
++            ElevateGun(car);
++            break;
++        }
++        if (car->player->edges & car->player->controls[6])
++            goto resetWeapon;
++        if (!car->battle.weapon.ammoCnt) {
++            if (car->battle.weapon.type == 5) {
++                float z;
++                sizep = &collsize[m->body_type];
++                m->bodyR[0][2] = m->bodyR[1][2] = sizep->colfront;
++                z = m->bodyR[0][2] > sizep->colrear ? m->bodyR[0][2] : sizep->colrear;
++                m->colrad = sqrtf(z*z + sizep->colside*sizep->colside + sizep->colheight*sizep->colheight);
++            }
++resetWeapon:
++            car->battle.weapon.type = 8;
++            car->battle.weapon.ammoCnt = -1;
++            SHOT_PITCH(car) = 0.0f;
++            SHOT_YAW(car) = 0.0f;
++        }
++        if (car->battle.reloadingTime > 0.0f)
++            car->battle.reloadingTime -= gFrameSeconds;
++        if (car->battle.reloadingTime <= 0.0f && car->battle.weapon.ammoCnt) {
++            if (car->battle.weapon.type == 3) {
++                if (SHOT_LOADED(car))
++                    continue;
++                SHOT_LOADED(car) = 1;
++            } else {
++                if (!car->player || car->battle.weapon.type == 5 ||
++                    (!(car->player->edges & car->player->controls[7]) &&
++                     (car->battle.weapon.type != 1 || !(car->player->levels & car->player->controls[7]))) ||
++                    m->crashflag || !car->collidable || car->dead)
++                    continue;
++                car->battle.shoot = 6;
++            }
++            shot = GetStatLLE(&gShotList);
++            if (!shot)
++                continue;
++            _InitNewShot(shot, car);
++            if (shot->type != 3)
++                PlayGameSound(sWeaponFx[car->battle.weapon.type], car->slot, 1, 1);
++            StartStreak = 0;
++            switch (shot->type) {
++            case 2:
++                StartStreak = 1;
++                streaktype = 1;
++                PitchUV(0.5f, shot->uvs);
++                car->battle.reloadingTime = 0.16666670143604279f;
++                shot->lifeTime = 3.1666667461395264f;
++                shot->radius = 15.0f;
++                shot->vel[0] = car->dr_vel[0] + 75.0f*shot->uvs[2][0];
++                shot->vel[1] = car->dr_vel[1] + 75.0f*shot->uvs[2][1];
++                shot->vel[2] = car->dr_vel[2] + 75.0f*shot->uvs[2][2];
++                break;
++            case 4:
++                StartStreak = 1;
++                streaktype = 0;
++                car->battle.reloadingTime = 1.0f;
++                shot->lifeTime = 15.0f;
++                shot->radius = 2.0f;
++                shot->vel[2] = 165.0f + (car->dr_vel[0]*shot->uvs[2][0] + car->dr_vel[1]*shot->uvs[2][1] + car->dr_vel[2]*shot->uvs[2][2]);
++                break;
++            case 6:
++                StartStreak = 1;
++                streaktype = 2;
++                car->battle.reloadingTime = 0.16666670143604279f;
++                shot->lifeTime = 10.0f;
++                shot->radius = 1.0f;
++                PitchUV(SHOT_PITCH(car), shot->uvs);
++                shot->vel[0] = car->dr_vel[0] + 50.0f*shot->uvs[2][0];
++                shot->vel[1] = car->dr_vel[1] + 50.0f*shot->uvs[2][1];
++                shot->vel[2] = car->dr_vel[2] + 50.0f*shot->uvs[2][2];
++                break;
++            case 8:
++                car->battle.reloadingTime = 0.16666670143604279f;
++                shot->lifeTime = 4.0f;
++                shot->radius = 0.5f;
++                YawUV(-SHOT_YAW(car), shot->uvs);
++                PitchUV(SHOT_PITCH(car), shot->uvs);
++                break;
++            case 0:
++                car->battle.reloadingTime = 0.16666670143604279f;
++                shot->lifeTime = 4.0f;
++                shot->radius = 0.5f;
++                PitchUV(SHOT_PITCH(car), shot->uvs);
++                break;
++            case 1:
++                car->battle.reloadingTime = 0.06666669994592667f;
++                shot->lifeTime = 4.0f;
++                shot->radius = 0.25f;
++                YawUV(Random(0.02500000037252903f) - 0.012500000186264515f - SHOT_YAW(car), shot->uvs);
++                PitchUV(SHOT_PITCH(car) + (Random(0.02500000037252903f) - 0.012500000186264515f), shot->uvs);
++                h = GetStatLLE(&gShotCaseList);
++                if (h) {
++                    float x = weaponOffsets[1][m->body_type][0] + CaseOffsets[0][0];
++                    float y = weaponOffsets[1][m->body_type][1] + CaseOffsets[0][1];
++                    float z = weaponOffsets[1][m->body_type][2] + CaseOffsets[0][2];
++                    h->mat.mat3.pos[0] = shot->pos[0] + car->dr_uvs[2][0]*z;
++                    h->mat.mat3.pos[1] = shot->pos[1] + car->dr_uvs[2][1]*z;
++                    h->mat.mat3.pos[2] = shot->pos[2] + car->dr_uvs[2][2]*z;
++                    h->mat.mat3.pos[0] += car->dr_uvs[1][0]*y;
++                    h->mat.mat3.pos[1] += car->dr_uvs[1][1]*y;
++                    h->mat.mat3.pos[2] += car->dr_uvs[1][2]*y;
++                    h->mat.mat3.pos[0] += car->dr_uvs[0][0]*x;
++                    h->mat.mat3.pos[1] += car->dr_uvs[0][1]*x;
++                    h->mat.mat3.pos[2] += car->dr_uvs[0][2]*x;
++                    CopyUV(car->dr_uvs, h->mat.mat3.uvs);
++                    RollUV(0.30000001192092896f + Random(0.23000000417232513f), h->mat.mat3.uvs);
++                    h->mbIdx = MBOX_NewObject(gWprObjList[0], &h->mat, -1, 0);
++                    h->time = 0.5f + Random(0.30000001192092896f);
++                    h->vel[0] = car->dr_vel[0] + 28.0f*h->mat.mat3.uvs[1][0];
++                    h->vel[1] = car->dr_vel[1] + 28.0f*h->mat.mat3.uvs[1][1];
++                    h->vel[2] = car->dr_vel[2] + 28.0f*h->mat.mat3.uvs[1][2];
++                    h->vel[2] *= 0.8799999952316284f;
++                    h->vel[1] *= 0.8799999952316284f;
++                    h->vel[0] *= 0.8799999952316284f;
++                }
++                break;
++            case 7:
++                car->battle.reloadingTime = 1.0f;
++                shot->lifeTime = 1.0f;
++                shot->radius = 2.0f;
++                break;
++            }
++            {
++                float x, y, z;
++                if (car->battle.weapon.type >= 8) {
++                    x = ShotOffsets[car->battle.weapon.type][0];
++                    y = ShotOffsets[car->battle.weapon.type][1];
++                    z = ShotOffsets[car->battle.weapon.type][2];
++                } else {
++                    x = ShotOffsets[car->battle.weapon.type][0] + weaponOffsets[car->battle.weapon.type][m->body_type][0];
++                    y = ShotOffsets[car->battle.weapon.type][1] + weaponOffsets[car->battle.weapon.type][m->body_type][1];
++                    z = ShotOffsets[car->battle.weapon.type][2] + weaponOffsets[car->battle.weapon.type][m->body_type][2];
++                }
++                shot->pos[0] += car->dr_uvs[2][0]*z;
++                shot->pos[1] += car->dr_uvs[2][1]*z;
++                shot->pos[2] += car->dr_uvs[2][2]*z;
++                shot->pos[0] += car->dr_uvs[1][0]*y;
++                shot->pos[1] += car->dr_uvs[1][1]*y;
++                shot->pos[2] += car->dr_uvs[1][2]*y;
++                shot->pos[0] += car->dr_uvs[0][0]*x;
++                shot->pos[1] += car->dr_uvs[0][1]*x;
++                shot->pos[2] += car->dr_uvs[0][2]*x;
++            }
++            if (StartStreak)
++                /* Preserve the original call's extra position argument, unused by NewStreak. */
++                shot->streak = ((tStreak *(*)(int, float *, float *))NewStreak)(streaktype, shot->pos, shot->pos);
++            else
++                shot->streak = 0;
++            if (car->battle.weapon.ammoCnt > 0 && car->battle.weapon.type != 5 && car->battle.weapon.type != 3)
++                car->battle.weapon.ammoCnt--;
++        }
++    }
++    for (hp = gHitPolyList.head; hp; hp = nexth) {
++        nexth = (tShotHitPolyDC *)hp->next;
++        ZOID_RemovePoly(hp->poly);
++        FreeStatLLE(&gHitPolyList, hp);
++    }
++    UpdateShots();
++    UpdateStreaks();
++}
+diff --git a/src/startscr.c b/src/startscr.c
+index 567d1d1..38ef9e2 100644
+--- a/src/startscr.c
++++ b/src/startscr.c
+@@ -186,6 +186,7 @@ int animText(void)
+ {
+     int i;
+     float y;
++    register float shadowOffset = 1.0f;
+     unsigned char str[40];
+     int numX, playerNumIdx;
+     if (buttonsInited == 1) {
+@@ -219,7 +220,7 @@ int animText(void)
+                             HAL_SetTextColor(64, 64, 64, 255);
+                     } else if (playerNumIdx == gNumPlayers - 1) {
+                         HAL_SetTextColor(0, 0, 0, 255);
+-                        TB_DrawText(numX + 1, y + 1.0f, str);
++                        TB_DrawText(numX + 1, y + shadowOffset, str);
+                         HAL_SetTextColor(224, 224, 224, 255);
+                     } else
+                         HAL_SetTextColor(64, 64, 64, 255);
+@@ -241,6 +242,7 @@ void animButtonText(void)
+ {
+     int i, x;
+     float y;
++    register float skipAngle = 0.6981316804885864f;
+     unsigned char str[40];
+     signed short screenPos[2];
+     int playerNumIdx;
+@@ -255,7 +257,7 @@ void animButtonText(void)
+     HAL_SetFont(10);
+     for (i = 0; i < 10; i++)
+         if (optionValid(i)) {
+-            if (buttonInfo[i].angle > 0.6981317f && buttonInfo[i].angle < 2.443461f)
++            if (buttonInfo[i].angle > skipAngle && buttonInfo[i].angle < 2.443461f)
+                 continue;
+             if (buttonInfo[i].angle > 0.34906585f && buttonInfo[i].angle < 2.7925268f)
+                 HAL_SetTextTranslucency(128.0f);
+@@ -465,8 +467,8 @@ void updateButtons(void)
+     WPitchUV(1.5707964f, buttonInfo[16].mat.uvs);
+     memcpy(prevPos, buttonInfo[17].mat.uvs[3], 12);
+     buttonInfo[17].mat.uvs[3][0] = buttonX * cursorZ / buttonZ + (72.0f + 22.5f * gNumPlayers) * gButtonScale;
+-    buttonInfo[17].mat.uvs[3][2] = cursorZ;
+     buttonInfo[17].mat.uvs[3][1] = maxY * cursorZ / buttonZ;
++    buttonInfo[17].mat.uvs[3][2] = cursorZ;
+     if (!buttonsJustInited) {
+         if (60.0 * fabs(buttonInfo[17].mat.uvs[3][0] - prevPos[0]) / 10.0 > playerCursorSpeed) {
+             playerCursorSpeed = 60.0 * fabs(buttonInfo[17].mat.uvs[3][0] - prevPos[0]) / 10.0;
+diff --git a/src/stree.c b/src/stree.c
+index 7d6fd6a..e854521 100644
+--- a/src/stree.c
++++ b/src/stree.c
+@@ -488,8 +488,7 @@ void fHalfPipeInterp(surftyp *sp, unsigned short pathIndex, float *ipos, float *
+ /* floor helper written as an inline function (no DWARF entry): it reproduces the original truncate-and-adjust code at each call */
+ static float floorpos(float f)
+ {
+-    if ((f < 0.0f && (int)f != f) != 0) f -= 1.0f;
+-    return f;
++    return f < 0.0f && (int)f != f ? f + -1.0f : f;
+ }
+ 
+ /* 0x80045520 */
+@@ -1080,7 +1079,8 @@ void CollideCarBodyAgainstSurface(tModelData *m, surftyp *sp, anon_surf_uvs_30 *
+         cand *= dy;
+         if (cand < 0.0f) cand = -cand;
+         if (cand > crossY) {
+-            if (-y1 / y2 < 1.0f) k = i;
++            a = -y1 / y2;
++                if (a < 1.0f) k = i;
+             else k = j;
+             coord[0] = m->bodyrwr[tireIndex[k]][0] - m->bodyrwr2[tireIndex[k]][0];
+             coord[1] = m->bodyrwr[tireIndex[k]][1] - m->bodyrwr2[tireIndex[k]][1];
+diff --git a/src/targets.c b/src/targets.c
+index 4a1149f..91258e6 100644
+--- a/src/targets.c
++++ b/src/targets.c
+@@ -304,10 +304,8 @@ int SetupTarget(void * obj, signed short Parent, float *pos, int fromWorld, sign
+         name = obj;
+         dlflags = 0;
+     }
+-    i = 0;
+-    goto testTargetName;
+-matchTargetName:
+-    if (strncmp(name, targetInfo[i].name, strlen(targetInfo[i].name))) goto nextTargetName;
++    for (i = 0; (unsigned int)i < sizeof(targetInfo) / sizeof(targetInfo[0]); i++) {
++    if (strncmp(name, targetInfo[i].name, strlen(targetInfo[i].name))) continue;
+     {
+             tInfo = &targetInfo[i];
+             if (gRace == kGhost && tInfo->collFuncIdx == 4 && col) return 1;
+@@ -442,10 +440,7 @@ matchTargetName:
+             }
+             return 1;
+     }
+-nextTargetName:
+-    i++;
+-testTargetName:
+-    if ((unsigned int)i < sizeof(targetInfo) / sizeof(targetInfo[0])) goto matchTargetName;
++}
+     return 0;
+ }
+ 
+@@ -561,11 +556,12 @@ void SetTargetDefs(void)
+     if (gTargetPaths.count) {
+         pos[0] = pos[1] = pos[2] = 0.0f;
+         for (i = 0; i < gTargetPaths.count; i++) {
+-            if (gRace == kGhost && gTargetPaths.paths[i].collIdx > 0) {
+-                for (j = 0; j < gTargetPaths.paths[i].numPts; j++) {
+-                    if (gTargetPaths.paths[i].pts[j].flags & 0x01000000) goto normal;
++            tBasicTargetPath *pathInfo = &gTargetPaths.paths[i];
++            if (gRace == kGhost && pathInfo->collIdx > 0) {
++                for (j = 0; j < pathInfo->numPts; j++) {
++                    if (pathInfo->pts[j].flags & 0x01000000) goto normal;
+                 }
+-                if (gTargetPaths.paths[i].collIdx > 0) RemoveCollisionObject(gTargetPaths.paths[i].collIdx);
++                if (pathInfo->collIdx > 0) RemoveCollisionObject(pathInfo->collIdx);
+                 continue;
+             }
+         normal:
+@@ -580,12 +576,12 @@ void SetTargetDefs(void)
+                 if ((fw && (flags & 8)) || (gBackwards && (flags & 8)) || (!gBackwards && fw)) {
+                     vis = _NB(flags, 15);
+                     col = _NB(flags, 4);
+-                    for (j = 0; j < gTargetPaths.paths[i].numPts; j++) {
+-                        if (Restarting) gTargetPaths.paths[i].pts[j].flags &= ~0x1000;
+-                        if (gTargetPaths.paths[i].pts[j].flags & 1)
++                    for (j = 0; j < pathInfo->numPts; j++) {
++                        if (Restarting) pathInfo->pts[j].flags &= ~0x1000;
++                        if (pathInfo->pts[j].flags & 1)
+                             SetupTarget(&gTargetPaths.paths[i], -1, pos, 0, i, vis, col);
+                     }
+-                    if (Restarting && gTargetPaths.paths[i].collIdx > 0) ResetCollisionObject(gTargetPaths.paths[i].collIdx);
++                    if (Restarting && pathInfo->collIdx > 0) ResetCollisionObject(pathInfo->collIdx);
+                 } else if (flags & 0x800) {
+                     RemoveCollisionObject(p->collIdx);
+                 }
+@@ -648,7 +644,7 @@ void CheckTargetCollision(signed short slot)
+     float mh; /* f3 */
+     tTargetInfo *tInfo; /* r27 */
+     tTargetGroup *tg; /* r30 */
+-    int currentG; /* r0 */
++    int currentG = 0; /* r0 */
+     int i; /* r29 */
+     tCarData *gc; /* r29 */
+     int infoindex; /* r0 */
+@@ -670,7 +666,6 @@ void CheckTargetCollision(signed short slot)
+     }
+     x = gc->dr_pos[0];
+     z = gc->dr_pos[2];
+-    currentG = 0;
+     for (;;) {
+         tg = &gTargetGroups[currentG];
+         if (x >= tg->minh && x < tg->maxh && z >= tg->minv && z < tg->maxv) {
+@@ -747,7 +742,8 @@ int _TargetCollBBox(void * data1, void * data2)
+     float posr[3]; /* stack */
+     float dsq; /* f5 */
+     int i; /* r28 */
+-    m = &model[*(signed short *)data2];
++    register signed short slot = *(signed short *)data2;
++    m = &model[slot];
+     tm = &gBBoxModelStructs[((tTarget *)data1)->owner];
+     if (!m->collidable) return 0;
+     dsq = 0.0f;
+@@ -776,7 +772,7 @@ int _TargetCollTrigger(void * data1, void * data2)
+ {
+     tTarget *t; /* r0 */
+     signed short slot; /* r4 */
+-    tModelData *m; /* r8 */
++    register tModelData *m; /* target model base lifetime */
+     tBasicTargetPath *pPtr; /* r3 */
+     int surfNum; /* r7 */
+     unsigned short ts1; /* r10 */
+@@ -891,7 +887,7 @@ int _TargetColl3Piece(void)
+ /* 0x8004d2c0, size 0x168 */
+ void _StartMine(tTarget *t)
+ {
+-    tCarData *gh; /* r30 */
++    register tCarData *gh; /* target saved pointer */
+     float pos[3]; /* stack */
+     float pos2[3]; /* stack */
+     if (model[t->slot].crashflag) return;
+@@ -925,10 +921,7 @@ void _AnimateMine(tVisual *v, signed short op)
+     float oldT; /* f1 */
+     tAlwaysCol *acol; /* r4 */
+     tAlwaysCol *acolnext; /* r27 */
+-    if (!op) {
+-        ReleaseEnviron(v, 1);
+-        return;
+-    }
++    if (op) {
+     if (gPauseState != kNoPause) return;
+     t = (tTarget *)v->data;
+     m = t->data;
+@@ -1069,8 +1062,9 @@ void _AnimateMine(tVisual *v, signed short op)
+         ZOID_RemoveObject(t->dlIdx);
+         t->Flags = 0;
+         FreeStatLLE(&gTargetList, t);
+-        ReleaseEnviron(v, 1);
++    } else return;
+     }
++    ReleaseEnviron(v, 1);
+ }
+ 
+ /* mid-file definition at its DWARF position, after gMineRingColors in .rodata */
+@@ -1237,7 +1231,7 @@ void _AnimateWeaponIcon(tVisual *v, signed short op)
+         if (wep != -1) {
+             ok = 1;
+             for (i = 0; i < gNumPlayers; i++) {
+-                if (wep == gGameCar[i].battle.weapon.type) ok = 0;
++                if (gGameCar[i].battle.weapon.type == wep) ok = 0;
+             }
+             if (ok) {
+             show:
+@@ -1274,8 +1268,7 @@ void _AnimateFlag(tVisual *v, signed short op)
+             else clrIdx = 0;
+             tex = MBOX_FindTexture_WORK(flag_pals[clrIdx], &ind, 0, gNumModels - 1, 1);
+             ZOID_SetTexture(t->dlIdx, tex, -1);
+-            color = strstr(t->data, "_OFF");
+-            if (color) clrIdx = color[4] - '0';
++            if ((color = strstr(t->data, "_OFF")) != 0) clrIdx = color[4] - '0';
+             else clrIdx = 0;
+             v->index = clrIdx;
+             t->Flags |= 1;
+@@ -1294,8 +1287,7 @@ void _StartCactus(tTarget *t)
+     float vel[3]; /* stack */
+     tInfo = &targetInfo[t->infoIdx];
+     t->frames = 7;
+-    v = GrabEnvEntry();
+-    if (v) {
++    if ((v = GrabEnvEntry()) != 0) {
+         v->index = 0;
+         v->func = tInfo->animFunc;
+         v->data = (unsigned int)t;
+@@ -1318,8 +1310,7 @@ void _StartFence(tTarget *t)
+     tTargetInfo *tInfo; /* r31 */
+     tInfo = &targetInfo[t->infoIdx];
+     t->frames = 12;
+-    v = GrabEnvEntry();
+-    if (v) {
++    if ((v = GrabEnvEntry()) != 0) {
+         v->index = 0;
+         v->func = tInfo->animFunc;
+         v->data = (unsigned int)t;
+@@ -1338,8 +1329,7 @@ void _StartWindow(tTarget *t)
+     tCarData *car; /* r3 */
+     tInfo = &targetInfo[t->infoIdx];
+     t->frames = 7;
+-    v = GrabEnvEntry();
+-    if (v) {
++    if ((v = GrabEnvEntry()) != 0) {
+         v->index = 0;
+         v->func = tInfo->animFunc;
+         v->data = (unsigned int)t;
+@@ -1417,7 +1407,8 @@ void _StartCoin(tTarget *t)
+         FoundCoin(t->slot, c->whichcoin);
+         MBOX_HideObject(t->dlIdx, 1, 1 << gGameCar[t->slot].camera);
+         MBOX_HideObject(c->dlIdx, 1, 1 << gGameCar[t->slot].camera);
+-        c->cameras &= ~(1 << gGameCar[t->slot].camera);
++        { int camera = gGameCar[t->slot].camera;
++          c->cameras &= ~(1 << camera); }
+         if (!c->cameras) t->Flags |= 0x80;
+         PlayTargetSound(targetInfo[t->infoIdx].startSnd, t->slot, t->mat.mat3.pos, 2);
+     }
+@@ -1508,18 +1499,19 @@ void _AnimateVelRotGeneric(tVisual *v, signed short op)
+     float *vel; /* r0 */
+     float *angV; /* r0 */
+     float angVF[3]; /* stack */
++    float step = 0.150000005f;
+     if (!op) {
+         ReleaseEnviron(v, 1);
+     } else if (gPauseState == kNoPause) {
+         t = (tTarget *)v->data;
+         vel = ((tTargetStructVelRot *)t->data)->vel;
+         angV = ((tTargetStructVelRot *)t->data)->angV;
+-        vel[0] += 0.150000005f * gravity[0];
+-        t->mat.mat3.pos[0] += 0.150000005f * gravity[0] + vel[0];
+-        vel[1] += 0.150000005f * gravity[1];
+-        t->mat.mat3.pos[1] += 0.150000005f * gravity[1] + vel[1];
+-        vel[2] += 0.150000005f * gravity[2];
+-        t->mat.mat3.pos[2] += 0.150000005f * gravity[2] + vel[2];
++        vel[0] += step * gravity[0];
++        t->mat.mat3.pos[0] += step * gravity[0] + vel[0];
++        vel[1] += step * gravity[1];
++        t->mat.mat3.pos[1] += step * gravity[1] + vel[1];
++        vel[2] += step * gravity[2];
++        t->mat.mat3.pos[2] += step * gravity[2] + vel[2];
+         angVF[0] = angV[0] * gFrameSeconds;
+         angVF[1] = angV[1] * gFrameSeconds;
+         angVF[2] = angV[2] * gFrameSeconds;
+@@ -1575,7 +1567,8 @@ void _AnimateObjSwapGeneric(tVisual *v, signed short op)
+         }
+         v->index = 0;
+     }
+-    if (t->type != (type = t->otype + v->index)) {
++    type = t->otype + v->index;
++    if (type != t->type) {
+         ZOID_SetObjectDef(t->dlIdx, gObjList[type]);
+         t->type = type;
+     }
+@@ -1586,8 +1579,7 @@ void _StartKnockdown(tTarget *t)
+ {
+     tVisual *v; /* r31 */
+     tUVMatrix mat; /* stack */
+-    v = GrabEnvEntry();
+-    if (v) {
++    if ((v = GrabEnvEntry()) != 0) {
+         v->index = 0;
+         v->func = targetInfo[t->infoIdx].animFunc;
+         v->data = (unsigned int)t;
+diff --git a/src/unk_8C0260F0.c b/src/unk_8C0260F0.c
+new file mode 100644
+index 0000000..6abe51e
+--- /dev/null
++++ b/src/unk_8C0260F0.c
+@@ -0,0 +1,55 @@
++#include "packet_round6.h"
++
++/* Native packet rewrite. The preceding five mapped entries are not reconstructed. */
++void func_8C026104(int textureSet, int wide, unsigned int *packet)
++{
++    tPacketTexturesR6 *textures = &gTexDefPtrs[textureSet];
++    unsigned int *defaultContext = (unsigned int *)dcContextA;
++    for (;;) {
++        unsigned int kind = *packet & 0xe0000000;
++        if (kind == 0xe0000000) return;
++        switch (kind) {
++        case 0x80000000:
++            if (gBackwards && (*packet & 2)) packet[1] = 0;
++            else if (!gBackwards && (*packet & 1)) packet[1] = 0;
++            packet++;
++            break;
++        case 0xa0000000:
++            if ((signed short)*packet != -1) {
++                tPacketTextureR6 *tex = &textures->textures[(signed short)*packet];
++                unsigned int type = (*tex->context >> 24) & 7;
++                unsigned int mode;
++                if (type == 0) mode = 0;
++                else if (type == 2) mode = 1;
++                else mode = 2;
++                if (tex->flags & 0x20000) {
++                    *packet = (*packet & 0xff000000) | (mode << 16) | type | 0x1000300;
++                    packet++;
++                    *packet = (unsigned int)tex->inlineContext;
++                } else {
++                    *packet = (*packet & 0xff000000) | (mode << 16) | type | 0x300;
++                    packet++;
++                    *packet = (unsigned int)tex->context;
++                }
++            } else {
++                *packet &= 0xff000000;
++                packet++;
++                *packet = (unsigned int)defaultContext;
++            }
++            break;
++        case 0x20000000:
++        case 0:
++            {
++                unsigned int position = *packet & 0x10000000;
++                unsigned int uv = *packet & 0x08000000;
++                unsigned int color = *packet & 0x04000000;
++                if (!position) packet += 3;
++                if (!uv) packet += 2;
++                if (wide) { if (!color) packet += 3; }
++                else if (!color) packet++;
++            }
++            break;
++        }
++        packet++;
++    }
++}
+diff --git a/src/unk_8C0898D8.c b/src/unk_8C0898D8.c
+new file mode 100644
+index 0000000..914225f
+--- /dev/null
++++ b/src/unk_8C0898D8.c
+@@ -0,0 +1,310 @@
++#include "records_buttons_round6.h"
++/* Native backing state has no named map placement; do not allocate a duplicate. */
++#define screenEnabledR6 (*(int *)0x8C19FFBC)
++#define screenModeR6 (*(int *)0x8C1A0004)
++extern void func_8C0898FC(void),func_8C08A5A2(void);
++
++void func_8C0898D8(void)
++{
++    if (screenEnabledR6) {
++        switch (screenModeR6) {
++        case 0: func_8C0898FC(); break;
++        case 1: func_8C08A5A2(); break;
++        }
++    }
++}
++
++
++/* Semantic donor recordscr.c updateSelectButtons; native map identity retained. */
++void func_8C0898FC(void)
++{
++    int buttonIdx, i;
++        float prevPos[3];
++        signed char clearScrollSpeed = 1;
++        int gSelectMenuCount;
++        int whichItem;
++        float buttonY, selectedPos;
++        tTexture *tex;
++        unsigned short texIdx;
++        tRGBA buttonColor;
++        buttonColor.c[0] = ((unsigned char *)0x8C0B2717)[0];
++    buttonColor.c[1] = ((unsigned char *)0x8C0B2717)[1];
++    buttonColor.c[2] = ((unsigned char *)0x8C0B2717)[2];
++    buttonColor.c[3] = ((unsigned char *)0x8C0B2717)[3];
++    
++        if (gDeleteConfirm == 1 || gDeleteNotify == 1) {
++            for (buttonIdx = 0; buttonIdx < 23; buttonIdx++) {
++                if (buttonIdx == 17 || buttonIdx == 19 || buttonIdx == 21 || buttonIdx == 22)
++                    MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++                else MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++            }
++        } else {
++            for (buttonIdx = 0; buttonIdx < 23; buttonIdx++) {
++                if ((buttonIdx > 11 && buttonIdx < 13) || buttonIdx == 15 || buttonIdx == 16)
++                    MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++                else MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++            }
++            gSelectMenuCount = 0;
++            whichItem = 0;
++        for (i = 0; i < 11; i++) {
++            if (gSelectMenuVisible[i]) {
++                gSelectMenuCount++;
++                if (i < gSelectMenuSelect) whichItem++;
++            }
++        }
++        if (gButtonScale * ((gSelectMenuCount - 1) * gButtonSpace) > maxY - minY)
++            selectedPos = maxY - whichItem * (maxY - minY) / (gSelectMenuCount - 1);
++        else selectedPos = maxY - gButtonScale * (whichItem * gButtonSpace);
++        memcpy(prevPos, buttonInfo[18].mat.uvs[3], 12);
++        buttonInfo[18].angle += 6.2831855f * gFrameSeconds;
++        if (buttonInfo[18].angle > 6.2831855f) buttonInfo[18].angle -= 6.2831855f;
++        memcpy(buttonInfo[18].mat.uvs, unitmatrix, 36);
++        buttonInfo[18].mat.uvs[3][0] = buttonX * cursorZ / buttonZ + -165.0f * gButtonScale;
++        buttonInfo[18].mat.uvs[3][1] = selectedPos * cursorZ / buttonZ;
++        buttonInfo[18].mat.uvs[3][2] = cursorZ;
++        if (!buttonsJustInited) {
++            if (gButtonScale * (fabs(buttonInfo[18].mat.uvs[3][1] - prevPos[1]) * 60.0) / 10.0 > cursorSpeed) {
++                cursorSpeed = gButtonScale * (fabs(buttonInfo[18].mat.uvs[3][1] - prevPos[1]) * 60.0) / 10.0;
++                cursorSpeed = cursorSpeed < 540.0f * gButtonScale ? cursorSpeed : 540.0f * gButtonScale;
++                cursorSpeed = cursorSpeed > 180.0f * gButtonScale ? cursorSpeed : 180.0f * gButtonScale;
++            }
++            if (buttonInfo[18].mat.uvs[3][1] > prevPos[1] + cursorSpeed * gFrameSeconds)
++                buttonInfo[18].mat.uvs[3][1] = prevPos[1] + cursorSpeed * gFrameSeconds;
++            else if (buttonInfo[18].mat.uvs[3][1] < prevPos[1] - cursorSpeed * gFrameSeconds)
++                buttonInfo[18].mat.uvs[3][1] = prevPos[1] - cursorSpeed * gFrameSeconds;
++            else cursorSpeed = 180.0f * gButtonScale;
++        }
++        WRollUV(buttonInfo[18].angle, buttonInfo[18].mat.uvs);
++        WPitchUV(1.5707964f, buttonInfo[18].mat.uvs);
++        ScaleUV(buttonInfo[18].mat.uvs, buttonInfo[18].mat.uvs, 0.4f * gButtonScale);
++        buttonY = selectedPos + gButtonScale * (whichItem * gButtonSpace);
++        for (buttonIdx = 0; buttonIdx < 11; buttonIdx++) {
++            if (buttonIdx == gSelectMenuSelect && !gSelectMenuClear) {
++                if (buttonInfo[buttonIdx].angle < 3.1415927f) buttonInfo[buttonIdx].angle += 12.566371f * gFrameSeconds;
++                if (buttonInfo[buttonIdx].angle > 3.1415927f) buttonInfo[buttonIdx].angle = 3.1415927f;
++                if (buttonsJustInited) buttonInfo[buttonIdx].angle = 3.1415927f;
++            } else {
++                if (buttonInfo[buttonIdx].angle > 0.0f) buttonInfo[buttonIdx].angle -= 12.566371f * gFrameSeconds;
++                if (buttonInfo[buttonIdx].angle < 0.0f) buttonInfo[buttonIdx].angle = 0.0f;
++                if (buttonsJustInited) buttonInfo[buttonIdx].angle = 0.0f;
++            }
++            memcpy(prevPos, buttonInfo[buttonIdx].mat.uvs[3], 12);
++            if (buttonInfo[buttonIdx].buttonType == 11) buttonInfo[buttonIdx].mat.uvs[3][0] = buttonX;
++    else if (buttonInfo[buttonIdx].buttonType == 9) buttonInfo[buttonIdx].mat.uvs[3][0] = buttonX + -80.0f * gButtonScale;
++    else buttonInfo[buttonIdx].mat.uvs[3][0] = buttonX + -120.0f * gButtonScale;
++            buttonInfo[buttonIdx].mat.uvs[3][1] = buttonY;
++            buttonInfo[buttonIdx].mat.uvs[3][2] = buttonZ;
++            if (!buttonsJustInited) {
++                if (fabs(buttonInfo[buttonIdx].mat.uvs[3][1] - prevPos[1]) * 60.0 / 10.0 > scrollSpeed) {
++                    scrollSpeed = fabs(buttonInfo[buttonIdx].mat.uvs[3][1] - prevPos[1]) * 60.0 / 10.0;
++                    scrollSpeed = scrollSpeed < 540.0f * gButtonScale ? scrollSpeed : 540.0f * gButtonScale;
++                    scrollSpeed = scrollSpeed > 180.0f * gButtonScale ? scrollSpeed : 180.0f * gButtonScale;
++                }
++                if (buttonInfo[buttonIdx].mat.uvs[3][1] > prevPos[1] + scrollSpeed * gFrameSeconds) {
++                    buttonInfo[buttonIdx].mat.uvs[3][1] = prevPos[1] + scrollSpeed * gFrameSeconds;
++                    clearScrollSpeed = 0;
++                } else if (buttonInfo[buttonIdx].mat.uvs[3][1] < prevPos[1] - scrollSpeed * gFrameSeconds) {
++                    buttonInfo[buttonIdx].mat.uvs[3][1] = prevPos[1] - scrollSpeed * gFrameSeconds;
++                    clearScrollSpeed = 0;
++                }
++            }
++            ScaleUV(unitmatrix, buttonInfo[buttonIdx].mat.uvs, gButtonScale);
++            WPitchUV(buttonInfo[buttonIdx].angle - 1.5707964f, buttonInfo[buttonIdx].mat.uvs);
++            if (buttonInfo[buttonIdx].angle > 1.5707964f) tex = MBOX_FindTexture_WORK((char *)0x8C0B271C, &texIdx, 0, gNumModels - 1, 1);
++            else tex = MBOX_FindTexture_WORK((char *)0x8C0B2700, &texIdx, 0, gNumModels - 1, 1);
++            ZOID_SetTexture(buttonInfo[buttonIdx].objIdx, tex, -1);
++            if (buttonInfo[buttonIdx].mat.uvs[3][1] > maxY + gButtonSpace * gButtonScale || buttonInfo[buttonIdx].mat.uvs[3][1] < minY - gButtonSpace * gButtonScale) buttonInfo[buttonIdx].alpha = 0;
++            else if (buttonInfo[buttonIdx].mat.uvs[3][1] > maxY) buttonInfo[buttonIdx].alpha = 255.0f - (buttonInfo[buttonIdx].mat.uvs[3][1] - maxY) * 255.0f / (gButtonSpace * gButtonScale);
++            else if (buttonInfo[buttonIdx].mat.uvs[3][1] < minY) buttonInfo[buttonIdx].alpha = 255.0f - (minY - buttonInfo[buttonIdx].mat.uvs[3][1]) * 255.0f / (gButtonSpace * gButtonScale);
++            else buttonInfo[buttonIdx].alpha = 255;
++            if (!gSelectMenuVisible[buttonIdx]) buttonInfo[buttonIdx].alpha = 0;
++            buttonColor.c[3] = buttonInfo[buttonIdx].alpha;
++            ZOID_SetColor(buttonInfo[buttonIdx].objIdx, &buttonColor);
++            if (!gSelectMenuVisible[buttonIdx] || !buttonInfo[buttonIdx].alpha) MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++            else MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++    if (buttonIdx == 1) {
++    
++    buttonInfo[14].mat.uvs[3][0] = buttonX + 160.0f * gButtonScale;
++    buttonInfo[14].mat.uvs[3][1] = buttonInfo[buttonIdx].mat.uvs[3][1];
++    buttonInfo[14].mat.uvs[3][2] = buttonInfo[buttonIdx].mat.uvs[3][2];
++    buttonInfo[14].angle = buttonInfo[buttonIdx].angle;
++    
++    ScaleUV(unitmatrix, buttonInfo[14].mat.uvs, gButtonScale);
++    WPitchUV(buttonInfo[14].angle - 1.5707964f, buttonInfo[14].mat.uvs);
++    ZOID_SetTexture(buttonInfo[14].objIdx, tex, -1);
++    
++    buttonInfo[14].alpha = buttonInfo[buttonIdx].alpha;
++    ZOID_SetColor(buttonInfo[14].objIdx, &buttonColor);
++    if (!gSelectMenuVisible[buttonIdx] || !buttonInfo[buttonIdx].alpha) MBOX_HideObject(buttonInfo[14].objIdx, 1, 15);
++    else MBOX_ShowObject(buttonInfo[14].objIdx, 0, 15);
++    } else if (gSelectMenuSelect >= 3 && gSelectMenuSelect < 11) {
++    if (buttonIdx == gSelectMenuSelect) {
++    
++    buttonInfo[13].mat.uvs[3][0] = buttonX + 120.0f * gButtonScale;
++    buttonInfo[13].mat.uvs[3][1] = buttonInfo[buttonIdx].mat.uvs[3][1];
++    buttonInfo[13].mat.uvs[3][2] = buttonInfo[buttonIdx].mat.uvs[3][2];
++    
++    if (gSelectMenuClear) {
++    if (buttonInfo[13].angle < 3.1415927f) buttonInfo[13].angle += 12.566371f * gFrameSeconds;
++    if (buttonInfo[13].angle > 3.1415927f) buttonInfo[13].angle = 3.1415927f;
++    if (buttonsJustInited) buttonInfo[13].angle = 3.1415927f;
++    } else {
++    if (buttonInfo[13].angle > 0.0f) buttonInfo[13].angle -= 12.566371f * gFrameSeconds;
++    if (buttonInfo[13].angle < 0.0f) buttonInfo[13].angle = 0.0f;
++    if (buttonsJustInited) buttonInfo[13].angle = 0.0f;
++    }
++    
++    ScaleUV(unitmatrix, buttonInfo[13].mat.uvs, gButtonScale);
++    WPitchUV(buttonInfo[13].angle - 1.5707964f, buttonInfo[13].mat.uvs);
++    
++    if (buttonInfo[13].angle > 1.5707964f) tex = MBOX_FindTexture_WORK((char *)0x8C0B271C, &texIdx, 0, gNumModels - 1, 1);
++    else tex = MBOX_FindTexture_WORK((char *)0x8C0B2700, &texIdx, 0, gNumModels - 1, 1);
++    ZOID_SetTexture(buttonInfo[13].objIdx, tex, -1);
++    
++    buttonInfo[13].alpha = buttonInfo[buttonIdx].alpha;
++    ZOID_SetColor(buttonInfo[13].objIdx, &buttonColor);
++    if (!gSelectMenuVisible[buttonIdx] || !buttonInfo[13].alpha) MBOX_HideObject(buttonInfo[13].objIdx, 1, 15);
++    else MBOX_ShowObject(buttonInfo[13].objIdx, 0, 15);
++    }
++    } else {
++    buttonInfo[13].angle = 0.0f;
++    MBOX_HideObject(buttonInfo[13].objIdx, 1, 15);
++    }
++            if (gSelectMenuVisible[buttonIdx] == 1) buttonY -= gButtonSpace * gButtonScale;
++        }
++        for (; buttonIdx < 13; buttonIdx++) MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++        if (clearScrollSpeed == 1) scrollSpeed = 0.0f;
++        buttonsJustInited = 0;
++        }
++}
++
++
++/* Semantic donor recordscr.c updateViewButtons; native map identity retained. */
++void func_8C08A5A2(void)
++{
++    int buttonIdx, i;
++    float prevPos[3];
++    signed char clearScrollSpeed = 1;
++    int gViewMenuCount = 0;
++    int whichItem = 0;
++    float buttonY, selectedPos;
++    tTexture *tex;
++    unsigned short texIdx;
++    tRGBA buttonColor;
++    buttonColor.c[0] = ((unsigned char *)0x8C0B272A)[0];
++    buttonColor.c[1] = ((unsigned char *)0x8C0B272A)[1];
++    buttonColor.c[2] = ((unsigned char *)0x8C0B272A)[2];
++    buttonColor.c[3] = ((unsigned char *)0x8C0B272A)[3];
++    for (i = 0; i < 2; i++) {
++        if (gViewMenuVisible[i]) {
++            gViewMenuCount++;
++            if (i < gViewMenuSelect) whichItem++;
++        }
++    }
++    if (gButtonScale * ((gViewMenuCount - 1) * gButtonSpace) > maxY - minY)
++        selectedPos = maxY - whichItem * (maxY - minY) / (gViewMenuCount - 1);
++    else selectedPos = maxY - gButtonScale * (whichItem * gButtonSpace);
++    memcpy(prevPos, buttonInfo[18].mat.uvs[3], 12);
++    buttonInfo[18].angle += 6.2831855f * gFrameSeconds;
++    if (buttonInfo[18].angle > 6.2831855f) buttonInfo[18].angle -= 6.2831855f;
++    memcpy(buttonInfo[18].mat.uvs, unitmatrix, 36);
++    buttonInfo[18].mat.uvs[3][0] = buttonX * cursorZ / buttonZ + -165.0f * gButtonScale;
++    buttonInfo[18].mat.uvs[3][1] = selectedPos * cursorZ / buttonZ;
++    buttonInfo[18].mat.uvs[3][2] = cursorZ;
++    if (!buttonsJustInited) {
++        if (gButtonScale * (fabs(buttonInfo[18].mat.uvs[3][1] - prevPos[1]) * 60.0) / 10.0 > cursorSpeed) {
++            cursorSpeed = gButtonScale * (fabs(buttonInfo[18].mat.uvs[3][1] - prevPos[1]) * 60.0) / 10.0;
++            cursorSpeed = cursorSpeed < 540.0f * gButtonScale ? cursorSpeed : 540.0f * gButtonScale;
++            cursorSpeed = cursorSpeed > 180.0f * gButtonScale ? cursorSpeed : 180.0f * gButtonScale;
++        }
++        if (buttonInfo[18].mat.uvs[3][1] > prevPos[1] + cursorSpeed * gFrameSeconds)
++            buttonInfo[18].mat.uvs[3][1] = prevPos[1] + cursorSpeed * gFrameSeconds;
++        else if (buttonInfo[18].mat.uvs[3][1] < prevPos[1] - cursorSpeed * gFrameSeconds)
++            buttonInfo[18].mat.uvs[3][1] = prevPos[1] - cursorSpeed * gFrameSeconds;
++        else cursorSpeed = 180.0f * gButtonScale;
++    }
++    WRollUV(buttonInfo[18].angle, buttonInfo[18].mat.uvs);
++    WPitchUV(1.5707964f, buttonInfo[18].mat.uvs);
++    ScaleUV(buttonInfo[18].mat.uvs, buttonInfo[18].mat.uvs, 0.4f * gButtonScale);
++    buttonY = selectedPos + gButtonScale * (whichItem * gButtonSpace);
++    for (buttonIdx = 0; buttonIdx < 11; buttonIdx++) MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++    for (buttonIdx = 11; buttonIdx < 13; buttonIdx++) {
++        if (buttonIdx - 11 == gViewMenuSelect) {
++            if (buttonInfo[buttonIdx].angle < 3.1415927f) buttonInfo[buttonIdx].angle += 12.566371f * gFrameSeconds;
++            if (buttonInfo[buttonIdx].angle > 3.1415927f) buttonInfo[buttonIdx].angle = 3.1415927f;
++            if (buttonsJustInited) buttonInfo[buttonIdx].angle = 3.1415927f;
++        } else {
++            if (buttonInfo[buttonIdx].angle > 0.0f) buttonInfo[buttonIdx].angle -= 12.566371f * gFrameSeconds;
++            if (buttonInfo[buttonIdx].angle < 0.0f) buttonInfo[buttonIdx].angle = 0.0f;
++            if (buttonsJustInited) buttonInfo[buttonIdx].angle = 0.0f;
++        }
++        memcpy(prevPos, buttonInfo[buttonIdx].mat.uvs[3], 12);
++        buttonInfo[buttonIdx].mat.uvs[3][0] = buttonX + -140.0f * gButtonScale;
++        buttonInfo[buttonIdx].mat.uvs[3][1] = buttonY;
++        buttonInfo[buttonIdx].mat.uvs[3][2] = buttonZ;
++        if (!buttonsJustInited) {
++            if (fabs(buttonInfo[buttonIdx].mat.uvs[3][1] - prevPos[1]) * 60.0 / 10.0 > scrollSpeed) {
++                scrollSpeed = fabs(buttonInfo[buttonIdx].mat.uvs[3][1] - prevPos[1]) * 60.0 / 10.0;
++                scrollSpeed = scrollSpeed < 540.0f * gButtonScale ? scrollSpeed : 540.0f * gButtonScale;
++                scrollSpeed = scrollSpeed > 180.0f * gButtonScale ? scrollSpeed : 180.0f * gButtonScale;
++            }
++            if (buttonInfo[buttonIdx].mat.uvs[3][1] > prevPos[1] + scrollSpeed * gFrameSeconds) {
++                buttonInfo[buttonIdx].mat.uvs[3][1] = prevPos[1] + scrollSpeed * gFrameSeconds;
++                clearScrollSpeed = 0;
++            } else if (buttonInfo[buttonIdx].mat.uvs[3][1] < prevPos[1] - scrollSpeed * gFrameSeconds) {
++                buttonInfo[buttonIdx].mat.uvs[3][1] = prevPos[1] - scrollSpeed * gFrameSeconds;
++                clearScrollSpeed = 0;
++            }
++        }
++        ScaleUV(unitmatrix, buttonInfo[buttonIdx].mat.uvs, gButtonScale);
++        WPitchUV(buttonInfo[buttonIdx].angle - 1.5707964f, buttonInfo[buttonIdx].mat.uvs);
++        if (buttonInfo[buttonIdx].angle > 1.5707964f) tex = MBOX_FindTexture_WORK((char *)0x8C0B271C, &texIdx, 0, gNumModels - 1, 1);
++        else tex = MBOX_FindTexture_WORK((char *)0x8C0B2700, &texIdx, 0, gNumModels - 1, 1);
++        ZOID_SetTexture(buttonInfo[buttonIdx].objIdx, tex, -1);
++        if (buttonInfo[buttonIdx].mat.uvs[3][1] > maxY + gButtonSpace * gButtonScale || buttonInfo[buttonIdx].mat.uvs[3][1] < minY - gButtonSpace * gButtonScale) buttonInfo[buttonIdx].alpha = 0;
++        else if (buttonInfo[buttonIdx].mat.uvs[3][1] > maxY) buttonInfo[buttonIdx].alpha = 255.0f - (buttonInfo[buttonIdx].mat.uvs[3][1] - maxY) * 255.0f / (gButtonSpace * gButtonScale);
++        else if (buttonInfo[buttonIdx].mat.uvs[3][1] < minY) buttonInfo[buttonIdx].alpha = 255.0f - (minY - buttonInfo[buttonIdx].mat.uvs[3][1]) * 255.0f / (gButtonSpace * gButtonScale);
++        else buttonInfo[buttonIdx].alpha = 255;
++        if (!gViewMenuVisible[buttonIdx - 11]) buttonInfo[buttonIdx].alpha = 0;
++        buttonColor.c[3] = buttonInfo[buttonIdx].alpha;
++        ZOID_SetColor(buttonInfo[buttonIdx].objIdx, &buttonColor);
++        if (!gViewMenuVisible[buttonIdx - 11] || !buttonInfo[buttonIdx].alpha) MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++        else MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++        if (buttonIdx - 11 == 0) {
++    buttonInfo[15].mat.uvs[3][0] = buttonX + 100.0f * gButtonScale;
++    buttonInfo[15].mat.uvs[3][1] = buttonInfo[buttonIdx].mat.uvs[3][1];
++    buttonInfo[15].mat.uvs[3][2] = buttonInfo[buttonIdx].mat.uvs[3][2];
++    buttonInfo[15].angle = buttonInfo[buttonIdx].angle;
++    ScaleUV(unitmatrix, buttonInfo[15].mat.uvs, gButtonScale);
++    WPitchUV(buttonInfo[15].angle - 1.5707964f, buttonInfo[15].mat.uvs);
++    ZOID_SetTexture(buttonInfo[15].objIdx, tex, -1);
++    buttonInfo[15].alpha = buttonInfo[buttonIdx].alpha;
++    ZOID_SetColor(buttonInfo[15].objIdx, &buttonColor);
++    if (!gViewMenuVisible[buttonIdx] || !buttonInfo[buttonIdx].alpha) MBOX_HideObject(buttonInfo[15].objIdx, 1, 15);
++    else MBOX_ShowObject(buttonInfo[15].objIdx, 0, 15);
++    }
++    else if (buttonIdx - 11 == 1) {
++    buttonInfo[16].mat.uvs[3][0] = buttonX + 100.0f * gButtonScale;
++    buttonInfo[16].mat.uvs[3][1] = buttonInfo[buttonIdx].mat.uvs[3][1];
++    buttonInfo[16].mat.uvs[3][2] = buttonInfo[buttonIdx].mat.uvs[3][2];
++    buttonInfo[16].angle = buttonInfo[buttonIdx].angle;
++    ScaleUV(unitmatrix, buttonInfo[16].mat.uvs, gButtonScale);
++    WPitchUV(buttonInfo[16].angle - 1.5707964f, buttonInfo[16].mat.uvs);
++    ZOID_SetTexture(buttonInfo[16].objIdx, tex, -1);
++    buttonInfo[16].alpha = buttonInfo[buttonIdx].alpha;
++    ZOID_SetColor(buttonInfo[16].objIdx, &buttonColor);
++    if (!gViewMenuVisible[buttonIdx - 11] || !buttonInfo[buttonIdx].alpha) MBOX_HideObject(buttonInfo[16].objIdx, 1, 15);
++    else MBOX_ShowObject(buttonInfo[16].objIdx, 0, 15);
++    }
++    
++        if (gViewMenuVisible[buttonIdx - 11] == 1) buttonY -= gButtonSpace * gButtonScale;
++    }
++    for (; buttonIdx < 23; buttonIdx++) {
++        if (buttonIdx < 15) MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++        else MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++    }
++    if (clearScrollSpeed == 1) scrollSpeed = 0.0f;
++    buttonsJustInited = 0;
++    MBOX_HideObject(buttonInfo[19].objIdx, 1, 15);
++    MBOX_HideObject(buttonInfo[20].objIdx, 1, 15);
++}

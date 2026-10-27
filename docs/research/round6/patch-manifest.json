@@ -1,0 +1,109 @@
+{
+  "base_commit": "6c46ee07a58c26b2915e3849510cfdbf8260b92b",
+  "base_tree": "0ebf12217741ed4660838f0550d736cb8f58f326",
+  "scope": "Archived deltas only, no active source changes. No path overlap. Texture header included only by lane3; lane1 depends on it.",
+  "lanes": {
+    "lane1": {
+      "paths": [
+        "include/dc_sound_types.h",
+        "include/ghost_private.h",
+        "include/maxpath_types.h",
+        "include/mdrive_types.h",
+        "include/visuals_effects_private.h",
+        "src/TB_text.c",
+        "src/controlsys.c",
+        "src/dc_sound_8C069F78.c",
+        "src/ghost.c",
+        "src/maxpath.c",
+        "src/mdrive.c",
+        "src/memsys.c",
+        "src/pausescr.c",
+        "src/resurrect.c",
+        "src/road.c",
+        "src/smoke.c",
+        "src/targetpaths.c",
+        "src/unk_8C0102A4_lz.c",
+        "src/unzip.c",
+        "src/videoscr.c",
+        "src/visuals.c"
+      ],
+      "context_lines": 3
+    },
+    "lane2": {
+      "paths": [
+        "include/hud_round6.h",
+        "include/packet_round6.h",
+        "include/paksysdc_round6.h",
+        "include/records_buttons_round6.h",
+        "include/shots_round6.h",
+        "include/shots_types.h",
+        "include/targets_private.h",
+        "src/Init.c",
+        "src/circuit.c",
+        "src/collision.c",
+        "src/controlscr.c",
+        "src/dc_unk_8C069E34.c",
+        "src/drivsym.c",
+        "src/hud.c",
+        "src/hudextra.c",
+        "src/optionscr.c",
+        "src/pakerr.c",
+        "src/paksysdc.c",
+        "src/selectcarload.c",
+        "src/shots.c",
+        "src/startscr.c",
+        "src/stree.c",
+        "src/targets.c",
+        "src/unk_8C0260F0.c",
+        "src/unk_8C0898D8.c"
+      ],
+      "context_lines": 3
+    },
+    "lane3": {
+      "paths": [
+        "include/carscr_types.h",
+        "include/circuitscr_types.h",
+        "include/dc_kamui_tex_types.h",
+        "include/gamerecords_types.h",
+        "include/initiali_private.h",
+        "include/recordscr_private.h",
+        "include/sequence_input_private.h",
+        "src/carscr.c",
+        "src/circuitscr.c",
+        "src/dc_kamui_tex_8C06E5B4.c",
+        "src/dc_misc_8C06B80C.c",
+        "src/game.c",
+        "src/gameoverscr.c",
+        "src/gamerecords.c",
+        "src/headlights.c",
+        "src/initiali.c",
+        "src/pakscr.c",
+        "src/recordscr.c",
+        "src/state.c",
+        "src/unk_8C065F2C.c",
+        "src/unk_8C07D90C.c",
+        "src/zip.c"
+      ],
+      "context_lines": 3
+    },
+    "lane4": {
+      "paths": [
+        "include/dc_render_prefix.h",
+        "include/highscorescr_private.h",
+        "include/pathcommon_private.h",
+        "include/playerscr_types.h",
+        "include/tires_private.h",
+        "include/trackscr_private.h",
+        "src/audio.c",
+        "src/audiomgr.c",
+        "src/dc_zoid_8C06ED90.c",
+        "src/highscorescr.c",
+        "src/pathcommon.c",
+        "src/playerscr.c",
+        "src/tires.c",
+        "src/trackscr.c"
+      ],
+      "context_lines": 3
+    }
+  }
+}

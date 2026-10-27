@@ -1,0 +1,3845 @@
+diff --git a/include/dc_render_prefix.h b/include/dc_render_prefix.h
+index 43cbc3f..1635590 100644
+--- a/include/dc_render_prefix.h
++++ b/include/dc_render_prefix.h
+@@ -43,4 +43,38 @@ void func_8C0DAC20(dcSQWord *,const void *,int);
+ #define DC_HW_CONTROL (*(volatile unsigned int *)0xff00001c)
+ #define DC_QACR0 (*(volatile unsigned int *)0xff000038)
+ #define DC_QACR1 (*(volatile unsigned int *)0xff00003c)
++/* Native renderer helpers; address views only, no storage is allocated. */
++typedef struct dcClipScratchSlot {dcClipVertex40 vertex; unsigned char unknown28[8];} dcClipScratchSlot;
++typedef struct dcMatrixEntry {float component[12];} dcMatrixEntry;
++typedef struct dcLightParameters {unsigned char attributes[4]; unsigned int scalar04; float vector08[3]; unsigned int scalar14; float vector18[3];} dcLightParameters;
++typedef char dc_check_scratch48[(sizeof(dcClipScratchSlot)==48)?1:-1];
++typedef char dc_check_matrix48[(sizeof(dcMatrixEntry)==48)?1:-1];
++typedef char dc_check_light36[(sizeof(dcLightParameters)==36)?1:-1];
++#define dcClipScratch ((dcClipScratchSlot *)0x7C002F10)
++#define dcClipCases (*(unsigned int *)0x8C19E948)
++#define dcMatrixStackIndex (*(int *)0x8C0C974C)
++#define dcMatrixStack ((dcMatrixEntry *)0x8C19E9E0)
++#define dcLightCount (*(int *)0x8C19F420)
++#define dcLightVectors ((float (*)[3])0x8C19F424)
++#define dcLightState (*(dcLightParameters *)0x8C19F43C)
++extern int drawWindowBorders;
++extern signed char gSplitScreen;
++void func_8C0725B8(dcMatrixEntry *);
++void func_8C072592(dcMatrixEntry *);
++void func_8C0725F0(float *,float *);
++void func_8C06F844(dcClipVertex40 *,dcClipVertex40 *,dcClipVertex40 *);
++void func_8C06F1EC(int,int,int,int,int,int,int,int,float);
++/* F844 native float vertex access at0/4/8,16/20/24,28/32 and packed color36. */
++typedef struct dcClipFloatVertex40 {float x,y,z;int clip;float screenX,screenY,screenW,u,v;tRGBA color;} dcClipFloatVertex40;
++typedef union dcFloatBitsVertex20 {dcVertexBits20 bits;struct {float x,y,z,u,v;} value;} dcFloatBitsVertex20;
++typedef char dc_check_floatvertex40[(sizeof(dcClipFloatVertex40)==40)?1:-1];
++typedef char dc_check_floatbits20[(sizeof(dcFloatBitsVertex20)==20)?1:-1];
++#define dcClipNearZ (*(float *)0x7C002C0C)
++#define dcClipScalar10 (*(float *)0x7C002C10)
++#define dcClipScalar6C (*(float *)0x7C002C6C)
++#define dcClipXYScale (*(float *)0x7C002C14)
++#define dcClipCenterX (*(float *)0x7C002C04)
++#define dcClipCenterY (*(float *)0x7C002C08)
++extern unsigned char dcContextA[]; /* canonical gfx ABI, nativeF232 */
++#define dcPlainStripContexts ((unsigned int *)dcContextA)
+ #endif
+diff --git a/include/highscorescr_private.h b/include/highscorescr_private.h
+new file mode 100644
+index 0000000..ce60e5f
+--- /dev/null
++++ b/include/highscorescr_private.h
+@@ -0,0 +1,85 @@
++#ifndef HIGHSCORESCR_PRIVATE_H
++#define HIGHSCORESCR_PRIVATE_H
++#include "highscorescr_types.h"
++/* Native DrawCircuitCode accesses text pointer table at gText+4;
++   prefix agrees with the separately verified playerscr view. */
++typedef struct dcHighText {char pad0[4];unsigned char **single;char pad8[4];unsigned short *tab;unsigned char **taba;} dcHighText;
++extern dcHighText gText;
++extern unsigned int gActiveEdges;
++int CountdownTimeOut(void);
++void SetCountdownTimer(float);
++void PlayStartABSound(unsigned int);
++void PlayLRSound(unsigned int);
++int HAL_SetFont(int);
++void HAL_SetTextDepth(float);
++void TB_SetTextColor(int);
++signed short TB_CenterText(void *,signed short);
++void TB_DrawText(signed short,signed short,void *);
++unsigned int TB_Strlen(void *);
++/* Native menu-local names differ from playerscr's similarly named arrays. */
++#define gNameSelect ((signed short *)0x8C13414C)
++#define gNameLen ((signed short *)0x8C134154)
++#define gThisPlayer ((tPlayerProfile ***)0x8C133F84)
++#define gScoreNames ((unsigned char **)0x8C134138)
++#define gScoreTimes ((unsigned char (*)[10])0x8C134103)
++#define CarTitles ((unsigned char **)0x8C0BB8FC)
++#define gDefStartTimes ((const float *)0x8C0A7840)
++extern signed short gNumWindows;
++extern signed char gNewTotalScore[3][5];
++extern tPlayerProfile **gTotalNames[][3][5];
++extern tRaceStats gTotalRaceStats[];
++extern unsigned char gTempNames[][13];
++extern unsigned char *gTrackTitles[];
++extern const char *gPlayerNameChars;
++extern int playerTextColor[];
++void PlayUDSound(unsigned int);
++void ChangePaneSize(void *,int,int,int,int);
++signed short TB_GetFontLineHeight(void);
++void TB_Sprintf(void *,void *,...);
++signed short TB_RightText(void *,signed short);
++void TB_DrawEllipseText(signed short,signed short,signed short,void *);
++unsigned int HAL_GetTextWidth(void *,signed short);
++int sprintf(char *,const char *,...);
++unsigned int rand_r(unsigned int *);
++int FindTempNameIdx(char *);
++void *memset(void *,int,unsigned int);
++#define strcpy _builtin_strcpy
++char *strcpy(char *,const char *);
++unsigned int strlen(const char *);
++int censor(char *);
++/* Saved ghost != raw replay: native32280/E/24/2C and canonical save_types. */
++typedef struct dcHighSaveHeader {unsigned char bytes[84];} dcHighSaveHeader;
++typedef struct dcHighFileView {unsigned char beforePak[16];unsigned char pak;unsigned char beforeFilename[7];char filename[13];unsigned char beforeBlocks[0x38-0x25];unsigned int blocks;} dcHighFileView;
++typedef struct dcHighSavedGhost {struct dcHighSavedGhost **next,**prev;tPS_File **fileh;signed char track;unsigned char backward;unsigned char name[13];unsigned char pad1B;unsigned int playerId[2];float finish;unsigned char **datah;dcHighSaveHeader **header;} dcHighSavedGhost;
++typedef char high_ghost48[(sizeof(dcHighSavedGhost)==48)?1:-1];
++typedef char high_file60[(sizeof(dcHighFileView)==60)?1:-1];
++typedef char high_replay84[(sizeof(dcHighSaveHeader)==84)?1:-1];
++#define gPakGhosts ((dcHighSavedGhost ***)0x8C13416C)
++#define gGhostStatus ((int *)0x8C134190)
++#define highSavedGhost (*(dcHighSavedGhost ***)0x8C13418C)
++#define highGhostHead (*(dcHighSavedGhost ***)0x8C150488)
++#define gGhostMenuSelect (*(int *)0x8C13415C)
++#define gGhostConfirmMenuSelect (*(int *)0x8C134160)
++#define gGhostMenuConflict (*(signed char *)0x8C134165)
++#define gGhostMenuConfirm (*(signed char *)0x8C134166)
++#define gYes (*(signed char *)0x8C134167)
++#define gGhostMenuNotify (*(signed char *)0x8C134168)
++extern tPadInfo gControllerData[];
++extern unsigned int gActiveLevels;
++extern char *gPS_PakName[];
++void *InitPane(int,int,int,int,int,int (*)(_tBlit *),unsigned int,int);
++void RemoveBlit(_tBlit *);
++_tBlit *NewMultiBlit(signed short,signed short,const tBlitDef *,signed short);
++int PS_PakInserted(int);
++int PS_PakDamaged(int);
++int PS_PakRumble(int);
++unsigned int PS_GetFreeBlocks(int);
++int GhostFileAvailable(tPlayerProfile **,int,int,int);
++int strcmp(const char *,const char *);
++int ReadGhostData(dcHighSavedGhost **);
++void DeleteGhost(dcHighSavedGhost **);
++void SaveGhostInLimbo(dcHighSaveHeader *,void *);
++void TB_SetJust(int,int);
++void TB_DrawTextScrollBox(signed short,signed short,signed short,signed short,signed short,signed short,void *);
++void TB_Printf(signed short,signed short,void *,...);
++#endif
+diff --git a/include/pathcommon_private.h b/include/pathcommon_private.h
+new file mode 100644
+index 0000000..cc3cd24
+--- /dev/null
++++ b/include/pathcommon_private.h
+@@ -0,0 +1,45 @@
++#ifndef PATHCOMMON_PRIVATE_H
++#define PATHCOMMON_PRIVATE_H
++#include "dc_types.h"
++/* DC checkpoint array: base8C12BAB4, memcpy size32C at45020; row stride50
++   at45360..66 and pathPts22 at462B8. Same established maxpath/resurrect slices. */
++typedef struct tPCPoint {
++ float pos[3],normal[3];
++ int radius; /* 453CA..D4 long load then FLOAT, not an FP radius. */
++ signed short flags,time[2],pathPts[20]; /* reader45126.. flags1c; times1e/20. */
++ char pad4a[2];
++ float distToNext; /* 45F90..: row4c, existing maxpath proof. */
++} tPCPoint;
++typedef struct tPCCheckpoints {
++ signed short startTime,loopPt,finishPt,startPt,numPoints;char padA[2];tPCPoint points[10];
++} tPCCheckpoints;
++/* Existing maxpath/resurrect proofs plus native reader45C50..D18. */
++typedef struct anon_pos_mph_8 {signed short pos[3];unsigned char mph;signed char hints;} anon_pos_mph_8;
++typedef struct anon_numPts_pts_8 {unsigned short numPts;char pad[2];anon_pos_mph_8 *pts;} anon_numPts_pts_8;
++typedef struct anon_resurrect_firstPath_10 {
++ unsigned char resurrect;signed char firstPath;unsigned short firstIdx;
++ signed char lastPath;char pad5;unsigned short lastIdx;
++ signed char startSection;char pad9;unsigned short numPts;signed short (*pts)[3];
++} anon_resurrect_firstPath_10;
++typedef struct anon_numPts_pts_10 {unsigned short numPts;char pad[2];signed short (*pts)[3];unsigned char numAlt;char pad9[3];anon_resurrect_firstPath_10 *alt;} anon_numPts_pts_10;
++typedef char check_pcrow[sizeof(tPCPoint)==0x50?1:-1];
++typedef char check_pcset[sizeof(tPCCheckpoints)==0x32c?1:-1];
++typedef char check_pcalt[sizeof(anon_resurrect_firstPath_10)==0x10?1:-1];
++extern tPCCheckpoints gCheckpoints;
++extern anon_numPts_pts_10 gResPath;
++extern anon_numPts_pts_8 gDronePaths[4];
++extern char *gPathWave;
++extern signed char gRestartGame;
++extern float gFirstLapDistance,gLapDistance;
++/* Native reader and bounds literal addresses; no invented backing allocations. */
++#define gAltPaths (*(anon_resurrect_firstPath_10 **)0x8C14C5E0) /*45C52*/
++#define gNumResPathPts (*(signed short *)0x8C14C5BC) /*45CD4/45CDC*/
++#define gResPathPtList (*(signed short (**)[3])0x8C14C5DC) /*45CE0*/
++#define gNumPathPts ((signed short *)0x8C14C5BE) /*45E28*/
++#define gPathPtList ((anon_pos_mph_8 **)0x8C14C5E4) /*45E46*/
++#define gPathMin ((signed short *)0x8C14C5D0) /*46798*/
++#define gPathMax ((signed short *)0x8C14C5D6) /*4679A*/
++#define gPathTrace ((int *)0x8C15039C) /*46350*/
++void *memcpy(void *,const void *,unsigned int);
++float _builtin_sqrtf(float);
++#endif
+diff --git a/include/playerscr_types.h b/include/playerscr_types.h
+index 19605bf..5688287 100644
+--- a/include/playerscr_types.h
++++ b/include/playerscr_types.h
+@@ -113,4 +113,5 @@ unsigned int PS_GetFreeBlocks(int),PS_GetFreeFiles(int),func_8C06D518(unsigned i
+ extern float gPlayerMenuCursorSpeed[4],gPlayerMenuScrollSpeed[4];
+ extern volatile float gFrameSeconds;
+ #define fabs _builtin_fabsf
++void HAL_SetMenuTextDepth(float); /* native drawCreatePlayer82292/822EE; canonical controlscr ABI */
+ #endif
+diff --git a/include/tires_private.h b/include/tires_private.h
+new file mode 100644
+index 0000000..1c20357
+--- /dev/null
++++ b/include/tires_private.h
+@@ -0,0 +1,28 @@
++#ifndef TIRES_PRIVATE_H
++#define TIRES_PRIVATE_H
++#include "dc_types.h"
++/* Friction-circle SH4 accesses prove these field widths/offsets. */
++typedef struct tNativeTire {
++ float tradius; /*0:B914*/
++ float springK,rubdamp; /*4:BCDC/BD2C,8:BC6A/BD20*/
++ char padC[4];
++ float cfmax,invmi; /*10:BBA2,14:B91A*/
++ char pad18[4];
++ float afmax,k1,k2,k3; /*1C:BBF8,20:BBA4,24:BBE2,28:BBEC*/
++ char pad2C[0x44-0x2C];
++ float patchy,angvel,sliptorque,sideforce,traction; /*44:BC58;48/4C:B9C8..DE;50/54:B8A4..AC*/
++ signed char slipflag; /*58:B912/B918; signed-byte storage invariant from mdrive*/
++ char pad59[3];
++} tNativeTire;
++typedef struct tNativeTireTune {char pad0[0x18];float fwdfk,sidefk;} tNativeTireTune;
++typedef struct tNativeTireModel {char pad0[0x5b0];float sidefk;} tNativeTireModel;
++typedef char native_tire_size[sizeof(tNativeTire)==0x5c?1:-1];
++/* Native tables: B7E0..FC engine stride12 and handling*4;
++   B802..81A trans stride24 and (gear+1)*4. Views only, not initialized data. */
++#define carEngineFwdForce ((float (*)[3])0x8C0BBCB8)
++#define carTransTraction ((float (*)[6])0x8C0BBB08)
++extern signed char gSpecialTires;
++float dc_cos(float),dc_sin(float),_builtin_sqrtf(float),_builtin_fabsf(float);
++void BodyVector(float *,float *,float (*)[3]);
++void WorldVector(float *,float *,float (*)[3]);
++#endif
+diff --git a/include/trackscr_private.h b/include/trackscr_private.h
+index 5f3cbf4..f1fd6ca 100644
+--- a/include/trackscr_private.h
++++ b/include/trackscr_private.h
+@@ -13,6 +13,11 @@ typedef struct tTrackProfileHead {tPlayerProfile **next;} tTrackProfileHead; /*
+ typedef struct tTrackFilePak {char unknown00[0x10];unsigned char pak;} tTrackFilePak; /* partial prefix,D248/D250 */
+ typedef struct tTrackPlayerList {char unknown00[8];tPlayerProfile **head;} tTrackPlayerList;
+ typedef struct tTrackBlitInstance {unsigned char flags;char unknown1[0x1f];} tTrackBlitInstance; /* qualified flags-byte view, E75C..E770: 170F51+index*20 */
++/* Native animFan E8A6/E8AA: whole instance base, flags at21, stride32. */
++typedef struct tTrackFullBlitInstance { unsigned char unknown00[0x15]; unsigned char flags; unsigned char unknown16[0x0a]; } tTrackFullBlitInstance;
++typedef char check_track_fullblit_size[(sizeof(tTrackFullBlitInstance)==0x20)?1:-1];
++typedef char check_track_fullblit_flags[(sizeof(((tTrackFullBlitInstance *)0)->unknown00)==0x15)?1:-1];
++#define trackFullBlitInstances ((tTrackFullBlitInstance *)0x8C170F3C)
+ typedef struct tTrackFogTile {unsigned short uls,ult;} tTrackFogTile; /* F218/F22E/F232 */
+ typedef char check_track_button[(sizeof(tTrackButton)==0x40)?1:-1];
+ typedef char check_track_carousel[(sizeof(tTrackCarousel)==0x18)?1:-1];
+@@ -48,9 +53,11 @@ extern tTrackCarousel trackCarousel[];
+ extern tTrackCity trackCities[];
+ extern tRGBA trackColors[],trackFogColor[];
+ extern tTrackFogTile trackFogTile;
+-extern char *trackMapObjNames[],*trackScreenNames[],*trackArrowNames[16][2];
++extern char *trackMapObjNames[],*trackArrowNames[16][2];
++/* Native loadTrackScreen F30C: unsized texture-name pointer table. */
++#define trackScreenNames ((char **)0x8C0D0F4C)
+ extern int trackValidOption[7][21];
+-extern tUVMatrix trackMapMat;
++#define trackMapMat (*(tUVMatrix *)0x8C1A09F4) /* F99C, 48-byte animation matrix */
+ extern tPoly *trackScreenPoly,*trackFogPoly;
+ extern void *gPathWave;
+ #define animTrackMap trackAnimTrackMap /* qualified trackscr external, DB46 poolDB80=8C08F784 */
+@@ -129,4 +136,44 @@ void ReadCheckpointData(void),ReadPathData(void),UnloadWaveInstance(int,int);
+ void updateTrackScreen(void),_InitScreen(void),_UninitScreen(void),showTrackSelect(void);
+ int animNewSlider(_tBlit *),animArrows(_tBlit *),animFan(_tBlit *),animText(void),TrackValid(int),OptionValid(int);
+ void animButtonText(void),SetFogIntensity(int),BlowFog(void),loadTrackScreen(void),unloadTrackScreen(void),buildTrackMap(void),clearTrackMap(void),animTrackMap(void),buildTrackMaps(void),buildRaceTrackMaps(void),buildStuntTrackMaps(void),buildBattleTrackMaps(void),clearTrackMaps(void),animTrackMaps(void),loadPathData(void),unloadPathData(void),initButtons(void),uninitButtons(void),updateButtons(void);
++tPoly *ZOID_NewPoly(int,float (*)[3],unsigned short,tRGBA *,unsigned short,int);
++void ZOID_ShowPoly(tPoly *);
++/* Native animation globals F7F8/F990/F998, no new backing allocation. */
++#define trackAnimRotation (*(float *)0x8C0D1924)
++#define trackAnimCityPos ((float *)0x8C0D190C)
++#define trackAnimMapPos ((float *)0x8C0D1918)
++void WYawUV(float,float (*)[3]);
++/* Native model/LOD views agree with waves: model72,lod24,record12. */
++typedef struct tTrackLod {unsigned short texture,flags;float radius;unsigned int *displayList;} tTrackLod;
++typedef struct tTrackModel {char name[16];float radius;short unknown14,lodCount;tTrackLod lod[4];} tTrackModel;
++typedef struct tTrackModelTable {tTrackModel *models;int count;} tTrackModelTable;
++typedef char track_lod12[(sizeof(tTrackLod)==12)?1:-1];
++typedef char track_model72[(sizeof(tTrackModel)==72)?1:-1];
++typedef char track_bank8[(sizeof(tTrackModelTable)==8)?1:-1];
++#define trackMapDisplayLists ((tTrackLod *)0x8C1A094C)
++#define trackSavedLods ((tTrackLod *)0x8C1A09A0)
++extern tTrackModelTable gRomObjDefPtrs[];
++extern volatile signed char gRenderInProgress; /* canonical waves ABI; asynchronous render wait */
++void DeallocateMemory(void *);
++/* Native map builder/animator data; all existing unsized views, no backing allocations. */
++#define kNumMapSects (*(int *)0x8C0D1258)
++#define trackBuildMapPos ((float *)0x8C0D1900)
++#define trackRaceMapPos ((float *)0x8C0D19A4)
++#define trackSelectedMapPos ((float *)0x8C0D19B0)
++#define trackOverviewMapPos ((float *)0x8C0D19D4)
++#define trackMapPositionIndices ((int *)0x8C0D192C)
++#define trackMapColorIndices ((int *)0x8C0D1954)
++#define trackMapVertexFlags ((unsigned int *)0x8C0D197C)
++#define trackMapBaseColor (*(unsigned int *)0x8C0D1928)
++typedef struct tTrackResPath {unsigned short numPts;unsigned short unknown02;signed short (*pts)[3];unsigned char numAlt;unsigned char unknown09[3];void *altPaths;} tTrackResPath;
++typedef union tTrackStreamWord {unsigned int bits;float value;} tTrackStreamWord;
++typedef char track_respath16[(sizeof(tTrackResPath)==16)?1:-1];
++typedef char track_streamword4[(sizeof(tTrackStreamWord)==4)?1:-1];
++#define trackResPath (*(tTrackResPath *)0x8C14C58C)
++#define trackPathMin ((signed short *)0x8C14C5D0)
++#define trackPathMax ((signed short *)0x8C14C5D6)
++#define trackLoopCheckpoint (*(signed short *)0x8C12BAB6)
++signed short FindResPathIntersect(signed short);
++void *AllocateMemoryHeap(int,unsigned int);
++float _builtin_sqrtf(float);
+ #endif
+diff --git a/src/audio.c b/src/audio.c
+index 0de45e1..494194c 100644
+--- a/src/audio.c
++++ b/src/audio.c
+@@ -280,7 +280,8 @@ void UpdateStationaryEmitters(void)
+         }
+         if (gTrackNum <= 5) {
+             em = gStEmitters[gTrackNum];
+-            for (i = 0, prevem = em; i < 20; i++, prevem = em, em++) {
++            i=0;prevem=em;
++            while (i<20) {
+                 if (em->fxid != -1 && em->freqMax != 0.0f && em->nextTime < gFrameCount) {
+                     if (em->freqMax < 0.0f) em->nextTime = prevem->nextTime;
+                     else {
+@@ -292,6 +293,7 @@ void UpdateStationaryEmitters(void)
+                     em->tag = AudEmitEffect(em->pos, unitmatrix[3], em->radius,
+                                            0.0f, 1.0f, 0.0f, fxid, 0, 0, 255);
+                 }
++                i++;prevem=em;em++;
+             }
+         }
+     }
+@@ -308,8 +310,10 @@ static void _StopStationaryEmitters(void)
+         }
+         if (gTrackNum <= 5) {
+             em = gStEmitters[gTrackNum];
+-            for (i = 0; i < 20; i++, em++) {
++            i=0;
++            while (i<20) {
+                 if (em->fxid != -1) AudStopEmitter(em->tag);
++                i++;em++;
+             }
+         }
+     }
+@@ -357,6 +361,7 @@ void StartCarSounds(struct tModelData *model)
+     int p = model->slot;
+     anon_specs_state_54 *eng = &gEngineSounds[p];
+     if (gGameSoundsEnabled && !model->crashflag) {
++        if(gCarActive[p]) {} /* Native1B88/1B8E stripped already-active assertion. */
+         eng->specs = gEngineSpecs[model->engine_type];
+         for (i = 0; i < 2; i++) {
+             _InitSoundState(&eng->state[i]);
+@@ -441,12 +446,12 @@ static void _UpdateEngineSound(struct tModelData *model)
+             if (rpm < eng->specs[i].lowVolRpm) vol = eng->specs[i].lowVol;
+             else if (rpm < eng->specs[i].midVolRpm)
+                 vol = eng->specs[i].lowVol +
+-                    ((rpm - eng->specs[i].lowVolRpm) / (eng->specs[i].midVolRpm - eng->specs[i].lowVolRpm)) *
+-                    (eng->specs[i].midVol - eng->specs[i].lowVol);
++                    (eng->specs[i].midVol - eng->specs[i].lowVol) *
++                    ((rpm - eng->specs[i].lowVolRpm) / (eng->specs[i].midVolRpm - eng->specs[i].lowVolRpm));
+             else if (rpm < eng->specs[i].hiVolRpm)
+                 vol = eng->specs[i].midVol +
+-                    ((rpm - eng->specs[i].midVolRpm) / (eng->specs[i].hiVolRpm - eng->specs[i].midVolRpm)) *
+-                    (eng->specs[i].hiVol - eng->specs[i].midVol);
++                    (eng->specs[i].hiVol - eng->specs[i].midVol) *
++                    ((rpm - eng->specs[i].midVolRpm) / (eng->specs[i].hiVolRpm - eng->specs[i].midVolRpm));
+             else vol = eng->specs[i].hiVol;
+             scale1 = 0.85f + 0.15f * ((200.0f + torq) / 900.0f);
+             vol *= scale1;
+@@ -515,8 +520,8 @@ static void _UpdateSkids(struct tModelData *model)
+         if (model->sviscode[i] == 0) {
+             pitch = 1.0f + (sPitchRange[i] * model->skidIntensity[i] - sPitchRange[i] / 2.0f);
+             if (pitch > maxPitch) maxPitch = pitch;
+-            pitch = 0.7f * (model->skidIntensity[i] * sPitchRange[i]);
+-            if (pitch > maxVol) maxVol = pitch;
++            if (0.7f * (model->skidIntensity[i] * sPitchRange[i]) > maxVol)
++                maxVol = 0.7f * (model->skidIntensity[i] * sPitchRange[i]);
+         }
+     }
+     if (gPaveSkidSounds[p].sound == -1 && maxVol > 0.0f) {
+@@ -561,8 +566,8 @@ static void _UpdateRoadSounds(struct tModelData *model)
+     for (i = 0; i < 4; i++) {
+         if (model->sviscode[i] == 0) {
+             vol = (model->reckon.rwmph >> 2) / 160.0f;
+-            vol = vol < 0.0f ? -vol : vol;
+-            vol = vol < 0.0f ? 0.0f : (vol > 1.0f ? 1.0f : vol);
++            if(vol<0.0f)vol=-vol;
++            if(vol<0.0f)vol=0.0f; else if(vol>1.0f)vol=1.0f;
+             vol = 1.0f - (1.0f - vol) * (1.0f - vol);
+             ++numPave;
+             vol /= (numPave == 1 ? 2.0f : (numPave == 2 ? 4.0f : 8.0f));
+@@ -571,7 +576,7 @@ static void _UpdateRoadSounds(struct tModelData *model)
+             vol = (model->reckon.rwmph >> 2) / 80.0f;
+             if (vol) {
+                 if (vol < 0.0f) vol = -vol;
+-                vol = vol < 0.0f ? 0.0f : (vol > 1.0f ? 1.0f : vol);
++                if(vol<0.0f)vol=0.0f; else if(vol>1.0f)vol=1.0f;
+                 vol = 1.0f - (1.0f - vol) * (1.0f - vol);
+             }
+             if (model->skidIntensity[i] > vol) vol = model->skidIntensity[i];
+@@ -582,7 +587,7 @@ static void _UpdateRoadSounds(struct tModelData *model)
+             vol = (model->reckon.rwmph >> 2) / 80.0f;
+             if (vol) {
+                 if (vol < 0.0f) vol = -vol;
+-                vol = vol < 0.0f ? 0.0f : (vol > 1.0f ? 1.0f : vol);
++                if(vol<0.0f)vol=0.0f; else if(vol>1.0f)vol=1.0f;
+                 vol = 1.0f - (1.0f - vol) * (1.0f - vol);
+             }
+             ++numWater;
+@@ -641,7 +646,7 @@ static void _UpdateBumps(struct tModelData *model)
+         if (gBump[p][i].bump && gBump[p][i].peak > highForce) highForce = gBump[p][i].peak;
+     }
+     vol = (0.01f * highForce < 150.0f ? 150.0f : (0.01f * highForce > 235.0f ? 235.0f : 0.01f * highForce));
+-    vol *= 0.00390625f;
++    vol /= 256.0f;
+     vol *= 0.65f;
+     highForce = 0.5f * highForce;
+     for (i = 0; i < 4; i++) {
+@@ -668,7 +673,7 @@ static void _UpdateBumps(struct tModelData *model)
+             for (i = 0; i < 3; i++)
+                 if (fabs(gBump[p][4].peakVec[i]) > highForce) highForce = fabs(gBump[p][4].peakVec[i]);
+             vol = (0.001f * highForce < 180.0f ? 180.0f : (0.001f * highForce > 235.0f ? 235.0f : 0.001f * highForce));
+-            vol *= 0.00390625f;
++            vol /= 256.0f;
+             if (fabs(gBump[p][4].peakVec[0]) > 0.5f * highForce) {
+                 if (gBump[p][4].peakVec[0] < 0.0f) bumpIndex |= 1;
+                 else bumpIndex |= 2;
+@@ -765,8 +770,7 @@ static void _GetForceAndPeak(signed short index, int p, float *vec, float thresh
+             if (gSeconds - gBump[p][index].time > 0.5f)
+                 gBump[p][index].time = 0.0f;
+         } else gBump[p][index].time = gSeconds;
+-        return;
+-    }
++    } else {
+     if (vec[0] != 0.0f || vec[1] != 0.0f || vec[2] != 0.0f) {
+         float force = sqrtf(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
+         if (threshold < force && force > gBump[p][index].peak) {
+@@ -781,6 +785,7 @@ static void _GetForceAndPeak(signed short index, int p, float *vec, float thresh
+         gBump[p][index].bump = 1;
+         gBump[p][index].time = gSeconds;
+     }
++    }
+ }
+ 
+ static void _InitBumps(signed short p)
+diff --git a/src/audiomgr.c b/src/audiomgr.c
+index 5684261..dc73f03 100644
+--- a/src/audiomgr.c
++++ b/src/audiomgr.c
+@@ -1,5 +1,5 @@
+ /* Private native SHC audiomgr candidate; no flags/assembly/original-byte injection.
+- * AudPlaySequence remains an external until native stdarg source is established.
++ * Native sequence varargs use the same4-byte SHC alignment contract as TB_text.
+  * No claim is made for missing, moved, fill, natural padding or BSS bytes.
+  */
+ #include "audiomgr_types.h"
+@@ -148,7 +148,13 @@ void AudioShutdown(void)
+     }
+ }
+ 
+-/* 8C013D4A..8C013D4E remains an unsourced target gap. */
++/* Native no-op reverb callback, immediately after AudioShutdown in the
++ * semantic donor and target. Root verified the native empty leaf; auxiliary
++ * source-completeness repair, never padding or gap-byte matching credit. */
++static void update_reverb(void)
++{
++}
++
+ 
+ /* DC 0x8C013D4E; semantic MAT3 body with target-backed platform contracts. */
+ void _PeriodicMaintenance(void)
+@@ -164,6 +170,7 @@ void _ProcessCommand(tAudioMsg *cmd)
+ {
+     tFxSequence *tag;
+     tFxSequence *next;
++    if (!gInited) {} /* native stripped initialized-state assertion013DFC..E00 */
+     LOCK();
+     switch (cmd->hdr.cmd) {
+     case 0:
+@@ -351,9 +358,11 @@ tAudioMsg *_GetCmd(void)
+ tFxSequence *_GetFxTag(void)
+ {
+     tFxSequence *tag = gFreeFxTags.head;
++    /* Target retains the stripped free-list assertion test at 8C014346. */
++    if (!tag) { }
+     tag->id = (gNextFxId << gTagShift) | (tag->id & gTagMask);
+-    if (gNextFxId < (~gTagMask >> (gTagShift + 1))) gNextFxId = gNextFxId + 1;
+-    else gNextFxId = 1;
++    if (gNextFxId >= (~gTagMask >> (gTagShift + 1))) gNextFxId = 1;
++    else gNextFxId++;
+     tag->startTime = -1.0f;
+     tag->data = 0;
+     tag->vol = 0.0f;
+@@ -505,8 +514,8 @@ int AudEffectPlaying(int tag)
+ void _AudChangeEffect(int tag, float volume, float lrpan, float fbpan, float pitch)
+ {
+     tAudioMsg *cmd = 0;
+-    tFxSequence *t = _ConvertTag(tag);
+-    if (t && ((-2.0f != volume && volume != t->vol) ||
++    tFxSequence *t;
++    if ((t = _ConvertTag(tag)) != 0 && ((-2.0f != volume && volume != t->vol) ||
+               (-2.0f != lrpan && lrpan != t->lrpan) ||
+               (-2.0f != fbpan && fbpan != t->fbpan) ||
+               (-2.0f != pitch && pitch != t->pitch))) {
+@@ -592,7 +601,7 @@ void AudPauseAllEffects(void)
+     tAudioMsg *cmd;
+     LOCK();
+     cmd = _GetCmd();
+-    cmd->hdr.cmd = 8;
++    cmd->hdr.cmd = 7;
+     UNLOCK();
+     _ProcessCommand(cmd);
+ }
+@@ -642,21 +651,21 @@ void _UpdateFx(void * element, int elNum)
+     anon_te_tag_c *stag = element;
+     tAudioMsg *cmd;
+     tFxSequence *tag = stag->tag;
+-    if (tag->state != 1) {
++    /* Native stripped state assertion, 8C014C78..88. */
++    if (tag->state != 2 && tag->state != 1 && tag->state != 3) { }
++    if (stag->tag->state != 1) {
+         if (elNum >= 0.75f * gMaxSfx ||
+-            (tag->loop && tag->state == 2 && tag->vol <= 0.0f &&
+-             AudioTimeout(tag->startTime, 0.200000004f))) {
++            (stag->tag->loop && stag->tag->state == 2 && stag->tag->vol <= 0.0f &&
++             AudioTimeout(stag->tag->startTime, 0.200000004f))) {
+             if (stag->tag->state == 2) {
+-                cmd = _GetCmd();
+-                gStopCmds[gNumStopCmds++] = cmd;
++                gStopCmds[gNumStopCmds++] = cmd = _GetCmd();
+                 cmd->hdr.cmd = 5;
+                 cmd->intEffect.tag = stag->tag;
+                 cmd->intEffect.tag->numCmds++;
+             }
+         } else if (stag->tag->state != 2 &&
+                    (stag->tag->vol > 0.100000002f || (!stag->tag->loop && stag->tag->type == 1))) {
+-            cmd = _GetCmd();
+-            gStartCmds[gNumStartCmds++] = cmd;
++            gStartCmds[gNumStartCmds++] = cmd = _GetCmd();
+             cmd->hdr.cmd = 3;
+             cmd->startEffect.tag = stag->tag;
+             cmd->startEffect.tag->numCmds++;
+@@ -689,14 +698,13 @@ void _ProcessPriorities(void)
+     for (tag = gInterruptedFxTags.head; tag; tag = next) {
+         next = tag->ll.next;
+         if (!tag->loop) {
+-            tag->startTime -= 1.0f;
+-            if (tag->startTime < -10.0f) {
++            if ((--tag->startTime) < -10.0f) {
+                 _FreeFxTag(tag);
+                 continue;
+             }
+         }
+         if (tag->state == 1) gNumFxPending++;
+-        if (tag->state != 1) gNumFxInterrupted++;
++        else gNumFxInterrupted++;
+         tag->wpriority = _WeightedPriority(tag);
+         _InsertSorted(tag);
+     }
+@@ -766,7 +774,13 @@ void _FreeListener(anon_ll_free_3c *lis)
+ }
+ 
+ /* DC 0x8C01502C; semantic MAT3 body with target-backed platform contracts. */
+-/* _ValidateListener: target validation remains external; original diagnostic source is unproved. */
++/* Native diagnostic expressions survive although diagnostic actions do not.
++   8C01502C..504C: base/pointer range comparisons, stride60, then free byte+8. */
++void _ValidateListener(anon_ll_free_3c *lis)
++{
++    if (!gListeners || lis < gListeners || lis > &gListeners[gNumListeners - 1]) { }
++    if (lis->free) { }
++}
+ 
+ /* DC 0x8C01504E; semantic MAT3 body with target-backed platform contracts. */
+ tSfxEmitter *_NewEmitter(void)
+@@ -785,12 +799,19 @@ void _FreeEmitter(tSfxEmitter *em)
+         RemoveLLE(&gActiveEmitters, em);
+         em->active = 0;
+     }
++    /* Native free-state assertion retains a load/test at 8C015090/96. */
++    if (em->free) { }
+     InsertLLE(&gFreeEmitters, em, gFreeEmitters.head);
+     em->free = 1;
+ }
+ 
+ /* DC 0x8C0150F4; semantic MAT3 body with target-backed platform contracts. */
+-/* _ValidateEmitter: target validation remains external; original diagnostic source is unproved. */
++/* 8C0150F4..5114: base/range checks, stride44, then free byte+8. */
++void _ValidateEmitter(tSfxEmitter *em)
++{
++    if (!gEmitters || em < gEmitters || em > &gEmitters[gNumEmitters - 1]) { }
++    if (em->free) { }
++}
+ 
+ /* DC 0x8C015116; semantic MAT3 body with target-backed platform contracts. */
+ void AudInit3D(int numListeners, int numEmitters, float footUnits, float frontDistance, int doppler)
+@@ -833,12 +854,13 @@ void AudShutdown3D(void)
+ int AudAddListener(float *pos, float *dir, float *look, float *up)
+ {
+     anon_ll_free_3c *lis;
++    float *lookVec = look;
+     if (!gListeners) return -1;
+     LOCK();
+     lis = _NewListener();
+     lis->pos[0] = pos[0]; lis->pos[1] = pos[1]; lis->pos[2] = pos[2];
+     lis->dir[0] = dir[0]; lis->dir[1] = dir[1]; lis->dir[2] = dir[2];
+-    lis->look[0] = look[0]; lis->look[1] = look[1]; lis->look[2] = look[2];
++    lis->look[0] = lookVec[0]; lis->look[1] = lookVec[1]; lis->look[2] = lookVec[2];
+     lis->up[0] = up[0]; lis->up[1] = up[1]; lis->up[2] = up[2];
+     InsertLLE(&gActiveListeners,lis,gActiveListeners.head);
+     lis->active=1;
+@@ -965,6 +987,10 @@ void _ProcessEmitters(void)
+     for (em = gActiveEmitters.head; em; em = next) {
+         next = em->ll.next;
+         tag = _ConvertTag(em->sndTag);
++        /* Stripped native invariant checks, 8C01581A..28. */
++        if (!tag) { }
++        if (tag->data != em) { }
++        if (!tag->state) { }
+         if (tag->state == 2 && !tag->numCmds && !tag->loop && !AudioEffectPlaying(tag->sysId))
+             _FreeFxTag(tag);
+         else if (!tag->paused) {
+@@ -980,6 +1006,8 @@ void _UpdateEmitter(tSfxEmitter *em, float *vol, float *lrpan, float *fbpan, flo
+ {
+     anon_ll_free_3c *lis;
+     float dir[3];
++    float localDir[3];
++    float uv[3][3];
+     float dist;
+     float lrpans[5];
+     float fbpans[5];
+@@ -994,22 +1022,17 @@ void _UpdateEmitter(tSfxEmitter *em, float *vol, float *lrpan, float *fbpan, flo
+         dir[2] = em->pos[2] - lis->pos[2];
+         dist = TB_Vector3Normalize(dir);
+         {
+-            float lookX = lis->look[0];
+-            float lookY = lis->look[1];
+-            float lookZ = lis->look[2];
+-            float upX = lis->up[0];
+-            float upY = lis->up[1];
+-            float fadeDistance = em->fadeDistance;
+-            float upZ = lis->up[2];
+-            {
+-                float rightX, rightY, rightZ;
+-                /* Listener right axis is up cross look. */
+-                rightX = upY * lookZ - upZ * lookY;
+-                rightY = upZ * lookX - upX * lookZ;
+-                rightZ = upX * lookY - upY * lookX;
+-                lrpans[l] = rightX * dir[0] + rightY * dir[1] + rightZ * dir[2];
+-                fbpans[l] = lookX * dir[0] + lookY * dir[1] + lookZ * dir[2];
+-            }
++            float fadeDistance;
++            uv[2][0]=lis->look[0];uv[2][1]=lis->look[1];uv[2][2]=lis->look[2];
++            uv[1][0]=lis->up[0];uv[1][1]=lis->up[1];uv[1][2]=lis->up[2];
++            uv[0][0]=uv[1][1]*uv[2][2]-uv[1][2]*uv[2][1];
++            uv[0][1]=uv[1][2]*uv[2][0]-uv[1][0]*uv[2][2];
++            uv[0][2]=uv[1][0]*uv[2][1]-uv[1][1]*uv[2][0];
++            localDir[0]=uv[0][0]*dir[0]+uv[0][1]*dir[1]+uv[0][2]*dir[2];
++            localDir[1]=uv[1][0]*dir[0]+uv[1][1]*dir[1]+uv[1][2]*dir[2];
++            localDir[2]=uv[2][0]*dir[0]+uv[2][1]*dir[1]+uv[2][2]*dir[2];
++            lrpans[l]=localDir[0];fbpans[l]=localDir[2];
++            fadeDistance=em->fadeDistance;
+             if (fadeDistance > 0.0f) {
+                 vols[l] = em->maxVol - (em->maxVol - em->minVol) * (dist / fadeDistance);
+                 if (vols[l] < 0.0f) vols[l] = 0.0f;
+@@ -1017,6 +1040,7 @@ void _UpdateEmitter(tSfxEmitter *em, float *vol, float *lrpan, float *fbpan, flo
+         }
+         totalVol += vols[l];
+         lrpans[l] -= lrpans[l] * vols[l];
++        if (gCalcDoppler && gActiveListeners.numElements == 1) {} /* target015ACC..D8 */
+     }
+     *vol = totalVol < 0.0f ? 0.0f : totalVol > 1.0f ? 1.0f : totalVol;
+     lrp = 0.0f;
+@@ -1035,6 +1059,8 @@ void _UpdateEmitter(tSfxEmitter *em, float *vol, float *lrpan, float *fbpan, flo
+ anon_ll_id_3c *_NewSequence(void)
+ {
+     anon_ll_id_3c *s = gFreeSequences.head;
++    /* Native free-list assertion test at 8C015B98. */
++    if (!s) { }
+     RemoveLLE(&gFreeSequences, s);
+     s->free = 0;
+     s->id = (gNextSeqId << gTagShift) | (s->id & gTagMask);
+@@ -1063,13 +1089,43 @@ anon_ll_id_3c *_ConvertSequence(int tag)
+     return &gSequences[tag & gTagMask];
+ }
+ 
++/* Native variadic walk015CA8..CF4, same alignment convention as TB_text.
++ * The final named parameter is stack resident; each int advances4 or8 bytes. */
++#define SEQ_VA_START(ap,last) ((ap)=((unsigned int)((char *)&(last)+4)&3)?(char *)&(last)+8:(char *)&(last)+4)
++#define SEQ_VA_INT(ap) (((ap)=((unsigned int)((ap)+4)&3)?(ap)+8:(ap)+4), *(int *)(((unsigned int)((ap)-4)&3)?(ap)-8:(ap)-4))
++int AudPlaySequence(int priority,float timeout,int replace,int subId,int num,...)
++{
++    anon_ll_id_3c *s;
++    char *args;
++    int i;
++    int tag;
++    LOCK();
++    s = _NewSequence();
++    s->priority = priority;
++    s->startTime = GetAudioTime();
++    s->timeout = timeout;
++    s->replace = replace;
++    s->subId = subId;
++    s->stop = 0;
++    s->next = 0;
++    if (num > 4 || num < 1) {} /* native stripped assertion015C9A..A6 */
++    SEQ_VA_START(args,num);
++    for (i=0;i<num;i++) s->ids[i] = SEQ_VA_INT(args);
++    for (;i<4;i++) s->ids[i] = -1;
++    s->sndTag = -1;
++    InsertLLE(&gActiveSequences,s,gActiveSequences.head);
++    s->active = 1;
++    tag = s->id;
++    UNLOCK();
++    return tag;
++}
++
+ /* DC 0x8C015D58; semantic MAT3 body with target-backed platform contracts. */
+ void AudStopSequence(int tag)
+ {
+     anon_ll_id_3c *s;
+     LOCK();
+-    s=_ConvertSequence(tag);
+-    if(s)s->stop=1;
++    if((s=_ConvertSequence(tag)) != 0)s->stop=1;
+     UNLOCK();
+ }
+ 
+@@ -1091,8 +1147,7 @@ void _ProcessSequences(void)
+             AudStopEffect(s->sndTag);
+             _FreeSequence(s);
+         } else {
+-            tag = _ConvertTag(s->sndTag);
+-            if (tag) {
++            if ((tag = _ConvertTag(s->sndTag)) != 0) {
+                 if (tag->state == 2 && !tag->numCmds && !AudioEffectPlaying(tag->sysId))
+                     _FreeFxTag(tag);
+                 else continue;
+diff --git a/src/dc_zoid_8C06ED90.c b/src/dc_zoid_8C06ED90.c
+index f3cd558..42e3635 100644
+--- a/src/dc_zoid_8C06ED90.c
++++ b/src/dc_zoid_8C06ED90.c
+@@ -101,24 +101,28 @@ void func_8C06F062(unsigned int *strip,int nverts,dcVertexBits20 *vertices,unsig
+     dcSQWord *out;
+     dcVertexBits20 *vertex;
+     int i,index;
++    int corners=4;
++    dcRendererPass *pass=&dcPass8C19E970;
++    unsigned int *destination;
+     if(dcReverseQuad8C15FA14) face=dcCornerOrderB8C0C9768;
+     else face=dcCornerOrderA8C0C9758;
+     dcCurrentList8C19E9DC=(*strip>>24)&7;
+-    *dcPass8C19E970.listType=dcCurrentList8C19E9DC;
+-    dcSelectedSlot8C19E9D8=&dcPass8C19E970.slots[dcCurrentList8C19E9DC];
+-    DC_QACR1=(unsigned int)*dcSelectedSlot8C19E9D8>>24;
+-    DC_QACR0=(unsigned int)*dcSelectedSlot8C19E9D8>>24;
+-    out=(dcSQWord *)(((unsigned int)*dcSelectedSlot8C19E9D8&0x03ffffff)|0xe0000000);
++    *pass->listType=dcCurrentList8C19E9DC;
++    dcSelectedSlot8C19E9D8=&pass->slots[dcCurrentList8C19E9DC];
++    destination=*dcSelectedSlot8C19E9D8;
++    DC_QACR1=(unsigned int)destination>>24;
++    DC_QACR0=(unsigned int)destination>>24;
++    out=(dcSQWord *)(((unsigned int)destination&0x03ffffff)|0xe0000000);
+     func_8C0DAC20(out,strip,32);
+     _builtin_prefetch((void *)out);
+     out+=8;
+-    if(*dcPass8C19E970.listType==0) dcListStrips8C19E900[0]++;
+-    else if(*dcPass8C19E970.listType==2) dcListStrips8C19E900[1]++;
+-    else if(*dcPass8C19E970.listType==4) dcListStrips8C19E900[2]++;
++    if(*pass->listType==0) dcListStrips8C19E900[0]++;
++    else if(*pass->listType==2) dcListStrips8C19E900[1]++;
++    else if(*pass->listType==4) dcListStrips8C19E900[2]++;
+     dcStrips8C19E920++;
+     dcTriangles8C19E928+=nverts-2;
+     dcVertices8C19E938+=nverts;
+-    for(i=0;i<4;i++) {
++    for(i=0;i<corners;i++) {
+         index=face[i];
+         if(index<nverts) {
+             vertex=&vertices[index];
+@@ -132,3 +136,271 @@ void func_8C06F062(unsigned int *strip,int nverts,dcVertexBits20 *vertices,unsig
+     }
+     *dcSelectedSlot8C19E9D8=(unsigned int *)(((unsigned int)*dcSelectedSlot8C19E9D8&0xfc000000)+((unsigned int)out&0x03ffffff));
+ }
++
++void func_8C06F1EC(int x0,int y0,int x1,int y1,int red,int green,int blue,int alpha,float depth)
++{
++    unsigned int color;
++    int *face;
++    int listType,i;
++    unsigned int *strip,*destination;
++    dcSQWord *out;
++    dcFloatBitsVertex20 vertices[4];
++    dcVertexBits20 *vertex;
++    color=((unsigned int)alpha<<24)|((unsigned int)red<<16)|((unsigned int)green<<8)|blue;
++    if(dcReverseQuad8C15FA14) face=dcCornerOrderB8C0C9768;
++    else face=dcCornerOrderA8C0C9758;
++    strip=dcPlainStripContexts;
++    if(alpha==255) listType=0;
++    else {strip+=16;listType=2;}
++    vertices[3].value.x=x0;vertices[3].value.y=y0;vertices[3].value.z=depth;
++    vertices[2].value.x=x1;vertices[2].value.y=y0;vertices[2].value.z=depth;
++    vertices[1].value.x=x1;vertices[1].value.y=y1;vertices[1].value.z=depth;
++    vertices[0].value.x=x0;vertices[0].value.y=y1;vertices[0].value.z=depth;
++    dcCurrentList8C19E9DC=(strip[0]>>24)&7;
++    *dcPass8C19E970.listType=dcCurrentList8C19E9DC;
++    dcSelectedSlot8C19E9D8=&dcPass8C19E970.slots[dcCurrentList8C19E9DC];
++    destination=*dcSelectedSlot8C19E9D8;
++    DC_QACR1=(unsigned int)destination>>24;
++    DC_QACR0=(unsigned int)destination>>24;
++    out=(dcSQWord *)(((unsigned int)destination&0x03ffffff)|0xe0000000);
++    func_8C0DAC20(out,strip,32);
++    _builtin_prefetch((void *)out);out+=8;
++    if(listType==0) dcListStrips8C19E900[0]++;
++    else if(listType==2) dcListStrips8C19E900[1]++;
++    else if(listType==4) dcListStrips8C19E900[2]++;
++    dcStrips8C19E920++;dcTriangles8C19E928+=2;dcVertices8C19E938+=4;
++    for(i=0;i<4;i++) {
++        vertex=&vertices[face[i]].bits;
++        if(i==3) out[0]=0xf0000000;else out[0]=0xe0000000;
++        out[1]=vertex->x;out[2]=vertex->y;out[3]=vertex->z;
++        out[4]=0;out[5]=0;out[6]=color;out[7]=0;
++        _builtin_prefetch((void *)out);out+=8;dcPackets8C19E940++;
++    }
++    *dcSelectedSlot8C19E9D8=(unsigned int *)(((unsigned int)*dcSelectedSlot8C19E9D8&0xfc000000)+((unsigned int)out&0x03ffffff));
++}
++
++/* Light vectors are transformed by the native matrix-register helper. */
++void func_8C06F47A(dcLightParameters *parameters,int count)
++{
++    dcLightCount=count;
++    if(count<0) return;
++    if(count>0) {
++        dcLightState.scalar04=parameters->scalar04;
++        func_8C0725F0(parameters->vector08,dcLightVectors[0]);
++    }
++    if(--count>0) {
++        dcLightState.scalar14=parameters->scalar14;
++        func_8C0725F0(parameters->vector18,dcLightVectors[1]);
++    }
++    dcLightState.attributes[0]=parameters->attributes[0];
++    dcLightState.attributes[1]=parameters->attributes[1];
++    dcLightState.attributes[2]=parameters->attributes[2];
++    dcLightState.attributes[3]=parameters->attributes[3];
++}
++
++void func_8C06F7AA(void)
++{
++    if(drawWindowBorders) {
++        if(gSplitScreen==1) func_8C06F1EC(0,223,640,225,0,0,0,255,1.0f);
++        else if(gSplitScreen==2) {
++            func_8C06F1EC(0,223,640,225,0,0,0,255,1.0f);
++            func_8C06F1EC(319,0,321,480,0,0,0,255,1.0f);
++        }
++    }
++}
++
++void func_8C06F844(dcClipVertex40 *aBits,dcClipVertex40 *bBits,dcClipVertex40 *outBits)
++{
++    dcClipFloatVertex40 *a=(dcClipFloatVertex40 *)aBits;
++    dcClipFloatVertex40 *b=(dcClipFloatVertex40 *)bBits;
++    dcClipFloatVertex40 *out=(dcClipFloatVertex40 *)outBits;
++    float delta,t,s;
++    delta=b->z-a->z;
++    if(delta!=0.0f) t=(dcClipNearZ-a->z)/delta;
++    else t=1.0f;
++    out->x=a->x+t*(b->x-a->x);
++    out->y=a->y+t*(b->y-a->y);
++    out->z=dcClipNearZ;
++    out->u=a->u+t*(b->u-a->u);
++    out->v=a->v+t*(b->v-a->v);
++    out->clip=0;
++    out->screenW=dcClipScalar10*dcClipScalar6C;
++    out->screenX=dcClipCenterX+dcClipXYScale*out->x;
++    out->screenY=dcClipCenterY-dcClipXYScale*out->y;
++    if(a->color.rgba!=b->color.rgba) {
++        s=1.0f-t;
++        out->color.c[0]=(int)(s*a->color.c[0]+t*b->color.c[0]+0.5f);
++        out->color.c[1]=(int)(s*a->color.c[1]+t*b->color.c[1]+0.5f);
++        out->color.c[2]=(int)(s*a->color.c[2]+t*b->color.c[2]+0.5f);
++        out->color.c[3]=(int)(s*a->color.c[3]+t*b->color.c[3]+0.5f);
++    } else out->color.rgba=a->color.rgba;
++}
++
++dcSQWord *func_8C06F994(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    if(!previous) {
++        func_8C06F844(a,b,first);
++        out=func_8C06EF10(out,first,0xe0000000);
++        out=func_8C06EF10(out,b,0xe0000000);
++    }
++    func_8C06F844(a,c,second);
++    out=func_8C06EF10(out,second,0xe0000000);
++    out=func_8C06EF10(out,b,0xe0000000);
++    out=func_8C06EF10(out,c,flags);
++    dcPlainTriangles8C19E930+=3;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FA12(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    if(!previous) {
++        func_8C06F844(a,b,first);
++        out=func_8C06EF10(out,first,0xe0000000);
++    }
++    out=func_8C06EF10(out,c,0xe0000000);
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,flags);
++    if(flags==0xe0000000) {
++        out=func_8C06EF10(out,c,0xe0000000);
++        dcPlainTriangles8C19E930++;
++    }
++    dcPlainTriangles8C19E930+=2;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FA9C(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    func_8C06F844(a,c,first);
++    out=func_8C06EF10(out,first,0xe0000000);
++    out=func_8C06EF10(out,b,0xe0000000);
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,flags);
++    dcPlainTriangles8C19E930+=3;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FAF6(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    if(!previous) {
++        func_8C06F844(a,b,first);
++        out=func_8C06EF10(out,first,0xe0000000);
++    }
++    func_8C06F844(a,c,second);
++    out=func_8C06EF10(out,second,0xf0000000);
++    dcPlainTriangles8C19E930++;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FB52(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    if(!previous) {
++        func_8C06F844(a,b,first);
++        out=func_8C06EF10(out,first,0xe0000000);
++        out=func_8C06EF10(out,b,0xe0000000);
++    }
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,flags);
++    dcPlainTriangles8C19E930++;
++    dcClipCases++;
++    return out;
++}
++
++
++dcSQWord *func_8C06FBBA(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    func_8C06F844(a,c,first);
++    out=func_8C06EF10(out,first,0xe0000000);
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,0xe0000000);
++    out=func_8C06EF10(out,c,flags);
++    dcPlainTriangles8C19E930++;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FC2C(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *second=&dcClipScratch[1].vertex;
++    func_8C06F844(a,c,second);
++    out=func_8C06EF10(out,second,0xe0000000);
++    out=func_8C06EF10(out,b,0xe0000000);
++    out=func_8C06EF10(out,c,flags);
++    dcPlainTriangles8C19E930+=3;
++    dcClipCases++;
++    return out;
++}
++
++dcSQWord *func_8C06FC74(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex;
++    out=func_8C06EF10(out,c,0xe0000000);
++    func_8C06F844(b,c,first);
++    out=func_8C06EF10(out,first,flags);
++    if(flags==0xe0000000) {out=func_8C06EF10(out,c,0xe0000000);dcPlainTriangles8C19E930++;}
++    dcPlainTriangles8C19E930+=2;dcClipCases++;return out;
++}
++
++dcSQWord *func_8C06FCD8(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    func_8C06F844(a,c,first);
++    out=func_8C06EF10(out,first,0xe0000000);
++    out=func_8C06EF10(out,b,0xe0000000);
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,flags);
++    dcPlainTriangles8C19E930+=3;dcClipCases++;return out;
++}
++
++dcSQWord *func_8C06FD32(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex;
++    func_8C06F844(a,c,first);
++    out=func_8C06EF10(out,first,0xf0000000);
++    dcPlainTriangles8C19E930++;dcClipCases++;return out;
++}
++
++dcSQWord *func_8C06FD68(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *second=&dcClipScratch[1].vertex;
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,flags);
++    dcPlainTriangles8C19E930++;dcClipCases++;return out;
++}
++
++dcSQWord *func_8C06FD9E(dcSQWord *out,dcClipVertex40 *a,dcClipVertex40 *b,dcClipVertex40 *c,int previous,unsigned int flags)
++{
++    dcClipVertex40 *first=&dcClipScratch[0].vertex,*second=&dcClipScratch[1].vertex;
++    func_8C06F844(a,c,first);
++    out=func_8C06EF10(out,first,0xe0000000);
++    out=func_8C06EF10(out,first,0xe0000000);
++    func_8C06F844(b,c,second);
++    out=func_8C06EF10(out,second,0xe0000000);
++    out=func_8C06EF10(out,c,flags);
++    dcPlainTriangles8C19E930+=2;dcClipCases++;return out;
++}
++
++void func_8C070BCC(void)
++{
++    if(dcMatrixStackIndex<10) func_8C0725B8(&dcMatrixStack[dcMatrixStackIndex++]);
++}
++
++void func_8C070BF8(void)
++{
++    if(dcMatrixStackIndex) func_8C072592(&dcMatrixStack[--dcMatrixStackIndex]);
++}
++
++void func_8C070C20(void)
++{
++    func_8C070BF8();
++    dcMatrixStackIndex++;
++}
+diff --git a/src/highscorescr.c b/src/highscorescr.c
+index 80b4af7..472356e 100644
+--- a/src/highscorescr.c
++++ b/src/highscorescr.c
+@@ -1,8 +1,18 @@
+-#include "highscorescr_types.h"
++#include "highscorescr_private.h"
+ 
+ static void _InitScreen(void);
+ static void _UninitScreen(void);
+ 
++void DrawUnlocked(void);
++void DrawCircuitCode(void);
++void DrawName(int);
++void DrawGhost(void);
++void DrawScores(void);
++void _PrintScores(void);
++static int animText(void);
++static void _FindGhosts(int);
++static const tBlitDef mblit[1] = {{(void *)-1,0,0,0,0,-1,-1,-1,-1,0,0,(int (*)(_tBlit *))animText,0}};
++
+ static int fixword(char *,char *);
+ unsigned char *gDefaultNames[58] = {
+     (unsigned char *)"MICROSERF", (unsigned char *)"YEAH BABY!", (unsigned char *)"EVAN J KELLY",
+@@ -192,18 +202,18 @@ static void _UninitScreen(void)
+             namePanes[p] = 0;
+         }
+     }
+-    for (i = 0; i < 3; i++) {
+-        if (scorePanes[i]) {
+-            RemovePane(scorePanes[i]);
+-            scorePanes[i] = 0;
+-        }
+-    }
+     for (i = 0; i < 3; i++) {
+         if (ghostPanes[i]) {
+             RemovePane(ghostPanes[i]);
+             ghostPanes[i] = 0;
+         }
+     }
++    for (i = 0; i < 3; i++) {
++        if (scorePanes[i]) {
++            RemovePane(scorePanes[i]);
++            scorePanes[i] = 0;
++        }
++    }
+     inited = 0;
+     setGameState(0x800000);
+ }
+@@ -264,8 +274,8 @@ static int fixword(char *op, char *wp)
+             if (!*wp || !cnt) {
+                 return fixword(op1, sp + 1);
+             }
+-            cnt--;
+             wp++;
++            cnt--;
+         }
+         while (*++wp == *op && *op != op[1]) {
+         }
+@@ -281,3 +291,939 @@ static int fixword(char *op, char *wp)
+ static unsigned char del[4] = "DEL";
+ static unsigned char end[4] = "END";
+ static unsigned char spc[4] = "SPC";
++
++/* Native target-backed ControlUnlocked reconstruction. */
++void ControlUnlocked(void)
++{
++    int nextState; /* r27 */
++    int p; /* r26 */
++
++    nextState = 1;
++    for (p = 0; p < gNumPlayers; p++) {
++        if (gStuffUnlocked[p] == 1) {
++            if ((gPlayers[p].edges & 11) || CountdownTimeOut()) {
++                PlayStartABSound(gPlayers[p].edges);
++                gStuffUnlocked[p] = 0;
++            }
++        } else if (namePanes[p]) {
++            RemovePane(namePanes[p]);
++            namePanes[p] = 0;
++        }
++    }
++    for (p = 0; p < gNumPlayers; p++) {
++        if (gStuffUnlocked[p] == 1) {
++            nextState = 0;
++        }
++    }
++    if (nextState == 1) {
++        if (circuitCode) {
++            _SetHighScoreState(2);
++        } else if (gRace == 0 || gRace == 3 || gRace == 2) {
++            _SetHighScoreState(3);
++        } else {
++            _SetHighScoreState(0);
++        }
++    }
++}
++
++/* Native target-backed ControlCircuitCode reconstruction. */
++void ControlCircuitCode(void)
++{
++    int p; /* r30 */
++
++    for (p = 0; p < gNumPlayers; p++) {
++        if ((gPlayers[p].edges & 11) || CountdownTimeOut()) {
++            PlayStartABSound(gPlayers[p].edges);
++            _SetHighScoreState(3);
++        }
++    }
++}
++
++/* Native target-backed ControlScores reconstruction. */
++void ControlScores(void)
++{
++    if (gRace != 2 && (gActiveEdges & 0x3000)) {
++        PlayLRSound(gActiveEdges);
++        gTable = !gTable;
++        _PrintScores();
++        SetCountdownTimer(15.0f);
++    } else if ((gActiveEdges & 11) || CountdownTimeOut()) {
++        if (gRace != 2 && CountdownTimeOut() && !gTable) {
++            gTable = 1;
++            _PrintScores();
++            SetCountdownTimer(15.0f);
++        } else {
++            PlayStartABSound(gActiveEdges);
++            _SetHighScoreState(0);
++        }
++    }
++}
++
++/* Native target-backed DrawCircuitCode reconstruction. */
++void DrawCircuitCode(void)
++{
++    int x; /* r25 */
++    int y; /* r29 */
++    int i; /* r28 */
++    int length; /* r0 */
++    unsigned char str[64]; /* stack */
++    HAL_SetFont(11);
++    TB_SetTextColor(1);
++    TB_DrawText(TB_CenterText(gText.single[68], 160), 82, gText.single[68]);
++    TB_DrawText(TB_CenterText(gText.single[69], 160), 122, gText.single[69]);
++    length = TB_Strlen(gCircuitCode) > 22 ? 22 : TB_Strlen(gCircuitCode);
++    str[1] = 0;
++    x = 160 - (length + 1) / 2 * 10 / 2;
++    y = 97;
++    for (i = 0; i < length; i++) {
++        str[0] = gCircuitCode[i];
++        TB_DrawText(TB_CenterText(str, x + 5), y, str);
++        if ((i + 1) % ((length + 1) / 2) == 0) {
++            x = 160 - (length + 1) / 2 * 10 / 2;
++            y += 10;
++        } else {
++            x += 10;
++        }
++    }
++}
++
++/* Native target-backed animText reconstruction. */
++static int animText(void)
++{
++    int p; /* r30 */
++    HAL_SetTextDepth(0.0f);
++    switch (gHighScoreState) {
++    case 1:
++        DrawUnlocked();
++        break;
++    case 2:
++        DrawCircuitCode();
++        break;
++    case 3:
++        for (p = 0; p < gNumPlayers; p++) {
++            if (gDrawName[p] == 1) {
++                DrawName(p);
++            }
++        }
++        break;
++    case 4:
++        DrawGhost();
++        break;
++    case 5:
++        DrawScores();
++        break;
++    }
++    HAL_SetTextDepth(-1.0f);
++    return 1;
++}
++
++void _RankScores(void)
++{
++    int p; 
++    int t; 
++    int s; 
++
++    for (p = 0; p < gNumPlayers; p++) {
++        if (!(*gPlayers[p].save)->fileh) {
++            gThisPlayer[p] = (tPlayerProfile **)gLastPlayer[gPlayers[p].controller];
++        } else {
++            gThisPlayer[p] = gPlayers[p].save;
++        }
++        for (t = 0; t < 3; t++) {
++            for (s = 0; s < 5; s++) {
++                if (p == gNewTotalScore[t][s]) {
++                    gDrawName[p] = 1;
++                }
++            }
++        }
++        if (gRace == 2 && gGhostToSave) {
++            gDrawName[p] = 1;
++        }
++        if (gDrawName[p]) {
++            if (!(*gPlayers[p].save)->fileh) {
++                gDrawName[p] = 1;
++                gNameSelect[p] = -1;
++                if (gThisPlayer[p] == (void *)0xFFFFFFFF) {
++                    memset(gScoreName[p], 0, 13);
++                } else {
++                    strcpy((char *)gScoreName[p], (char *)gTempNames[(int)gThisPlayer[p]]);
++                }
++                gNameLen[p] = strlen((char *)gScoreName[p]);
++            } else {
++                gDrawName[p] = 0;
++                strcpy((char *)gScoreName[p], (char *)(*gPlayers[p].save)->name);
++            }
++        }
++    }
++}
++
++void _PrintScores(void)
++{
++    int i; 
++    float *s; 
++    tPlayerProfile ***p; 
++    float defTime; 
++    unsigned int seed; 
++    int width; 
++
++    gThisTrack = gTrackNum + (gBackwards ? 6 : 0);
++    p = gTotalNames[gThisTrack][gTable];
++    s = gTotalRaceStats[gThisTrack].scores[gTable];
++    defTime = gDefStartTimes[gTrackNum + (gBackwards ? 19 : 0)];
++    seed = defTime * 6969.0f;
++    if (gTable == 1) {
++        defTime += 1.0f + (rand_r(&seed) % 2000) / 1000.0f;
++    }
++    for (i = 0; i < 5; i++, s++, p++) {
++        if (*p == (void *)0xFFFFFFFF) {
++            gScoreNames[i] = gDefaultNames[rand_r(&seed) % 58];
++            defTime += (rand_r(&seed) % 1000) / 1000.0f;
++            sprintf((char *)gScoreTimes[i], "%01d:%02d.%03d", (unsigned int)defTime / 60, (unsigned int)defTime % 60,
++                    (unsigned int)(defTime * 1000.0f) % 1000);
++        } else {
++            if (*p >= (tPlayerProfile **)0 && *p <= (tPlayerProfile **)20) {
++                gScoreNames[i] = gTempNames[(int)*p];
++            } else {
++                gScoreNames[i] = (**p)->name;
++            }
++            defTime = *s;
++            seed = defTime;
++            sprintf((char *)gScoreTimes[i], "%01d:%02d.%03d", (unsigned int)defTime / 60, (unsigned int)defTime % 60,
++                    (unsigned int)(defTime * 1000.0f) % 1000);
++        }
++    }
++    if (scorePanes[0]) {
++        HAL_SetFont(13);
++        width = HAL_GetTextWidth(gText.taba[gText.tab[28] + gTable], -1);
++        width /= 2;
++        ChangePaneSize(scorePanes[0], (160-width) - 8, 6, 160 + width + 8, 14 + TB_GetFontLineHeight());
++    }
++}
++
++void ControlName(int p)
++{
++    int t; 
++    int s; 
++    if (gPlayers[p].autoEdges & 0x400) {
++        PlayUDSound(gPlayers[p].autoEdges);
++        if (gNameSelect[p] == -1) {
++            gNameSelect[p] = 52;
++        } else if (gNameSelect[p] == -2) {
++            gNameSelect[p] = 49;
++        } else if (gNameSelect[p] == -3) {
++            gNameSelect[p] = 46;
++        } else if (gNameSelect[p] < 3) {
++            gNameSelect[p] = -3;
++        } else if (gNameSelect[p] < 6) {
++            gNameSelect[p] = -2;
++        } else if (gNameSelect[p] < 9) {
++            gNameSelect[p] = -1;
++        } else {
++            gNameSelect[p] -= 9;
++        }
++    } else if (gPlayers[p].autoEdges & 0x800) {
++        PlayUDSound(gPlayers[p].autoEdges);
++        if (gNameSelect[p] == -1) {
++            gNameSelect[p] = 7;
++        } else if (gNameSelect[p] == -2) {
++            gNameSelect[p] = 4;
++        } else if (gNameSelect[p] == -3) {
++            gNameSelect[p] = 1;
++        } else if (gNameSelect[p] < 45) {
++            gNameSelect[p] += 9;
++        } else if (gNameSelect[p] < 48) {
++            gNameSelect[p] = -3;
++        } else if (gNameSelect[p] < 51) {
++            gNameSelect[p] = -2;
++        } else {
++            gNameSelect[p] = -1;
++        }
++    } else if (gPlayers[p].autoEdges & 0x1000) {
++        PlayLRSound(gPlayers[p].autoEdges);
++        if (gNameSelect[p] == -1) {
++            gNameSelect[p] = -2;
++        } else if (gNameSelect[p] == -2) {
++            gNameSelect[p] = -3;
++        } else if (gNameSelect[p] == -3) {
++            gNameSelect[p] = -1;
++        } else if (gNameSelect[p] % 9 == 0) {
++            gNameSelect[p] += 8;
++        } else {
++            gNameSelect[p] -= 1;
++        }
++    } else if (gPlayers[p].autoEdges & 0x2000) {
++        PlayLRSound(gPlayers[p].autoEdges);
++        if (gNameSelect[p] == -1) {
++            gNameSelect[p] = -3;
++        } else if (gNameSelect[p] == -2) {
++            gNameSelect[p] = -1;
++        } else if (gNameSelect[p] == -3) {
++            gNameSelect[p] = -2;
++        } else if (gNameSelect[p] % 9 == 8) {
++            gNameSelect[p] -= 8;
++        } else {
++            gNameSelect[p] += 1;
++        }
++    }
++    if ((gPlayers[p].edges & 11) || CountdownTimeOut()) {
++        PlayStartABSound(gPlayers[p].edges);
++        if ((gPlayers[p].edges & 1) || CountdownTimeOut()) {
++            gNameSelect[p] = -1;
++        }
++        if (gNameSelect[p] == -2) {
++            if (gNameLen[p] > 0) {
++                gNameLen[p]--;
++                gScoreName[p][gNameLen[p]] = 0;
++            }
++        } else if (gNameSelect[p] == -1) {
++            while (gScoreName[p][gNameLen[p] - 1] == ' ') {
++                gNameLen[p]--;
++                gScoreName[p][gNameLen[p]] = 0;
++            }
++            censor((char *)gScoreName[p]);
++            gDrawName[p] = 0;
++            gLastPlayer[gPlayers[p].controller] = (dcHighProfile **)FindTempNameIdx((char *)gScoreName[p]);
++            gThisPlayer[p] = (tPlayerProfile **)gLastPlayer[gPlayers[p].controller];
++            for (t = 0; t < 3; t++) {
++                for (s = 0; s < 5; s++) {
++                    if (gNewTotalScore[t][s] == p) {
++                        gTotalNames[gThisTrack][t][s] = gThisPlayer[p];
++                    }
++                }
++            }
++        } else if (gNameLen[p] < 12 && (gNameSelect[p] != -3 || gNameLen[p] > 0)) {
++            if (gNameSelect[p] == -3) {
++                gScoreName[p][gNameLen[p]] = ' ';
++            } else {
++                gScoreName[p][gNameLen[p]] = gPlayerNameChars[gNameSelect[p]];
++            }
++            gNameLen[p]++;
++            gScoreName[p][gNameLen[p]] = 0;
++            if (gNameLen[p] == 12) {
++                gNameSelect[p] = -1;
++            }
++        }
++    } else if (gPlayers[p].edges & 4) {
++        PlayStartABSound(gPlayers[p].edges);
++        if (gNameLen[p] > 0) {
++            gNameLen[p]--;
++            gScoreName[p][gNameLen[p]] = 0;
++        }
++    }
++}
++
++void DrawUnlocked(void)
++{
++    int x; 
++    int y; 
++    int i; 
++    int p; 
++    unsigned char str[64]; 
++    int stuffCount; 
++    HAL_SetFont(11);
++    for (p = 0; p < gNumPlayers; p++) {
++        if (gStuffUnlocked[p]) {
++            stuffCount = 3;
++            for (i = 0; i < 19; i++) {
++                if (gUnlockedTracks[p][i] && !gPrevUnlockedTracks[p][i]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 13; i++) {
++                if (gUnlockedCars[p][i] && !gPrevUnlockedCars[p][i]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 4; i++) {
++                if (gUnlockedCircuits[p][i] && !gPrevUnlockedCircuits[p][i]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 4; i++) {
++                if (gUnlockedTrans[p][i * 2] && !gPrevUnlockedTrans[p][i * 2]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 9; i++) {
++                if (gUnlockedEngines[p][i] && !gPrevUnlockedEngines[p][i]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 5; i++) {
++                if (gUnlockedTires[p][i] && !gPrevUnlockedTires[p][i]) {
++                    stuffCount++;
++                }
++            }
++            for (i = 0; i < 6; i++) {
++                if (gUnlockedFrames[p][i] && !gPrevUnlockedFrames[p][i]) {
++                    stuffCount++;
++                }
++            }
++            x = gPlayerRects[gNumWindows - 1][p].cx;
++            y = gPlayerRects[gNumWindows - 1][p].cy - stuffCount * TB_GetFontLineHeight() / 2;
++            if (namePanes[p]) {
++                ChangePaneSize(namePanes[p], gPlayerRects[gNumWindows - 1][p].x, y - 4,
++                               gPlayerRects[gNumWindows - 1][p].x + gPlayerRects[gNumWindows - 1][p].w,
++                               y + stuffCount * TB_GetFontLineHeight() + 4);
++            }
++            TB_SetTextColor(1);
++            TB_DrawText(TB_CenterText(gText.single[59], x), y, gText.single[59]);
++            y += TB_GetFontLineHeight();
++            TB_DrawText(TB_CenterText(gText.single[60], x), y, gText.single[60]);
++            y += TB_GetFontLineHeight() * 2;
++            TB_SetTextColor(22);
++            for (i = 0; i < 19; i++) {
++                if (gUnlockedTracks[p][i] && !gPrevUnlockedTracks[p][i]) {
++                    TB_DrawText(TB_CenterText(gTrackTitles[i], x), y, gTrackTitles[i]);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 13; i++) {
++                if (gUnlockedCars[p][i] && !gPrevUnlockedCars[p][i]) {
++                    TB_DrawText(TB_CenterText(CarTitles[i], x), y, CarTitles[i]);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 4; i++) {
++                if (gUnlockedCircuits[p][i] && !gPrevUnlockedCircuits[p][i]) {
++                    TB_Sprintf(str, "%s %s", gText.taba[gText.tab[45] + i], gText.single[42]);
++                    TB_DrawText(TB_CenterText(str, x), y, str);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 4; i++) {
++                if (gUnlockedTrans[p][i * 2] && !gPrevUnlockedTrans[p][i * 2]) {
++                    TB_Sprintf(str, "%s %s", gText.taba[gText.tab[5] + i], gText.taba[gText.tab[2] + 1]);
++                    TB_DrawText(TB_CenterText(str, x), y, str);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 9; i++) {
++                if (gUnlockedEngines[p][i] && !gPrevUnlockedEngines[p][i]) {
++                    TB_Sprintf(str, "%s %s", gText.taba[gText.tab[7] + i], gText.taba[gText.tab[2] + 3]);
++                    TB_DrawText(TB_CenterText(str, x), y, str);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 5; i++) {
++                if (gUnlockedTires[p][i] && !gPrevUnlockedTires[p][i]) {
++                    TB_Sprintf(str, "%s %s", gText.taba[gText.tab[8] + i], gText.taba[gText.tab[2] + 4]);
++                    TB_DrawText(TB_CenterText(str, x), y, str);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++            for (i = 0; i < 6; i++) {
++                if (gUnlockedFrames[p][i] && !gPrevUnlockedFrames[p][i]) {
++                    TB_Sprintf(str, "%s %s", gText.taba[gText.tab[9] + i], gText.taba[gText.tab[2] + 5]);
++                    TB_DrawText(TB_CenterText(str, x), y, str);
++                    y += TB_GetFontLineHeight();
++                }
++            }
++        }
++    }
++}
++
++void DrawName(int p)
++{
++    static unsigned char del[4] = "DEL"; 
++    static unsigned char end[4] = "END"; 
++    static unsigned char spc[4] = "SPC"; 
++    unsigned char ltr[2]; 
++    int x; 
++    int y; 
++    int i; 
++    HAL_SetFont(12);
++    ltr[1] = 0;
++    x = gPlayerRects[gNumWindows - 1][p].cx;
++    y = gPlayerRects[gNumWindows - 1][p].y + 4;
++    TB_SetTextColor(1);
++    TB_DrawText(TB_CenterText(gText.single[160], x), y, gText.single[160]);
++    x = gPlayerRects[gNumWindows - 1][p].cx;
++    y = gPlayerRects[gNumWindows - 1][p].y + 15;
++    TB_SetTextColor(22);
++    TB_DrawText(TB_CenterText(gScoreName[p], x), y, gScoreName[p]);
++    x = gPlayerRects[gNumWindows - 1][p].cx - 48;
++    y = gPlayerRects[gNumWindows - 1][p].y + 30;
++    for (i = 0; i < 54; i++) {
++        ltr[0] = gPlayerNameChars[i];
++        TB_SetTextColor(gNameSelect[p] == i ? 22 : 1);
++        TB_DrawText(TB_CenterText(ltr, x), y, ltr);
++        if ((i + 1) % 9 == 0) {
++            y += 10;
++            x = gPlayerRects[gNumWindows - 1][p].cx - 48;
++        } else {
++            x += 12;
++        }
++    }
++    x = gPlayerRects[gNumWindows - 1][p].cx - 36;
++    TB_SetTextColor(gNameSelect[p] == -3 ? 22 : 16);
++    TB_DrawText(TB_CenterText(spc, x), y, spc);
++    TB_SetTextColor(gNameSelect[p] == -2 ? 22 : 16);
++    TB_DrawText(TB_CenterText(del, x + 36), y, del);
++    TB_SetTextColor(gNameSelect[p] == -1 ? 22 : 16);
++    TB_DrawText(TB_CenterText(end, x + 72), y, end);
++}
++
++void DrawScores(void)
++{
++    int i; 
++    int numWid; 
++    unsigned char str[16]; 
++    HAL_SetFont(13);
++    TB_SetTextColor(1);
++    TB_DrawText(TB_CenterText(gText.taba[gText.tab[28] + gTable], 160), 10, gText.taba[gText.tab[28] + gTable]);
++    for (i = 0; i < 5; i++) {
++        sprintf((char *)str, "%d", i + 1);
++        HAL_SetFont(5);
++        TB_SetTextColor(gNewTotalScore[gTable][i] == -1 ? 1 : playerTextColor[gNewTotalScore[gTable][i]]);
++        numWid = HAL_GetTextWidth(str, -1);
++        TB_DrawText(16, i * 24 + 56, str);
++        HAL_SetFont(11);
++        TB_DrawText(numWid + 16, i * 24 + 58, gText.taba[gText.tab[57] + i]);
++    }
++    HAL_SetFont(10);
++    for (i = 0; i < 5; i++) {
++        TB_SetTextColor(gNewTotalScore[gTable][i] == -1 ? 1 : playerTextColor[gNewTotalScore[gTable][i]]);
++        TB_DrawEllipseText(69, i * 24 + 60, 160, gScoreNames[i]);
++    }
++    HAL_SetFont(2);
++    for (i = 0; i < 5; i++) {
++        TB_SetTextColor(gNewTotalScore[gTable][i] == -1 ? 1 : playerTextColor[gNewTotalScore[gTable][i]]);
++        TB_DrawText(TB_RightText(gScoreTimes[i], 304), i * 24 + 60, gScoreTimes[i]);
++    }
++    HAL_SetFont(11);
++    TB_SetTextColor(22);
++    TB_DrawText(TB_CenterText(gText.single[112], 160), 190, gText.single[112]);
++}
++
++void _SetHighScoreState(int newState)
++{
++    if (gHighScoreState == newState) {
++        return;
++    }
++    if (blit) {
++        RemoveBlit((_tBlit *)blit);
++        blit = 0;
++    }
++    switch (gHighScoreState) {
++    case 1:
++        {
++            int p; /* r27 */
++
++            for (p = 0; p < gNumPlayers; p++) {
++                if (namePanes[p]) {
++                    RemovePane(namePanes[p]);
++                    namePanes[p] = 0;
++                }
++            }
++        }
++        break;
++    case 2:
++        if (codePane) {
++            RemovePane(codePane);
++            codePane = 0;
++        }
++        break;
++    case 3:
++        {
++            int p; /* r27 */
++
++            for (p = 0; p < gNumPlayers; p++) {
++                if (namePanes[p]) {
++                    RemovePane(namePanes[p]);
++                    namePanes[p] = 0;
++                }
++            }
++        }
++        break;
++    case 4:
++        {
++            int i; /* r27 */
++
++            for (i = 0; i < 3; i++) {
++                if (ghostPanes[i]) {
++                    RemovePane(ghostPanes[i]);
++                    ghostPanes[i] = 0;
++                }
++            }
++        }
++        break;
++    case 5:
++        {
++            int i; /* r27 */
++
++            for (i = 0; i < 3; i++) {
++                if (scorePanes[i]) {
++                    RemovePane(scorePanes[i]);
++                    scorePanes[i] = 0;
++                }
++            }
++        }
++        break;
++    }
++    gHighScoreState = newState;
++    switch (newState) {
++    case 0:
++        _UninitScreen();
++        break;
++    case 1:
++        {
++            int p; /* r27 */
++
++            for (p = 0; p < gNumPlayers; p++) {
++                if (!namePanes[p]) {
++                    namePanes[p] = InitPane(gPlayerRects[gNumWindows - 1][p].x, gPlayerRects[gNumWindows - 1][p].y,
++                                            gPlayerRects[gNumWindows - 1][p].x + gPlayerRects[gNumWindows - 1][p].w,
++                                            gPlayerRects[gNumWindows - 1][p].y + gPlayerRects[gNumWindows - 1][p].h,
++                                            176, 0, 0, 0);
++                }
++            }
++        }
++        SetCountdownTimer(600.0f);
++        break;
++    case 2:
++        codePane = InitPane(83, 70, 237, 136, 192, 0, 0, 0);
++        SetCountdownTimer(600.0f);
++        break;
++    case 3:
++        {
++            int p; /* r27 */
++
++            for (p = 0; p < gNumPlayers; p++) {
++                if (!namePanes[p]) {
++                    namePanes[p] = InitPane(gPlayerRects[gNumWindows - 1][p].x, gPlayerRects[gNumWindows - 1][p].y,
++                                            gPlayerRects[gNumWindows - 1][p].x + gPlayerRects[gNumWindows - 1][p].w,
++                                            gPlayerRects[gNumWindows - 1][p].y + gPlayerRects[gNumWindows - 1][p].h,
++                                            176, 0, 0, 0);
++                }
++            }
++        }
++        SetCountdownTimer(600.0f);
++        break;
++    case 4:
++        if (!ghostPanes[0]) {
++            int width; /* r0 */
++
++            HAL_SetFont(13);
++            width = HAL_GetTextWidth(gText.single[230], -1);
++            width /= 2;
++            ghostPanes[0] = InitPane((160-width) - 8, 6, 160 + width + 8, 14 + TB_GetFontLineHeight(),
++                                     176, 0, 0, 0);
++        }
++        if (!ghostPanes[1]) {
++            HAL_SetFont(10);
++            ghostPanes[1] = InitPane(71, 51, 249, TB_GetFontLineHeight() * 3 + 59, 176, 0, 0, 0);
++        }
++        if (!ghostPanes[2]) {
++            HAL_SetFont(10);
++            ghostPanes[2] = InitPane(71, 106, 249, TB_GetFontLineHeight() * 5 + 114, 176, 0, 0, 0);
++        }
++        SetCountdownTimer(600.0f);
++        gGhostMenuSelect = 0;
++        gGhostPak = 0;
++        {
++            int p; /* r27 */
++
++            for (p = 0; p < gNumPlayers; p++) {
++                if (gPlayers[p].save) {
++                    PS_LockFile((*gPlayers[p].save)->fileh, 0);
++                }
++            }
++        }
++        {
++            int pak; /* r27 */
++
++            for (pak = 0; pak < 8; pak++) {
++                _FindGhosts(pak);
++            }
++        }
++        break;
++    case 5:
++        gTable = gRace == 2 ? 2 : 0;
++        _PrintScores();
++        if (!scorePanes[0]) {
++            int width; /* r0 */
++
++            HAL_SetFont(13);
++            width = HAL_GetTextWidth(gText.taba[gText.tab[28] + gTable], -1);
++            width /= 2;
++            scorePanes[0] = InitPane((160-width) - 8, 6, 160 + width + 8, 14 + TB_GetFontLineHeight(),
++                                     176, 0, 0, 0);
++        }
++        if (!scorePanes[1]) {
++            scorePanes[1] = InitPane(8, 55, 312, 180, 176, 0, 0, 0);
++        }
++        if (!scorePanes[2]) {
++            int width; /* r0 */
++
++            HAL_SetFont(11);
++            width = HAL_GetTextWidth(gText.single[112], -1);
++            /* `width / 2` inline here (the other two pane blocks use `width /= 2;`) gives the original register order between width and the pane address */
++            scorePanes[2] = InitPane((160-width/2) - 8, 186, 160 + width / 2 + 8, 194 + TB_GetFontLineHeight(),
++                                     176, 0, 0, 0);
++        }
++        if (gRace == 2) {
++            SetCountdownTimer(30.0f);
++        } else {
++            SetCountdownTimer(15.0f);
++        }
++        break;
++    }
++    if (gHighScoreState) {
++        blit = (_tBlit *)NewMultiBlit(0, 0, mblit, 1);
++    }
++}
++
++static void _FindGhosts(int pak)
++{
++    dcHighSavedGhost **gh;
++    dcHighSavedGhost *g;
++    tPlayerProfile *p=(tPlayerProfile *)gGhostPlayer;
++    unsigned int existingGhostSize=0;
++    gPakGhosts[pak]=0;
++    if(!gControllerData[pak/2].attached) {gGhostStatus[pak]=-4;return;}
++    if(!PS_PakInserted(pak)) {gGhostStatus[pak]=-1;return;}
++    if(PS_PakDamaged(pak)) {gGhostStatus[pak]=-2;return;}
++    if(PS_PakRumble(pak)) {gGhostStatus[pak]=-3;return;}
++    gGhostStatus[pak]=0;
++    if(gRace==2) {
++        if(!GhostFileAvailable((tPlayerProfile **)&gGhostPlayer,pak,gTrackNum,gBackwards)) gGhostStatus[pak]=-5;
++        for(gh=highGhostHead;gh;gh=g->next) {
++            g=*gh;
++            if(g->fileh && ((dcHighFileView *)*g->fileh)->pak==pak && g->track==gTrackNum && g->backward==gBackwards &&
++                !strcmp((char *)g->name,(char *)p->name) && g->playerId[0]==p->id[0] && g->playerId[1]==p->id[1]) {
++                if(!gPakGhosts[pak] || g->finish > (*gPakGhosts[pak])->finish) {gPakGhosts[pak]=gh;gGhostStatus[pak]=1;}
++            }
++        }
++        if(gPakGhosts[pak]) existingGhostSize=((dcHighFileView *)*(*gPakGhosts[pak])->fileh)->blocks;
++        if(gBlocksNeeded > existingGhostSize+PS_GetFreeBlocks(pak)) {gPakGhosts[pak]=0;gGhostStatus[pak]=-5;}
++    }
++}
++
++void ControlGhost(void)
++{
++    int exitGhost; /* r31 */
++    signed char delete; /* r30 */
++
++    exitGhost = 0;
++    while(gGhostMenuSelect==1 || (gGhostMenuSelect==2 && gGhostStatus[gGhostPak]!=0 && gGhostStatus[gGhostPak]!=1)) {
++        gGhostMenuSelect--; if(gGhostMenuSelect<0)gGhostMenuSelect=3;
++    }
++    if (gGhostMenuConflict == 1) {
++        if (gActiveEdges & 15) {
++            PlayStartABSound(gActiveEdges);
++            gGhostMenuConflict = 0;
++        }
++    } else if (gGhostMenuConfirm == 1) {
++        if (!PS_PakInserted(gGhostPak)) {
++            PS_LockFile((*gPakGhosts[gGhostPak])->fileh, 0);
++            gGhostMenuConfirm = 0;
++        } else if (gActiveEdges & 0xc00) {
++            PlayUDSound(gActiveEdges);
++            do {
++                gGhostConfirmMenuSelect += (gActiveEdges & 0x800) ? 1 : -1;
++                if (gGhostConfirmMenuSelect < 0) {
++                    gGhostConfirmMenuSelect = 2;
++                }
++                if (gGhostConfirmMenuSelect > 2) {
++                    gGhostConfirmMenuSelect = 0;
++                }
++            } while (gGhostConfirmMenuSelect == 1 &&
++                     (gBlocksNeeded > PS_GetFreeBlocks(gGhostPak) ||
++                      !GhostFileAvailable((tPlayerProfile **)&gGhostPlayer, gGhostPak, gTrackNum, gBackwards)));
++        } else if (gActiveEdges & 15) {
++            delete = 0;
++            PlayStartABSound(gActiveEdges);
++            if ((gActiveEdges & 11) && gGhostConfirmMenuSelect != 2) {
++                if (gGhostConfirmMenuSelect == 0) {
++                    delete = 1;
++                    if (ReadGhostData(gPakGhosts[gGhostPak])) {
++                        SaveGhostInLimbo(*(*gPakGhosts[gGhostPak])->header, *(*gPakGhosts[gGhostPak])->header + 1);
++                        DeleteGhost(gPakGhosts[gGhostPak]);
++                    }
++                }
++                if (GhostFileAvailable((tPlayerProfile **)&gGhostPlayer, gGhostPak, gTrackNum, gBackwards)) {
++                    if (SaveGhost(gGhostPak, &gGhostPlayer, gSavedGhost, 0)) {
++                        PS_LockFile((*gSavedGhost)->fileh, 1);
++                        gGhostMenuNotify = 1;
++                    }
++                }
++            }
++            if (!delete) {
++                PS_LockFile((*gPakGhosts[gGhostPak])->fileh, 0);
++            }
++            gGhostMenuConfirm = 0;
++        }
++    } else if (gGhostMenuNotify == 1) {
++        if (gActiveEdges & 15) {
++            PlayStartABSound(gActiveEdges);
++            gGhostMenuNotify = 0;
++            exitGhost = 1;
++        }
++    } else if ((gActiveLevels & 0x3000) && gGhostMenuSelect == 0) {
++        if (gActiveEdges & 0x3000) {
++            PlayLRSound(gActiveEdges);
++            gGhostPak += (gActiveEdges & 0x2000) ? 1 : -1;
++            if(gGhostPak<0)gGhostPak=7;
++            if(gGhostPak>7)gGhostPak=0;
++        }
++    } else if (gActiveEdges & 0xc00) {
++        PlayUDSound(gActiveEdges);
++        do {
++            gGhostMenuSelect += (gActiveEdges & 0x800)?1:-1;
++            if(gGhostMenuSelect<0)gGhostMenuSelect=3;
++            if(gGhostMenuSelect>3)gGhostMenuSelect=0;
++        } while(gGhostMenuSelect==1 || (gGhostMenuSelect==2 && gGhostStatus[gGhostPak]!=0 && gGhostStatus[gGhostPak]!=1));
++    } else if (gActiveEdges & 11) {
++        PlayStartABSound(gActiveEdges);
++        if (gGhostMenuSelect == 2) {
++            if (gGhostStatus[gGhostPak] == 0) {
++                if (SaveGhost(gGhostPak, &gGhostPlayer, gSavedGhost, 0)) {
++                    PS_LockFile((*gSavedGhost)->fileh, 1);
++                    gGhostMenuNotify = 1;
++                }
++            } else if (gGhostStatus[gGhostPak] == 1) {
++                PS_LockFile((*gPakGhosts[gGhostPak])->fileh, 1);
++                gGhostMenuConfirm = 1;
++                gGhostConfirmMenuSelect = 2;
++                gYes = 0;
++                gGhostMenuNotify = 0;
++            } else if (gGhostStatus[gGhostPak] == 2) {
++                gGhostMenuConflict = 1;
++            }
++        }
++        if (gGhostMenuSelect == 3) {
++            SaveGhost(gGhostPak, &gGhostPlayer, gSavedGhost, 1);
++            gSavedGhost = 0;
++            exitGhost = 1;
++        }
++    }
++    if (exitGhost == 1) {
++        _SetHighScoreState(5);
++    } else {
++        _FindGhosts(gGhostPak);
++    }
++}
++
++void DrawGhost(void)
++{
++    int i; /* r27 */
++    int y; /* r26 */
++    unsigned char *str; /* r25 */
++    unsigned char str1[128]; /* stack */
++    unsigned char time[16]; /* stack */
++    signed short gFreePages; /* r5 */
++    HAL_SetFont(13);
++    TB_SetTextColor(1);
++    y = 10; /* propagated away; makes y the first local referenced, which puts the final loop's str in r27 and y in r28 */
++    str = gText.single[230];
++    TB_DrawText(TB_CenterText(str, 160), y, str);
++    HAL_SetFont(10);
++    str = (*highSavedGhost)->name;
++    TB_DrawText(TB_CenterText(str, 160), 55, str);
++    y = TB_GetFontLineHeight() + 55;
++    HAL_SetFont(2);
++    TB_Sprintf(time, "%01d:%02d.%03d", (int)((*highSavedGhost)->finish / 60.0f), (int)(*highSavedGhost)->finish % 60,
++               (int)((*highSavedGhost)->finish * 1000.0f) % 1000);
++    TB_DrawText(TB_CenterText(time, 160), y, time);
++    y += TB_GetFontLineHeight();
++    HAL_SetFont(11);
++    TB_Sprintf(str1,"%d%s%s",gBlocksNeeded,gText.single[94],gText.single[165]);
++    TB_DrawText(TB_CenterText(str1,160),y,str1);
++    if (gGhostMenuConflict == 1) {
++        HAL_SetFont(10);
++        TB_Sprintf(str1, gText.single[235], (*gPakGhosts[gGhostPak])->name);
++        TB_SetJust(1, 3);
++        TB_DrawTextScrollBox(160, 110, 130, TB_GetFontLineHeight() * 6, -1, 0, str1);
++        TB_SetJust(0, 3);
++    } else if (gGhostMenuConfirm == 1) {
++        HAL_SetFont(11);
++        TB_SetJust(1, 3);
++        TB_DrawText(160, 110, gText.single[232]);
++        y = TB_GetFontLineHeight() + 110;
++        HAL_SetFont(2);
++        TB_Printf(160, y, "%01d:%02d.%03d", (int)((*gPakGhosts[gGhostPak])->finish / 60.0f),
++                  (int)(*gPakGhosts[gGhostPak])->finish % 60, (int)((*gPakGhosts[gGhostPak])->finish * 1000.0f) % 1000);
++        HAL_SetFont(10);
++        y = TB_GetFontLineHeight() * 2 + 110;
++        for (i = 0; i < 3; i++) {
++            TB_SetTextColor(i == gGhostConfirmMenuSelect ? 22 : 1);
++            if (i == 1 && (gBlocksNeeded > PS_GetFreeBlocks(gGhostPak) ||
++                           !GhostFileAvailable((tPlayerProfile **)&gGhostPlayer, gGhostPak, gTrackNum, gBackwards))) {
++                TB_SetTextColor(4);
++            }
++            TB_DrawText(160, y, gText.taba[gText.tab[48] + i]);
++            y += TB_GetFontLineHeight();
++        }
++        TB_SetJust(0, 3);
++    } else if (gGhostMenuNotify == 1) {
++        HAL_SetFont(10);
++        TB_Sprintf(str1,gText.single[234],((dcHighFileView *)*(*highSavedGhost)->fileh)->filename,gPS_PakName[gGhostPak]);
++        TB_SetJust(1, 3);
++        TB_DrawTextScrollBox(160, 110, 130, TB_GetFontLineHeight() * 6, -1, 0, str1);
++        TB_SetTextColor(22);
++        TB_DrawText(160,110+TB_GetFontLineHeight()*4,gText.single[112]);
++        TB_SetJust(0,3);
++    } else {
++        HAL_SetFont(10);
++        y = 110;
++        for (i = 0; i < 4; i++) {
++            TB_SetTextColor(i == gGhostMenuSelect ? 22 : 1);
++            time[0] = 0;
++            if (i == 1) {
++                switch (gGhostStatus[gGhostPak]) {
++                case -4:
++                    str = gText.single[175];
++                    break;
++                case -3:
++                    str = gText.single[179];
++                    break;
++                case -2:
++                    str = gText.single[176];
++                    break;
++                case -1:
++                    str = gText.single[178];
++                    break;
++                case -5:
++                    str = gText.single[170];
++                    break;
++                case 0:
++                case 1:
++                case 2:
++                    gFreePages = PS_GetFreeBlocks(gGhostPak);
++                    if (gPakGhosts[gGhostPak]) {
++                        gFreePages += ((dcHighFileView *)*(*gPakGhosts[gGhostPak])->fileh)->blocks;
++                    }
++                    str = str1;
++                    TB_Sprintf(str, "%d%s%s", gFreePages, gFreePages == 1 ? gText.single[93] : gText.single[94],
++                               gFreePages == 1 ? gText.single[99] : gText.single[100]);
++                    break;
++                }
++                if (gGhostStatus[gGhostPak] == 2) {
++                    TB_SetTextColor(5);
++                }
++            } else {
++                str = gText.taba[gText.tab[47] + i];
++            }
++            if(i==2 && gGhostStatus[gGhostPak]!=0 && gGhostStatus[gGhostPak]!=1) TB_SetTextColor(4);
++            if (i == 1) {
++                HAL_SetFont(11);
++                TB_DrawText(TB_CenterText(str, 160), y, str);
++                HAL_SetFont(10);
++                y += TB_GetFontLineHeight();
++                if (time[0]) {
++                    HAL_SetFont(2);
++                    TB_DrawText(TB_CenterText(time, 160), y, time);
++                    HAL_SetFont(10);
++                }
++            } else if (i == 0) {
++                TB_DrawText(95,y,str);
++                TB_DrawText(TB_RightText(gPS_PakName[gGhostPak],225),y,gPS_PakName[gGhostPak]);
++            } else {
++                TB_DrawText(TB_CenterText(str, 160), y, str);
++            }
++            TB_SetTextColor(1);
++            y += TB_GetFontLineHeight();
++        }
++    }
++}
+diff --git a/src/pathcommon.c b/src/pathcommon.c
+new file mode 100644
+index 0000000..b263fa2
+--- /dev/null
++++ b/src/pathcommon.c
+@@ -0,0 +1,554 @@
++/* Native Dreamcast checkpoint/path reconstruction. MAT3 semantic donor;
++   target uses inline byte-swapping, without the GC reload swap prepass. */
++#include "pathcommon_private.h"
++unsigned int GetNextCheckpoint(unsigned int);
++signed short NextPathPt(signed short,signed short);
++void SyncAltPaths(void);
++void CalcResPathBounds(void);
++float GetPathDistance(int,int);
++void NextResPathPt(int,int,int *,int *);
++#define SWAP16(v) ((((v) & 0xff) << 8) + (((v) >> 8) & 0xff))
++#define SWAP32(v) (((v) << 24) + ((v) >> 24) + (((v) << 8) & 0xff0000) + (((v) >> 8) & 0xff00))
++
++static signed short FindAltPathIntersect(signed short cp, signed short path);
++static void CalcCheckpointTimes(void);
++static void FindPathDistances(void);
++static int TraceToCheckpoint(int inPath, int inIdx, int *cp, int depth);
++static void FindClosestPt(int alt, int first, signed short *pos, int *path, int *index);
++
++
++
++void ReadCheckpointData(void)
++{
++    signed short i;
++    signed short j;
++    signed short p;
++    memcpy(&gCheckpoints, gPathWave, sizeof(gCheckpoints));
++    gCheckpoints.finishPt = gCheckpoints.loopPt = gCheckpoints.startPt = -1;
++    gCheckpoints.startTime = 90;
++    gCheckpoints.numPoints = SWAP16(gCheckpoints.numPoints);
++    for (i = 0; i < gCheckpoints.numPoints; ++i) {
++        for (j = 0; j < 3; ++j) {
++            *(unsigned int *)&gCheckpoints.points[i].pos[j] = SWAP32(*(unsigned int *)&gCheckpoints.points[i].pos[j]);
++            *(unsigned int *)&gCheckpoints.points[i].normal[j] = SWAP32(*(unsigned int *)&gCheckpoints.points[i].normal[j]);
++        }
++        *(unsigned int *)&gCheckpoints.points[i].radius = SWAP32(*(unsigned int *)&gCheckpoints.points[i].radius);
++        gCheckpoints.points[i].flags = SWAP16(gCheckpoints.points[i].flags);
++        if (gCheckpoints.finishPt < 0 && (gCheckpoints.points[i].flags & 1))
++            gCheckpoints.finishPt = i;
++        if (gCheckpoints.loopPt < 0 && (gCheckpoints.points[i].flags & 4))
++            gCheckpoints.loopPt = i;
++        if (gCheckpoints.startPt < 0 && (gCheckpoints.points[i].flags & 2))
++            gCheckpoints.startPt = i;
++        for (p = 0; p <= 19; ++p)
++            gCheckpoints.points[i].pathPts[p] = 0;
++        gCheckpoints.points[i].time[0] = gCheckpoints.points[i].time[1] = 45;
++    }
++    if (gCheckpoints.finishPt < 0)
++        gCheckpoints.finishPt = 0;
++    if (gCheckpoints.loopPt < 0)
++        gCheckpoints.loopPt = 0;
++    if (gCheckpoints.startPt < 0)
++        gCheckpoints.startPt = 0;
++}
++
++static signed short FindAltPathIntersect(signed short cp, signed short path)
++{
++    signed short p;
++    signed short sign;
++    signed short newSign;
++    float nx,nz,dx,dz;
++    int first = 1;
++    if (path >= gResPath.numAlt)
++        return -1;
++    if (gResPath.alt[path].resurrect == 2) {
++        if (cp == 0)
++            return 0;
++        else
++            return -1;
++    }
++    nx = gCheckpoints.points[cp].normal[0];
++    nz = gCheckpoints.points[cp].normal[2];
++    for (p = 0; p < gResPath.alt[path].numPts; ++p) {
++        dx = gResPath.alt[path].pts[p][0] - gCheckpoints.points[cp].pos[0];
++        dz = gResPath.alt[path].pts[p][2] - gCheckpoints.points[cp].pos[2];
++        if (dx *
++            dx +
++            dz *
++            dz <=
++            gCheckpoints.points[cp].radius) {
++            newSign = (dx *
++                       nx +
++                       dz *
++                       nz) < 0.0f ? -1 : 1;
++            if (first) {
++                sign = newSign;
++                first = 0;
++            } else if (sign != newSign)
++                return p;
++        }
++    }
++    return -1;
++}
++
++signed short FindResPathIntersect(signed short cp)
++{
++    float nx,nz,dx,dz;
++    float pDist;
++    float ppDist;
++    float minDist = 1.0e20f;
++    signed short p;
++    signed short pp;
++    signed short pSign;
++    signed short ppSign;
++    signed short closest;
++    nx = gCheckpoints.points[cp].normal[0];
++    nz = gCheckpoints.points[cp].normal[2];
++    for (pp = -1, p = 0; pp < gResPath.numPts; ++p, ++pp) {
++        if (p == gResPath.numPts)
++            p = 0;
++        dx = gResPath.pts[p][0] - gCheckpoints.points[cp].pos[0];
++        dz = gResPath.pts[p][2] - gCheckpoints.points[cp].pos[2];
++        pDist = dx *
++                dx +
++                dz *
++                dz;
++        pSign = (dx *
++                 nx +
++                 dz *
++                 nz) < 0.0f ? -1 : 1;
++        if (pDist < minDist) {
++            minDist = pDist;
++            closest = p;
++        }
++        if (pp >= 0 && pDist <= gCheckpoints.points[cp].radius &&
++            ppDist <= gCheckpoints.points[cp].radius && pSign != ppSign)
++            break;
++        ppDist = pDist;
++        ppSign = pSign;
++    }
++    if (pp == gResPath.numPts)
++        return closest;
++    else
++        return p;
++}
++
++signed short FindDronePathIntersect(signed short cp, signed short path)
++{
++    float nx,nz,dx,dz;
++    float pDist;
++    float ppDist;
++    float minDist = 1.0e20f;
++    signed short p;
++    signed short pp;
++    signed short pSign;
++    signed short ppSign;
++    signed short closest;
++    nx = gCheckpoints.points[cp].normal[0];
++    nz = gCheckpoints.points[cp].normal[2];
++    for (pp = -1, p = 0; pp < gDronePaths[path].numPts; ++p, ++pp) {
++        if (p == gDronePaths[path].numPts)
++            p = 0;
++        dx = gDronePaths[path].pts[p].pos[0] - gCheckpoints.points[cp].pos[0];
++        dz = gDronePaths[path].pts[p].pos[2] - gCheckpoints.points[cp].pos[2];
++        pDist = dx *
++                dx +
++                dz *
++                dz;
++        pSign = (dx *
++                 nx +
++                 dz *
++                 nz) < 0.0f ? -1 : 1;
++        if (pDist < minDist) {
++            minDist = pDist;
++            closest = p;
++        }
++        if (pp >= 0 && pDist <= gCheckpoints.points[cp].radius &&
++            ppDist <= gCheckpoints.points[cp].radius && pSign != ppSign)
++            break;
++        ppDist = pDist;
++        ppSign = pSign;
++    }
++    if (pp == gDronePaths[path].numPts)
++        return closest;
++    else
++        return p;
++}
++
++void SyncCheckpointsToPaths(signed short path)
++{
++    int i;
++    int p;
++    for (i = 0; i < gCheckpoints.numPoints; ++i) {
++        if (path < 0) {
++            for (p = 0; p <= 19; ++p) {
++                if (p == 0)
++                    gCheckpoints.points[i].pathPts[p] = FindResPathIntersect(i);
++                else if (p > 4)
++                    gCheckpoints.points[i].pathPts[p] = FindAltPathIntersect(i, p - 5);
++                else
++                    gCheckpoints.points[i].pathPts[p] = FindDronePathIntersect(i, p - 1);
++            }
++        } else if (path == 0) {
++            gCheckpoints.points[i].pathPts[path] = FindResPathIntersect(i);
++            for (p = 0; p < gResPath.numAlt; ++p)
++                gCheckpoints.points[i].pathPts[p + 5] = FindAltPathIntersect(i, p);
++        } else
++            gCheckpoints.points[i].pathPts[path] = FindDronePathIntersect(i, path - 1);
++    }
++    FindPathDistances();
++}
++
++static void CalcCheckpointTimes(void)
++{
++    anon_numPts_pts_8 *dronePath;
++    int lap;
++    int cp;
++    int ncp;
++    int endPt;
++    int i;
++    float time;
++    int started;
++    float delta[3];
++    for (lap = 0; lap < 2; ++lap) {
++        started = gCheckpoints.startPt == 0 || lap != 0;
++        cp = lap == 0 ? gCheckpoints.startPt : gCheckpoints.finishPt;
++        for (;;) {
++            dronePath = gDronePaths;
++            ncp = GetNextCheckpoint(cp);
++            if (ncp < cp)
++                endPt = dronePath->numPts - 1;
++            else
++                endPt = gCheckpoints.points[ncp].pathPts[1] - 1;
++            time = 0.0f;
++            for (i = gCheckpoints.points[cp].pathPts[1]; i < endPt; ++i) {
++                delta[0] = dronePath->pts[i+1].pos[0] - dronePath->pts[i].pos[0];
++                delta[1] = dronePath->pts[i+1].pos[1] - dronePath->pts[i].pos[1];
++                delta[2] = dronePath->pts[i+1].pos[2] - dronePath->pts[i].pos[2];
++                time += _builtin_sqrtf(delta[0]*delta[0] + delta[1]*delta[1] + delta[2]*delta[2]) / (dronePath->pts[i].mph * 1.4666667f);
++            }
++            delta[0] = dronePath->pts[NextPathPt(i, 0)].pos[0] - dronePath->pts[i].pos[0];
++            delta[1] = dronePath->pts[NextPathPt(i, 0)].pos[1] - dronePath->pts[i].pos[1];
++            delta[2] = dronePath->pts[NextPathPt(i, 0)].pos[2] - dronePath->pts[i].pos[2];
++            time += _builtin_sqrtf(delta[0]*delta[0] + delta[1]*delta[1] + delta[2]*delta[2]) / (dronePath->pts[i].mph * 1.4666667f);
++            gCheckpoints.points[cp].time[lap] = time;
++            cp = ncp;
++            if (cp == gCheckpoints.finishPt) {
++                if (started)
++                    break;
++                started = 1;
++            }
++        }
++    }
++    time = 0.0f;
++    gCheckpoints.startTime = gCheckpoints.points[0].time[0] + 10;
++    cp = gCheckpoints.finishPt;
++    do {
++        time += gCheckpoints.points[cp].time[1];
++        cp = GetNextCheckpoint(cp);
++    } while (cp != gCheckpoints.finishPt);
++    gCheckpoints.startTime += time / 30.0f;
++    gCheckpoints.points[gCheckpoints.finishPt].time[1] += time / 30.0f;
++}
++
++unsigned int GetNextCheckpoint(unsigned int cp)
++{
++    if (cp == gCheckpoints.numPoints - 1)
++        return gCheckpoints.loopPt;
++    return cp + 1;
++}
++
++void ReadPathData(void)
++{
++    signed short i;
++    signed short p;
++    char *ptr;
++    signed short j;
++    if (gRestartGame) {
++        CalcCheckpointTimes();
++        SyncCheckpointsToPaths(-1);
++        SyncAltPaths();
++        CalcResPathBounds();
++        CalcCheckpointTimes();
++        return;
++    }
++    ptr = gPathWave + sizeof(gCheckpoints);
++    memcpy(&gResPath, ptr, sizeof(gResPath));
++    ptr += sizeof(gResPath);
++    gAltPaths = (anon_resurrect_firstPath_10 *)ptr;
++    gResPath.numPts = SWAP16(*(short *)&gResPath.numPts);
++    ptr += gResPath.numAlt * sizeof(*gAltPaths);
++    for (i = 0; i < gResPath.numAlt; ++i) {
++        *(short *)&gAltPaths[i].firstIdx = SWAP16(*(short *)&gAltPaths[i].firstIdx);
++        *(short *)&gAltPaths[i].lastIdx = SWAP16(*(short *)&gAltPaths[i].lastIdx);
++        *(short *)&gAltPaths[i].numPts = SWAP16(*(short *)&gAltPaths[i].numPts);
++    }
++    memcpy(&gNumResPathPts, ptr, sizeof(gNumResPathPts));
++    ptr += sizeof(gNumResPathPts);
++    gNumResPathPts = SWAP16(*(short *)&gNumResPathPts);
++    gResPathPtList = (signed short (*)[3])ptr;
++    ptr += gResPath.numPts * sizeof(*gResPathPtList);
++    for (i = 0; i < gNumResPathPts; ++i)
++        for (j = 0; j < 3; ++j) {
++            *(short *)&gResPathPtList[i][j] = SWAP16(*(short *)&gResPathPtList[i][j]);
++        }
++    gResPath.pts = gResPathPtList;
++    if (gResPath.numAlt)
++        gResPath.alt = gAltPaths;
++    else
++        gResPath.alt = gAltPaths = 0;
++    for (i = 0; i < gResPath.numAlt; ++i) {
++        gAltPaths[i].pts = (signed short (*)[3])ptr;
++        ptr += gAltPaths[i].numPts * sizeof(*gResPathPtList);
++    }
++    for (p = 0; p < 4; ++p) {
++        memcpy(&gDronePaths[p], ptr, sizeof(gDronePaths[p]));
++        ptr += sizeof(gDronePaths[p]);
++        *(short *)&gDronePaths[p].numPts = SWAP16(*(short *)&gDronePaths[p].numPts);
++        gNumPathPts[p] = gDronePaths[p].numPts;
++        gPathPtList[p] = (anon_pos_mph_8 *)ptr;
++        gDronePaths[p].pts = (anon_pos_mph_8 *)ptr;
++        ptr += gDronePaths[p].numPts * sizeof(*gPathPtList[p]);
++        for (i = 0; i < gDronePaths[p].numPts; ++i)
++            for (j = 0; j < 3; ++j) {
++                *(short *)&gDronePaths[p].pts[i].pos[j] = SWAP16(*(short *)&gDronePaths[p].pts[i].pos[j]);
++            }
++    }
++    SyncCheckpointsToPaths(-1);
++    SyncAltPaths();
++    CalcResPathBounds();
++    CalcCheckpointTimes();
++}
++
++static void FindPathDistances(void)
++{
++    int i;
++    int n;
++    int finishReached = 0;
++    gLapDistance = gFirstLapDistance = 0.0f;
++    for (i = 0; i < gCheckpoints.numPoints; ++i) {
++        n = GetNextCheckpoint(i);
++        gCheckpoints.points[i].distToNext = GetPathDistance(
++            gCheckpoints.points[i].pathPts[0], gCheckpoints.points[n].pathPts[0]);
++        if (i > 0 && gCheckpoints.finishPt == i)
++            finishReached = 1;
++        if (!finishReached)
++            gFirstLapDistance += gCheckpoints.points[i].distToNext;
++        if (i >= gCheckpoints.loopPt)
++            gLapDistance += gCheckpoints.points[i].distToNext;
++    }
++}
++
++float GetPathDistance(int from, int to)
++{
++    int i;
++    int n;
++    int end;
++    float dist;
++    float delta[3];
++    if (from > to && to < gCheckpoints.points[gCheckpoints.loopPt].pathPts[0])
++        return -1.0f;
++    if (from > to)
++        end = gResPath.numPts;
++    else
++        end = to;
++    dist = 0.0f;
++    for (i = from; i < end; ++i) {
++        NextResPathPt(-1, i, 0, &n);
++        delta[0] = gResPath.pts[n][0] - gResPath.pts[i][0];
++        delta[1] = gResPath.pts[n][1] - gResPath.pts[i][1];
++        delta[2] = gResPath.pts[n][2] - gResPath.pts[i][2];
++        delta[1] = 0.0f;
++        dist += _builtin_sqrtf(delta[0]*delta[0] + delta[1]*delta[1] + delta[2]*delta[2]);
++    }
++    if (end != to)
++        for (i = gCheckpoints.points[gCheckpoints.loopPt].pathPts[0]; i < to; ++i) {
++            NextResPathPt(-1, i, 0, &n);
++            delta[0] = gResPath.pts[n][0] - gResPath.pts[i][0];
++        delta[1] = gResPath.pts[n][1] - gResPath.pts[i][1];
++            delta[2] = gResPath.pts[n][2] - gResPath.pts[i][2];
++        delta[1] = 0.0f;
++            dist += _builtin_sqrtf(delta[0]*delta[0] + delta[1]*delta[1] + delta[2]*delta[2]);
++        }
++    return dist;
++}
++
++void NextResPathPt(int inPath, int inIdx, int *outPath, int *outIdx)
++{
++    if (inPath >= 0) {
++        if (inIdx == gResPath.alt[inPath].numPts - 1) {
++            *outIdx = gResPath.alt[inPath].lastIdx;
++            *outPath = gResPath.alt[inPath].lastPath;
++        } else {
++            *outIdx = inIdx + 1;
++            *outPath = inPath;
++        }
++    } else {
++        if (inIdx == gResPath.numPts - 1)
++            *outIdx = gCheckpoints.points[gCheckpoints.loopPt].pathPts[0];
++        else
++            *outIdx = inIdx + 1;
++        if (outPath)
++            *outPath = -1;
++    }
++}
++
++signed short PrevPathPt(signed short idx, signed short path)
++{
++    if (idx == 0 && gCheckpoints.loopPt > 0)
++        return idx;
++    if (idx == 0 || idx == gCheckpoints.points[gCheckpoints.loopPt].pathPts[path + 1])
++        return gDronePaths[path].numPts - 1;
++    return idx - 1;
++}
++
++signed short NextPathPt(signed short idx, signed short path)
++{
++    if (idx == gDronePaths[path].numPts - 1)
++        return gCheckpoints.points[gCheckpoints.loopPt].pathPts[path + 1];
++    return idx + 1;
++}
++
++int TraceCheck(int inPath, int depth)
++{
++    int i;
++    if (inPath >= 0 && gResPath.alt[inPath].resurrect &&
++        ((gResPath.alt[inPath].firstPath >= 0 &&
++          !gResPath.alt[gResPath.alt[inPath].firstPath].resurrect) ||
++         (gResPath.alt[inPath].lastPath >= 0 &&
++          !gResPath.alt[gResPath.alt[inPath].lastPath].resurrect)))
++        return 0;
++    gPathTrace[depth] = inPath;
++    for (i = 0; i < depth; ++i)
++        if (gPathTrace[i] == inPath)
++            return 0;
++    return 1;
++}
++
++static int TraceToCheckpoint(int inPath, int inIdx, int *cp, int depth)
++{
++    int i;
++    int idx;
++    if (!TraceCheck(inPath, depth))
++        return 0;
++    if (inPath < 0) {
++        for (i = 1; i < gCheckpoints.numPoints; ++i)
++            if (inIdx < gCheckpoints.points[i].pathPts[0])
++                break;
++        *cp = i - 1;
++        return 1;
++    }
++    idx = -1;
++    for (i = 0; i < gCheckpoints.numPoints; ++i) {
++        if ((short)gCheckpoints.points[i].pathPts[inPath + 5] >= 0 &&
++            (idx < 0 || idx < gCheckpoints.points[i].pathPts[inPath + 5]) &&
++            inIdx >= gCheckpoints.points[i].pathPts[inPath + 5]) {
++            *cp = i;
++            idx = gCheckpoints.points[i].pathPts[inPath + 5];
++        }
++    }
++    if (idx >= 0)
++        return 1;
++    return TraceToCheckpoint(gResPath.alt[inPath].firstPath,
++                             gResPath.alt[inPath].firstIdx, cp, depth + 1);
++}
++
++static void FindClosestPt(int alt, int first, signed short *pos, int *path, int *index)
++{
++    float min = 1.0e20f;
++    float dx;
++    float dy;
++    float dz;
++    float dist;
++    int p;
++    int a;
++    *path = -1;
++    for (p = 0; p < gResPath.numPts; ++p) {
++        dx = gResPath.pts[p][0] - pos[0];
++        dy = gResPath.pts[p][1] - pos[1];
++        dz = gResPath.pts[p][2] - pos[2];
++        dist = dx * dx + dy * dy + dz * dz;
++        if (dist < min) {
++            min = dist;
++            *index = p;
++        }
++    }
++    for (a = 0; a < gResPath.numAlt; ++a) {
++        if (a == alt)
++            continue;
++        if (first && a < alt && gResPath.alt[a].firstPath == alt && gResPath.alt[a].firstIdx == 0)
++            continue;
++        if (!first && a < alt && gResPath.alt[a].lastPath == alt &&
++            gResPath.alt[a].lastIdx == gResPath.alt[alt].numPts - 1)
++            continue;
++        for (p = 0; p < gResPath.alt[a].numPts; ++p) {
++            dx = gResPath.alt[a].pts[p][0] - pos[0];
++            dy = gResPath.alt[a].pts[p][1] - pos[1];
++            dz = gResPath.alt[a].pts[p][2] - pos[2];
++            dist = dx * dx + dy * dy + dz * dz;
++            if (dist < min) {
++                *index = p;
++                min = dist;
++                *path = a;
++            }
++        }
++    }
++}
++
++void SyncAltPaths(void)
++{
++    int i;
++    int cp;
++    int path;
++    int index;
++    for (i = 0; i < gResPath.numAlt; ++i) {
++        if (gResPath.alt[i].resurrect == 2) {
++            gResPath.alt[i].firstPath = -1;
++            gResPath.alt[i].firstIdx = 0;
++            gResPath.alt[i].lastPath = -1;
++            gResPath.alt[i].lastIdx = 1;
++        } else {
++            FindClosestPt(i, 1, gResPath.alt[i].pts[0], &path, &index);
++            gResPath.alt[i].firstPath = path;
++            gResPath.alt[i].firstIdx = index;
++            FindClosestPt(i, 0, gResPath.alt[i].pts[gResPath.alt[i].numPts - 1], &path, &index);
++            gResPath.alt[i].lastPath = path;
++            gResPath.alt[i].lastIdx = index;
++        }
++    }
++    for (i = 0; i < gResPath.numAlt; ++i) {
++        if (gResPath.alt[i].resurrect == 2)
++            gResPath.alt[i].startSection = -1;
++        else if (!TraceToCheckpoint(i, 0, &cp, 0))
++            gResPath.alt[i].startSection = -1;
++        else
++            gResPath.alt[i].startSection = cp;
++    }
++}
++
++void CalcResPathBounds(void)
++{
++    int i;
++    int j;
++    int validPt;
++    gPathMin[0] = gPathMin[1] = gPathMin[2] = 32767;
++    gPathMax[0] = gPathMax[1] = gPathMax[2] = -32767;
++    for (i = 0; i < gNumResPathPts; ++i) {
++        if (i < gResPath.numPts)
++            validPt = 1;
++        else {
++            validPt = 0;
++            for (j = 0; j < gResPath.numAlt; ++j)
++                if (gResPathPtList[i] >= gResPath.alt[j].pts[0] &&
++                    gResPathPtList[i] < gResPath.alt[j].pts[gResPath.alt[j].numPts] &&
++                    gResPath.alt[j].resurrect == 1)
++                    validPt = 1;
++        }
++        if (validPt == 1)
++            for (j = 0; j < 3; ++j) {
++                gPathMin[j] = gPathMin[j] < gResPathPtList[i][j] ? gPathMin[j] : gResPathPtList[i][j];
++                gPathMax[j] = gPathMax[j] > gResPathPtList[i][j] ? gPathMax[j] : gResPathPtList[i][j];
++            }
++    }
++}
++
+diff --git a/src/playerscr.c b/src/playerscr.c
+index 548639f..d1a07cc 100644
+--- a/src/playerscr.c
++++ b/src/playerscr.c
+@@ -228,8 +228,8 @@ void uninitScreen(void)
+         blit = 0;
+     }
+     removeBG();
+-    gNumWindows = 1;
+     HFOV = 90.0f;
++    gNumWindows = 1;
+     drawWindowBorders = 1;
+     ZOID_ResetWindows();
+     ZOID_Reset();
+@@ -282,7 +282,7 @@ void controlSelect(int p)
+             claimPlayer(p, gSelectedPlayer[p]);
+         else claimPlayer(p, &gJustPlayers[p]);
+         setPlayerState(p, kPlayerStateWait);
+-    } else if (gPlayers[p].edges & 2) {
++    } else if (gPlayers[p].edges & 10) {
+         PlayStartABSound(gPlayers[p].edges);
+         if (gSelectMenuSelect[p] >= kSelectMenuSelectPlayer && gSelectMenuSelect[p] < kSelectMenuCreatePlayer) {
+ 
+@@ -471,7 +471,7 @@ void controlCreatePlayer(int p)
+         else if (gNameSelect[p] % 9 == 8) gNameSelect[p] -= 8;
+         else gNameSelect[p]++;
+     }
+-    if (gPlayers[p].edges & 3) {
++    if (gPlayers[p].edges & 11) {
+         PlayStartABSound(gPlayers[p].edges);
+         if (gPlayers[p].edges & 1) gNameSelect[p] = -1;
+         if (gNameSelect[p] == -2) {
+@@ -556,7 +556,7 @@ void controlDeletePlayer(int p)
+             gDeleteMenuConfirm[p] = 0;
+             gDeleteMenuYes[p] = 0;
+         } else setPlayerState(p, kPlayerStateSelect);
+-    } else if (gPlayers[p].edges & 2) {
++    } else if (gPlayers[p].edges & 10) {
+         if (gDeleteMenuNotify[p] == 1) {
+             PlayStartABSound(gPlayers[p].edges);
+             gDeleteMenuNotify[p] = 0;
+@@ -689,7 +689,7 @@ void controlPakFull(int p)
+ /* 0x8007c354, size 0x54 */
+ void controlPakDamaged(int p)
+ {
+-    if (gPlayers[p].edges & 7) {
++    if (gPlayers[p].edges & 15) {
+         PlayStartABSound(gPlayers[p].edges);
+         setPlayerState(p, kPlayerStateSelect);
+     }
+@@ -713,6 +713,7 @@ void drawSelect(int p)
+     int i;
+     signed short w;
+     if (gNumPlayers > 1) gTextPosScale *= 0.5f;
++    x = gPlayerRects[gNumPlayers - 1][p].x;
+     ChangePaneSize(gPlayerMenuPane[p], -20, 0, -10, 10);
+     if (gNumPlayers == 1) HAL_SetFont(13);
+     else if (gNumPlayers == 2) HAL_SetFont(11);
+@@ -854,7 +855,7 @@ void drawSelect(int p)
+ /* 0x8007d10c, size 0x2e8 */
+ void drawWait(int p)
+ {
+-    int x;
++    int x = gPlayerRects[gNumPlayers - 1][p].cx;
+     int y;
+     unsigned char *str;
+     signed short screenPos[2];
+@@ -924,10 +925,12 @@ void drawCreatePlayer(int p)
+     ZOID_ProjectWindow(p, buttonInfo[p][16].mat.mat3.pos, &gCamera[p].mat, 0, screenPos);
+     x = screenPos[0] / 2;
+     y = (screenPos[1]-4) / 2.0f;
++    HAL_SetMenuTextDepth(buttonInfo[p][16].mat.mat3.pos[2]-10.0f);
+     TB_SetTextColor(22);
+     TB_DrawEllipseText(x, y, gNumPlayers == 1 ? 150 : 69, str);
+     TB_SetJust(0, 1);
+     HAL_SetFont(11);
++    HAL_SetMenuTextDepth(0.0f);
+     TB_SetJust(0, 3);
+     y = gPlayerRects[gNumPlayers - 1][p].y + 32;
+     x = gPlayerRects[gNumPlayers - 1][p].cx;
+@@ -984,6 +987,7 @@ void drawDeletePlayer(int p)
+     int i;
+     signed short w;
+     if (gNumPlayers > 1) gTextPosScale *= 0.5f;
++    x = gPlayerRects[gNumPlayers - 1][p].x;
+     if (gNumPlayers > 1) HAL_SetFont(12); else HAL_SetFont(13);
+     y = 0;
+     str = gText.single[150];
+@@ -1121,12 +1125,13 @@ void drawDeletePlayer(int p)
+ /* 0x8007eab4, size 0x144 */
+ void drawPakFull(int p)
+ {
+-    int y = gPlayerRects[gNumPlayers - 1][p].y;
+-    int cx = gPlayerRects[gNumPlayers - 1][p].cx;
++    int numPlayers = gNumPlayers;
++    int y = gPlayerRects[numPlayers - 1][p].y;
++    int cx = gPlayerRects[numPlayers - 1][p].cx;
+     unsigned char *str;
+     unsigned char str1[40];
+-    if (gNumPlayers > 2) HAL_SetFont(11);
+-    else if (gNumPlayers == 2) HAL_SetFont(10);
++    if (numPlayers > 2) HAL_SetFont(11);
++    else if (numPlayers == 2) HAL_SetFont(10);
+     else HAL_SetFont(13);
+     TB_Sprintf(str1, "%s %d", gText.single[29], p + 1);
+     TB_SetTextColor(playerTextColor[p]);
+@@ -1143,12 +1148,13 @@ void drawPakFull(int p)
+ /* 0x8007ebf8, size 0x144 */
+ void drawPakDamaged(int p)
+ {
+-    int y = gPlayerRects[gNumPlayers - 1][p].y;
+-    int cx = gPlayerRects[gNumPlayers - 1][p].cx;
++    int numPlayers = gNumPlayers;
++    int y = gPlayerRects[numPlayers - 1][p].y;
++    int cx = gPlayerRects[numPlayers - 1][p].cx;
+     unsigned char *str;
+     unsigned char str1[40];
+-    if (gNumPlayers > 2) HAL_SetFont(11);
+-    else if (gNumPlayers == 2) HAL_SetFont(10);
++    if (numPlayers > 2) HAL_SetFont(11);
++    else if (numPlayers == 2) HAL_SetFont(10);
+     else HAL_SetFont(13);
+     TB_Sprintf(str1, "%s %d", gText.single[29], p + 1);
+     TB_SetTextColor(playerTextColor[p]);
+@@ -1165,9 +1171,9 @@ void drawPakDamaged(int p)
+ /* 0x8007ed3c, size 0xec */
+ int animText(void)
+ {
+-    int playerIdx;
++    int playerIdx = 0;
+     HAL_SetTextDepth(0.0f);
+-    for (playerIdx = 0; playerIdx < gNumPlayers; playerIdx++) {
++    for (; playerIdx < gNumPlayers; playerIdx++) {
+         updatePlayer(playerIdx);
+         switch (gPlayerState[playerIdx]) {
+         case kPlayerStateSelect: drawSelect(playerIdx); break;
+@@ -1196,7 +1202,7 @@ void setPlayerState(int p, enum_kPlayerStateCount newState)
+         if (!player || !(*player)->fileh) {
+             gSelectedPlayer[p] = &gJustPlayers[p];
+             if (gPlayerState[p] != kPlayerStateCreatePlayer && gPlayerState[p] != kPlayerStateDeletePlayer)
+-                gSelectPakIdx[p] = (int)gPlayers[p].controller * 2;
++                gSelectPakIdx[p] = (int)gPlayers[p].controller * 8 / 4;
+             if (gSelectMenuSelect[p] >= kSelectMenuSelectPlayer && gSelectMenuSelect[p] < kSelectMenuCreatePlayer)
+                 gSelectMenuSelect[p] = kSelectMenuJustPlay;
+         } else {
+@@ -1242,18 +1248,12 @@ void updateSelectInfo(int p)
+     for (p = firstPlayer; p <= lastPlayer; p++) {
+         gSelectPlayerNum[p] = gNumPakPlayers[gSelectPakIdx[p]];
+         gSelectMenuValid[p][0] = 1;
+-        gSelectMenuValid[p][1] = 0;
++        gSelectMenuValid[p][1] = 1;
+         gSelectMenuValid[p][2] = 0;
+-        gSelectMenuValid[p][3] = gSelectPlayerNum[p] > 0;
+-        gSelectMenuValid[p][4] = gSelectPlayerNum[p] > 1;
+-        gSelectMenuValid[p][5] = gSelectPlayerNum[p] > 2;
+-        gSelectMenuValid[p][6] = gSelectPlayerNum[p] > 3;
+-        gSelectMenuValid[p][7] = gSelectPlayerNum[p] > 4;
+-        gSelectMenuValid[p][8] = gSelectPlayerNum[p] > 5;
+-        gSelectMenuValid[p][9] = gSelectPlayerNum[p] > 6;
+-        gSelectMenuValid[p][10] = gSelectPlayerNum[p] > 7;
++        for (i = 0; i < 8; i++)
++            gSelectMenuValid[p][i+3] = gSelectPlayerNum[p] > i;
+ 
+-        gSelectMenuValid[p][11] = gSelectPlayerNum[p] > -1 && gSelectPlayerNum[p] < 8 && !gPakFull[gSelectPakIdx[p]];
++        gSelectMenuValid[p][11] = gSelectPlayerNum[p] > -1 && !gPakFull[gSelectPakIdx[p]];
+         gSelectMenuValid[p][12] = gSelectPlayerNum[p] > 0;
+         gSelectMenuValid[p][13] = 0;
+         if (gPlayerState[p] == kPlayerStateDeletePlayer) {
+@@ -1264,16 +1264,10 @@ void updateSelectInfo(int p)
+             gSelectMenuValid[p][13] = 0;
+         }
+         gSelectMenuVisible[p][0] = gSelectMenuValid[p][0];
+-        gSelectMenuVisible[p][1] = 0;
+-        gSelectMenuVisible[p][2] = 0;
+-        gSelectMenuVisible[p][3] = gSelectMenuValid[p][3];
+-        gSelectMenuVisible[p][4] = gSelectMenuValid[p][4];
+-        gSelectMenuVisible[p][5] = gSelectMenuValid[p][5];
+-        gSelectMenuVisible[p][6] = gSelectMenuValid[p][6];
+-        gSelectMenuVisible[p][7] = gSelectMenuValid[p][7];
+-        gSelectMenuVisible[p][8] = gSelectMenuValid[p][8];
+-        gSelectMenuVisible[p][9] = gSelectMenuValid[p][9];
+-        gSelectMenuVisible[p][10] = gSelectMenuValid[p][10];
++        gSelectMenuVisible[p][1] = gPlayerState[p] == kPlayerStateDeletePlayer || gSelectMenuValid[p][1];
++        gSelectMenuVisible[p][2] = gSelectPlayerNum[p] <= 0 || (gPakFull[gSelectPakIdx[p]] && gPlayerState[p] != kPlayerStateDeletePlayer);
++        for (i = 3; i < 11; i++)
++            gSelectMenuVisible[p][i] = gSelectMenuValid[p][i];
+         gSelectMenuVisible[p][11] = gSelectMenuValid[p][11];
+         gSelectMenuVisible[p][12] = gSelectMenuValid[p][12];
+         gSelectMenuVisible[p][13] = gSelectMenuValid[p][13];
+@@ -1292,10 +1286,11 @@ void updatePakInfo(void)
+     int p;
+     for(pak=0;pak<8;pak++) {
+         gPakFull[pak]=0;
+-        if(!gControllerData[pak/2].attached) {gNumPakPlayers[pak]=-4;continue;}
+-        if(!PS_PakInserted(pak)) {gNumPakPlayers[pak]=-1;continue;}
+-        if(PS_PakDamaged(pak)) {gNumPakPlayers[pak]=-2;continue;}
+-        if(PS_PakRumble(pak)) {gNumPakPlayers[pak]=-3;continue;}
++        if(!gControllerData[pak/2].attached) gNumPakPlayers[pak]=-4;
++        else if(!PS_PakInserted(pak)) gNumPakPlayers[pak]=-1;
++        else if(PS_PakDamaged(pak)) gNumPakPlayers[pak]=-2;
++        else if(PS_PakRumble(pak)) gNumPakPlayers[pak]=-3;
++        else {
+         if(gNumPakPlayers[pak]<0) {
+             for(p=0;p<gNumPlayers;p++) if(gSelectPakIdx[p]==pak) gPlayerMenuButtonsJustInited[p]=1;
+         }
+@@ -1305,6 +1300,7 @@ void updatePakInfo(void)
+         }
+         if(gNumPakPlayers[pak]==0) gNumPakPlayers[pak]=0;
+         gPakFull[pak]=PS_GetFreeBlocks(pak)<func_8C06D518(0x810) || PS_GetFreeFiles(pak)<1;
++        }
+     }
+ }
+ 
+@@ -1368,6 +1364,7 @@ void initButtons(signed char p)
+     tTexture *tex;
+     unsigned short texIdx;
+     int buttonIdx;
++    float scale;
+     for (buttonIdx = 0; buttonIdx < 22; buttonIdx++) {
+         if (buttonInfo[p][buttonIdx].objIdx == -1) {
+             memcpy(buttonInfo[p][buttonIdx].mat.mat3.uvs, unitmatrix, 36);
+@@ -1389,9 +1386,11 @@ void initButtons(signed char p)
+     buttonInfo[p][16].mat.mat3.pos[0] = 0.0f;
+     buttonInfo[p][16].mat.mat3.pos[1] = gNumPlayers > 1 ? 105.0f : 115.0f;
+     buttonInfo[p][16].mat.mat3.pos[2] = 200.0f;
+-    /* no-op copies kept on purpose: the target reloads and re-stores both coordinates */
+-    buttonInfo[p][16].mat.mat3.pos[0] = buttonInfo[p][16].mat.mat3.pos[0];
+-    buttonInfo[p][16].mat.mat3.pos[1] = buttonInfo[p][16].mat.mat3.pos[1];
++    /* Native position scaling uses a shared unit scale on these widgets. */
++    scale = 1.0f;
++    buttonInfo[p][16].mat.mat3.pos[0] *= scale;
++    buttonInfo[p][16].mat.mat3.pos[1] *= scale;
++    buttonInfo[p][16].mat.mat3.pos[2] *= scale;
+     tex = MBOX_FindTexture_WORK("CURSOR", &texIdx, 0, gNumModels - 1, 1);
+     ZOID_SetTexture(buttonInfo[p][17].objIdx, tex, -1);
+     tex = MBOX_FindTexture_WORK("A1", &texIdx, 0, gNumModels - 1, 1);
+@@ -1415,18 +1414,20 @@ void initButtons(signed char p)
+     buttonInfo[p][20].mat.mat3.pos[0] = -75.1f;
+     buttonInfo[p][20].mat.mat3.pos[1] = (gNumPlayers > 1 ? 50.2f : 55.2f);
+     buttonInfo[p][20].mat.mat3.pos[2] = 100.0f;
+-    /* no-op copies kept on purpose: the target reloads and re-stores both coordinates */
+-    buttonInfo[p][20].mat.mat3.pos[0] = buttonInfo[p][20].mat.mat3.pos[0];
+-    buttonInfo[p][20].mat.mat3.pos[1] = buttonInfo[p][20].mat.mat3.pos[1];
++    /* Shared native coordinate scale. */
++    buttonInfo[p][20].mat.mat3.pos[0] *= scale;
++    buttonInfo[p][20].mat.mat3.pos[1] *= scale;
++    buttonInfo[p][20].mat.mat3.pos[2] *= scale;
+     ScaleUV(buttonInfo[p][20].mat.mat3.uvs, buttonInfo[p][20].mat.mat3.uvs, 0.5f);
+     memcpy(buttonInfo[p][21].mat.mat3.uvs, unitmatrix, 36);
+     WPitchUV(-1.5707964f, buttonInfo[p][21].mat.mat3.uvs);
+     buttonInfo[p][21].mat.mat3.pos[0] = -87.1f;
+     buttonInfo[p][21].mat.mat3.pos[1] = (gNumPlayers > 1 ? 50.2f : 55.2f);
+     buttonInfo[p][21].mat.mat3.pos[2] = 100.0f;
+-    /* no-op copies kept on purpose: the target reloads and re-stores both coordinates */
+-    buttonInfo[p][21].mat.mat3.pos[0] = buttonInfo[p][21].mat.mat3.pos[0];
+-    buttonInfo[p][21].mat.mat3.pos[1] = buttonInfo[p][21].mat.mat3.pos[1];
++    /* Shared native coordinate scale. */
++    buttonInfo[p][21].mat.mat3.pos[0] *= scale;
++    buttonInfo[p][21].mat.mat3.pos[1] *= scale;
++    buttonInfo[p][21].mat.mat3.pos[2] *= scale;
+     gPlayerMenuButtonsInited[p] = 1;
+     gPlayerMenuButtonsJustInited[p] = 1;
+     ZeroCameras();
+@@ -1442,7 +1443,7 @@ void initButtons(signed char p)
+ void uninitButtons(signed char p)
+ {
+     int buttonIdx;
+-    for (buttonIdx = 0; buttonIdx < 23; buttonIdx++) {
++    for (buttonIdx = 0; buttonIdx < 22; buttonIdx++) {
+         if (buttonInfo[p][buttonIdx].objIdx != -1) {
+             ZOID_RemoveObject(buttonInfo[p][buttonIdx].objIdx);
+             buttonInfo[p][buttonIdx].objIdx = -1;
+@@ -1581,6 +1582,35 @@ void updateButtons(signed char p)
+             ZOID_SetColor(buttonInfo[p][15].objIdx,&buttonColor);
+             if (!gSelectMenuVisible[p][buttonIdx] || !buttonInfo[p][buttonIdx].alpha) MBOX_HideObject(buttonInfo[p][15].objIdx,1,15);
+             else MBOX_ShowObject(buttonInfo[p][15].objIdx,0,1<<p);
++        } else if (gPlayerState[p] == kPlayerStateSelect &&
++                   (gSelectMenuSelect[p] == 0 || (gSelectMenuSelect[p] >= 3 && gSelectMenuSelect[p] < 11))) {
++            /* Native085440..7EA: separate controls button, absent in GC donor. */
++            if (buttonIdx == gSelectMenuSelect[p]) {
++                buttonInfo[p][14].mat.mat3.pos[0] = buttonX + 120.0f*gButtonScale;
++                buttonInfo[p][14].mat.mat3.pos[1] = buttonInfo[p][buttonIdx].mat.mat3.pos[1];
++                buttonInfo[p][14].mat.mat3.pos[2] = buttonInfo[p][buttonIdx].mat.mat3.pos[2];
++                if (gSelectMenuControls[p]) {
++                    if (buttonInfo[p][14].angle < 3.14159275f) buttonInfo[p][14].angle += 12.566371f*gFrameSeconds;
++                    if (buttonInfo[p][14].angle > 3.14159275f) buttonInfo[p][14].angle = 3.14159275f;
++                    if (gPlayerMenuButtonsJustInited[p]) buttonInfo[p][14].angle = 3.14159275f;
++                } else {
++                    if (buttonInfo[p][14].angle > 0.0f) buttonInfo[p][14].angle -= 12.566371f*gFrameSeconds;
++                    if (buttonInfo[p][14].angle < 0.0f) buttonInfo[p][14].angle = 0.0f;
++                    if (gPlayerMenuButtonsJustInited[p]) buttonInfo[p][14].angle = 0.0f;
++                }
++                ScaleUV(unitmatrix,buttonInfo[p][14].mat.mat3.uvs,gButtonScale);
++                WPitchUV(buttonInfo[p][14].angle-1.5707964f,buttonInfo[p][14].mat.mat3.uvs);
++                if (buttonInfo[p][14].angle > 1.5707964f)
++                    tex=MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
++                else tex=MBOX_FindTexture_WORK("BUTTON",&texIdx,0,gNumModels-1,1);
++                ZOID_SetTexture(buttonInfo[p][14].objIdx,tex,-1);
++                buttonInfo[p][14].alpha=buttonInfo[p][buttonIdx].alpha;
++                ZOID_SetColor(buttonInfo[p][14].objIdx,&buttonColor);
++                if (!gSelectMenuVisible[p][buttonIdx] || !buttonInfo[p][buttonIdx].alpha) {
++                    buttonInfo[p][14].angle=0.0f;
++                    MBOX_HideObject(buttonInfo[p][14].objIdx,1,15);
++                } else MBOX_ShowObject(buttonInfo[p][14].objIdx,0,1<<p);
++            }
+         } else {
+             buttonInfo[p][14].angle = 0.0f;
+             MBOX_HideObject(buttonInfo[p][14].objIdx,1,15);
+diff --git a/src/tires.c b/src/tires.c
+new file mode 100644
+index 0000000..26b3cd6
+--- /dev/null
++++ b/src/tires.c
+@@ -0,0 +1,200 @@
++/* Native Dreamcast tire forces: source-level reconstruction from donor algorithms,
++ * SH4 operations/calls/field accesses are authoritative. Private views approved. */
++#include "tires_private.h"
++#define sqrtf(x) _builtin_sqrtf(x)
++#define fabs(x) _builtin_fabsf(x)
++float calcalpha(float *);
++void frictioncircle(tModelData *,float *,float,float,tNativeTire *,float *,float *);
++void calctireuv(float *v, float *w, float *r, float steer, float (*caruvs)[3], float (*roaduvs)[3], float (*tireuvs)[3], float *tirev)
++{
++    float cartirev[3]; /* stack */
++    cartirev[0] = r[1]*w[2] - r[2]*w[1];
++    cartirev[1] = r[2]*w[0] - r[0]*w[2];
++    cartirev[2] = r[0]*w[1] - r[1]*w[0];
++    cartirev[0] += v[0];
++    cartirev[1] += v[1];
++    cartirev[2] += v[2];
++    BodyVector(roaduvs[1], tireuvs[1], caruvs);
++    tireuvs[0][0] = dc_cos(steer);
++    tireuvs[0][1] = 0.0f;
++    tireuvs[0][2] = -(float)dc_sin(steer);
++    tireuvs[2][0] = tireuvs[0][1]*tireuvs[1][2] - tireuvs[0][2]*tireuvs[1][1];
++    tireuvs[2][1] = tireuvs[0][2]*tireuvs[1][0] - tireuvs[0][0]*tireuvs[1][2];
++    tireuvs[2][2] = tireuvs[0][0]*tireuvs[1][1] - tireuvs[0][1]*tireuvs[1][0];
++    tireuvs[0][0] = tireuvs[1][1]*tireuvs[2][2] - tireuvs[1][2]*tireuvs[2][1];
++    tireuvs[0][1] = tireuvs[1][2]*tireuvs[2][0] - tireuvs[1][0]*tireuvs[2][2];
++    tireuvs[0][2] = tireuvs[1][0]*tireuvs[2][1] - tireuvs[1][1]*tireuvs[2][0];
++    BodyVector(cartirev,tirev,tireuvs);
++}
++
++void dotireforce(tModelData *m, float *tirev, float (*tireuvs)[3], tNativeTire *tire, float torque, float *forcevec, float suscomp, float otsuscomp, float springrate, float arspringrate, float cdamping, float rdamping, int poortract)
++{
++    float normal; /* f1 */
++    float damping; /* f6 */
++    float sideforce; /* stack */
++    float traction; /* stack */
++    float arforce; /* f5 */
++    float tireforcevec[3]; /* stack */
++    if(suscomp>0.0f && otsuscomp>0.0f) arforce=arspringrate*(suscomp-otsuscomp);
++    else arforce=0.0f;
++    damping=tirev[1]<0.0f?cdamping:rdamping;
++    if(suscomp>10.0f) {
++        if(tirev[1]<1.0f) tireforcevec[1] = m->idt*(-0.25f*((1.0f-tirev[1])*m->mass));
++        else tireforcevec[1]=suscomp*springrate+arforce-damping*tirev[1];
++    } else if(suscomp>0.0f) tireforcevec[1]=suscomp*springrate+arforce-damping*tirev[1];
++    else tireforcevec[1]=0.0f;
++    tireforcevec[1] *= m->idt*(0.000047744f*m->idt-0.017552f);
++    normal=tireforcevec[1];
++    if(normal<0.0f) tireforcevec[1]=normal=0.0f;
++    else if(normal>m->weight) normal=m->weight;
++    frictioncircle(m,tirev,normal,torque,tire,&sideforce,&traction);
++    if(tire==(tNativeTire *)&m->tires[2] || tire==(tNativeTire *)&m->tires[3]) {
++        traction *= carEngineFwdForce[m->engine_type][m->handling];
++        traction *= 1.0+(carTransTraction[m->trans][m->gear+1]-1.0f)*(1.0-fabs(m->mainin.wheel));
++        traction *= ((tNativeTireTune *)m->tune)->fwdfk;
++        sideforce *= ((tNativeTireModel *)m)->sidefk*(1.0f-0.1f*((tNativeTireTune *)m->tune)->sidefk);
++        if(poortract) sideforce *= gSpecialTires==2?0.7f:0.1f*m->offroadtires+0.9f;
++    }
++    tireforcevec[2]=traction;
++    tireforcevec[0]=sideforce;
++    WorldVector(tireforcevec,forcevec,tireuvs);
++    tire->sideforce=sideforce;
++    tire->traction=traction;
++}
++
++void frictioncircle(tModelData *m, float *tirev, float normalforce, float torque, tNativeTire *tire, float *sfp, float *trp)
++{
++    float maxtraction; /* f1 */
++    float maxtorque; /* f3 */
++    float maxf; /* f29 */
++    float Cfmax; /* f5 */
++    float Afmax; /* f28 */
++    float temp; /* f4 */
++    float roadangvel; /* f4 */
++    float ydot; /* f4 */
++    float p; /* f8 */
++    float k2; /* f27 */
++    float k3; /* f26 */
++    float patchvel; /* f6 */
++    float realtorque; /* f31 */
++    float alpha; /* f0 */
++    realtorque = torque;
++    temp = m->mass*tire->tradius;
++    tire->slipflag=0;
++    torque = (temp*torque)/(temp+1.0f/tire->invmi);
++    if(normalforce<=0.0f) {
++        *sfp=0.0f; *trp=0.0f; tire->slipflag+=3;
++        tire->angvel+=m->dt*(realtorque*tire->invmi);
++        if(m->brake>0.0f) { tire->angvel-=m->dt*(1000.0f*m->brake*tire->invmi); if(tire->angvel<0.0f)tire->angvel=0.0f; }
++        return;
++    }
++    maxtraction=tire->cfmax*normalforce;
++    maxtorque=maxtraction*tire->tradius;
++    roadangvel=tirev[2]/tire->tradius;
++    if(tire->angvel>roadangvel) {
++        tire->sliptorque=maxtorque;
++        tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));
++        if(tire->angvel<=roadangvel) {tire->slipflag=10;tire->angvel=roadangvel;}
++        else {
++            patchvel=tirev[2]-tire->angvel*tire->tradius;
++            temp=sqrtf(patchvel*patchvel+tirev[0]*tirev[0]);
++            if(temp==0.0f) {*trp=maxtraction;*sfp=0.0f;}
++            else {*trp=-maxtraction*patchvel/temp;*sfp=-maxtraction*tirev[0]/temp;}
++            tire->slipflag=20; return;
++        }
++    } else if(tire->angvel<roadangvel) {
++        tire->sliptorque=-maxtorque;
++        if(m->brake>0.8f && roadangvel>5.0f) tire->angvel=roadangvel-(roadangvel-tire->angvel)*fabs(m->steerangle);
++        else tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));
++        if(tire->angvel>=roadangvel) {tire->angvel=roadangvel;tire->slipflag=30;}
++        else {
++            patchvel=tirev[2]-tire->angvel*tire->tradius;
++            temp=sqrtf(patchvel*patchvel+tirev[0]*tirev[0]);
++            if(temp==0.0f) {*trp=-maxtraction;*sfp=0.0f;}
++            else {
++                *trp=-maxtraction*patchvel/temp;
++                if(m->magvel>20.0f) *sfp=-maxtraction*tirev[0]/(2.0f+sqrtf(tirev[2]*tirev[2]+tirev[0]*tirev[0]));
++                else *sfp=-maxtraction*tirev[0]/temp;
++            }
++            tire->slipflag=40;return;
++        }
++    }
++    tire->sliptorque=0.0f;
++    if(torque!=0.0f) {
++        if(torque>=maxtorque) {
++            *trp=maxtraction;*sfp=0.0f;tire->slipflag+=4;tire->sliptorque=maxtorque;
++            tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));return;
++        } else if(torque<=-maxtorque) {
++            *trp=-maxtraction;*sfp=0.0f;tire->slipflag+=5;tire->sliptorque=-maxtorque;
++            tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));return;
++        }
++        *trp=torque/tire->tradius;
++        temp=*trp/normalforce;
++        Cfmax=sqrtf(tire->cfmax*tire->cfmax-temp*temp);
++        k2=(tire->k1*tire->k1)/(3.0f*Cfmax);
++        k3=(tire->k1*(tire->k1*tire->k1))/(27.0f*Cfmax*Cfmax);
++        Afmax=(3.0f*Cfmax)/tire->k1;
++    } else {
++        *trp=0.0f;k2=tire->k2;k3=tire->k3;Cfmax=tire->cfmax;Afmax=tire->afmax;
++    }
++    maxf=Cfmax*normalforce;
++    alpha=calcalpha(tirev);
++    tire->sliptorque=0.0f;
++    if(alpha>=0.0f) {
++        if(alpha>=Afmax) {
++            ydot=-tirev[0]; tire->patchy+=ydot*m->dt;
++            *sfp=tire->springK*tire->patchy+tire->rubdamp*ydot;
++            if(*sfp<-(double)maxf) {*sfp=-maxf;tire->patchy=*sfp/tire->springK;}
++            tire->slipflag+=6;
++            tire->sliptorque=*trp*tire->tradius;
++            tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));return;
++        }
++        tire->slipflag+=7;
++        p=tirev[2]*tire->springK/(normalforce*(tire->k1-k2*alpha+alpha*(k3*alpha)));
++        if(p<0.0f)p=-p;
++        if(p*m->dt<0.5f) {
++            ydot=-p*tire->patchy-tirev[0];tire->patchy+=ydot*m->dt;
++            *sfp=tire->springK*tire->patchy+tire->rubdamp*ydot;tire->slipflag+=100;
++        } else {
++            temp=tire->k1*alpha-alpha*(k2*alpha);
++            temp=-(alpha*(alpha*(k3*alpha))+temp);
++            *sfp=normalforce*temp;
++            tire->patchy=*sfp/tire->springK;tire->slipflag+=200;
++        }
++    } else {
++        if(alpha<=-Afmax) {
++            ydot=-tirev[0];tire->patchy+=ydot*m->dt;
++            *sfp=tire->springK*tire->patchy+tire->rubdamp*ydot;
++            if(*sfp>maxf){*sfp=maxf;tire->patchy=*sfp/tire->springK;}
++            tire->slipflag+=8;tire->sliptorque=*trp*tire->tradius;
++            tire->angvel+=m->dt*(tire->invmi*(realtorque-tire->sliptorque));return;
++        }
++        tire->slipflag+=9;
++        p=tirev[2]*tire->springK/(normalforce*(tire->k1+k2*alpha+alpha*(k3*alpha)));
++        if(p<0.0f)p=-p;
++        if(p*m->dt<0.5f) {
++            ydot=-p*tire->patchy-tirev[0];tire->patchy+=ydot*m->dt;
++            *sfp=tire->springK*tire->patchy+tire->rubdamp*ydot;tire->slipflag+=100;
++        } else {
++            temp=tire->k1*alpha+alpha*(k2*alpha);
++            temp=-(alpha*(alpha*(k3*alpha))+temp);
++            *sfp=normalforce*temp;
++            tire->patchy=*sfp/tire->springK;tire->slipflag+=200;
++        }
++    }
++}
++
++float calcalpha(float *tirev)
++{
++    float alpha; /* f1 */
++    alpha=tirev[0];
++    if(tirev[2]>0.0f) {
++        if(tirev[2]<400.0f) alpha=alpha/tirev[2];
++        else alpha=0.0025f*alpha;
++    } else if(tirev[2]<0.0f) {
++        if(tirev[2]>-400.0f) alpha=-alpha/tirev[2];
++        else alpha=0.0025f*alpha;
++    }
++    return alpha;
++}
++
+diff --git a/src/trackscr.c b/src/trackscr.c
+index e7d0c48..1d726a5 100644
+--- a/src/trackscr.c
++++ b/src/trackscr.c
+@@ -112,7 +112,9 @@ void updateTrackScreen(void)
+         return;
+     }
+     if (gActiveLevels & 0x3080) {
+-        add = (gActiveAutoEdges & 0x1000) ? -1 : (gActiveAutoEdges & 0x2000) != 0;
++        if (gActiveAutoEdges & 0x1000) add=-1;
++        else if (gActiveAutoEdges & 0x2000) add=1;
++        else add=0;
+         if (gRace == kCircuit && (gCircuitTrack > 0 || gOpts[gActiveOption] != 20)) goto controls_done;
+         if (add == 0 && !gActiveZ) goto controls_done;
+         if (gRace == kGhost && gOpts[gActiveOption] == 2) goto controls_done;
+@@ -310,6 +312,7 @@ void _InitScreen(void)
+     int i;
+     int j;
+     float pos;
++    int trackCount=19;
+     gActiveOption = 0;
+     gFirstOption = 0;
+     gActiveZ = 0;
+@@ -343,7 +346,7 @@ void _InitScreen(void)
+     blit = (_tBlit_2 *)NewMultiBlit(0,0,mblit,18);
+     { int j;
+     i = 0;
+-    for (j = 0; j < 19; j++) {
++    for (j = 0; j < trackCount; j++) {
+         if (TrackValid(j)) {
+             if (j == gTrackNum) {gTrack = i; break;}
+             i++;
+@@ -353,7 +356,7 @@ void _InitScreen(void)
+     gNumTracks = 19;
+     i = 0;
+     pos = 0.0f;
+-    for (j = 0; j < 19; j++) {
++    for (j = 0; j < trackCount; j++) {
+         if (TrackValid(j)) {
+             gTracks[i].gTrackNum = j;
+             gTracks[i].slot = i-gTrack;
+@@ -407,13 +410,13 @@ void showTrackSelect(void)
+     for (i = 0; i < 21; i++) if (OptionValid(i)) gOpts[gNumOptions++] = i;
+     frames = 30.0f * gFrameSeconds;
+     if ((gBackwards && !gMirrorWaves) || (!gBackwards && gMirrorWaves)) {
+-        trackShowAngle -= 0.01745329238474369f * frames;
+-        if (trackShowAngle < 0.0f) trackShowAngle += 6.2831854820251465f;
++        trackShowAngle -= 0.017453293f * frames;
++        if (trackShowAngle < 0.0f) trackShowAngle += 6.2831855f;
+     } else {
+-        trackShowAngle += 0.01745329238474369f * frames;
+-        if (trackShowAngle >= 6.2831854820251465f) trackShowAngle -= 6.2831854820251465f;
++        trackShowAngle += 0.017453293f * frames;
++        if (trackShowAngle >= 6.2831855f) trackShowAngle -= 6.2831855f;
+     }
+-    speed = frames * ((gTracks[gTrack].targetPos - gTracks[gTrack].pos[0]) / 10.0f);
++    speed = ((gTracks[gTrack].targetPos - gTracks[gTrack].pos[0]) / 10.0f) * frames;
+     for (i = 0; i < gNumTracks; i++) {
+         slot = i - gTrack;
+         if (slot < 0) slot += gNumTracks;
+@@ -446,17 +449,17 @@ int animNewSlider(_tBlit_2 *blt)
+     signed short screenPos[2];
+     type = blt->animID & 15;
+     opt = blt->animID >> 16;
+-    if (Hidden(blt,(buttonInfo[opt+21].angle > 0.6981316804885864f && buttonInfo[opt+21].angle < 2.4434609413146973f) || buttonInfo[opt+21].alpha == 0)) return 1;
++    if (Hidden(blt,(buttonInfo[opt+21].angle > 0.6981317f && buttonInfo[opt+21].angle < 2.4434609413146973f) || buttonInfo[opt+21].alpha == 0)) return 1;
+     ZOID_ProjectWindow(0,buttonInfo[opt+21].mat.mat3.pos,&gCamera[0].mat,0,screenPos);
+     blt->x = (screenPos[0] - blt->width/2) / 2;
+-    blt->y = screenPos[1] / 2.0f - (blt->height/4/2) / 2.0f;
++    blt->y = (screenPos[1]-4) / 2.0f - (blt->height/4/2) / 2.0f;
+     blt->top = 0;
+     blt->bot = blt->height/4 - 1;
+     blt->left = 0;
+     blt->right = blt->width-1;
+     blt->alpha = buttonInfo[opt+21].alpha;
+     if (blt->alpha == 255) blt->alpha = 254;
+-    if (buttonInfo[opt+21].angle > 1.5707963705062866f) {
++    if (buttonInfo[opt+21].angle > 1.5707964f) {
+         blt->top += blt->height/2;
+         blt->bot += blt->height/2;
+     }
+@@ -477,7 +480,7 @@ int animNewSlider(_tBlit_2 *blt)
+ int animArrows(_tBlit_2 *blt)
+ {
+     static const signed short arrowPos[2][4][2] = { 94, 177, 106, 177, 106, 177, 106, 216, 16, 151, 304, 151, 160, 135, 160, 167 };
+-    signed short fg, dir, size, tex;
++    signed short fg, dir, size, tex, enabled;
+     fg = blt->animID & 15;
+     dir = (blt->animID >> 4) & 15;
+     size = (blt->animID >> 8) & 15;
+@@ -488,7 +491,8 @@ int animArrows(_tBlit_2 *blt)
+         if (dir == 2) { if (Hidden(blt,gFirstOption == 0)) return 1; }
+         else if (dir == 3) { if (Hidden(blt,gNumOptions-gFirstOption <= 4)) return 1; }
+     }
+-    RenameBlit((_tBlit *)blt,trackArrowNames[tex][(signed short)(gActiveOptionEnabled || dir >= 2)],1);
++    enabled=gActiveOptionEnabled || dir>=2;
++    RenameBlit((_tBlit *)blt,trackArrowNames[tex][enabled],1);
+     if (fg) blt->alpha = TB_GetFlashTextCycle() * 255.0f;
+     blt->x = arrowPos[size][dir][0] - (blt->width/2)/2;
+     blt->y = arrowPos[size][dir][1] - blt->height / 2.0f / 2.0f;
+@@ -516,7 +520,7 @@ int animFan(_tBlit_2 *blt)
+     blt->right = blt->left + blt->width / 8 - 1;
+     blt->animID = (blt->animID & ~0xfff00) | (frame << 8);
+     UpdateBlit((_tBlit *)blt);
+-    { tTrackBlitInstance *inst = &gBlitInstanceList[blt->blidx]; inst->flags |= 1; }
++    { tTrackFullBlitInstance *inst = &trackFullBlitInstances[blt->blidx]; inst->flags |= 1; }
+     return 1;
+ }
+ 
+@@ -531,7 +535,7 @@ int animText(void)
+                 if (gPlayers[i].save == player) break;
+                 player = ((tTrackProfileHead *)*player)->next;
+             }
+-            if (!player) return 1;
++            if (!player || func_8C06D41A(((tTrackFilePak *)*(*player)->fileh)->pak)) return 1;
+         }
+     }
+     if (buttonsInited == 1) animButtonText();
+@@ -559,24 +563,24 @@ void animButtonText(void)
+     HAL_SetFont(11);
+     for (i = 0; i < gNumOptions; i++) {
+         item = gOpts[i];
+-        if ((buttonInfo[item].angle <= 0.6981316804885864f || buttonInfo[item].angle >= 2.4434609413146973f) && buttonInfo[item].alpha) {
++        if ((buttonInfo[item].angle <= 0.6981317f || buttonInfo[item].angle >= 2.4434609413146973f) && buttonInfo[item].alpha) {
+             HAL_SetTextTranslucency(buttonInfo[item].alpha);
+             ZOID_ProjectWindow(0,buttonInfo[item].mat.mat3.pos,&gCamera[0].mat,0,screenPos);
+             x = screenPos[0]/2 - 35.0f*gButtonScale;
+             y = (screenPos[1]-4)/2.0f;
+-            if (buttonInfo[item].angle < 1.5707963705062866f) {
++            if (buttonInfo[item].angle < 1.5707964f) {
+                 TB_FlashTextColors(flashColors[0],flashColors[1]); TB_SetTextColor(1);
+             } else {
+                 TB_FlashTextColors(flashColors[0],flashColors[1]); TB_SetTextColor(22);
+             }
+             TB_DrawText(x,y,gText.taba[gText.tab[1]+gOpts[i]]);
+         }
+-        if ((buttonInfo[item+21].angle <= 0.6981316804885864f || buttonInfo[item+21].angle >= 2.4434609413146973f) && buttonInfo[item+21].alpha) {
++        if ((buttonInfo[item+21].angle <= 0.6981317f || buttonInfo[item+21].angle >= 2.4434609413146973f) && buttonInfo[item+21].alpha) {
+             HAL_SetTextTranslucency(buttonInfo[item+21].alpha);
+             ZOID_ProjectWindow(0,buttonInfo[item+21].mat.mat3.pos,&gCamera[0].mat,0,screenPos);
+             x = screenPos[0]/2 - 35.0f*gButtonScale;
+             y = (screenPos[1]-4)/2.0f;
+-            if (buttonInfo[item+21].angle < 1.5707963705062866f) {
++            if (buttonInfo[item+21].angle < 1.5707964f) {
+                 TB_FlashTextColors(flashColors[0],flashColors[1]); TB_SetTextColor(1);
+             } else {
+                 TB_FlashTextColors(flashColors[0],flashColors[1]); TB_SetTextColor(22);
+@@ -646,19 +650,19 @@ int OptionValid(int opt)
+ 
+ void SetFogIntensity(int now)
+ {
+-    int red, green, blue;
++    tRGBA color;
+     if (gFogColor < 19) gFogColor = gTrackNum;
+-    red = gFogColors[gFogColor][0];
+-    green = gFogColors[gFogColor][1];
+-    blue = gFogColors[gFogColor][2];
++    color.c[0] = gFogColors[gFogColor][0];
++    color.c[1] = gFogColors[gFogColor][1];
++    color.c[2] = gFogColors[gFogColor][2];
+     if (now) {
+-        trackFogColor[0].c[0] = red;
+-        trackFogColor[0].c[1] = green;
+-        trackFogColor[0].c[2] = blue;
++        trackFogColor[0].c[0] = color.c[0];
++        trackFogColor[0].c[1] = color.c[1];
++        trackFogColor[0].c[2] = color.c[2];
+     } else {
+-        trackFogColor[0].c[0] += (red - trackFogColor[0].c[0]) / 10;
+-        trackFogColor[0].c[1] += (green - trackFogColor[0].c[1]) / 10;
+-        trackFogColor[0].c[2] += (blue - trackFogColor[0].c[2]) / 10;
++        trackFogColor[0].c[0] += (color.c[0] - trackFogColor[0].c[0]) / 10;
++        trackFogColor[0].c[1] += (color.c[1] - trackFogColor[0].c[1]) / 10;
++        trackFogColor[0].c[2] += (color.c[2] - trackFogColor[0].c[2]) / 10;
+     }
+     trackFogColor[0].c[3] = gFogIntensity * 192 / 3;
+     if (trackFogPoly) ZOID_UpdatePoly(trackFogPoly, 0, 0, 0, trackFogColor, 0, 0);
+@@ -677,18 +681,146 @@ void BlowFog(void)
+     tile->ult = 0;
+ }
+ 
++void loadTrackScreen(void)
++{
++    float polyVerts[4][3];
++    unsigned short texIdx;
++    tRGBA backColor = {255,255,255,255};
++    unloadTrackScreen();
++    if (!((gTrackNum >= 0 && gTrackNum <= 5) ||
++        (gTrackNum >= 6 && gTrackNum <= 13) ||
++        (gTrackNum >= 14 && gTrackNum <= 17) ||
++        (gTrackNum >= 18 && gTrackNum <= 18))) return;
++    {
++        polyVerts[0][0] = 320.0f;
++        polyVerts[0][1] = 180.0f;
++        polyVerts[0][2] = 400.0f;
++        polyVerts[1][0] = 80.0f;
++        polyVerts[1][1] = 180.0f;
++        polyVerts[1][2] = 400.0f;
++        polyVerts[2][0] = 80.0f;
++        polyVerts[2][1] = -60.000003814697266f;
++        polyVerts[2][2] = 400.0f;
++        polyVerts[3][0] = 320.0f;
++        polyVerts[3][1] = -60.000003814697266f;
++        polyVerts[3][2] = 400.0f;
++        MBOX_FindTexture_WORK(trackScreenNames[gTrackNum], &texIdx, 0, gNumModels-1, 1);
++        trackScreenPoly = ZOID_NewPoly(4,polyVerts,texIdx,&backColor,0x201,1);
++        ZOID_ShowPoly(trackScreenPoly);
++        if (OptionValid(14) == 1) {
++            MBOX_FindTexture_WORK("FOG",&texIdx,0,gNumModels-1,1);
++            backColor.c[3] = 128;
++            trackFogPoly = ZOID_NewPoly(4,polyVerts,texIdx,&backColor,0x201,1);
++            ZOID_ShowPoly(trackFogPoly);
++        }
++    }
++}
++
+ void unloadTrackScreen(void)
+ {
+     if (trackScreenPoly) { ZOID_RemovePoly(trackScreenPoly); trackScreenPoly = 0; }
+     if (trackFogPoly) { ZOID_RemovePoly(trackFogPoly); trackFogPoly = 0; }
+ }
+ 
++void buildTrackMap(void)
++{
++    unsigned int *p;
++    unsigned int temp;
++    int sect;
++    loadTrackScreen();
++    if (desiredTrackMap >= 0 && desiredTrackMap <= 5) {
++        if (trackMap[19].objIdx != -1) {
++            memcpy(trackMapDisplayLists[6].displayList,trackMapDisplayLists[desiredTrackMap].displayList,(kNumMapSects*40+3)*4);
++            if ((gRace == kCircuit && gCircuitTracks[gCircuitTrack].mirror == 1) || (gRace != kCircuit && gOptions[27])) {
++                p=trackMapDisplayLists[6].displayList+2;
++                for (sect=0;sect<kNumMapSects;sect++,p+=40) {
++                    temp=p[1];p[1]=p[13];p[13]=temp;
++                    temp=p[2];p[2]=p[14];p[14]=temp;
++                    temp=p[3];p[3]=p[15];p[15]=temp;
++                    temp=p[8];p[8]=p[17];p[17]=temp;
++                    temp=p[9];p[9]=p[18];p[18]=temp;
++                    temp=p[10];p[10]=p[19];p[19]=temp;
++                    temp=p[21];p[21]=p[31];p[31]=temp;
++                    temp=p[22];p[22]=p[32];p[32]=temp;
++                    temp=p[23];p[23]=p[33];p[33]=temp;
++                    temp=p[26];p[26]=p[35];p[35]=temp;
++                    temp=p[27];p[27]=p[36];p[36]=temp;
++                    temp=p[28];p[28]=p[37];p[37]=temp;
++                }
++            }
++            ScaleUV(unitmatrix,trackMap[19].mat.mat3.uvs,2.0f);
++            WPitchUV(-0.7853982f,trackMap[19].mat.mat3.uvs);
++            trackMap[19].mat.mat3.pos[0] = trackBuildMapPos[0];
++            trackMap[19].mat.mat3.pos[1] = trackBuildMapPos[1];
++            trackMap[19].mat.mat3.pos[2] = trackBuildMapPos[2];
++        }
++    } else if ((desiredTrackMap >= 6 && desiredTrackMap <= 13) || (desiredTrackMap >= 14 && desiredTrackMap <= 17)) {
++        if (trackMapObj == -1) {
++            trackMapObj = MBOX_NewObject(MBOX_FindObject_WORK(trackMapObjNames[desiredTrackMap],0,gNumModels-1,1),&trackMapMat,-1,0x2000);
++            ZOID_SetColor(trackMapObj,&trackColors[desiredTrackMap]);
++            ScaleUV(unitmatrix,trackMapMat.mat3.uvs,2.0f);
++            WPitchUV(-0.7853982f,trackMapMat.mat3.uvs);
++            trackMapMat.mat3.pos[0] = trackBuildMapPos[0];
++            trackMapMat.mat3.pos[1] = trackBuildMapPos[1];
++            trackMapMat.mat3.pos[2] = trackBuildMapPos[2];
++        }
++    }
++    currentTrackMap = desiredTrackMap;
++}
++
+ void clearTrackMap(void)
+ {
+     unloadTrackScreen();
+     if (trackMapObj != -1) { ZOID_RemoveObject(trackMapObj); trackMapObj = -1; }
+ }
+ 
++void animTrackMap(void)
++{
++
++
++
++    trackAnimRotation += 6.2831854820251465f * gFrameSeconds / 10.0f;
++    if (trackAnimRotation > 6.2831854820251465f) trackAnimRotation -= 6.2831854820251465f;
++    if (currentTrackMap != desiredTrackMap) {
++        mapTransition -= 4.0f * gFrameSeconds;
++        if (mapTransition < 0.0f) {
++            mapTransition = 0.0f;
++            clearTrackMap();
++            buildTrackMap();
++        }
++    } else {
++        mapTransition += 4.0f * gFrameSeconds;
++        if (mapTransition > 1.0f) mapTransition = 1.0f;
++    }
++    trackMap[19].mat.mat3.pos[0] = trackAnimCityPos[0];
++    trackMap[19].mat.mat3.pos[1] = trackAnimCityPos[1];
++    trackMap[19].mat.mat3.pos[2] = trackAnimCityPos[2];
++    trackMap[19].mat.mat3.pos[0] += trackMap[currentTrackMap].cityX;
++    trackMap[19].mat.mat3.pos[1] += trackMap[currentTrackMap].cityY;
++    trackMap[19].mat.mat3.pos[0] *= 1.0f-mapTransition;
++    trackMap[19].mat.mat3.pos[1] *= 1.0f-mapTransition;
++    trackMap[19].mat.mat3.pos[2] *= 1.0f-mapTransition;
++    trackMap[19].mat.mat3.pos[0] += trackAnimMapPos[0]*mapTransition;
++    trackMap[19].mat.mat3.pos[1] += trackAnimMapPos[1]*mapTransition;
++    trackMap[19].mat.mat3.pos[2] += trackAnimMapPos[2]*mapTransition;
++    trackMapMat.mat3.pos[0] = trackMap[19].mat.mat3.pos[0];
++    trackMapMat.mat3.pos[1] = trackMap[19].mat.mat3.pos[1];
++    trackMapMat.mat3.pos[2] = trackMap[19].mat.mat3.pos[2];
++    ScaleUV(unitmatrix,trackMapMat.mat3.uvs,trackMap[currentTrackMap].scale*mapTransition+trackMap[currentTrackMap].cityScale*(1.0f-mapTransition));
++    ScaleUV(unitmatrix,trackMap[19].mat.mat3.uvs,trackMap[currentTrackMap].scale*mapTransition+trackMap[currentTrackMap].cityScale*(1.0f-mapTransition));
++    if ((gRace == kCircuit && gCircuitTracks[gCircuitTrack].mirror == 1) ||
++        (gRace != kCircuit && gRace != kStunt && gRace != kBattle && gRace != kObstacle && gOptions[27])) {
++        ScaleUVXYZ(trackMapMat.mat3.uvs,trackMapMat.mat3.uvs,-1.0f,1.0f,1.0f);
++        ScaleUVXYZ(trackMap[19].mat.mat3.uvs,trackMap[19].mat.mat3.uvs,-1.0f,1.0f,1.0f);
++    }
++    WYawUV(trackAnimRotation*mapTransition+trackMap[currentTrackMap].cityRot*(1.0f-mapTransition),trackMapMat.mat3.uvs);
++    WPitchUV(-0.5235987901687622f*mapTransition+-1.5707963705062866f*(1.0f-mapTransition),trackMapMat.mat3.uvs);
++    WYawUV(trackAnimRotation*mapTransition+trackMap[currentTrackMap].cityRot*(1.0f-mapTransition),trackMap[19].mat.mat3.uvs);
++    WPitchUV(-0.5235987901687622f*mapTransition+-1.5707963705062866f*(1.0f-mapTransition),trackMap[19].mat.mat3.uvs);
++}
++
++
++
+ void buildTrackMaps(void)
+ {
+     if (gRace == kStunt) buildStuntTrackMaps();
+@@ -698,16 +830,157 @@ void buildTrackMaps(void)
+     pathPos = 0.0f;
+ }
+ 
++void buildRaceTrackMaps(void)
++{
++    int saveTrackNum,pointIdx,vertIdx,prevPt,currStartPt,currEndPt,nextPt,trackMBIdx,i;
++    float x0,y0,x1,y1,x2,y2,x3,y3,dx0,dy0,dx1,dy1,dx2,dy2,xoffset,yoffset,zoffset;
++    float sectVerts[8][3];
++    tTrackModel *model;
++    tTrackStreamWord *stream;
++    int size;
++    saveTrackNum=gTrackNum;
++    for (gTrackNum=0;gTrackNum<=5;gTrackNum++) {
++        if (IsTrackUnlocked(gTrackNum)) {
++            loadPathData();
++            xoffset=-(trackPathMin[0]+trackPathMax[0])/2;
++            yoffset=-(trackPathMin[2]+trackPathMax[2])/2;
++            zoffset=-(trackPathMin[1]+trackPathMax[1])/2;
++            trackMap[gTrackNum].scale=5000.0f/((trackPathMax[0]-trackPathMin[0]>trackPathMax[2]-trackPathMin[2])?trackPathMax[0]-trackPathMin[0]:trackPathMax[2]-trackPathMin[2]);
++            trackMBIdx=MBOX_FindObject_WORK(trackMapObjNames[gTrackNum],0,gNumModels-1,1);
++            model=&gRomObjDefPtrs[trackMBIdx>>10].models[trackMBIdx&1023];
++            trackSavedLods[gTrackNum]=model->lod[0];
++            size=(kNumMapSects*40+3)*4;
++            trackMapDisplayLists[gTrackNum].displayList=AllocateMemoryHeap(0,size);
++            stream=(tTrackStreamWord *)trackMapDisplayLists[gTrackNum].displayList;
++            stream++->bits=trackSavedLods[gTrackNum].displayList[0];
++            stream++->bits=trackSavedLods[gTrackNum].displayList[1];
++            for (pointIdx = 0; pointIdx < kNumMapSects; pointIdx++) {
++                float len0,len1,len2;
++                if (pointIdx > 0) prevPt = (trackResPath.numPts*(pointIdx-1))/kNumMapSects; else prevPt = -1;
++                currStartPt = trackResPath.numPts*pointIdx/kNumMapSects;
++                currEndPt = pointIdx < kNumMapSects-1 ? (trackResPath.numPts*(pointIdx+1))/kNumMapSects : FindResPathIntersect(trackLoopCheckpoint);
++                if (pointIdx < kNumMapSects-2) nextPt = (trackResPath.numPts*(pointIdx+2))/kNumMapSects; else nextPt = -1;
++                x1 = xoffset + trackResPath.pts[currStartPt][0];
++                y1 = yoffset + trackResPath.pts[currStartPt][2];
++                x2 = xoffset + trackResPath.pts[currEndPt][0];
++                y2 = yoffset + trackResPath.pts[currEndPt][2];
++                if (prevPt != -1) {
++                    x0 = xoffset + trackResPath.pts[prevPt][0];
++                    y0 = yoffset + trackResPath.pts[prevPt][2];
++                } else {
++                    x0 = x1-(x2-x1);
++                    y0 = y1-(y2-y1);
++                }
++                if (nextPt != -1) {
++                    x3 = xoffset + trackResPath.pts[nextPt][0];
++                    y3 = yoffset + trackResPath.pts[nextPt][2];
++                } else {
++                    x3 = x2+(x2-x1);
++                    y3 = y2+(y2-y1);
++                }
++                dx0 = x0-x1; dy0 = y1-y0;
++                dx1 = x1-x2; dy1 = y2-y1;
++                dx2 = x2-x3; dy2 = y3-y2;
++                len0 = _builtin_sqrtf(dx0*dx0+dy0*dy0);
++                len1 = _builtin_sqrtf(dx1*dx1+dy1*dy1);
++                len2 = _builtin_sqrtf(dx2*dx2+dy2*dy2);
++                dx0 *= 100.0f; dy0 *= 100.0f; dx1 *= 100.0f; dy1 *= 100.0f; dx2 *= 100.0f; dy2 *= 100.0f;
++                dx0 /= len0; dy0 /= len0; dx1 /= len1; dy1 /= len1; dx2 /= len2; dy2 /= len2;
++                sectVerts[0][0] = x1+(dy0+dy1)/2.0f;
++                sectVerts[0][2] = y1+(dx0+dx1)/2.0f;
++                sectVerts[0][1] = zoffset+trackResPath.pts[currStartPt][1]+50.0f;
++                sectVerts[1][0] = x1-(dy0+dy1)/2.0f;
++                sectVerts[1][2] = y1-(dx0+dx1)/2.0f;
++                sectVerts[1][1] = zoffset+trackResPath.pts[currStartPt][1]+50.0f;
++                sectVerts[2][0] = x1-(dy0+dy1)/2.0f;
++                sectVerts[2][2] = y1-(dx0+dx1)/2.0f;
++                sectVerts[2][1] = trackPathMin[1]+zoffset-50.0f;
++                sectVerts[3][0] = x1+(dy0+dy1)/2.0f;
++                sectVerts[3][2] = y1+(dx0+dx1)/2.0f;
++                sectVerts[3][1] = trackPathMin[1]+zoffset-50.0f;
++                sectVerts[4][0] = x2+(dy1+dy2)/2.0f;
++                sectVerts[4][2] = y2+(dx1+dx2)/2.0f;
++                sectVerts[4][1] = zoffset+trackResPath.pts[currEndPt][1]+50.0f;
++                sectVerts[5][0] = x2-(dy1+dy2)/2.0f;
++                sectVerts[5][2] = y2-(dx1+dx2)/2.0f;
++                sectVerts[5][1] = zoffset+trackResPath.pts[currEndPt][1]+50.0f;
++                sectVerts[6][0] = x2-(dy1+dy2)/2.0f;
++                sectVerts[6][2] = y2-(dx1+dx2)/2.0f;
++                sectVerts[6][1] = trackPathMin[1]+zoffset-50.0f;
++                sectVerts[7][0] = x2+(dy1+dy2)/2.0f;
++                sectVerts[7][2] = y2+(dx1+dx2)/2.0f;
++                sectVerts[7][1] = trackPathMin[1]+zoffset-50.0f;
++                if (pointIdx == kNumMapSects-1) {
++                    sectVerts[0][1] += 0.1f; sectVerts[1][1] += 0.1f;
++                    sectVerts[2][1] += 0.1f; sectVerts[3][1] += 0.1f;
++                }
++                for (i = 0; i < 8; i++) {
++                    sectVerts[i][0] *= 0.01f;
++                    sectVerts[i][1] *= 0.01f;
++                    sectVerts[i][2] *= 0.01f;
++                }
++
++                for (vertIdx=0;vertIdx<10;vertIdx++) {
++                    int position=trackMapPositionIndices[vertIdx];
++                    int color=trackMapColorIndices[vertIdx];
++                    unsigned int flags=trackMapVertexFlags[vertIdx];
++                    stream++->bits=flags|((position<<16)&0x00ff0000)|(color&255);
++                    if (!(flags&0x10000000)) {
++                        stream++->value=sectVerts[position][0];
++                        stream++->value=sectVerts[position][1];
++                        stream++->value=sectVerts[position][2];
++                    }
++                    if (!(flags&0x08000000)) {
++                        stream++->value=0.0f;stream++->value=0.0f;
++                    }
++                    if (!(flags&0x04000000)) stream++->bits=trackMapBaseColor;
++                }
++            }
++            stream++->bits=0xE0000000;
++            trackMapDisplayLists[gTrackNum].texture=0;
++            trackMapDisplayLists[gTrackNum].flags=0;
++            trackMapDisplayLists[gTrackNum].radius=0.0f;
++            model->lod[0]=trackMapDisplayLists[gTrackNum];
++            if (trackMap[gTrackNum].objIdx == -1) {
++                trackMap[gTrackNum].objIdx=MBOX_NewObject(trackMBIdx,&trackMap[gTrackNum].mat,-1,0);
++                ScaleUV(unitmatrix,trackMap[gTrackNum].mat.mat3.uvs,1.0f);
++                WPitchUV(-1.5707964f,trackMap[gTrackNum].mat.mat3.uvs);
++                trackMap[gTrackNum].mat.mat3.pos[0]=trackRaceMapPos[0];
++                trackMap[gTrackNum].mat.mat3.pos[1]=trackRaceMapPos[1];
++                trackMap[gTrackNum].mat.mat3.pos[2]=trackRaceMapPos[2];
++            }
++            unloadPathData();
++        }
++    }
++    gTrackNum=saveTrackNum;
++    trackMBIdx=MBOX_FindObject_WORK(trackMapObjNames[19],0,gNumModels-1,1);
++    model=&gRomObjDefPtrs[trackMBIdx>>10].models[trackMBIdx&1023];
++    trackSavedLods[6]=model->lod[0];
++    trackMapDisplayLists[6].displayList=AllocateMemoryHeap(0,(kNumMapSects*40+3)*4);
++    trackMapDisplayLists[6].texture=0;trackMapDisplayLists[6].flags=0;trackMapDisplayLists[6].radius=0.0f;
++    model->lod[0]=trackMapDisplayLists[6];
++    if (trackMap[19].objIdx == -1) {
++        trackMap[19].objIdx=MBOX_NewObject(trackMBIdx,&trackMap[19].mat,-1,0);
++        ScaleUV(unitmatrix,trackMap[19].mat.mat3.uvs,1.0f);
++        WPitchUV(-1.5707964f,trackMap[19].mat.mat3.uvs);
++        trackMap[19].mat.mat3.pos[0]=trackSelectedMapPos[0];
++        trackMap[19].mat.mat3.pos[1]=trackSelectedMapPos[1];
++        trackMap[19].mat.mat3.pos[2]=trackSelectedMapPos[2];
++    }
++}
++
+ void buildStuntTrackMaps(void)
+ {
+     int saveTrackNum;
++    tTrackCity *city;
+     saveTrackNum = gTrackNum;
+     for (gTrackNum = 14; gTrackNum <= 17; gTrackNum++) {
+         if (IsTrackUnlocked(gTrackNum) && trackMap[gTrackNum].objIdx == -1) {
+-            trackMap[gTrackNum].objIdx = MBOX_NewObject(MBOX_FindObject_WORK(trackMapObjNames[gTrackNum],0,gNumModels-1,1), &trackMap[gTrackNum].mat, -1, 0x2000);
++            city=&trackMap[gTrackNum];
++            city->objIdx = MBOX_NewObject(MBOX_FindObject_WORK(trackMapObjNames[gTrackNum],0,gNumModels-1,1), &city->mat, -1, 0x2000);
+             ZOID_SetColor(trackMap[gTrackNum].objIdx, &trackColors[gTrackNum]);
+             ScaleUV(unitmatrix, trackMap[gTrackNum].mat.mat3.uvs, 1.0f);
+-            WPitchUV(-1.5707963705062866f, trackMap[gTrackNum].mat.mat3.uvs);
++            WPitchUV(-1.5707964f, trackMap[gTrackNum].mat.mat3.uvs);
+             trackMap[gTrackNum].mat.mat3.pos[0] = trackStuntMapPos[0];
+             trackMap[gTrackNum].mat.mat3.pos[1] = trackStuntMapPos[1];
+             trackMap[gTrackNum].mat.mat3.pos[2] = trackStuntMapPos[2];
+@@ -719,13 +992,15 @@ void buildStuntTrackMaps(void)
+ void buildBattleTrackMaps(void)
+ {
+     int saveTrackNum;
++    tTrackCity *city;
+     saveTrackNum = gTrackNum;
+     for (gTrackNum = 6; gTrackNum <= 13; gTrackNum++) {
+         if (IsTrackUnlocked(gTrackNum) && trackMap[gTrackNum].objIdx == -1) {
+-            trackMap[gTrackNum].objIdx = MBOX_NewObject(MBOX_FindObject_WORK(trackMapObjNames[gTrackNum],0,gNumModels-1,1), &trackMap[gTrackNum].mat, -1, 0x2000);
++            city=&trackMap[gTrackNum];
++            city->objIdx = MBOX_NewObject(MBOX_FindObject_WORK(trackMapObjNames[gTrackNum],0,gNumModels-1,1), &city->mat, -1, 0x2000);
+             ZOID_SetColor(trackMap[gTrackNum].objIdx, &trackColors[gTrackNum]);
+             ScaleUV(unitmatrix, trackMap[gTrackNum].mat.mat3.uvs, 1.0f);
+-            WPitchUV(-1.5707963705062866f, trackMap[gTrackNum].mat.mat3.uvs);
++            WPitchUV(-1.5707964f, trackMap[gTrackNum].mat.mat3.uvs);
+             trackMap[gTrackNum].mat.mat3.pos[0] = trackBattleMapPos[0];
+             trackMap[gTrackNum].mat.mat3.pos[1] = trackBattleMapPos[1];
+             trackMap[gTrackNum].mat.mat3.pos[2] = trackBattleMapPos[2];
+@@ -734,6 +1009,99 @@ void buildBattleTrackMaps(void)
+     gTrackNum = saveTrackNum;
+ }
+ 
++/* Selected address090AAC is native clearTrackMaps; map's obstacle name is provisional. */
++void clearTrackMaps(void)
++{
++    int trackIdx;
++    int object;
++    tTrackModel *model;
++    if(trackMapsBuilt) {
++        for(trackIdx=0;trackIdx<=19;trackIdx++) {
++            if(trackMap[trackIdx].objIdx!=-1) {
++                ZOID_RemoveObject(trackMap[trackIdx].objIdx);
++                trackMap[trackIdx].objIdx=-1;
++            }
++        }
++        while(gRenderInProgress) {}
++        for(trackIdx=0;trackIdx<=6;trackIdx++) {
++            object=MBOX_FindObject_WORK(trackMapObjNames[trackIdx<6?trackIdx:19],0,gNumModels-1,1);
++            model=&gRomObjDefPtrs[object>>10].models[object&1023];
++            model->lod[0]=trackSavedLods[trackIdx];
++            if(trackMapDisplayLists[trackIdx].displayList)
++                DeallocateMemory(trackMapDisplayLists[trackIdx].displayList);
++            trackMapDisplayLists[trackIdx].displayList=0;
++        }
++        trackMapsBuilt=0;
++    }
++}
++
++void animTrackMaps(void)
++{
++
++    int trackIdx;
++    int pointIdx;
++    unsigned int *p;
++    tRGBA color;
++    int fade;
++    int i;
++    int mapIdx;
++    if (trackMapsBuilt) {
++        for (trackIdx = 0; trackIdx <= 19; trackIdx++) {
++            if (trackMap[trackIdx].objIdx != -1) {
++                if (trackIdx < 19) {
++                    ScaleUV(unitmatrix,trackMap[trackIdx].mat.mat3.uvs,trackMap[trackIdx].cityScale);
++                    WPitchUV(-1.5707964f,trackMap[trackIdx].mat.mat3.uvs);
++                    WRollUV(-trackMap[trackIdx].cityRot,trackMap[trackIdx].mat.mat3.uvs);
++                    trackMap[trackIdx].mat.mat3.pos[0] = trackOverviewMapPos[0];
++                    trackMap[trackIdx].mat.mat3.pos[1] = trackOverviewMapPos[1];
++                    trackMap[trackIdx].mat.mat3.pos[2] = trackOverviewMapPos[2];
++                    trackMap[trackIdx].mat.mat3.pos[0] += trackMap[trackIdx].cityX;
++                    trackMap[trackIdx].mat.mat3.pos[1] += trackMap[trackIdx].cityY;
++                    if (trackIdx == gTrackNum) {
++                        ScaleUV(trackMap[trackIdx].mat.mat3.uvs,trackMap[trackIdx].mat.mat3.uvs,0.80000002f);
++                        trackMap[trackIdx].mat.mat3.pos[0] = 0.80000002f * trackMap[trackIdx].mat.mat3.pos[0];
++                        trackMap[trackIdx].mat.mat3.pos[1] = 0.80000002f * trackMap[trackIdx].mat.mat3.pos[1];
++                        trackMap[trackIdx].mat.mat3.pos[2] = 0.80000002f * trackMap[trackIdx].mat.mat3.pos[2];
++                    }
++                }
++                mapIdx = trackIdx == 19 ? 6 : trackIdx;
++                if (trackIdx < 6 || trackIdx == 19) {
++                    if (trackMapDisplayLists[mapIdx].displayList) {
++                        for (pointIdx=0;pointIdx<kNumMapSects;pointIdx++) {
++                            p=trackMapDisplayLists[mapIdx].displayList+pointIdx*40;
++                            if (gOptions[26]) fade=(int)(kNumMapSects*pathPos-pointIdx);
++                            else fade=(int)(kNumMapSects*pathPos+pointIdx);
++                            if (fade<0) fade+=kNumMapSects;
++                            if (fade>kNumMapSects-1) fade-=kNumMapSects;
++                            fade*=2;
++                            if (mapIdx!=gTrackNum && mapIdx<6) {
++                                color.c[0]=((mapIdx+1)&1)?127:31;
++                                color.c[1]=((mapIdx+1)&2)?127:31;
++                                color.c[2]=((mapIdx+1)&4)?127:31;
++                            } else if (mapIdx<6) {
++                                if (fade>63) fade=64;
++                                color.c[0]=((gTrackNum+1)&1)?255-fade:255-3*fade;
++                                color.c[1]=((gTrackNum+1)&2)?255-fade:255-3*fade;
++                                color.c[2]=((gTrackNum+1)&4)?255-fade:255-3*fade;
++                            } else {
++                                if (fade>63) fade=64;
++                                color.c[0]=((currentTrackMap+1)&1)?255-fade:255-3*fade;
++                                color.c[1]=((currentTrackMap+1)&2)?255-fade:255-3*fade;
++                                color.c[2]=((currentTrackMap+1)&4)?255-fade:255-3*fade;
++                            }
++                            p[8]=color.rgba;p[13]=color.rgba;
++                            p[26]=0xFF000000;p[31]=0xFF000000;
++                            if (pointIdx==kNumMapSects-1) p[8]=p[13]=p[26]=p[31]=0xFFFFFFFF;
++                        }
++                    }
++                }
++            }
++        }
++        pathPos += gFrameSeconds/5.0f;
++        while (pathPos > 1.0f) pathPos -= 1.0f;
++    }
++}
++
+ void loadPathData(void)
+ {
+     if (gTrackNum >= 0 && gTrackNum <= 5) {
+@@ -750,6 +1118,8 @@ void unloadPathData(void)
+     pathWaveIdx = -1;
+ }
+ 
++
++
+ void initButtons(void)
+ {
+     tRGBA buttonColor = {255,255,255,255};
+@@ -766,7 +1136,7 @@ void initButtons(void)
+     tex = MBOX_FindTexture_WORK("BUTTON",&texIdx,0,gNumModels-1,1);
+     ZOID_SetTexture(buttonInfo[42].objIdx,tex,-1);
+     memcpy(buttonInfo[42].mat.mat3.uvs,unitmatrix,36);
+-    WPitchUV(-1.5707963705062866f,buttonInfo[42].mat.mat3.uvs);
++    WPitchUV(-1.5707964f,buttonInfo[42].mat.mat3.uvs);
+     buttonInfo[42].mat.mat3.pos[0] = 0.0f;
+     buttonInfo[42].mat.mat3.pos[1] = 115.0f;
+     buttonInfo[42].mat.mat3.pos[2] = 200.0f;
+@@ -775,29 +1145,29 @@ void initButtons(void)
+     tex = MBOX_FindTexture_WORK("A1",&texIdx,0,gNumModels-1,1);
+     ZOID_SetTexture(buttonInfo[44].objIdx,tex,-1);
+     memcpy(buttonInfo[44].mat.mat3.uvs,unitmatrix,36);
+-    WPitchUV(-1.5707963705062866f,buttonInfo[44].mat.mat3.uvs);
++    WPitchUV(-1.5707964f,buttonInfo[44].mat.mat3.uvs);
+     buttonInfo[44].mat.mat3.pos[0] = 75.1f;
+-    buttonInfo[44].mat.mat3.pos[1] = 59.2000008f;
++    buttonInfo[44].mat.mat3.pos[1] = 55.200001f;
+     buttonInfo[44].mat.mat3.pos[2] = 100.0f;
+     ScaleUV(buttonInfo[44].mat.mat3.uvs,buttonInfo[44].mat.mat3.uvs,0.5f);
+     memcpy(buttonInfo[45].mat.mat3.uvs,unitmatrix,36);
+-    WPitchUV(-1.5707963705062866f,buttonInfo[45].mat.mat3.uvs);
+-    WRollUV(3.1415927410125732f,buttonInfo[45].mat.mat3.uvs);
++    WPitchUV(-1.5707964f,buttonInfo[45].mat.mat3.uvs);
++    WRollUV(3.1415928f,buttonInfo[45].mat.mat3.uvs);
+     buttonInfo[45].mat.mat3.pos[0] = 87.1f;
+-    buttonInfo[45].mat.mat3.pos[1] = 59.2000008f;
++    buttonInfo[45].mat.mat3.pos[1] = 55.200001f;
+     buttonInfo[45].mat.mat3.pos[2] = 100.0f;
+     tex = MBOX_FindTexture_WORK("B1",&texIdx,0,gNumModels-1,1);
+     ZOID_SetTexture(buttonInfo[46].objIdx,tex,-1);
+     memcpy(buttonInfo[46].mat.mat3.uvs,unitmatrix,36);
+-    WPitchUV(-1.5707963705062866f,buttonInfo[46].mat.mat3.uvs);
++    WPitchUV(-1.5707964f,buttonInfo[46].mat.mat3.uvs);
+     buttonInfo[46].mat.mat3.pos[0] = -75.1f;
+-    buttonInfo[46].mat.mat3.pos[1] = 59.2000008f;
++    buttonInfo[46].mat.mat3.pos[1] = 55.200001f;
+     buttonInfo[46].mat.mat3.pos[2] = 100.0f;
+     ScaleUV(buttonInfo[46].mat.mat3.uvs,buttonInfo[46].mat.mat3.uvs,0.5f);
+     memcpy(buttonInfo[47].mat.mat3.uvs,unitmatrix,36);
+-    WPitchUV(-1.5707963705062866f,buttonInfo[47].mat.mat3.uvs);
++    WPitchUV(-1.5707964f,buttonInfo[47].mat.mat3.uvs);
+     buttonInfo[47].mat.mat3.pos[0] = -87.1f;
+-    buttonInfo[47].mat.mat3.pos[1] = 59.2000008f;
++    buttonInfo[47].mat.mat3.pos[1] = 55.200001f;
+     buttonInfo[47].mat.mat3.pos[2] = 100.0f;
+     buttonsInited = 1;
+     buttonsJustInited = 1;
+@@ -831,14 +1201,14 @@ void updateButtons(void)
+             selectedPos = maxY - gActiveOption*(maxY-minY)/(gNumOptions-1);
+         else selectedPos = maxY - gButtonScale*(gActiveOption*gButtonSpace);
+         memcpy(prevPos,buttonInfo[43].mat.mat3.pos,12);
+-        buttonInfo[43].angle += 6.2831854820251465f*gFrameSeconds;
+-        if (buttonInfo[43].angle > 6.2831854820251465f) buttonInfo[43].angle -= 6.2831854820251465f;
++        buttonInfo[43].angle += 6.2831855f*gFrameSeconds;
++        if (buttonInfo[43].angle > 6.2831855f) buttonInfo[43].angle -= 6.2831855f;
+         buttonInfo[43].mat.mat3.pos[0] = buttonX*cursorZ/buttonZ + -180.0f*gButtonScale;
+         buttonInfo[43].mat.mat3.pos[1] = selectedPos*cursorZ/buttonZ;
+         buttonInfo[43].mat.mat3.pos[2] = cursorZ;
+         if (!buttonsJustInited) {
+-            if (60.0*fabs(buttonInfo[43].mat.mat3.pos[1]-prevPos[1])/10.0 > trackCursorSpeed) {
+-                trackCursorSpeed = 60.0*fabs(buttonInfo[43].mat.mat3.pos[1]-prevPos[1])/10.0;
++            if (60.0f*fabs(buttonInfo[43].mat.mat3.pos[1]-prevPos[1])/10.0f > trackCursorSpeed) {
++                trackCursorSpeed = 60.0f*fabs(buttonInfo[43].mat.mat3.pos[1]-prevPos[1])/10.0f;
+                 trackCursorSpeed = trackCursorSpeed < 540.0f*gButtonScale ? trackCursorSpeed : 540.0f*gButtonScale;
+                 trackCursorSpeed = trackCursorSpeed > 180.0f*gButtonScale ? trackCursorSpeed : 180.0f*gButtonScale;
+             }
+@@ -848,15 +1218,15 @@ void updateButtons(void)
+                 buttonInfo[43].mat.mat3.pos[1] = prevPos[1]-trackCursorSpeed*gFrameSeconds;
+             else trackCursorSpeed = 180.0f*gButtonScale;
+         }
+-        ScaleUV(unitmatrix,buttonInfo[43].mat.mat3.uvs,0.4f*gButtonScale);
++        ScaleUV(unitmatrix,buttonInfo[43].mat.mat3.uvs,0.40000001f*gButtonScale);
+         WRollUV(buttonInfo[43].angle,buttonInfo[43].mat.mat3.uvs);
+-        WPitchUV(1.5707963705062866f,buttonInfo[43].mat.mat3.uvs);
++        WPitchUV(1.5707964f,buttonInfo[43].mat.mat3.uvs);
+         buttonY = selectedPos + gButtonScale*(gActiveOption*gButtonSpace);
+         for (buttonIdx = 0; buttonIdx < 21; buttonIdx++) {
+             if (buttonIdx == gOpts[gActiveOption]) {
+-                if (buttonInfo[buttonIdx].angle < 3.1415927410125732f) buttonInfo[buttonIdx].angle += 12.566370964050293f*gFrameSeconds;
+-                if (buttonInfo[buttonIdx].angle > 3.1415927410125732f) buttonInfo[buttonIdx].angle = 3.1415927410125732f;
+-                if (buttonsJustInited) buttonInfo[buttonIdx].angle = 3.1415927410125732f;
++                if (buttonInfo[buttonIdx].angle < 3.1415928f) buttonInfo[buttonIdx].angle += 12.566370964050293f*gFrameSeconds;
++                if (buttonInfo[buttonIdx].angle > 3.1415928f) buttonInfo[buttonIdx].angle = 3.1415928f;
++                if (buttonsJustInited) buttonInfo[buttonIdx].angle = 3.1415928f;
+             } else {
+                 if (buttonInfo[buttonIdx].angle > 0.0f) buttonInfo[buttonIdx].angle -= 12.566370964050293f*gFrameSeconds;
+                 if (buttonInfo[buttonIdx].angle < 0.0f) buttonInfo[buttonIdx].angle = 0.0f;
+@@ -869,8 +1239,8 @@ void updateButtons(void)
+             buttonInfo[buttonIdx].mat.mat3.pos[1] = buttonY;
+             buttonInfo[buttonIdx].mat.mat3.pos[2] = buttonZ;
+             if (!buttonsJustInited) {
+-                if (60.0*fabs(buttonInfo[buttonIdx].mat.mat3.pos[1]-prevPos[1])/10.0 > trackScrollSpeed) {
+-                    trackScrollSpeed = 60.0*fabs(buttonInfo[buttonIdx].mat.mat3.pos[1]-prevPos[1])/10.0;
++                if (60.0f*fabs(buttonInfo[buttonIdx].mat.mat3.pos[1]-prevPos[1])/10.0f > trackScrollSpeed) {
++                    trackScrollSpeed = 60.0f*fabs(buttonInfo[buttonIdx].mat.mat3.pos[1]-prevPos[1])/10.0f;
+                     trackScrollSpeed = trackScrollSpeed < 540.0f*gButtonScale ? trackScrollSpeed : 540.0f*gButtonScale;
+                     trackScrollSpeed = trackScrollSpeed > 180.0f*gButtonScale ? trackScrollSpeed : 180.0f*gButtonScale;
+                 }
+@@ -887,12 +1257,12 @@ void updateButtons(void)
+             buttonInfo[buttonIdx+21].mat.mat3.pos[2] = buttonInfo[buttonIdx].mat.mat3.pos[2];
+             ScaleUV(unitmatrix,buttonInfo[buttonIdx].mat.mat3.uvs,gButtonScale);
+             ScaleUV(unitmatrix,buttonInfo[buttonIdx+21].mat.mat3.uvs,gButtonScale);
+-            WPitchUV(3.1415927410125732f + (buttonInfo[buttonIdx].angle - 1.5707963705062866f),buttonInfo[buttonIdx].mat.mat3.uvs);
+-            WPitchUV(3.1415927410125732f + (buttonInfo[buttonIdx+21].angle - 1.5707963705062866f),buttonInfo[buttonIdx+21].mat.mat3.uvs);
+-            if (buttonInfo[buttonIdx].angle > 1.5707963705062866f) tex = MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
++            WPitchUV(3.1415928f + (buttonInfo[buttonIdx].angle - 1.5707964f),buttonInfo[buttonIdx].mat.mat3.uvs);
++            WPitchUV(3.1415928f + (buttonInfo[buttonIdx+21].angle - 1.5707964f),buttonInfo[buttonIdx+21].mat.mat3.uvs);
++            if (buttonInfo[buttonIdx].angle > 1.5707964f) tex = MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
+             else tex = MBOX_FindTexture_WORK("BUTTON",&texIdx,0,gNumModels-1,1);
+             ZOID_SetTexture(buttonInfo[buttonIdx].objIdx,tex,-1);
+-            if (buttonInfo[buttonIdx+21].angle > 1.5707963705062866f) tex = MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
++            if (buttonInfo[buttonIdx+21].angle > 1.5707964f) tex = MBOX_FindTexture_WORK("BUTTON_SELECT",&texIdx,0,gNumModels-1,1);
+             else tex = MBOX_FindTexture_WORK("BUTTON",&texIdx,0,gNumModels-1,1);
+             ZOID_SetTexture(buttonInfo[buttonIdx+21].objIdx,tex,-1);
+             if (buttonInfo[buttonIdx].mat.mat3.pos[1] > maxY+gButtonSpace*gButtonScale || buttonInfo[buttonIdx].mat.mat3.pos[1] < minY-gButtonSpace*gButtonScale) buttonInfo[buttonIdx].alpha = 0;

@@ -1,0 +1,3352 @@
+diff --git a/include/dc_sound_types.h b/include/dc_sound_types.h
+index 6234d82..4caee5e 100644
+--- a/include/dc_sound_types.h
++++ b/include/dc_sound_types.h
+@@ -18,10 +18,32 @@ struct tMidiJob {
+  int song,ticks; /* 440/444: A0C8/A29C */
+  signed char stopIssued; /* 448:A224/A33A/A41E */
+ }; /* Last observed byte448; full allocation end is not claimed. */
++/* Accessed stream-record prefix, not an allocation-stride assertion.
++ * A5D0/A738/A836/AD18 establish all offsets below. */
++typedef struct dcStreamTransfer {
++ void *destination; const void *source; unsigned int bytes;
++ unsigned int field0C,field10,field14;
++} dcStreamTransfer; /* AD58/AD68/AD6A index*24; AD74..ADA4 stores. */
+ typedef struct tStreamJob {
+  struct tStreamJob *next,*prev;
+- char opaque08[0x56-8];
+- signed char cancel; /* A568..56A; no full stride claimed. */
++ void *staging[2]; /* +8 */
++ unsigned char *soundRam[2]; /* +16 */
++ unsigned char *source[2]; /* +24 */
++ unsigned int sourceBytes; /* +32 */
++ unsigned int sourceOffset[2]; /* +36 */
++ unsigned int playCursor[2]; /* +44 */
++ unsigned int halfCounter[2]; /* +52 */
++ int channel[2]; /* +60 */
++ unsigned char channels; /* +68, extu.b A65E/A7BA */
++ char unknown45[3];
++ int wave,song; /* +72/+76 */
++ signed char setupDone[2],loopDone[2],panDone[2]; /* +80..85 */
++ signed char active,loop; /* +86 selects active/pending list, +87 */
++ unsigned char retries; /* +88 */
++ char unknown59;
++ signed short volume; /* +90 */
++ unsigned int setup[16]; /* +92..155, target stores named only by offset */
++ dcStreamTransfer transfer[2]; /* +156 */
+ } tStreamJob;
+ extern tDLList midiFree8C177B3C,midiActive8C177B4C,midiPending8C177B5C;
+ extern tDLList streamFree8C177FC0,streamActive8C177FD0,streamPending8C177FE0;
+diff --git a/include/ghost_private.h b/include/ghost_private.h
+new file mode 100644
+index 0000000..91f7dea
+--- /dev/null
++++ b/include/ghost_private.h
+@@ -0,0 +1,34 @@
++#ifndef GHOST_PRIVATE_H
++#define GHOST_PRIVATE_H
++#include "save_types.h"
++/* GhostStart E832..E84C: ten-byte link rows, byte fields0/1/2/6/7/8. */
++typedef struct dcGhostLink {
++ unsigned char track,car,PaintJob; char unknown03[3];
++ unsigned char polepos,flags,owner; char unknown09;
++} dcGhostLink;
++typedef char ghost_check_link[(sizeof(dcGhostLink)==10)?1:-1];
++extern dcGhostLink gLink[];
++extern tModelData model[];
++#define gGameCar ((tCarData *)0x8C004000)
++extern tGhostFile **gGhosts[4];
++extern int gRace;
++/* E956/EAAE load signed long counter from the native mdrive B base. */
++#define gModelIteration (*(int *)0x8C14CB60)
++extern signed short gNumCars,num_humans;
++extern signed char gRestartGame,gBackwards;
++extern float gRetraceTime;
++/* Native arenas are accessed, not allocated here: frozen map has no B/D ranges.
++ * E4E0..E4FC proves four pointer rows, profiles stride64 and headers stride84;
++ * E536..E55E proves file stride48 and header handle at44. */
++#define gGhostToSave (*(tSaveHeader **)0x8C1335F4)
++#define gGhostPlayers ((tPlayerProfile **)0x8C1335F8)
++#define gRealGhostPlayers ((tPlayerProfile *)0x8C133608)
++#define gNewGhosts ((tGhostFile **)0x8C133708)
++#define gRealNewGhosts ((tGhostFile *)0x8C133718)
++#define gNewGhostHeaders ((tSaveHeader **)0x8C1337D8)
++#define gRealNewGhostHeaders ((tSaveHeader *)0x8C1337E8)
++#define gInited (*(signed char *)0x8C0BDF80)
++#define gEndingGhosts (*(signed char *)0x8C0BDF81)
++/* The seven signed-byte setting tables have native13-byte row increments
++ * (E794..E7F4), while front/rear scales use52-byte rows (E7FA..E828). */
++#endif
+diff --git a/include/maxpath_types.h b/include/maxpath_types.h
+index 932fe22..4bcfbf9 100644
+--- a/include/maxpath_types.h
++++ b/include/maxpath_types.h
+@@ -48,7 +48,9 @@ typedef char check_checkpointrow[(sizeof(tMaxpathCheckpoint)==0x50)?1:-1];
+ extern tModelData model[6];
+ extern tCarData gGameCar[6];
+ extern float gModelTime;
+-extern signed short gNumActiveCars,num_drones,drones[6];
++/* B992/C1E8: native signed-byte loads; matches the mdrive definition. */
++extern signed char gNumActiveCars;
++extern signed short num_drones,drones[6];
+ extern tMaxpathCheckpoints gCheckpoints;
+ extern anon_numPts_pts_10 gResPath;
+ extern anon_numPts_pts_8 gDronePaths[4];
+diff --git a/include/mdrive_types.h b/include/mdrive_types.h
+index 93afec7..b6692aa 100644
+--- a/include/mdrive_types.h
++++ b/include/mdrive_types.h
+@@ -28,7 +28,8 @@ extern signed short modelrun,gNumPlayers,gNumLaps;
+ extern signed char gTrackNum,gUseCatchup,gOneMoreCP,gDeathMode,gCoastFlag;
+ extern unsigned int gGameState;
+ extern int gRace,gAPlayerReallyFinished;
+-extern signed short gStuntsDone;
++/* FCD2: native MOV.L; shared stunt producer contract is int. */
++extern int gStuntsDone;
+ extern float gRetraceTime,gFrameSeconds;
+ extern void InitCarVisuals(tCarData *),InitCarPath(tModelData *,tCarData *);
+ extern signed short GetNextCheckpoint(signed short);
+diff --git a/include/visuals_effects_private.h b/include/visuals_effects_private.h
+new file mode 100644
+index 0000000..5ac1591
+--- /dev/null
++++ b/include/visuals_effects_private.h
+@@ -0,0 +1,193 @@
++#ifndef VISUALS_EFFECTS_PRIVATE_H
++#define VISUALS_EFFECTS_PRIVATE_H
++#include "visuals_types.h"
++#include "dc_kamui_tex_types.h" /* approved lane3 surface/context correction required */
++/* Observed slices of CarParts only. Preserve its shared 96-byte stride.
++ * 8C064876 loads brakes as a long at+0C. 8C0648C0..4920 read the five
++ * low signed words at4C/50/54/58/5C. SetupCar F8FE/F908/F912/F91C/F926
++ * corroborates full long reads at those same slots. Little-endian union keeps
++ * the independently observed narrow callback loads, without type punning. */
++typedef union dcVisualSparkSlot {
++ int full;
++ struct { signed short object; unsigned short upper; } narrow;
++} dcVisualSparkSlot;
++typedef char vis_spark_slot_size[(sizeof(dcVisualSparkSlot)==4)?1:-1];
++typedef struct dcVisualEffectParts {
++ char unknown00[12]; int brakes;
++ int trim; char unknown14[56];
++ dcVisualSparkSlot sparks[5];
++} dcVisualEffectParts;
++#define effectParts(slot) ((dcVisualEffectParts *)&gCarParts[(slot)])
++/* FD6E/FD7C are a literal address plus signed16 load; FD84 writes16. */
++#define gEnvCountMax (*(signed short *)0x8C15CA36)
++extern tCarData gGameCar[];
++extern tModelData model[];
++extern int gRace;
++extern float gModelTime;
++void StartFrame(signed short);
++void StartSparks(signed short);
++void StartWing(signed short,signed short);
++void StartWingFlame(signed short,signed short);
++void StartWeapon(signed short);
++void StartHeadLights(signed short);
++void StartBrakeLights(signed short);
++void StartTire(signed short,unsigned int);
++void RemoveVisuals(signed short);
++void AnimateSkids(void);
++void func_8C04EE60(void);
++void AnimateFrame(tVisual *,signed short);
++void AnimateWing(tVisual *,signed short);
++void AnimateWingFlame(tVisual *,signed short);
++void AnimateTire(tVisual *,signed short);
++void AnimateBrakeLights(tVisual *,signed short);
++void AnimateLFSpark(tVisual *,signed short);
++void AnimateLRSpark(tVisual *,signed short);
++void AnimateRFSpark(tVisual *,signed short);
++void AnimateRRSpark(tVisual *,signed short);
++void AnimateBSpark(tVisual *,signed short);
++void PositionObject(int,float,float,float,float,float,float);
++void HandleASpark(tVisual *,int,float,float,float,int,signed short);
++int CheckVisibleAll(tVisual *,int);
++int CheckVisible(tVisual *,int,int);
++tUVMatrix *ZOID_FindMatrix(int);
++void LookInDir(float *,tUVMatrix *);
++extern tPadState gPlayers[];
++float Random(float);
++void ScaleUV(float [3][3],float [3][3],float);
++void func_8C069328(unsigned short,int,unsigned short);
++void ZOID_UpdateObject(int,float *,float (*)[3]);
++void InitWingSmoke(signed short,signed short);
++#define visualWingRows ((signed char (*)[13])0x8C0BBE14)
++/* 61556 folds the Y component to8C0C440C, body index*12. */
++#define visualWingOffsets ((float (*)[3])0x8C0C4408)
++/* 602C2/602E2/602F8 show floats390/394/38C in the car. */
++#define visualRocketScale(slot) ((float *)((char *)&gGameCar[(slot)]+0x38C))
++/* InitBlast1D50 and StartNewBlast1E2C independently establish400-byte records.
++ * StartNewBlast1F2E/204C/210C/21D8 increments84 and21CE compares four.
++ * Per element: object0, matrix4, scale34, scaleInc38, yaw3C, yawInc40,
++ * pitch44,pitchInc48, alpha4C/alphaInc4D byte, height50 (1EC4..1F26).
++ * Glow object150,matrix154,alpha184/count185,life188,timer18C (2208..22D2).
++ * Unknown alignment bytes stay explicit; matrix-pointer table remains separate. */
++typedef struct dcVisualBlastObject {
++ int mbIdx; tUVMatrix mat;
++ float scale,scaleInc,yaw,yawInc,pitch,pitchInc;
++ unsigned char alpha,alphaInc; char unknown4E[2]; float ht;
++} dcVisualBlastObject;
++typedef struct dcVisualBlastRecord {
++ dcVisualBlastObject blastObjs[4];
++ int glowIdx; tUVMatrix mat;
++ unsigned char alpha,alphaCnt; char unknown186[2];
++ float lifeTime,incTime;
++} dcVisualBlastRecord;
++typedef char vis_blast_object_size[(sizeof(dcVisualBlastObject)==84)?1:-1];
++/* Ring stride60 from2914/29EA; matrix+4, alpha52,count53,timer56. */
++typedef struct dcVisualBlastRing {
++ int ringIdx;
++ tUVMatrix mat;
++ unsigned char ralpha,ralphaCnt;
++ char unknown36[2];
++ float incTime;
++} dcVisualBlastRing;
++typedef struct dcVisualBlastMatrix { tUVMatrix *mat; } dcVisualBlastMatrix;
++#define gBlastObjs ((dcVisualBlastRecord *)0x8C15EF3C)
++#define gBlastRingObjs ((dcVisualBlastRing *)0x8C15F89C)
++#define gBlastMats ((dcVisualBlastMatrix *)0x8C15ED80)
++#define gBlastMatCnt (*(signed short *)0x8C15ED7C)
++typedef char vis_blast_size[(sizeof(dcVisualBlastRecord)==400)?1:-1];
++typedef char vis_ring_size[(sizeof(dcVisualBlastRing)==60)?1:-1];
++typedef char vis_matrix_pointer[(sizeof(dcVisualBlastMatrix)==4)?1:-1];
++extern int gPauseState;
++extern float gFrameSeconds;
++extern tZoidObjectDC ObjInstanceList[];
++int MBOX_NewObject(int,tUVMatrix *,signed short,int);
++void ZOID_RemoveObject(int);
++void ZOID_SetObjectDef(int,int);
++void StartNewBlast(signed short);
++void StartNewBlastRing(signed short);
++void AnimateNewBlastRing(tVisual *,signed short);
++void AnimateBlast(tVisual *,signed short);
++void newWorldDamage(float *,signed short);
++int EmitGameSound(float *,float *,float,float,float,float,int,int,int,unsigned char);
++/* SetupCar F788: unsigned owner at +8 of the shared ten-byte link. */
++#define visualOwner(slot) (*((unsigned char *)&gLink[(slot)]+8))
++/* 63F8A..3FB0 clear16 bytes;4038/408A use four-byte rows. */
++#define gFadePlayerArrow ((signed char (*)[4])0x8C15FA04)
++/* FFAC literal; FEFE/FF18 byte stores. */
++#define gGoodFrameRate (*(signed char *)0x8C15D028)
++extern signed char gDriveHulk[4],gInvisibleCar,gShowPlayerArrows;
++extern signed short gNumPlayers;
++extern float gRetraceRate;
++extern volatile unsigned int dcDuration;
++unsigned int func_8C0D8736(unsigned int);
++void StartSmoke(signed short,unsigned int,int,float *);
++void UpdateSkids(int);
++void CreateCar(signed short,signed short,int);
++void StartCar(signed short);
++void func_8C063378(signed short);
++void StartArrow(signed short);
++void CopyUV(float (*)[3],float (*)[3]);
++void *ShotToWorldCollision(float *,float *,float (*)[3],float,int,int);
++/* Tire 63104..6311C: four pointer slots at+60, pointed float at0.
++ * No allocation extent is asserted for this observed car prefix. */
++#define visualCarTires(car) ((tTire **)((char *)(car)+0x60))
++/* 6325A/25C: signed-byte lookup; no unobserved table extent asserted. */
++#define visualWheelBlur ((signed char *)0x8C0AE40F)
++/* CreateCar F46C stores a long at378, F478/F486 copy four-byte colors. */
++#define visualSheenAlpha(car) (*(unsigned int *)((char *)(car)+0x378))
++#define visualIRColor(car) (*(tRGBA *)((char *)(car)+0x364))
++#define visualPrevIRColor(car) (*(tRGBA *)((char *)(car)+0x368))
++extern tCar *gCarModels[13];
++extern tCamera gCamera[];
++extern float gFrontTireScale[5][13],gRearTireScale[5][13];
++extern signed char gTrackNum,gCoastFlag;
++extern signed char gTireRims[5][13];
++void SetupCarColor(signed short,signed short,unsigned char);
++void CreateYPRMatrix(float (*)[3],float *);
++/* GetCarsIRColor B1C: signed long lookup, native source table. */
++#define visualTrackBaseColors ((int *)0x8C0C43B8)
++/* SetupCarColor F628/F644..650/F698: selector stride24 and signed word+A. */
++#define visualSelectPaint(slot) (*(signed short *)(0x8C1A0194+(slot)*24+10))
++/* F51A/520: native signed-long counts, switch has13 cases. */
++#define visualNumPaintTextures ((int *)0x8C0AE4A4)
++#define visualTextureLoadName ((char *)0x8C0AE8AC)
++#define visualPoliceCarName ((const char *)0x8C0AED04)
++void func_8C06EDC2(int,char *);
++tRGBA GetCarsIRColor(tCarData *,tModelData *);
++int AudPlayEffect(int,int,int,unsigned char);
++void AudChangeEffectPitch(int,float);
++void AudChangeEffectVol(int,float);
++void AudStopEffect(int);
++void PitchUV(float,float (*)[3]);
++/* Frame D4C/D5E/D60 and1432..1446: unsigned word at object+28.
++ * Existing ObjInstanceList stride88 remains unchanged. */
++#define visualObjectIndex(i) (*(unsigned short *)((char *)&ObjInstanceList[(i)]+0x28))
++unsigned int ZOID_ObjectFlags(signed short);
++void ZOID_SetObjectFlags(int,unsigned int);
++extern signed short gNumWindows;
++void AnimateNewBlast(tVisual *,signed short);
++void YawUV(float,float (*)[3]);
++/* Arrow4106/4134 and4356..35C: native color tables, no extent claimed. */
++#define visualArrowColors ((tRGBA *)0x8C0C44A4)
++#define visualArrowInvisible ((unsigned char *)0x8C0C44B8)
++extern signed char gCarTeam[],gSplitScreen;
++extern tWindowInfo ZoidWinInfo[];
++extern tPoly PolyInstanceList[];
++tPoly *ZOID_NewPoly(int,float (*)[3],unsigned short,tRGBA *,unsigned short,int);
++void ZOID_UpdatePoly(tPoly *,int,float (*)[3],unsigned short,tRGBA *,unsigned short,int);
++void ZOID_SetPolyZ(tPoly *,int);
++void ZOID_HidePoly(tPoly *);
++void U64WorldVector(float *,float *,float (*)[3]);
++float fatan2(float,float);
++float magnitude(float *);
++void AnimateArrow(tVisual *,signed short);
++/* Shadow339A/33A8 and3E78: alpha byte+3 of native four-byte color.
++ * Shadow3B16 uses body*16 and four scalar loads from the native table. */
++#define visualShadowColor (*(tRGBA *)0x8C0C3D90)
++#define visualShadowScale ((const float (*)[4])0x8C0A9054)
++void AnimateShadow(tVisual *,signed short);
++void ZOID_RemovePoly(tPoly *);
++void ZOID_ShowPoly(tPoly *);
++void ZOID_SetPolyFlags(tPoly *,unsigned short);
++void ZOID_ClearPolyFlags(tPoly *,unsigned short);
++void BodyVector(float *,float *,float (*)[3]);
++#endif
+diff --git a/src/TB_text.c b/src/TB_text.c
+index b14d204..9801d0e 100644
+--- a/src/TB_text.c
++++ b/src/TB_text.c
+@@ -265,7 +265,7 @@ void TB_DrawTextC(signed short x, signed short y, enum_kTB_FlashText color, void
+ }
+ 
+ /* 0x8004fd1c, size 0x33c */
+-void TB_DrawTextScrollBox(signed short x, signed short y, signed short width, signed short height, signed short page, signed short line, void * text)
++void TB_DrawTextScrollBox(signed short x, signed short y, signed short width, signed short height, signed short page, signed short line, register void * text)
+ {
+     signed short top,bottom,fontHeight,spacing,charSize,numLines,currentLine,currentPage,len,overlap,currWidth,ch;
+     const unsigned char *s,*lastSpace;
+diff --git a/src/controlsys.c b/src/controlsys.c
+index 6636fc7..a3414ac 100644
+--- a/src/controlsys.c
++++ b/src/controlsys.c
+@@ -35,7 +35,7 @@ void InitControlSys(void)
+ {
+     static int sRegistered = 0;
+     int i;
+-    int mask;
++    register int mask;
+     if (!gInitControls) {
+         SetControllerActive(-1,1);
+         SetControllerStickEdges(-1,1);
+@@ -45,7 +45,7 @@ void InitControlSys(void)
+     gInitControls=1;
+     for (i=0;i<4;i++) gContStickRange[i][0]=gContStickRange[i][1]=110;
+     _InitSemaphore();
+-    if (!sRegistered) {
++    if (sRegistered == 0) {
+         mask=SetInterruptMask(15);
+         RegisterRetraceCallback(0x900,ModelThread,0x58,0);
+         SetInterruptMask(mask);
+@@ -217,7 +217,10 @@ int ControllerUpdate(void)
+         ((volatile tPadInfo *)gControllerData)[i].analog1=per->l;
+         ((volatile tPadInfo *)gControllerData)[i].analog2=per->r;
+         if (!gStickEdges[i] && gHardStickEdges[i] && (((volatile tPadInfo *)gControllerData)[i].buttons &0x3000)) {
+-            ((volatile tPadInfo *)gControllerData)[i].buttons &=0xffffcfff;
++            {
++                volatile unsigned int *buttons = &((volatile tPadInfo *)gControllerData)[i].buttons;
++                *buttons = *buttons & ~0x3000;
++            }
+         }
+     }
+     ControlIRQ();
+@@ -229,12 +232,13 @@ void ControlIRQ(void)
+     unsigned int i; /* r20 */
+     unsigned int edges; /* r4 */
+     unsigned int levels; /* r0 */
+-    int stickEdge = 88;
++    int stickEdge;
+ 
+     if (!gInitControls) {
+         InitControlSys();
+     }
+     _GetSemaphore();
++    stickEdge = 88;
+     for (i = 0; i < 4; i++) {
+         if (!((volatile tPadInfo *)gControllerData)[i].attached) {
+             gNewStick[i][0] = 0;
+diff --git a/src/dc_sound_8C069F78.c b/src/dc_sound_8C069F78.c
+index 1cf74c7..9838710 100644
+--- a/src/dc_sound_8C069F78.c
++++ b/src/dc_sound_8C069F78.c
+@@ -22,7 +22,7 @@ void func_8C069F78(void)
+ void func_8C069FD0(int song,int loop)
+ {
+  tMidiJob *p;
+- /* Target retains unused range comparisons here; their original assert is unknown. */
++ if(song>=0 && song>=20){}
+  if(song>=18){func_8C06A5D0(song,loop);return;}
+  for(p=midiActive8C177B4C.head;p;p=p->next)if(p->song==song && !p->cancel)return;
+  for(p=midiPending8C177B5C.head;p;p=p->next) {
+@@ -46,6 +46,7 @@ void func_8C06A0DA(int song)
+ {
+  tMidiJob *p;
+  songLock8C0C7C44++;
++ if(song>=0 && song>=20){}
+  if(song>=18)func_8C06A738(song);
+  else {
+   for(p=midiActive8C177B4C.head;p;p=p->next) {
+@@ -102,6 +103,7 @@ void func_8C06A1E4(void)
+ tMidiJob *func_8C06A320(void)
+ {
+  tMidiJob *p=midiFree8C177B3C.tail;
++ if(p){}
+  RemoveLLE((tDLList *)&midiFree8C177B3C,p);
+  p->cancel=0;p->stopIssued=0;p->ticks=0;return p;
+ }
+@@ -115,9 +117,9 @@ void func_8C06A348(tMidiJob *p,int active)
+ 
+ void func_8C06A39C(tMidiJob *p)
+ {
+- sdkPath8C09FCC6(&p->state,p->path);
+- sdkBuffers8C09FBB6(&p->state,p->readBuffer1,p->readBytes,p->workHandle,p->workBytes);
+- sdkReadBuffer8C09FAF4(&p->state,p->readBuffer2);
++ if(sdkPath8C09FCC6(&p->state,p->path)){}
++ if(sdkBuffers8C09FBB6(&p->state,p->readBuffer1,p->readBytes,p->workHandle,p->workBytes)){}
++ if(sdkReadBuffer8C09FAF4(&p->state,p->readBuffer2)){}
+ }
+ 
+ void func_8C06A3E0(tMidiJob *p)
+@@ -129,7 +131,7 @@ void func_8C06A3E0(tMidiJob *p)
+ void func_8C06A40E(tMidiJob *p)
+ {
+  commandDelay8C0C7C40=0;p->stopIssued=1;
+- if(func_8C06A462(p))sdkStop8C09FD6A(&p->state);
++ if(func_8C06A462(p)) {if(sdkStop8C09FD6A(&p->state)){}}
+ }
+ 
+ int func_8C06A438(tMidiJob *p)
+@@ -149,7 +151,7 @@ int func_8C06A462(tMidiJob *p)
+ void func_8C06A48C(tMidiJob *p)
+ {
+  p->state.beginFlag=1;
+- sdkStart8C09FB2C(&p->state);audioFlush8C06B1A8();
++ if(sdkStart8C09FB2C(&p->state)){} audioFlush8C06B1A8();
+  sdkVolume8C09F7FC(&p->state,(signed char)p->volume,0);audioFlush8C06B1A8();
+  commandDelay8C0C7C40=0;
+ }
+@@ -162,13 +164,14 @@ void func_8C06A504(tMidiJob *p)
+ 
+ void func_8C06A52C(tMidiJob *p,int volume)
+ {
+- sdkVolume8C09F7FC(&p->state,volume,0);audioFlush8C06B1A8();p->volume=volume;
++ if(sdkVolume8C09F7FC(&p->state,volume,0)){} audioFlush8C06B1A8();p->volume=volume;
+ }
+ 
+ tStreamJob *func_8C06A554(void)
+ {
+  tStreamJob *p=streamFree8C177FC0.tail;
+- RemoveLLE((tDLList *)&streamFree8C177FC0,p);p->cancel=0;return p;
++ if(p){}
++ RemoveLLE((tDLList *)&streamFree8C177FC0,p);p->active=0;return p;
+ }
+ 
+ void func_8C06A574(tStreamJob *p,int active)
+@@ -177,3 +180,173 @@ void func_8C06A574(tStreamJob *p,int active)
+  else RemoveLLE((tDLList *)&streamPending8C177FE0,p);
+  InsertLLE((tDLList *)&streamFree8C177FC0,p,streamFree8C177FC0.head);
+ }
++
++/* Stream metadata is a four-byte record: A646 byte0, A860 byte1,
++ * A876 unsigned word2. Only the two observed stream-song records are read. */
++typedef struct dcStreamFormat { unsigned char channels,bits; unsigned short rate; } dcStreamFormat;
++#define streamFormats ((const dcStreamFormat *)0x8C0A7A48)
++extern unsigned int gWaveSizes[];
++int FindWaveInstance(int);
++int LoadWave(int,int,int,int,int);
++void LockWaveInstance(int);
++void UnlockWaveInstance(int);
++void *GetWaveInstanceAddr(int);
++void *AllocateMemoryHeap(void *,unsigned int);
++void PurgeableMemory(void *,int);
++int func_8C09DB1A(int);
++int func_8C09D812(int);
++int func_8C0A34A0(int);
++int func_8C09F396(dcStreamTransfer *);
++void *memcpy(void *,const void *,unsigned int);
++void func_8C06AC96(unsigned char *,const unsigned char *,unsigned int *,unsigned int,unsigned int);
++void func_8C06AD18(tStreamJob *,int,int);
++
++void func_8C06A5D0(int song,int loop)
++{
++ tStreamJob *p=func_8C06A554();
++ unsigned char *data;
++ int i,wave=song-12;
++ p->song=song;p->loop=loop;p->volume=-1;
++ p->wave=FindWaveInstance(wave);
++ if(p->wave<0)p->wave=LoadWave(wave,0,0,0,0);
++ LockWaveInstance(p->wave);
++ data=GetWaveInstanceAddr(p->wave);
++ p->sourceBytes=gWaveSizes[wave];
++ p->channels=streamFormats[song-18].channels;
++ p->sourceBytes/=p->channels;
++ for(i=0;i<p->channels;i++) {
++  p->source[i]=data+i*p->sourceBytes;
++  p->sourceOffset[i]=0;
++  p->staging[i]=AllocateMemoryHeap(0,65504);
++  PurgeableMemory(p->staging[i],0);
++  p->soundRam[i]=0;
++  p->channel[i]=0x666;
++  p->setupDone[i]=0;p->loopDone[i]=0;p->panDone[i]=0;
++ }
++ p->retries=0;
++ InsertLLE(&streamPending8C177FE0,p,streamPending8C177FE0.head);
++}
++
++void func_8C06A738(int song)
++{
++ tStreamJob *p;
++ int i;
++ for(p=streamActive8C177FD0.head;p;p=p->next)if(p->song==song)break;
++ if(!p)for(p=streamPending8C177FE0.head;p;p=p->next)if(p->song==song)break;
++ if(!p)return;
++ if(p->active)for(i=0;i<p->channels;i++)if(func_8C09DB1A(p->channel[i])){}
++ for(i=p->channels-1;i>=0;i--) {
++  if(func_8C09D812(p->channel[i])){}
++  if(func_8C0A34A0(p->channel[i])){}
++  if(sdkFree8C0A1BB4(p->soundRam[i])){}
++  DeallocateMemory(p->staging[i]);
++ }
++ UnlockWaveInstance(p->wave);
++ func_8C06A574(p,p->active);
++}
++
++int func_8C0A191C(void **,unsigned int,int,int,int);
++int func_8C09E81C(void *,const void *,unsigned int);
++int func_8C0161B2(void *);
++int func_8C09D394(int,void *,unsigned int,int,unsigned int);
++int func_8C09CC62(int,int,int);
++int func_8C09DA40(int,int);
++int func_8C09C6A8(int,unsigned int *);
++int func_8C09EC18(int);
++int func_8C09D9AE(int,int);
++
++void func_8C06A836(void)
++{
++ tStreamJob *p,*next;
++ int i,format,failed;
++ unsigned short rate;
++ for(p=streamPending8C177FE0.head;p;p=next) {
++  next=p->next;
++  format=streamFormats[p->song-18].bits==8?1:0;
++  rate=streamFormats[p->song-18].rate;
++  failed=0;
++  for(i=0;i<p->channels;i++) {
++   if(!p->soundRam[i]) {
++    if(!func_8C0A191C((void **)&p->soundRam[i],131008,32,2,0)){failed=1;break;}
++    func_8C06AC96(p->staging[i],p->source[i],&p->sourceOffset[i],65504,p->sourceBytes);
++    func_8C09E81C(p->soundRam[i],p->staging[i],65504);
++   }
++   if(p->channel[i]==0x666) {
++    p->setup[0]=rate;p->setup[1]=format;
++    p->setup[2]=convertVolume8C016508(songMasterVolume8C17843C);
++    p->setup[3]=63;p->setup[4]=0;p->setup[5]=0;p->setup[6]=0;p->setup[7]=0;
++    p->setup[8]=1;p->setup[9]=0;p->setup[10]=131008;p->setup[12]=0;
++    p->setup[14]=0;p->setup[15]=0;p->setup[11]=0x666;p->setup[13]=(unsigned int)p->soundRam[i];
++    if(!func_8C0161B2(p->setup)){failed=1;break;}
++    p->channel[i]=p->setup[11];
++   }
++   if(!p->setupDone[i]) {
++    if(!func_8C09D394(p->channel[i],p->soundRam[i],131008,format,rate)){failed=1;break;}
++    p->setupDone[i]=1;
++   }
++   p->halfCounter[i]=1;
++  }
++  if(!failed)for(i=0;i<p->channels;i++) {
++   if(!p->loopDone[i] && !func_8C09CC62(p->channel[i],0,p->loop?255:0)){failed=1;break;}
++   p->loopDone[i]=1;
++  }
++  if(!failed)for(i=0;i<p->channels;i++) {
++   if(p->channels>1 && !p->panDone[i]) {
++    if(!func_8C09DA40(p->channel[i],i==0?31:0)){failed=1;break;}
++    p->panDone[i]=1;
++   }
++  }
++  if(!failed) {
++   for(i=0;i<p->channels;i++)if(func_8C09C6A8(p->channel[i],&p->playCursor[i])){}
++   RemoveLLE(&streamPending8C177FE0,p);
++   InsertLLE(&streamActive8C177FD0,p,streamActive8C177FD0.head);
++   p->active=1;
++  } else {
++   p->retries++;
++   if(p->retries>=30){}
++  }
++ }
++ for(p=streamActive8C177FD0.head;p;p=next) {
++  next=p->next;
++  for(i=0;i<p->channels;i++)if(func_8C09C6A8(p->channel[i],&p->playCursor[i])){}
++  for(i=0;i<p->channels;i++) {
++   if((p->halfCounter[i]&1) && p->playCursor[i]<32752) {
++    p->halfCounter[i]++;func_8C06AD18(p,i,1);
++   } else if(!(p->halfCounter[i]&1) && p->playCursor[i]>=32752) {
++    p->halfCounter[i]++;func_8C06AD18(p,i,0);
++   }
++   if(p->volume!=convertVolume8C016508(songMasterVolume8C17843C)) {
++    int volume=convertVolume8C016508(songMasterVolume8C17843C)?convertVolume8C016508(songMasterVolume8C17843C)*2+1:0;
++    if(func_8C09D9AE(p->channel[i],func_8C09EC18(volume))){}
++   }
++  }
++  p->volume=convertVolume8C016508(songMasterVolume8C17843C);
++ }
++}
++
++void func_8C06AC96(unsigned char *dest,const unsigned char *source,unsigned int *offset,unsigned int bytes,unsigned int sourceBytes)
++{
++ unsigned int copied=0,remaining=bytes;
++ while(*offset+remaining>=sourceBytes) {
++  memcpy(dest+copied,source+*offset,sourceBytes-*offset);
++  remaining-=sourceBytes-*offset;
++  copied+=sourceBytes-*offset;
++  *offset=0;
++ }
++ if(remaining) {
++  memcpy(dest+copied,source+*offset,remaining);
++  copied+=remaining;
++  *offset+=remaining;
++ }
++ if(copied==bytes){}
++}
++
++void func_8C06AD18(tStreamJob *p,int channel,int half)
++{
++ func_8C06AC96(p->staging[channel],p->source[channel],&p->sourceOffset[channel],65504,p->sourceBytes);
++ p->transfer[channel].destination=p->soundRam[channel]+half*65504;
++ p->transfer[channel].source=p->staging[channel];
++ p->transfer[channel].bytes=65504;
++ p->transfer[channel].field0C=0;p->transfer[channel].field10=0;p->transfer[channel].field14=0;
++ if(func_8C09F396(&p->transfer[channel])){}
++}
+diff --git a/src/ghost.c b/src/ghost.c
+new file mode 100644
+index 0000000..b51b22a
+--- /dev/null
++++ b/src/ghost.c
+@@ -0,0 +1,185 @@
++#include "ghost_private.h"
++
++/* 0x80019870, size 0x594 */
++void GhostStart(void)
++{
++    tSaveHeader *g; /* r23 */
++    int i; /* r17 */
++    int np; /* r16 */
++    int car; /* r15 */
++    int j; /* r0 */
++
++    if (gRace != 2) {
++        return;
++    }
++    if (!gInited) {
++        for (j = 0; j < 4; j++) {
++            gGhostPlayers[j] = &gRealGhostPlayers[j];
++            gNewGhostHeaders[j] = &gRealNewGhostHeaders[j];
++        }
++        gInited = 1;
++    }
++    if (gRestartGame) {
++        gNumPlayers = gNumCars = 1;
++    }
++    np = gNumPlayers;
++    for (i = 0; i < gNumPlayers; i++) {
++        gNewGhosts[i] = &gRealNewGhosts[i];
++        gGhosts[i] = &gNewGhosts[i];
++        (*gGhosts[i])->header = &gNewGhostHeaders[i];
++        g = *(*gGhosts[i])->header;
++        g->flag = -1;
++        g->id = (*(*gPlayers[i].save)->datah)->raceStats[gTrackNum + (gBackwards ? 6 : 0)].totalGhosts;
++        g->track = gTrackNum;
++        g->backward = gBackwards;
++        memcpy(g->name, (*gPlayers[i].save)->name, 13);
++        memcpy(g->playerId, (*gPlayers[i].save)->id, 8);
++        g->trans = GetPlayerCarTrans(gPlayers[i].save);
++        memcpy(g->settings, (*(*gPlayers[i].save)->datah)->carSettings[gLink[i].car].settings, 10);
++        g->car = gLink[i].car;
++        g->retraceTime = gRetraceTime;
++        if (!gRestartGame) {
++            g->size = (int)(gRetraceRate * (10.0f + ghostRaceTimes[gTrackNum]));
++            g->start = AllocateMemoryHeap(0, g->size * 3);
++        }
++        g->offset = 0;
++    }
++    for (; i < 4; i++) {
++        if (!gGhosts[i]) {
++            break;
++        }
++        if (!ReadGhostData(gGhosts[i])) {
++            for (j = i; j < 3; j++) {
++                gGhosts[j] = gGhosts[j + 1];
++            }
++            continue;
++        }
++        (*(*gGhosts[i])->header)->start = *(*gGhosts[i])->datah;
++        g = *(*gGhosts[i])->header;
++        g->offset = 0;
++        car = g->car;
++        memset(&gPlayers[i], 0, sizeof(gPlayers[i]));
++        gPlayers[i].save = &gGhostPlayers[i];
++        memset(*gPlayers[i].save, 0, sizeof(**gPlayers[i].save));
++        memcpy((*gPlayers[i].save)->name, g->name, 13);
++        gPlayers[i].slot = i;
++        gPlayers[i].controller = i;
++        gPlayers[i].trans = g->trans;
++        gCarHandling[13 * (i + 1) + car] = g->settings[0];
++        gCarEngines[13 * (i + 1) + car] = g->settings[1];
++        gCarTires[13 * (i + 1) + car] = g->settings[2];
++        gCarFrame[13 * (i + 1) + car] = g->settings[3];
++        gPhysicsWingRows[13 * (i + 1) + car] = g->settings[4];
++        gTireRims[13 * (i + 1) + car] = g->settings[6];
++        gCarHorn[13 * (i + 1) + car] = g->settings[7];
++        gFrontTireScale[i + 1][car] = 0.75f + g->settings[8] / 100.0f;
++        gRearTireScale[i + 1][car] = 0.75f + g->settings[9] / 100.0f;
++        gLink[np].track = g->track;
++        gLink[np].car = car;
++        gLink[np].PaintJob = g->settings[5];
++        gLink[np].polepos = np;
++        gLink[np].flags = 0xb0;
++        gLink[np].owner = 6;
++        model[np].drone_type = 2;
++        model[np].fastin.dt = g->retraceTime;
++        gNumCars = ++np;
++    }
++    gNumPlayers = np;
++    num_humans = np;
++}
++
++/* 0x80019e04, size 0x3dc */
++int GhostUpdate(int i, float *time)
++{
++    tSaveHeader *g; /* r5 */
++
++    *time = gRetraceTime;
++    if (gEndingGhosts) {
++        return 0;
++    }
++    if (!gGhosts[i]) {
++        return 0;
++    }
++    g = *(*gGhosts[i])->header;
++    if (!g->flag) {
++        return 0;
++    }
++    if (g->flag > 0) {
++        *time = g->retraceTime;
++        if (g->retraceTime != gRetraceTime && 0.02f == g->retraceTime &&
++            (gModelIteration >= 0 ? gModelIteration : -gModelIteration) % 6 == 2) {
++            return -1;
++        }
++        if (g->offset == g->size) {
++            model[i].mainin.abort = 0;
++            model[i].mainin.wing = 0;
++            model[i].mainin.wheel = 0.0f;
++            model[i].mainin.throttle = 0.0f;
++            model[i].mainin.brake = 0.0f;
++        } else {
++            model[i].mainin.gear = (g->start[g->offset] & 7) - 1;
++            model[i].mainin.abort = (g->start[g->offset] & 8) >> 3;
++            model[i].mainin.wing = (g->start[g->offset] & 0x10) >> 4;
++            model[i].mainin.wheel = (signed char)g->start[g->offset + g->size] / 127.0f;
++            model[i].mainin.throttle = (g->start[g->offset + g->size + g->size] >> 4) / 15.0f;
++            model[i].mainin.brake = (g->start[g->offset + g->size + g->size] & 0xf) / 15.0f;
++            g->offset++;
++        }
++        if (g->retraceTime != gRetraceTime && 0.016666668f == g->retraceTime &&
++            (gModelIteration >= 0 ? gModelIteration : -gModelIteration) % 5 == 2) {
++            return 1;
++        }
++        return 0;
++    }
++    if (gGameCar[i].place_locked) {
++        return 0;
++    }
++    if (g->offset >= g->size) {
++        return 0;
++    }
++    g->start[g->offset] = (model[i].mainin.wing << 4) | ((model[i].mainin.gear + 1) | (model[i].mainin.abort << 3));
++    g->start[g->offset + g->size] = 127.0f * model[i].mainin.wheel < 0.0f ? 127.0f * model[i].mainin.wheel - 0.5f : 127.0f * model[i].mainin.wheel + 0.5f;
++    g->start[g->offset + g->size + g->size] = ((unsigned char)(int)(15.0f * model[i].mainin.throttle + 0.5f) << 4) | (int)(15.0f * model[i].mainin.brake + 0.5f);
++    g->offset++;
++    return 0;
++}
++
++/* 0x8001a1e0, size 0x104 */
++void GhostEnd(void)
++{
++    tSaveHeader *g; /* r27 */
++    int i; /* r31 */
++
++    gGhostToSave = 0;
++    if (gRace != 2) {
++        return;
++    }
++    gEndingGhosts = 1;
++    for (i = 0; i < gNumPlayers; i++) {
++        if (gGhosts[i]) {
++            tGhostFile **ghost = gGhosts[i];
++
++            gGhosts[i] = 0;
++            model[i].fastin.modelrun = 0;
++            g = *(*ghost)->header;
++            if (g->flag >= 0) {
++                if (g->flag > 0) {
++                    PurgeGhostData(ghost);
++                }
++            } else {
++                g->flag = 0;
++                if (gGameCar[i].place_locked) {
++                    g->finish = gGameCar[i].score;
++                    g->size = g->offset;
++                    gGhostToSave = g;
++                } else {
++                    DeallocateMemory(g->start);
++                    g->start = 0;
++                }
++            }
++        }
++    }
++    gNumPlayers = 1;
++    gEndingGhosts = 0;
++}
++
+diff --git a/src/maxpath.c b/src/maxpath.c
+index d3d9274..a91eb47 100644
+--- a/src/maxpath.c
++++ b/src/maxpath.c
+@@ -238,25 +238,27 @@ void IntervalPos(tModelData *m, tPathPoint *cp)
+     n[0] = npt->pos[0] - pt->pos[0];
+     n[1] = npt->pos[2] - pt->pos[2];
+     cp->len = TB_Vector2Normalize(n);
++    if (cp->len < 0.1f) {}
+     x = m->rwr[0] - pt->pos[0];
+     z = m->rwr[2] - pt->pos[2];
+     cp->xrel = z * n[1] + x * n[0];
+     cp->yrel = x * n[1] - z * n[0];
+     nextIdx = NextPathPt(nextIdx, cp->path);
+     nnpt = &gDronePaths[cp->path].pts[nextIdx];
+-    cp->cyrel = n[1] * (nnpt->pos[0] - pt->pos[0]) - n[0] * (nnpt->pos[2] - pt->pos[2]);
++    cp->cyrel = (nnpt->pos[0] - pt->pos[0]) * n[1] - (nnpt->pos[2] - pt->pos[2]) * n[0];
+ }
+ 
+ /* 0x800262c0, 0x990 bytes */
+ void FindMaxpathIntervals(void)
+ {
+     signed short slot;
+-    float min;
++    register float min;
+     float dx, dy, dz, dist;
+     float feet;
+     int p, i, a, path, idx, nextIdx;
+     signed short end;
+     float dirNext[3];
++    signed short pos[3];
+     signed short node;
+     tModelData *m;
+     tCarData *gc;
+@@ -267,7 +269,6 @@ void FindMaxpathIntervals(void)
+         if (!AreWeSolid(node) || gc->place_locked == 1)
+             continue;
+         {
+-        signed short pos[3];
+         pos[0] = m->rwr[0];
+         pos[1] = m->rwr[1];
+         pos[2] = m->rwr[2];
+@@ -536,13 +537,13 @@ void AvoidAreas(signed short drone_index)
+     m = &model[drone_index];
+     cp = &gGameCar[drone_index].mpctl;
+     {
+-        float c0, m1, c1, c2;
+-        c0 = cp->tgtpos[0];
+-        c1 = cp->tgtpos[1]; m1 = m->reckon.rwr[1];
+-        c2 = cp->tgtpos[2];
+-        pos[0] = c0 - m->reckon.rwr[0];
+-        pos[1] = c1 - m1;
+-        pos[2] = c2 - m->reckon.rwr[2];
++        float targetPos[3];
++        targetPos[0] = cp->tgtpos[0];
++        targetPos[1] = cp->tgtpos[1];
++        targetPos[2] = cp->tgtpos[2];
++        pos[0] = targetPos[0] - m->reckon.rwr[0];
++        pos[1] = targetPos[1] - m->reckon.rwr[1];
++        pos[2] = targetPos[2] - m->reckon.rwr[2];
+     }
+     BodyVector(pos, rpos, m->reckon.uvs);
+     if (m->idt == 0.0f || m->magvel < 0.1f) {
+@@ -761,7 +762,7 @@ signed short FindClosestDronePathPtEfficiently(signed short *pos, signed short l
+     delta = delta < 0 ? -delta : delta;
+     min = 1.0e20f;
+     idx = 0;
+-    delta = delta < 5 ? 5 : delta;
++    if (delta < 5) delta = 5;
+     p = lastIdx + offset - delta;
+     while (p < 0)
+         p += gDronePaths[path].numPts;
+@@ -847,10 +848,10 @@ void TracePathPtForward(int res, int inPath, int inIdx, int numPts, int *outPath
+         *outIdx = inIdx + numPts;
+         if (res) {
+             while (*outIdx >= gResPath.numPts)
+-                *outIdx = gCheckpoints.points[gCheckpoints.loopPt].pathPts[0] + (*outIdx - gResPath.numPts);
++                *outIdx = (*outIdx - gResPath.numPts) + gCheckpoints.points[gCheckpoints.loopPt].pathPts[0];
+         } else {
+             while (*outIdx >= gDronePaths[inPath].numPts)
+-                *outIdx = gCheckpoints.points[gCheckpoints.loopPt].pathPts[1 + inPath] + (*outIdx - gDronePaths[inPath].numPts);
++                *outIdx = (*outIdx - gDronePaths[inPath].numPts) + gCheckpoints.points[gCheckpoints.loopPt].pathPts[1 + inPath];
+         }
+     } else if (inIdx + numPts < gResPath.alt[inPath].numPts) {
+         *outPath = inPath;
+@@ -865,10 +866,11 @@ void TracePathPtForward(int res, int inPath, int inIdx, int numPts, int *outPath
+ int NumPtsToCheckpoint(int res, int inPath, int inIdx, int cp)
+ {
+     if (!res) {
+-        if (gCheckpoints.points[cp].pathPts[1 + inPath] < inIdx)
+-            return gDronePaths[inPath].numPts - inIdx + gCheckpoints.points[cp].pathPts[1 + inPath]
+-                - (cp >= gCheckpoints.loopPt ? gCheckpoints.points[gCheckpoints.loopPt].pathPts[1 + inPath] : 0);
+-        return gCheckpoints.points[cp].pathPts[1 + inPath] - inIdx;
++        int pathPoint = 1 + inPath;
++        if (gCheckpoints.points[cp].pathPts[pathPoint] < inIdx)
++            return gDronePaths[inPath].numPts - inIdx + gCheckpoints.points[cp].pathPts[pathPoint]
++                - (cp >= gCheckpoints.loopPt ? gCheckpoints.points[gCheckpoints.loopPt].pathPts[pathPoint] : 0);
++        return gCheckpoints.points[cp].pathPts[pathPoint] - inIdx;
+     }
+     if (inPath < 0) {
+         if (gCheckpoints.points[cp].pathPts[0] < inIdx)
+@@ -912,8 +914,7 @@ int FindResPtRecurse(int inPath, int inIdx, int *outPath, int *outIdx, int honor
+             if (gResPath.alt[inPath].firstPath != -1)
+                 return 0;
+             i = gResPath.numPts - gResPath.alt[inPath].firstIdx;
+-            numPts = gResPath.alt[inPath].lastIdx - gCheckpoints.points[gCheckpoints.loopPt].pathPts[0] + 1;
+-            numPts = i + numPts;
++            numPts = i + gResPath.alt[inPath].lastIdx - gCheckpoints.points[gCheckpoints.loopPt].pathPts[0] + 1;
+             *outIdx = gResPath.alt[inPath].firstIdx + inIdx * numPts / gResPath.alt[inPath].numPts;
+             if (*outIdx >= gResPath.numPts)
+                 *outIdx = gCheckpoints.points[gCheckpoints.loopPt].pathPts[0] + (*outIdx - gResPath.numPts);
+diff --git a/src/mdrive.c b/src/mdrive.c
+index 2c0c7f9..524fe69 100644
+--- a/src/mdrive.c
++++ b/src/mdrive.c
+@@ -320,7 +320,9 @@ void init_model_task(int frames)
+ 
+ void model_iteration(void)
+ {
+-    if ((gGameState & 0x600008) && modelrun) {
++    if (gGameState & 0x600008) {
++        register signed short running = modelrun;
++        if (running) {
+         gModelIteration++;
+         gModelTime = gModelIteration * gRetraceTime;
+         _UpdateLinkCars();
+@@ -330,6 +332,7 @@ void model_iteration(void)
+             dead_reckon_all();
+         }
+         UpdateListeners();
++        }
+     }
+ }
+ 
+@@ -584,7 +587,8 @@ void update_game_data(void)
+     unsigned short tsf;
+ 
+     game_reckon_all(gModelTime);
+-    for (i = 0; i < 6; i++) {
++    i = 0;
++    do {
+         m = &model[i];
+         gc = &gGameCar[i];
+         if (!m->in_game || gc->dead >= 2) {
+@@ -698,7 +702,7 @@ void update_game_data(void)
+         }
+         if (gc->solid == 1) gc->collide_time = 0.0f;
+         gc->data_valid = m->data_valid;
+-    }
++    } while (++i < 6);
+ }
+ 
+ void _UpdateTireAppearance(signed short droneIndex)
+@@ -738,6 +742,7 @@ static const struct tSkidData sSkidData[4] = {
+         }
+     } else {
+         for (side = 0; side < 4; side++) {
++            skidData = &sSkidData[side];
+             switch (side) {
+             case 0:
+                 force = _builtin_fabsf(m->tires[1].sideforce) > _builtin_fabsf(m->tires[3].sideforce) ?
+@@ -755,7 +760,6 @@ static const struct tSkidData sSkidData[4] = {
+                 force = _builtin_fabsf(m->tires[2].traction) + _builtin_fabsf(m->tires[3].traction);
+                 break;
+             }
+-            skidData = &sSkidData[side];
+             { float scale = gRace == kBattle ? 3.0f : m->tune->skidk;
+             if (force >= scale * skidData->forceTable[0]) {
+                 if (force > skidData->forceTable[4]) {
+diff --git a/src/memsys.c b/src/memsys.c
+index dd222a0..fa65c0d 100644
+--- a/src/memsys.c
++++ b/src/memsys.c
+@@ -21,10 +21,12 @@ void _FillFreeMem(void *,unsigned int);
+ void InitMemory(unsigned short numInitialMasters, unsigned short numAdditionalMasters)
+ {
+  unsigned int avail, heap_size;
++ tHeap *heap;
+  if (!sInited) sInited=1;
+  sdk_heap_bounds(&heap_size,&avail);
+- gMainHeap=sdk_heap_alloc(avail);
+- gMainHeap->endRam=(unsigned char *)(((unsigned int)gMainHeap+avail)&~31);
++ heap=sdk_heap_alloc(avail);
++ gMainHeap=heap;
++ heap->endRam=(unsigned char *)(((unsigned int)heap+avail)&~31);
+  _InitHeap(gMainHeap,numInitialMasters,numAdditionalMasters);
+ }
+ void func_8C03FD54(void *heap, int (*emergency)(unsigned int))
+@@ -302,7 +304,9 @@ void *func_8C040474(void *ptr,unsigned int size)
+ {
+  tHeap *heap;tMemoryChunk *chunk,*newChunk;
+ 
++ if((((unsigned int)ptr+31)&~31)==(unsigned int)ptr){}
+  _GetSemaphore();heap=_FindHeap(ptr);size=(size+31)&~31;
++ if(size){}
+  for(chunk=heap->chunks;chunk;chunk=chunk->next)
+   if((unsigned int)ptr>=(unsigned int)chunk&&(!chunk->next||(unsigned int)ptr<(unsigned int)chunk->next)) {
+    break;
+@@ -342,6 +346,7 @@ void _ReallocateMemory(void * ptr, unsigned int newSize, int internal)
+     tHeap *heap;
+     tMemoryChunk *chunk,*nextChunk,*newChunk;
+     newSize=(newSize+31)&~31;
++    if(newSize){}
+ 
+     heap=_FindHeap(ptr);
+     chunk=_FindChunk(heap,ptr,internal);
+@@ -512,7 +517,7 @@ void PurgeableMemory(void * ptr, int purgeable)
+ }
+ 
+ void func_8C040990(void *ptr)
+-{tHeap *heap;tMemoryChunk *chunk;_GetSemaphore();heap=_FindHeap(ptr);chunk=_FindChunk(heap,ptr,0);if(chunk->locked<255)chunk->locked++;_ReleaseSemaphore();}
++{tHeap *heap;tMemoryChunk *chunk;_GetSemaphore();heap=_FindHeap(ptr);chunk=_FindChunk(heap,ptr,0);if(chunk->master){} if(chunk->locked<255)chunk->locked++;_ReleaseSemaphore();}
+ void func_8C0409D4(void *ptr)
+ {tHeap *heap;tMemoryChunk *chunk;_GetSemaphore();heap=_FindHeap(ptr);chunk=_FindChunk(heap,ptr,0);if(chunk->locked)chunk->locked--;_ReleaseSemaphore();}
+ void func_8C040A16(void *ptr)
+@@ -571,6 +576,7 @@ tHeap *_FindHeap(void * ptr)
+ {
+     tHeap *heap,*lastHeap=0;
+     for(heap=gMainHeap;heap;heap=heap->next)if((unsigned int)ptr>=(unsigned int)heap->chunks&&(unsigned int)ptr<(unsigned int)heap->endRam)lastHeap=heap;
++    if(lastHeap){}
+     return lastHeap;
+ }
+ tMemoryChunk *_FindChunk(tHeap *heap, void * ptr, int internal)
+diff --git a/src/pausescr.c b/src/pausescr.c
+index 9bc3796..882168d 100644
+--- a/src/pausescr.c
++++ b/src/pausescr.c
+@@ -166,9 +166,12 @@ void updatePauseScreen(void)
+         }
+         break;
+     }
+-    if (gPauseState && gControllerRemoved != !gControllerData[playerInPause].attached) {
+-        gControllerRemoved = !gControllerData[playerInPause].attached;
+-        if (gPauseState != 5 && gPauseState != 4 && gPauseState != 2 && gPauseState != 3) _TitlePane();
++    if (gPauseState) {
++        tPadInfo *controller = &gControllerData[playerInPause];
++        if (gControllerRemoved != !controller->attached) {
++            gControllerRemoved = !controller->attached;
++            if (gPauseState != 5 && gPauseState != 4 && gPauseState != 2 && gPauseState != 3) _TitlePane();
++        }
+     }
+ }
+ 
+@@ -195,6 +198,7 @@ static void updatePauseStateCreate(void)
+     int max;
+     int width;
+     int i;
++    register tText *text = &gText; /* native retained text-table base */
+     int x;
+     int y;
+     switch (gPauseState) {
+@@ -207,7 +211,7 @@ static void updatePauseStateCreate(void)
+         HAL_SetFont(10);
+         max = 0;
+         for (i = 0; i < 8; i++) {
+-            width = HAL_GetTextWidth(gText.taba[i + 1 + gText.tab[58]], -1);
++            width = HAL_GetTextWidth(text->taba[i + 1 + text->tab[58]], -1);
+             if (max < width) max = width;
+         }
+         max /= 2;
+@@ -221,12 +225,12 @@ static void updatePauseStateCreate(void)
+         HAL_SetFont(10);
+         x = gPlayerRects[0][1].cx;
+         y = gPlayerRects[0][1].cy - TB_GetFontLineHeight() / 2;
+-        width = HAL_GetTextWidth(gText.single[238], -1);
++        width = HAL_GetTextWidth(text->single[238], -1);
+         width /= 2;
+         InitPane(x - width - 8, y - 4, x + width + 8, y + TB_GetFontLineHeight() + 4, 176, animRumblePane, 0, 0);
+         HAL_SetFont(11);
+-        width = HAL_GetTextWidth(gText.single[181], -1);
+-        width = (unsigned int)width > HAL_GetTextWidth(gText.single[180], -1) ? width : HAL_GetTextWidth(gText.single[180], -1);
++        width = HAL_GetTextWidth(text->single[181], -1);
++        width = (unsigned int)width > HAL_GetTextWidth(text->single[180], -1) ? width : HAL_GetTextWidth(text->single[180], -1);
+         width /= 2;
+         for (max = 0; max < gNumPlayers; max++) {
+             x = gPlayerRects[gNumPlayers - 1][max].cx;
+@@ -243,7 +247,7 @@ static void updatePauseStateCreate(void)
+         x = titlePos.x;
+         y = titlePos.y + 2 * TB_GetFontLineHeight();
+         HAL_SetFont(10);
+-        width = HAL_GetTextWidth(gText.single[227], -1);
++        width = HAL_GetTextWidth(text->single[227], -1);
+         width /= 2;
+         InitPane(x - width - 8, y - 4, x + width + 8, y + 2 * TB_GetFontLineHeight() + 4, 176, 0, 0, 0);
+         TitleBlit = NewMultiBlit(0, 0, TitleMultiBlit, 1);
+@@ -254,6 +258,7 @@ static void updatePauseStateCreate(void)
+ 
+ static void _TitlePane(void)
+ {
++    register tText *text = &gText; /* native retained text-table base */
+     int x;
+     int y;
+     int width;
+@@ -262,14 +267,14 @@ static void _TitlePane(void)
+     HAL_SetFont(13);
+     str = str1;
+     if (gControllerRemoved) {
+-        TB_Sprintf(str1, "CONTROLLER %d %s", playerInPause + 1, gText.single[242]);
++        TB_Sprintf(str1, "CONTROLLER %d %s", playerInPause + 1, text->single[242]);
+         width = HAL_GetTextWidth(str, -1);
+     } else if (gPauseState == 7 || gPauseState == 8) {
+-        width = HAL_GetTextWidth(gText.taba[gText.tab[58] + gPauseState], -1);
++        width = HAL_GetTextWidth(text->taba[text->tab[58] + gPauseState], -1);
+     } else if (gPauseState == 6) {
+         width = 0;
+     } else {
+-        TB_Sprintf(str1, "%s %s", (*gPlayers[playerInPause].save)->name, gText.taba[gText.tab[58]]);
++        TB_Sprintf(str1, "%s %s", (*gPlayers[playerInPause].save)->name, text->taba[text->tab[58]]);
+         width = HAL_GetTextWidth(str, -1);
+     }
+     x = titlePos.x;
+diff --git a/src/resurrect.c b/src/resurrect.c
+index f031ed6..464450a 100644
+--- a/src/resurrect.c
++++ b/src/resurrect.c
+@@ -1,5 +1,5 @@
+ /* Private DC resurrect candidate. MAT3 algorithms plus target-proved platform seams.
+- * No implementation is inferred for the unexplained appearance-bit test at47FFA.
++ * Native empty appearance-bit test at47FFA is retained without assigning a role.
+  */
+ #include "resurrect_types.h"
+ signed short gDemoPathPt;
+@@ -58,6 +58,7 @@ void Resurrect(tModelData *m)
+     }
+     m->resurrect.waterAbort = 0;
+     if (m->resurrect.crash_time == 0.0f) {
++        if (m->appearance & 0x10) {}
+         m->initin.pos[0] = m->resurrect.save_pos[0];
+         m->initin.pos[1] = m->resurrect.save_pos[1];
+         m->initin.pos[2] = m->resurrect.save_pos[2];
+@@ -260,8 +261,10 @@ void FindHumanResPt(tModelData *m, int *outPath, int *outIdx)
+     if (gRace == kBattle) {
+         float min2 = 0.0f;
+         int bestfit = 0;
+-        int pOffset = Random(gResPath.numPts);
++        int pOffset;
+         int pReal;
++        InitBattlePlayer(m->slot);
++        pOffset = Random(gResPath.numPts);
+         for (p = 0; p < gResPath.numPts; p++) {
+             min = 1.00000003e20f;
+             pReal = pOffset + p;
+@@ -392,7 +395,6 @@ void FindSurfaceUvsFromResPoint(int res, int path, int idx, float (*uvs)[3])
+ {
+     float sine, cosine, yaw, angle;
+     float snapPos[3], pt[3], pos[3];
+-    surftyp *surf;
+     if (path >= 0) {
+         if (res) {
+             pos[0] = gResPath.alt[path].pts[idx][0];
+@@ -442,8 +444,7 @@ void FindSurfaceUvsFromResPoint(int res, int path, int idx, float (*uvs)[3])
+         }
+     }
+     TB_Vector3Normalize(pt);
+-    surf = RoadPosition(pos,snapPos,uvs);
+-    if (surf) {
++    if (RoadPosition(pos,snapPos,uvs)) {
+         angle = fasin(pt[0]);
+         if (pt[2] < 0.0f) angle = 3.1415928f - angle;
+         ExtractYaw(uvs,&yaw);
+@@ -602,8 +603,6 @@ void SetResurrectionData(signed short mode,tModelData *m,int abort)
+         }
+         m->resurrect.crash_time=0.0f;
+         break;
+-    case 1:
+-        break;
+     case 2:
+         m->resurrect.save_pos[0]=m->reckon.rwr[0];
+         m->resurrect.save_pos[1]=m->reckon.rwr[1];
+@@ -703,7 +702,7 @@ void UpdateResurrectingCar(tModelData *m)
+         pos2[1]=m->initin.pos[1]-m->resurrect.pos[1];
+         pos2[2]=m->initin.pos[2]-m->resurrect.pos[2];
+         temp=magnitude(pos2);
+-        temp*=0.125f;
++        temp/=8.0f;
+         if(temp>100.0f) temp=100.0f;
+         Interpolate(m->initin.pos,m->resurrect.pos,3,0.0f,resurrectTime,resurrectTime/2.0f,save_pos[node]);
+         save_pos[node][1]+=temp;
+@@ -813,7 +812,12 @@ void DetectDroneAbort(void)
+                    (m->magvel<25.0f || abort_me)) {
+                     if(!abort_me) {
+                         if(m->stuck_time==0.0f) m->stuck_time=m->fastin.modelTime;
+-                        else m->stuck_time=m->fastin.modelTime;
++                        else {
++                            int count=1;
++                            if(gPlayers[node].levels & gPlayers[node].controls[5]) count++;
++                            if(count==4) m->stuck_time=m->fastin.modelTime;
++                            else if(m->fastin.modelTime-m->stuck_time > 6.0f*count) abort_me=1;
++                        }
+                     }
+                     if(abort_me) {
+                         SetResurrectionData(2,m,1);
+@@ -861,6 +865,7 @@ int AreWeSolid(signed short node)
+ {
+     tCarData *gc = &gGameCar[node];
+     tModelData *m = &model[node];
+-    return gc->crash_state == 0 && m->crashflag == 0 &&
+-           m->resurrect.moving_state == -1 && m->solid && !m->hide_car;
++    if (gc->crash_state != 0 || m->crashflag != 0 ||
++        m->resurrect.moving_state != -1 || !m->solid) return 0;
++    return m->hide_car == 0;
+ }
+diff --git a/src/road.c b/src/road.c
+index 7a0d5cd..1416b73 100644
+--- a/src/road.c
++++ b/src/road.c
+@@ -9,26 +9,24 @@ void make_super_speed(tModelData *m)
+     float *x, *y, *v; /* target separate component addresses and stores */
+     z = invmagnitude(m->uvs[0]);
+     z *= 1.00025f;
+-    x = &m->uvs[0][0]; *x *= z;
+-    y = &m->uvs[0][1]; *y *= z;
+-    v = &m->uvs[0][2]; *v *= z;
++    x = &m->uvs[0][0]; y = &m->uvs[0][1]; v = &m->uvs[0][2];
++    *x *= z; *y *= z; *v *= z;
+     z = invmagnitude(m->uvs[1]);
+     z *= 1.00025f;
+-    x = &m->uvs[1][0]; *x *= z;
+-    y = &m->uvs[1][1]; *y *= z;
+-    v = &m->uvs[1][2]; *v *= z;
++    x = &m->uvs[1][0]; y = &m->uvs[1][1]; v = &m->uvs[1][2];
++    *x *= z; *y *= z; *v *= z;
+     z = invmagnitude(m->uvs[2]);
+     z *= 1.00025f;
+-    x = &m->uvs[2][0]; *x *= z;
+-    y = &m->uvs[2][1]; *y *= z;
+-    v = &m->uvs[2][2]; *v *= z;
++    x = &m->uvs[2][0]; y = &m->uvs[2][1]; v = &m->uvs[2][2];
++    *x *= z; *y *= z; *v *= z;
+ }
+ 
+ /* 0x80037650, size 0x22c */
+ void init_road(tModelData *m)
+ {
+     float temp[3]; /* stack */
+-    int i; /* r27 */
++    int i;
++    float *x, *y, *z; /* native independently addressed component stores */
+     CopyUV(m->initin.uvs, m->uvs);
+     if (gSuperSpeed) {
+         make_super_speed(m);
+@@ -50,17 +48,15 @@ void init_road(tModelData *m)
+     gGameCar[m->slot].dr_pos[2] = m->rwr[2];
+     for (i = 0; i < 4; i++) {
+         WorldVector(m->car->tireR[i], m->tireRwr[i], m->uvs);
+-        m->tireRwr[i][0] += m->rwr[0];
+-        m->tireRwr[i][1] += m->rwr[1];
+-        m->tireRwr[i][2] += m->rwr[2];
++        x = &m->tireRwr[i][0]; y = &m->tireRwr[i][1]; z = &m->tireRwr[i][2];
++        *x += m->rwr[0]; *y += m->rwr[1]; *z += m->rwr[2];
+         m->suscomp[i] = 0.0f;
+         m->tpcomp[i] = 0.0f;
+         m->roadcode[i] = m->sviscode[i] = 8;
+         m->roadboost[i] = m->sound_flags[i] = 0;
+         WorldVector(m->bodyR[i], m->bodyrwr[i], m->uvs);
+-        m->bodyrwr[i][0] += m->rwr[0];
+-        m->bodyrwr[i][1] += m->rwr[1];
+-        m->bodyrwr[i][2] += m->rwr[2];
++        x = &m->bodyrwr[i][0]; y = &m->bodyrwr[i][1]; z = &m->bodyrwr[i][2];
++        *x += m->rwr[0]; *y += m->rwr[1]; *z += m->rwr[2];
+         m->bodyrwr2[i][0] = m->bodyrwr[i][0];
+         m->bodyrwr2[i][1] = m->bodyrwr[i][1];
+         m->bodyrwr2[i][2] = m->bodyrwr[i][2];
+@@ -72,7 +68,7 @@ void road(tModelData *m)
+ {
+     float igpos[3]; /* stack */
+     float last_airdist; /* f2 */
+-    int i = 0; /* target zero persists across CollideCarBody */
++    int i; /* target one retained zero reused after body contact */
+     int j, k; /* target body-force clearing column/row loops */
+     for (j = 0; j < 3; j++) {
+         for (k = 0; k < 4; k++) {
+@@ -81,7 +77,7 @@ void road(tModelData *m)
+     }
+     CollideCarBody(m);
+     /* one chained assignment: the zero register is shared with i */
+-    m->movingSurface = (void *)i;
++    m->movingSurface = (void *)(i = 0);
+     for (; i < 4; i++) {
+         TireSurf(m, m->tireRwr[i], igpos, &m->roadcode[i], m->roaduvs[i], i);
+         last_airdist = m->airdist[i];
+diff --git a/src/smoke.c b/src/smoke.c
+index ea4d73c..cec9928 100644
+--- a/src/smoke.c
++++ b/src/smoke.c
+@@ -71,7 +71,7 @@ void StartWater(signed short slot, unsigned int tire)
+     float offset2;
+     float fmph;
+     signed short mph;
+-    signed short mph2;
++    register signed short mph2;
+     int j;
+     int k;
+     tRGBA wht = { 255,255,255,255 };
+diff --git a/src/targetpaths.c b/src/targetpaths.c
+index eca47ac..b48519e 100644
+--- a/src/targetpaths.c
++++ b/src/targetpaths.c
+@@ -109,6 +109,7 @@ void _PlacePathTargetPos(tTarget *t)
+ 
+ void _PlacePathTargetQuat(tTarget *t)
+ {
++    float delta[3];
+     float nquat[4];
+     float frac;
+     float dist2;
+@@ -139,7 +140,6 @@ directQuat:
+     if (pPtr->flags & 0x20) {
+         int move = 1;
+         if (gRace == kObstacle) {
+-            float delta[3];
+             delta[0] = t->mat.mat3.pos[0] - gGameCar[0].dr_pos[0];
+             delta[1] = t->mat.mat3.pos[1] - gGameCar[0].dr_pos[1];
+             delta[2] = t->mat.mat3.pos[2] - gGameCar[0].dr_pos[2];
+@@ -223,7 +223,7 @@ void _StartPathTarget(tTarget *t)
+     float max;
+     tTargetInfo *tInfo;
+     tBasicTargetPath *pPtr;
+-    tTargetStructPath *dPtr;
++    register tTargetStructPath *dPtr;
+     int i;
+     t->sndState = 2;
+     tInfo = &targetInfo[t->infoIdx];
+diff --git a/src/unk_8C0102A4_lz.c b/src/unk_8C0102A4_lz.c
+index f1cb966..414021c 100644
+--- a/src/unk_8C0102A4_lz.c
++++ b/src/unk_8C0102A4_lz.c
+@@ -3,8 +3,9 @@
+ 
+ unsigned int func_8C0102A4(unsigned char *source,unsigned char *output)
+ {
+- int count=0,flags=0,bits=0,distance;
+- unsigned char *start=output,*copy;
++ int count=0,flags=0;
++ register int bits=0;
++ unsigned char *start=output;
+  for(;;) {
+   if(!bits) {flags=*source++;bits=8;}
+   bits--;
+@@ -12,6 +13,8 @@ unsigned int func_8C0102A4(unsigned char *source,unsigned char *output)
+    count=*source++;
+    *output++=count;
+   } else {
++   int distance;
++   unsigned char *copy;
+    distance=*source++;
+    count=15;
+    count&=distance;
+diff --git a/src/unzip.c b/src/unzip.c
+index 686cea0..9580df0 100644
+--- a/src/unzip.c
++++ b/src/unzip.c
+@@ -82,7 +82,7 @@ int huft_build(unsigned int *b, unsigned int n, unsigned int s, unsigned short *
+     unsigned int i; /* r6 */
+     unsigned int j; /* r7 */
+     int k; /* r15 */
+-    volatile int l; /* trial: target reloads this local from stack; qualification unproven */
++    int l; /* target stack traffic can arise from normal register pressure */
+     unsigned int *p; /* r7 */
+     huft *q; /* r3 */
+     huft r; /* stack */
+@@ -176,7 +176,7 @@ int huft_build(unsigned int *b, unsigned int n, unsigned int s, unsigned short *
+ }
+ 
+ /* 0x80052a10, size 0x438 */
+-int inflate_codes(huft *tl, huft *td, int bl, int bd)
++int inflate_codes(huft *tl, huft *td, register int bl, register int bd)
+ {
+     unsigned int e; /* r21 */
+     unsigned int n; /* r23 */
+@@ -232,8 +232,8 @@ int inflate_codes(huft *tl, huft *td, int bl, int bd)
+ int inflate_stored(void)
+ {
+     unsigned int n; /* r3 */
+-    unsigned int b; /* r30 */
+-    unsigned int k; /* r29 */
++    register unsigned int k; /* target live bit-count */
++    register unsigned int b; /* target live bit-buffer */
+     k = bk;
+     b = bb;
+     n = k & 7;
+@@ -299,7 +299,7 @@ int inflate_dynamic(void)
+     unsigned int nb; /* r21 */
+     unsigned int nl; /* r23 */
+     unsigned int nd; /* r22 */
+-    unsigned int *ll; /* r31 */
++    register unsigned int *ll; /* target preserved table pointer */
+     unsigned int b; /* r29 */
+     unsigned int k; /* r30 */
+     ll = (unsigned int *)alloc_zip_mem(316 * sizeof(unsigned int));
+@@ -354,8 +354,8 @@ int inflate_dynamic(void)
+ int inflate_block(int *e)
+ {
+     unsigned int t; /* r4 */
+-    unsigned int b; /* r31 */
+-    unsigned int k; /* r30 */
++    register unsigned int b;
++    register unsigned int k;
+     b = bb;
+     k = bk;
+     NEEDBITS(1);
+@@ -397,9 +397,10 @@ int func_8C01120A(void)
+ unsigned int unzipdata(unsigned char *src, unsigned int srclen, unsigned char *dest)
+ {
+     unsigned char *s_buf;
++    unsigned char *sourceEnd = src + srclen;
+     unzip_buffer = dest;
+     incoming = src;
+-    last_incoming = src + srclen;
++    last_incoming = sourceEnd;
+     s_buf = mem_func_8C040380(0,12000);
+     init_zip_mem(s_buf,12000);
+     if (inflate()) {
+diff --git a/src/videoscr.c b/src/videoscr.c
+index 8a38474..defe3f7 100644
+--- a/src/videoscr.c
++++ b/src/videoscr.c
+@@ -163,7 +163,7 @@ void initScreen(void)
+ void _TitlePane(void)
+ {
+     int width;
+-    int center=160;
++    int center;
+     unsigned char str1[64];
+     HAL_SetFont(13);
+     if (gControllerRemoved) {
+@@ -173,6 +173,7 @@ void _TitlePane(void)
+         width = HAL_GetTextWidth(gText.single[53], -1);
+     }
+     width /= 2;
++    center = 160;
+     if (gTitlePane) {
+         ChangePaneSize(gTitlePane, center-width-8, 6,
+                        center+width+8, 14 + TB_GetFontLineHeight());
+@@ -239,14 +240,15 @@ int animText(void)
+     HAL_SetTextDepth(0.0f);
+     HAL_SetFont(13);
+     TB_SetTextColor(1);
++    y = 10;
+     if ((gGameState & 0x7c0000) && gControllerRemoved) {
+         TB_Sprintf(str1, "CONTROLLER %d %s", playerInPause + 1, gText.single[242]);
+-        TB_DrawText(TB_CenterText(str1, 160), 10, str1);
++        TB_DrawText(TB_CenterText(str1, 160), y, str1);
+     } else {
+         str = gText.single[53];
+-        TB_DrawText(TB_CenterText(str, 160), 10, str);
++        TB_DrawText(TB_CenterText(str, 160), y, str);
+     }
+-    y = TB_GetFontLineHeight()*2 + 10;
++    y += TB_GetFontLineHeight()*2;
+     HAL_SetFont(10);
+     x = menuRect.cx + 5;
+     for (i = 0; i < 4; i++) {
+@@ -304,9 +306,10 @@ void animButtonText(void)
+     HAL_SetFont(13);
+     TB_SetTextColor(1);
+     ZOID_ProjectWindow(0, buttonInfo[11].mat.mat3.pos, &gCamera[0].mat, 0, screenPos);
+-    y = screenPos[1] / 2.0f;
++    x = screenPos[0] / 2;
++    y = (screenPos[1]-4) / 2.0f;
+     str = gText.single[53];
+-    TB_DrawText(TB_CenterText(str, screenPos[0] / 2), y, str);
++    TB_DrawText(TB_CenterText(str, x), y, str);
+     HAL_SetFont(11);
+     for (i = 0; i < 4; i++) {
+         if (validOption(i)) {
+@@ -323,10 +326,10 @@ void animButtonText(void)
+                 TB_SetTextColor(22);
+             }
+             ZOID_ProjectWindow(0, buttonInfo[i].mat.mat3.pos, &gCamera[0].mat, 0, screenPos);
+-            TB_DrawText(screenPos[0] / 2 - 55, (int)(screenPos[1] / 2.0f), gText.taba[gText.tab[42] + i]);
++            TB_DrawText(screenPos[0] / 2 - 55, (int)((screenPos[1]-4) / 2.0f), gText.taba[gText.tab[42] + i]);
+             ZOID_ProjectWindow(0, buttonInfo[i+4].mat.mat3.pos, &gCamera[0].mat, 0, screenPos);
+             x = screenPos[0] / 2 - 35;
+-            y = screenPos[1] / 2.0f;
++            y = (screenPos[1]-4) / 2.0f;
+             switch (i) {
+             case 0:
+                 TB_Sprintf(str1, "%s%d", gVertCenter > 0 ? "+" : "", gVertCenter);
+@@ -399,7 +402,7 @@ void animButtonText(void)
+ /* 0x80064ed0, size 0x29c */
+ void drawColorBars(void)
+ {
+-    int x;
++    register int x;
+     int i;
+     int gray;
+     x=24;
+@@ -414,11 +417,13 @@ void drawColorBars(void)
+     func_8C06F1EC(S2(104), S2(162), S2(136), S2(182), 255, 255, 255, 255, 1200.0f);
+     func_8C06F1EC(S2(104), S2(182), S2(136), S2(202), 0, 0, 0, 255, 1200.0f);
+     func_8C06F1EC(S2(136), S2(162), S2(184), S2(202), 0, 255, 0, 255, 1200.0f);
+-    func_8C06F1EC(S2(184), S2(162), S2(216), S2(182), 255, 255, 255, 255, 1200.0f);
+-    func_8C06F1EC(S2(184), S2(182), S2(216), S2(202), 0, 0, 0, 255, 1200.0f);
+-    func_8C06F1EC(S2(216), S2(162), S2(264), S2(202), 0, 0, 255, 255, 1200.0f);
+-    func_8C06F1EC(S2(264), S2(162), S2(296), S2(182), 255, 255, 255, 255, 1200.0f);
+-    func_8C06F1EC(S2(264), S2(182), S2(296), S2(202), 0, 0, 0, 255, 1200.0f);
++    x=216;
++    func_8C06F1EC(S2(x-32), S2(162), S2(x), S2(182), 255, 255, 255, 255, 1200.0f);
++    func_8C06F1EC(S2(x-32), S2(182), S2(x), S2(202), 0, 0, 0, 255, 1200.0f);
++    func_8C06F1EC(S2(x), S2(162), S2(x+48), S2(202), 0, 0, 255, 255, 1200.0f);
++    x=296;
++    func_8C06F1EC(S2(x-32), S2(162), S2(x), S2(182), 255, 255, 255, 255, 1200.0f);
++    func_8C06F1EC(S2(x-32), S2(182), S2(x), S2(202), 0, 0, 0, 255, 1200.0f);
+ }
+ 
+ /* 0x8006516c, size 0x30 */
+@@ -435,7 +440,7 @@ signed char validOption(int item)
+ 
+ void calcMenuRect(void)
+ {
+-    int menuSize;
++    register int menuSize;
+     int optionWidth;
+     int valueWidth;
+     int menuIdx;
+@@ -474,14 +479,13 @@ void initButtons(void)
+     int buttonIdx;
+     for (buttonIdx = 0; buttonIdx < 12; buttonIdx++) {
+         if (buttonInfo[buttonIdx].objIdx == -1) {
+-            unsigned int flags;
+             memcpy(buttonInfo[buttonIdx].mat.mat3.uvs, unitmatrix, 36);
+-            flags = (buttonInfo[buttonIdx].buttonType == 0 ||
+-                     buttonInfo[buttonIdx].buttonType == 1 ||
+-                     buttonInfo[buttonIdx].buttonType == 2) ? 0x42000 : 0;
+             buttonInfo[buttonIdx].objIdx = MBOX_NewObject(
+                 MBOX_FindObject_WORK(buttonNames[buttonInfo[buttonIdx].buttonType], 0, gNumModels-1, 1),
+-                &buttonInfo[buttonIdx].mat, -1, flags);
++                &buttonInfo[buttonIdx].mat, -1,
++                (buttonInfo[buttonIdx].buttonType == 0 ||
++                 buttonInfo[buttonIdx].buttonType == 1 ||
++                 buttonInfo[buttonIdx].buttonType == 2) ? 0x42000 : 0);
+             ZOID_SetColor(buttonInfo[buttonIdx].objIdx, &buttonColor);
+         }
+     }
+@@ -533,50 +537,52 @@ void updateButtons(void)
+     float buttonY;
+     float selectY;
+     tTexture *tex;
++    tMenuButton *button; /* target retains current button base across copies in r9 */
+     unsigned short texIdx;
+     if (buttonsInited) {
+         buttonY = 100.0f;
+         for (buttonIdx = 0; buttonIdx < 4; buttonIdx++) {
++            button = &buttonInfo[buttonIdx];
+             if (buttonIdx == gVideoMenuSelect) {
+                 selectY = buttonY;
+-                if (buttonInfo[buttonIdx].angle < 3.1415928602f)
+-                    buttonInfo[buttonIdx].angle += 12.566371441f * gFrameSeconds;
+-                if (buttonInfo[buttonIdx].angle > 3.1415928602f || buttonsJustInited == 1)
+-                    buttonInfo[buttonIdx].angle = 3.1415928602f;
++                if (button->angle < 3.1415928602f)
++                    button->angle += 12.566371441f * gFrameSeconds;
++                if (button->angle > 3.1415928602f || buttonsJustInited == 1)
++                    button->angle = 3.1415928602f;
+             } else {
+-                if (buttonInfo[buttonIdx].angle > 0.0f)
+-                    buttonInfo[buttonIdx].angle -= 12.566371441f * gFrameSeconds;
+-                if (buttonInfo[buttonIdx].angle < 0.0f || buttonsJustInited == 1)
+-                    buttonInfo[buttonIdx].angle = 0.0f;
++                if (button->angle > 0.0f)
++                    button->angle -= 12.566371441f * gFrameSeconds;
++                if (button->angle < 0.0f || buttonsJustInited == 1)
++                    button->angle = 0.0f;
+             }
+-            memcpy(buttonInfo[buttonIdx].mat.mat3.uvs, unitmatrix, 36);
+-            memcpy(prevPos, buttonInfo[buttonIdx].mat.mat3.pos, 12);
+-            buttonInfo[buttonIdx].mat.mat3.pos[0] = -90.0f;
+-            buttonInfo[buttonIdx].mat.mat3.pos[1] = buttonY;
+-            buttonInfo[buttonIdx].mat.mat3.pos[2] = 300.0f;
++            memcpy(button->mat.mat3.uvs, unitmatrix, 36);
++            memcpy(prevPos, button->mat.mat3.pos, 12);
++            button->mat.mat3.pos[0] = -90.0f;
++            button->mat.mat3.pos[1] = buttonY;
++            button->mat.mat3.pos[2] = 300.0f;
+             if (!buttonsJustInited) {
+-                if (buttonInfo[buttonIdx].mat.mat3.pos[1] > prevPos[1] + 180.0f * gFrameSeconds)
+-                    buttonInfo[buttonIdx].mat.mat3.pos[1] = prevPos[1] + 180.0f * gFrameSeconds;
+-                if (buttonInfo[buttonIdx].mat.mat3.pos[1] < prevPos[1] - 180.0f * gFrameSeconds)
+-                    buttonInfo[buttonIdx].mat.mat3.pos[1] = prevPos[1] - 180.0f * gFrameSeconds;
++                if (button->mat.mat3.pos[1] > prevPos[1] + 180.0f * gFrameSeconds)
++                    button->mat.mat3.pos[1] = prevPos[1] + 180.0f * gFrameSeconds;
++                if (button->mat.mat3.pos[1] < prevPos[1] - 180.0f * gFrameSeconds)
++                    button->mat.mat3.pos[1] = prevPos[1] - 180.0f * gFrameSeconds;
+             }
+             buttonInfo[buttonIdx+4].mat.mat3.pos[0] = 150.0f;
+-            buttonInfo[buttonIdx+4].mat.mat3.pos[1] = buttonInfo[buttonIdx].mat.mat3.pos[1];
+-            buttonInfo[buttonIdx+4].mat.mat3.pos[2] = buttonInfo[buttonIdx].mat.mat3.pos[2];
+-            buttonInfo[buttonIdx+4].angle = buttonInfo[buttonIdx].angle;
+-            WPitchUV(buttonInfo[buttonIdx].angle - 1.5707964301f, buttonInfo[buttonIdx].mat.mat3.uvs);
+-            memcpy(buttonInfo[buttonIdx+4].mat.mat3.uvs, buttonInfo[buttonIdx].mat.mat3.uvs, 36);
+-            if (buttonInfo[buttonIdx].angle > 1.5707964301f)
++            buttonInfo[buttonIdx+4].mat.mat3.pos[1] = button->mat.mat3.pos[1];
++            buttonInfo[buttonIdx+4].mat.mat3.pos[2] = button->mat.mat3.pos[2];
++            buttonInfo[buttonIdx+4].angle = button->angle;
++            WPitchUV(button->angle - 1.5707964301f, button->mat.mat3.uvs);
++            memcpy(buttonInfo[buttonIdx+4].mat.mat3.uvs, button->mat.mat3.uvs, 36);
++            if (button->angle > 1.5707964301f)
+                 tex = MBOX_FindTexture_WORK("BUTTON_SELECT", &texIdx, 0, gNumModels-1, 1);
+             else
+                 tex = MBOX_FindTexture_WORK("BUTTON", &texIdx, 0, gNumModels-1, 1);
+-            ZOID_SetTexture(buttonInfo[buttonIdx].objIdx, tex, -1);
++            ZOID_SetTexture(button->objIdx, tex, -1);
+             ZOID_SetTexture(buttonInfo[buttonIdx+4].objIdx, tex, -1);
+             if (!validOption(buttonIdx)) {
+-                MBOX_HideObject(buttonInfo[buttonIdx].objIdx, 1, 15);
++                MBOX_HideObject(button->objIdx, 1, 15);
+                 MBOX_HideObject(buttonInfo[buttonIdx+4].objIdx, 1, 15);
+             } else {
+-                MBOX_ShowObject(buttonInfo[buttonIdx].objIdx, 0, 15);
++                MBOX_ShowObject(button->objIdx, 0, 15);
+                 if (buttonIdx < 3)
+                     MBOX_ShowObject(buttonInfo[buttonIdx+4].objIdx, 0, 15);
+                 else
+diff --git a/src/visuals.c b/src/visuals.c
+index fbfb10e..5fb81a9 100644
+--- a/src/visuals.c
++++ b/src/visuals.c
+@@ -1,4 +1,4 @@
+-#include "visuals_types.h"
++#include "visuals_effects_private.h"
+ static void InitWheelDynamicObjs(void);
+ static void InitDynamicTextures(void);
+ 
+@@ -206,3 +206,1716 @@ int InitCarObj(int objnum, signed short camlink, int parent, unsigned int flags,
+     } else mat = ((tUVMatrix **)gCarMatrices)[slot / 13 * 12 + carObjNum];
+     return (signed short)MBOX_NewObjectCam(objnum, mat, camlink, parent, flags);
+ }
++
++
++/* Target-ordered native reconstructions; remaining nonexact research. */
++
++void CreateCar(signed short slot, signed short camlink, int for_game)
++{
++CarParts *car;
++    signed short offset;
++    unsigned int flags;
++    unsigned int flags2;
++    unsigned int idx;
++    idx = slot % 13;
++    flags = (gNumPlayers == 1 || !for_game) ? 0 : 5;
++    offset = slot * 9;
++    car = &gCarParts[slot];
++    flags2 = !for_game ? 0x40004 : 0;
++    car->frame = InitCarObj(gObjList[0 + offset], camlink, -1, flags2 | 0x2018, slot, 0, for_game);
++    car->hood = InitCarObj(gObjList[1 + offset], camlink, car->frame, flags2 | 0x2080, slot, -1, for_game);
++    car->extraparts[0] = 0;
++    if ((!for_game && idx == 3) ||
++        (for_game && model[slot].body_type == 3 && gLink[slot].PaintJob == 5)) {
++        car->extraparts[0] = InitCarObj(MBOX_FindObject_WORK(visualPoliceCarName, 0, gNumModels - 1, 1), camlink, car->frame, 0x2080, slot, -1, for_game);
++        MBOX_HideObject(car->extraparts[0], 1, 15);
++    }
++    if (for_game && (gTrackNum == 3 || gTrackNum == 5)) {
++        effectParts(slot)->brakes = InitCarObj(gObjList[7 + offset], camlink, car->frame, 0x80, slot, -1, for_game);
++        effectParts(slot)->trim = InitCarObj(gObjList[8 + offset], camlink, car->frame, 0x84, slot, -1, for_game);
++        MBOX_ShowObject(effectParts(slot)->trim, 0, 15);
++    } else {
++        effectParts(slot)->brakes = InitCarObj(gObjList[3 + offset], camlink, car->frame, flags2 | 0x80, slot, -1, for_game);
++        effectParts(slot)->trim = 0;
++    }
++    car->sheen = InitCarObj(gObjList[2 + offset], camlink, car->frame, flags2 | 0x286080, slot, -1, for_game);
++    ZOID_SetTexture(gCarParts[slot].sheen, &gTexDefPtrs[gTexList[11] >> 10].texDefs[gTexList[11] & 1023], -1);
++    ObjInstanceList[car->sheen].w = 1.01f;
++    SetSheenColor(slot, &Track1Colors[0], &Track1Colors[0]);
++    car->tsheen = 0;
++    if (for_game) flags2 = flags | (gNumPlayers == 1 ? 0 : 5);
++    else flags2 = flags | 0x42004;
++    car->tires[0] = InitCarObj(gObjList[468], camlink, car->frame, flags2 | 0x2000, slot, 3, for_game);
++    car->tires[1] = InitCarObj(gObjList[468], camlink, car->frame, flags2 | 0x2000, slot, 4, for_game);
++    car->tires[2] = InitCarObj(gObjList[468], camlink, car->frame, flags2 | 0x2000, slot, 5, for_game);
++    car->tires[3] = InitCarObj(gObjList[468], camlink, car->frame, flags2 | 0x2000, slot, 6, for_game);
++    ZOID_SetTexture(car->tires[0], gWheelTextures[24 + gTireRims[visualOwner(idx) == 6 ? idx + 1 : 0][idx]], -1);
++    ZOID_SetTexture(car->tires[1], gWheelTextures[24 + gTireRims[visualOwner(idx) == 6 ? idx + 1 : 0][idx]], -1);
++    ZOID_SetTexture(car->tires[2], gWheelTextures[24 + gTireRims[visualOwner(idx) == 6 ? idx + 1 : 0][idx]], -1);
++    ZOID_SetTexture(car->tires[3], gWheelTextures[24 + gTireRims[visualOwner(idx) == 6 ? idx + 1 : 0][idx]], -1);
++    if (for_game) {
++        effectParts(slot)->sparks[0].full = InitCarObj(gObjList[506], camlink, car->frame, 0xf00, slot, 7, for_game);
++        effectParts(slot)->sparks[1].full = InitCarObj(gObjList[506], camlink, car->frame, 0xf00, slot, 8, for_game);
++        effectParts(slot)->sparks[2].full = InitCarObj(gObjList[506], camlink, car->frame, 0xf00, slot, 9, for_game);
++        effectParts(slot)->sparks[3].full = InitCarObj(gObjList[506], camlink, car->frame, 0xf00, slot, 10, for_game);
++        effectParts(slot)->sparks[4].full = InitCarObj(gObjList[506], camlink, car->frame, 0xf00, slot, 11, for_game);
++    } else {
++        effectParts(slot)->sparks[0].full = -1;
++        effectParts(slot)->sparks[1].full = -1;
++        effectParts(slot)->sparks[2].full = -1;
++        effectParts(slot)->sparks[3].full = -1;
++        effectParts(slot)->sparks[4].full = -1;
++    }
++    if (for_game) {
++        visualSheenAlpha(&gGameCar[slot]) = 255;
++        visualIRColor(&gGameCar[slot]) = gTrackColors[gTrackNum][0];
++        visualPrevIRColor(&gGameCar[slot]) = gTrackColors[gTrackNum][0];
++        SetupCarColor(slot, gLink[slot].car, model[slot].PaintJob);
++    }
++    SetFrameColor(slot, &Track1Colors[0]);
++    if (idx == 3 && car->extraparts[0]) ZOID_SetColor(car->extraparts[0], &Track1Colors[0]);
++}
++
++void SetupCarColor(signed short slot, signed short car, unsigned char PaintJob)
++{
++const char *const *texnames;
++    char name[16];
++    const char *const *extnames;
++    int numtexs;
++    tTexture *tex;
++    tTexture *paint;
++    unsigned short idx;
++    int i;
++    numtexs = visualNumPaintTextures[car];
++    switch (car) {
++        case 0: texnames = ((const char *const *)0x8C0C40D8); extnames = ((const char *const *)0x8C0AE63C); break;
++        case 1: texnames = ((const char *const *)0x8C0C414C); extnames = ((const char *const *)0x8C0AE66C); break;
++        case 2: texnames = ((const char *const *)0x8C0C41AC); extnames = ((const char *const *)0x8C0AE69C); break;
++        case 3: texnames = ((const char *const *)0x8C0C41D4); extnames = ((const char *const *)0x8C0AE6CC); break;
++        case 4: texnames = ((const char *const *)0x8C0C4230); extnames = ((const char *const *)0x8C0AE6FC); break;
++        case 5: texnames = ((const char *const *)0x8C0C4298); extnames = ((const char *const *)0x8C0AE72C); break;
++        case 6: texnames = ((const char *const *)0x8C0C42E8); extnames = ((const char *const *)0x8C0AE75C); break;
++        case 7: texnames = ((const char *const *)0x8C0C4344); extnames = ((const char *const *)0x8C0AE78C); break;
++        case 8: texnames = ((const char *const *)0x8C0AE540); extnames = ((const char *const *)0x8C0AE7BC); break;
++        case 9: texnames = ((const char *const *)0x8C0AE598); extnames = ((const char *const *)0x8C0AE7EC); break;
++        case 10: texnames = ((const char *const *)0x8C0AE5EC); extnames = ((const char *const *)0x8C0AE81C); break;
++        case 11: texnames = ((const char *const *)0x8C0AE624); extnames = ((const char *const *)0x8C0AE84C); break;
++        case 12: texnames = ((const char *const *)0x8C0C43A0); extnames = ((const char *const *)0x8C0AE87C); break;
++    }
++    for (i = 0; i < numtexs; i++) {
++        tex = MBOX_FindTexture_WORK(texnames[i], &idx, gCarModelNums[slot], gCarModelNums[slot] + 1, 0);
++        if (tex) {
++            sprintf(name, CarPartFormat, texnames[i], extnames[PaintJob]);
++            if (gGameState & 0x100) paint = MBOX_FindTexture_WORK(name, &idx, visualSelectPaint(slot), visualSelectPaint(slot) + 1, 0);
++            else paint = MBOX_FindTexture_WORK(name, &idx, 0, gNumModels - 1, 1);
++            func_8C06EDC2(func_8C0DC100(((tDcTexture *)tex)->surface, ((tDcTexture *)paint)->pixels), visualTextureLoadName);
++        }
++    }
++    gCarPaintJobInited[slot] = 1;
++}
++
++void SetupCar(signed short slot, unsigned char type, int for_game)
++{
++signed short i;
++    unsigned int appear;
++    if (for_game && type != 13 && (gGameCar[slot].appearance & 0x10)) {
++        if (visualOwner(slot) != 6 || !gDriveHulk[slot]) appear = ~0x10;
++        else if (gDriveHulk[slot] == 2) appear = ~0x60;
++        else appear = ~0;
++        model[slot].appearance &= appear;
++        gGameCar[slot].appearance &= appear;
++    }
++    ZOID_SetObjectDef(gCarParts[slot].frame, (unsigned short)PickCar(slot, type));
++    gGameCar[slot].objnum = gCarParts[slot].frame;
++    ZOID_SetObjectDef(gCarParts[slot].hood, gObjList[(signed short)(slot * 9) + 1]);
++    for (i = 0; i < 4; i++) ZOID_SetObjectDef(gCarParts[slot].tires[i], gObjList[468]);
++    ZOID_SetTexture(gCarParts[slot].tires[0], gWheelTextures[24 + model[slot].tireRims], -1);
++    ZOID_SetTexture(gCarParts[slot].tires[1], gWheelTextures[24 + model[slot].tireRims], -1);
++    ZOID_SetTexture(gCarParts[slot].tires[2], gWheelTextures[24 + model[slot].tireRims], -1);
++    ZOID_SetTexture(gCarParts[slot].tires[3], gWheelTextures[24 + model[slot].tireRims], -1);
++    MBOX_ShowObject(gCarParts[slot].frame, 1, 15);
++    if (gGameCar[slot].view != 1) {
++        MBOX_HideObject(gCarParts[slot].hood, 1, 15);
++        MBOX_HideObject(gCarParts[slot].hood, 1, 15);
++    }
++    if (for_game) {
++        MBOX_HideObject(effectParts(slot)->sparks[0].full, 1, 15);
++        MBOX_HideObject(effectParts(slot)->sparks[1].full, 1, 15);
++        MBOX_HideObject(effectParts(slot)->sparks[2].full, 1, 15);
++        MBOX_HideObject(effectParts(slot)->sparks[3].full, 1, 15);
++        MBOX_HideObject(effectParts(slot)->sparks[4].full, 1, 15);
++        if (type == 13 || gGameCar[slot].view < 2) {
++            for (i = 0; i < 4; i++) MBOX_HideObject(gCarParts[slot].tires[i], 1, 15);
++            if (type == 13) {
++                MBOX_HideObject(gCarParts[slot].hood, 1, 15);
++                model[slot].appearance |= 0x10;
++                gGameCar[slot].appearance |= 0x10;
++            }
++        }
++    }
++}
++
++void StartCar(signed short slot)
++{
++    signed short j; /* r31 */
++    StartFrame(slot);
++    StartSparks(slot);
++    StartWing(slot, 0);
++    StartWing(slot, 1);
++    StartWingFlame(slot, 0);
++    StartWingFlame(slot, 1);
++    if (gRace == 6) StartWeapon(slot);
++    StartHeadLights(slot);
++    StartBrakeLights(slot);
++    for (j = 0; j < 4; j++) StartTire(slot, j);
++}
++
++int PickCar(signed short slot, unsigned char type)
++{
++    if (type == 13) return gObjList[slot * 9 + 4];
++    return gObjList[slot * 9];
++}
++
++void RemoveCar(signed short slot)
++{
++    if (gGameCar[slot].objnum >= 0) {
++        MBOX_HideObject(gCarParts[slot].frame, 2, 15);
++        RemoveVisuals(slot);
++    }
++}
++
++void StartEnvironment(void)
++{
++    signed short i;
++    for (i = 0; i < 6; i++) {
++        if (model[i].in_game) {
++            CreateCar(i, 15, 1);
++            StartCar(i);
++        }
++    }
++    for (i = 0; i < 6; i++) {
++        if (model[i].in_game) {
++            func_8C063378(i);
++            if (gNumPlayers > 1 && visualOwner(i) == 6) StartArrow(i);
++        }
++    }
++}
++
++tVisual *GrabEnvEntry(void)
++{
++    tVisual *v = gFreeVis;
++    if (!v) return 0;
++    gFreeVis = v->next;
++    if (++gEnvCount > gEnvCountMax) gEnvCountMax = gEnvCount;
++    v->next = 0;
++    v->index = 0;
++    v->objnum = -1;
++    v->slot = 0;
++    v->data = 0;
++    v->timeStamp = 0.0f;
++    v->func = 0;
++    return v;
++}
++
++void AddToEnvList(tVisual *v)
++{
++    v->next = gEnvList;
++    gEnvList = v;
++}
++
++void UpdateEnvirons(void)
++{
++    tVisual *v; /* r3 */
++    tVisual *next; /* r31 */
++    v = gEnvList;
++    next = v ? v->next : 0;
++    while (v) {
++        if (v->func) v->func(v, 1);
++        v = next;
++        if (next) next = next->next;
++    }
++    AnimateSkids();
++}
++
++void ReleaseEnviron(tVisual *v, int unlink)
++{
++    tVisual *p; /* r3 */
++    if (v->objnum >= 0) MBOX_HideObject(v->objnum, 1, 15);
++    v->func = 0;
++    v->objnum = -1;
++    if (unlink) {
++        p = gEnvList;
++        if (v == p) gEnvList = p->next;
++        else {
++            while (p && p->next != v) p = p->next;
++            if (p && p->next == v) p->next = v->next;
++        }
++    }
++    v->next = gFreeVis;
++    gFreeVis = v;
++    if (--gEnvCount > gEnvCountMax) gEnvCountMax = gEnvCount;
++}
++
++void RemoveEnvirons(void)
++{
++    while (gEnvList) ReleaseEnviron(gEnvList, 1);
++    func_8C04EE60();
++}
++
++void UpdateVisuals(signed short slot)
++{
++tCarData *car;
++    tVisual *v;
++    signed short i;
++    float rtime;
++    car = &gGameCar[slot];
++    v = car->visuals;
++    rtime = func_8C0D8736(dcDuration);
++    if (gRetraceRate == 50.0f) gGoodFrameRate = rtime < 36000.0f;
++    else if (gNumPlayers > 1) gGoodFrameRate = rtime < 45000.0f;
++    else gGoodFrameRate = rtime < 30000.0f;
++    if (car->appearance & 0x60) StartSmoke(slot, 4, 0, 0);
++    if (model[slot].sviscode[0] == 2) StartSmoke(slot, 0, 1, 0);
++    else if (car->appearance & 0x40000) StartSmoke(slot, 0, 0, 0);
++    if (model[slot].sviscode[1] == 2) StartSmoke(slot, 1, 1, 0);
++    else if (car->appearance & 0x80000) StartSmoke(slot, 1, 0, 0);
++    if (model[slot].sviscode[2] == 2) StartSmoke(slot, 2, 1, 0);
++    else if (car->appearance & 0x10000) StartSmoke(slot, 2, 0, 0);
++    if (model[slot].sviscode[3] == 2) StartSmoke(slot, 3, 1, 0);
++    else if (car->appearance & 0x20000) StartSmoke(slot, 3, 0, 0);
++    for (i = 0; i < 22; i++, v++) if (v->func) v->func(v, 1);
++    UpdateSkids(slot);
++}
++
++void RemoveVisuals(signed short slot)
++{
++    tVisual *v = gGameCar[slot].visuals;
++    signed short i;
++    for (i=0; i<22; i++,v++) {
++        if (v->func) v->func(v,0);
++        else if (v->objnum>=0) {
++            MBOX_HideObject(v->objnum,1,15);
++            v->objnum=-1;
++        }
++    }
++}
++
++void StartFrame(signed short slot)
++{
++    tVisual *v; /* r6 */
++    v = &gGameCar[slot].visuals[15];
++    v->func = AnimateFrame;
++    v->slot = slot;
++    v->objnum = gCarParts[slot].frame;
++    MBOX_ShowObject(v->objnum, 0, 15);
++    if (model[slot].body_type == 2) {
++        gCarParts[slot].extraparts[1] = InitCarObj(gObjList[525], 15, -1, 0x42000, slot, -1, 1);
++        visualRocketScale(slot)[1] = 0.25f;
++        gCarParts[slot].extraparts[2] = InitCarObj(gObjList[526], 15, -1, 0x42000, slot, -1, 1);
++        visualRocketScale(slot)[2] = 0.5f;
++        gCarParts[slot].extraparts[0] = InitCarObj(gObjList[524], 15, -1, 0x42000, slot, -1, 1);
++        visualRocketScale(slot)[0] = 0.25f;
++    }
++    if (model[slot].body_type == 3 && model[slot].PaintJob == 5)
++        MBOX_ShowObject(gCarParts[slot].extraparts[0], 0, 15);
++}
++
++static void AnimateRocketFlame(signed short slot, int hulk)
++{
++{
++    tModelData *m;
++    tCarData *car;
++    tUVMatrix *mat;
++    tUVMatrix *flames[3];
++    tRGBA clr = { 255,255,255,255 };
++    float scale1;
++    float r;
++    float pos[3];
++    int mph;
++    int b;
++    m=&model[slot];
++    car=&gGameCar[slot];
++    if(hulk) {
++        MBOX_HideObject(gCarParts[slot].extraparts[0],1,15);
++        MBOX_HideObject(gCarParts[slot].extraparts[1],1,15);
++        MBOX_HideObject(gCarParts[slot].extraparts[2],1,15);
++        return;
++    }
++    MBOX_ShowObject(gCarParts[slot].extraparts[0],0,15);
++    MBOX_ShowObject(gCarParts[slot].extraparts[1],0,15);
++    MBOX_ShowObject(gCarParts[slot].extraparts[2],0,15);
++    if(car->camera<0 || car->view>=2) {
++        MBOX_ShowObject(gCarParts[slot].extraparts[0],0,1<<car->camera);
++        MBOX_ShowObject(gCarParts[slot].extraparts[1],0,1<<car->camera);
++        MBOX_ShowObject(gCarParts[slot].extraparts[2],0,1<<car->camera);
++    } else {
++        MBOX_HideObject(gCarParts[slot].extraparts[0],1,1<<car->camera);
++        MBOX_HideObject(gCarParts[slot].extraparts[1],1,1<<car->camera);
++        MBOX_HideObject(gCarParts[slot].extraparts[2],1,1<<car->camera);
++    }
++    if(gRace==2 && slot>0) clr.c[3]=128;
++    else if(gRace==6 && (car->battle.defense.active&1)) clr.c[3]=car->battle.fadeAlpha;
++    ZOID_SetColor(gCarParts[slot].extraparts[0], &clr);
++    ZOID_SetColor(gCarParts[slot].extraparts[1], &clr);
++    ZOID_SetColor(gCarParts[slot].extraparts[2], &clr);
++    mat=ZOID_FindMatrix(gCarParts[slot].frame);
++    pos[0]=mat->mat3.pos[0]+2.0f*mat->mat3.uvs[1][0];
++    pos[1]=mat->mat3.pos[1]+2.0f*mat->mat3.uvs[1][1];
++    pos[2]=mat->mat3.pos[2]+2.0f*mat->mat3.uvs[1][2];
++    pos[0]+=-5.6f*mat->mat3.uvs[2][0];
++    pos[1]+=-5.6f*mat->mat3.uvs[2][1];
++    pos[2]+=-5.6f*mat->mat3.uvs[2][2];
++    flames[0]=ZOID_FindMatrix(gCarParts[slot].extraparts[0]);
++    CopyUV(mat->mat3.uvs,flames[0]->mat3.uvs);
++    flames[0]->mat3.pos[0]=pos[0];
++    flames[0]->mat3.pos[1]=pos[1];
++    flames[0]->mat3.pos[2]=pos[2];
++    flames[1]=ZOID_FindMatrix(gCarParts[slot].extraparts[1]);
++    CopyUV(mat->mat3.uvs,flames[1]->mat3.uvs);
++    flames[1]->mat3.pos[0]=pos[0];
++    flames[1]->mat3.pos[1]=pos[1];
++    flames[1]->mat3.pos[2]=pos[2];
++    flames[2]=ZOID_FindMatrix(gCarParts[slot].extraparts[2]);
++    CopyUV(mat->mat3.uvs,flames[2]->mat3.uvs);
++    flames[2]->mat3.pos[0]=pos[0];
++    flames[2]->mat3.pos[1]=pos[1];
++    flames[2]->mat3.pos[2]=pos[2];
++    b=0;
++    if(gRace==6 && car->battle.weapon.type==3) {
++        b=1;
++        visualRocketScale(slot)[0]=0.1f;
++        visualRocketScale(slot)[1]=0.1f;
++        visualRocketScale(slot)[2]=0.2f;
++    } else if((car->rwmph>>2)<0) {
++        visualRocketScale(slot)[0]=0.25f-Random(0.15f);
++        visualRocketScale(slot)[1]=0.25f-Random(0.15f);
++        visualRocketScale(slot)[2]=0.55f-Random(0.1f);
++    } else if(m->throttle<0.1f) {
++        if(visualRocketScale(slot)[0]<0.28f) visualRocketScale(slot)[0]=0.25f-Random(0.15f);
++        else {
++            visualRocketScale(slot)[0]-=0.01f+Random(0.025f);
++            if(visualRocketScale(slot)[0]<0.2f) visualRocketScale(slot)[0]=0.2f;
++        }
++        if(visualRocketScale(slot)[1]<0.28f) visualRocketScale(slot)[1]=0.25f-Random(0.15f);
++        else {
++            visualRocketScale(slot)[1]-=0.01f+Random(0.025f);
++            if(visualRocketScale(slot)[1]<0.2f) visualRocketScale(slot)[1]=0.2f;
++        }
++        if(visualRocketScale(slot)[2]<0.58f) visualRocketScale(slot)[2]=0.55f-Random(0.1f);
++        else {
++            visualRocketScale(slot)[2]-=0.01f+Random(0.025f);
++            if(visualRocketScale(slot)[2]<0.5f) visualRocketScale(slot)[2]=0.5f;
++        }
++    } else {
++        mph=m->rpm;
++        scale1=0.2f+(1.35f*mph)/10000.0f;
++        if(scale1>1.0f) scale1=1.0f;
++        visualRocketScale(slot)[0]=scale1-Random(0.15f);
++        visualRocketScale(slot)[1]=scale1-Random(0.15f);
++        scale1=0.5f+mph/10000.0f;
++        if(scale1>1.0f) scale1=1.0f;
++        visualRocketScale(slot)[2]=scale1-Random(0.1f);
++    }
++    flames[0]->mat3.uvs[2][0]*=visualRocketScale(slot)[0];
++    flames[0]->mat3.uvs[2][1]*=visualRocketScale(slot)[0];
++    flames[0]->mat3.uvs[2][2]*=visualRocketScale(slot)[0];
++    flames[1]->mat3.uvs[2][0]*=visualRocketScale(slot)[1];
++    flames[1]->mat3.uvs[2][1]*=visualRocketScale(slot)[1];
++    flames[1]->mat3.uvs[2][2]*=visualRocketScale(slot)[1];
++    if(b) ScaleUV(flames[2]->mat3.uvs,flames[2]->mat3.uvs,visualRocketScale(slot)[2]);
++    else {
++        flames[2]->mat3.uvs[0][0]*=visualRocketScale(slot)[2];
++        flames[2]->mat3.uvs[0][1]*=visualRocketScale(slot)[2];
++        flames[2]->mat3.uvs[0][2]*=visualRocketScale(slot)[2];
++        flames[2]->mat3.uvs[1][0]*=visualRocketScale(slot)[2];
++        flames[2]->mat3.uvs[1][1]*=visualRocketScale(slot)[2];
++        flames[2]->mat3.uvs[1][2]*=visualRocketScale(slot)[2];
++    }
++    if(gRace==6 && m->resurrect.moving_state>=0) {
++        ObjInstanceList[gCarParts[slot].extraparts[0]].flags |=0x80000000;
++        ObjInstanceList[gCarParts[slot].extraparts[1]].flags |=0x80000000;
++        ObjInstanceList[gCarParts[slot].extraparts[2]].flags |=0x80000000;
++    } else if(gInvisibleCar || (car->appearance&8)) {
++        ObjInstanceList[gCarParts[slot].extraparts[0]].flags ^=0x80000000;
++        ObjInstanceList[gCarParts[slot].extraparts[1]].flags ^=0x80000000;
++        ObjInstanceList[gCarParts[slot].extraparts[2]].flags ^=0x80000000;
++    } else {
++        ObjInstanceList[gCarParts[slot].extraparts[0]].flags &=0x7fffffff;
++        ObjInstanceList[gCarParts[slot].extraparts[1]].flags &=0x7fffffff;
++        ObjInstanceList[gCarParts[slot].extraparts[2]].flags &=0x7fffffff;
++    }
++}
++}
++
++tRGBA GetCarsIRColor(tCarData *car, tModelData *m)
++{
++tRGBA clr;
++    tRGBA sclr2;
++    float d1;
++    float d2;
++    float weights[2];
++    unsigned int a;
++    unsigned int b;
++    unsigned int hobj;
++    unsigned char rgb[3];
++    unsigned char *column[3];
++
++    a=(car->sound_flags[0]&0xf800)>>11;
++    hobj=(car->sound_flags[1]&0xf800)>>11;
++    column[0]=(unsigned char *)gTrackColors[gTrackNum];
++    column[2]=&gTrackColors[gTrackNum][0].c[2];
++
++    b = column[0][a * 4] + column[0][hobj * 4] + column[0][((car->sound_flags[2] & 0xf800) >> 11) * 4] + column[0][((car->sound_flags[3] & 0xf800) >> 11) * 4];
++    rgb[0] = b >> 2;
++
++    b = (&gTrackColors[gTrackNum][0].c[1])[(a) * (int)sizeof(tRGBA)] + (&gTrackColors[gTrackNum][0].c[1])[(hobj) * (int)sizeof(tRGBA)] + (&gTrackColors[gTrackNum][0].c[1])[((car->sound_flags[2]&0xf800)>>11) * (int)sizeof(tRGBA)] + (&gTrackColors[gTrackNum][0].c[1])[((car->sound_flags[3]&0xf800)>>11) * (int)sizeof(tRGBA)];
++    rgb[1] = b >> 2;
++
++    b = column[2][(a) * (int)sizeof(tRGBA)] + column[2][(hobj) * (int)sizeof(tRGBA)] + column[2][((car->sound_flags[2]&0xf800)>>11) * (int)sizeof(tRGBA)] + column[2][((car->sound_flags[3]&0xf800)>>11) * (int)sizeof(tRGBA)];
++    rgb[2] = b >> 2;
++
++    if (m->airdist[2] >= 20.0f)
++    {
++        d1 = 0.025f * (m->airdist[2] - 20.0f);
++        if (d1 > 1.0f)
++            return gTrackColors[gTrackNum][visualTrackBaseColors[gTrackNum]];
++        if (d1 > 0.0f) {
++            d2 = 1.0f - d1;
++            sclr2 = gTrackColors[gTrackNum][visualTrackBaseColors[gTrackNum]];
++            b = sclr2.c[0];
++            rgb[0] = rgb[0] * d2 + b * d1;
++            b = sclr2.c[1];
++            rgb[1] = rgb[1] * d2 + b * d1;
++            b = sclr2.c[2];
++            rgb[2] = rgb[2] * d2 + b * d1;
++        }
++    }
++
++    weights[0]=0.34f;
++    weights[1]=0.66f;
++
++    sclr2 = gTrackColors[gTrackNum][0];
++    a = visualPrevIRColor(car).c[0];
++    clr.c[0] = rgb[0] * weights[0] + a * weights[1];
++    a = visualPrevIRColor(car).c[1];
++    clr.c[1] = rgb[1] * weights[0] + a * weights[1];
++    a = visualPrevIRColor(car).c[2];
++    clr.c[2] = rgb[2] * weights[0] + a * weights[1];
++
++    clr.c[3] = 255;
++
++    return clr;
++}
++
++void AnimateFrame(tVisual *v, signed short op)
++{
++{
++    int hulk;
++    signed short slot;
++    tModelData *m;
++    tCarData *car;
++    int def;
++    unsigned int flags;
++    unsigned int hobj;
++    unsigned int sobj;
++    int rear;
++    unsigned int tobj;
++    unsigned int eobj;
++    tRGBA clr;
++    tRGBA sclr1;
++    tRGBA sclr2;
++    tRGBA nextclr;
++    slot=v->slot;
++    m=&model[slot];
++    car=&gGameCar[slot];
++    def=visualObjectIndex(v->objnum);
++    if(!op) {
++        if(v->objnum>=0) MBOX_HideObject(v->objnum,1,15);
++        v->func=0;
++        v->objnum=-1;
++        return;
++    }
++    hulk=(car->appearance>>4)&1;
++    sobj=gCarParts[slot].sheen;
++    hobj=gCarParts[slot].hood;
++    tobj=effectParts(slot)->trim;
++    eobj=m->body_type==3?gCarParts[slot].extraparts[0]:0;
++    if(eobj) {
++        MBOX_ShowObject(eobj,0,15);
++        if(car->camera<0 || car->view>=2) MBOX_ShowObject(gCarParts[slot].extraparts[0],0,1<<car->camera);
++        else MBOX_HideObject(gCarParts[slot].extraparts[0],1,1<<car->camera);
++    }
++    if(m->body_type==2) AnimateRocketFlame(slot,hulk);
++    nextclr=GetCarsIRColor(car,m);
++    visualPrevIRColor(car)=visualIRColor(car);
++    visualIRColor(car)=nextclr;
++    clr=nextclr;
++    sclr1=SheenColors[gTrackNum][0];
++    sclr2=SheenColors[gTrackNum][1];
++    if(car->in_tunnel && !hulk) {
++        if(visualSheenAlpha(car)<32) visualSheenAlpha(car)=0;
++        else visualSheenAlpha(car)-=25;
++    } else {
++        if(visualSheenAlpha(car)>224) visualSheenAlpha(car)=255;
++        else visualSheenAlpha(car)+=25;
++    }
++    sclr1.c[3]=visualSheenAlpha(car);
++    sclr2.c[3]=visualSheenAlpha(car);
++    if(gRace==2 && slot>0) clr.c[3]=128;
++    else if(gRace==6 && (car->battle.defense.active&1)) {
++        clr.c[3]=car->battle.fadeAlpha;
++        sclr1.c[3]=car->battle.fadeAlpha;
++        sclr2.c[3]=car->battle.fadeAlpha;
++    } else clr.c[3]=255;
++    SetFrameColor(slot,&clr);
++    SetSheenColor(slot,&sclr1,&sclr2);
++    if(eobj) ZOID_SetColor(eobj,&clr);
++    if(hulk) {
++        car->carMine=0;
++        if(def!=PickCar(slot,13)) ZOID_SetObjectDef(v->objnum,PickCar(slot,13));
++        MBOX_HideObject(hobj,1,15);
++        if(eobj) MBOX_HideObject(eobj,1,15);
++        if(tobj) MBOX_HideObject(tobj,1,15);
++        ZOID_SetObjectDef(sobj,gObjList[slot*9+5]);
++        ZOID_SetTexture(sobj,&gTexDefPtrs[gTexList[12]>>10].texDefs[gTexList[12]&1023],-1);
++        flags=ZOID_ObjectFlags(sobj);
++        ZOID_SetObjectFlags(sobj,flags&0xffd7ffff);
++        MBOX_ShowObject(sobj,0,15);
++        CheckVisible(v,1,car->camera);
++        return;
++    }
++    if((gGameState&0x100) && gCarMines && !car->carMine) {
++        gObjList[550]=MBOX_FindObject_WORK(MineName,0,gNumModels-1,0);
++        car->carMine=1;
++    }
++    if((gGameState&0x100) && !gCarMines && car->carMine) car->carMine=0;
++    if(car->carMine) {
++        if(def!=gObjList[550]) ZOID_SetObjectDef(v->objnum,gObjList[550]);
++        MBOX_HideObject(hobj,1,15);
++        MBOX_HideObject(sobj,1,15);
++        CheckVisible(v,car->view>=2,car->camera);
++        return;
++    }
++    if(gGameState&0x100) return;
++    if(tobj) {
++        if(gInvisibleCar || (car->appearance&8)) ObjInstanceList[tobj].flags^=0x80000000;
++        else ObjInstanceList[tobj].flags&=0x7fffffff;
++        if(car->camera<0 || car->view>=2) MBOX_ShowObject(tobj,0,1<<car->camera);
++        else MBOX_HideObject(tobj,1,1<<car->camera);
++    }
++    CheckVisible(v,car->view>=2,car->camera);
++    if(car->in_tunnel) {
++        if(visualSheenAlpha(car)<=16) MBOX_HideObject(sobj,1,15);
++        else {
++            sclr1.c[3]=visualSheenAlpha(car);
++            sclr2.c[3]=visualSheenAlpha(car);
++            SetSheenColor(slot,&sclr1,&sclr2);
++        }
++    } else if(car->camera<0 || car->view>=2) {
++        if(model[slot].body_type==10 && model[slot].PaintJob==6) MBOX_HideObject(sobj,1,15);
++        else {
++            ZOID_SetObjectDef(sobj,gObjList[slot*9+2]);
++            ZOID_SetTexture(sobj,&gTexDefPtrs[gTexList[11]>>10].texDefs[gTexList[11]&1023],-1);
++            flags=ZOID_ObjectFlags(sobj);
++            ZOID_SetObjectFlags(sobj,flags|0x280000);
++            MBOX_ShowObject(sobj,0,15);
++        }
++    } else MBOX_HideObject(sobj,1,1<<car->camera);
++    if(def!=PickCar(slot,model[slot].body_type)) ZOID_SetObjectDef(v->objnum,PickCar(slot,model[slot].body_type));
++    if(gRace==6 && m->resurrect.moving_state>=0) {
++        ObjInstanceList[v->objnum].flags|=0x80000000;
++        if(eobj) ObjInstanceList[eobj].flags|=0x80000000;
++    } else if(gInvisibleCar || (car->appearance&8)) {
++        ObjInstanceList[v->objnum].flags^=0x80000000;
++        if(eobj) ObjInstanceList[eobj].flags^=0x80000000;
++    } else {
++        ObjInstanceList[v->objnum].flags&=0x7fffffff;
++        if(eobj) ObjInstanceList[eobj].flags&=0x7fffffff;
++    }
++    rear=(gPlayers[car->slot].levels&gPlayers[car->slot].controls[9])!=0;
++    if(car->view==1 && rear) MBOX_HideObject(hobj,1,15);
++    else if(car->view!=1 || gNumWindows>1) MBOX_HideObject(hobj,1,15);
++    else {
++        if(car->camera>=0) {}
++        flags=ZOID_ObjectFlags(hobj);
++        if((int)visualObjectIndex(hobj)!=(int)gObjList[(signed short)(slot*9+1)]) ZOID_SetObjectDef(hobj,gObjList[(signed short)(slot*9+1)]);
++        if(flags&(0x100<<car->camera)) MBOX_ShowObject(hobj,0,1<<car->camera);
++        if(gInvisibleCar || (car->appearance&8)) ObjInstanceList[hobj].flags^=0x80000000;
++        else ObjInstanceList[hobj].flags&=0x7fffffff;
++    }
++}
++}
++
++void StartWing(signed short slot, signed short side)
++{
++    tVisual *v; /* r31 */
++    float iOffset[3]; /* stack */
++    v = &gGameCar[slot].visuals[17 + side];
++    if (gRace == 2 || gRace == 6 || model[slot].we_control) {
++        v->func = 0;
++        return;
++    }
++    v->func = AnimateWing;
++    v->slot = slot;
++    v->data = side;
++    iOffset[0] = 0.0f;
++    iOffset[1] = visualWingOffsets[model[slot].body_type][1];
++    iOffset[2] = 0.0f;
++    {
++        int index = side;
++        index += 4 * visualWingRows[slot + 1][model[slot].body_type];
++        index += 538;
++        v->objnum = InitCarObj(gObjList[index], 15, gCarParts[slot].frame, 0, slot, -1, 1);
++    }
++    ZOID_UpdateObject(v->objnum, iOffset, 0);
++    MBOX_HideObject(v->objnum, 1, 15);
++    InitWingSmoke(slot, side);
++}
++
++void AnimateWing(tVisual *v, signed short op)
++{
++int hulk;
++    signed short slot;
++    tCarData *car;
++    tModelData *m;
++    float offset[3];
++    float newUVS[3][3];
++    slot = v->slot;
++    car = &gGameCar[slot];
++    m = &model[slot];
++    if (!op) {
++        if (v->objnum >= 0) MBOX_HideObject(v->objnum, 0, 15);
++        v->func = 0;
++        v->objnum = -1;
++        return;
++    }
++    {
++    hulk = v->data & 1;
++    offset[0] = visualWingOffsets[m->body_type][0] * (hulk ? 1.0f : -1.0f);
++    offset[1] = visualWingOffsets[m->body_type][1];
++    offset[2] = 0.0f;
++    if (!m->wing || gCoastFlag) {
++        if (v->data & 0x10) {
++            v->data &= ~0x100;
++            v->data |= 0x1200;
++            if (m->wingSnd == -1) {
++                m->wingSnd = AudPlayEffect(77, m->slot, 2, 2);
++                AudChangeEffectPitch(m->wingSnd, 0.75f);
++                AudChangeEffectVol(m->wingSnd, 0.5f);
++            }
++        } else if (!(v->data & 0x1000)) {
++            InitWingSmoke(slot, hulk);
++            MBOX_HideObject(v->objnum, 0, 15);
++            return;
++        }
++    }
++    if (m->wing && !(v->data & 0x10)) {
++        MBOX_ShowObject(v->objnum, 0, 15);
++        v->data |= 0x1110;
++        v->timeStamp = 0.015f + gModelTime;
++        v->index = 0;
++        if (m->wingSnd == -1) {
++            m->wingSnd = AudPlayEffect(77, m->slot, 2, 2);
++            AudChangeEffectPitch(m->wingSnd, 0.75f);
++            AudChangeEffectVol(m->wingSnd, 0.5f);
++        }
++    }
++    if (v->data & 0x1000) {
++        if (!(v->data & 0x100) && (v->data & 0x200) && m->wing && !gCoastFlag) {
++            v->data &= ~0x200;
++            v->data |= 0x100;
++        }
++        if (v->data & 0x100) {
++            if (v->timeStamp < gModelTime) {
++                offset[0] *= (float)v->index / 6.0f;
++                ZOID_UpdateObject(v->objnum, offset, 0);
++                v->timeStamp = 0.015f + gModelTime;
++                v->index++;
++                if (v->index == 6) {
++                    v->data &= ~0x1100;
++                    if (m->wingSnd != -1) {
++                        AudStopEffect(m->wingSnd);
++                        m->wingSnd = -1;
++                    }
++                }
++            }
++        } else if (v->data & 0x200) {
++            if (v->timeStamp < gModelTime) {
++                offset[0] *= (float)v->index / 6.0f;
++                ZOID_UpdateObject(v->objnum, offset, 0);
++                v->timeStamp = 0.015f + gModelTime;
++                v->index--;
++                if (v->index == -1) {
++                    v->data &= ~0x1210;
++                    if (m->wingSnd != -1) {
++                        AudStopEffect(m->wingSnd);
++                        m->wingSnd = -1;
++                    }
++                }
++            }
++        }
++    }
++    if (v->data & 0x10) {
++        CopyUV(unitmatrix, newUVS);
++        PitchUV(0.507f * car->player->analog[1], newUVS);
++        ZOID_UpdateObject(v->objnum, 0, newUVS);
++        StartSmoke(slot, 6 + (hulk != 0), 0, offset);
++    }
++    hulk = (car->appearance & 0x10) != 0;
++    {
++        int inv = gInvisibleCar || (car->appearance & 8);
++        if (CheckVisibleAll(v, !hulk && !car->carMine)) {
++            CheckVisible(v, car->view >= 2, car->camera);
++            if (inv) ObjInstanceList[v->objnum].flags ^= 0x80000000;
++            else ObjInstanceList[v->objnum].flags &= 0x7fffffff;
++        }
++    }
++}
++}
++
++void StartWingFlame(signed short slot, signed short side)
++{
++    tVisual *v; /* r31 */
++    tUVMatrix *mat; /* r0 */
++    v = &gGameCar[slot].visuals[19 + side];
++    if (gRace == 2 || gRace == 6 || model[slot].we_control) {
++        v->func = 0;
++        return;
++    }
++    v->func = AnimateWingFlame;
++    v->slot = slot;
++    v->data = side;
++    {
++        int index = side;
++        index += 4 * visualWingRows[slot + 1][model[slot].body_type];
++        index += 540;
++        v->objnum = InitCarObj(gObjList[index], 15, gGameCar[slot].visuals[17 + side].objnum, 0, slot, -1, 1);
++    }
++    mat = ZOID_FindMatrix(v->objnum);
++    mat->mat3.pos[1] = 0.55f;
++    MBOX_HideObject(v->objnum, 1, 15);
++}
++
++void AnimateWingFlame(tVisual *v, signed short op)
++{
++    int hulk;
++    tUVMatrix *mat;
++    tCarData *car;
++    float scale;
++    int index;
++    car = &gGameCar[v->slot];
++    if (!op) {
++        if (v->objnum >= 0) MBOX_HideObject(v->objnum, 1, 15);
++        v->func = 0;
++        v->objnum = -1;
++        return;
++    }
++    hulk = v->data & 1;
++    index = hulk;
++    index += 17;
++    if (car->visuals[index].data & 0x10) {
++        MBOX_ShowObject(v->objnum, 0, 15);
++        mat = ZOID_FindMatrix(v->objnum);
++        CopyUV(unitmatrix, mat->mat3.uvs);
++        scale = hulk ? 8.0f * car->player->analog[0] : -8.0f * car->player->analog[0];
++        if (scale < 2.0f) scale = 2.0f;
++        mat->mat3.uvs[1][1] = scale;
++    } else MBOX_HideObject(v->objnum, 1, 15);
++    hulk = (car->appearance & 0x10) != 0;
++    {
++        int inv = gInvisibleCar || (car->appearance & 8);
++        if (CheckVisibleAll(v, !hulk && !car->carMine)) {
++            CheckVisible(v, car->view >= 2, car->camera);
++            if (inv) ObjInstanceList[v->objnum].flags ^= 0x80000000;
++            else ObjInstanceList[v->objnum].flags &= 0x7fffffff;
++        }
++    }
++}
++
++void InitBlast(void)
++{
++    signed short i; /* r29 */
++    for (i = 0; i < 50; i++) gBlastMats[i].mat = ZOID_NewMatrix();
++    for (i = 0; i < 6; i++) {
++        gBlastRingObjs[i].ringIdx = -1;
++        gBlastObjs[i].glowIdx = -1;
++        gBlastObjs[i].blastObjs[0].mbIdx = -1;
++        gBlastObjs[i].blastObjs[1].mbIdx = -1;
++        gBlastObjs[i].blastObjs[2].mbIdx = -1;
++        gBlastObjs[i].blastObjs[3].mbIdx = -1;
++    }
++    gBlastMatCnt = 0;
++}
++
++void StartNewBlast(signed short slot)
++{
++tVisual *v;
++    int i;
++    tRGBA clr = { 255, 255, 255, 255 };
++    v = GrabEnvEntry();
++    if (v) {
++        v->func = AnimateNewBlast;
++        v->timeStamp = gModelTime;
++        v->slot = slot;
++        clr.c[0] = 20;
++        clr.c[1] = 127;
++        clr.c[2] = 244;
++        for (i = 0; i < 4; i++) {
++            if (gBlastObjs[slot].blastObjs[i].mbIdx != -1) ZOID_RemoveObject(gBlastObjs[slot].blastObjs[i].mbIdx);
++            CopyUV(unitmatrix, gBlastObjs[slot].blastObjs[i].mat.mat3.uvs);
++            gBlastObjs[slot].blastObjs[i].mat.mat3.pos[0] = gGameCar[slot].dr_pos[0];
++            gBlastObjs[slot].blastObjs[i].mat.mat3.pos[1] = gGameCar[slot].dr_pos[1] - 3.0f;
++            gBlastObjs[slot].blastObjs[i].mat.mat3.pos[2] = gGameCar[slot].dr_pos[2];
++            gBlastObjs[slot].blastObjs[i].mbIdx = (signed short)MBOX_NewObject(gObjList[470 + i], &gBlastObjs[slot].blastObjs[i].mat, -1, 0x42000);
++            gBlastObjs[slot].blastObjs[i].scale = 0.4f;
++            gBlastObjs[slot].blastObjs[i].scaleInc = 0.05f + Random(0.005f);
++            gBlastObjs[slot].blastObjs[i].mat.mat3.uvs[0][0] = gBlastObjs[slot].blastObjs[i].mat.mat3.uvs[1][1] = gBlastObjs[slot].blastObjs[i].mat.mat3.uvs[2][2] = gBlastObjs[slot].blastObjs[i].scale;
++            gBlastObjs[slot].blastObjs[i].yawInc = 0.1f - Random(0.2f);
++            gBlastObjs[slot].blastObjs[i].pitchInc = 0.1f - Random(0.2f);
++            clr.c[3] = 128;
++            gBlastObjs[slot].blastObjs[i].ht = 0.0f;
++            gBlastObjs[slot].blastObjs[i].yaw = 0.0f;
++            gBlastObjs[slot].blastObjs[i].pitch = 0.0f;
++            gBlastObjs[slot].blastObjs[i].alpha = 128;
++            gBlastObjs[slot].blastObjs[i].alphaInc = (int)Random(10.0f) + 17;
++            ZOID_SetColor(gBlastObjs[slot].blastObjs[i].mbIdx, &clr);
++        }
++        CopyUV(unitmatrix, gBlastObjs[slot].mat.mat3.uvs);
++        gBlastObjs[slot].mat.mat3.pos[0] = gGameCar[slot].dr_pos[0];
++        gBlastObjs[slot].mat.mat3.pos[1] = gGameCar[slot].dr_pos[1];
++        gBlastObjs[slot].mat.mat3.pos[2] = gGameCar[slot].dr_pos[2];
++        if (gBlastObjs[slot].glowIdx != -1) ZOID_RemoveObject(gBlastObjs[slot].glowIdx);
++        gBlastObjs[slot].glowIdx = (signed short)MBOX_NewObject(gObjList[474], &gBlastObjs[slot].mat, -1, 0x52000);
++        gBlastObjs[slot].alpha = 56;
++        gBlastObjs[slot].alphaCnt = 0;
++        ObjInstanceList[gBlastObjs[slot].glowIdx].scale = 0.2f;
++        ObjInstanceList[gBlastObjs[slot].glowIdx].w = 1.4f;
++        clr.c[0] = 255;
++        clr.c[1] = 255;
++        clr.c[2] = 255;
++        clr.c[3] = gBlastObjs[slot].alpha;
++        ZOID_SetColor(gBlastObjs[slot].glowIdx, &clr);
++        gBlastObjs[slot].lifeTime = 0.7f;
++        gBlastObjs[slot].incTime = 0.0333333f;
++        AddToEnvList(v);
++    }
++    StartSmoke(slot, 5, 0, 0);
++}
++
++void AnimateNewBlast(tVisual *v, signed short op)
++{
++int i;
++    dcVisualBlastObject *b;
++    tRGBA clr;
++    float x;
++    float y;
++    if (gPauseState) return;
++    gBlastObjs[v->slot].lifeTime -= gFrameSeconds;
++    if (gBlastObjs[v->slot].lifeTime <= 0.0f || model[v->slot].resurrect.moving_state >= 0) {
++        for (i = 0; i < 4; i++) {
++            b = &gBlastObjs[v->slot].blastObjs[i];
++            if (b->mbIdx != -1) ZOID_RemoveObject(b->mbIdx);
++            b->mbIdx = -1;
++        }
++    }
++    if (!model[v->slot].crashflag) {
++        if (gBlastObjs[v->slot].glowIdx != -1) {
++            ZOID_RemoveObject(gBlastObjs[v->slot].glowIdx);
++            gBlastObjs[v->slot].glowIdx = -1;
++        }
++        for (i = 0; i < 4; i++) {
++            b = &gBlastObjs[v->slot].blastObjs[i];
++            if (b->mbIdx != -1) ZOID_RemoveObject(b->mbIdx);
++            b->mbIdx = -1;
++        }
++        ReleaseEnviron(v, 1);
++        return;
++    }
++    if (!op) {
++        ReleaseEnviron(v, 1);
++        return;
++    }
++    gBlastObjs[v->slot].mat.mat3.pos[0] = gGameCar[v->slot].dr_pos[0];
++    gBlastObjs[v->slot].mat.mat3.pos[1] = gGameCar[v->slot].dr_pos[1];
++    gBlastObjs[v->slot].mat.mat3.pos[2] = gGameCar[v->slot].dr_pos[2];
++    gBlastObjs[v->slot].incTime -= gFrameSeconds;
++    if (gBlastObjs[v->slot].incTime <= 0.0f) {
++        if (gBlastObjs[v->slot].alphaCnt == 0) gBlastObjs[v->slot].alpha -= 16;
++        else if (gBlastObjs[v->slot].alphaCnt == 1) {
++            if (gBlastObjs[v->slot].alpha < 56U) gBlastObjs[v->slot].alpha += 16;
++        } else if (gBlastObjs[v->slot].alphaCnt > 1) {
++            gBlastObjs[v->slot].alphaCnt = (int)Random(3.0f) * -1;
++            gBlastObjs[v->slot].alpha = 56;
++        }
++        gBlastObjs[v->slot].alphaCnt++;
++        clr.c[0] = 255;
++        clr.c[1] = 255;
++        clr.c[2] = 255;
++        clr.c[3] = gBlastObjs[v->slot].alpha;
++        ZOID_SetColor(gBlastObjs[v->slot].glowIdx, &clr);
++        if (ObjInstanceList[gBlastObjs[v->slot].glowIdx].scale < 1.0f)
++            ObjInstanceList[gBlastObjs[v->slot].glowIdx].scale += 0.05f;
++        for (i = 0; i < 4; i++) {
++            b = &gBlastObjs[v->slot].blastObjs[i];
++            if (b->mbIdx != -1) {
++                b->mat.mat3.uvs[0][0] = b->mat.mat3.uvs[1][1] = b->mat.mat3.uvs[2][2] = b->scale;
++                b->mat.mat3.uvs[0][1] = b->mat.mat3.uvs[1][0] = b->mat.mat3.uvs[2][0] = 0.0f;
++                b->mat.mat3.uvs[0][2] = b->mat.mat3.uvs[1][2] = b->mat.mat3.uvs[2][1] = 0.0f;
++                switch (i) {
++                    case 0: x = 0.0f; y = 0.0f; break;
++                    case 1: x = 0.5f * b->ht; y = 0.5f * b->ht; break;
++                    case 2: x = -0.5f * b->ht; y = -0.5f * b->ht; break;
++                    case 3: x = -0.5f * b->ht; y = 0.5f * b->ht; break;
++                }
++                b->mat.mat3.pos[0] = x + gGameCar[v->slot].dr_pos[0];
++                b->mat.mat3.pos[2] = y + gGameCar[v->slot].dr_pos[2];
++                b->mat.mat3.pos[1] = b->ht + gGameCar[v->slot].dr_pos[1] - 3.0f;
++                b->ht += 0.2f;
++                PitchUV(b->pitch, b->mat.mat3.uvs);
++                YawUV(b->yaw, b->mat.mat3.uvs);
++                b->scale += b->scaleInc;
++                b->scaleInc -= 0.002f;
++                b->yaw += b->yawInc;
++                b->pitch += b->pitchInc;
++                if (gBlastObjs[v->slot].lifeTime < 0.2f) {
++                    clr.c[0] = 20;
++                    clr.c[1] = 127;
++                    clr.c[2] = 244;
++                    clr.c[3] = b->alpha;
++                    if (b->alpha > b->alphaInc) b->alpha -= b->alphaInc;
++                    ZOID_SetColor(b->mbIdx, &clr);
++                }
++            }
++        }
++        gBlastObjs[v->slot].incTime = 0.0333333f;
++    }
++}
++
++void StartNewBlastRing(signed short slot)
++{
++    tVisual *v; /* r29 */
++    tRGBA clr = { 255, 255, 255, 255 }; /* stack */
++    v = GrabEnvEntry();
++    if (!v) return;
++    v->func = AnimateNewBlastRing;
++    v->timeStamp = gModelTime;
++    v->slot = slot;
++    CopyUV(unitmatrix, gBlastRingObjs[slot].mat.mat3.uvs);
++    gBlastRingObjs[slot].mat.mat3.pos[0] = gGameCar[slot].dr_pos[0];
++    gBlastRingObjs[slot].mat.mat3.pos[1] = gGameCar[slot].dr_pos[1];
++    gBlastRingObjs[slot].mat.mat3.pos[2] = gGameCar[slot].dr_pos[2];
++    if (gBlastRingObjs[slot].ringIdx != -1) ZOID_RemoveObject(gBlastRingObjs[slot].ringIdx);
++    gBlastRingObjs[slot].ringIdx = (signed short)MBOX_NewObject(gObjList[475], &gBlastRingObjs[slot].mat, -1, 0x42000);
++    gBlastRingObjs[slot].ralpha = 240;
++    gBlastRingObjs[slot].ralphaCnt = 0;
++    ZOID_SetColor(gBlastRingObjs[slot].ringIdx, &clr);
++    gBlastRingObjs[slot].incTime = 0.0333333f;
++    AddToEnvList(v);
++}
++
++void AnimateNewBlastRing(tVisual *v, signed short op)
++{
++    tRGBA clr;
++    if (gPauseState) return;
++    if (!model[v->slot].crashflag) {
++        if (gBlastRingObjs[v->slot].ringIdx != -1) {
++            ZOID_RemoveObject(gBlastRingObjs[v->slot].ringIdx);
++            gBlastRingObjs[v->slot].ringIdx = -1;
++        }
++        ReleaseEnviron(v,1);
++        return;
++    }
++    if (!op) { ReleaseEnviron(v,1); return; }
++    gBlastRingObjs[v->slot].mat.mat3.pos[0] = gGameCar[v->slot].dr_pos[0];
++    gBlastRingObjs[v->slot].mat.mat3.pos[1] = gGameCar[v->slot].dr_pos[1];
++    gBlastRingObjs[v->slot].mat.mat3.pos[2] = gGameCar[v->slot].dr_pos[2];
++    gBlastRingObjs[v->slot].incTime -= gFrameSeconds;
++    if (gBlastRingObjs[v->slot].incTime <= 0.0f) {
++        gBlastRingObjs[v->slot].mat.mat3.uvs[0][0] += 1.5f;
++        gBlastRingObjs[v->slot].mat.mat3.uvs[1][1] += 1.5f;
++        gBlastRingObjs[v->slot].mat.mat3.uvs[2][2] += 1.5f;
++        if (gBlastRingObjs[v->slot].ralphaCnt > 15) {
++            if (gBlastRingObjs[v->slot].ringIdx != -1) {
++                ZOID_RemoveObject(gBlastRingObjs[v->slot].ringIdx);
++                gBlastRingObjs[v->slot].ringIdx = -1;
++            }
++            ReleaseEnviron(v,1);
++            return;
++        }
++        if (gBlastRingObjs[v->slot].ralphaCnt > 6) {
++            clr.c[0] = 255; clr.c[1] = 255; clr.c[2] = 255;
++            clr.c[3] = gBlastRingObjs[v->slot].ralpha;
++            ZOID_SetColor(gBlastRingObjs[v->slot].ringIdx, &clr);
++            if (gBlastRingObjs[v->slot].ralpha > 24) gBlastRingObjs[v->slot].ralpha -= 24;
++        }
++        gBlastRingObjs[v->slot].ralphaCnt++;
++        gBlastRingObjs[v->slot].incTime = 0.0333333f;
++    }
++}
++
++void StartBlast(void * data, int linkToCar, float scale, int playSound)
++{
++    tVisual *v; /* r31 */
++    tUVMatrix *mat; /* r30 */
++    if (linkToCar) StartNewBlastRing(*(signed short *)data);
++    v = GrabEnvEntry();
++    if (!v) return;
++    mat = gBlastMats[gBlastMatCnt].mat;
++    CopyUV(unitmatrix, mat->mat3.uvs);
++    v->func = AnimateBlast;
++    v->timeStamp = 0.0333333f;
++    if (linkToCar) {
++        v->slot = *(signed short *)data;
++        mat->mat3.pos[0] = gGameCar[v->slot].dr_pos[0];
++        mat->mat3.pos[1] = gGameCar[v->slot].dr_pos[1];
++        mat->mat3.pos[2] = gGameCar[v->slot].dr_pos[2];
++    } else {
++        v->slot = -1;
++        mat->mat3.pos[0] = ((float *)data)[0];
++        mat->mat3.pos[1] = ((float *)data)[1];
++        mat->mat3.pos[2] = ((float *)data)[2];
++    }
++    v->index = 0;
++    v->objnum = MBOX_NewObject(gObjList[476], mat, -1, 0x50000);
++    AddToEnvList(v);
++    ObjInstanceList[v->objnum].scale = scale;
++    if (++gBlastMatCnt >= 50) gBlastMatCnt = 0;
++    if (playSound) EmitGameSound(mat->mat3.pos, unitmatrix[3], 400.0f, 0.0f, 1.0f, 0.0f, scale >= 1.0f ? 9 : scale >= 0.5f ? 61 : 62, v->objnum, 0, 128);
++}
++
++void AnimateBlast(tVisual *v, signed short op)
++{
++    if (gPauseState) return;
++    if (!op || (v->slot >= 0 && !model[v->slot].crashflag)) {
++        ZOID_RemoveObject(v->objnum);
++        v->objnum = -1;
++        ReleaseEnviron(v,1);
++        return;
++    }
++    if (v->slot >= 0) {
++        ObjInstanceList[v->objnum].mat->mat3.pos[0] = gGameCar[v->slot].dr_pos[0];
++        ObjInstanceList[v->objnum].mat->mat3.pos[1] = gGameCar[v->slot].dr_pos[1];
++        ObjInstanceList[v->objnum].mat->mat3.pos[2] = gGameCar[v->slot].dr_pos[2];
++    }
++    v->timeStamp -= gFrameSeconds;
++    if (v->slot < 0 || (v->slot >= 0 && v->timeStamp <= 0.0f)) {
++        v->timeStamp = 0.0333333f;
++        if (v->index == 30) {
++            ZOID_RemoveObject(v->objnum);
++            v->objnum = -1;
++            ReleaseEnviron(v,1);
++            return;
++        }
++        ZOID_SetObjectDef(v->objnum, gObjList[476 + v->index]);
++        v->index++;
++        if (v->slot >= 0) {
++            if (v->index == 4) newWorldDamage(gGameCar[v->slot].dr_pos, v->slot);
++            if (v->index == 3) StartNewBlast(v->slot);
++        }
++    }
++}
++
++void StartTire(signed short slot, unsigned int tire)
++{
++    tVisual *v; /* r8 */
++    v = &gGameCar[slot].visuals[tire + 7];
++    v->func = AnimateTire;
++    v->slot = slot;
++    v->data = 0;
++    v->index = tire;
++    v->timeStamp = gModelTime;
++    v->objnum = gCarParts[slot].tires[tire];
++}
++
++void AnimateTire(tVisual *v, signed short op)
++{
++float pos[3];
++    float mat[3][3];
++    float pyr[3];
++    float spring;
++    float spring2;
++    float t;
++    float lastpos;
++    tCarData *car;
++    tModelData *m;
++    signed short tire;
++    signed short who;
++    signed short mph;
++    int camera;
++    tCar *cartp;
++    int rim;
++    int invisible;
++    signed short slot;
++    if (!op) {
++        MBOX_HideObject(v->objnum, 1, 15);
++        v->func = 0;
++        v->objnum = -1;
++        return;
++    }
++    slot = v->slot;
++    car = &gGameCar[slot];
++    m = &model[slot];
++    tire = v->index;
++    spring = m->suscomp[tire];
++    invisible = gInvisibleCar || (car->appearance & 8);
++    mph = car->rwmph >> 2;
++    camera = car->camera;
++    who = m->drone_type == 2 ? m->slot + 1 : 0;
++    cartp = gCarModels[model[slot].body_type];
++    if (CheckVisibleAll(v, !(car->appearance & 0x10) && !car->carMine)) {
++        CheckVisible(v, car->view >= 2, camera);
++        if (model[slot].sviscode[tire] == 1) {
++            t = 0.05f * (float)(mph >> 2);
++            if (t > 0.6f) t = 0.6f;
++            spring += Random(t);
++        }
++        if (spring < 0.0f) spring = 0.0f;
++        else if (spring > 0.5f) spring = 0.5f;
++        pos[0] = cartp->tireR[tire][0];
++        pos[1] = spring + (cartp->tireR[tire][1] + visualCarTires(cartp)[tire]->tradius);
++        pos[2] = cartp->tireR[tire][2];
++        if (camera >= 0 && car->view == 1 && tire == 0) {
++            spring = 0.002f * (float)(mph >> 2);
++            if (model[slot].sviscode[tire] == 1) spring2 = spring * (Random(2.0f) - 1.0f);
++            else if (model[slot].sviscode[tire] == 8) spring2 = 0.0f;
++            else spring2 = 0.25f * (spring * (Random(2.0f) - 1.0f));
++            gCamera[camera].view2spring = 0.75f * gCamera[camera].view2spring + spring2;
++        }
++        lastpos = *(float *)&v->data;
++        if (m->tires[tire].angvel > 64.0f) lastpos += 3.7f;
++        else lastpos += m->tires[tire].angvel * (gModelTime - v->timeStamp);
++        *(float *)&v->data = lastpos;
++        v->timeStamp = gModelTime;
++        pyr[0] = -lastpos;
++        pyr[1] = tire < 2 ? -m->steerangle : 0.0f;
++        pyr[2] = 0.0f;
++        rim = m->tireRims;
++        if (m->tires[tire].angvel > 64.0f) rim = visualWheelBlur[rim];
++        else rim += 24;
++        ZOID_SetTexture(v->objnum, gWheelTextures[rim], -1);
++        CreateYPRMatrix(mat, pyr);
++        if (tire >= 2) {
++            t = gRearTireScale[who][m->body_type];
++            if (t != 1.0f) ScaleUV(mat, mat, t);
++        } else {
++            t = gFrontTireScale[who][m->body_type];
++            if (t != 1.0f) ScaleUV(mat, mat, t);
++        }
++        ZOID_UpdateObject(v->objnum, pos, mat);
++        if (invisible) ObjInstanceList[v->objnum].flags ^= 0x80000000;
++        else ObjInstanceList[v->objnum].flags &= 0x7fffffff;
++    }
++}
++
++void func_8C063378(signed short slot)
++{
++    tVisual *v=&gGameCar[slot].visuals[11];
++    tPoly *poly;
++    v->func=AnimateShadow;
++    v->slot=slot;
++    v->timeStamp=gModelTime;
++    visualShadowColor.c[3]=192;
++    poly=ZOID_NewPoly(4,gDummyVtx,gTexList[8],&visualShadowColor,
++                     0x8200|((gGameState&0x100)?1:15),1);
++    v->objnum=poly-PolyInstanceList;
++}
++
++void AnimateShadow(tVisual *v, signed short op)
++{
++{
++    float pos[3];
++    float tvec[3];
++    float xyz[4][3];
++    float dist[4];
++    float d1,d2,d3,d4;
++    signed short i,ii;
++    signed short body;
++    tCarData *car;
++    tModelData *m;
++    float fscale,bscale,len;
++    float scalePair[2];
++    car=&gGameCar[v->slot];
++    m=&model[v->slot];
++    if(!op) {
++        if(v->objnum>=0) ZOID_RemovePoly(&PolyInstanceList[v->objnum]);
++        v->func=0;
++        v->objnum=-1;
++        return;
++    }
++    d1=m->reckon.airdist[3]-m->reckon.airdist[1];
++    d2=m->reckon.airdist[2]-m->reckon.airdist[0];
++    d3=m->reckon.airdist[1]-m->reckon.airdist[0];
++    d4=m->reckon.airdist[3]-m->reckon.airdist[2];
++    if(_builtin_fabsf(d1)>20.0f || _builtin_fabsf(d2)>20.0f || _builtin_fabsf(d3)>20.0f || _builtin_fabsf(d4)>20.0f ||
++       car->carMine || m->resurrect.moving_state>-1 || (car->appearance&8) || gInvisibleCar || m->hide_car) {
++        ZOID_HidePoly(&PolyInstanceList[v->objnum]);
++        return;
++    }
++    d1=i=0;
++    for(;i<4;i++) {
++        dist[i]=m->reckon.airdist[i];
++        d1+=m->reckon.airdist[i];
++        if(dist[i]<0.0f) dist[i]=0.0f;
++    }
++    d1*=0.25f;
++    for(i=0;i<4;i++) {
++        signed short tire=i<2?i:5-i;
++        d2=dist[tire]>10.0f?2.0f:1.0f+0.1f*dist[tire];
++        xyz[i][0]=car->dr_tirepos[tire][0];
++        xyz[i][1]=d2+(car->dr_tirepos[tire][1]-dist[tire]);
++        xyz[i][2]=car->dr_tirepos[tire][2];
++    }
++    if(car->dr_uvs[1][1]<0.0f) {
++        pos[0]=xyz[0][0];
++        pos[1]=xyz[0][1];
++        pos[2]=xyz[0][2];
++        xyz[0][0]=xyz[1][0];
++        xyz[0][1]=xyz[1][1];
++        xyz[0][2]=xyz[1][2];
++        xyz[1][0]=pos[0];
++        xyz[1][1]=pos[1];
++        xyz[1][2]=pos[2];
++        pos[0]=xyz[2][0];
++        pos[1]=xyz[2][1];
++        pos[2]=xyz[2][2];
++        xyz[2][0]=xyz[3][0];
++        xyz[2][1]=xyz[3][1];
++        xyz[2][2]=xyz[3][2];
++        xyz[3][0]=pos[0];
++        xyz[3][1]=pos[1];
++        xyz[3][2]=pos[2];
++    }
++    len=3.0f*(1.0f-_builtin_fabsf(car->dr_uvs[1][1]));
++    if(car->dr_uvs[0][1]<0.0f) {
++        pos[0]=car->dr_uvs[1][0]*len+xyz[0][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[0][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[0][2];
++        xyz[0][0]=pos[0];
++        xyz[0][2]=pos[2];
++        pos[0]=car->dr_uvs[1][0]*len+xyz[3][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[3][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[3][2];
++        xyz[3][0]=pos[0];
++        xyz[3][2]=pos[2];
++    } else if(car->dr_uvs[0][1]>0.0f) {
++        pos[0]=car->dr_uvs[1][0]*len+xyz[1][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[1][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[1][2];
++        xyz[1][0]=pos[0];
++        xyz[1][2]=pos[2];
++        pos[0]=car->dr_uvs[1][0]*len+xyz[2][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[2][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[2][2];
++        xyz[2][0]=pos[0];
++        xyz[2][2]=pos[2];
++    }
++    if((car->dr_uvs[1][1]>0.0f && car->dr_uvs[2][1]>0.95f) ||
++       (car->dr_uvs[1][1]<0.0f && car->dr_uvs[2][1]<-0.95f)) {
++        pos[0]=car->dr_uvs[1][0]*len+xyz[2][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[2][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[2][2];
++        xyz[2][0]=pos[0];
++        xyz[2][2]=pos[2];
++        pos[0]=car->dr_uvs[1][0]*len+xyz[3][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[3][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[3][2];
++        xyz[3][0]=pos[0];
++        xyz[3][2]=pos[2];
++    } else if((car->dr_uvs[1][1]<0.0f && car->dr_uvs[2][1]>0.95f) ||
++       (car->dr_uvs[1][1]>0.0f && car->dr_uvs[2][1]<-0.95f)) {
++        pos[0]=car->dr_uvs[1][0]*len+xyz[0][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[0][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[0][2];
++        xyz[0][0]=pos[0];
++        xyz[0][2]=pos[2];
++        pos[0]=car->dr_uvs[1][0]*len+xyz[1][0];
++        pos[1]=car->dr_uvs[1][1]*len+xyz[1][1];
++        pos[2]=car->dr_uvs[1][2]*len+xyz[1][2];
++        xyz[1][0]=pos[0];
++        xyz[1][2]=pos[2];
++    }
++    body=(car->appearance&0x10)?13:m->body_type;
++    fscale=visualShadowScale[body][0];
++    bscale=visualShadowScale[body][1];
++    for(i=0;i<3;i++) {
++        d2=xyz[0][i]-xyz[1][i];
++        d3=d2*fscale;
++        xyz[0][i]+=d3;
++        xyz[1][i]-=d3;
++        d2=xyz[3][i]-xyz[2][i];
++        d3=d2*bscale;
++        xyz[3][i]+=d3;
++        xyz[2][i]-=d3;
++    }
++    scalePair[0]=visualShadowScale[body][2];
++    scalePair[1]=visualShadowScale[body][3];
++    for(i=0;i<3;i++) {
++        d2=xyz[0][i]-xyz[3][i];
++        xyz[0][i]+=d2*scalePair[0];
++        xyz[3][i]-=d2*scalePair[1];
++        d2=xyz[1][i]-xyz[2][i];
++        xyz[1][i]+=d2*scalePair[0];
++        xyz[2][i]-=d2*scalePair[1];
++    }
++    for(i=0;i<4;i++) {
++        signed short tire;
++        if(car->dr_uvs[1][1]<0.0f) {
++            switch(i) {
++                case 0: ii=1;break;
++                case 1: ii=0;break;
++                case 2: ii=3;break;
++                case 3: ii=2;break;
++            }
++        } else ii=i;
++        tire=ii<2?ii:5-ii;
++        if(!(xyz[ii][1]<car->dr_tirepos[tire][1]+1.15f)) {
++            pos[0]=xyz[ii][0]-car->dr_tirepos[tire][0];
++            pos[1]=xyz[ii][1]-car->dr_tirepos[tire][1];
++            pos[2]=xyz[ii][2]-car->dr_tirepos[tire][2];
++            BodyVector(pos,tvec,car->dr_uvs);
++            if(tvec[1]>4.0f || (tvec[2]<1.25f && tvec[0]<1.25f && tvec[1]>1.25f)) {
++                ZOID_HidePoly(&PolyInstanceList[v->objnum]);
++                return;
++            }
++        }
++    }
++    ZOID_ShowPoly(&PolyInstanceList[v->objnum]);
++    fscale=8.0f*d1;
++    visualShadowColor.c[3]=255.0f-(fscale<20.0f?20.0f:fscale>255.0f?255.0f:fscale);
++    if(visualShadowColor.c[3]>192) visualShadowColor.c[3]=192;
++    if(car->camera>=0 && (car->view==0 || car->view==1)) ZOID_ClearPolyFlags(&PolyInstanceList[v->objnum],1<<car->camera);
++    else ZOID_SetPolyFlags(&PolyInstanceList[v->objnum],15);
++    ZOID_UpdatePoly(&PolyInstanceList[v->objnum],4,xyz,0,&visualShadowColor,0,0);
++}
++}
++
++void UpdateArrowVis(void)
++{
++    int i;
++    int j;
++    float p1[3];
++    float p2[3];
++    float uvs[3][3];
++    for (i = 0; i < 16; i++) ((signed char *)gFadePlayerArrow)[i] = 0;
++    if (gShowPlayerArrows && gRace == 6) {
++        for (i = 0; i < gNumPlayers - 1; i++) {
++            p1[0] = gGameCar[i].dr_pos[0];
++            p1[1] = gGameCar[i].dr_pos[1];
++            p1[2] = gGameCar[i].dr_pos[2];
++            p1[1] += 5.0f;
++            for (j = 1; j < gNumPlayers; j++) {
++                p2[0] = gGameCar[j].dr_pos[0];
++                p2[1] = gGameCar[j].dr_pos[1];
++                p2[2] = gGameCar[j].dr_pos[2];
++                p2[1] += 5.0f;
++                if (ShotToWorldCollision(p1, p2, uvs, 0.5f, 0, 65535)) {
++                    gFadePlayerArrow[i][j] = 1;
++                    gFadePlayerArrow[j][i] = 1;
++                }
++            }
++        }
++    }
++}
++
++void StartArrow(signed short slot)
++{
++    tVisual *v = &gGameCar[slot].visuals[12];
++    int i;
++    tRGBA clr = { 255, 255, 255, 255 };
++    tPoly *poly;
++    if (gRace == 6) {
++        clr.c[0] = visualArrowColors[gCarTeam[slot]].c[0];
++        clr.c[1] = visualArrowColors[gCarTeam[slot]].c[1];
++        clr.c[2] = visualArrowColors[gCarTeam[slot]].c[2];
++        clr.c[3] = visualArrowColors[gCarTeam[slot]].c[3];
++    } else {
++        clr.c[0] = visualArrowColors[slot].c[0];
++        clr.c[1] = visualArrowColors[slot].c[1];
++        clr.c[2] = visualArrowColors[slot].c[2];
++        clr.c[3] = visualArrowColors[slot].c[3];
++    }
++    for (i = 0; i < gNumWindows; i++) {
++        if (i != slot) {
++            v->func = (void (*)(tVisual *, signed short))AnimateArrow;
++            v->slot = slot;
++            v->index = i;
++            if (gRace == 6) poly = ZOID_NewPoly(4, gDummyVtx, gTexList[9], &clr, (1 << i) | 0x3200, 1);
++            else poly = ZOID_NewPoly(4, gDummyVtx, gTexList[9], &clr, (1 << i) | 0x1200, 1);
++            ZOID_SetPolyZ(poly, 10000);
++            v->objnum = poly - PolyInstanceList;
++            v++;
++        }
++    }
++    while (v < &gGameCar[slot].visuals[14]) {
++        v->func = 0;
++        v->objnum = -1;
++        v++;
++    }
++}
++
++void AnimateArrow(tVisual *v, signed short op)
++{
++{
++    tCarData *car;
++    tModelData *m;
++    float xyz[4][3];
++    float scale;
++    int oslot;
++    int i;
++    float vec[3];
++    tWindowInfo *window;
++    float x,y,z;
++    float widthTerm;
++    float border=19.0f;
++    float vscale,voffset;
++    int j;
++    car=&gGameCar[v->slot];
++    m=&model[v->slot];
++    oslot=v->index;
++    {
++    tRGBA clr = {255,255,255,255};
++    if(!gShowPlayerArrows || !(gGameState&0x400000) ||
++        ((car->crash_state || m->resurrect.moving_state>=0) && gRace==6)) {
++        ZOID_HidePoly(&PolyInstanceList[v->objnum]);
++        return;
++    }
++    if(gRace==6 && (car->battle.defense.active&1)) {
++        if(car->battle.fadeState==1) clr.c[3]=car->battle.fadeAlpha;
++        else if(car->battle.fadeState==2) clr.c[3]=car->battle.fadeAlpha;
++        else clr.c[3]=visualArrowInvisible[car->battle.shoot];
++        if(clr.c[3]<32) clr.c[3]=32;
++    }
++    if(m->drone_type==2) {
++        if(gRace==6) {
++            clr.c[0]=visualArrowColors[gCarTeam[m->slot]].c[0];
++            clr.c[1]=visualArrowColors[gCarTeam[m->slot]].c[1];
++            clr.c[2]=visualArrowColors[gCarTeam[m->slot]].c[2];
++        } else {
++            clr.c[0]=visualArrowColors[m->slot].c[0];
++            clr.c[1]=visualArrowColors[m->slot].c[1];
++            clr.c[2]=visualArrowColors[m->slot].c[2];
++        }
++        if(gFadePlayerArrow[m->slot][oslot] && clr.c[3]>112) clr.c[3]=112;
++        if(gRace==2 && v->slot>0) clr.c[3]=128;
++    } else {
++        clr.c[0]=visualArrowColors[4].c[0];
++        clr.c[1]=visualArrowColors[4].c[1];
++        clr.c[2]=visualArrowColors[4].c[2];
++    }
++    vec[0]=car->dr_pos[0]-gCamera[oslot].mat.mat3.pos[0];
++    vec[1]=car->dr_pos[1]-gCamera[oslot].mat.mat3.pos[1];
++    vec[2]=car->dr_pos[2]-gCamera[oslot].mat.mat3.pos[2];
++    if(gRace==6) {
++        window=&ZoidWinInfo[oslot];
++        U64WorldVector(vec,xyz[0],gCamera[oslot].mat.mat3.uvs);
++        scale=fatan2(-xyz[0][0],xyz[0][2]);
++        z=31.41592788696289f/window->whviewang;
++        if(gSplitScreen>1) {
++            voffset=0.75f*window->wvviewang;
++            vscale=16.5f;
++        } else {
++            vscale=14.5f; /* vscale before voffset here (the reverse of the branch above) gives the original instruction order */
++            voffset=1.1f*window->wvviewang;
++        }
++        j=-1;
++        if(scale<0.48f*-window->whviewang && scale>-1.5707963705062866f) {
++            x=(window->whviewang*border)*0.6366197466850281f;
++            scale=-scale;
++            j=3;
++        } else if(scale<-1.5707963705062866f || scale>1.5707963705062866f) {
++            if(scale<0.0f) scale=3.1415927410125732f+scale;
++            else scale=scale-3.1415927410125732f;
++            j=0;
++            x=((window->whviewang*border)*scale)*0.40528470277786255f;
++            y=(window->wvviewang*vscale)*0.6366197466850281f;
++        } else if(scale>0.48f*window->whviewang && scale<1.5707963705062866f) {
++            j=1;
++            x=-((window->whviewang*border)*0.6366197466850281f);
++        }
++        if(j==1 || j==3)
++            y=(((window->wvviewang*vscale)*(scale-voffset))*(1.0f/(1.5707963705062866f-voffset)))*0.6366197466850281f;
++        if(j>=0) {
++        for(i=0;i<4;i++,j=(j+1)&3) {
++            float (*p)[3]=&xyz[j];
++            (*p)[0]=x+gDummyVtx[i][0];
++            (*p)[1]=gDummyVtx[i][1]-y;
++            (*p)[2]=z;
++        }
++        ZOID_UpdatePoly(&PolyInstanceList[v->objnum],4,xyz,0,&clr,(1<<oslot)|0x3610,0);
++        return;
++        }
++    }
++
++    scale=magnitude(vec)/25.0f;
++    for(i=0;i<4;i++) {
++        U64WorldVector(gDummyVtx[i],xyz[i],gCamera[oslot].n64.mat3.uvs);
++        xyz[i][0]=car->dr_pos[0]+scale*xyz[i][0];
++        xyz[i][1]=5.0f+(scale+(car->dr_pos[1]+scale*xyz[i][1]));
++        xyz[i][2]=car->dr_pos[2]+scale*xyz[i][2];
++    }
++    if(gRace==6) ZOID_UpdatePoly(&PolyInstanceList[v->objnum],4,xyz,0,&clr,(1<<oslot)|0x3600,0);
++    else ZOID_UpdatePoly(&PolyInstanceList[v->objnum],4,xyz,0,&clr,(1<<oslot)|0x1600,0);
++}
++}
++}
++
++void StartBrakeLights(signed short slot)
++{
++    tVisual *v; /* r8 */
++    v = &gGameCar[slot].visuals[0];
++    v->func = AnimateBrakeLights;
++    v->slot = slot;
++    MBOX_HideObject(effectParts(slot)->brakes, 1, 15);
++}
++
++void AnimateBrakeLights(tVisual *v, signed short op)
++{
++    tCarData *car; /* r7 */
++    int on;
++    car = &gGameCar[v->slot];
++    on = ((car->appearance & 0x1000) && !(car->appearance & 0x10));
++    if (!op || !on)
++        MBOX_HideObject(effectParts(v->slot)->brakes, 1, 15);
++    else MBOX_ShowObject(effectParts(v->slot)->brakes, 0, 15);
++}
++
++void StartSparks(signed short slot)
++{
++    tVisual *v; /* r30 */
++    if (!(gGameState & 8)) {
++        v = &gGameCar[slot].visuals[2];
++        v->func = AnimateLFSpark;
++        v->index = -1;
++        v->slot = slot;
++        v->objnum = effectParts(slot)->sparks[0].narrow.object;
++        v = &gGameCar[slot].visuals[3];
++        v->func = AnimateLRSpark;
++        v->index = -1;
++        v->slot = slot;
++        v->objnum = effectParts(slot)->sparks[1].narrow.object;
++        v = &gGameCar[slot].visuals[4];
++        v->func = AnimateRFSpark;
++        v->index = -1;
++        v->slot = slot;
++        v->objnum = effectParts(slot)->sparks[2].narrow.object;
++        v = &gGameCar[slot].visuals[5];
++        v->func = AnimateRRSpark;
++        v->index = -1;
++        v->slot = slot;
++        v->objnum = effectParts(slot)->sparks[3].narrow.object;
++        v = &gGameCar[slot].visuals[6];
++        v->func = AnimateBSpark;
++        v->index = -1;
++        v->slot = slot;
++        v->objnum = effectParts(slot)->sparks[4].narrow.object;
++    }
++}
++
++void AnimateLFSpark(tVisual *v, signed short op)
++{
++    int rear; /* r7 */
++    tCarData *car; /* r9 */
++    car = &gGameCar[v->slot];
++    rear = (gPlayers[v->slot].levels & gPlayers[v->slot].controls[9]) != 0;
++    HandleASpark(v, (signed short)model[v->slot].magvel > 20 && (car->appearance & 0x100) && (!rear || (rear && car->view >= 2)), car->tireR[1][0] - 0.6f, car->tireR[1][1] + 2.0f * model[v->slot].tires[1].tradius, car->tireR[1][2], 506, op);
++}
++
++void AnimateLRSpark(tVisual *v, signed short op)
++{
++    tCarData *car; /* r9 */
++    int rear; /* r7 */
++    car = &gGameCar[v->slot];
++    rear = (gPlayers[v->slot].levels & gPlayers[v->slot].controls[9]) != 0;
++    HandleASpark(v, (signed short)model[v->slot].magvel > 20 && (car->appearance & 0x2000) && (!rear || (rear && car->view >= 2)), car->tireR[3][0] - 0.6f, car->tireR[3][1] + 2.0f * model[v->slot].tires[3].tradius, car->tireR[3][2], 506, op);
++}
++
++void AnimateRFSpark(tVisual *v, signed short op)
++{
++    tCarData *car; /* r9 */
++    int rear; /* r7 */
++    car = &gGameCar[v->slot];
++    rear = (gPlayers[v->slot].levels & gPlayers[v->slot].controls[9]) != 0;
++    HandleASpark(v, (signed short)model[v->slot].magvel > 20 && (car->appearance & 0x80) && (!rear || (rear && car->view >= 2)), car->tireR[0][0] + 0.6f, car->tireR[0][1] + 2.0f * model[v->slot].tires[0].tradius, car->tireR[0][2], 506, op);
++}
++
++void AnimateRRSpark(tVisual *v, signed short op)
++{
++    tCarData *car; /* r9 */
++    int rear; /* r7 */
++    car = &gGameCar[v->slot];
++    rear = (gPlayers[v->slot].levels & gPlayers[v->slot].controls[9]) != 0;
++    HandleASpark(v, (signed short)model[v->slot].magvel > 20 && (car->appearance & 0x4000) && (!rear || (rear && car->view >= 2)), car->tireR[2][0] + 0.6f, car->tireR[2][1] + 2.0f * model[v->slot].tires[2].tradius, car->tireR[2][2], 506, op);
++}
++
++void AnimateBSpark(tVisual *v, signed short op)
++{
++    int top; /* r12 */
++    tCarData *car; /* r10 */
++    int rear; /* r8 */
++    int on[1];
++    car = &gGameCar[v->slot];
++    top = model[v->slot].topscrape;
++    rear = (gPlayers[v->slot].levels & gPlayers[v->slot].controls[9]) != 0;
++    on[0] = 0;
++    {
++        int contact = (signed short)model[v->slot].magvel > 12 && (top || (car->appearance & 0x800));
++        if (contact) {
++            int visible = !rear || (rear && car->view >= 2);
++            if (visible) on[0] = 1;
++        }
++    }
++    HandleASpark(v, on[0], 0.0f, car->tireR[3][1] + (top ? 2.0f : model[v->slot].tires[3].tradius), car->tireR[3][2] - 2.0f, 506, op);
++}
++
++void HandleASpark(tVisual *v, int on, float x, float y, float z, int spark, signed short op)
++{
++    tCarData *car; /* r29 */
++    tUVMatrix *mat; /* r4 */
++    signed short mph; /* r29 */
++    car = &gGameCar[v->slot];
++    if (op && !(gGameState & 8) && on) {
++        if (v->index < 0) v->index = Random(5.0f);
++        v->index++;
++        if (v->index > 7) v->index = 0;
++        PositionObject(v->objnum, x, y, z, car->v[0], car->v[1], car->v[2]);
++        mph = model[v->slot].magvel;
++        if (mph < 100) {
++            mat = ZOID_FindMatrix(v->objnum);
++            ScaleUV(mat->mat3.uvs, mat->mat3.uvs, (float)mph / 100.0f);
++        }
++        if (CheckVisibleAll(v, v->index >= 0)) {
++            func_8C069328(gObjList[spark], 0, gTexList[v->index]);
++            return;
++        }
++    }
++    MBOX_HideObject(v->objnum, 1, 15);
++    v->index = -1;
++}
++
++void PositionObject(int objnum, float x, float y, float z, float u, float v, float w)
++{
++    tUVMatrix *mat; /* r31 */
++    mat = ZOID_FindMatrix(objnum);
++    mat->mat3.pos[0] = u;
++    mat->mat3.pos[1] = v;
++    mat->mat3.pos[2] = w;
++    LookInDir(mat->mat3.pos, mat);
++    mat->mat3.pos[0] = x;
++    mat->mat3.pos[1] = y;
++    mat->mat3.pos[2] = z;
++}
++
++int CheckVisibleAll(tVisual *v,int on)
++{
++ if(on)MBOX_ShowObject(v->objnum,0,15);
++ else MBOX_HideObject(v->objnum,1,15);
++ return on;
++}
++
++int CheckVisible(tVisual *v, int on, int camera)
++{
++    if (camera < 0) return CheckVisibleAll(v, on);
++    if (on) MBOX_ShowObject(v->objnum, 0, 1 << camera);
++    else MBOX_HideObject(v->objnum, 1, 1 << camera);
++    return on;
++}
