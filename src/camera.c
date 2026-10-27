@@ -1,6 +1,6 @@
 /* camera.c - private Dreamcast camera recovery candidate.
    MAT3 reference supplies names and behavior; strict status is in evidence/receipt.json.
-   Original: D:\rush_ngc\Rush_NGC\GameSource\src\camera.c; assembly: build/2049LE/asm/GameSource/src/camera.s */
+   Reference: MAT3 GameSource camera implementation; target bytes remain authoritative. */
 #include "camera_types.h"
 
 static void _UpdateDroneObjects(void);
@@ -52,11 +52,10 @@ void init_views(void)
     tCarData *car;
     int i;
     for (i = 0; i < gNumWindows; i++) {
-        car = &gGameCar[gCamera[i].slot];
+        car = &((tCarData *)0x8C004000)[gCamera[i].slot];
         car->camera = i;
         init_view3(car);
-        state = gGameState;
-        if (state & 8) {
+        if (gGameState & 8) {
             car->view = 6;
             init_camera_on_track(car);
             lastSwitch[i] = gModelTime;
@@ -74,10 +73,8 @@ void init_view3(tCarData *car)
 {
     unsigned int state;
     int camera = car->camera;
-    car->saveview = 2;
-    car->view = 2;
-    state = gGameState;
-        if (state & 8) {
+    car->view = car->saveview = 2;
+    if (gGameState & 8) {
         rear_y[camera] = 7.0f;
         rear_z[camera] = 20.0f;
     } else {

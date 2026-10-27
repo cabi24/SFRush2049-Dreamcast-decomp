@@ -46,15 +46,17 @@ void func_8C015EF0(DcSfxBank *bank, int lock)
 void func_8C016044(void)
 {
     int time;
-    int i;
+    register int i;
     DcSfxBank **loaded;
+    tSfxVoice *voice;
     time = func_8C06AEC8() - 1.0f;
     loaded=gAudLoadedBanks;
     while (gAudNumLoadedBanks) {
         if (loaded[gAudNumLoadedBanks-1]->locked) break;
         for (i=0; i<256; i++) {
-            if (gSfxInstances[i].used && gSfxInstances[i].started &&
-                func_8C0A2EEA(&gSfxInstances[i].handle) &&
+            voice = &gSfxInstances[i];
+            if (voice->used && voice->started &&
+                func_8C0A2EEA(&voice->handle) &&
                 gSfxInstances[i].soundId >= gAudLoadedBanks[gAudNumLoadedBanks-1]->first &&
                 gSfxInstances[i].soundId <= gAudLoadedBanks[gAudNumLoadedBanks-1]->last) {
                 if (func_8C06AF30(time, 1.0f)) {

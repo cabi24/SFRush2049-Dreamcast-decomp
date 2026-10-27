@@ -231,7 +231,8 @@ void ResumeGameMusic(void) { _StartGameMusic(1); }
 void StartListeners(void)
 {
     int p;
-    if (!(gGameState & 8)) {
+    if (gGameState & 8) return;
+    {
         for (p = 0; p < gNumPlayers; p++) {
             if (gRace != 2 || gPlayers[p].slot == 0)
                 gPlayers[p].listener = AudAddListener(unitmatrix[3], unitmatrix[3],

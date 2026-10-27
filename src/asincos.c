@@ -23,8 +23,8 @@ float farcsine(float x, int flag)
 {
     static const float a[2] = { 0.0f, PIO4 };
     static const float b[2] = { PIO2, PIO4 };
-    float y;
-    float g;
+    register float y;
+    register float g;
     float r;
     int i;
 
