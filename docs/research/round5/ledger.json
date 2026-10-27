@@ -1,0 +1,1524 @@
+{
+  "scope": "100 source-probed selected targets. Selected exact-function counts exclude auxiliary/collateral gains; accepted integration total is35. Associated probe records may share whole-TU builds and include recorded neutral variants; they are not unique compiles.",
+  "targets": [
+    {
+      "id": 1,
+      "lane": "platform",
+      "unit": "paksysdc",
+      "function": "PS_InitPakSys",
+      "address": "8C06CADC",
+      "mapped_size": 204,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target retains two-record unrolling, a hoisted bound, and different call-argument scheduling; three source-shape cap reached.",
+      "associated_probe_records": 3,
+      "hypotheses": [
+        "Local eight-record bound instead of literal loop bound",
+        "Unsigned rather than signed induction variable",
+        "Register-qualified local bound"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 2,
+      "lane": "platform",
+      "unit": "paksysdc",
+      "function": "func_8C06CBA8",
+      "address": "8C06CBA8",
+      "mapped_size": 26,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body already agrees apart from pool placement; do/while changes scratch registers away from target. PS_InitPakSys remains two bytes short.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Empty do/while with identical SDK call/test sequence"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 3,
+      "lane": "platform",
+      "unit": "paksysdc",
+      "function": "func_8C06CBC2",
+      "address": "8C06CBC2",
+      "mapped_size": 56,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Direct boolean tail reconstructs target control flow; upstream initialization remains two bytes short and shared pool is displaced.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Else-if error-chain nesting",
+        "Direct short-circuit boolean tail after error-specific returns"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 4,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06B80C",
+      "address": "8C06B80C",
+      "mapped_size": 32,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline instruction body is already correct; only the shared initialization pool differs. Switch shape is inferior.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Negative guard with early return",
+        "Switch with exactly the three observed error codes"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 5,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06B82C",
+      "address": "8C06B82C",
+      "mapped_size": 194,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target retains no-effect error/range checks and a post-loop count test whose original diagnostic source remains unknown; aligned-pointer hoisting is inferior.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Named aligned work and directory pointers before retry loop"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 6,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06B954",
+      "address": "8C06B954",
+      "mapped_size": 34,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Early guard reconstructs target cleanup instructions; preceding initialization size and literal-pool flush remain wrong.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Early null return before heap release"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 7,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06B976",
+      "address": "8C06B976",
+      "mapped_size": 170,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target repeats the volatile frame-address materialization and has different scratch allocation; gate probes do not recover this naturally.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Structured nested complement of existing skip gate, preserving volatile reads",
+        "Explicit zero comparisons in skip predicate"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 8,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BA20",
+      "address": "8C06BA20",
+      "mapped_size": 26,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body is correct except displaced literal reference; direct comparison loses target result-local shape.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Direct SDK-state equality return"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 9,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BA3A",
+      "address": "8C06BA3A",
+      "mapped_size": 154,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target retains a buffer-capacity comparison and an additional preserved register; original diagnostic expression is not recovered.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Combined cache-enabled and assignment guard instead of ternary"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 10,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BAD4",
+      "address": "8C06BAD4",
+      "mapped_size": 56,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Builtin strcmp reconstructs target body and helper reload behavior, but preceding source/pool layout remains displaced.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Compiler builtin strcmp, supported by target helper ABI and reload behavior"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 11,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BB0C",
+      "address": "8C06BB0C",
+      "mapped_size": 626,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Late flag initialization, builtin string copies, and early capacity computation improve instruction shape; one allocation-call scratch choice and upstream/pool differences remain. Three-shape cap reached.",
+      "associated_probe_records": 3,
+      "hypotheses": [
+        "Initialize compaction flag immediately before eviction loop",
+        "Target-ABI builtin strcpy at both name-copy sites",
+        "Materialize required capacity before querying available memory"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 12,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BD7E",
+      "address": "8C06BD7E",
+      "mapped_size": 104,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body is byte-identical at a moved address; explicit head-update form adds an instruction. Predecessor layout is the blocker.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Explicit head assignment before and at end of first traversal loop"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 13,
+      "lane": "platform",
+      "unit": "dc_misc_8C06B80C",
+      "function": "func_8C06BDE6",
+      "address": "8C06BDE6",
+      "mapped_size": 42,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body is byte-identical at a moved address; intermediate rating changes arithmetic scheduling. Predecessor layout is the blocker.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Unsigned intermediate rating, preserving arithmetic conversions"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 14,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C069F78",
+      "address": "8C069F78",
+      "mapped_size": 88,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body differs only in relocated calls/pools; do/while wait form changes scratch registers away from target.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Empty do/while waits with original short-circuit list reads"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 15,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C069FD0",
+      "address": "8C069FD0",
+      "mapped_size": 266,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target retains range-check predicates and direct same-TU stream dispatch; original diagnostic source and full TU context are missing. Continue probe does not solve the tail-call form.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Continue guard for nonmatching pending jobs"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 16,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A0DA",
+      "address": "8C06A0DA",
+      "mapped_size": 198,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Explicit lock pointer recovers target saved-register ownership but range checks, scratch choices, and direct same-TU stream call remain unresolved.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Register-qualified pointer to persistent lock counter"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 17,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A1A0",
+      "address": "8C06A1A0",
+      "mapped_size": 42,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Four-list direct boolean form changes branching away from target; initial baseline scratch allocation also remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Direct four-list conjunction of explicit null tests"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 18,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A1CA",
+      "address": "8C06A1CA",
+      "mapped_size": 26,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body already agrees except pool references; direct-return form changes control flow away from target.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Direct two-list disjunction of explicit nonnull tests"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 19,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A1E4",
+      "address": "8C06A1E4",
+      "mapped_size": 316,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Continue form recovers bottom-tested pending traversal, but direct same-TU stream update call, register allocation, and prior layout remain unresolved.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Continue after canceled pending-job release, preserving saved next pointer"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 20,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A320",
+      "address": "8C06A320",
+      "mapped_size": 40,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Target retains a null-pointer diagnostic test before removal; chained resets change store scheduling and do not establish the original diagnostic expression.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Chained zero initialization of existing reset fields"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 21,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A348",
+      "address": "8C06A348",
+      "mapped_size": 42,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body is byte-identical at a moved address; ternary list selection changes call setup away from target.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Conditional list argument to common removal call"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 22,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A39C",
+      "address": "8C06A39C",
+      "mapped_size": 68,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Status-test shape reconstructs target body, but original diagnostic macro is not established and function remains moved; research-only.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Research-only empty tests of three SDK status results retained by target"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 23,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A3E0",
+      "address": "8C06A3E0",
+      "mapped_size": 46,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body already agrees except a moved helper call; state-pointer caching adds a saved register and is rejected.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Local SDK-state pointer reused across stop/reset/close calls"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 24,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A40E",
+      "address": "8C06A40E",
+      "mapped_size": 42,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Status-test shape reconstructs target body, but original diagnostic macro is not established and function remains moved; research-only.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Research-only empty test of SDK stop result retained by target"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 25,
+      "lane": "platform",
+      "unit": "dc_sound_8C069F78",
+      "function": "func_8C06A438",
+      "address": "8C06A438",
+      "mapped_size": 42,
+      "outcome": "attempted; rejected from accepted source",
+      "remaining_blocker": "Baseline body already agrees except literal displacement; conditional expression merges epilogues away from target.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Conditional-expression return of SDK query output"
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 26,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_InitText",
+      "address": "8C02ECF4",
+      "mapped_size": 40,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Change inlined _InitSemaphore from conditional assignment to early return followed by assignment."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 27,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "_HAL_SetFont",
+      "address": "8C02EF04",
+      "mapped_size": 146,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Combine FindWaveInstance assignment with its negative comparison.",
+        "Split LoadWave assignment from LockWaveInstance call for both wave handles."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 28,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_SetFontLeading",
+      "address": "8C02F314",
+      "mapped_size": 56,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison only in the negative-leading branch."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 29,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_SetFontSpacing",
+      "address": "8C02F34C",
+      "mapped_size": 42,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison only in the negative-spacing branch."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 30,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_SetFontFixedWidth",
+      "address": "8C02F376",
+      "mapped_size": 38,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before font-data setup."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 31,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetFontAscent",
+      "address": "8C02F39C",
+      "mapped_size": 40,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before font-data setup and ascent conversion."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 32,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetFontDescent",
+      "address": "8C02F3C4",
+      "mapped_size": 40,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before font-data setup and descent conversion."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 33,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetFontLeading",
+      "address": "8C02F3EC",
+      "mapped_size": 26,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before the leading conversion."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 34,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetFontSpacing",
+      "address": "8C02F406",
+      "mapped_size": 20,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before the spacing conversion."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 35,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetFontChars",
+      "address": "8C02F41A",
+      "mapped_size": 80,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before font-data setup and character-copy loop."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 36,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetCharWidth",
+      "address": "8C02F46A",
+      "mapped_size": 152,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Insert font-index sentinel comparison before font-data setup and glyph-width lookup."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 37,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_GetTextWidth",
+      "address": "8C02F502",
+      "mapped_size": 342,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Final body retains 17 strict differences; remaining loop/register and shared-pool placement discrepancies. Counter reorder rejected; only reviewed residual validity comparison retained.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Add observed font-index sentinel comparison before font-data setup.",
+        "Initialize nc before i/len."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 38,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "HAL_FinishText",
+      "address": "8C02ED68",
+      "mapped_size": 334,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Probe produced the wrong comparison polarity/register choice. Original body restored; six remaining strict call/pool differences are upstream layout effects.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Spell loop condition gBufLen > i after explicit i initialization."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 39,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "_DrawText",
+      "address": "8C02FA04",
+      "mapped_size": 570,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Scissor constant corrected experimentally but body/pools and placement remain nonexact; register probe expands linked size from 582 to 608. Both research-only; accepted source restored.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Set BlitScissor bottom argument to observed 479.",
+        "Test register-local y0 while keeping the target-backed scissor argument."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 40,
+      "lane": "presentation",
+      "unit": "HAL_text",
+      "function": "_SetDefaults",
+      "address": "8C02FC3E",
+      "mapped_size": 44,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Probe yields a moved body, not an original-address exact match; upstream drawing/layout discrepancy remains. Research-only and restored.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Set *fontYpos = 4."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 41,
+      "lane": "presentation",
+      "unit": "visuals",
+      "function": "InitCarDynamicObjs",
+      "address": "8C05EAE8",
+      "mapped_size": 230,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Direct indexing shortened linked output from 230 to 188 and worsened strict differences from 12 to 204. Restore original; argument/literal scheduling unresolved.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Remove objIndex and access gObjList[slot*9+i] directly."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 42,
+      "lane": "presentation",
+      "unit": "visuals",
+      "function": "InitEnvs",
+      "address": "8C05EBCE",
+      "mapped_size": 170,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Both actual loop shapes remained nonexact (151 and 159 strict differences); baseline 138 restored. Structure/layout and register lifetime need further evidence.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Remove next local and address gEnvirons[i+1] directly.",
+        "Retain local next but use unsigned type."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 43,
+      "lane": "presentation",
+      "unit": "visuals",
+      "function": "InitCarVisuals",
+      "address": "8C05ED66",
+      "mapped_size": 38,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Index loop expanded linked output from 82 to 106 and worsened 16 to 35 strict differences at the target address. Baseline restored.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use gc->visuals[i] with an index loop instead of incrementing a visual pointer."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 44,
+      "lane": "presentation",
+      "unit": "visuals",
+      "function": "InitCarObj",
+      "address": "8C05EF1E",
+      "mapped_size": 104,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Both actual arithmetic shapes remain nonexact; second expands linked size from 158 to 162. Baseline restored; target value lifetimes/array declaration remain unresolved.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Introduce unsigned player = slot/13 before matrix selection.",
+        "Use a two-dimensional matrix-array cast indexed by player and carObjNum."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 45,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "downleaf",
+      "address": "8C05162A",
+      "mapped_size": 122,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Probe grows linked body 122 to 126 and increases strict differences 4 to 76. Restored; four original call/pool differences remain.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use q = midh <= posh and if (midv > posv) q += 2."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 46,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "DecodeVlist",
+      "address": "8C051794",
+      "mapped_size": 100,
+      "outcome": "accepted-exact",
+      "remaining_blocker": "None for this exact original-address function.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use *vlp++ & ~0xe0 and assign decoded final value to existing unsigned next before returning."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 47,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "CameraCollision",
+      "address": "8C052FDC",
+      "mapped_size": 162,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Own instruction shape improves, but three shared-pool displacements and upstream placement prevent exact original-address match. Probe restored.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Spell each position update as 0.25f*temp[i] + ipos[i]."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 48,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "MoveCollisionObject",
+      "address": "8C05378E",
+      "mapped_size": 444,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Linked body becomes 442 versus target 444, with unresolved registers/pools and placement; 414 strict differences. Restored; research-only.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use int ipos[3]/float pos[3], target-observed found counter and continue guard, signed-half rounding, and shift-before-mask packing."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 49,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "RotateCollisionObject",
+      "address": "8C05395C",
+      "mapped_size": 628,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Linked body grows 562 to 632 versus target 628; strict differences 588 remain. Register scheduling and placement unresolved; restored.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use fixedPos[3], found counter and continue guard in object traversal."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 50,
+      "lane": "presentation",
+      "unit": "stree",
+      "function": "CarApplyCollision",
+      "address": "8C053CAC",
+      "mapped_size": 1002,
+      "outcome": "research-only-nonexact",
+      "remaining_blocker": "Actual load schedule changes but linked size remains 1020 versus target 1002; strict differences 941 remain. Restored; research-only.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Move dz = c->dist before whl = tireIndex[c->carEdge]."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 51,
+      "lane": "simulation",
+      "unit": "drivsym",
+      "function": "regular",
+      "address": "8C0238EE",
+      "mapped_size": 54,
+      "outcome": "47 differing bytes after alias removal versus 2 originally; restore. Original misses are local BSR destinations displaced by force/torque predecessors.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Test whether the temporary model alias around forces calls is unnecessary; target retains two model registers."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 52,
+      "lane": "simulation",
+      "unit": "drivsym",
+      "function": "calcaa",
+      "address": "8C0250AC",
+      "mapped_size": 42,
+      "outcome": "Relative mismatch increased from 0 to 27 bytes and body grew 4 bytes; restore. Baseline arithmetic was already exact but displaced.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Reverse each commutative component multiply to test operand-load/allocation order seen in the target."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 53,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "TargetSteerPos",
+      "address": "8C03BAB0",
+      "mapped_size": 342,
+      "outcome": "Body changed; 23 relative differences remain. No fixed-address match; restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Materialize the next path point before distance initializers, following the target early path load."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 54,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "SaveServer",
+      "address": "8C04B746",
+      "mapped_size": 600,
+      "outcome": "Zero-test form was neutral and not counted; pointer-local probe changed body but worsened 19 to 231 fixed-address differences. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Explicit zero string tests, then a local file pointer for the second scan to test target stack-spill order."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 55,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "_ReadGhostHeader",
+      "address": "8C04DCB2",
+      "mapped_size": 276,
+      "outcome": "Fixed-address body changes from 1 difference to 0. Accepted; no direct ReadGhostHeader edit needed.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Trace the sole BSR difference to the displaced verification helper and repair the target-backed SaveGhost stack layout."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 56,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "_ReadGhostData",
+      "address": "8C04DDC6",
+      "mapped_size": 268,
+      "outcome": "Fixed-address body changes from 1 difference to 0 after natural SaveGhost layout repair. Accepted.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Independently trace the sole BSR difference to _VerifyGhost and its upstream pool/layout shift."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 57,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "SavePlayerCoins",
+      "address": "8C04C890",
+      "mapped_size": 232,
+      "outcome": "227 and 175 fixed-address differences versus 89 baseline; target parameter spill unresolved. Both restored.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Use an explicit widened track local to test the target spill/reload lifetime, first unsigned then signed."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 58,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "DeleteGhost",
+      "address": "8C04E52A",
+      "mapped_size": 30,
+      "outcome": "Fixed-address body changes from 1 difference to 0; same PS_DeleteFile literal value. Accepted.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Trace the lone literal displacement to the oversized preceding pool caused by SaveGhost local layout."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 59,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "SaveGhost",
+      "address": "8C04E2F4",
+      "mapped_size": 566,
+      "outcome": "SaveGhost becomes exact at its original address; old accepted spans preserved. Accepted.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Reorder existing palette, pixels, extension and description locals to the observed stack offsets without changing any array size."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 60,
+      "lane": "simulation",
+      "unit": "save",
+      "function": "_ReadTraining",
+      "address": "8C04DC14",
+      "mapped_size": 110,
+      "outcome": "Target comparison opcode obtained, but scratch operands differ; 4 then 6 differences versus 3 after accepted layout repair. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Reverse relational source operand order, then test an explicit stamp local against the target unsigned strict comparison."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 61,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "AdjustSpeed",
+      "address": "8C03BC20",
+      "mapped_size": 230,
+      "outcome": "Second probe has 0 relative body differences but is displaced. Research only, zero credit.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Name the square-root speed result to reproduce the target result copy; retain target-proven multiply/add order."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 62,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "AdjustSteer",
+      "address": "8C03BD38",
+      "mapped_size": 104,
+      "outcome": "Clamp region improves but constant reload/register schedule remains; 56 then 49 relative differences. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Replace ternary clamp with if/else; test register-qualified model lifetime and correctly rounded pi literal."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 63,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "SetDroneResPathIndex",
+      "address": "8C03C460",
+      "mapped_size": 366,
+      "outcome": "Address-generation shape improves; pooled predecessor value and downstream pool displacements remain. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Express the proven game-car base and mpctl offset separately instead of a folded field address."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 64,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "FindSurfaceUvsInPlace",
+      "address": "8C049750",
+      "mapped_size": 152,
+      "outcome": "0 relative differences, but entry remains four bytes early. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Assign RoadPosition result inside the condition to test the target r0 test and delayed result copy."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 65,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "SetNewPathIndex",
+      "address": "8C03C5CE",
+      "mapped_size": 50,
+      "outcome": "0 relative body differences, but displaced. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Keep game-car base and target-proven mpctl offset separate rather than a folded address."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 66,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "FindDroneResPt",
+      "address": "8C049168",
+      "mapped_size": 234,
+      "outcome": "Body changes and shrinks four bytes, but allocation/frame mismatches remain. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Test unsigned path-index lifetime against the target spilled index and register-saving pattern."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 67,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "FinishResurrecting",
+      "address": "8C04A06C",
+      "mapped_size": 236,
+      "outcome": "Compiler does not produce target scalar shape; body grows and 222 relative differences remain. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Express the three position copies as a short-index vector loop, testing target scalar-copy scheduling."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 68,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "TraceToMain",
+      "address": "8C03C8A6",
+      "mapped_size": 134,
+      "outcome": "Isolated probe preserves linked address and size and changes its emitted pool byte; source recursion instructions unchanged. Still displaced with pool alignment differences; no credit.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Correct the nearest-path float literal to the exact target float under the pinned compiler truncation rule; this pool is inside TraceToMain mapped ownership."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 69,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "TraceToIndex",
+      "address": "8C03C9D4",
+      "mapped_size": 224,
+      "outcome": "Second probe matches all instructions; 2 literal displacements remain at a displaced address. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Test ternary zero clamp, then an explicit return after the terminal main-path case to reproduce store-before-branch scheduling."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 70,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "FindBestQuat",
+      "address": "8C049A08",
+      "mapped_size": 120,
+      "outcome": "Second probe yields 0 relative body differences, still four bytes early. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Reverse accumulator initialization order, then use chained zero assignment to reproduce register assignment and initialization."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 71,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "CheckCrash",
+      "address": "8C049FA4",
+      "mapped_size": 166,
+      "outcome": "Case ordering improves; flag scratch register and restart-store schedule still differ. Research only.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Place switch cases in target order (0,1,2,3); test explicit nonzero crashflag guard."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 72,
+      "lane": "simulation",
+      "unit": "resurrect",
+      "function": "BlinkResurrectingCars",
+      "address": "8C04A3DC",
+      "mapped_size": 226,
+      "outcome": "Body changes but allocation/loop differences remain (209 relative differences). Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Introduce a per-iteration car pointer to test the target car pointer-induction pattern."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 73,
+      "lane": "simulation",
+      "unit": "maxpath",
+      "function": "TargetSpeed",
+      "address": "8C03B9B4",
+      "mapped_size": 224,
+      "outcome": "Body changes, but literal-island placement and clamp scheduling remain wrong. Restore.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Use statement-form interpolation clamping to test target branch and constant lifetime."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 74,
+      "lane": "simulation",
+      "unit": "game",
+      "function": "_EndGame",
+      "address": "8C028D5C",
+      "mapped_size": 116,
+      "outcome": "Shared-pool repair produces 0 fixed-address differences. Register-loop negative probe gives 15 differences and is restored. Accepted dependency repair.",
+      "remaining_blocker": null,
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Trace all 16 differences to the shared pool, then restore its placement with the target empty-loop shape; separately reject a register-loop variant."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 75,
+      "lane": "simulation",
+      "unit": "game",
+      "function": "_CheckButtons",
+      "address": "8C028E5A",
+      "mapped_size": 22,
+      "outcome": "Exact at the original address; also restores the preceding shared pool and callers. Accepted.",
+      "remaining_blocker": null,
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Replace inherited goto loop with the ordinary signed-short empty for loop evidenced by target entry test and induction."
+      ],
+      "new_exact_selected_function_credit": 1
+    },
+    {
+      "id": 76,
+      "lane": "screens",
+      "unit": "videoscr",
+      "function": "initScreen",
+      "address": "8C05C6D2",
+      "mapped_size": 168,
+      "outcome": "parked; research-only shape improvement",
+      "remaining_blocker": "Upstream function lengths and shared literal pools still displace the body/callees; no fixed-address credit.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target has a separate increment/store and comparison value; split the preincrement expression into a statement and test."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 77,
+      "lane": "screens",
+      "unit": "videoscr",
+      "function": "uninitScreen",
+      "address": "8C05C88E",
+      "mapped_size": 74,
+      "outcome": "parked; research-only shape improvement",
+      "remaining_blocker": "Upstream function lengths and shared literal pools still displace the body/callees; no fixed-address credit.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target establishes zero in the preserved register before title-pointer reset; make the common cleanup value explicit."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 78,
+      "lane": "screens",
+      "unit": "videoscr",
+      "function": "animPanes",
+      "address": "8C05C92C",
+      "mapped_size": 166,
+      "outcome": "parked; research-only shape improvement",
+      "remaining_blocker": "Upstream function lengths and shared literal pools still displace the body/callees; no fixed-address credit.",
+      "associated_probe_records": 3,
+      "hypotheses": [
+        "Target y=10 is materialized before controller attachment expression; test that exact source sequencing within the pause branch.",
+        "Target materializes 10 only on the pause-menu branch and keeps it across the title/height calls; narrow the accumulator lifetime to that branch.",
+        "Target keeps a 10-valued accumulator in a preserved register across title/height calls, then adds doubled line height."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 79,
+      "lane": "screens",
+      "unit": "videoscr",
+      "function": "validOption",
+      "address": "8C05D40C",
+      "mapped_size": 34,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target short-circuit gates item 2; test a direct guarded return against the existing eagerly loaded temporary."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 80,
+      "lane": "screens",
+      "unit": "audioscr",
+      "function": "_TitlePane",
+      "address": "8C0174C4",
+      "mapped_size": 190,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 3,
+      "hypotheses": [
+        "Target preserves center 160 and width separately until after the height call, rather than precomputing left/right locals.",
+        "Target first materializes 160 alongside width division after GetTextWidth; constrain the center lifetime to that point.",
+        "Target uses common 160 after width division; let expression constants be shared across the two pane calls without explicit center or edge locals."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 81,
+      "lane": "screens",
+      "unit": "audioscr",
+      "function": "uninitScreen",
+      "address": "8C017582",
+      "mapped_size": 88,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Test whether common-zero materialization follows naturally from literal pointer/flag resets; target retains zero in r14."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 82,
+      "lane": "screens",
+      "unit": "audioscr",
+      "function": "uninitButtons",
+      "address": "8C0182CC",
+      "mapped_size": 120,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target uses 64-byte pointer induction and an unsigned endpoint comparison; test direct pointer traversal instead of source index induction."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 83,
+      "lane": "screens",
+      "unit": "pausescr",
+      "function": "setPauseState",
+      "address": "8C04751E",
+      "mapped_size": 12,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Explicit address local also perturbs inlined callers and loses the old exact wrapper in this rejected trial; all effects restored.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target loads the state global address before cleanup call; test whether an explicit address local affects that standalone scheduling."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 84,
+      "lane": "screens",
+      "unit": "pausescr",
+      "function": "animPause",
+      "address": "8C04752A",
+      "mapped_size": 48,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Target materializes a canonical Boolean for Hidden; test whether a signed-byte Boolean local, as used by neighboring screen flags, explains its argument conversion.",
+        "Target skips the palette/update sequence when Hidden returns nonzero; test positive visible-block form against an early return."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 85,
+      "lane": "screens",
+      "unit": "pausescr",
+      "function": "animTitleText",
+      "address": "8C047590",
+      "mapped_size": 256,
+      "outcome": "parked; research-only shape improvement",
+      "remaining_blocker": "Upstream function lengths and shared literal pools still displace the body/callees; no fixed-address credit.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Target keeps one string pointer in r14 and avoids the baseline extra preserved register; narrow temporary string assignment to only branches using the buffer.",
+        "Target uses one preserved pointer both as the formatting destination and selected text; route the two format calls and empty-string store through str instead of independently naming str1."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 86,
+      "lane": "screens",
+      "unit": "pausescr",
+      "function": "animRumblePane",
+      "address": "8C047B44",
+      "mapped_size": 102,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target computes paired rumble ports and reloads the controller between calls; test a once-per-player port local to determine the call-lifetime requirement."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 87,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "menuItemValid",
+      "address": "8C07C50C",
+      "mapped_size": 74,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target gates the distinct item 3/0/1 cases; test native switch dispatch versus a short-circuit conjunction."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 88,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "getFinishedStr",
+      "address": "8C07C5A0",
+      "mapped_size": 108,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target reloads the track for pluralization after string calls; test cached numeric argument lifetime while preserving formatting and call order."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 89,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "getToGoStr",
+      "address": "8C07C60C",
+      "mapped_size": 124,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target repeats remaining-track subtraction after string calls; test whether a named remaining-progress local reproduces that lifetime or wrongly caches it."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 90,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "getPlaceStr",
+      "address": "8C07C688",
+      "mapped_size": 92,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target carries player index across Strcpy then computes the ordinal; test preserving the narrow place instead of the index across that string-only call."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 91,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "getPointsStr",
+      "address": "8C07C71C",
+      "mapped_size": 84,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target zero-extends the points halfword after Strcpy; test unsigned numeric local lifetime across that string-only call."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 92,
+      "lane": "screens",
+      "unit": "circuitscr",
+      "function": "getFinishPlaceStr",
+      "address": "8C07C770",
+      "mapped_size": 92,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target finish-place helper uses a distinct heading but the same ordinal lookup; test preserving the ordinal rather than player index across Strcpy."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 93,
+      "lane": "screens",
+      "unit": "playerscr",
+      "function": "updatePlayer",
+      "address": "8C0801C4",
+      "mapped_size": 86,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target returns without state transition when the selected profile remains on the list; test a direct successful-search return instead of loop break plus null test."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 94,
+      "lane": "screens",
+      "unit": "playerscr",
+      "function": "controlWait",
+      "address": "8C080930",
+      "mapped_size": 78,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target tests the same cancel edge in the wait predicate and sound call; test an explicit edge snapshot instead of repeated member syntax."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 95,
+      "lane": "screens",
+      "unit": "playerscr",
+      "function": "controlControls",
+      "address": "8C08097E",
+      "mapped_size": 104,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target saves a player-record address across LockFile, then reloads its profile handle; test the competing handle-local lifetime after SaveFlush."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 96,
+      "lane": "screens",
+      "unit": "playerscr",
+      "function": "controlPakFull",
+      "address": "8C0814F8",
+      "mapped_size": 58,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target mask 7 recognizes three acknowledgment buttons; test whether separate equivalent edge predicates lower to the same combined-mask body."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 97,
+      "lane": "screens",
+      "unit": "playerscr",
+      "function": "claimPlayer",
+      "address": "8C0839A4",
+      "mapped_size": 44,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target reloads the profile through the handle after assignment; test direct profile local lifetime versus the handle-based form."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 98,
+      "lane": "screens",
+      "unit": "trackscr",
+      "function": "BlowFog",
+      "address": "8C08F202",
+      "mapped_size": 50,
+      "outcome": "parked; research-only shape improvement",
+      "remaining_blocker": "Upstream function lengths and shared literal pools still displace the body/callees; no fixed-address credit.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target branches to select a speed register and directly adds it to the tile coordinate; test statement selection rather than ternary result temporary."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 99,
+      "lane": "screens",
+      "unit": "trackscr",
+      "function": "clearTrackMap",
+      "address": "8C08F728",
+      "mapped_size": 36,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 2,
+      "hypotheses": [
+        "Target guards object removal and reset after unloading screen resources; test an early empty-object return against the conditional cleanup block.",
+        "Target retains object state across the remove call; test a named address local versus direct global accesses, with the resource-unload call order unchanged."
+      ],
+      "new_exact_selected_function_credit": 0
+    },
+    {
+      "id": 100,
+      "lane": "screens",
+      "unit": "trackscr",
+      "function": "unloadPathData",
+      "address": "8C091230",
+      "mapped_size": 28,
+      "outcome": "rejected; original source restored",
+      "remaining_blocker": "Probe changes real body instructions but does not reproduce the target better; baseline body/literal placement remains nonexact.",
+      "associated_probe_records": 1,
+      "hypotheses": [
+        "Target unconditionally resets the index after an optional unload; test equivalent omission of the redundant -1 store on the already-unloaded path."
+      ],
+      "new_exact_selected_function_credit": 0
+    }
+  ]
+}

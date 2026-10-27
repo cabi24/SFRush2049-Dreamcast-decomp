@@ -1,0 +1,140 @@
+diff --git a/src/maxpath.c b/src/maxpath.c
+index d3d9274..0846fd1 100644
+--- a/src/maxpath.c
++++ b/src/maxpath.c
+@@ -271,7 +271,7 @@ void FindMaxpathIntervals(void)
+         pos[0] = m->rwr[0];
+         pos[1] = m->rwr[1];
+         pos[2] = m->rwr[2];
+-        min = 1.0e20f;
++        min = 1.00000003e20f;
+         idx = 0;
+         path = -1;
+         i = gc->resIdx;
+@@ -475,7 +475,7 @@ void TargetSteerPos(tModelData *m, tPathPoint *cp)
+ void AdjustSpeed(tModelData *m, float tspd)
+ {
+     int node = m->slot;
+-    float x, y, z, delta_speed;
++    float x, y, z, speed, delta_speed;
+     tspd *= 1.05f;
+     if (gGravityScale <= 1 && (m->tires[0].slipflag == 40 || m->tires[1].slipflag == 40)) {
+         lastbrake[node] = 0.0f;
+@@ -484,7 +484,8 @@ void AdjustSpeed(tModelData *m, float tspd)
+         x = m->rwv[0];
+         y = m->rwv[1];
+         z = m->rwv[2];
+-        delta_speed = tspd - _builtin_sqrtf(x * x + y * y + z * z);
++        speed = _builtin_sqrtf(x * x + y * y + z * z);
++        delta_speed = tspd - speed;
+         if (delta_speed < 0.0f)
+             delta_speed *= 0.5f;
+         lastthrottle[node] += 0.183f * delta_speed;
+@@ -662,7 +663,7 @@ void AvoidAreas(signed short drone_index)
+ void SetDroneResPathIndex(tModelData *m, signed short path, signed short idx)
+ {
+     tPathPoint *cp;
+-    float min = 1.0e20f;
++    float min = 1.00000003e20f;
+     float x, y, z, dx, dy, dz, dist;
+     int p;
+     int end;
+@@ -675,7 +676,7 @@ void SetDroneResPathIndex(tModelData *m, signed short path, signed short idx)
+         y = gResPath.pts[idx][1];
+         z = gResPath.pts[idx][2];
+     }
+-    cp = &gGameCar[m->slot].mpctl;
++    cp = (tPathPoint *)((unsigned int)&gGameCar[m->slot] + 0x32C);
+     end = m->next_cp_index < m->last_cp_index ? gDronePaths[cp->path].numPts : gCheckpoints.points[m->next_cp_index].pathPts[1 + cp->path];
+     idx = 0;
+     for (p = gCheckpoints.points[m->last_cp_index].pathPts[1 + cp->path]; p < end; p++) {
+@@ -696,7 +697,7 @@ void SetDroneResPathIndex(tModelData *m, signed short path, signed short idx)
+ /* 0x80027d24, 0x40 bytes */
+ void SetNewPathIndex(tModelData *m, signed short idx)
+ {
+-    tPathPoint *cp = &gGameCar[m->slot].mpctl;
++    tPathPoint *cp = (tPathPoint *)((unsigned int)&gGameCar[m->slot] + 0x32C);
+     cp->idx = idx;
+     cp->interval_time = gModelTime;
+     cp->newIdx = -1;
+@@ -707,7 +708,7 @@ void SetNewPathIndex(tModelData *m, signed short idx)
+ /* 0x80027d64, 0xdc bytes */
+ signed short FindClosestResPathPt(signed short *pos)
+ {
+-    float min = 1.0e20f;
++    float min = 1.00000003e20f;
+     float dx, dy, dz, dist;
+     int p;
+     signed short idx;
+@@ -726,7 +727,7 @@ signed short FindClosestResPathPt(signed short *pos)
+ 
+ signed short FindClosestPathPt(signed short *pos, signed short path)
+ {
+-    float min = 1.0e20f;
++    float min = 1.00000003e20f;
+     float dx, dy, dz, dist;
+     int p;
+     signed short idx;
+@@ -759,7 +760,7 @@ signed short FindClosestDronePathPtEfficiently(signed short *pos, signed short l
+     else
+         delta = gCheckpoints.points[lastCP + 1].pathPts[1 + path] - gCheckpoints.points[lastCP + 1].pathPts[1 + lastPath] - offset;
+     delta = delta < 0 ? -delta : delta;
+-    min = 1.0e20f;
++    min = 1.00000003e20f;
+     idx = 0;
+     delta = delta < 5 ? 5 : delta;
+     p = lastIdx + offset - delta;
+@@ -826,6 +827,7 @@ void TraceToIndex(int inPath, int inIdx, int toIdx, int *outPath, int *outIdx)
+         if (inIdx < gCheckpoints.points[gCheckpoints.loopPt].pathPts[0]) {
+             if (*outIdx < 0)
+                 *outIdx = 0;
++            return;
+         } else {
+             while (*outIdx < gCheckpoints.points[gCheckpoints.loopPt].pathPts[0])
+                 *outIdx += gResPath.numPts - gCheckpoints.points[gCheckpoints.loopPt].pathPts[0];
+diff --git a/src/resurrect.c b/src/resurrect.c
+index f031ed6..6d83ccd 100644
+--- a/src/resurrect.c
++++ b/src/resurrect.c
+@@ -468,8 +468,7 @@ int FindSurfaceUvsInPlace(float *inPos, float (*inUvs)[3], float (*uvs)[3])
+     surftyp *surf;
+     ExtractYaw(inUvs, &inYaw);
+     inYaw=-inYaw;
+-    surf=RoadPosition(inPos, snapPos, uvs);
+-    if (surf) {
++    if ((surf=RoadPosition(inPos, snapPos, uvs)) != 0) {
+         if (surf->flags & 0x2000) return 1;
+         ExtractYaw(uvs, &outYaw);
+         sine=sinf(inYaw+outYaw);
+@@ -536,8 +535,9 @@ void MakeQuatFromUvs(float (*uvs)[3], float *q)
+ void FindBestQuat(float *q1, float *q2)
+ {
+     signed short i;
+-    float dq1=0.0f;
+-    float dq2=0.0f;
++    float dq1;
++    float dq2;
++    dq1 = dq2 = 0.0f;
+     for (i = 0; i < 4; i++) {
+         dq1 += _builtin_fabsf(q1[i] - q2[i]);
+         dq2 += _builtin_fabsf(q1[i] + q2[i]);
+@@ -643,9 +643,6 @@ void CheckCrash(signed short drone_index)
+     tCarData *gc=&gGameCar[drone_index];
+     tModelData *m=&model[drone_index];
+     switch (gc->crash_state) {
+-    case 2:
+-    case 3:
+-        break;
+     case 0:
+         if (gc->dead <= 0 && m->crashflag) {
+             gc->restart=-1;
+@@ -663,6 +660,9 @@ void CheckCrash(signed short drone_index)
+                 gc->crash_state=2;
+         }
+         break;
++    case 2:
++    case 3:
++        break;
+     }
+ }
+ 
