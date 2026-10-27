@@ -301,3 +301,15 @@ Parked (size-exact, first differing instruction):
   r11/r12 the other way round.
 - SaveGhost 8C04E306: the two mov.w frame constants (-0x250, 0x230) sit in the opposite pool order;
   ours also emits a 0x200 constant (the pixel initializer copy) that the target does not.
+
+
+## 2026-10-27: InitWaves empty busy-wait shape
+
+Replacing the empty `while (volatile_read) {}` with `do {} while (volatile_read);`
+preserves the sequence of existing volatile reads, including the first test, but
+changes SHC scratch allocation. The latter exactly matches the 462-byte mapped
+InitWaves interval; only 460 emitted bytes count (two fill bytes are excluded).
+No type, volatility, flags, headers, maps or comparison rules changed. Independent
+baseline/candidate/negative/restored tests returned 9/0/2/0 differing bytes.
+Full 114-unit Linux integration preserves every previous accepted byte span.
+See docs/initwaves-match-20261027.md; the Linux workflow is reviewed separately.

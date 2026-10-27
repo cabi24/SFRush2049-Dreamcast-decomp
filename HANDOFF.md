@@ -1,5 +1,22 @@
 # HANDOFF â€” Rush 2049 Dreamcast matching decompilation
 
+## Verified InitWaves match — 2026-10-27
+
+InitWaves now adds **460 emitted code bytes and one exact function**. Verified totals:
+**79,014 / 569,664 game code/literal bytes (13.8703%)**,
+**148,345 / 1,123,492 image bytes (13.2039%)**, **519 / 1,555 game functions**.
+All earlier accepted spans are preserved. Independent replay, a deliberately incorrect
+control, and a full 114-unit integration build passed strict target comparison.
+
+This verification used the explicit pinned Linux/wibo toolchain under separate review,
+not the native-only wrappers at this commit. The new evidence is
+`evidence/linux-round1-integration-20261027.json`; its tool hashes describe that
+verification environment. `evidence/strict-integration-receipt.json` remains the
+historical native baseline and predates this source change. No claim of full raw
+Windows/Linux artifact equivalence or whole-game execution is made.
+See `docs/initwaves-match-20261027.md` for scope and reproduction requirements.
+
+
 Updated 2026-10-26. Read this first, then `BUILDING.md`, `map/README.md`, `include/README.md`,
 `pilot/lanes/toolchain/calibration.md` (compiler facts) and `tools/README.md` (tool provenance).
 `CODEX.md`, `overview.md` and `mat3-to-dreamcast-plan.md` are the earlier planning record.

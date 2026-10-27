@@ -31,7 +31,7 @@ const signed char gWaveReplace[315] = {
 void InitWaves(void)
 {
  int i;
- while (*(volatile signed char *)&gRenderInProgress) {}
+ do {} while (*(volatile signed char *)&gRenderInProgress);
  ZOID_Reset(); InitBlits();
  for (i=0;i<64;i++) {
   if (gWaveInstance[i].ptr && !gWaveInstance[i].locked) {
