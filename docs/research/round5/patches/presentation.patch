@@ -1,0 +1,246 @@
+--- a/src/HAL_text.c
++++ b/src/HAL_text.c
+@@ -72,7 +72,8 @@
+         _SetDefaults(&gFontColor, &gTrans, &gFontXpos, &gFontYpos, &gFontIndex, &gLeading, &gSpacing);
+         _HAL_SetFont(gFontIndex);
+         gFontAttribute &= 0x8000;
+-        for (i = 0; i < gBufLen;) {
++        i = 0;
++        while (gBufLen > i) {
+             switch (gBuffer[i++]) {
+                 case 0:
+                     _HAL_SetFont(gBuffer[i++]);
+@@ -357,9 +358,9 @@
+     }
+     if (!t[0] && (!dbl || !t[1]))
+         return 0;
++    nc = 0;
+     i = 0;
+     len = 0;
+-    nc = 0;
+     chPrev = -1;
+     while ((numChars < 0 || nc < numChars) && (t[i] || (dbl && t[i + 1]))) {
+         if (gFontHeader->nonProp)
+@@ -485,7 +486,7 @@
+     int i; /* r29 */
+     int x; /* r4 */
+     int x0; /* r28 */
+-    int y0; /* r27 */
++    register int y0; /* target retains Y across drawing calls */
+     int step; /* r26 */
+     int ch; /* r0 */
+     int chPrev; /* r5 */
+@@ -494,7 +495,7 @@
+     int dbl; /* r23 */
+     anon_kerns_value_c *l; /* r22 */
+     _SetupFontData(0);
+-    BlitScissor(0, 0, 639, 447);
++    BlitScissor(0, 0, 639, 479);
+     BlitSetAttribute(gFontAttribute);
+     BlitClearAttribute(~gFontAttribute);
+     BlitClearColors();
+@@ -560,7 +561,7 @@
+     fontColor->fore.rgba[3] = 255;
+     *trans = -1.0f;
+     *fontXpos = 0;
+-    *fontYpos = 0;
++    *fontYpos = 4;
+     *fontIndex = -1;
+     *leading = -1;
+     *spacing = -1;
+--- a/src/visuals.c
++++ b/src/visuals.c
+@@ -93,11 +93,9 @@
+ {
+     int i; /* r27 */
+     char partName[20]; /* stack */
+-    int objIndex;
+-    objIndex = slot * 9;
+-    for (i = 0; i < 9; i++, objIndex++) {
++    for (i = 0; i < 9; i++) {
+         sprintf(partName, CarPartFormat, CarNames[car], carObjNames[i]);
+-        gObjList[objIndex] = MBOX_FindObject_WORK(partName, model, model, 1);
++        gObjList[slot * 9 + i] = MBOX_FindObject_WORK(partName, model, model, 1);
+     }
+ }
+ 
+@@ -106,7 +104,7 @@
+     register int i; /* r4 */
+     gFreeVis = gEnvirons;
+     for (i = 0; i < 99; i++) {
+-        int next = i + 1;
++        unsigned int next = i + 1;
+         gEnvirons[i].next = &gEnvirons[next];
+         gEnvirons[i].objnum = -1;
+     }
+@@ -138,11 +136,10 @@
+ 
+ void InitCarVisuals(tCarData *gc)
+ {
+-    tVisual *v; /* r5 */
+-    signed short i; /* r6 */
+-    for (v = gc->visuals, i = 0; i < 22; i++, v++) {
+-        v->func = 0;
+-        v->objnum = -1;
++    signed short i;
++    for (i = 0; i < 22; i++) {
++        gc->visuals[i].func = 0;
++        gc->visuals[i].objnum = -1;
+     }
+ }
+ 
+@@ -203,6 +200,6 @@
+     else if (carObjNum == -1) {
+         flags |= 128;
+         mat = (tUVMatrix *)unitmatrix;
+-    } else mat = ((tUVMatrix **)gCarMatrices)[slot / 13 * 12 + carObjNum];
++    } else mat = ((tUVMatrix *(*)[12])gCarMatrices)[slot / 13][carObjNum];
+     return (signed short)MBOX_NewObjectCam(objnum, mat, camlink, parent, flags);
+ }
+--- a/src/stree.c
++++ b/src/stree.c
+@@ -105,8 +105,8 @@
+     if (midv < 0) midv++;
+     midh >>= 1;
+     midv >>= 1;
+-    q = posh >= midh;
+-    if (posv < midv) q += 2;
++    q = midh <= posh;
++    if (midv > posv) q += 2;
+     if (tp->flags & (1 << q)) {
+         tp = &stree[tp->child[q]];
+         if (tp == stree) return 0;
+@@ -649,9 +649,9 @@
+         temp[1] = lookat[1] - ipos[1];
+         temp[2] = lookat[2] - ipos[2];
+         NormalVector(temp);
+-        ipos[0] += 0.25f * temp[0];
+-        ipos[1] += 0.25f * temp[1];
+-        ipos[2] += 0.25f * temp[2];
++        ipos[0] = 0.25f * temp[0] + ipos[0];
++        ipos[1] = 0.25f * temp[1] + ipos[1];
++        ipos[2] = 0.25f * temp[2] + ipos[2];
+    }
+     return 0;
+ }
+@@ -806,43 +806,49 @@
+ void MoveCollisionObject(int num, float *trans)
+ {
+     unsigned int i;
++    int moved = 0;
++    int ipos[3];
++    float pos[3];
+     sverttyp *vp;
+     savetyp *s;
+     for (i = 0, s = save; i < savenum; s++, i++) {
+-        if (s->object == num) {
+-            float x, y, z;
+-            int ix, iy, iz;
++        if (s->object != num) continue;
++        moved++;
++        {
+             vp = &svert[s->vnum];
+-            x = ((vp->pos[0] << 5) + ((vp->overflow & 0x7c00) >> 10)) * (1.0f / 32.0f);
+-            y = ((vp->pos[1] << 5) + ((vp->overflow & 0x3e0) >> 5)) * (1.0f / 32.0f);
+-            z = ((vp->pos[2] << 5) + (vp->overflow & 31)) * (1.0f / 32.0f);
+-            x += trans[0];
+-            y += trans[1];
+-            z += trans[2];
++            pos[0] = ((vp->pos[0] << 5) + ((vp->overflow & 0x7c00) >> 10)) * (1.0f / 32.0f);
++            pos[1] = ((vp->pos[1] << 5) + ((vp->overflow & 0x3e0) >> 5)) * (1.0f / 32.0f);
++            pos[2] = ((vp->pos[2] << 5) + (vp->overflow & 31)) * (1.0f / 32.0f);
++            pos[0] += trans[0];
++            pos[1] += trans[1];
++            pos[2] += trans[2];
+             {
+-                float scaled = x * 32.0f;
+-                ix = scaled < 0.0f ? scaled - 0.5f : scaled + 0.5f;
++                float scaled = pos[0] * 32.0f;
++                ipos[0] = scaled + (scaled < 0.0f ? -0.5f : 0.5f);
+             }
+             {
+-                float scaled = y * 32.0f;
+-                iy = scaled < 0.0f ? scaled - 0.5f : scaled + 0.5f;
++                float scaled = pos[1] * 32.0f;
++                ipos[1] = scaled + (scaled < 0.0f ? -0.5f : 0.5f);
+             }
+             {
+-                float scaled = z * 32.0f;
+-                iz = scaled < 0.0f ? scaled - 0.5f : scaled + 0.5f;
+-            }
+-            vp->pos[0] = ix >> 5;
+-            vp->pos[1] = iy >> 5;
+-            vp->pos[2] = iz >> 5;
+-            vp->overflow = ((ix & 31) << 10) | ((iy & 31) << 5) | (iz & 31);
+-        }
+-    }
++                float scaled = pos[2] * 32.0f;
++                ipos[2] = scaled + (scaled < 0.0f ? -0.5f : 0.5f);
++            }
++            vp->pos[0] = ipos[0] >> 5;
++            vp->pos[1] = ipos[1] >> 5;
++            vp->pos[2] = ipos[2] >> 5;
++            vp->overflow = ((ipos[0] << 10) & 0x7c00) | ((ipos[1] << 5) & 0x3e0) | (ipos[2] & 31);
++        }
++    }
++    if (!moved) { }
+ }
+ 
+ /* 0x80046B98 */
+ void RotateCollisionObject(int num, float *ipos, float (*orig)[3], float (*uvs)[3])
+ {
+     unsigned int i;
++    int moved = 0;
++    int fixedPos[3];
+     float p0[3];
+     float vec[3];
+     float surfuvs[3][3];
+@@ -850,8 +856,9 @@
+     sverttyp *vp;
+     savetyp *s;
+     for (i = 0, s = save; i < savenum; s++, i++) {
+-        if (s->object == num) {
+-            int ix, iy, iz;
++        if (s->object != num) continue;
++        moved++;
++        {
+             mats2fcopy(s->uvs, surfuvs);
+             MulUVS(orig, surfuvs, newuvs);
+             MulUVS(uvs, newuvs, surfuvs);
+@@ -867,16 +874,17 @@
+             p0[0] = vec[0] + ipos[0];
+             p0[1] = vec[1] + ipos[1];
+             p0[2] = vec[2] + ipos[2];
+-            ix = p0[0] * 32.0f;
+-            iy = p0[1] * 32.0f;
+-            iz = p0[2] * 32.0f;
++            fixedPos[0] = p0[0] * 32.0f;
++            fixedPos[1] = p0[1] * 32.0f;
++            fixedPos[2] = p0[2] * 32.0f;
+             vp = &svert[s->vnum];
+-            vp->overflow = ((ix & 31) << 10) + ((iy & 31) << 5) + (iz & 31);
+-            vp->pos[0] = ix >> 5;
+-            vp->pos[1] = iy >> 5;
+-            vp->pos[2] = iz >> 5;
+-        }
+-    }
++            vp->overflow = ((fixedPos[0] & 31) << 10) + ((fixedPos[1] & 31) << 5) + (fixedPos[2] & 31);
++            vp->pos[0] = fixedPos[0] >> 5;
++            vp->pos[1] = fixedPos[1] >> 5;
++            vp->pos[2] = fixedPos[2] >> 5;
++        }
++    }
++    if (!moved) { }
+ }
+ 
+ /* 0x80046DBC */
+@@ -911,8 +919,8 @@
+     float massEffect, dz;
+     int i, whl;
+     surftyp *sp;
++    dz = c->dist;
+     whl = tireIndex[c->carEdge];
+-    dz = c->dist;
+     sp = c->surf;
+     tmp[0] = c->uvs[1][0] * dz;
+     tmp[1] = c->uvs[1][1] * dz;

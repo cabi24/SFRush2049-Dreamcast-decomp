@@ -1,0 +1,121 @@
+--- a/src/paksysdc.c
++++ b/src/paksysdc.c
+@@ -49,6 +49,5 @@
+ {
+     if (gPaks[pak].error == 14) return 0;
+     if (gPaks[pak].error == 2) return gPaks[pak].inserted;
+-    if (!gPaks[pak].inserted && !gPaks[pak].wasRemoved) return 1;
+-    return 0;
++    return !gPaks[pak].inserted && !gPaks[pak].wasRemoved;
+ }
+--- a/src/dc_misc_8C06B80C.c
++++ b/src/dc_misc_8C06B80C.c
+@@ -97,11 +97,10 @@
+ 
+ void func_8C06B954(void)
+ {
+-    if (dcFileCacheHeap) {
+-        func_8C03FF46(dcFileCacheHeap);
+-        dcFileCacheHeap=0;
+-        func_8C0D6B52();
+-    }
++    if (!dcFileCacheHeap) return;
++    func_8C03FF46(dcFileCacheHeap);
++    dcFileCacheHeap=0;
++    func_8C0D6B52();
+ }
+ 
+ void func_8C06B976(void)
+@@ -160,7 +159,7 @@
+ {
+     tDCFileCache **fileh;
+     for (fileh=list->head;fileh;fileh=(*fileh)->next)
+-        if (!strcmp((*fileh)->name,name)) return fileh;
++        if (!_builtin_strcmp((*fileh)->name,name)) return fileh;
+     return 0;
+ }
+ 
+@@ -171,7 +170,8 @@
+     tDCFileCache **fileh;
+     tDCFileCache *file;
+     unsigned int available;
+-    int compacted=0;
++    int compacted;
++    unsigned int needed;
+     int rating;
+     dcCacheMisses++;
+     dcCacheMissSize+=size;
+@@ -182,14 +182,16 @@
+         (*old)->lastAccess=dcNumLoads;
+         rating=func_8C06BDE6((*old)->accesses,0,size);
+     } else rating=func_8C06BDE6(1,0,size);
++    needed=size+508;
+     available=func_8C0401AA(dcFileCacheHeap);
++    compacted=0;
+     for (;;) {
+-        if (!compacted && available>=size+508) {
++        if (!compacted && available>=needed) {
+             compacted=1;
+             func_8C03FFBC(dcFileCacheHeap);
+             available=LargestAvailableMemoryHeapChunk(dcFileCacheHeap);
+         }
+-        if (compacted && available>=size+508) break;
++        if (compacted && available>=needed) break;
+         victim=dcCachedFiles.tail;
+         if (!victim || rating>=(*victim)->rating) {
+             if (old) return;
+@@ -198,7 +200,7 @@
+             (*fileh)->accesses=1;
+             (*fileh)->generation=0;
+             (*fileh)->lastAccess=dcNumLoads;
+-            strcpy((*fileh)->name,name);
++            _builtin_strcpy((*fileh)->name,name);
+             InsertLLE(&dcUnloadedFiles,fileh,dcUnloadedFiles.head);
+             return;
+         }
+@@ -224,7 +226,7 @@
+     file->lastAccess=dcNumLoads;
+     file->rating=rating;
+     file->size=size;
+-    strcpy(file->name,name);
++    _builtin_strcpy(file->name,name);
+     memcpy(file+1,buffer,size);
+     func_8C06BE4C(fileh);
+ }
+--- a/src/dc_sound_8C069F78.c
++++ b/src/dc_sound_8C069F78.c
+@@ -90,8 +90,8 @@
+  if(commandDelay8C0C7C40){commandDelay8C0C7C40--;return;}
+  for(p=midiPending8C177B5C.head;p;p=next) {
+   next=p->next;
+-  if(p->cancel)func_8C06A348(p,0);
+-  else {
++  if(p->cancel){func_8C06A348(p,0);continue;}
++  {
+    func_8C06A39C(p);func_8C06A48C(p);
+    RemoveLLE((tDLList *)&midiPending8C177B5C,p);
+    InsertLLE((tDLList *)&midiActive8C177B4C,p,midiActive8C177B4C.head);
+@@ -115,9 +115,10 @@
+ 
+ void func_8C06A39C(tMidiJob *p)
+ {
+- sdkPath8C09FCC6(&p->state,p->path);
+- sdkBuffers8C09FBB6(&p->state,p->readBuffer1,p->readBytes,p->workHandle,p->workBytes);
+- sdkReadBuffer8C09FAF4(&p->state,p->readBuffer2);
++ /* Research-only: target retains each SDK status test; diagnostic macro unknown. */
++ if(sdkPath8C09FCC6(&p->state,p->path)) {}
++ if(sdkBuffers8C09FBB6(&p->state,p->readBuffer1,p->readBytes,p->workHandle,p->workBytes)) {}
++ if(sdkReadBuffer8C09FAF4(&p->state,p->readBuffer2)) {}
+ }
+ 
+ void func_8C06A3E0(tMidiJob *p)
+@@ -129,7 +130,8 @@
+ void func_8C06A40E(tMidiJob *p)
+ {
+  commandDelay8C0C7C40=0;p->stopIssued=1;
+- if(func_8C06A462(p))sdkStop8C09FD6A(&p->state);
++ /* Research-only: retained SDK status predicate, not a recovered assertion. */
++ if(func_8C06A462(p)) { if(sdkStop8C09FD6A(&p->state)) {} }
+ }
+ 
+ int func_8C06A438(tMidiJob *p)
