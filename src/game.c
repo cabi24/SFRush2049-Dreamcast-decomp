@@ -346,6 +346,8 @@ void PlayGame(void)
     int i;
     signed short slot;
     int camera;
+    tModelData *m;
+    tCarData *car;
     Update_MDrive();
     if (gRace == kStunt) CheckForStunt();
     else if (gRace == kBattle) { ShotUpdate(); UpdateBattlePowerUps(); }
@@ -356,35 +358,35 @@ void PlayGame(void)
     }
     UpdateSmoke();
     UpdateArrowVis();
-    for (i = 0; i < gNumActiveCars; i++) {
+    for (i = 0, m = model, car = gGameCar; i < gNumActiveCars; i++, m++, car++) {
         /* DC restart dispatch has negative and positive byte tests. */
-        signed char restart = gGameCar[i].restart;
-        slot = model[i].slot;
+        signed char restart = car->restart;
+        slot = m->slot;
         if (restart < 0) {
-            camera = gGameCar[i].camera;
+            camera = car->camera;
             if (!(gGameState & 8) && slot < gNumPlayers) gPlayers[slot].numCrashes++;
             if (camera >= 0) {
-                gGameCar[i].saveview = gGameCar[i].view;
-                gGameCar[i].view = 4;
+                car->saveview = car->view;
+                car->view = 4;
                 gCamera[camera].fcam.uvs[3][0] = gCamera[camera].mat.uvs[3][0];
                 gCamera[camera].fcam.uvs[3][1] = gCamera[camera].mat.uvs[3][1];
                 gCamera[camera].fcam.uvs[3][2] = gCamera[camera].mat.uvs[3][2];
             }
             StartBlast(&slot, 1, 1.0f, 0);
-            StopCarSounds(&model[i]);
-            if (model[i].drone_type == 2) {
-                if (gRace != kGhost || !gGhosts[model[i].slot] || (*(*gGhosts[model[i].slot])->header)->flag < 0)
-                    PlayGameSound(9, model[i].slot, 1, 1);
-            } else EmitGameSound(model[i].rwr, unitmatrix[3], 400.0f, 0.0f, 1.0f, 0.0f, 9, model[i].slot, 0, 128);
+            StopCarSounds(m);
+            if (m->drone_type == 2) {
+                if (gRace != kGhost || !gGhosts[m->slot] || (*(*gGhosts[m->slot])->header)->flag < 0)
+                    PlayGameSound(9, m->slot, 1, 1);
+            } else EmitGameSound(m->rwr, unitmatrix[3], 400.0f, 0.0f, 1.0f, 0.0f, 9, m->slot, 0, 128);
             if (gRace == kStunt) CrashedStunt(slot);
-            gGameCar[i].restart = 0;
-        } else if (gGameCar[i].restart > 0) {
+            car->restart = 0;
+        } else if (car->restart > 0) {
             InitSmokeBlast(slot);
-            if (gGameCar[i].camera >= 0) {
-                gGameCar[i].view = gGameCar[i].saveview;
-                SetCameraView(gGameCar[i].camera);
+            if (car->camera >= 0) {
+                car->view = car->saveview;
+                SetCameraView(car->camera);
             }
-            gGameCar[i].restart = 0;
+            car->restart = 0;
         }
         UpdateVisuals(slot);
         if (gLink[slot].owner == 0 || gLink[slot].owner == 6) {
