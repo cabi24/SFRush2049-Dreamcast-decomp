@@ -14,7 +14,7 @@ extern dcVisualRomBase gRomObjDefPtrs[];
 extern dcVisualTexBase gTexDefPtrs[];
 extern tCarLoadLink gLink[];
 extern const char *CarNames[];
-extern volatile signed char gNumModels;
+extern volatile unsigned char gNumModels;
 extern signed char gMineCones,gCarMines;
 extern unsigned int gGameState;
 extern tUVMatrix *gCarMatrices[];

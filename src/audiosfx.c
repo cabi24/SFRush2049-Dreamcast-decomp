@@ -193,7 +193,8 @@ int func_8C016538(tSfxVoice **theSound)
             gSfxInstances[i].stopAll=0;
             gSfxInstances[i].fail=0;
             gSfxInstances[i].index=(gNextIndex<<8)|i;
-            gNextIndex=gNextIndex>=0xffffff?1:gNextIndex+1;
+            if (gNextIndex >= 0xffffff) gNextIndex=1;
+            else gNextIndex++;
             *theSound=&gSfxInstances[i];
             return 1;
         }

@@ -179,29 +179,31 @@ static void _CheckRoll(int p)
             aW[0] = _builtin_fabsf(plyrInfo->stuntW[0][0]);
             aW[1] = _builtin_fabsf(plyrInfo->stuntW[0][1]);
             aW[2] = _builtin_fabsf(plyrInfo->stuntW[0][2]);
-            if (aW[0] > 1.2566371f || aW[1] > 0.471238911151885986328125f) {
+            if (aW[0] > 1.2566371f || aW[1] > 0.47123893f) {
                 plyrInfo->active &= ~0x20;
             } else if ((aW[2] > 2.5132742f && aW[2] < 3.7699113f) ||
                 ((chW2 || j >= 1 || (gc->appearance & 0x100000)) && aW[2] > 1.727876f)) {
                 plyrInfo->active &= ~0x80;
                 if (plyrInfo->stuntW[0][2] > 0.0f) {
                     _AddStunt(p, 3);
-                    plyrInfo->stuntW[0][2] += -3.1415927410125732421875f;
+                    plyrInfo->stuntW[0][2] += -3.1415928f;
                 } else {
                     _AddStunt(p, 2);
-                    plyrInfo->stuntW[0][2] += 3.1415927410125732421875f;
+                    plyrInfo->stuntW[0][2] += 3.1415928f;
                 }
                 plyrInfo->stuntW[0][0] = plyrInfo->stuntW[0][1] = 0.0f;
             }
         }
     } else {
-        float *absW = GCabsW;
-        if (okToStart && absW[2] > absW[1] &&
-            absW[2] > absW[0]) {
+        if (okToStart) {
+          float *absW = GCabsW;
+          float z = absW[2];
+          if (z > absW[1] && z > absW[0]) {
             plyrInfo->active |= 0x20;
             plyrInfo->stuntW[0][0] = gc->stuntW[0];
             plyrInfo->stuntW[0][1] = gc->stuntW[1];
             plyrInfo->stuntW[0][2] = gc->stuntW[2];
+          }
         }
     }
 }
@@ -210,7 +212,6 @@ static void _CheckSpin(int p)
 {
     tCarData *gc = &gGameCar[p];
     tStuntInfo *plyrInfo = &gStuntInfo[p];
-    float *absW = GCabsW;
     if (plyrInfo->active & 0x10) {
         if (chW1 || j >= 3)
             plyrInfo->active &= ~0x10;
@@ -224,30 +225,32 @@ static void _CheckSpin(int p)
             aW[0] = _builtin_fabsf(plyrInfo->stuntW[2][0]);
             aW[1] = _builtin_fabsf(plyrInfo->stuntW[2][1]);
             aW[2] = _builtin_fabsf(plyrInfo->stuntW[2][2]);
-            if (aW[0] > 0.471238911151885986328125f || aW[2] > 0.471238911151885986328125f) {
+            if (aW[0] > 0.47123893f || aW[2] > 0.47123893f) {
                 plyrInfo->active &= ~0x10;
             } else if ((aW[1] > 2.5132742f && aW[1] < 3.7699113f) ||
                 ((chW1 || j >= 1 || (gc->appearance & 0x100000)) && aW[1] > 1.727876f)) {
                 plyrInfo->active &= ~0x80;
                 _AddStunt(p, 4);
-                plyrInfo->stuntW[2][1] += plyrInfo->stuntW[2][1] > 0.0f ? -3.1415927410125732421875f : 3.1415927410125732421875f;
+                plyrInfo->stuntW[2][1] += plyrInfo->stuntW[2][1] > 0.0f ? -3.1415928f : 3.1415928f;
                 plyrInfo->stuntW[2][0] = plyrInfo->stuntW[2][2] = 0.0f;
             }
         }
-    } else if (okToStart && absW[1] > absW[0] &&
-               absW[1] > absW[2]) {
+    } else if (okToStart) {
+      float *absW = GCabsW;
+      float z = absW[1];
+      if (z > absW[0] && z > absW[2]) {
         plyrInfo->active |= 0x10;
         plyrInfo->stuntW[2][0] = gc->stuntW[0];
         plyrInfo->stuntW[2][1] = gc->stuntW[1];
         plyrInfo->stuntW[2][2] = gc->stuntW[2];
     }
+  }
 }
 
 static void _CheckFlip(int p)
 {
     tCarData *gc = &gGameCar[p];
     tStuntInfo *plyrInfo = &gStuntInfo[p];
-    float *absW = GCabsW;
     if (plyrInfo->active & 0x40) {
         if (chW0 || j >= 3)
             plyrInfo->active &= ~0x40;
@@ -261,28 +264,31 @@ static void _CheckFlip(int p)
             aW[0] = _builtin_fabsf(plyrInfo->stuntW[1][0]);
             aW[1] = _builtin_fabsf(plyrInfo->stuntW[1][1]);
             aW[2] = _builtin_fabsf(plyrInfo->stuntW[1][2]);
-            if (aW[1] > 0.471238911151885986328125f || aW[2] > 0.471238911151885986328125f) {
+            if (aW[1] > 0.47123893f || aW[2] > 0.47123893f) {
                 plyrInfo->active &= ~0x40;
             } else if ((aW[0] > 2.5132742f && aW[0] < 3.7699113f) ||
                 ((chW0 || j >= 1 || (gc->appearance & 0x100000)) && aW[0] > 1.727876f)) {
                 plyrInfo->active &= ~0x80;
                 if (plyrInfo->stuntW[1][0] > 0.0f) {
                     _AddStunt(p, 0);
-                    plyrInfo->stuntW[1][0] += -3.1415927410125732421875f;
+                    plyrInfo->stuntW[1][0] += -3.1415928f;
                 } else {
                     _AddStunt(p, 1);
-                    plyrInfo->stuntW[1][0] += 3.1415927410125732421875f;
+                    plyrInfo->stuntW[1][0] += 3.1415928f;
                 }
                 plyrInfo->stuntW[1][1] = plyrInfo->stuntW[1][2] = 0.0f;
             }
         }
-    } else if (okToStart && absW[0] > absW[1] &&
-               absW[0] > absW[2]) {
+    } else if (okToStart) {
+      float *absW = GCabsW;
+      float z = absW[0];
+      if (z > absW[1] && z > absW[2]) {
         plyrInfo->active |= 0x40;
         plyrInfo->stuntW[1][0] = gc->stuntW[0];
         plyrInfo->stuntW[1][1] = gc->stuntW[1];
         plyrInfo->stuntW[1][2] = gc->stuntW[2];
     }
+  }
 }
 
 static void _CheckMulti(int p)
@@ -298,16 +304,19 @@ static void _CheckMulti(int p)
             plyrInfo->stuntW[3][2] += _builtin_fabsf(gc->stuntW[2]);
         }
         c = 0;
-        if (plyrInfo->stuntW[3][0] > 0.471238911151885986328125f) c++;
-        if (plyrInfo->stuntW[3][1] > 0.471238911151885986328125f) c++;
-        if (plyrInfo->stuntW[3][2] > 0.471238911151885986328125f) c++;
-        if (c >= 2 && (plyrInfo->stuntW[3][2] +
-                      (plyrInfo->stuntW[3][0] + plyrInfo->stuntW[3][1])) >= 3.1415927410125732421875f) {
+        if (plyrInfo->stuntW[3][0] > 0.47123893f) c++;
+        if (plyrInfo->stuntW[3][1] > 0.47123893f) c++;
+        if (plyrInfo->stuntW[3][2] > 0.47123893f) c++;
+        if (c >= 2) {
+          float *w = plyrInfo->stuntW[3];
+          float sum = w[0] + w[1];
+          if (sum + w[2] >= 3.1415928f) {
             plyrInfo->active &= ~0x70;
             _AddStunt(p, 5);
             plyrInfo->stuntW[3][0] = 0.0f;
             plyrInfo->stuntW[3][1] = 0.0f;
             plyrInfo->stuntW[3][2] = 0.0f;
+          }
         }
     } else if (okToStart) {
         plyrInfo->active |= 0x80;

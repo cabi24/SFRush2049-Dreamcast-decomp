@@ -155,18 +155,22 @@ static void _ControlFileDel(void)
 {
     if (gActiveAutoEdges & 0x400) {
         AudPlayEffect(8, 0, 1, 0);
-        if (--gDeleteSelect < 0) gDeleteSelect = gDeleteSize - 1;
+        gDeleteSelect--;
+        if (gDeleteSelect < 0) gDeleteSelect = gDeleteSize - 1;
         if (gDeleteSize > gDeleteHeight) {
             if (gDeleteSelPos == 0) {
-                if (--gDeleteSelTop < 0) gDeleteSelTop = gDeleteSize - 1;
+                gDeleteSelTop--;
+                if (gDeleteSelTop < 0) gDeleteSelTop = gDeleteSize - 1;
             } else gDeleteSelPos--;
         }
     } else if (gActiveAutoEdges & 0x800) {
         AudPlayEffect(2, 0, 1, 0);
-        if (++gDeleteSelect >= gDeleteSize) gDeleteSelect = 0;
+        gDeleteSelect++;
+        if (gDeleteSelect >= gDeleteSize) gDeleteSelect = 0;
         if (gDeleteSize > gDeleteHeight) {
             if (gDeleteSelPos == gDeleteHeight - 1) {
-                if (++gDeleteSelTop >= gDeleteSize) gDeleteSelTop = 0;
+                gDeleteSelTop++;
+                if (gDeleteSelTop >= gDeleteSize) gDeleteSelTop = 0;
             } else gDeleteSelPos++;
         }
     }

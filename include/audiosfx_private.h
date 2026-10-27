@@ -73,7 +73,7 @@ extern int func_8C06AF30(float, float);
 extern int func_8C0A2A60(unsigned int, int, DcAudioHandle *);
 extern int func_8C0A2BF0(DcAudioHandle *);
 extern int func_8C0A29BE(DcAudioHandle *);
-extern int func_8C0A2DB2(DcAudioHandle *, signed char);
+extern int func_8C0A2DB2(DcAudioHandle *, int);
 extern int func_8C0A2E1C(DcAudioHandle *, unsigned int);
 extern int func_8C0A2C26(DcAudioHandle *, unsigned int *);
 extern int func_8C0A3118(DcAudioHandle *);

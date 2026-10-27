@@ -1,5 +1,17 @@
 # San Francisco Rush 2049 (Dreamcast) decompilation
 
+## Latest verified matches — round 3, 2026-10-27
+
+**84,326/569,664 game code/literal bytes (14.8028%)**,
+**153,657/1,123,492 image bytes (13.6767%)**, **533/1,555 game functions**.
+The50-target round adds2,930 emitted bytes and9 exact functions with all previous
+credited addresses preserved. Full114-unit build, strict audit, negative controls
+and six credit tests passed. See docs/round3-matching.md and the dedicated
+evidence/linux-round3-integration-20261027.json. Verification used the separately
+reviewed pinned Linux workflow; native wrappers and historical native receipts
+remain unchanged in this source-only commit. Older snapshots below are historical.
+
+
 ## Latest verified matches — round 2, 2026-10-27
 
 **81,396 / 569,664 game code/literal bytes (14.2884%)**,

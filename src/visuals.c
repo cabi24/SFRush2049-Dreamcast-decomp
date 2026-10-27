@@ -54,7 +54,7 @@ static float TSCLS[3] = { 0.60000003129243851f, 1.700000062584877f, 2.5f };
 
 void InitTrackDynamicObjs(void)
 {
-    register int i;
+    int i;
     for (i = 469; i < 530; i++)
         gObjList[i] = MBOX_FindObject_WORK(ObjNames[i - 469], 0, gNumModels - 1, 0);
     gRomObjDefPtrs[gObjList[528] >> 10].romObjDefs[gObjList[528] & 1023].radius = 100.0f;
