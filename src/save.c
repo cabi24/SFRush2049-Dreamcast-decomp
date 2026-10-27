@@ -1282,11 +1282,11 @@ tGhostFile **CompressGhost(tSaveHeader *header, unsigned char *blocks)
 /* Map name func_8C04E2F4. The DC names the file with a generated extension instead of "TRN". */
 int SaveGhost(int pak, void *unused, tGhostFile **saveGhosth, int limbo)
 {
-    /* Declared before the palette: the frame has the palette lowest, then ext (sp+32) and str (sp+48). */
-    char str[32];
-    char ext[16]; /* frame 0x250: twelve bytes more than ext[4] */
+    /* Target stack layout: strings, icon pixels, then the palette. */
     signed short ghostPalette[16] = { SAVE_GHOST_PALETTE };
     char ghostPixels[512] = { SAVE_GHOST_PIXELS };
+    char ext[16];
+    char str[32];
     tGhostFile *ghost;
     tGhostFile **before;
     tSaveHeader *header;

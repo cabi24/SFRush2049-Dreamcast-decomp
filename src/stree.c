@@ -159,14 +159,15 @@ unsigned short DecodeVlist(unsigned char *vlp, int vnum, unsigned short *vlnum)
         next = (vlp[0] << 8) + vlp[1];
         vlp += 2;
         if (vnum > 1 && vlp[0] >= 0xe0) {
-            cnt = *vlp++ & 0x1f;
+            cnt = *vlp++ & ~0xe0;
         } else cnt = 0;
         vnum -= cnt + 1;
         do {
             *vlnum++ = next++;
         } while (--cnt >= 0);
    }
-    return (vlp[0] << 8) + vlp[1];
+    next = (vlp[0] << 8) + vlp[1];
+    return next;
 }
 
 /* Retain recovered geometric helpers while their callers remain unmatched. */
@@ -185,7 +186,9 @@ void surfpos(float *pos, float (*uvs)[3], float *pt, float *rpt)
 int VectorToSurfEdge(float *tpos, float *cpos, float *epos, float radiussq)
 {
     float t;
-    t = (cpos[0] * tpos[0] + cpos[2] * tpos[2]) / (tpos[0] * tpos[0] + tpos[2] * tpos[2]);
+    float denom;
+    denom = tpos[0] * tpos[0] + tpos[2] * tpos[2];
+    t = (cpos[0] * tpos[0] + cpos[2] * tpos[2]) / denom;
     if (t < 0.0f) {
         epos[0] = unitmatrix[3][0] - cpos[0];
         epos[1] = 0.0f;
@@ -200,7 +203,8 @@ int VectorToSurfEdge(float *tpos, float *cpos, float *epos, float radiussq)
         epos[2] = tpos[2] * t - cpos[2];
     }
     epos[1] = 0.0f;
-    return !(epos[0] * epos[0] + epos[2] * epos[2] >= radiussq);
+    if (epos[0] * epos[0] + epos[2] * epos[2] >= radiussq) return 0;
+    return 1;
 }
 
 

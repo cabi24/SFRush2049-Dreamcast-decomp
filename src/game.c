@@ -453,12 +453,8 @@ void CarSetup(void)
 void _CheckButtons(void)
 {
     signed short i;
-    i = 0;
-    goto test;
-again:
-    i++;
-test:
-    if (i < gNumPlayers) goto again;
+    for (i = 0; i < gNumPlayers; i++) {
+    }
 }
 
 void _CalcPolePositions(void)

@@ -8,6 +8,8 @@ static float gDepth=-1.0f;
 static float gTrans=-1.0f;
 static signed char gBufferInited=0;
 
+/* Residual validity comparisons below are present in the target without
+ * an error branch; no original assertion implementation is assumed. */
 void HAL_InitText(void);
 void HAL_StartText(void);
 void HAL_FinishText(signed char end);
@@ -53,10 +55,8 @@ void HAL_StartText(void)
     _GetSemaphore();
     _SetDefaults(&gFontColor, &gTrans, &gFontXpos, &gFontYpos, &gFontIndex, &gLeading, &gSpacing);
     _HAL_SetFont(gFontIndex);
-    gFontAttribute = 0;
+    gFontAttribute = gBufferInited = gFinished = 0;
     gFontAttribute |= 0x8000;
-    gBufferInited = 0;
-    gFinished = 0;
     _ReleaseSemaphore();
 }
 
@@ -116,12 +116,14 @@ int _HAL_SetFont(int fontID)
     old = gFontIndex;
     gFontIndex = fontID;
     if (fontID != -1) {
-        gFontDatWaveInst = FindWaveInstance(gFontIndex + 24);
-        if (gFontDatWaveInst < 0)
-            LockWaveInstance(gFontDatWaveInst = LoadWave(gFontIndex + 24, 0, 0, 1, 0));
-        gFontTexWaveInst = FindWaveInstance(gFontIndex + 8);
-        if (gFontTexWaveInst < 0)
-            LockWaveInstance(gFontTexWaveInst = LoadWave(gFontIndex + 8, 0, 0, 0, gFontHeap));
+        if ((gFontDatWaveInst = FindWaveInstance(gFontIndex + 24)) < 0) {
+            gFontDatWaveInst = LoadWave(gFontIndex + 24, 0, 0, 1, 0);
+            LockWaveInstance(gFontDatWaveInst);
+        }
+        if ((gFontTexWaveInst = FindWaveInstance(gFontIndex + 8)) < 0) {
+            gFontTexWaveInst = LoadWave(gFontIndex + 8, 0, 0, 0, gFontHeap);
+            LockWaveInstance(gFontTexWaveInst);
+        }
         _SetupFontData(old != fontID);
     }
     if (fontID == 0)
@@ -164,8 +166,6 @@ void _SetupFontData(int force)
         gFontHeader = (void *)data;
         data += sizeof(*gFontHeader);
         gFontLetters = (void *)data;
-        for (i = 0; i < gFontHeader->numChars; i++) {
-        }
         data += gFontHeader->numChars * sizeof(*gFontLetters);
         if (gFontHeader->kern)
             for (i = 0; i < gFontHeader->numChars; i++) {
@@ -176,6 +176,7 @@ void _SetupFontData(int force)
             gCharMap[i] = -1;
         for (i = 0; i < gFontHeader->numChars; i++)
             gCharMap[gFontLetters[i].value] = i;
+        if (gFontHeader->numTextures > 16) { }
     }
     if (force) {
         for (i = 0; i < gFontHeader->numTextures; i++)
@@ -245,6 +246,7 @@ void HAL_SetTextPos(signed short x, signed short y)
 void HAL_SetFontLeading(signed short leading)
 {
     if (leading < 0) {
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
         gLeading = gFontHeader->leading;
     } else
@@ -255,6 +257,7 @@ void HAL_SetFontLeading(signed short leading)
 void HAL_SetFontSpacing(signed short spacing)
 {
     if (spacing < 0) {
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
         gSpacing = gFontHeader->spacing;
     } else
@@ -265,6 +268,7 @@ void HAL_SetFontSpacing(signed short spacing)
 signed char HAL_SetFontFixedWidth(signed char fixedWidth)
 {
     signed char retFixedWidth; /* r3 */
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     retFixedWidth = gFontHeader->nonProp;
     gFontHeader->nonProp = fixedWidth;
@@ -274,6 +278,7 @@ signed char HAL_SetFontFixedWidth(signed char fixedWidth)
 /* 0x8001ac34, size 0x58 */
 unsigned char HAL_GetFontAscent(void)
 {
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     return gFontHeader->ascent / 2.0f;
 }
@@ -281,6 +286,7 @@ unsigned char HAL_GetFontAscent(void)
 /* 0x8001ac8c, size 0x58 */
 unsigned char HAL_GetFontDescent(void)
 {
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     return gFontHeader->descent / 2.0f;
 }
@@ -288,12 +294,14 @@ unsigned char HAL_GetFontDescent(void)
 /* 0x8001ace4, size 0x44 */
 signed char HAL_GetFontLeading(void)
 {
+    if (gFontIndex == -1) { }
     return gLeading / 2.0f;
 }
 
 /* 0x8001ad28, size 0x1c */
 signed char HAL_GetFontSpacing(void)
 {
+    if (gFontIndex == -1) { }
     return gSpacing / 2;
 }
 
@@ -301,6 +309,7 @@ signed char HAL_GetFontSpacing(void)
 void HAL_GetFontChars(unsigned char *out)
 {
     int i;
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     for (i=0;i<gFontHeader->numChars;i++) out[i]=gFontLetters[i].value;
     out[i]=0;
@@ -310,6 +319,7 @@ void HAL_GetFontChars(unsigned char *out)
 unsigned int HAL_GetCharWidth(unsigned short ch)
 {
     signed short c; /* r3 */
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     if (gFontHeader->nonProp)
         return gFontHeader->maxWidth / 2;
@@ -334,6 +344,7 @@ unsigned int HAL_GetTextWidth(void *text, signed short numChars)
     int nc; /* r10 */
     int dbl; /* r11 */
     const unsigned char *t; /* r12 */
+    if (gFontIndex == -1) { }
     _SetupFontData(0);
     if (*(unsigned char *)text == 255) {
         t = (unsigned char *)text + 1;
@@ -581,8 +592,8 @@ unsigned int _TextLen(const unsigned char *text, signed short numChars)
 static void _InitSemaphore(void)
 {
     static signed char sInited = 0;
-    if (!sInited)
-        sInited = 1;
+    if (sInited) return;
+    sInited = 1;
 }
 
 /* 0x8001b7a4, size 0x4 */
