@@ -1,0 +1,29 @@
+--- a/src/optionscr.c
++++ b/src/optionscr.c
+@@ -93,8 +93,7 @@
+     if (gFirstOption > 14 - gOptionMenuSize) gFirstOption = 14 - gOptionMenuSize;
+     if (gFirstOption < 0) gFirstOption = 0;
+     if (edges & 0x3000) {
+-        int dir = 1;
+-        if (edges & 0x1000) dir = -1;
++        int dir = (edges & 0x1000) ? -1 : 1;
+         PlayLRSound(edges);
+         switch (gSelectedOption) {
+         case 1: gOptions[10] = !gOptions[10]; break;
+--- a/src/pakscr.c
++++ b/src/pakscr.c
+@@ -117,10 +117,12 @@
+ {
+     if (gActiveEdges & 0x400) {
+         AudPlayEffect(8, 0, 1, 0);
+-        if (--gPickedPak < 0) gPickedPak = 7;
++        gPickedPak--;
++        if (gPickedPak < 0) gPickedPak = 7;
+     } else if (gActiveEdges & 0x800) {
+         AudPlayEffect(2, 0, 1, 0);
+-        if (++gPickedPak >= 8) gPickedPak = 0;
++        gPickedPak++;
++        if (gPickedPak >= 8) gPickedPak = 0;
+     }
+     if (gActiveEdges & 10) {
+         AudPlayEffect(0, 0, 1, 0);

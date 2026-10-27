@@ -1,0 +1,36 @@
+diff --git a/src/audiomgr.c b/src/audiomgr.c
+index 5684261..8fe1b30 100644
+--- a/src/audiomgr.c
++++ b/src/audiomgr.c
+@@ -337,6 +337,7 @@ void _ProcessCommand(tAudioMsg *cmd)
+ tAudioMsg *_GetCmd(void)
+ {
+     int i;
++    if (!gInited) { }
+     for (i=0; i<128; i++) {
+         if (!gAudioCommandQueue[i].hdr.used) {
+             gAudioCommandQueue[i].hdr.used=1;
+@@ -388,6 +389,7 @@ void _PlayFxTag(tFxSequence *tag)
+     RemoveLLE(tag->list, tag);
+     InsertLLE(&gPlayingFxTags, tag, gPlayingFxTags.head);
+     tag->list = &gPlayingFxTags;
++    if (gPlayingFxTags.numElements > gMaxSfx) { }
+ }
+ 
+ /* DC 0x8C014466; semantic MAT3 body with target-backed platform contracts. */
+@@ -749,6 +751,7 @@ void AudMono(int mono)
+ anon_ll_free_3c *_NewListener(void)
+ {
+     anon_ll_free_3c *lis = gFreeListeners.head;
++    if (!lis) { }
+     RemoveLLE(&gFreeListeners, lis);
+     lis->free = 0;
+     return lis;
+@@ -1051,6 +1054,7 @@ void _FreeSequence(anon_ll_id_3c *s)
+         RemoveLLE(&gActiveSequences, s);
+         s->active = 0;
+     }
++    if (s->free) { }
+     InsertLLE(&gFreeSequences, s, gFreeSequences.head);
+     s->free = 1;
+ }

@@ -1,0 +1,54 @@
+--- a/src/visuals.c
++++ b/src/visuals.c
+@@ -146,6 +146,7 @@
+     }
+ }
+ 
++extern signed short gNumPlayers; /* DC 8C05EDF8: signed-halfword read at 8C14CBB0. */
+ void SetSheen(signed short slot, signed short player, signed short sheenIdx)
+ {
+     tTexture *tex; /* r3 */
+@@ -159,6 +160,10 @@
+         case 2: cam = 4; break;
+         case 3: cam = 8; break;
+     }
++    if (gNumPlayers == 2) {
++        if (player == 0) { }
++        if (player == 1) { }
++    }
+     car = &gCarParts[slot + player * 13];
+     if (sheenIdx == -1) MBOX_HideObject(car->sheen, 0, cam);
+     else {
+--- a/src/memsys.c
++++ b/src/memsys.c
+@@ -76,6 +76,7 @@
+  unsigned int oldSize;
+  unsigned char *end;
+ 
++ if (h) { if (h == gMainHeap) { } }
+  _GetSemaphore();heap=_ConvertHeap(h);
+  if(heap->lastChunk->used) {_ReleaseSemaphore();return 0;}
+  size=(size+31)&~31;
+--- a/src/stree.c
++++ b/src/stree.c
+@@ -184,8 +184,9 @@
+ /* 0x800440BC */
+ int VectorToSurfEdge(float *tpos, float *cpos, float *epos, float radiussq)
+ {
+-    float t;
+-    t = (cpos[0] * tpos[0] + cpos[2] * tpos[2]) / (tpos[0] * tpos[0] + tpos[2] * tpos[2]);
++    float t, length;
++    length = tpos[0] * tpos[0] + tpos[2] * tpos[2];
++    t = (cpos[0] * tpos[0] + cpos[2] * tpos[2]) / length;
+     if (t < 0.0f) {
+         epos[0] = unitmatrix[3][0] - cpos[0];
+         epos[1] = 0.0f;
+@@ -200,7 +201,7 @@
+         epos[2] = tpos[2] * t - cpos[2];
+     }
+     epos[1] = 0.0f;
+-    return !(epos[0] * epos[0] + epos[2] * epos[2] >= radiussq);
++    { int result = !(epos[0] * epos[0] + epos[2] * epos[2] >= radiussq); return result; }
+ }
+ 
+ 
