@@ -2,14 +2,13 @@
 
 ## Latest verified checkpoint — round 6, 2026-10-27
 
-The **500-target campaign is ongoing**. Its first accepted checkpoint adds
-**978 emitted bytes and nine exact functions**, with all previous matches retained.
-Current total: **89,542 / 569,664 game code/literal bytes (15.7184%)**,
-**158,873 / 1,123,492 image bytes (14.1410%)**, **578 / 1,555 game functions**.
-Full 114-unit build, strict audit, independent negative controls and 22 tests pass.
-See [checkpoint scope and verification](docs/round6-checkpoint1.md).
-Earlier snapshots below are historical; this is not a claim that all 500 attempts
-or their research publication are finished.
+The **500-target campaign is ongoing**. Two accepted checkpoints add
+**1,414 emitted bytes and ten exact functions**, preserving all earlier matches.
+Current total: **89,978 / 569,664 game code/literal bytes**,
+**159,309 / 1,123,492 image bytes**, **579 / 1,555 game functions**.
+Full 114-unit builds, strict audits, independent negative controls and 22 tests pass.
+See [checkpoint 2](docs/round6-checkpoint2.md) and [checkpoint 1](docs/round6-checkpoint1.md).
+These checkpoints do not claim all 500 attempts or their research publication are finished.
 
 ## Latest verified matches — round 5, 2026-10-27
 

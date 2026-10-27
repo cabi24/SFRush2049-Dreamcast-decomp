@@ -68,93 +68,96 @@ void init_cars(void)
     anon_colfront_colrear_10 *sizep;
     float dt;
     tModelData *m;
+    tCarData *gc;
 
     gNumActiveCars = 0;
     /* volatile read: the target reloads gNumCars on every loop test (header keeps it plain) */
     for (i = 0; i < *(volatile signed short *)&gNumCars; i++) {
-        dt = model[i].fastin.dt;
+        m = &model[i];
+        gc = &gGameCar[i];
+        dt = m->fastin.dt;
         for (j = 0; j < sizeof(tModelData); j++) {
-            ((char *)&model[i])[j] = 0;
+            ((char *)m)[j] = 0;
         }
-        model[i].fastin.dt = dt;
+        m->fastin.dt = dt;
         for (j = 0; j < sizeof(tCarData); j++) {
-            ((char *)&gGameCar[i])[j] = 0;
+            ((char *)gc)[j] = 0;
         }
-        gGameCar[i].camera = -1;
-        model[i].car = gCarModels[0];
-        model[i].we_control = gLink[i].owner == 0;
-        gGameCar[i].view = gGameCar[i].saveview = 2;
+        gc->camera = -1;
+        m->car = gCarModels[0];
+        m->we_control = gLink[i].owner == 0;
+        gc->view = gc->saveview = 2;
         j = i - gNumPlayers + 1;
         if (gLink[i].owner == 6) {
             j = 6 - i;
         }
-        gGameCar[i].distance = -j;
-        model[i].solid = model[i].collidable = 1;
-        gGameCar[i].solid = 1;
-        gGameCar[i].collide_state = -1; /* written right after the model stores: storing to another object first creates the -1 constant before 0 and binds it to r4, as in the original */
-        model[i].drone_target = 0;
-        model[i].catchup = model[i].time_boost = model[i].drone_scale = 1.0f;
-        model[i].obResPt = 0;
-        model[i].resurrect.moving_state = -1;
-        model[i].wingSnd = -1;
-        gGameCar[i].last_distance = -100.0f;
-        gGameCar[i].crash_state = 0;
-        InitCarVisuals(&gGameCar[i]);
-        model[i].in_game = (gLink[i].flags & 0x80) != 0;
-        if (model[i].in_game) {
+        gc->distance = -j;
+        m->solid = m->collidable = 1;
+        gc->solid = 1;
+        gc->collide_state = -1; /* written right after the model stores: storing to another object first creates the -1 constant before 0 and binds it to r4, as in the original */
+        m->drone_target = 0;
+        m->catchup = m->time_boost = m->drone_scale = 1.0f;
+        m->obResPt = 0;
+        m->resurrect.moving_state = -1;
+        m->wingSnd = -1;
+        gc->last_distance = -100.0f;
+        gc->crash_state = 0;
+        InitCarVisuals(gc);
+        m->in_game = (gLink[i].flags & 0x80) != 0;
+        if (m->in_game) {
             model[gNumActiveCars++].slot = i;
-            gGameCar[i].slot = i;
-            gGameCar[i].place = gLink[i].polepos;
-            model[i].drone_type = gLink[i].owner < 6 ? 1 : 2;
-            if (model[i].drone_type == 2) {
-                gGameCar[i].player = &gPlayers[i];
+            gc->slot = i;
+            gc->place = gLink[i].polepos;
+            m->drone_type = gLink[i].owner < 6 ? 1 : 2;
+            if (m->drone_type == 2) {
+                gc->player = &gPlayers[i];
                 switch (gDriveHulk[i]) {
                 case 1:
-                    model[i].appearance = gGameCar[i].appearance = 0x70;
+                    m->appearance = gc->appearance = 0x70;
                     break;
                 case 2:
-                    model[i].appearance = gGameCar[i].appearance = 0x10;
+                    m->appearance = gc->appearance = 0x10;
                     break;
                 }
             }
-            if (gGameCar[i].player) {
-                model[i].body_type = gLink[i].car;
-                model[i].trans = gGameCar[i].player->trans;
-                model[i].autotrans = (model[i].trans & 1) ^ 1;
-                gGameCar[i].data_valid = 1;
-                model[i].handling = gCarHandling[model[i].slot + 1][model[i].body_type];
-                model[i].engine_type = gCarEngines[model[i].slot + 1][model[i].body_type];
-                model[i].tire_type = gCarTires[model[i].slot + 1][model[i].body_type];
-                model[i].frame = gCarFrame[model[i].slot + 1][model[i].body_type];
-                model[i].tireRims = gTireRims[model[i].slot + 1][model[i].body_type];
-                model[i].PaintJob = gLink[i].PaintJob;
-                model[i].data_valid = 1;
-            } else if (model[i].we_control) {
-                model[i].body_type = gLink[i].car;
-                model[i].trans = 0;
-                model[i].autotrans = 1;
-                gGameCar[i].data_valid = 1;
-                model[i].handling = gCarHandling[0][model[i].body_type];
-                model[i].engine_type = model[i].slot & 3;
-                model[i].tire_type = gCarTires[0][model[i].body_type];
-                model[i].frame = gCarFrame[0][model[i].body_type];
-                model[i].tireRims = gTireRims[0][model[i].body_type];
-                model[i].PaintJob = gLink[i].PaintJob;
-                model[i].data_valid = 1;
+            if (gc->player) {
+                m->body_type = gLink[i].car;
+                m->trans = gc->player->trans;
+                m->autotrans = (m->trans & 1) ^ 1;
+                gc->data_valid = 1;
+                m->handling = gCarHandling[m->slot + 1][m->body_type];
+                m->engine_type = gCarEngines[m->slot + 1][m->body_type];
+                m->tire_type = gCarTires[m->slot + 1][m->body_type];
+                m->frame = gCarFrame[m->slot + 1][m->body_type];
+                m->tireRims = gTireRims[m->slot + 1][m->body_type];
+                m->PaintJob = gLink[i].PaintJob;
+                m->data_valid = 1;
+            } else if (m->we_control) {
+                m->body_type = gLink[i].car;
+                m->trans = 0;
+                m->autotrans = 1;
+                gc->data_valid = 1;
+                m->handling = gCarHandling[0][m->body_type];
+                m->engine_type = m->slot & 3;
+                m->tire_type = gCarTires[0][m->body_type];
+                m->frame = gCarFrame[0][m->body_type];
+                m->tireRims = gTireRims[0][m->body_type];
+                m->PaintJob = gLink[i].PaintJob;
+                m->data_valid = 1;
             }
-            model[i].last_cp_index = 0;
-            model[i].next_cp_index = GetNextCheckpoint(model[i].last_cp_index);
-            InitCarPath(&model[i], &gGameCar[i]);
-            if (!gGameCar[i].player && !model[i].we_control) {
-                sizep = &collsize[model[i].body_type];
-                model[i].bodyR[0][0] = model[i].bodyR[2][0] = sizep->colside;
-                model[i].bodyR[1][0] = model[i].bodyR[3][0] = -sizep->colside;
-                model[i].bodyR[2][1] = model[i].bodyR[3][1] =
-                    model[i].bodyR[0][1] = model[i].bodyR[1][1] = sizep->colheight;
-                model[i].bodyR[0][2] = model[i].bodyR[1][2] = sizep->colfront;
-                model[i].bodyR[2][2] = model[i].bodyR[3][2] = -sizep->colrear;
+            m->last_cp_index = 0;
+            m->next_cp_index = GetNextCheckpoint(m->last_cp_index);
+            InitCarPath(m, gc);
+            if (!gc->player && !m->we_control) {
+                sizep = &collsize[m->body_type];
+                m->bodyR[0][0] = m->bodyR[2][0] = sizep->colside;
+                m->bodyR[1][0] = m->bodyR[3][0] = -sizep->colside;
+                m->bodyR[2][1] = m->bodyR[3][1] =
+                    m->bodyR[0][1] = m->bodyR[1][1] = sizep->colheight;
+                m->bodyR[0][2] = m->bodyR[1][2] = sizep->colfront;
+                m->bodyR[2][2] = m->bodyR[3][2] = -sizep->colrear;
                 dt = sizep->colfront > sizep->colrear ? sizep->colfront : sizep->colrear;
-                model[i].colrad = _builtin_sqrtf(dt * dt + sizep->colside * sizep->colside +
+                m->colrad = _builtin_sqrtf(dt * dt + sizep->colside * sizep->colside +
                     sizep->colheight * sizep->colheight);
             }
         }
@@ -183,12 +186,13 @@ void func_8C03DD58(signed short trk)
 {
     signed short i;
     signed short place;
+    signed short count = 6;
     static signed short attractSlot=0;
 
     gTrackNum = trk;
-    gNumCars = 6;
+    gNumCars = count;
     for (i = 0, place = 0; i < 6; i++) {
-        if (i >= gNumCars) {
+        if (i >= count) {
             gLink[i].flags = 0;
             gLink[i].owner = i + 6;
         } else {
