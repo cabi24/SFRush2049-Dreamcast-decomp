@@ -1,0 +1,13 @@
+--- a/src/TB_text.c
++++ b/src/TB_text.c
+@@ -168,9 +168,8 @@
+             eStr[9] = d[len*2+3]; eStr[10] = d[len*2+4];
+             eStr[11] = 0; eStr[12] = 0; d[len*2+1]=0; d[len*2+2]=0;
+         } else {
+-            unsigned char *end;
++            unsigned char *end = d+len;
+             TB_Strcpy(eStr,(void *)ellipse);
+-            end=d+len;
+             TB_Strcat(eStr,end);
+             *end=0;
+         }

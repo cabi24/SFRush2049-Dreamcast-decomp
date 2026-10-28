@@ -1,0 +1,22 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..62d5c02 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -644,6 +644,7 @@ void CalcUnlockedStuff(void)
+     int totalStuntGoldCoins;
+     int raceIdx;
+     int stuntIdx;
++    int totalMileage;
+     if (gCheatState[16] == 1) {
+         for (p = 0; p < gNumPlayers; p++)
+             for (carIdx = 0; carIdx < 13; carIdx++) gUnlockedCars[p][carIdx] = 1;
+@@ -696,8 +697,7 @@ void CalcUnlockedStuff(void)
+         for (p = 0; p < gNumPlayers; p++) {
+             if (!(*gPlayers[p].save)->datah) continue;
+             {
+-                int totalMileage = 0;
+-                int raceIdx;
++                totalMileage = 0;
+                 for (raceIdx = 0; raceIdx < 12; raceIdx++) totalMileage += (*(*gPlayers[p].save)->datah)->raceStats[raceIdx].totalMiles;
+                 totalMileage /= 10;
+                 gUnlockedTrans[p][0] = 1;

@@ -1,0 +1,22 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..40c3625 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -487,7 +487,6 @@ int IsCoinFound(int p, int coin)
+ unsigned char NumCoinsFound(int p, int whichCoins)
+ {
+     unsigned int coins;
+-    unsigned char numFound;
+     if (gTrackNum >= 0 && gTrackNum <= 5) {
+         if (!gPlayers[p].save) gPlayers[p].save = &gJustPlayers[gPlayers[p].controller];
+         if (!(*gPlayers[p].save)->datah) return 16;
+@@ -497,8 +496,7 @@ unsigned char NumCoinsFound(int p, int whichCoins)
+         coins = (*(*gPlayers[p].save)->datah)->stuntStats[gTrackNum - 14].coinsFound;
+     } else coins = 0;
+     if (whichCoins) coins &= whichCoins == 1 ? 0xff00 : 0xff;
+-    numFound = CountBits(coins, 16);
+-    return numFound;
++    return CountBits(coins, 16);
+ }
+ 
+ int CountBits(unsigned int data, unsigned char numBits)

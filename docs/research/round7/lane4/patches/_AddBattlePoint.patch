@@ -1,0 +1,11 @@
+--- a/src/hudextra.c
++++ b/src/hudextra.c
+@@ -541,7 +541,7 @@
+ /* 0x80024224, size 0x194 */
+ void _AddBattlePoint(signed char to, signed char from, signed char p)
+ {
+-    int j;
++    register int j;
+     if (p < 0) {
+         RecordBattlePoints(to, from, p);
+         if (!gOptions[39]) return;

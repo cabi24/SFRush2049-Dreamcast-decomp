@@ -1,0 +1,14 @@
+--- a/src/trackscr.c
++++ b/src/trackscr.c
+@@ -736,8 +736,9 @@
+ 
+ void loadPathData(void)
+ {
+-    if (gTrackNum >= 0 && gTrackNum <= 5) {
+-        pathWaveIdx = LoadWave(gTrackNum + 0x122, 0, 0, 0, 0);
++    register int track = gTrackNum;
++    if (track >= 0 && track <= 5) {
++        pathWaveIdx = LoadWave(track + 0x122, 0, 0, 0, 0);
+         gPathWave = GetWaveInstanceAddr(pathWaveIdx);
+         ReadCheckpointData();
+         ReadPathData();

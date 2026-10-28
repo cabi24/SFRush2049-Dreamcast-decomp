@@ -1,0 +1,11 @@
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -833,7 +833,7 @@
+     short oldest;
+     int nameIdx;
+     if (!name[0]) return 0;
+-    for (i = 1; i < 20; i++) gTempNameAges[i]++;
++    for (i = 1; i < 20; i++) ++gTempNameAges[i];
+     for (i = 1; i < 20; i++) {
+         if (!strcmp((char *)gTempNames[i], name)) {
+             gTempNameAges[i] = 0;

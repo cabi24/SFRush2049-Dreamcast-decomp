@@ -1,0 +1,14 @@
+--- a/src/hudextra.c
++++ b/src/hudextra.c
+@@ -532,9 +532,9 @@
+ /* 0x80024204, size 0x20 */
+ static void ClearBattlePoints(void)
+ {
+-    int i;
++    dcHudBattlePoint *point=battlePoint;
+     battlePointCnt = 0;
+-    for (i=0; i<4; i++) battlePoint[i].active = 0;
++    while (point != battlePoint+4) { point->active = 0; point++; }
+ 
+ }
+ 

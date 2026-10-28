@@ -1,0 +1,13 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..d055ec3 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -486,7 +486,7 @@ int IsCoinFound(int p, int coin)
+ 
+ unsigned char NumCoinsFound(int p, int whichCoins)
+ {
+-    unsigned int coins;
++    register unsigned int coins;
+     unsigned char numFound;
+     if (gTrackNum >= 0 && gTrackNum <= 5) {
+         if (!gPlayers[p].save) gPlayers[p].save = &gJustPlayers[gPlayers[p].controller];

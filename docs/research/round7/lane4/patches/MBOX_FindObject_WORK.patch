@@ -1,0 +1,16 @@
+--- a/src/mbox.c
++++ b/src/mbox.c
+@@ -159,10 +159,10 @@
+     tModelDef odef; /* stack */
+     tModelDef *ptr; /* r31 */
+     ptr = 0;
+-    if (!name || !name[0]) {
++    if (name && name[0]) {
++        strncpy(odef.name, name, 16);
++    } else {
+         strcpy(odef.name, "AAANULLOBJ");
+-    } else {
+-        strncpy(odef.name, name, 16);
+     }
+     if (firstModel < 0) {
+         firstModel = 0;

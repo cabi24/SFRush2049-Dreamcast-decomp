@@ -1,0 +1,13 @@
+diff --git a/src/save.c b/src/save.c
+index 8f8b38d..e1733fc 100644
+--- a/src/save.c
++++ b/src/save.c
+@@ -1218,7 +1218,7 @@ tGhostFile **CompressGhost(tSaveHeader *header, unsigned char *blocks)
+ {
+     tGhostFile *ghost;
+     tGhostFile **ghosth;
+-    unsigned int maxsize;
++    register unsigned int maxsize;
+     unsigned char *sorted;
+     unsigned char *gdata;
+     unsigned int num;

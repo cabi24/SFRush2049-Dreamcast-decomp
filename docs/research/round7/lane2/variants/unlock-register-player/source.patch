@@ -1,0 +1,13 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..c63efb5 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -633,7 +633,7 @@ void RemovePlayerScores(tPlayerProfile **player)
+ 
+ void CalcUnlockedStuff(void)
+ {
+-    tSaveData *player;
++    register tSaveData *player;
+     short carIdx;
+     short trackIdx;
+     short p;

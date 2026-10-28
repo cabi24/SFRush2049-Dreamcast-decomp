@@ -1,0 +1,12 @@
+--- a/src/mbox.c
++++ b/src/mbox.c
+@@ -72,7 +72,8 @@
+             if (tmpidx != -1) {
+                 MBOX_HideObject(tmpidx, 3, camlink);
+             }
+-        } while ((dlidx = MBOX_GetNext(dlidx)) != -1);
++            dlidx = MBOX_GetNext(dlidx);
++        } while (dlidx != -1);
+     }
+ }
+ 

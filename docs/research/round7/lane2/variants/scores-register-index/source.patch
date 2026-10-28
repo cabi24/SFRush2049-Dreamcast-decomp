@@ -1,0 +1,13 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..f485eda 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -611,7 +611,7 @@ void RemovePlayerScores(tPlayerProfile **player)
+     float *totalScores;
+     tPlayerProfile ***totalNames;
+     int totalIdx;
+-    int i;
++    register int i;
+     for (track = 0; track < 12; track++) {
+         for (type = 0; type < 3; type++) {
+             totalScores = gTotalRaceStats[track].scores[type];

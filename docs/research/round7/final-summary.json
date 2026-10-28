@@ -1,0 +1,48 @@
+{
+  "requested": 500,
+  "completed_unique_targets": 30,
+  "remaining_requested_slots": 470,
+  "final": true,
+  "shortfall": 470,
+  "fresh_targets": 28,
+  "evidence_backed_historical_revisits": 2,
+  "lane_counts": {
+    "1": 8,
+    "2": 8,
+    "3": 4,
+    "4": 10
+  },
+  "categories": {
+    "body": 24,
+    "causal_placement": 2,
+    "historical_ABI_body": 2,
+    "reconstruction": 2
+  },
+  "baseline_report_sha256": "4c54caf9ab5955381f1fa44c5960287253a0d8f6fc56cf16ae3a9e4f36021284",
+  "baseline_game_exact": 579,
+  "baseline_game_bytes": 89978,
+  "baseline_image_bytes": 159309,
+  "qualification_limit": "Counts are distinct target attempts, not compiler invocations or exact gains. Failed causal placement counts only when pretrial explicit hypothesis is substantiated. Neutral output, mere inspection, repeated historical shapes, and source-less SDK work are excluded.",
+  "ledger_inputs": [
+    {
+      "lane": 1,
+      "ledger": "private-worker-ledger-1",
+      "sha256": "3d89cfb1800df7baca2a2e71b4aff6af90dea0f608961599d167693734f03c7a"
+    },
+    {
+      "lane": 2,
+      "ledger": "private-worker-ledger-2",
+      "sha256": "776277853c148e1d06b287e8889ecddfae6aa786784bc9de3528d049dcfcc7c5"
+    },
+    {
+      "lane": 3,
+      "ledger": "private-worker-ledger-3",
+      "sha256": "5c0d8747994f3994a28f30618cb953daea41f128925f301d81377b303820b153"
+    },
+    {
+      "lane": 4,
+      "ledger": "private-worker-ledger-4",
+      "sha256": "513c6b9f98d146d8cebb0064594f94918784b17313254dfa602205899ad649d8"
+    }
+  ]
+}

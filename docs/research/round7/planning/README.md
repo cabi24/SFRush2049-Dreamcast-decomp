@@ -1,0 +1,17 @@
+# Round 7 selection, not completed attempts
+
+Requested: 500 more game functions, four concurrent matching workers. Baseline: local Linux restore commit 6fb2d7e, public master 688e4269d28afd86b30e98944e623e69fdcb7e5c, 579 exact game functions and 89,978 credited game code/literal bytes.
+
+The four lane manifests own disjoint whole translation units. They index all 976 currently nonexact mapped game functions. Start with `fresh_candidates`, then inspect `historical_review_queue`; neither queue is a claim of completed or even guaranteed viable attempts. `prior_round_revisit_queue` requires materially new native dataflow/ABI or compilation-context evidence documented before compiling. Prior neutral probes are included in the exclusion union, not recycled. The individual records preserve known earlier hypotheses and source references.
+
+Current discovery: 152 candidate addresses absent the public rounds 2–6 attempted/replaced/neutral union and without an identified earlier Markdown reference; 44 more have older history requiring careful review. These are NOT asserted never-before-studied: some old summaries abbreviate function names and private replaced-target ledgers did not survive workspace reset. Workers must check the relevant historical unit notes before claiming freshness. The full known public exclusion union has 774 addresses (includes already matched addresses). Earlier private planning cited a larger prior-round union, so the public reconstruction is conservatively incomplete.
+
+No honest evidence-backed 500-target selection currently exists. The maximum outside the known recent public union is 240 nonexact game functions: 196 C candidates/review cases, 37 handwritten-looking transform/clip routines held outside the C-matching queue, and seven unsourced empty stubs held rather than fabricated. The remainder of the 500 request must come from justified new-evidence revisits, not repeating exhausted expressions, changing test labels, or broadening to runtime/SDK work without approval.
+
+Counting rule: one distinct function address only after a target-backed source change or explicitly causal predecessor hypothesis, frozen successful compile/link, and individual before/after comparison. Neutral unchanged output, inspection alone, incidental placement movement, synthetic controls, donor copying without native adaptation, arbitrary filler/stubs, and independent compiler invocation counts are not target completion. Moved equality never earns fixed-address matching credit. Full prior exact-byte/function preservation and independent replay remain mandatory for accepted changes.
+
+A fresh small leaf or already moved-exact helper may lack a credible body repair. It is a candidate, not permission to manufacture changes. Prioritize non-moved substantial bodies and actual missing donor-backed bodies. Restore accepted source after rejected trials. Research regressions and ABI proposals remain separate.
+
+The separate compilation-group investigator found all 1,417 decoded direct BSR calls to mapped starts remain inside their mapped translation unit once literal pools are excluded. Seven apparent cross-unit calls were pool data. Thus broad TU merging is not a valid mechanism to fill the missing slots; new grouping claims need native evidence.
+
+This is the historical selection methodology. Candidate manifests and private input ledgers are not shipped; final-ledger.json is the authoritative outcome count.

@@ -1,0 +1,28 @@
+--- a/src/trackscr.c
++++ b/src/trackscr.c
+@@ -616,12 +616,19 @@
+ 
+ int TrackValid(int track)
+ {
+-    if (!trackReady[track]) return 0;
+-    if (!IsTrackUnlocked(track)) return 0;
+-    if (gRace == kStunt) return track >= 14 && track <= 17;
+-    if (gRace == kObstacle) return track >= 18 && track <= 18;
+-    if (gRace == kBattle) return track >= 6 && track <= 13;
+-    return track >= 0 && track <= 5;
++    if (!trackReady[track] || !IsTrackUnlocked(track)) return 0;
++    if (gRace == kStunt) {
++        if (track >= 14 && track <= 17) return 1;
++        return 0;
++    } else if (gRace == kObstacle) {
++        if (track >= 18 && track <= 18) return 1;
++        return 0;
++    } else if (gRace == kBattle) {
++        if (track >= 6 && track <= 13) return 1;
++        return 0;
++    }
++    if (track >= 0 && track <= 5) return 1;
++    return 0;
+ }
+ 
+ int OptionValid(int opt)

@@ -1,0 +1,31 @@
+--- a/src/pausescr.c
++++ b/src/pausescr.c
+@@ -175,19 +175,20 @@
+ void updatePauseStateCleanup(void)
+ {
+     int p;
++    register int zero = 0;
+     switch (gPauseState) {
+     case 0:
+-        if (DimBlit) { RemoveBlit(DimBlit); DimBlit = 0; }
++        if (DimBlit) { RemoveBlit(DimBlit); DimBlit = (void *)zero; }
+         for (p = 0; p < gNumPlayers; p++)
+             if ((*gPlayers[p].save)->datah) SaveSelectPlayer(gPlayers[p].save);
+     case 1: case 5: case 4: case 2: case 3: case 6: case 7: case 8:
+-        if (TitleBlit) { RemoveBlit(TitleBlit); TitleBlit = 0; }
+-        if (PauseBlit) { RemoveBlit(PauseBlit); PauseBlit = 0; }
+-        if (SureBlit) { RemoveBlit(SureBlit); SureBlit = 0; }
+-        if (RumbleBlit) { RemoveBlit(RumbleBlit); RumbleBlit = 0; }
+-    }
+-    RemovePanes(0);
+-    gTitlePane = 0;
++        if (TitleBlit) { RemoveBlit(TitleBlit); TitleBlit = (void *)zero; }
++        if (PauseBlit) { RemoveBlit(PauseBlit); PauseBlit = (void *)zero; }
++        if (SureBlit) { RemoveBlit(SureBlit); SureBlit = (void *)zero; }
++        if (RumbleBlit) { RemoveBlit(RumbleBlit); RumbleBlit = (void *)zero; }
++    }
++    RemovePanes(zero);
++    gTitlePane = (void *)zero;
+ }
+ 
+ static void updatePauseStateCreate(void)

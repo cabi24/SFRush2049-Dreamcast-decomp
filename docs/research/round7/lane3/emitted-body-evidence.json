@@ -1,0 +1,63 @@
+[
+  {
+    "trial": "path-index-register",
+    "linked_start": "8C08F9C0",
+    "comparison_length": 80,
+    "baseline_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+    "candidate_window_sha256": "8c4569697cb150fe64edb4e78c6172cad11fb8bf418988cd8c128539dd02fe97",
+    "changed_byte_offsets": [
+      "0x0",
+      "0xA"
+    ],
+    "changed_byte_count": 2,
+    "interpretation": "Exactly two changed emitted bytes, each a PC-relative literal-reference displacement. Fixed-address target diffcount remains 79; linked start remains 8C08F9C0; linked size remains 80. Counts as unsuccessful source-shape attempt, not gain."
+  },
+  {
+    "trial": "path-zero-register",
+    "linked_start": "8C08F9C0",
+    "comparison_length": 80,
+    "baseline_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+    "candidate_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+    "changed_byte_offsets": [],
+    "changed_byte_count": 0,
+    "interpretation": "Successful compile is emitted-body neutral; excluded from attempt credit. Failed prior compile is also excluded."
+  },
+  {
+    "trial": "cleanup-zero-lifetime",
+    "linked_start": "8C046F00",
+    "comparison_length": 128,
+    "baseline_window_sha256": "f6a4311ca4fa991f04372b4a1b7d254fe3fcd597ad57f8b39cca9fbed21b3f97",
+    "candidate_window_sha256": "db45a1b5ec157e3964374edc6bf77b9a5e1bbab04dc6540328f07dbd306fbc54",
+    "changed_byte_offsets": [
+      "0xA",
+      "0x14",
+      "0x40",
+      "0x4C",
+      "0x50",
+      "0x54",
+      "0x58",
+      "0x7E"
+    ],
+    "changed_byte_count": 8,
+    "interpretation": "First 128 emitted bytes are a body-prefix window, not entire function. Static symbol linked_size spans neighboring functions, so this direct prefix delta is the changed-body proof."
+  },
+  {
+    "trial": "cleanup-shared-zero",
+    "linked_start": "8C046F00",
+    "comparison_length": 128,
+    "baseline_window_sha256": "f6a4311ca4fa991f04372b4a1b7d254fe3fcd597ad57f8b39cca9fbed21b3f97",
+    "candidate_window_sha256": "db45a1b5ec157e3964374edc6bf77b9a5e1bbab04dc6540328f07dbd306fbc54",
+    "changed_byte_offsets": [
+      "0xA",
+      "0x14",
+      "0x40",
+      "0x4C",
+      "0x50",
+      "0x54",
+      "0x58",
+      "0x7E"
+    ],
+    "changed_byte_count": 8,
+    "interpretation": "First 128 emitted bytes are a body-prefix window, not entire function. Static symbol linked_size spans neighboring functions, so this direct prefix delta is the changed-body proof."
+  }
+]
