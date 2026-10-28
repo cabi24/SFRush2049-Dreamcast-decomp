@@ -1,6 +1,19 @@
 # San Francisco Rush 2049 (Dreamcast) decompilation
 
-## Round 7 checkpoint 2 — 2026-10-28, ongoing
+## Round 7 final results — 2026-10-28
+
+**30 qualifying attempts out of 500 requested; 470 slots remain unfilled.**
+Four workers exhausted the currently justified fresh/new-evidence queue rather than
+recycling historical shapes or counting inspections. The round adds **240 game
+code/literal bytes, 276 image bytes and five exact functions**, preserving all previous
+matches. Totals: **90,218 / 569,664 game bytes (15.8371%)**, **159,585 / 1,123,492
+image bytes (14.2044%)**, **584 / 1,555 exact game functions**.
+See [final scope and evidence](docs/round7-results.md). Research includes two compiled
+native renderer reconstructions, not accepted matching credit. The 500-target goal is
+partially fulfilled, not complete.
+
+## Round 7 checkpoint 2 — historical checkpoint
+
 
 Round 7 now adds **240 game code/literal bytes, 276 image bytes and five exact
 functions**, preserving all prior matches. Current total: **90,218 / 569,664 game
