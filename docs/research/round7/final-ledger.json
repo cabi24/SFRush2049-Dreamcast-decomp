@@ -1,0 +1,3295 @@
+{
+  "summary": {
+    "requested": 500,
+    "completed_unique_targets": 30,
+    "remaining_requested_slots": 470,
+    "final": true,
+    "shortfall": 470,
+    "fresh_targets": 28,
+    "evidence_backed_historical_revisits": 2,
+    "lane_counts": {
+      "1": 8,
+      "2": 8,
+      "3": 4,
+      "4": 10
+    },
+    "categories": {
+      "body": 24,
+      "causal_placement": 2,
+      "historical_ABI_body": 2,
+      "reconstruction": 2
+    },
+    "baseline_report_sha256": "4c54caf9ab5955381f1fa44c5960287253a0d8f6fc56cf16ae3a9e4f36021284",
+    "baseline_game_exact": 579,
+    "baseline_game_bytes": 89978,
+    "baseline_image_bytes": 159309,
+    "qualification_limit": "Counts are distinct target attempts, not compiler invocations or exact gains. Failed causal placement counts only when pretrial explicit hypothesis is substantiated. Neutral output, mere inspection, repeated historical shapes, and source-less SDK work are excluded.",
+    "ledger_inputs": [
+      {
+        "lane": 1,
+        "ledger": "private-worker-ledger-1",
+        "sha256": "3d89cfb1800df7baca2a2e71b4aff6af90dea0f608961599d167693734f03c7a"
+      },
+      {
+        "lane": 2,
+        "ledger": "private-worker-ledger-2",
+        "sha256": "776277853c148e1d06b287e8889ecddfae6aa786784bc9de3528d049dcfcc7c5"
+      },
+      {
+        "lane": 3,
+        "ledger": "private-worker-ledger-3",
+        "sha256": "5c0d8747994f3994a28f30618cb953daea41f128925f301d81377b303820b153"
+      },
+      {
+        "lane": 4,
+        "ledger": "private-worker-ledger-4",
+        "sha256": "513c6b9f98d146d8cebb0064594f94918784b17313254dfa602205899ad649d8"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "lane": 1,
+      "unit": "dc_status_8C06CA98",
+      "function": "func_8C06CAB4",
+      "address": "8C06CAB4",
+      "size": 28,
+      "category": "body",
+      "hypothesis": "Keep native signed-byte boolean conversion but use full-width result temporary so value is not retained in r14 across tailcall.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 27,
+        "linked_at": "8C06CAB4",
+        "linked_size": 44
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 3,
+          "probe_result": {
+            "name": "func_8C06CAB4",
+            "status": "differs",
+            "diff_bytes": 2,
+            "linked_at": "8C06CAB4",
+            "linked_size": 40
+          },
+          "evidence": "checkpoint-status/report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06CAB4",
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C06CAB4",
+        "linked_size": 40
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_status_8C06CA98",
+      "function": "func_8C06CA98",
+      "address": "8C06CA98",
+      "size": 16,
+      "category": "causal_placement",
+      "hypothesis": "Repair final CAB4 helper extent so shared status literal pool returns from CAD4 to native CAD0; first function literal displacement must recover.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C06CA98",
+        "linked_size": 16
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "func_8C06CA98",
+            "status": "exact",
+            "diff_bytes": 0,
+            "linked_at": "8C06CA98",
+            "linked_size": 16
+          },
+          "evidence": "checkpoint-status/report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06CA98",
+        "status": "exact",
+        "diff_bytes": 0,
+        "linked_at": "8C06CA98",
+        "linked_size": 16
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_status_8C06CA98",
+      "function": "func_8C06CAA8",
+      "address": "8C06CAA8",
+      "size": 12,
+      "category": "causal_placement",
+      "hypothesis": "Repair final CAB4 helper extent so shared status literal pool returns from CAD4 to native CAD0; second function literal displacement must recover.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C06CAA8",
+        "linked_size": 12
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "func_8C06CAA8",
+            "status": "exact",
+            "diff_bytes": 0,
+            "linked_at": "8C06CAA8",
+            "linked_size": 12
+          },
+          "evidence": "checkpoint-status/report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06CAA8",
+        "status": "exact",
+        "diff_bytes": 0,
+        "linked_at": "8C06CAA8",
+        "linked_size": 12
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_audio64_init_8C06ADD4",
+      "function": "func_8C06B298",
+      "address": "8C06B298",
+      "size": 60,
+      "category": "body",
+      "hypothesis": "Pass existing alignment conditional directly to formatter to keep va-list selection in native r6 instead of extra r5 local and move.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 26,
+        "linked_at": "8C06B298",
+        "linked_size": 84
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 2,
+          "probe_result": {
+            "name": "func_8C06B298",
+            "status": "exact",
+            "diff_bytes": 0,
+            "linked_at": "8C06B298",
+            "linked_size": 84
+          },
+          "evidence": "checkpoint-audio64/report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06B298",
+        "status": "exact",
+        "diff_bytes": 0,
+        "linked_at": "8C06B298",
+        "linked_size": 84
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_misc_8C06C08C",
+      "function": "func_8C06C524",
+      "address": "8C06C524",
+      "size": 104,
+      "category": "body",
+      "hypothesis": "Native retains output callback in r10 and outer port in r11; register and declaration-order lifetimes tested.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 11,
+        "linked_at": "8C06C524",
+        "linked_size": 104
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 3,
+          "probe_result": {
+            "name": "func_8C06C524",
+            "status": "differs",
+            "diff_bytes": 76,
+            "linked_at": "8C06C524",
+            "linked_size": 108
+          },
+          "evidence": "misc-probe1-report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06C524",
+        "status": "differs",
+        "diff_bytes": 11,
+        "linked_at": "8C06C524",
+        "linked_size": 104
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_misc_8C06C08C",
+      "function": "func_8C06C58C",
+      "address": "8C06C58C",
+      "size": 86,
+      "category": "body",
+      "hypothesis": "Native schedules length literal before saving index; parameter/local frame-pointer lifetime variants tested.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 6,
+        "linked_at": "8C06C58C",
+        "linked_size": 86
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 3,
+          "probe_result": {
+            "name": "func_8C06C58C",
+            "status": "differs",
+            "diff_bytes": 77,
+            "linked_at": "8C06C58C",
+            "linked_size": 88
+          },
+          "evidence": "misc58C-probe3-report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06C58C",
+        "status": "differs",
+        "diff_bytes": 6,
+        "linked_at": "8C06C58C",
+        "linked_size": 86
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "dc_periph_8C06C664",
+      "function": "func_8C06C712",
+      "address": "8C06C712",
+      "size": 128,
+      "category": "body",
+      "hypothesis": "Native callback call uses r1 rather than r3; early guards, file register and named minimum lifetime tested.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C06C712",
+        "linked_size": 128
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 3,
+          "probe_result": {
+            "name": "func_8C06C712",
+            "status": "differs",
+            "diff_bytes": 4,
+            "linked_at": "8C06C712",
+            "linked_size": 128
+          },
+          "evidence": "periph-final-report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "func_8C06C712",
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C06C712",
+        "linked_size": 128
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "audiomgr",
+      "function": "AudEmitEffect",
+      "address": "8C01548E",
+      "size": 394,
+      "category": "body",
+      "hypothesis": "Native hoists interrupt function in r10 and saved mask in r11; command-pointer register lifetime tested, removing residual allocation mismatch.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 390,
+        "linked_at": "8C0153F2",
+        "linked_size": 446
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 3,
+          "probe_result": {
+            "name": "AudEmitEffect",
+            "status": "differs",
+            "diff_bytes": 390,
+            "linked_at": "8C0153F2",
+            "linked_size": 446
+          },
+          "evidence": "audiomgr.probe3-report.json"
+        }
+      ],
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "AudEmitEffect",
+        "status": "differs",
+        "diff_bytes": 390,
+        "linked_at": "8C0153F2",
+        "linked_size": 446
+      },
+      "emitted_body_evidence": {
+        "unit": "audiomgr",
+        "function": "AudEmitEffect",
+        "verification_only_no_new_attempt": true,
+        "source_baseline": "audiomgr.original.c",
+        "source_probe": "audiomgr.probe3.c",
+        "baseline_source_sha256": "147f5d252e7dcdcb0dfb668477635cbe044f2c1234294e267c1d3c8acd3eb64a",
+        "probe_source_sha256": "037b0ac7b37d6263708af7e681c8bb6709cf666ebcb7d7943caf9b4137173876",
+        "scope": "Linked emitted instruction body only; excludes trailing shared literal pool, object metadata, target bytes, and disassembly",
+        "linked_start": "8C0153F2",
+        "linked_end_exclusive": "8C01557C",
+        "body_bytes": 394,
+        "baseline_body_sha256": "7e9cea2ede3793fadaf7101add9b63faf06f00d77a53e4bfdd297100b51a9049",
+        "probe_body_sha256": "24b9e130a025e357b9c2ca32aa0c1f64be0b45486f2c2651a3417dccc3f2a924",
+        "different_bytes": 12,
+        "different_instruction_words": 12,
+        "differing_byte_offsets_hex": [
+          "0x2c",
+          "0x30",
+          "0x37",
+          "0x3b",
+          "0x57",
+          "0x58",
+          "0x131",
+          "0x132",
+          "0x141",
+          "0x145",
+          "0x16f",
+          "0x170"
+        ],
+        "fixed_address_target_diff_before": 390,
+        "fixed_address_target_diff_after": 390,
+        "exact_gain": 0,
+        "source_restored": true,
+        "restored_body_sha256": "7e9cea2ede3793fadaf7101add9b63faf06f00d77a53e4bfdd297100b51a9049"
+      }
+    },
+    {
+      "lane": 2,
+      "unit": "gamerecords",
+      "function": "FindTempNameIdx",
+      "address": "8C02DDD6",
+      "size": 826,
+      "category": "body",
+      "hypothesis": "Native aging loop assigns age and narrowed index to opposite R2/R3 registers; test equivalent update expression and explicit postincrement loop.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 5,
+        "linked_at": "8C02DDD6",
+        "linked_size": 834
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "tempname-prefix",
+          "hypothesis": "Native aging loop assigns age and narrowed index to opposite R2/R3 registers; test equivalent update expression and explicit postincrement loop.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "status": "differs",
+              "diff_bytes": 5,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "after": [
+            {
+              "status": "differs",
+              "diff_bytes": 5,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "emitted_neutral": true,
+          "object_changed_reported": null,
+          "source_sha256": "3f051d353d8bf22a08c4f952fd37e15987badb8cc2ed2eccad960b332e33e6e7"
+        },
+        {
+          "label": "tempname-assignment",
+          "hypothesis": "Native aging loop assigns age and narrowed index to opposite R2/R3 registers; test equivalent update expression and explicit postincrement loop.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "status": "differs",
+              "diff_bytes": 5,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "after": [
+            {
+              "status": "differs",
+              "diff_bytes": 5,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "emitted_neutral": true,
+          "object_changed_reported": null,
+          "source_sha256": "72f957afc9d8b240732a61bbeaa102b451384f9963db9232fc5eb3d1c27e70e8"
+        },
+        {
+          "label": "tempname-postindex",
+          "hypothesis": "Native aging loop assigns age and narrowed index to opposite R2/R3 registers; test equivalent update expression and explicit postincrement loop.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "status": "differs",
+              "diff_bytes": 5,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "after": [
+            {
+              "status": "differs",
+              "diff_bytes": 749,
+              "linked_at": "8C02DDD6"
+            }
+          ],
+          "emitted_neutral": false,
+          "object_changed_reported": null,
+          "source_sha256": "33ee7eae38efb06e5b61d9a36797af790147d165c188c27f966075d8bd2b2b6c"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "save",
+      "function": "SaveGhostInLimbo",
+      "address": "8C04E58C",
+      "size": 302,
+      "category": "body",
+      "hypothesis": "Target retains limboGhosts in r11 not r12; explicit register lifetime may reproduce allocation without semantic changes.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 37,
+        "linked_at": "8C04E58C",
+        "linked_size": 302
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "limbo-register",
+          "hypothesis": "Target retains limboGhosts in r11 not r12; explicit register lifetime may reproduce allocation without semantic changes.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 37,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "after": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 67,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "3bdd05c845851317f2dd02dabb34725aee6d8720fe7992d4e83c22fe8282e9ac"
+        },
+        {
+          "label": "limbo-locals",
+          "hypothesis": "Native register roles r11 pointer/r12 later data suggest distinct declaration lifetime ordering.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 67,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "after": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 37,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "f77ed6301c6206f74579c5b9a98b56525e9c46bb64f6aa792541150712ffff6b"
+        },
+        {
+          "label": "limbo-header-register",
+          "hypothesis": "Target retains header temporary differently across loop and calls; test explicit header register lifetime.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 37,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "after": [
+            {
+              "name": "SaveGhostInLimbo",
+              "start": "8C04E58C",
+              "end": "8C04E6BA",
+              "size": 302,
+              "status": "differs",
+              "diff_bytes": 36,
+              "linked_at": "8C04E58C",
+              "linked_size": 302
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "e86958adce77a072cffcda20c424b91518816fa88f4e2fc21122184dcf3c8229"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "gamerecords",
+      "function": "RemovePlayerScores",
+      "address": "8C02D392",
+      "size": 162,
+      "category": "body",
+      "hypothesis": "Native shift loop recalculates i+1 rather than pointer strength reduction; register index preserves explicit induction.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 42,
+        "linked_at": "8C02D392",
+        "linked_size": 162
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "scores-register-index",
+          "hypothesis": "Native shift loop recalculates i+1 rather than pointer strength reduction; register index preserves explicit induction.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 42,
+              "linked_at": "8C02D392",
+              "linked_size": 162
+            }
+          ],
+          "after": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 150,
+              "linked_at": "8C02D392",
+              "linked_size": 178
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "6102408b38a4a45914ec6467f4e2f1a87e6d1eb10b5892cd769ad82c5dd728f5"
+        },
+        {
+          "label": "scores-while-index",
+          "hypothesis": "Native non-delayed loop branch follows increment and both stores; use natural while induction.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 150,
+              "linked_at": "8C02D392",
+              "linked_size": 178
+            }
+          ],
+          "after": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 42,
+              "linked_at": "8C02D392",
+              "linked_size": 162
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "2825c2eb9f39dcb529dd996a03807f0cad88111981be7730c28bb359bb3fa659"
+        },
+        {
+          "label": "scores-register-bases",
+          "hypothesis": "Target keeps unadjusted score/name bases; explicit register base lifetimes may avoid preincrement strength reduction.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 42,
+              "linked_at": "8C02D392",
+              "linked_size": 162
+            }
+          ],
+          "after": [
+            {
+              "name": "RemovePlayerScores",
+              "start": "8C02D392",
+              "end": "8C02D434",
+              "size": 162,
+              "status": "differs",
+              "diff_bytes": 150,
+              "linked_at": "8C02D392",
+              "linked_size": 178
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "21b3aa1b3070aca92dab29585439b955e49a4305489192a845ce676be96d2da5"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "gamerecords",
+      "function": "NumCoinsFound",
+      "address": "8C02C888",
+      "size": 208,
+      "category": "body",
+      "hypothesis": "Native saves only r14 and returns CountBits directly without extra temporary; remove redundant numFound local.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 187,
+        "linked_at": "8C02C888",
+        "linked_size": 208
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "coins-direct-return",
+          "hypothesis": "Native saves only r14 and returns CountBits directly without extra temporary; remove redundant numFound local.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 187,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "after": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 187,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "160e70e4c196ecef5f1177a985f7124bd6628e19738cdc55fce0d008593f81ba"
+        },
+        {
+          "label": "coins-register",
+          "hypothesis": "Native coins remains r14 formerly player base; test declared register lifetime rather than extra callee-save r13.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 187,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "after": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 196,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "d6f9b2c4d918e6135eede2c640af05d25ba89c0fe49636984ba2e107807fa951"
+        },
+        {
+          "label": "coins-range-order",
+          "hypothesis": "Native holds track in r0 across branch and releases it before coins; reorder equivalent finite integer range test to test allocation.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 196,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "after": [
+            {
+              "name": "NumCoinsFound",
+              "start": "8C02C888",
+              "end": "8C02C958",
+              "size": 208,
+              "status": "differs",
+              "diff_bytes": 191,
+              "linked_at": "8C02C888",
+              "linked_size": 208
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "65fbd9f885b9942c36189e98dfa772f65d5b7ecd62c8d7fec7c0a0091f7dc65f"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "save",
+      "function": "CompressGhost",
+      "address": "8C04E080",
+      "size": 560,
+      "category": "body",
+      "hypothesis": "Native spills first move size before call; retain that logical size in existing dataSize local.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 488,
+        "linked_at": "8C04E080",
+        "linked_size": 628
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "compress-first-size",
+          "hypothesis": "Native spills first move size before call; retain that logical size in existing dataSize local.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 488,
+              "linked_at": "8C04E080",
+              "linked_size": 628
+            }
+          ],
+          "after": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 331,
+              "linked_at": "8C04E080",
+              "linked_size": 628
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "e7af2e461196d39659dda05f689d12655aaaff598c4943608daaa18a82d51ad7"
+        },
+        {
+          "label": "compress-first-argument-order",
+          "hypothesis": "First native move retains a size temporary absent in current output; natural start+size operand order tests argument scheduling.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 331,
+              "linked_at": "8C04E080",
+              "linked_size": 628
+            }
+          ],
+          "after": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 488,
+              "linked_at": "8C04E080",
+              "linked_size": 628
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "0bab710bea5ecb2762a94f52d09761f4603bd39b376d63d3decb519db1850b88"
+        },
+        {
+          "label": "compress-register-maxsize",
+          "hypothesis": "Native maxsize survives two memmove calls in r14; explicit register lifetime tests distinct temporary spilling.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 488,
+              "linked_at": "8C04E080",
+              "linked_size": 628
+            }
+          ],
+          "after": [
+            {
+              "name": "CompressGhost",
+              "start": "8C04E080",
+              "end": "8C04E2B0",
+              "size": 560,
+              "status": "differs",
+              "diff_bytes": 453,
+              "linked_at": "8C04E080",
+              "linked_size": 636
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "4656e1044d2e293d5dc9ddc56d338dd304c53cae96f7eba5de70dc67bc5045b9"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "gamerecords",
+      "function": "CalcUnlockedStuff",
+      "address": "8C02D434",
+      "size": 2296,
+      "category": "body",
+      "hypothesis": "Native distinct spill homes for player and stats with36-byte frame suggest function-scope distinct stat pointers.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 878,
+        "linked_at": "8C02D434",
+        "linked_size": 2298
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "unlock-outer-stat-pointers",
+          "hypothesis": "Native distinct spill homes for player and stats with36-byte frame suggest function-scope distinct stat pointers.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 878,
+              "linked_at": "8C02D434",
+              "linked_size": 2298
+            }
+          ],
+          "after": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 878,
+              "linked_at": "8C02D434",
+              "linked_size": 2298
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "bdcaf3b93453e5b561b51204ef2e01fe6ccb2782183de081ef021ed6f778fa42"
+        },
+        {
+          "label": "unlock-shared-race-index",
+          "hypothesis": "Native stack lifetime differs by4bytes; use one race index and function-scope mileage accumulator instead of shadowed inner index.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 878,
+              "linked_at": "8C02D434",
+              "linked_size": 2298
+            }
+          ],
+          "after": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 878,
+              "linked_at": "8C02D434",
+              "linked_size": 2298
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": false,
+          "source_sha256": "beb8248a9e1032a5fbd29f4931a6f1e6fd82acaf78c4a6a0431d291f52ec27a8"
+        },
+        {
+          "label": "unlock-register-player",
+          "hypothesis": "Target repeatedly retains save data player pointer across unlock loops; test explicit player lifetime.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 878,
+              "linked_at": "8C02D434",
+              "linked_size": 2298
+            }
+          ],
+          "after": [
+            {
+              "name": "CalcUnlockedStuff",
+              "start": "8C02D434",
+              "end": "8C02DD2C",
+              "size": 2296,
+              "status": "differs",
+              "diff_bytes": 2204,
+              "linked_at": "8C02D434",
+              "linked_size": 2380
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "c800febc93867b278656be6bb2dd3f0baab6f68b2b52d6ff1d94d6bcacd52408"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 2,
+      "unit": "mdrive",
+      "function": "are_all_cars_stopped",
+      "address": "8C03FB9C",
+      "size": 328,
+      "category": "historical_ABI_body",
+      "hypothesis": "New evidence: canonical timer.c object is volatile; this private header dropped qualifier. Target reloads frame-time address inside lap loop, unlike current hoisting.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 325,
+        "linked_at": "8C03FB02",
+        "linked_size": 326
+      },
+      "selection_history": "prior_round_requires_new_evidence",
+      "trials": [
+        {
+          "label": "stopped-canonical-frame-qualifier",
+          "hypothesis": "New evidence: canonical timer.c object is volatile; this private header dropped qualifier. Target reloads frame-time address inside lap loop, unlike current hoisting.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "are_all_cars_stopped",
+              "start": "8C03FB9C",
+              "end": "8C03FCE4",
+              "size": 328,
+              "status": "differs",
+              "diff_bytes": 325,
+              "linked_at": "8C03FB02",
+              "linked_size": 326
+            }
+          ],
+          "after": [
+            {
+              "name": "are_all_cars_stopped",
+              "start": "8C03FB9C",
+              "end": "8C03FCE4",
+              "size": 328,
+              "status": "differs",
+              "diff_bytes": 328,
+              "linked_at": "8C03FB02",
+              "linked_size": 334
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "a0d1c85aa1c149fa53ba91d817538a3e4c746444f7d1b5bf1e5154abf113f8a1"
+        }
+      ],
+      "historical_revisit": true
+    },
+    {
+      "lane": 2,
+      "unit": "targetpaths",
+      "function": "_AnimatePathTarget",
+      "address": "8C056AC0",
+      "size": 2082,
+      "category": "historical_ABI_body",
+      "hypothesis": "New evidence: canonical timer.c object is volatile but private path header plain; target animation has separated frame-time accesses across path/callback operations.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 2018,
+        "linked_at": "8C056AD4",
+        "linked_size": 2112
+      },
+      "selection_history": "prior_round_requires_new_evidence",
+      "trials": [
+        {
+          "label": "targetpath-canonical-frame-qualifier",
+          "hypothesis": "New evidence: canonical timer.c object is volatile but private path header plain; target animation has separated frame-time accesses across path/callback operations.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "_AnimatePathTarget",
+              "start": "8C056AC0",
+              "end": "8C0572E2",
+              "size": 2082,
+              "status": "differs",
+              "diff_bytes": 2018,
+              "linked_at": "8C056AD4",
+              "linked_size": 2112
+            }
+          ],
+          "after": [
+            {
+              "name": "_AnimatePathTarget",
+              "start": "8C056AC0",
+              "end": "8C0572E2",
+              "size": 2082,
+              "status": "differs",
+              "diff_bytes": 2021,
+              "linked_at": "8C056AD4",
+              "linked_size": 2112
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "08bafc983174a3d5c5d0a990c6d2e23f0f7e2db5e89d78375be3fc5850388d83"
+        }
+      ],
+      "historical_revisit": true
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "loadPathData",
+      "address": "8C0911E0",
+      "size": 80,
+      "category": "body",
+      "hypothesis": "Native retains signed track index in r14 across LoadWave; make the already single-read track lifetime explicit.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 79,
+        "linked_at": "8C08F9C0",
+        "linked_size": 80
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "path-index-register",
+          "hypothesis": "Native retains signed track index in r14 across LoadWave; make the already single-read track lifetime explicit.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "loadPathData",
+            "start": "8C0911E0",
+            "end": "8C091230",
+            "size": 80,
+            "status": "differs",
+            "diff_bytes": 79,
+            "linked_at": "8C08F9C0",
+            "linked_size": 80
+          },
+          "after": {
+            "name": "loadPathData",
+            "start": "8C0911E0",
+            "end": "8C091230",
+            "size": 80,
+            "status": "differs",
+            "diff_bytes": 79,
+            "linked_at": "8C08F9C0",
+            "linked_size": 80
+          },
+          "source_sha256": "f3e084813d31ff5f4e909e26cc6becfad3adc9d71ff89fb2835ac2a4a5e11bdc"
+        },
+        {
+          "label": "path-zero-register",
+          "hypothesis": "Native LoadWave zero uses r2 whereas baseline r3; retain a typed shared zero operand before argument evaluation.",
+          "compile_link_exit": 1,
+          "before": {
+            "name": "loadPathData",
+            "start": "8C0911E0",
+            "end": "8C091230",
+            "size": 80,
+            "status": "differs",
+            "diff_bytes": 79,
+            "linked_at": "8C08F9C0",
+            "linked_size": 80
+          },
+          "after": {
+            "status": "failed",
+            "notes": [
+              "compile failed: [shc_cc] shc-v5.1r11 (wibo) failed rc=1: trackscr.c(741) : 2201 (E) Cannot convert parameter \"5\""
+            ]
+          },
+          "source_sha256": "15c9f2c9cc27ad94faaf45d3c753e4143495789a1b77e2e9c1be207c1f1d05bd"
+        },
+        {
+          "label": "path-zero-register",
+          "hypothesis": "Native LoadWave zero uses r2 whereas baseline r3; retain a typed shared zero operand before argument evaluation.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "loadPathData",
+            "start": "8C0911E0",
+            "end": "8C091230",
+            "size": 80,
+            "status": "differs",
+            "diff_bytes": 79,
+            "linked_at": "8C08F9C0",
+            "linked_size": 80
+          },
+          "after": {
+            "name": "loadPathData",
+            "start": "8C0911E0",
+            "end": "8C091230",
+            "size": 80,
+            "status": "differs",
+            "diff_bytes": 79,
+            "linked_at": "8C08F9C0",
+            "linked_size": 80
+          },
+          "source_sha256": "f54bfc1eff383b2cb2237461c3e72089c5edd92811fb38589f8a8722f7e746ef"
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": [
+        {
+          "trial": "path-index-register",
+          "linked_start": "8C08F9C0",
+          "comparison_length": 80,
+          "baseline_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+          "candidate_window_sha256": "8c4569697cb150fe64edb4e78c6172cad11fb8bf418988cd8c128539dd02fe97",
+          "changed_byte_offsets": [
+            "0x0",
+            "0xA"
+          ],
+          "changed_byte_count": 2,
+          "interpretation": "Exactly two changed emitted bytes, each a PC-relative literal-reference displacement. Fixed-address target diffcount remains 79; linked start remains 8C08F9C0; linked size remains 80. Counts as unsuccessful source-shape attempt, not gain."
+        },
+        {
+          "trial": "path-zero-register",
+          "linked_start": "8C08F9C0",
+          "comparison_length": 80,
+          "baseline_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+          "candidate_window_sha256": "73f6a8c3747f775286736bcbc6c3a1ef45663aa42da8740e6c74b77b4fa9346e",
+          "changed_byte_offsets": [],
+          "changed_byte_count": 0,
+          "interpretation": "Successful compile is emitted-body neutral; excluded from attempt credit. Failed prior compile is also excluded."
+        }
+      ]
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "TrackValid",
+      "address": "8C08EFA0",
+      "size": 136,
+      "category": "body",
+      "hypothesis": "Target uses shared true-return and multiple early false epilogues; structured range arms with explicit returns test that native control graph without changed bounds.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 133,
+        "linked_at": "8C08F310",
+        "linked_size": 182
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "trackvalid-explicit-returns",
+          "hypothesis": "Target uses shared true-return and multiple early false epilogues; structured range arms with explicit returns test that native control graph without changed bounds.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "TrackValid",
+            "start": "8C08EFA0",
+            "end": "8C08F028",
+            "size": 136,
+            "status": "differs",
+            "diff_bytes": 133,
+            "linked_at": "8C08F310",
+            "linked_size": 182
+          },
+          "after": {
+            "name": "TrackValid",
+            "start": "8C08EFA0",
+            "end": "8C08F028",
+            "size": 136,
+            "status": "differs",
+            "diff_bytes": 133,
+            "linked_at": "8C08F310",
+            "linked_size": 162
+          },
+          "source_sha256": "d99dbdcbdb9f1a58732343413cd96f9368fbfb9879bbd2f72bdf1d01566b1d40"
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pausescr",
+      "function": "updatePauseStateCleanup",
+      "address": "8C046F0C",
+      "size": 218,
+      "category": "body",
+      "hypothesis": "Target reuses callee-saved zero r14 after RemovePanes; explicit zero lifetime across all cleanup calls.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 195,
+        "linked_at": "8C046F00",
+        "linked_size": 1554
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "cleanup-zero-lifetime",
+          "hypothesis": "Target reuses callee-saved zero r14 after RemovePanes; explicit zero lifetime across all cleanup calls.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "updatePauseStateCleanup",
+            "start": "8C046F0C",
+            "end": "8C046FE6",
+            "size": 218,
+            "status": "differs",
+            "diff_bytes": 195,
+            "linked_at": "8C046F00",
+            "linked_size": 1554
+          },
+          "after": {
+            "name": "updatePauseStateCleanup",
+            "start": "8C046F0C",
+            "end": "8C046FE6",
+            "size": 218,
+            "status": "differs",
+            "diff_bytes": 195,
+            "linked_at": "8C046F00",
+            "linked_size": 1550
+          },
+          "source_sha256": "77a1aa9460182fbac2eef243bb2f014d069ea8de2f8b0711ec66ebcaf4e6194f"
+        },
+        {
+          "label": "cleanup-shared-zero",
+          "hypothesis": "Native zero r14 survives all cleanup calls and final pane reset; share typed zero across every null store and RemovePanes argument.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "updatePauseStateCleanup",
+            "start": "8C046F0C",
+            "end": "8C046FE6",
+            "size": 218,
+            "status": "differs",
+            "diff_bytes": 195,
+            "linked_at": "8C046F00",
+            "linked_size": 1554
+          },
+          "after": {
+            "name": "updatePauseStateCleanup",
+            "start": "8C046F0C",
+            "end": "8C046FE6",
+            "size": 218,
+            "status": "differs",
+            "diff_bytes": 195,
+            "linked_at": "8C046F00",
+            "linked_size": 1550
+          },
+          "source_sha256": "9cdce60e5ad7812bb48726a9b3c6029d95cb3a6bdec406c9f70c0a72696afec8"
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": [
+        {
+          "trial": "cleanup-zero-lifetime",
+          "linked_start": "8C046F00",
+          "comparison_length": 128,
+          "baseline_window_sha256": "f6a4311ca4fa991f04372b4a1b7d254fe3fcd597ad57f8b39cca9fbed21b3f97",
+          "candidate_window_sha256": "db45a1b5ec157e3964374edc6bf77b9a5e1bbab04dc6540328f07dbd306fbc54",
+          "changed_byte_offsets": [
+            "0xA",
+            "0x14",
+            "0x40",
+            "0x4C",
+            "0x50",
+            "0x54",
+            "0x58",
+            "0x7E"
+          ],
+          "changed_byte_count": 8,
+          "interpretation": "First 128 emitted bytes are a body-prefix window, not entire function. Static symbol linked_size spans neighboring functions, so this direct prefix delta is the changed-body proof."
+        },
+        {
+          "trial": "cleanup-shared-zero",
+          "linked_start": "8C046F00",
+          "comparison_length": 128,
+          "baseline_window_sha256": "f6a4311ca4fa991f04372b4a1b7d254fe3fcd597ad57f8b39cca9fbed21b3f97",
+          "candidate_window_sha256": "db45a1b5ec157e3964374edc6bf77b9a5e1bbab04dc6540328f07dbd306fbc54",
+          "changed_byte_offsets": [
+            "0xA",
+            "0x14",
+            "0x40",
+            "0x4C",
+            "0x50",
+            "0x54",
+            "0x58",
+            "0x7E"
+          ],
+          "changed_byte_count": 8,
+          "interpretation": "First 128 emitted bytes are a body-prefix window, not entire function. Static symbol linked_size spans neighboring functions, so this direct prefix delta is the changed-body proof."
+        }
+      ]
+    },
+    {
+      "lane": 3,
+      "unit": "pakerr",
+      "function": "ShowPakError",
+      "address": "8C044154",
+      "size": 1040,
+      "category": "body",
+      "hypothesis": "Native loads both choice pointers before clearing choice2 then choice1; chained assignment retains first-use parameter spill order while reversing stores.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 432,
+        "linked_at": "8C044154",
+        "linked_size": 1060
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "pak-chained-choice-zero",
+          "hypothesis": "Native loads both choice pointers before clearing choice2 then choice1; chained assignment retains first-use parameter spill order while reversing stores.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 432,
+            "linked_at": "8C044154",
+            "linked_size": 1060
+          },
+          "after": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 420,
+            "linked_at": "8C044154",
+            "linked_size": 1060
+          },
+          "source_sha256": "b359e1a951667419fc215159408b27c4c035fc2dc7d5ca673c2cca0c765d7508"
+        },
+        {
+          "label": "pak-local-text-index",
+          "hypothesis": "Native ErrExist path stores 16-bit gText.tab[25] at stack+20 and reserves four extra bytes; restore real shared text-index local, not padding.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 432,
+            "linked_at": "8C044154",
+            "linked_size": 1060
+          },
+          "after": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 205,
+            "linked_at": "8C044154",
+            "linked_size": 1072
+          },
+          "source_sha256": "5485386d6c6f7f0574f9580d9a9edb6827861e88c78a419c25111466cf1662d8"
+        },
+        {
+          "label": "pak-addressed-text-index",
+          "hypothesis": "Target explicitly spills real text-index as unsigned short; address-backed local preserves that observed storage while keeping original parameter first-use order.",
+          "compile_link_exit": 0,
+          "before": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 432,
+            "linked_at": "8C044154",
+            "linked_size": 1060
+          },
+          "after": {
+            "name": "ShowPakError",
+            "start": "8C044154",
+            "end": "8C044564",
+            "size": 1040,
+            "status": "differs",
+            "diff_bytes": 932,
+            "linked_at": "8C044154",
+            "linked_size": 1088
+          },
+          "source_sha256": "d4ced706336647d4a288f79e851c4f58196c6e60b2432d884c9f8f8c8bcc0f0b"
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 4,
+      "unit": "dc_zoid_8C06ED90",
+      "function": "func_8C06F4D0",
+      "address": "8C06F4D0",
+      "size": 730,
+      "category": "reconstruction",
+      "hypothesis": "New native blit draw traversal; target730 bytes; first isolated build708 bytes, final combined688 bytes; zero exact credit.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 730
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_snapshot": "renderer-blits.c",
+          "source_sha256": "a21d3d9c7668b57270ea522ed9a8158481a2b7433520830f30877f33e93971e3",
+          "after_combined_research": {
+            "name": "func_8C06F4D0",
+            "start": "8C06F4D0",
+            "end": "8C06F7AA",
+            "size": 730,
+            "status": "differs",
+            "diff_bytes": 723,
+            "linked_at": "8C06F300",
+            "linked_size": 688
+          },
+          "compile_link_status": "successful worker full114 research build"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "dc_zoid_8C06ED90",
+      "function": "func_8C0705EA",
+      "address": "8C0705EA",
+      "size": 1462,
+      "category": "reconstruction",
+      "hypothesis": "New native polygon traversal, 1462-byte target, compiled1500 bytes; no exact credit.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 1462
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_snapshot": "renderer-research-final.c",
+          "source_sha256": "3ac470bc4eb51a4fed575f49a3c22ded7ae5bbd3a3bf1c7a5e77dc49731916b2",
+          "after_combined_research": {
+            "name": "func_8C0705EA",
+            "start": "8C0705EA",
+            "end": "8C070BA0",
+            "size": 1462,
+            "status": "missing",
+            "diff_bytes": 1462,
+            "linked_at": "8C06F5B0",
+            "linked_size": 1500
+          },
+          "compile_link_status": "successful worker full114 research build"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "hudextra",
+      "function": "ClearBattlePoints",
+      "address": "8C095060",
+      "size": 34,
+      "category": "body",
+      "hypothesis": "Pointer/end loop differs in 20/34 compiled bytes at actual linked 8C095346; static symbol absent from report, no exact credit.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 33
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "hudextra",
+          "snapshot": "hud-clear-while.c",
+          "function": "ClearBattlePoints",
+          "before": {
+            "name": "ClearBattlePoints",
+            "start": "8C095060",
+            "end": "8C095082",
+            "size": 34,
+            "status": "differs",
+            "diff_bytes": 33,
+            "note": "symbol not in the compiled object"
+          },
+          "after": {
+            "name": "ClearBattlePoints",
+            "start": "8C095060",
+            "end": "8C095082",
+            "size": 34,
+            "status": "differs",
+            "diff_bytes": 33,
+            "note": "symbol not in the compiled object"
+          },
+          "unit_status": "partial",
+          "source_sha256": "3f670d726b523b4c40dfad05c82f792cbbdb600b1ca29134945e1532a2bf6e94"
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": {
+        "compiled_body_start": "0x8c095346",
+        "comparison_length": 34,
+        "changed_bytes_vs_compiled_baseline": 20,
+        "baseline_abs_sha256": "95744441fdae96638a484ab5389b5b8234afb5d1e9360c7ebd086cfb1298f698",
+        "variant_abs_sha256": "395f7c2b39f8f9a9d275ece350d3b7346676d3c61e903cbbbadd0600d1f80ac4",
+        "note": "Clear loop shortens; its comparison includes successor boundary. Register-j changes real body; neither accepted."
+      }
+    },
+    {
+      "lane": 4,
+      "unit": "gfx",
+      "function": "func_8C02E124",
+      "address": "8C02E124",
+      "size": 66,
+      "category": "body",
+      "hypothesis": "Unsigned-duration early return; exact 66-byte function, +66 game bytes.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C02E124",
+        "linked_size": 104
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_snapshot": "gfx-accepted.c",
+          "source_sha256": "6eac37bc70034e561482c0c1d3133a21dcff7d1850a409aa94462435fffe8c4e",
+          "result": "Unsigned-duration early return; exact 66-byte function, +66 game bytes."
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "mbox",
+      "function": "MBOX_HideObject",
+      "address": "8C03D0E0",
+      "size": 198,
+      "category": "body",
+      "hypothesis": "Split successor update and loop condition. Linked D0DE remains two bytes early; no credit.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 76,
+        "linked_at": "8C03D0DE",
+        "linked_size": 230
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "mbox",
+          "snapshot": "mbox-hideloop.c",
+          "function": "MBOX_HideObject",
+          "before": {
+            "name": "MBOX_HideObject",
+            "start": "8C03D0E0",
+            "end": "8C03D1A6",
+            "size": 198,
+            "status": "differs",
+            "diff_bytes": 76,
+            "linked_at": "8C03D0DE",
+            "linked_size": 230
+          },
+          "after": {
+            "name": "MBOX_HideObject",
+            "start": "8C03D0E0",
+            "end": "8C03D1A6",
+            "size": 198,
+            "status": "differs",
+            "diff_bytes": 182,
+            "linked_at": "8C03D0DE",
+            "linked_size": 230
+          },
+          "unit_status": "partial",
+          "source_sha256": "7f8fc87e513118f636ff9f36de50891ea280819e5d3d9c5d82db0d16f148c765"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "TB_text",
+      "function": "TB_GetTextNumLines",
+      "address": "8C05A88C",
+      "size": 238,
+      "category": "body",
+      "hypothesis": "Native double-byte flag lifetime/type shape: diff 164 -> 162, length 252 -> 248; still nonexact.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 164,
+        "linked_at": "8C05A88C",
+        "linked_size": 252
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "TB_text",
+          "snapshot": "tb-intdbl.c",
+          "function": "TB_GetTextNumLines",
+          "before": {
+            "name": "TB_GetTextNumLines",
+            "start": "8C05A88C",
+            "end": "8C05A97A",
+            "size": 238,
+            "status": "differs",
+            "diff_bytes": 164,
+            "linked_at": "8C05A88C",
+            "linked_size": 252
+          },
+          "after": {
+            "name": "TB_GetTextNumLines",
+            "start": "8C05A88C",
+            "end": "8C05A97A",
+            "size": 238,
+            "status": "differs",
+            "diff_bytes": 162,
+            "linked_at": "8C05A88C",
+            "linked_size": 248
+          },
+          "unit_status": "partial",
+          "source_sha256": "f82ba8982a7c1e307bf4b4830fc83756cdbafa2e396fd0815142814f2ca20320"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "mbox",
+      "function": "MBOX_FindObject_WORK",
+      "address": "8C03D390",
+      "size": 260,
+      "category": "body",
+      "hypothesis": "Positive name guard, fixed-location diff 34 -> 50 bytes.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 34,
+        "linked_at": "8C03D390",
+        "linked_size": 282
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "mbox",
+          "snapshot": "mbox-positiveguard.c",
+          "function": "MBOX_FindObject_WORK",
+          "before": {
+            "name": "MBOX_FindObject_WORK",
+            "start": "8C03D390",
+            "end": "8C03D494",
+            "size": 260,
+            "status": "differs",
+            "diff_bytes": 34,
+            "linked_at": "8C03D390",
+            "linked_size": 282
+          },
+          "after": {
+            "name": "MBOX_FindObject_WORK",
+            "start": "8C03D390",
+            "end": "8C03D494",
+            "size": 260,
+            "status": "differs",
+            "diff_bytes": 50,
+            "linked_at": "8C03D390",
+            "linked_size": 282
+          },
+          "unit_status": "partial",
+          "source_sha256": "593aa71a997941a069f18f92fd0151507bcdd85b576c2d1e46f52e081239043b"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "gfx",
+      "function": "func_8C02E18C",
+      "address": "8C02E18C",
+      "size": 276,
+      "category": "body",
+      "hypothesis": "Buffer-size live range: fixed-location diff 46 -> 59 bytes; no accepted gain.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 46,
+        "linked_at": "8C02E18C",
+        "linked_size": 276
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "gfx",
+          "snapshot": "gfx-latesize.c",
+          "function": "func_8C02E18C",
+          "before": {
+            "name": "func_8C02E18C",
+            "start": "8C02E18C",
+            "end": "8C02E2A0",
+            "size": 276,
+            "status": "differs",
+            "diff_bytes": 46,
+            "linked_at": "8C02E18C",
+            "linked_size": 276
+          },
+          "after": {
+            "name": "func_8C02E18C",
+            "start": "8C02E18C",
+            "end": "8C02E2A0",
+            "size": 276,
+            "status": "differs",
+            "diff_bytes": 59,
+            "linked_at": "8C02E18C",
+            "linked_size": 276
+          },
+          "unit_status": "partial",
+          "source_sha256": "d861bbd8d3f99fb30bd1c1d5380340a399af42fc11998ca89f0f66a6409783c8"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "TB_text",
+      "function": "TB_EllipseText",
+      "address": "8C05A988",
+      "size": 276,
+      "category": "body",
+      "hypothesis": "End pointer formed before copy; diff 142 -> 146; no gain.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 142,
+        "linked_at": "8C05A988",
+        "linked_size": 292
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "unit": "TB_text",
+          "snapshot": "tb-ellipse-end.c",
+          "function": "TB_EllipseText",
+          "before": {
+            "name": "TB_EllipseText",
+            "start": "8C05A988",
+            "end": "8C05AA9C",
+            "size": 276,
+            "status": "differs",
+            "diff_bytes": 142,
+            "linked_at": "8C05A988",
+            "linked_size": 292
+          },
+          "after": {
+            "name": "TB_EllipseText",
+            "start": "8C05A988",
+            "end": "8C05AA9C",
+            "size": 276,
+            "status": "differs",
+            "diff_bytes": 146,
+            "linked_at": "8C05A988",
+            "linked_size": 292
+          },
+          "unit_status": "partial",
+          "source_sha256": "26c011dd98548fee5dd577a75b9784ee04815fdbc75d872d562f4e6507962910"
+        }
+      ],
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "hudextra",
+      "function": "_AddBattlePoint",
+      "address": "8C095082",
+      "size": 296,
+      "category": "body",
+      "hypothesis": "Register-j local shape differs in 54/296 compiled body bytes at 8C095368. Pointer-local shape is byte-identical and excluded.",
+      "qualifies_as_completed_target": true,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 295,
+        "linked_at": "8C095368",
+        "linked_size": 298
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_snapshot": "hud-add-registerj.c",
+          "source_sha256": "9984782bca593a46d754df286a0ca242db397727f026c84b8b6be7e4cbfd00ad",
+          "result": "Register-j local shape differs in 54/296 compiled body bytes at 8C095368. Pointer-local shape is byte-identical and excluded."
+        }
+      ],
+      "historical_revisit": false,
+      "emitted_body_evidence": {
+        "compiled_body_start": "0x8c095368",
+        "comparison_length": 296,
+        "changed_bytes_vs_compiled_baseline": 54,
+        "baseline_abs_sha256": "95744441fdae96638a484ab5389b5b8234afb5d1e9360c7ebd086cfb1298f698",
+        "variant_abs_sha256": "b238d3f04d966a62d46663850706be0d621871c4cdfaedcdfe263e3619afa7e2",
+        "note": "Clear loop shortens; its comparison includes successor boundary. Register-j changes real body; neither accepted."
+      }
+    }
+  ],
+  "excluded_or_held_records": [
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "UpdateFrameTimer",
+      "address": "8C01010A",
+      "size": 108,
+      "category": "body",
+      "hypothesis": "New inverted paused guard and scoped elapsed temporary test target missing else counter-address reload; earlier explicit-adds shape not repeated.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 60,
+        "linked_at": "8C01010A",
+        "linked_size": 106
+      },
+      "selection_history": "older_history_requires_review",
+      "trials": [
+        {
+          "source_shape_trials": 2,
+          "probe_result": {
+            "name": "UpdateFrameTimer",
+            "status": "differs",
+            "diff_bytes": 82,
+            "linked_at": "8C01010A",
+            "linked_size": 106
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": true,
+      "retained_result": {
+        "name": "UpdateFrameTimer",
+        "status": "differs",
+        "diff_bytes": 60,
+        "linked_at": "8C01010A",
+        "linked_size": 106
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "PauseTimer",
+      "address": "8C0100FA",
+      "size": 8,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C0100FA",
+        "linked_size": 8
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "PauseTimer",
+            "status": "differs",
+            "diff_bytes": 1,
+            "linked_at": "8C0100FA",
+            "linked_size": 8
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "PauseTimer",
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C0100FA",
+        "linked_size": 8
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "ResumeTimer",
+      "address": "8C010102",
+      "size": 8,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C010102",
+        "linked_size": 8
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "ResumeTimer",
+            "status": "differs",
+            "diff_bytes": 1,
+            "linked_at": "8C010102",
+            "linked_size": 8
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "ResumeTimer",
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C010102",
+        "linked_size": 8
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "RetraceCallback",
+      "address": "8C0100A4",
+      "size": 10,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C0100A4",
+        "linked_size": 10
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "RetraceCallback",
+            "status": "differs",
+            "diff_bytes": 1,
+            "linked_at": "8C0100A4",
+            "linked_size": 10
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "RetraceCallback",
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C0100A4",
+        "linked_size": 10
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "CountdownTimeOut",
+      "address": "8C0101FC",
+      "size": 18,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 16,
+        "linked_at": "8C0101F8",
+        "linked_size": 28
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "CountdownTimeOut",
+            "status": "moved",
+            "diff_bytes": 16,
+            "linked_at": "8C0101F8",
+            "linked_size": 28
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "CountdownTimeOut",
+        "status": "moved",
+        "diff_bytes": 16,
+        "linked_at": "8C0101F8",
+        "linked_size": 28
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "AddCountdownTime",
+      "address": "8C010194",
+      "size": 20,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 18,
+        "linked_at": "8C010192",
+        "linked_size": 20
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "AddCountdownTime",
+            "status": "differs",
+            "diff_bytes": 18,
+            "linked_at": "8C010192",
+            "linked_size": 20
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "AddCountdownTime",
+        "status": "differs",
+        "diff_bytes": 18,
+        "linked_at": "8C010192",
+        "linked_size": 20
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "SetCountdownTimer",
+      "address": "8C010176",
+      "size": 30,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 28,
+        "linked_at": "8C010174",
+        "linked_size": 30
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "SetCountdownTimer",
+            "status": "differs",
+            "diff_bytes": 28,
+            "linked_at": "8C010174",
+            "linked_size": 30
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "SetCountdownTimer",
+        "status": "differs",
+        "diff_bytes": 28,
+        "linked_at": "8C010174",
+        "linked_size": 30
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 1,
+      "unit": "timer",
+      "function": "InitializeTimer",
+      "address": "8C0100AE",
+      "size": 76,
+      "category": "causal_placement",
+      "hypothesis": "Repair UpdateFrameTimer missing two-byte else address reload; explicitly test this helper address or shared literal displacement. Inverted-guard probe changed predecessor body but retained106-byte size, so hypothesis failed.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 13,
+        "linked_at": "8C0100AE",
+        "linked_size": 76
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "source_shape_trials": 1,
+          "probe_result": {
+            "name": "InitializeTimer",
+            "status": "differs",
+            "diff_bytes": 13,
+            "linked_at": "8C0100AE",
+            "linked_size": 76
+          },
+          "evidence": "timer.probe1-report.json"
+        }
+      ],
+      "reason": "Known historical reload evidence and no preserved pretrial target-specific causal record; excluded auxiliary probe.",
+      "historical_revisit": false,
+      "retained_result": {
+        "name": "InitializeTimer",
+        "status": "differs",
+        "diff_bytes": 13,
+        "linked_at": "8C0100AE",
+        "linked_size": 76
+      },
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 2,
+      "unit": "drivetra",
+      "function": "enginetorque",
+      "address": "8C0230B0",
+      "size": 290,
+      "category": "body",
+      "hypothesis": "Native retains torque-row pointer across inline arithmetic, unlike current temporary index expression; test explicit pointer lifetime.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 177,
+        "linked_at": "8C0230B0",
+        "linked_size": 280
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [
+        {
+          "label": "torque-register-pointer",
+          "hypothesis": "Native retains torque-row pointer across inline arithmetic, unlike current temporary index expression; test explicit pointer lifetime.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 177,
+              "linked_at": "8C0230B0",
+              "linked_size": 280
+            }
+          ],
+          "after": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 273,
+              "linked_at": "8C0230B0",
+              "linked_size": 280
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "39ac4c25d0270631d73512d3f87bc3ed75d2ec99e66d1b5c1b55084f8b4df7e8"
+        },
+        {
+          "label": "torque-pointer-loads",
+          "hypothesis": "Native emits pointer+2 before MOV.W rather than displacement addressing; test explicit pointer dereference expressions.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 273,
+              "linked_at": "8C0230B0",
+              "linked_size": 280
+            }
+          ],
+          "after": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 177,
+              "linked_at": "8C0230B0",
+              "linked_size": 280
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "2f3fb820310c3dd46c80bf2eca4f541532f689939bbec0da6c90027700b778d7"
+        },
+        {
+          "label": "torque-separate-pointer",
+          "hypothesis": "Native has separate low/high cell pointers and saved row base; represent distinct endpoint pointers without changing interpolation.",
+          "compile_link_exit": 0,
+          "before": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 177,
+              "linked_at": "8C0230B0",
+              "linked_size": 280
+            }
+          ],
+          "after": [
+            {
+              "name": "enginetorque",
+              "start": "8C0230B0",
+              "end": "8C0231D2",
+              "size": 290,
+              "status": "differs",
+              "diff_bytes": 156,
+              "linked_at": "8C0230B0",
+              "linked_size": 294
+            }
+          ],
+          "emitted_neutral": null,
+          "object_changed_reported": true,
+          "source_sha256": "bb5de1e57ea475b42d7a74dbf46b589c8ea67707cd570107bf44f2aaf0add3eb"
+        }
+      ],
+      "reason": "Known historical pointer-lifetime family; no materially new native evidence, excluded.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 3,
+      "unit": "highscorescr",
+      "function": "censor",
+      "address": "8C034660",
+      "size": 66,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 66,
+        "linked_at": "8C031198",
+        "linked_size": 396
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "carscr",
+      "function": "uninitButtons",
+      "address": "8C078E5C",
+      "size": 150,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 150,
+        "linked_at": "8C072C80",
+        "linked_size": 150
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "carscr",
+      "function": "clearCarComponents",
+      "address": "8C076A60",
+      "size": 198,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 198,
+        "linked_at": "8C072820",
+        "linked_size": 212
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "gameoverscr",
+      "function": "controlScore",
+      "address": "8C029758",
+      "size": 28,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 28,
+        "linked_at": "8C02975C",
+        "linked_size": 60
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "unloadTrackScreen",
+      "address": "8C08F3CC",
+      "size": 48,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 47,
+        "linked_at": "8C08F5C2",
+        "linked_size": 48
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "_UninitScreen",
+      "address": "8C08DFEC",
+      "size": 72,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 71,
+        "linked_at": "8C08E3C8",
+        "linked_size": 148
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "gameoverscr",
+      "function": "initScreen",
+      "address": "8C029244",
+      "size": 84,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 2,
+        "linked_at": "8C029244",
+        "linked_size": 84
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "selectcarload",
+      "function": "UnloadSelectCar",
+      "address": "8C08B0B4",
+      "size": 98,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 90,
+        "linked_at": "8C08B0B6",
+        "linked_size": 122
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "videoscr",
+      "function": "uninitButtons",
+      "address": "8C05DABC",
+      "size": 120,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 120,
+        "linked_at": "8C05DA80",
+        "linked_size": 136
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "gameoverscr",
+      "function": "animText",
+      "address": "8C02B00A",
+      "size": 132,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 132,
+        "linked_at": "8C02AF96",
+        "linked_size": 132
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pakscr",
+      "function": "_AnimText",
+      "address": "8C07F15E",
+      "size": 140,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 139
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "gameoverscr",
+      "function": "validOption",
+      "address": "8C029508",
+      "size": 170,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 164,
+        "linked_at": "8C02950A",
+        "linked_size": 172
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "OptionValid",
+      "address": "8C08F028",
+      "size": 194,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 193,
+        "linked_at": "8C08F3C6",
+        "linked_size": 194
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pausescr",
+      "function": "animPauseText",
+      "address": "8C0476D4",
+      "size": 242,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 230
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native stack allocation and/or local lifetime differences require original scratch-variable evidence. No unused array, padding or invented semantic call introduced.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pausescr",
+      "function": "animSureText",
+      "address": "8C0477F4",
+      "size": 298,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 294
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native stack allocation and/or local lifetime differences require original scratch-variable evidence. No unused array, padding or invented semantic call introduced.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "initScreen",
+      "address": "8C07FEE0",
+      "size": 496,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 481,
+        "linked_at": "8C07FEB4",
+        "linked_size": 496
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pausescr",
+      "function": "animRumbleText",
+      "address": "8C047950",
+      "size": 500,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 464
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native stack allocation and/or local lifetime differences require original scratch-variable evidence. No unused array, padding or invented semantic call introduced.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "startscr",
+      "function": "initButtons",
+      "address": "8C08C5B6",
+      "size": 756,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 696,
+        "linked_at": "8C08C5BA",
+        "linked_size": 756
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native instruction/constant sequence largely agrees; pool and predecessor shift obscure remaining allocation details. No independently supported changed-body hypothesis beyond exhausted predecessor.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "pakerr",
+      "function": "_AnimDim",
+      "address": "8C0446B6",
+      "size": 28,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 27,
+        "linked_at": "8C0446AA",
+        "linked_size": 74
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "drawControls",
+      "address": "8C0821AC",
+      "size": 36,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 35,
+        "linked_at": "8C0820A6",
+        "linked_size": 36
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "startscr",
+      "function": "uninitScreen",
+      "address": "8C08BCB4",
+      "size": 42,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 40,
+        "linked_at": "8C08BCB8",
+        "linked_size": 42
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "playerBeingCreated",
+      "address": "8C083A16",
+      "size": 52,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 52,
+        "linked_at": "8C083852",
+        "linked_size": 52
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "playerBeingDeleted",
+      "address": "8C083A4A",
+      "size": 52,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 52,
+        "linked_at": "8C083886",
+        "linked_size": 82
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "playerClaimed",
+      "address": "8C0839D0",
+      "size": 70,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 68,
+        "linked_at": "8C08380C",
+        "linked_size": 70
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "startscr",
+      "function": "optionValid",
+      "address": "8C08C570",
+      "size": 70,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 68,
+        "linked_at": "8C08C574",
+        "linked_size": 70
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "startscr",
+      "function": "uninitButtons",
+      "address": "8C08C8AA",
+      "size": 72,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 66,
+        "linked_at": "8C08C8AE",
+        "linked_size": 72
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "gameoverscr",
+      "function": "drawRect",
+      "address": "8C02B08E",
+      "size": 118,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 118,
+        "linked_at": "8C02B01A",
+        "linked_size": 134
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "startscr",
+      "function": "initScreen",
+      "address": "8C08BC34",
+      "size": 128,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 123,
+        "linked_at": "8C08BC38",
+        "linked_size": 128
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "optionscr",
+      "function": "printOption",
+      "address": "8C0421E0",
+      "size": 142,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 136,
+        "linked_at": "8C0421D0",
+        "linked_size": 216
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "playerscr",
+      "function": "calcSelectMenuMaxSize",
+      "address": "8C083910",
+      "size": 148,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 138,
+        "linked_at": "8C08374C",
+        "linked_size": 148
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "trackscr",
+      "function": "uninitButtons",
+      "address": "8C09167E",
+      "size": 176,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 174,
+        "linked_at": "8C08FE6A",
+        "linked_size": 222
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "controlscr",
+      "function": "uninitButtons",
+      "address": "8C021B40",
+      "size": 184,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 180,
+        "linked_at": "8C021B68",
+        "linked_size": 184
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "audioscr",
+      "function": "initButtons",
+      "address": "8C017F4C",
+      "size": 800,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 787,
+        "linked_at": "8C017F78",
+        "linked_size": 896
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 3,
+      "unit": "controlscr",
+      "function": "validOption",
+      "address": "8C0214E4",
+      "size": 4,
+      "category": "body",
+      "hypothesis": null,
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 4,
+        "linked_at": "8C02152A",
+        "linked_size": 66
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Already equivalent emitted body modulo placement, pool placement and/or local callee addresses. Predecessor reconstruction variants already capped; no new source-shape hypothesis.",
+      "historical_revisit": false,
+      "emitted_body_evidence": null
+    },
+    {
+      "lane": 4,
+      "unit": "dc_zoid_8C06ED90",
+      "function": "func_8C071588",
+      "address": "8C071588",
+      "size": 1416,
+      "category": "body",
+      "hypothesis": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 1416
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "dc_zoid_8C06ED90",
+      "function": "func_8C06FE24",
+      "address": "8C06FE24",
+      "size": 1990,
+      "category": "body",
+      "hypothesis": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 1990
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "dc_zoid_8C06ED90",
+      "function": "func_8C070C32",
+      "address": "8C070C32",
+      "size": 2368,
+      "category": "body",
+      "hypothesis": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "missing",
+        "diff_bytes": 2368
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Native body/donor identified, but packed-object/hierarchy/EndFrame ABI and platform differences remain unestablished. No speculative body copied.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "visuals",
+      "function": "SetSheenColor",
+      "address": "8C05EEC6",
+      "size": 44,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 44,
+        "linked_at": "8C05EEB6",
+        "linked_size": 44
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "visuals",
+      "function": "SetTSheenColor",
+      "address": "8C05EEF2",
+      "size": 44,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 44,
+        "linked_at": "8C05EEE2",
+        "linked_size": 44
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "visuals",
+      "function": "SetFrameColor",
+      "address": "8C05EE76",
+      "size": 80,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 66,
+        "linked_at": "8C05EE66",
+        "linked_size": 80
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "hudextra",
+      "function": "RemoveHUDExtra",
+      "address": "8C093AB0",
+      "size": 426,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 1,
+        "linked_at": "8C093AB0",
+        "linked_size": 426
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "dc_kamui_tex_8C06E5B4",
+      "function": "func_8C06E7B4",
+      "address": "8C06E7B4",
+      "size": 8,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "differs",
+        "diff_bytes": 8,
+        "linked_at": "8C06E79E",
+        "linked_size": 8
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "mbox",
+      "function": "MBOX_GetChild",
+      "address": "8C03D0C8",
+      "size": 12,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 10,
+        "linked_at": "8C03D0C6",
+        "linked_size": 12
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    },
+    {
+      "lane": 4,
+      "unit": "mbox",
+      "function": "MBOX_GetNext",
+      "address": "8C03D0D4",
+      "size": 12,
+      "category": "body",
+      "hypothesis": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "qualifies_as_completed_target": false,
+      "baseline": {
+        "status": "moved",
+        "diff_bytes": 10,
+        "linked_at": "8C03D0D2",
+        "linked_size": 12
+      },
+      "selection_history": "fresh_candidate",
+      "trials": [],
+      "reason": "Inspected only: body/relocation or predecessor/shared-pool placement blocker, no new evidence-backed changed-body probe.",
+      "historical_revisit": false
+    }
+  ]
+}

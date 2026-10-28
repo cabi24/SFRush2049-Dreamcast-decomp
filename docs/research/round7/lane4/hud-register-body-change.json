@@ -1,0 +1,18 @@
+{
+  "hud-clear-while.c": {
+    "compiled_body_start": "0x8c095346",
+    "comparison_length": 34,
+    "changed_bytes_vs_compiled_baseline": 20,
+    "baseline_abs_sha256": "95744441fdae96638a484ab5389b5b8234afb5d1e9360c7ebd086cfb1298f698",
+    "variant_abs_sha256": "395f7c2b39f8f9a9d275ece350d3b7346676d3c61e903cbbbadd0600d1f80ac4",
+    "note": "Clear loop shortens; its comparison includes successor boundary. Register-j changes real body; neither accepted."
+  },
+  "hud-add-registerj.c": {
+    "compiled_body_start": "0x8c095368",
+    "comparison_length": 296,
+    "changed_bytes_vs_compiled_baseline": 54,
+    "baseline_abs_sha256": "95744441fdae96638a484ab5389b5b8234afb5d1e9360c7ebd086cfb1298f698",
+    "variant_abs_sha256": "b238d3f04d966a62d46663850706be0d621871c4cdfaedcdfe263e3619afa7e2",
+    "note": "Clear loop shortens; its comparison includes successor boundary. Register-j changes real body; neither accepted."
+  }
+}

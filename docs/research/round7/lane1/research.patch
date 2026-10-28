@@ -1,0 +1,13 @@
+diff --git a/src/audiomgr.c b/src/audiomgr.c
+index 5684261..e6a7070 100644
+--- a/src/audiomgr.c
++++ b/src/audiomgr.c
+@@ -875,7 +875,7 @@ void AudUpdateListener(int lis, float *pos, float *dir, float *look, float *up)
+ int AudEmitEffect(float *pos, float *dir, float fadeDistance, float fadeCompression, float maxVol, float minVol, int fxid, int subId, int replace, unsigned char priority)
+ {
+     tSfxEmitter *em;
+-    tAudioMsg *cmd;
++    register tAudioMsg *cmd;
+     int tag;
+     if (!gEmitters) return -1;
+     LOCK();

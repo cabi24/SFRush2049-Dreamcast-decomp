@@ -1,0 +1,34 @@
+diff --git a/src/gamerecords.c b/src/gamerecords.c
+index 7fcac9a..c283eb9 100644
+--- a/src/gamerecords.c
++++ b/src/gamerecords.c
+@@ -634,6 +634,8 @@ void RemovePlayerScores(tPlayerProfile **player)
+ void CalcUnlockedStuff(void)
+ {
+     tSaveData *player;
++    tRaceStats *raceStats;
++    tStuntStats *stuntCoinStats;
+     short carIdx;
+     short trackIdx;
+     short p;
+@@ -660,14 +662,14 @@ void CalcUnlockedStuff(void)
+                     else gUnlockedCars[p][carIdx] = 0;
+                 }
+                 for (raceIdx = 0; raceIdx < 6; raceIdx++) {
+-                    tRaceStats *stats = &(*(*gPlayers[p].save)->datah)->raceStats[raceIdx];
+-                    totalRaceSilverCoins += CountBits(stats->coinsFound & 0xff, 16);
+-                    totalRaceGoldCoins += CountBits(stats->coinsFound & 0xff00, 16);
++                    raceStats = &(*(*gPlayers[p].save)->datah)->raceStats[raceIdx];
++                    totalRaceSilverCoins += CountBits(raceStats->coinsFound & 0xff, 16);
++                    totalRaceGoldCoins += CountBits(raceStats->coinsFound & 0xff00, 16);
+                 }
+                 for (stuntIdx = 0; stuntIdx < 4; stuntIdx++) {
+-                    tStuntStats *stats = &(*(*gPlayers[p].save)->datah)->stuntStats[stuntIdx];
+-                    totalStuntSilverCoins += CountBits(stats->coinsFound & 0xff, 16);
+-                    totalStuntGoldCoins += CountBits(stats->coinsFound & 0xff00, 16);
++                    stuntCoinStats = &(*(*gPlayers[p].save)->datah)->stuntStats[stuntIdx];
++                    totalStuntSilverCoins += CountBits(stuntCoinStats->coinsFound & 0xff, 16);
++                    totalStuntGoldCoins += CountBits(stuntCoinStats->coinsFound & 0xff00, 16);
+                 }
+                 if (totalRaceSilverCoins >= 48) gUnlockedCars[p][6] = 1;
+                 if (totalRaceGoldCoins >= 24) gUnlockedCars[p][7] = 1;

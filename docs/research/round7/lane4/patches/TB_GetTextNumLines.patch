@@ -1,0 +1,11 @@
+--- a/src/TB_text.c
++++ b/src/TB_text.c
+@@ -128,7 +128,7 @@
+     signed short spacing, charSize, numLines, currWidth, ch;
+     const unsigned char *str, *s, *lastSpace;
+     const unsigned char *txt = text;
+-    signed char dbl = *txt == 255;
++    int dbl = *txt == 255;
+     if (dbl) { str = txt + 1; charSize = 2; } else { str = txt; charSize = 1; }
+     spacing = HAL_GetFontSpacing(); numLines = 0;
+     do {

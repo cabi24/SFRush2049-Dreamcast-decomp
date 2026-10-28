@@ -1,0 +1,13 @@
+{
+  "baseline_exact_functions": 579,
+  "missing_baseline_exact_functions": [],
+  "old_credited_span_regressions": [],
+  "research_exact_functions": 580,
+  "new_exact_functions": [
+    [
+      "gfx",
+      "8C02E124"
+    ]
+  ],
+  "note": "Only gfx guard is credited; both renderer reconstructions remain research."
+}

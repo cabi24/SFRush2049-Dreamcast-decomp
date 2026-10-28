@@ -1,0 +1,14 @@
+{
+  "hud-clear-while.c": {
+    "compiled_body_start": "0x8c095346",
+    "comparison_length": 34,
+    "changed_bytes_vs_compiled_baseline": 20,
+    "note": "ClearBattlePoints comparison includes changed successor boundary after shortened loop."
+  },
+  "hud-add-pointer.c": {
+    "compiled_body_start": "0x8c095368",
+    "comparison_length": 296,
+    "changed_bytes_vs_compiled_baseline": 0,
+    "note": "Same linked start and comparison length; byte-identical pointer shape excluded, changed register-j shape unsuccessful."
+  }
+}

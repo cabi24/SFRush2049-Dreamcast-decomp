@@ -1,0 +1,28 @@
+diff --git a/include/mdrive_types.h b/include/mdrive_types.h
+index 93afec7..72a2602 100644
+--- a/include/mdrive_types.h
++++ b/include/mdrive_types.h
+@@ -29,7 +29,8 @@ extern signed char gTrackNum,gUseCatchup,gOneMoreCP,gDeathMode,gCoastFlag;
+ extern unsigned int gGameState;
+ extern int gRace,gAPlayerReallyFinished;
+ extern signed short gStuntsDone;
+-extern float gRetraceTime,gFrameSeconds;
++extern float gRetraceTime;
++extern volatile float gFrameSeconds; /* Same object qualifier as timer.c. */
+ extern void InitCarVisuals(tCarData *),InitCarPath(tModelData *,tCarData *);
+ extern signed short GetNextCheckpoint(signed short);
+ extern void CarReportsGameOver(int,float),SetResurrectionData(signed short,tModelData *,int),Resurrect(tModelData *);
+diff --git a/include/targetpaths_private.h b/include/targetpaths_private.h
+index e2f2be1..538553c 100644
+--- a/include/targetpaths_private.h
++++ b/include/targetpaths_private.h
+@@ -68,7 +68,8 @@ extern tTargetGameCar gGameCar[]; /* only index0 referenced: target56374..384. *
+ extern tTargetInfo targetInfo[];
+ extern tTarget *CollisionTargetPtrs[]; /* target56230=8C15861C,30slots. */
+ extern int numCollisionTargetPtrs; /* target56234=8C158694. */
+-extern float gFrameSeconds,unitmatrix[4][3];
++extern volatile float gFrameSeconds; /* Same object qualifier as timer.c. */
++extern float unitmatrix[4][3];
+ extern int gRace,gPauseState;
+ extern unsigned int gGameState;
+ extern unsigned short gObjList[];

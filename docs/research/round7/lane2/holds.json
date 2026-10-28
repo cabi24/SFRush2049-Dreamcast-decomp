@@ -1,0 +1,232 @@
+[
+  {
+    "unit": "maxpath",
+    "function": "FindResPt",
+    "address": "8C03CF4A",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "controlsys",
+    "function": "func_8C01FDA8",
+    "address": "8C01FDA8",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "camera",
+    "function": "view1_suscomp_offset",
+    "address": "8C0194C4",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "stree",
+    "function": "RemoveCollisionObject",
+    "address": "8C053C50",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "InitDemoPathPoint",
+    "address": "8C049F26",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "gamerecords",
+    "function": "ResetHighScores",
+    "address": "8C02C494",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "mdrive",
+    "function": "Update_MDrive",
+    "address": "8C03E01C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "mdrive",
+    "function": "_UpdateLinkCars",
+    "address": "8C03EE08",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targets",
+    "function": "UpdateMiniModelStruct",
+    "address": "8C057DB6",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "AbortCar",
+    "address": "8C04A4DC",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "stree",
+    "function": "ResetCollisionObject",
+    "address": "8C053BD0",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "maxpath",
+    "function": "TraceToEnd",
+    "address": "8C03C92C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "camera",
+    "function": "DeathCam",
+    "address": "8C01A51C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "GetResPt",
+    "address": "8C048A4C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "mdrive",
+    "function": "multigo",
+    "address": "8C03EFBC",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "controlsys",
+    "function": "_PotRange",
+    "address": "8C01FD86",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targets",
+    "function": "PauseTargets",
+    "address": "8C0586E6",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "checkpoint",
+    "function": "CalcRaceTime",
+    "address": "8C01C518",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "Interpolate",
+    "address": "8C049A80",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "drones",
+    "function": "_LinearInterp",
+    "address": "8C026090",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "camera",
+    "function": "init_steady_move_cam",
+    "address": "8C01AC80",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targetpaths",
+    "function": "_PlayStartSound",
+    "address": "8C0572FC",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "camera",
+    "function": "update_car_object",
+    "address": "8C01A420",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "maxpath",
+    "function": "FindClosestResPathPt",
+    "address": "8C03C620",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "maxpath",
+    "function": "FindClosestPathPt",
+    "address": "8C03C696",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targetpaths",
+    "function": "_PlayStopSound",
+    "address": "8C05736E",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "MakeUvsFromQuat",
+    "address": "8C0497E8",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "resurrect",
+    "function": "MakeQuatFromUvs",
+    "address": "8C0498D4",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targetpaths",
+    "function": "_ResetPath",
+    "address": "8C05664C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targets",
+    "function": "_TargetColl3Piece",
+    "address": "8C058CA4",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targetpaths",
+    "function": "PauseTargetPaths",
+    "address": "8C05760C",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "drivsym",
+    "function": "mcommunication",
+    "address": "8C02551E",
+    "status": "inspection_only_no_attempt",
+    "blocker": "No non-PC-relative body divergence in relaxed triage; needs evidence-backed predecessor/source-completeness repair, not padding."
+  },
+  {
+    "unit": "targets",
+    "function": "_AnimateKnockdown",
+    "status": "inspection_only_no_attempt",
+    "blocker": "Native unused 48-byte frame is unexplained by available MAT3/N64 source. Adding dead local solely to alter layout is not justified."
+  }
+]

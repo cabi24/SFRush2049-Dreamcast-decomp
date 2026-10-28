@@ -1,0 +1,39 @@
+{
+  "old_units_checked": 114,
+  "all_credited_spans_preserved": true,
+  "all_exact_counts_preserved": true,
+  "summary": {
+    "game_code": {
+      "exact_bytes": 89978,
+      "total_bytes": 569664,
+      "percent": 15.7949
+    },
+    "image": {
+      "exact_bytes": 159309,
+      "total_bytes": 1123492,
+      "percent": 14.1798
+    },
+    "map_coverage": {
+      "text_bytes": 1123492,
+      "data_bytes": 86009,
+      "unique_file_bytes": 1123492,
+      "image_bytes": 1123492,
+      "percent": 100.0
+    },
+    "functions": {
+      "exact": 579,
+      "total": 4717,
+      "game_exact": 579,
+      "game_total": 1555
+    },
+    "units": {
+      "mapped": 159,
+      "game": 124,
+      "with_source": 114,
+      "partial": 85,
+      "exact": 29
+    }
+  },
+  "old_exact_identities_preserved": true,
+  "old_exact_identities_checked": 579
+}

@@ -1,0 +1,13 @@
+diff --git a/src/save.c b/src/save.c
+index 8f8b38d..fa9eb66 100644
+--- a/src/save.c
++++ b/src/save.c
+@@ -1337,7 +1337,7 @@ void DeleteGhost(tGhostFile **ghosth)
+ void SaveGhostInLimbo(tSaveHeader *header, void *data)
+ {
+     tGhostFile **limboGhosts;
+-    tSaveHeader *limbo;
++    register tSaveHeader *limbo;
+     int i;
+     limboGhosts = gLimboGhosts + (header->track + (header->backward ? 6 : 0)) * 3;
+     for (i = 0; i < gNumLimbo; i++) {

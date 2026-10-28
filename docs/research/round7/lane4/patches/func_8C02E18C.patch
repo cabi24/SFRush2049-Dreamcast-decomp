@@ -1,0 +1,26 @@
+--- a/src/gfx.c
++++ b/src/gfx.c
+@@ -21,12 +22,14 @@
+     tGfxBorderColor border;
+     int result;
+     float *field48;
++    unsigned int bufferSize;
+     dcVideoInit(0,0);
+     dcInitDevice(dcDevice);
+     border.value = 0;
+     result = dcSetBorderColor(border);
+     dcCheckKm(result,"kmSetBorderColor");
+     dcVertexBuffer = (void *)((unsigned int)dcAlloc(0x180000) | 0xa0000000);
++    bufferSize = 0x180000;
+     dcTables[0] = dcTableA;
+     dcTables[1] = dcTableB;
+     dcGfxConfig.size = 0x1f8;
+@@ -41,7 +44,7 @@
+     dcGfxConfig.v28 = 1;
+     dcGfxConfig.buffer = dcVertexBuffer;
+     field48 = &dcGfxConfig.f48;
+-    dcGfxConfig.bufferSize = 0x180000;
++    dcGfxConfig.bufferSize = bufferSize;
+     dcGfxConfig.v34 = 1;
+     dcGfxConfig.v38 = 0;
+     dcGfxConfig.v44 = 0;

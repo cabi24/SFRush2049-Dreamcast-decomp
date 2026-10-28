@@ -1,0 +1,14 @@
+diff --git a/src/save.c b/src/save.c
+index 8f8b38d..bf08d86 100644
+--- a/src/save.c
++++ b/src/save.c
+@@ -1233,7 +1233,8 @@ tGhostFile **CompressGhost(tSaveHeader *header, unsigned char *blocks)
+     maxsize = (int)(gRetraceRate * (ghostRaceTimes[gTrackNum] + 10.0f));
+     /* Size term first: the argument temporaries are created right to left, which puts the start
+        temporary in the lower spill slot (8C04E0D0/E0D4). */
+-    memmove(header->size + header->start, header->start + maxsize, header->size);
++    dataSize = header->size;
++    memmove(dataSize + header->start, header->start + maxsize, dataSize);
+     memmove(header->size * 2 + header->start, header->start + maxsize * 2, header->size);
+     dataSize = header->size * 3;
+     unzippedChecksum = _CalcChecksum(sorted, dataSize);
