@@ -11,7 +11,8 @@ void func_8C02E124(void)
     duration = dcReadTick();
     dcDuration = dcTickDiff(dcFrameTick,duration);
     duration = dcConvertTick(dcDuration);
-    if (duration <= 40000) {
+    if (duration > 40000) return;
+    {
         dcDuration = dcRenderTime = duration;
         if (dcMaxRenderTime < dcRenderTime) dcMaxRenderTime = dcRenderTime;
     }

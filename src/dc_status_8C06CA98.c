@@ -46,4 +46,4 @@ int func_8C06CA0A(int);
 
 void func_8C06CA98(void) {dcPeripheralSystemStatus=func_8C0A3BF2();}
 int func_8C06CAA8(void) {return dcPeripheralSystemStatus!=-3;}
-void func_8C06CAB4(void) {signed char enabled=dcPeripheralSystemStatus!=-3;if(enabled)func_8C0DAA98(enabled);}
+void func_8C06CAB4(void) {int enabled=(signed char)(dcPeripheralSystemStatus!=-3);if(enabled)func_8C0DAA98(enabled);}
