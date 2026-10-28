@@ -222,10 +222,7 @@ void func_8C06B254(void *data)
 void func_8C06B298(const char *format, ...)
 {
     char buffer[256];
-    char *args;
-    if ((unsigned int)(&format + 1) & 3) args = (char *)&format + 8;
-    else args = (char *)&format + 4;
-    func_8C09C044(buffer, format, args);
+    func_8C09C044(buffer, format, ((unsigned int)(&format + 1) & 3) ? (char *)&format + 8 : (char *)&format + 4);
     func_8C06B22C();
     func_8C06B1C8();
 }

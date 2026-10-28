@@ -253,6 +253,7 @@ void CancelPakError(int pak)
 void ShowPakError(int pak, signed char *choice1, signed char *choice2, signed char *done, int (*cancelFunc)(int))
 {
     int i, j;
+    unsigned short textIndex;
     char str[256];
     if (cancelFunc && cancelFunc(pak))
         CancelPakError(pak);
@@ -262,10 +263,9 @@ void ShowPakError(int pak, signed char *choice1, signed char *choice2, signed ch
         if (!gPakError[pak][i].done) {
             gPakError[pak][i].done = 1;
             *done = 1;
-            /* choice1 before choice2: SHC assigns the parameter spill slots by first use
-               (choice1 @4, choice2 @12 at 8C04416A..6C); MAT3 order swaps the two slots. */
-            *choice1 = 0;
-            *choice2 = 0;
+            /* Native loads both pointers, then clears choice2 before choice1
+               (8C0441C8..1CE). Parameter spill assignment remains nonmatching. */
+            *choice1 = *choice2 = 0;
             goto restore;
         }
     }
@@ -313,7 +313,8 @@ void ShowPakError(int pak, signed char *choice1, signed char *choice2, signed ch
         _DrawChoice(pak, i, gText.single[121], gText.taba[gText.tab[27] + 1], gText.single[245], gPakError[pak][i].choice1);
         break;
     case kPS_ErrExist:
-        _DrawChoice(pak, i, gText.single[122], gText.taba[(int)gText.tab[25]], gText.taba[(int)gText.tab[25] + 1], gPakError[pak][i].choice1);
+        textIndex = gText.tab[25];
+        _DrawChoice(pak, i, gText.single[122], gText.taba[textIndex], gText.taba[textIndex + 1], gPakError[pak][i].choice1);
         break;
     case kPS_ErrFull: _DrawPakErrFull(pak, i); break;
     case kPS_ErrBadData: _DrawPakErrBadData(pak, i); break;

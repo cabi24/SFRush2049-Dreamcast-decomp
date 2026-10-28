@@ -1,5 +1,15 @@
 # San Francisco Rush 2049 (Dreamcast) decompilation
 
+## Round 7 checkpoint 2 — 2026-10-28, ongoing
+
+Round 7 now adds **240 game code/literal bytes, 276 image bytes and five exact
+functions**, preserving all prior matches. Current total: **90,218 / 569,664 game
+bytes (15.8371%)**, **159,585 / 1,123,492 image bytes (14.2044%)**, and
+**584 / 1,555 exact game functions**. Full 114-unit builds, strict emitted-byte
+audits, independent negative controls and 22 host tests passed.
+The requested 500 attempts are not complete; viable fresh targets are scarce and
+historical revisits require new evidence. See [checkpoint 2](docs/round7-checkpoint2.md).
+
 ## Round 7 checkpoint 1 — 2026-10-28, ongoing
 
 The new matching round has independently verified **106 additional emitted bytes and
